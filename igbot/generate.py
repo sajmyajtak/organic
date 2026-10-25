@@ -15,6 +15,7 @@ from datetime import date, timedelta
 from typing import Literal
 
 import anthropic
+import yaml
 from pydantic import BaseModel
 
 from . import content
@@ -104,6 +105,14 @@ def _inspiration() -> list[dict]:
     return json.loads(path.read_text(encoding="utf-8")).get("top_posts", [])[:25]
 
 
+def _niche_profile() -> dict | None:
+    """Niche profile proposed by `analyze` from real posts of the source account."""
+    path = DATA_DIR / "niche_profile.yaml"
+    if not path.exists():
+        return None
+    return yaml.safe_load(path.read_text(encoding="utf-8"))
+
+
 def build_prompt(cfg: dict, start: date, days: int) -> str:
     niche = cfg["niche"]
     sched = cfg["schedule"]
@@ -115,6 +124,7 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
                  "Karusel 5–8 slidů, single image 1 slide. Story má 1 slide."),
         "dny": dates,
         "nika": niche,
+        "nika_podle_analyzy_zdrojoveho_uctu": _niche_profile(),
         "monetizace": cfg.get("monetization", {}),
         "uz_jsme_publikovali_neopakuj": _recent_captions(),
         "nase_nejlepsi_prispevky": _top_performers(),

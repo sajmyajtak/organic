@@ -167,14 +167,34 @@ class Instagram:
 
     # -- discovery (Facebook Login host only) ------------------------------
 
-    def business_discovery(self, username: str, media_limit: int = 25) -> dict:
+    MEDIA_FIELDS = ("caption,media_type,media_product_type,view_count,like_count,comments_count,"
+                    "permalink,timestamp,media_url")
+
+    def business_discovery(self, username: str, media_limit: int = 25, after: str | None = None,
+                           media_fields: str = MEDIA_FIELDS) -> dict:
+        """Public profile + one page of recent posts of another Business/Creator account."""
         if self.host != "graph.facebook.com":
             raise InstagramError("Business Discovery vyžaduje IG_API_HOST=graph.facebook.com")
-        media = (f"media.limit({media_limit}){{caption,media_type,media_product_type,view_count,"
-                 "like_count,comments_count,permalink,timestamp}")
+        cursor = f".after({after})" if after else ""
+        media = f"media{cursor}.limit({media_limit}){{{media_fields}}}"
         fields = (f"business_discovery.username({username})"
-                  f"{{username,name,biography,website,followers_count,media_count,{media}}}")
+                  f"{{username,biography,website,followers_count,media_count,{media}}}")
         return self.get(self.user_id, fields=fields)["business_discovery"]
+
+    def account_posts(self, username: str, limit: int = 60) -> tuple[dict, list[dict]]:
+        """Profile and up to `limit` most recent posts, following pagination cursors."""
+        posts: list[dict] = []
+        after = None
+        profile: dict = {}
+        while len(posts) < limit:
+            page = self.business_discovery(username, min(25, limit - len(posts)), after)
+            media = page.pop("media", {}) or {}
+            profile = profile or page
+            posts += media.get("data", [])
+            after = (media.get("paging") or {}).get("cursors", {}).get("after")
+            if not after or not media.get("data"):
+                break
+        return profile, posts[:limit]
 
     # -- tokens ------------------------------------------------------------
 

@@ -8,7 +8,8 @@ account:
   timezone: Europe/Prague
 
 niche:
-  # TODO: upřesnit podle skutečného obsahu organic__101_
+  # ZÁSTUPNÁ HODNOTA: skutečnou niku zjistí `python -m igbot analyze organic__101_`
+  # (uloží data/niche_profile.yaml, který generátor použije), pak tuto sekci upravíme.
   name: "Organic 101 – přírodní a zdravý životní styl pro začátečníky"
   description: >
     Srozumitelné a ověřené tipy pro lidi, kteří chtějí jíst a žít přirozeněji:

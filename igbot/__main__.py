@@ -29,6 +29,11 @@ def main() -> None:
 
     sub.add_parser("insights", help="stáhni statistiky postů a účtu do data/")
     sub.add_parser("discover", help="analyzuj podobné účty a rozšiř jejich seznam")
+
+    an = sub.add_parser("analyze", help="hloubková analýza IG účtu (API nebo screenshoty) → report")
+    an.add_argument("username", help="uživatelské jméno bez @")
+    an.add_argument("--limit", type=int, default=60, help="kolik posledních postů projít (API)")
+    an.add_argument("--images", type=Path, help="složka se screenshoty místo API")
     sub.add_parser("quota", help="ukaž využití denního limitu publikací")
     sub.add_parser("refresh-token", help="prodluž long-lived token (Instagram Login)")
 
@@ -84,6 +89,13 @@ def main() -> None:
         from .instagram import Instagram
         result = run(Instagram.from_env(), cfg["competitors"]["seeds"], cfg["account"].get("handle", ""))
         print(result)
+    elif args.cmd == "analyze":
+        from .analyze import run
+        ig = None
+        if not args.images:
+            from .instagram import Instagram
+            ig = Instagram.from_env()
+        print(f"Report: {run(cfg, args.username.lstrip('@'), args.limit, args.images, ig)}")
     elif args.cmd == "quota":
         from .instagram import Instagram
         print(Instagram.from_env().publishing_quota())
