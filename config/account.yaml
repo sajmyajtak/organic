@@ -1,0 +1,68 @@
+# Hlavní nastavení účtu. Vše, co tu je, čte generátor obsahu i publikační skript.
+# Hodnoty označené TODO doplníme společně, jakmile bude založený účet
+# a potvrzená nika (profil organic__101_ je bez přihlášení skrytý).
+
+account:
+  handle: ""                 # TODO: uživatelské jméno nového účtu (bez @)
+  language: cs
+  timezone: Europe/Prague
+
+niche:
+  # TODO: upřesnit podle skutečného obsahu organic__101_
+  name: "Organic 101 – přírodní a zdravý životní styl pro začátečníky"
+  description: >
+    Srozumitelné a ověřené tipy pro lidi, kteří chtějí jíst a žít přirozeněji:
+    sezónní potraviny, jednoduché recepty, čtení etiket, domácí pěstování,
+    méně chemie v domácnosti. Žádné zázračné sliby ani zdravotní tvrzení.
+  audience: "Češi a Slováci 22–45 let, hlavně ženy, začátečníci v tématu"
+  voice: "kamarádský, věcný, tykání, krátké věty, žádný strašák ani moralizování"
+  pillars:                   # obsahové pilíře a jejich podíl ve feedu
+    - name: "Tipy a návody"            # uložitelné karusely
+      share: 0.4
+    - name: "Mýty vs. fakta"           # sdílitelný obsah
+      share: 0.2
+    - name: "Recepty a sezóna"
+      share: 0.2
+    - name: "Doporučené produkty"      # monetizace (affiliate), max 1× týdně
+      share: 0.1
+    - name: "Komunita a otázky"        # komentáře, ankety, DM
+      share: 0.1
+  avoid:
+    - "zdravotní a léčebná tvrzení (léčí, vyléčí, detox na nemoci)"
+    - "kopírování textů nebo grafiky jiných účtů"
+    - "strašení a zesměšňování"
+
+schedule:
+  feed_per_day: 1
+  feed_time: "18:30"
+  stories_per_day: 3
+  story_times: ["08:00", "12:30", "20:30"]
+
+brand:
+  background: "#F4F1EA"
+  foreground: "#1F2A1F"
+  accent: "#4E7D3A"
+  muted: "#6B6B5E"
+
+monetization:
+  link_in_bio: ""            # TODO: odkaz na rozcestník / lead magnet
+  lead_magnet: "Zdarma PDF: 30denní plán přechodu na přirozenější stravu"
+  ad_label: "#reklama"       # povinné označení placené spolupráce / affiliate
+  cta_rotation:
+    - "Ulož si to, ať to máš po ruce."
+    - "Pošli to někomu, komu to pomůže."
+    - "Napiš do komentáře, co zkusíš jako první."
+    - "Odkaz na zdarma PDF najdeš v biu."
+
+competitors:
+  # Výchozí seznam účtů pro analýzu přes oficiální Business Discovery API.
+  # Skript `discover` z jejich veřejných popisků najde další kandidáty.
+  seeds:
+    - organic__101_
+
+generation:
+  model: claude-opus-5-5
+  effort: medium
+  # false = koncepty čekají na schválení (doporučeno prvních 30 dní),
+  # true = generátor rovnou plánuje k publikaci.
+  auto_approve: false

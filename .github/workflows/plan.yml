@@ -1,0 +1,71 @@
+name: Týdenní plán obsahu
+
+# Každou neděli: analýza podobných účtů → Claude vygeneruje obsah na další
+# týden → otevře se pull request. Sloučení PR = schválení obsahu.
+on:
+  schedule:
+    - cron: "17 7 * * 0"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Počet dní"
+        default: "7"
+
+concurrency:
+  group: content-queue
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_API_HOST: ${{ vars.IG_API_HOST }}
+      IG_API_VERSION: ${{ vars.IG_API_VERSION }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Kontrola nastavení
+        id: ready
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "Chybí secret ANTHROPIC_API_KEY, plán se negeneruje."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Analýza podobných účtů
+        if: steps.ready.outputs.ok == 'true' && env.IG_USER_ID != '' && vars.IG_API_HOST != 'graph.instagram.com'
+        continue-on-error: true
+        run: python -m igbot discover
+      - name: Vygenerovat koncepty
+        if: steps.ready.outputs.ok == 'true'
+        run: python -m igbot generate --days "${{ inputs.days || '7' }}"
+      - name: Schválit bezchybné koncepty do PR
+        if: steps.ready.outputs.ok == 'true'
+        run: python -m igbot approve
+      - name: Otevřít pull request ke schválení
+        if: steps.ready.outputs.ok == 'true'
+        run: |
+          branch="plan/$(date -u +%F)"
+          git config user.name "igbot"
+          git config user.email "igbot@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add content data
+          git commit -m "plan: obsah od $(date -u -d tomorrow +%F)"
+          git push origin "$branch"
+          gh pr create --base "${{ github.ref_name }}" --head "$branch" \
+            --title "Obsah na další týden ($(date -u -d tomorrow +%F))" \
+            --body "Koncepty vygenerované Claudem. Projdi soubory v content/approved, uprav nebo smaž, co se nelíbí, a PR slouč = schváleno. Koncepty s problémy zůstaly v content/drafts."

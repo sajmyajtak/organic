@@ -1,0 +1,61 @@
+name: Publikace
+
+# Každých 30 minut mezi 6:00 a 22:30 českého času zkontroluje frontu
+# a publikuje schválené položky, kterým nastal čas.
+on:
+  schedule:
+    - cron: "7,37 4-21 * * *"   # UTC; pokrývá letní i zimní čas
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Jen zkouška (nic nepublikovat)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: content-queue
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Publikovat
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_API_HOST: ${{ vars.IG_API_HOST }}
+          IG_API_VERSION: ${{ vars.IG_API_VERSION }}
+          MEDIA_BACKEND: ${{ vars.MEDIA_BACKEND }}
+          MEDIA_BRANCH: ${{ github.ref_name }}
+          S3_BUCKET: ${{ vars.S3_BUCKET }}
+          S3_PUBLIC_BASE_URL: ${{ vars.S3_PUBLIC_BASE_URL }}
+          S3_ENDPOINT_URL: ${{ vars.S3_ENDPOINT_URL }}
+          S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+        run: |
+          if [ -z "$IG_USER_ID" ]; then echo "Účet zatím není připojený (chybí secret IG_USER_ID)."; exit 0; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python -m igbot publish --dry-run
+          else
+            python -m igbot publish
+          fi
+      - name: Uložit stav fronty
+        run: |
+          git config user.name "igbot"
+          git config user.email "igbot@users.noreply.github.com"
+          git add content
+          git diff --cached --quiet && exit 0
+          git commit -m "content: publikace $(date -u +%F\ %H:%M)"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"

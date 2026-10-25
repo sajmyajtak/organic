@@ -1,0 +1,6 @@
+anthropic>=2.3,<3
+requests>=2.32,<3
+PyYAML>=6.0,<7
+Pillow>=11,<13
+pydantic>=2.10,<3
+boto3>=1.40,<2   # jen pro MEDIA_BACKEND=s3 (Cloudflare R2 / AWS S3)
