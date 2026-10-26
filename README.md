@@ -43,8 +43,8 @@ python -m igbot inspect --file odkazy.txt        # víc odkazů najednou
 python -m igbot analyze organic__101_ --limit 100   # analýza účtu → report
 python -m igbot inspect <odkaz> [--image shot.png]  # rozbor odkazu IG / TikTok / YouTube
 python -m igbot discover                            # podobné účty
-python -m igbot generate --days 7                   # koncepty na týden (karusely, stories, scénáře reelů)
-python -m igbot attach <id> video.mp4               # připojit natočený reel
+python -m igbot generate --days 7                   # koncepty na týden (karusely + stories, anglicky)
+python -m igbot attach <id> foto.jpg                # připojit vlastní fotky/video k položce
 python -m igbot preview                             # grafika do build/preview
 python -m igbot approve                             # schválit koncepty
 python -m igbot publish --dry-run                   # publikace (nanečisto)

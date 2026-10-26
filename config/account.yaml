@@ -4,44 +4,49 @@
 
 account:
   handle: ""                 # TODO: uživatelské jméno nového účtu (bez @)
-  language: cs
-  timezone: Europe/Prague
+  language: en               # obsah v angličtině
+  # Časy níže jsou v časovém pásmu publika (USA, východní pobřeží).
+  # Po 2 týdnech je upravíme podle toho, kdy jsou sledující online (Insights).
+  timezone: America/New_York
 
 niche:
-  # ZÁSTUPNÁ HODNOTA: skutečnou niku zjistí `python -m igbot analyze organic__101_`
-  # (uloží data/niche_profile.yaml, který generátor použije), pak tuto sekci upravíme.
-  name: "Organic 101 – přírodní a zdravý životní styl pro začátečníky"
+  # ZÁSTUPNÁ HODNOTA, než nastudujeme organic__101_ (screenshoty nebo
+  # `python -m igbot analyze organic__101_`). Generátor bere přednostně
+  # data/niche_profile.yaml z analýzy. Texty jsou anglicky, protože jdou
+  # rovnou do generátoru anglického obsahu.
+  name: "Organic 101: natural whole-food living, made simple"
   description: >
-    Srozumitelné a ověřené tipy pro lidi, kteří chtějí jíst a žít přirozeněji:
-    sezónní potraviny, jednoduché recepty, čtení etiket, domácí pěstování,
-    méně chemie v domácnosti. Žádné zázračné sliby ani zdravotní tvrzení.
-  audience: "Češi a Slováci 22–45 let, hlavně ženy, začátečníci v tématu"
-  voice: "kamarádský, věcný, tykání, krátké věty, žádný strašák ani moralizování"
+    Practical, evidence-aware carousels for people who want to eat and live more
+    naturally: real-food swaps, reading labels, seasonal produce, simple recipes,
+    fewer unnecessary chemicals at home. No miracle claims, no fear-mongering.
+  audience: "English-speaking adults 22-45 (US, UK, CA, AU), beginners in natural living"
+  voice: "warm, direct, practical, short sentences, never preachy or alarmist"
   pillars:                   # obsahové pilíře a jejich podíl ve feedu
-    - name: "Tipy a návody"            # uložitelné karusely
+    - name: "How-to and swaps"         # uložitelné návody
       share: 0.4
-    - name: "Mýty vs. fakta"           # sdílitelný obsah
+    - name: "Myth vs. fact"            # sdílitelné
       share: 0.2
-    - name: "Recepty a sezóna"
+    - name: "Recipes and seasonal food"
       share: 0.2
-    - name: "Doporučené produkty"      # monetizace (affiliate), max 1× týdně
+    - name: "Product picks"            # monetizace (affiliate), max 1× týdně
       share: 0.1
-    - name: "Komunita a otázky"        # komentáře, ankety, DM
+    - name: "Community questions"
       share: 0.1
   avoid:
-    - "zdravotní a léčebná tvrzení (léčí, vyléčí, detox na nemoci)"
-    - "kopírování textů nebo grafiky jiných účtů"
-    - "strašení a zesměšňování"
+    - "disease or cure claims, 'detox' against illness"
+    - "copying text or graphics from other accounts"
+    - "fear-mongering and mocking people"
+    - "raw milk promotion"
 
 schedule:
-  # 1 příspěvek denně: reels jsou hlavní motor dosahu i monetizace, karusely
-  # sbírají uložení. Stories vidí jen sledující; víc než ~4–5 denně škodí dosahu.
-  feed_time: "18:30"
+  # Jen karusely (bez reels): 1 denně. Stories vidí jen sledující;
+  # víc než ~4–5 denně prý škodí dosahu (neověřeno).
+  feed_time: "11:30"
   weekly_mix:
-    reel: 4          # scénáře k natočení (video doplníš přes `igbot attach`)
-    carousel: 3      # grafiku vyrenderuje bot sám
+    carousel: 7
+    reel: 0
   stories_per_day: 3
-  story_times: ["08:00", "12:30", "20:30"]
+  story_times: ["08:30", "13:00", "20:00"]
 
 brand:
   background: "#F4F1EA"
@@ -51,13 +56,13 @@ brand:
 
 monetization:
   link_in_bio: ""            # TODO: odkaz na rozcestník / lead magnet
-  lead_magnet: "Zdarma PDF: 30denní plán přechodu na přirozenější stravu"
-  ad_label: "#reklama"       # povinné označení placené spolupráce / affiliate
+  lead_magnet: "Free PDF: 30-day real-food reset (simple swaps, no dieting)"
+  ad_label: "Ad"             # povinné označení placené spolupráce / affiliate na začátku popisku
   cta_rotation:
-    - "Ulož si to, ať to máš po ruce."
-    - "Pošli to někomu, komu to pomůže."
-    - "Napiš do komentáře, co zkusíš jako první."
-    - "Odkaz na zdarma PDF najdeš v biu."
+    - "Save this so you have it next time you shop."
+    - "Send this to someone who needs it."
+    - "Comment which swap you'll try first."
+    - "Grab the free PDF from the link in bio."
 
 competitors:
   # Výchozí seznam účtů pro analýzu přes oficiální Business Discovery API.

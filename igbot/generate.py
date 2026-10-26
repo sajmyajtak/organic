@@ -73,40 +73,42 @@ class Plan(BaseModel):
     stories: list[Story]
 
 
-SYSTEM = """Jsi obsahový stratég a copywriter českého Instagram účtu. Píšeš výhradně
-původní obsah v češtině. Nikdy nepřebíráš texty, grafiku ani konkrétní formulace
-jiných účtů: data o konkurenci ber jen jako signál, která témata a formáty lidi
-zajímají, a téma pak zpracuj vlastními slovy, vlastní strukturou a s vlastní
-přidanou hodnotou. Instagram od dubna 2026 přestává doporučovat účty, které
-převážně přebírají cizí obsah, takže originalita je podmínka dosahu.
+SYSTEM = """You are the content strategist and copywriter of an Instagram account.
+Write every post in the language given in `language`. Write only original content:
+never reuse text, graphics or specific phrasing from other accounts. Data about
+other accounts is only a signal of which topics and formats people care about;
+cover the topic in your own words, with your own structure and your own added
+value. Since April 2026 Instagram stops recommending accounts that mostly post
+other people's photos, carousels or reels, so originality is a condition of reach.
 
-Co Instagram podle oficiálních popisů doporučování měří: dokoukání a čas strávený
-u příspěvku, sdílení do zpráv (u lidí, kteří nás nesledují, nejdůležitější signál),
-uložení, lajky na dosah, swipnutí celého karuselu. Návody, tipy a srovnání se sdílejí
-nejvíc. Proto:
-- REELS (hlavní motor růstu i jediný formát, který jde zpeněžit): háček v prvních
-  2 s mluveným slovem i textem na obrazovce, délka 7–45 s, jedna myšlenka, vlastní
-  hlas, záběry, které zvládne natočit jeden člověk s telefonem; text nesmí zakrývat
-  většinu obrazu; žádné vodoznaky jiných aplikací; konec s výzvou poslat/uložit.
-- KARUSELY: 5–10 slidů, slide 1 háček (max ~8 slov), slide 2 funguje i jako začátek
-  (Instagram ho někomu ukáže první), každý slide jedna myšlenka, poslední slide
-  shrnutí a jedna výzva. Uvádějte zdroje u faktických tvrzení.
-- POPISEK: první řádek háček s klíčovými slovy (hledání), konec otázka nebo výzva.
-  Maximálně 5 konkrétních hashtagů (Instagram víc nedovolí), žádné obecné (#love).
-- STORIES vidí jen sledující: osobní, krátké, otázky na odpověď do DM, upoutávka na
-  nový příspěvek. Nálepky (anketa, odkaz, otázka) přes API dát nejde, proto nápad na
-  nálepku dej do sticker_idea (přidá se ručně) a samotný text formuluj tak, aby
-  fungoval i bez ní.
+What Instagram's published ranking explainers say it measures: time spent on a
+post, swiping through the whole carousel, saves, likes per reach and shares by DM
+(the share model favours informative posts: how-tos, comparisons, reviews). So:
+- CAROUSELS are the main format: 6-10 slides. Slide 1 is the hook (a concrete
+  benefit or curiosity gap, max ~8 words). Slide 2 must also work as an opener,
+  because Instagram shows it first to some people. One idea per slide, short
+  sentences, no filler. The last slide sums up and gives one clear call to action
+  (save / send to a friend / comment). Cite a source for factual claims.
+- CAPTION: first line is a hook with searchable keywords, the end is a question
+  or a call to action. At most 5 specific hashtags (Instagram allows no more),
+  no generic ones (#love, #instagood).
+- STORIES are seen by followers only: short, personal, ask for DM replies or tease
+  the new post. Stickers (poll, link, question) cannot be added through the API,
+  so put a sticker idea in sticker_idea (added by hand) and write the text so it
+  works without it.
+- REELS only if the task asks for them: hook in the first 2 seconds, 7-45 s,
+  one idea, own voice, no watermarks, text never covering most of the frame.
 
-Právní pravidla (Česko/EU), závazná:
-- Žádná léčebná tvrzení (léčí, vyléčí, detox proti nemocem) a žádné strašení.
-  Zdravotní tvrzení o potravinách jen v podobě schválené EU (nařízení 1924/2006);
-  když si nejsi jistý, tvrzení vynech.
-- U doplňků stravy vždy text „doplněk stravy“.
-- Syrové mléko nepropaguj; pokud se téma objeví, uveď povinné upozornění
-  „před použitím tepelně opracovat nebo pasterovat“.
-- Produktová doporučení a affiliate: sponsored=true a popisek začíná slovem „Reklama“.
-  Alt text popisuje obsah grafiky pro nevidomé."""
+Legal rules (the creator is an EU business; audiences in the US/UK/EU), binding:
+- No disease or cure claims (treats, cures, prevents, "detox" against illness),
+  no fear-mongering. Food health claims only in EU-authorised wording (Regulation
+  1924/2006); if unsure, leave the claim out. Never imply that a non-medicinal
+  product improves health or that skipping it harms health.
+- Food supplements are always called "food supplement".
+- Do not promote raw milk.
+- Product recommendations and affiliate links: sponsored=true and the caption's
+  first line starts with "Ad" (or "#ad" / "Paid partnership").
+- Alt text describes the graphic for blind users."""
 
 
 def _recent_captions(limit: int = 30) -> list[str]:
@@ -151,26 +153,26 @@ def _niche_profile() -> dict | None:
 
 
 def build_prompt(cfg: dict, start: date, days: int) -> str:
-    niche = cfg["niche"]
     sched = cfg["schedule"]
-    mix = sched.get("weekly_mix", {"reel": 4, "carousel": 3})
+    mix = sched.get("weekly_mix", {"carousel": 7})
     dates = [(start + timedelta(days=d)).isoformat() for d in range(days)]
     reels = max(0, round(mix.get("reel", 0) * days / 7))
     carousels = max(0, round(mix.get("carousel", 0) * days / 7))
     return json.dumps({
-        "ukol": (f"Naplánuj obsah na dny {dates[0]} až {dates[-1]}: celkem {reels} scénářů reelů "
-                 f"(pole reels) a {carousels} karuselů nebo obrázků (pole feed), nejvýš jeden příspěvek "
-                 f"do feedu denně, rozložené rovnoměrně. Každý den {sched['stories_per_day']} "
-                 f"stories (slot 1..{sched['stories_per_day']}). Střídej pilíře podle podílů. "
-                 "Karusel 5–10 slidů, single image 1 slide, story 1 slide."),
-        "dny": dates,
-        "nika": niche,
-        "nika_podle_analyzy_zdrojoveho_uctu": _niche_profile(),
-        "monetizace": cfg.get("monetization", {}),
-        "uz_jsme_publikovali_neopakuj": _recent_captions(),
-        "nase_nejlepsi_prispevky": _top_performers(),
-        "co_funguje_u_podobnych_uctu_jen_jako_signal": _inspiration(),
-        "rozebrane_odkazy_jen_jako_signal": recent_inspections(),
+        "task": (f"Plan content for {dates[0]} to {dates[-1]}: {carousels} carousels or single "
+                 f"images (field feed) and {reels} reel scripts (field reels), at most one feed post "
+                 f"per day, spread evenly. Every day {sched['stories_per_day']} stories "
+                 f"(slot 1..{sched['stories_per_day']}). Rotate pillars by their shares. "
+                 "Carousel 6-10 slides, single image 1 slide, story 1 slide."),
+        "language": cfg.get("account", {}).get("language", "en"),
+        "days": dates,
+        "niche": cfg["niche"],
+        "niche_from_source_account_analysis": _niche_profile(),
+        "monetization": cfg.get("monetization", {}),
+        "already_published_do_not_repeat": _recent_captions(),
+        "our_best_posts": _top_performers(),
+        "what_works_for_similar_accounts_signal_only": _inspiration(),
+        "inspected_links_signal_only": recent_inspections(),
     }, ensure_ascii=False, indent=1)
 
 
@@ -194,6 +196,7 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
     plan: Plan = response.parsed_output
 
     sched = cfg["schedule"]
+    lang = cfg.get("account", {}).get("language", "en")
     state = "approved" if gen.get("auto_approve") else "drafts"
     created = []
     taken: set[str] = set()
@@ -220,6 +223,7 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
             "alt_text": post.alt_text,
             "sponsored": post.sponsored,
             "inspired_by": post.inspired_by,
+            "lang": lang,
             "ai_generated": True,
         }
         created.append(item)
@@ -241,6 +245,7 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
             "hashtags": reel.hashtags,
             "sponsored": reel.sponsored,
             "inspired_by": reel.inspired_by,
+            "lang": lang,
             "ai_generated": True,
         })
     for story in plan.stories:
@@ -253,6 +258,7 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
             "purpose": story.purpose,
             "slides": [{"title": story.title, "body": story.body}],
             "sticker_idea": story.sticker_idea,
+            "lang": lang,
             "ai_generated": True,
         })
     for item in created:

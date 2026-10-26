@@ -239,3 +239,11 @@ def test_attach_resets_ai_flag_and_rejects_github_backend(queue, monkeypatch, tm
     monkeypatch.setenv("MEDIA_BACKEND", "github")
     with pytest.raises(SystemExit, match="s3"):
         attach_media(Namespace(id="2026-11-02-feed-1", files=[video], ai=False))
+
+
+def test_english_ad_label_and_ai_disclosure():
+    en = carousel(lang="en", sponsored=True, caption="Ad: my favourite olive oil", ai_media=True)
+    assert content.validate(en) == []
+    assert "Created with the help of AI." in content.full_caption(en)
+    assert content.validate(carousel(sponsored=True, caption="Adding fiber is easy")) != []
+    assert content.validate(carousel(sponsored=True, caption="#ad Paid link inside")) == []

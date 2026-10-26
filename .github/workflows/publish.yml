@@ -1,11 +1,10 @@
 name: Publikace
 
-# Každých 30 minut mezi 6:07 a 22:37 českého času zkontroluje frontu
-# a publikuje schválené položky, kterým nastal čas.
+# Každých 30 minut (celý den, publikum je v USA) zkontroluje frontu a publikuje
+# schválené položky, kterým nastal čas v časovém pásmu z config/account.yaml.
 on:
   schedule:
-    - cron: "7,37 6-22 * * *"
-      timezone: "Europe/Prague"
+    - cron: "7,37 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:

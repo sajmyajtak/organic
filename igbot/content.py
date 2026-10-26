@@ -68,8 +68,11 @@ def due(tz: str, now: datetime | None = None) -> list[dict]:
 
 MAX_HASHTAGS = 5  # Instagram's cap since Dec 2025; the API docs still say 30
 HASHTAG = re.compile(r"#\w*[^\W\d_]\w*")  # needs a letter, so "#1" in a list doesn't count
-AD_LABEL = re.compile(r"(#?reklama|placené partnerství|sponzorovaný obsah)(?!\w)")
-AI_DISCLOSURE = "Vytvořeno s pomocí AI."
+# Disclosure has to open the post, in the post's language (ČOI's position as
+# reported by law firms; the FTC likewise wants it up front).
+AD_LABEL = re.compile(r"(#?reklama|placené partnerství|sponzorovaný obsah|#?ad|#?advertisement"
+                      r"|paid partnership|sponsored)(?!\w)")
+AI_DISCLOSURE = {"cs": "Vytvořeno s pomocí AI.", "en": "Created with the help of AI."}
 MISSING_VIDEO = "chybí video: natoč ho podle scénáře a připoj přes `igbot attach`"
 
 
@@ -100,17 +103,17 @@ def validate(item: dict) -> list[str]:
     # Attached media wins over generated slides when publishing.
     if kind == "carousel" and not 2 <= len(media or slides) <= 20:
         problems.append("karusel musí mít 2–20 položek")
-    # Label at the very start of the post, in Czech (ČOI's position as reported
-    # by law firms; "Spolupráce s…" alone is not enough).
+    # "Spolupráce s…" / "in collaboration with…" alone is not enough.
     first_line = caption.strip().split("\n", 1)[0].lower()
     if item.get("sponsored") and not AD_LABEL.match(first_line):
-        problems.append("placený/affiliate obsah musí začínat označením „Reklama“ nebo „#reklama“")
+        problems.append("placený/affiliate obsah musí začínat označením „Ad“ / „#ad“ (česky „Reklama“)")
     return problems
 
 
 def full_caption(item: dict) -> str:
     caption = (item.get("caption") or "").strip()
-    if item.get("ai_media") and AI_DISCLOSURE not in caption:
-        caption = f"{caption}\n\n{AI_DISCLOSURE}"
+    disclosure = AI_DISCLOSURE.get(item.get("lang", "cs"), AI_DISCLOSURE["en"])
+    if item.get("ai_media") and disclosure not in caption:
+        caption = f"{caption}\n\n{disclosure}"
     tags = " ".join(f"#{t.lstrip('#')}" for t in item.get("hashtags") or [])
     return f"{caption}\n\n{tags}".strip() if tags else caption
