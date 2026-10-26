@@ -165,3 +165,77 @@ def test_attach_uploads_and_schedules(queue, monkeypatch, tmp_path):
     item = content.items("drafts")[0]
     assert item["media"] == [f"https://pub.example/{reel['id']}/reel.mp4"]
     assert "problems" not in item
+
+
+def test_hashtag_count_ignores_numbered_lists_and_label_needs_word_boundary():
+    item = carousel(caption="Tři tipy: #1 vločky, #2 kefír, #3 zelí", hashtags=["a", "b", "c", "d", "e"])
+    assert content.validate(item) == []
+    assert any("Reklama" in p for p in content.validate(carousel(sponsored=True, caption="Reklamace e-shopu?")))
+    assert content.validate(carousel(sponsored=True, caption="Reklama: nový kefír")) == []
+
+
+def test_check_treats_unfilmed_reel_drafts_as_info(queue, capsys):
+    from igbot.__main__ import main
+    content.save(carousel(kind="reel", slides=[], media=[], script={"hook_spoken": "x"}), "drafts")
+    import sys
+    sys.argv = ["igbot", "check"]
+    with pytest.raises(SystemExit) as exit_info:
+        main()
+    assert exit_info.value.code == 0
+    assert "čeká na natočení" in capsys.readouterr().out
+
+
+def test_generate_never_overwrites_existing_ids(queue, monkeypatch):
+    from types import SimpleNamespace
+
+    from igbot import generate as gen
+    content.save(carousel(id="2026-11-02-feed-1", kind="reel", slides=[], media=["https://x/v.mp4"]), "drafts")
+    plan = gen.Plan(
+        feed=[gen.FeedPost(date="2026-11-02", pillar="Tipy", kind="carousel",
+                           slides=[gen.Slide(title="A", body=""), gen.Slide(title="B", body="b")],
+                           caption="Popisek", hashtags=["tip"], alt_text="alt", sponsored=False, inspired_by="")],
+        reels=[],
+        stories=[gen.Story(date="2026-11-02", slot=9, purpose="question", title="Ahoj", body="", sticker_idea=""),
+                 gen.Story(date="2026-11-02", slot=9, purpose="teaser", title="Dnes", body="", sticker_idea="")])
+    fake = SimpleNamespace(beta=SimpleNamespace(messages=SimpleNamespace(
+        parse=lambda **kw: SimpleNamespace(stop_reason="end_turn", parsed_output=plan))))
+    monkeypatch.setattr(gen.anthropic, "Anthropic", lambda: fake)
+    cfg = {"niche": {}, "generation": {}, "schedule": {"feed_time": "18:30", "stories_per_day": 2,
+                                                       "story_times": ["08:00", "12:00"]}}
+    created = gen.generate(cfg, __import__("datetime").date(2026, 11, 2), 1)
+    assert [i["id"] for i in created] == ["2026-11-02-feed-2", "2026-11-02-story-1", "2026-11-02-story-2"]
+    reel = next(i for i in content.items("drafts") if i["id"] == "2026-11-02-feed-1")
+    assert reel["media"] == ["https://x/v.mp4"]  # the filmed reel survived
+
+
+def test_insights_csv_header_migration(tmp_path):
+    from igbot.insights import _append
+    path = tmp_path / "insights.csv"
+    path.write_text("snapshot,media_id,replies\n2026-10-01,1,3\n", encoding="utf-8")
+    _append(path, ["snapshot", "media_id", "reach", "replies"], [{"snapshot": "2026-10-02", "media_id": "2", "replies": 4}])
+    import csv
+    rows = list(csv.DictReader(path.open(encoding="utf-8")))
+    assert [(r["media_id"], r["replies"]) for r in rows] == [("1", "3"), ("2", "4")]
+
+
+def test_quota_left_tolerates_odd_responses():
+    class Odd:
+        def publishing_quota(self):
+            return {"quota_usage": None, "config": ["unexpected"]}
+    assert publish.quota_left(Odd()) is None
+
+
+def test_attach_resets_ai_flag_and_rejects_github_backend(queue, monkeypatch, tmp_path):
+    from argparse import Namespace
+
+    from igbot.__main__ import attach_media
+    import igbot.hosting as hosting
+    video = tmp_path / "reel.mp4"
+    video.write_bytes(b"\x00")
+    content.save(carousel(kind="reel", slides=[], media=[], ai_media=True), "drafts")
+    monkeypatch.setattr(hosting, "upload", lambda files, prefix: [f"https://pub.example/{f.name}" for f in files])
+    attach_media(Namespace(id="2026-11-02-feed-1", files=[video], ai=False))
+    assert content.items("drafts")[0]["ai_media"] is False
+    monkeypatch.setenv("MEDIA_BACKEND", "github")
+    with pytest.raises(SystemExit, match="s3"):
+        attach_media(Namespace(id="2026-11-02-feed-1", files=[video], ai=False))

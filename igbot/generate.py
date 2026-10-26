@@ -111,7 +111,9 @@ Právní pravidla (Česko/EU), závazná:
 
 def _recent_captions(limit: int = 30) -> list[str]:
     done = content.items("published")[-limit:]
-    return [(i.get("slides") or [{}])[0].get("title", "") for i in done if i["kind"] != "story"]
+    titles = [(i.get("slides") or [{}])[0].get("title", "") or (i.get("script") or {}).get("hook_on_screen", "")
+              for i in done if i["kind"] != "story"]
+    return [t for t in titles if t]
 
 
 def _top_performers(limit: int = 8) -> list[dict]:
@@ -153,11 +155,12 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
     sched = cfg["schedule"]
     mix = sched.get("weekly_mix", {"reel": 4, "carousel": 3})
     dates = [(start + timedelta(days=d)).isoformat() for d in range(days)]
-    reels = round(mix.get("reel", 0) * days / 7)
+    reels = max(0, round(mix.get("reel", 0) * days / 7))
+    carousels = max(0, round(mix.get("carousel", 0) * days / 7))
     return json.dumps({
-        "ukol": (f"Naplánuj obsah na dny {dates[0]} až {dates[-1]}. Každý den právě jeden příspěvek "
-                 f"do feedu: celkem {reels} scénářů reelů (pole reels) a {days - reels} karuselů nebo "
-                 f"obrázků (pole feed), rozložených rovnoměrně. Každý den {sched['stories_per_day']} "
+        "ukol": (f"Naplánuj obsah na dny {dates[0]} až {dates[-1]}: celkem {reels} scénářů reelů "
+                 f"(pole reels) a {carousels} karuselů nebo obrázků (pole feed), nejvýš jeden příspěvek "
+                 f"do feedu denně, rozložené rovnoměrně. Každý den {sched['stories_per_day']} "
                  f"stories (slot 1..{sched['stories_per_day']}). Střídej pilíře podle podílů. "
                  "Karusel 5–10 slidů, single image 1 slide, story 1 slide."),
         "dny": dates,
@@ -193,11 +196,20 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
     sched = cfg["schedule"]
     state = "approved" if gen.get("auto_approve") else "drafts"
     created = []
-    per_day: dict[str, int] = {}
+    taken: set[str] = set()
+
+    def new_id(day: str, kind: str) -> str:
+        """Next free id for the day; never reuses one already in any queue folder,
+        so re-running generate can't overwrite drafts with attached videos."""
+        n = 1
+        while f"{day}-{kind}-{n}" in taken or content.exists(f"{day}-{kind}-{n}"):
+            n += 1
+        taken.add(f"{day}-{kind}-{n}")
+        return f"{day}-{kind}-{n}"
+
     for post in plan.feed:
-        per_day[post.date] = per_day.get(post.date, 0) + 1
         item = {
-            "id": f"{post.date}-feed-{per_day[post.date]}",
+            "id": new_id(post.date, "feed"),
             "date": post.date,
             "time": sched["feed_time"],
             "kind": post.kind,
@@ -212,9 +224,8 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
         }
         created.append(item)
     for reel in plan.reels:
-        per_day[reel.date] = per_day.get(reel.date, 0) + 1
         created.append({
-            "id": f"{reel.date}-feed-{per_day[reel.date]}",
+            "id": new_id(reel.date, "feed"),
             "date": reel.date,
             "time": sched["feed_time"],
             "kind": "reel",
@@ -235,7 +246,7 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
     for story in plan.stories:
         slot = max(1, min(story.slot, len(sched["story_times"])))
         created.append({
-            "id": f"{story.date}-story-{slot}",
+            "id": new_id(story.date, "story"),
             "date": story.date,
             "time": sched["story_times"][slot - 1],
             "kind": "story",

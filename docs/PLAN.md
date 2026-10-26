@@ -2,7 +2,9 @@
 
 Stav k 26. 10. 2026. Vychází z průzkumu šesti oblastí (oficiální API, algoritmus,
 monetizace v ČR, právo a pravidla, technické řešení, nika). Asi 180 tvrzení prošlo
-druhou nezávislou kontrolou proti primárním zdrojům. Co ověřit nešlo, je označené.
+druhou nezávislou kontrolou proti primárním nebo důvěryhodným sekundárním zdrojům.
+Co ověřit nešlo nebo stojí jen na sekundárním zdroji, je označené. Nejde o právní
+ani daňové poradenství.
 
 ---
 
@@ -19,7 +21,8 @@ datum stažení neznámé):
 - `linktr.ee/organic__101_` i `youtube.com/@organic__101_` vrací 404.
 
 Ověříme to hned po připojení API: `python -m igbot analyze organic__101_ --limit 100`
-(funguje, pokud je to firemní nebo autorský účet).
+(funguje jen ve variantě B z NASTAVENI.md a jen pro veřejné firemní nebo autorské
+účty bez věkového omezení).
 
 **Co si bereme:** témata a formáty, které u něj fungují, jako signál.
 **Co nebereme:** jeho posty, texty, fotky, videa, jméno, tvář ani příběh.
@@ -43,7 +46,9 @@ všechno tvoříme vlastní.
 Praktické záměny potravin, čtení etiket, sezónní české suroviny, jednoduché recepty,
 kde koupit bio v ČR. Vyhneme se nejrizikovějším částem zdrojové niky: léčebným
 tvrzením, „detoxům“, strašení „toxiny“, hormonálním zázrakům a propagaci syrového
-mléka. Takový obsah Instagram nedoporučuje novým lidem a v ČR naráží na zákon.
+mléka. Přehnaná zdravotní tvrzení a „zázračné léky“ Instagram nedoporučuje lidem,
+kteří nás nesledují, a zdravotní tvrzení v reklamě a affiliate postech omezuje
+zákon (viz kap. 8). Zbytek je naše volba kvůli riziku a důvěryhodnosti.
 
 **Rozhodnutí A: jazyk**
 
@@ -87,16 +92,20 @@ Týdně 7 příspěvků (1 denně), denně 3 stories.
 
 ## 5. Pravidla algoritmu, podle kterých bot píše
 
-Z oficiálních popisů doporučování od Mety (2025–2026) a vyjádření Adama Mosseriho:
+Z oficiálních popisů doporučování od Mety (2025–2026), vyjádření Adama Mosseriho
+a dat analytických firem. Kde jde o naše výchozí hodnoty k testování, je to napsáno.
 
-- **Hlavní signály:** čas sledování (dokoukání), lajky vzhledem k dosahu a sdílení
-  do zpráv vzhledem k dosahu. Sdílení je nejdůležitější u lidí, kteří nás nesledují.
-  Návody a tipy se sdílejí nejvíc.
-- **Reels:** háček do 3 sekund (odchod do 3 s je negativní signál), 7–45 s, formát
-  9:16, vlastní zvuk, žádné vodoznaky jiných aplikací, text nesmí zakrývat většinu
-  obrazu. Reels hlavně s textem Instagram ukazuje méně.
-- **Karusely:** 5–10 slidů. Druhý slide musí fungovat i jako začátek, protože ho
-  Instagram někomu ukáže první. Hudbu ke karuselu přes API přidat nejde.
+- **Hlavní signály:** čas sledování (dokoukání), lajky a sdílení do zpráv
+  (Mosseri, leden 2025). Sdílení má o něco větší váhu u lidí, kteří nás nesledují,
+  lajky u sledujících. Model Mety, který předpovídá sdílení do zpráv, bere v úvahu,
+  jestli je obsah informativní (návody, recenze, how-to).
+- **Reels:** háček do 3 sekund (odchod do 3 s je negativní signál), formát 9:16,
+  vlastní zvuk, žádné vodoznaky jiných aplikací, text nesmí zakrývat většinu obrazu.
+  Reels hlavně s textem Instagram ukazuje méně. Oficiálně musí mít reel nejvýš
+  3 minuty, aby šel doporučovat; naše výchozí délka k testování je 7–45 s.
+- **Karusely:** naše výchozí délka 5–10 slidů. Druhý slide musí fungovat i jako
+  začátek, protože ho Instagram někomu ukáže první. Hudbu ke karuselu přes API
+  přidat nejde.
 - **Hashtagy:** nejvýš 5 (limit od prosince 2025), fungují jako štítky pro hledání,
   ne jako zdroj dosahu. Klíčová slova patří do prvního řádku popisku.
 - **Čerstvost:** skoro polovina doporučených reels je mladší než den, takže
@@ -107,7 +116,8 @@ Z oficiálních popisů doporučování od Mety (2025–2026) a vyjádření Ada
   Uvádí se, že jsou dostupné od 1 000 sledujících (neověřeno). Bot je umí publikovat.
 - **Publikace přes API** dosah nesnižuje (podle Mosseriho z druhé ruky).
 - **Konzistentní téma:** uživatelé teď vidí a upravují témata, se kterými je
-  Instagram spojuje (funkce „Your Algorithm“).
+  Instagram spojuje (funkce „Your Algorithm“; běží globálně v angličtině,
+  dostupnost pro česky nastavenou aplikaci nebyla potvrzena).
 - **Každý týden** zkontrolovat v aplikaci *Nastavení → Účet → Stav účtu*, jestli je
   účet způsobilý pro doporučování.
 
@@ -120,20 +130,21 @@ Z oficiálních popisů doporučování od Mety (2025–2026) a vyjádření Ada
 | Sprint 2 (dny 31–60) | zdvojnásobíme dva nejlepší pilíře; spolupráce (Collabs) s podobně velkými českými účty; lead magnet a e-mailový seznam | růst sledujících, podíl dosahu mimo sledující, přihlášení do e-mailu |
 | Sprint 3 (dny 61–90) | škálujeme vítězné formáty; zkušební reels (Trial Reels); první monetizace | příjmy, konverze z bia, nabídky spoluprací |
 
-Týdenní „severka“: engagement rate = zapojení / dosah (doporučuje Mosseri), ne
-hrubá zhlédnutí.
+Týdenní „severka“: engagement rate místo hrubých zhlédnutí (doporučuje Mosseri).
+Počítáme ho jako zapojení / dosah; tahle definice je naše pracovní.
 
 ## 7. Monetizace podle velikosti účtu
 
-Ověřeno, co je dostupné v ČR. Textové karusely a prezentace obrázků **nemají nárok
-na nativní monetizaci** Instagramu, proto jsou jádrem reels.
+Dostupnost v ČR je ověřená tam, kde to není napsáno jinak. Textové karusely
+a prezentace obrázků **nemají nárok na nativní monetizaci** Instagramu, proto jsou
+jádrem reels.
 
 | Sledující | Co zapnout | Poznámka |
 |---|---|---|
 | 0–1 000 | e-mailový seznam přes lead magnet (zdarma PDF), affiliate (Dognet bere i lidi bez živnosti, později eHUB), první digitální produkt za 99–299 Kč přes Gumroad nebo Lemon Squeezy | e-maily jen se souhlasem (zákon 480/2004); Gumroad a Lemon Squeezy řeší DPH u digitálních produktů; zatím nepropagovat placeně (nákup reklamy u Mety = registrace k DPH jako identifikovaná osoba) |
 | od 500 | dárky v reelech (Gifts) | ČR podporována; 0,01 $ za hvězdičku; předem nastavit výplatní účet |
-| 1 000–10 000 | Meta Creator Marketplace, přímé nabídky českým značkám s media kitem | před první placenou spoluprací volná živnost „Reklamní činnost, marketing, mediální zastoupení“ (poplatek 1 000 Kč); zvážit paušální daň (1. pásmo 9 162 Kč měsíčně od 7/2026) |
-| 10 000–50 000 | předplatné (Subscriptions), odznaky v Live, sponzorované balíčky, partnerské reklamy | předplatné je v ČR dostupné a Instagram si nebere nic, Apple a Google 30 %; orientačně kolem 20 000 Kč za reel u mikroinfluencera (údaj jedné agentury) |
+| 1 000–10 000 | Meta Creator Marketplace, přímé nabídky českým značkám s media kitem | před první placenou spoluprací volná živnost „Reklamní činnost, marketing, mediální zastoupení“ (poplatek asi 1 000 Kč, neověřeno na úředním webu); zvážit paušální daň (1. pásmo 9 162 Kč měsíčně od 7/2026) |
+| 10 000–50 000 | předplatné (Subscriptions), sponzorované balíčky, partnerské reklamy; odznaky v Live (dostupnost v ČR neověřena, zkontrolovat v Professional Dashboard) | předplatné je v ČR dostupné a Instagram si nebere nic, Apple a Google 30 %; orientačně kolem 20 000 Kč za reel u mikroinfluencera (údaj jedné agentury) |
 | 50 000+ | dlouhodobé ambasadorství, vlastní produkt nebo e-shop, kurz nebo komunita | Instagram Shops v ČR nejsou, prodej přes vlastní web; u obratu nad 2 000 000 Kč plátce DPH od 1. 1. dalšího roku, nad 2 536 500 Kč hned |
 
 **Nepočítat s:** bonusy (jen na pozvánku), nativními affiliate odkazy a nakupovatelnými
@@ -142,25 +153,34 @@ spouští výplaty až 19. 1. 2027.
 
 ## 8. Právo a pravidla: checklist
 
-- **Reklama:** u spolupráce i affiliate musí post začínat označením „Reklama“,
-  „Sponzorovaný obsah“ nebo „Placené partnerství“ (stanovisko ČOI, viz epravo.cz).
-  K tomu štítek „Placené partnerství“ od Mety, který jde přes API jen
-  s Facebook/Unified Login. Bot obojí kontroluje a přidává.
+- **Reklama:** spolupráci i affiliate je nutné označit. Podle advokátní kanceláře
+  citující ČOI (epravo.cz, 12/2025, primární stránka ČOI nenalezena) stačí, když post
+  začíná slovem „Reklama“, „Sponzorovaný obsah“ nebo „Placené partnerství“;
+  samotné „Spolupráce s…“ nestačí. Bot hlídá, aby popisek takto začínal.
+  Štítek „Placené partnerství“ od Mety je přes API zdokumentovaný jen pro
+  Facebook Login (u Unified Login neověřeno), vyžaduje způsobilost k brandovanému
+  obsahu a nejvýš 2 sponzory; jinak se přidá ručně v aplikaci.
 - **AI:** u obrázků a videí generovaných AI štítek `is_ai_generated` plus řádek
-  „Vytvořeno s pomocí AI“, obojí přidává bot. Texty před zveřejněním schvaluje
-  člověk, což odpovídá výjimce v AI Actu (čl. 50 odst. 4). Archiv schválení je
-  historie pull requestů.
-- **Zdraví a jídlo:** zdravotní tvrzení jen ve znění schváleném EU (nařízení
-  1924/2006); u doplňků text „doplněk stravy“; nic o léčbě nemocí (zákon 40/1995,
-  § 5d a § 5n). Syrové mléko jen s povinným upozorněním „před použitím tepelně
-  opracovat nebo pasterovat“.
+  „Vytvořeno s pomocí AI“, obojí přidává bot. U textů se lze opřít o výjimku
+  v AI Actu (čl. 50 odst. 4) jen za podmínek: člověk text věcně zkontroluje, nese
+  za něj redakční odpovědnost a bot ho po schválení (sloučení PR) už nemění.
+  Výjimka se netýká obrázků a videí. Archiv schválení je historie pull requestů.
+- **Zdraví a jídlo** (platí pro reklamu, affiliate a sponzorované posty):
+  zdravotní tvrzení o potravinách jen ve znění schváleném EU (nařízení 1924/2006);
+  u doplňků text „doplněk stravy“ (zákon 40/1995, § 5d). U výrobků „pro zdraví“,
+  které nejsou léčivem, nesmí reklama tvrdit, že zlepšují nebo udržují zdraví, ani
+  že jejich nepoužívání škodí, a nesmí se opírat o vědce, zdravotníky nebo známé
+  osobnosti (§ 5n). Syrové mléko: prodejce musí v místě prodeje uvádět
+  „Syrové mléko, před použitím tepelně opracovat nebo pasterovat“ (vyhláška
+  289/2007, § 13); náš obsah s tím nesmí být v rozporu.
 - **Hudba:** jen Sound Collection od Mety, vlastní zvuk nebo licencovaná hudba.
   Žádné komerční hity v reklamních postech.
 - **Automatizace:** jen oficiální API. Žádné hromadné sledování, lajky, komentáře,
   studené DM ani kupování sledujících. DM bot by směl jen odpovídat, s upozorněním,
   že jde o automat.
 - **Data o konkurenci:** jen veřejné firemní metriky přes Business Discovery,
-  krátká doba uchování. Data z YouTube API se po 30 dnech mažou (bot to dělá sám).
+  krátká doba uchování. Data z YouTube API se po 30 dnech mažou (bot to dělá sám;
+  vychází z YouTube API Developer Policies, část III.E.4, mimo hlavní průzkum).
 - **Daně:** živnost před první placenou spoluprací. Výplaty od Mety (dárky,
   předplatné) mohou znamenat povinnost registrace k DPH jako identifikovaná osoba:
   ověřit s daňovým poradcem.
@@ -171,8 +191,8 @@ spouští výplaty až 19. 1. 2027.
 |---|---|
 | Claude API (týdenní plány, rozbory, analýzy) | zhruba 50–200 Kč podle počtu rozborů |
 | GitHub Actions (automatické spouštění) | 0 Kč (vejde se do bezplatného limitu) |
-| Cloudflare R2 (úložiště obrázků a videí) | 0 Kč (bezplatný tarif) |
-| YouTube Data API | 0 Kč |
+| Cloudflare R2 (úložiště obrázků a videí) | 0 Kč v rámci bezplatného tarifu; pro ostrý provoz vlastní doména (asi 10 $ ročně), protože adresa r2.dev je omezená a určená pro vývoj |
+| YouTube Data API | 0 Kč (výchozí denní kvóta) |
 | volitelně AI pozadí obrázků nebo krátká AI videa | asi 50–150 Kč |
 
 ## 10. Stav a další kroky
@@ -204,7 +224,7 @@ automatické spouštění na GitHubu. Zatím **neběželo naostro**: chybí úč
 - Předplatné a dárky v ČR: <https://help.instagram.com/478012211024479>, <https://help.instagram.com/738469380549477>
 - Creator Marketplace: <https://help.instagram.com/1389278101788752>
 - Shops nejsou v ČR: <https://help.instagram.com/321000045119159>
-- Pravidla monetizace obsahu: <https://help.instagram.com/26355360999>
+- Pravidla monetizace obsahu: <https://help.instagram.com/2635536099905516>
 - Označování reklamy (ČOI): <https://www.epravo.cz/top/clanky/spoluprace-s-influencery-na-co-si-dat-pozor-120427.html>
 - Zákon o regulaci reklamy: <https://www.zakonyprolidi.cz/cs/1995-40>
 - AI Act čl. 50: <https://artificialintelligenceact.eu/article/50/>

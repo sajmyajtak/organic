@@ -54,6 +54,15 @@ def collect(ig: Instagram) -> int:
 
 def _append(path, fields, rows):
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        with open(path, newline="", encoding="utf-8") as fh:
+            reader = csv.DictReader(fh)
+            if reader.fieldnames != fields:  # columns changed: rewrite under the new header
+                old_rows = list(reader)
+                with open(path, "w", newline="", encoding="utf-8") as out:
+                    writer = csv.DictWriter(out, fieldnames=fields, extrasaction="ignore")
+                    writer.writeheader()
+                    writer.writerows(old_rows)
     new = not path.exists()
     with open(path, "a", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=fields, extrasaction="ignore")

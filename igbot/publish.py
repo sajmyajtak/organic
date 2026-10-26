@@ -49,7 +49,8 @@ def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list
         return [ig.publish_reel(urls[0], caption, cover_url=urls[1] if len(urls) > 1 else None,
                                 trial=bool(item.get("trial")), ai_generated=ai_media, paid_partnership=paid)]
     if kind == "carousel" and len(urls) > 1:
-        alts = [" ".join(filter(None, [s.get("title"), s.get("body")])) for s in item.get("slides") or []]
+        slides = [] if item.get("media") else item.get("slides") or []  # alt text must describe what's shown
+        alts = [" ".join(filter(None, [s.get("title"), s.get("body")])) for s in slides]
         return [ig.publish_carousel(urls, caption, alts, ai_generated=ai_media, paid_partnership=paid)]
     return [ig.publish_image(urls[0], caption, item.get("alt_text", ""), ai_generated=ai_media,
                              paid_partnership=paid)]
@@ -59,11 +60,11 @@ def quota_left(ig: Instagram) -> int | None:
     """Remaining API publications in the rolling 24 h window (Meta docs say 50 or 100)."""
     try:
         quota = ig.publishing_quota()
+        total = (quota.get("config") or {}).get("quota_total") or 50
+        return int(total) - int(quota.get("quota_usage") or 0)
     except Exception as exc:  # the check is a safeguard, not a reason to stop publishing
         print(f"limit publikací nezjištěn: {exc}")
         return None
-    total = (quota.get("config") or {}).get("quota_total", 50)
-    return int(total) - int(quota.get("quota_usage") or 0)
 
 
 def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -> int:

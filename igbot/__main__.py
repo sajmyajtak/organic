@@ -88,6 +88,10 @@ def main() -> None:
         for state in ("drafts", "approved"):
             for item in content.items(state):
                 problems = content.validate(item)
+                if state == "drafts" and content.MISSING_VIDEO in problems:
+                    # A reel script waiting to be filmed is normal, not a broken queue.
+                    problems.remove(content.MISSING_VIDEO)
+                    print(f"čeká na natočení: {item['id']}")
                 slot = (item["date"], item["time"], item["kind"] == "story")
                 if slot in seen:
                     problems.append(f"stejný termín jako {seen[slot]}")
@@ -140,7 +144,10 @@ def attach_media(args) -> None:
     Videos are too big for git, so the item stores the public URL; publishing
     then works the same from GitHub Actions as from this computer."""
     from . import hosting
+    from .config import env
 
+    if env("MEDIA_BACKEND", "s3") == "github":
+        raise SystemExit("attach potřebuje MEDIA_BACKEND=s3 (videa do gitu nepatří).")
     found = [i for state in ("drafts", "approved", "failed") for i in content.items(state) if i["id"] == args.id]
     if not found:
         raise SystemExit(f"Položka {args.id} není v drafts/approved/failed.")
@@ -148,9 +155,8 @@ def attach_media(args) -> None:
     missing = [str(f) for f in args.files if not f.is_file()]
     if missing:
         raise SystemExit(f"Soubor neexistuje: {', '.join(missing)}")
-    item["media"] = hosting.upload(list(args.files), prefix=item["id"])
-    if args.ai:
-        item["ai_media"] = True
+    item["media"] = hosting.upload([f.resolve() for f in args.files], prefix=item["id"])
+    item["ai_media"] = bool(args.ai)  # attach replaces all media, so the flag follows the new files
     item.pop("error", None)
     problems = content.validate(item)
     if problems:

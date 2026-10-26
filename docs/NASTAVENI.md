@@ -1,8 +1,9 @@
 # Nastavení: jak se bot „přihlásí“ na Instagram
 
 Bot se **nepřihlašuje heslem** a neovládá aplikaci jako člověk. Používá oficiální
-Instagram API od Mety s přístupovým tokenem. Je to jediná cesta, za kterou Instagram
-účty neblokuje. Heslo k účtu nikdy nedávej do kódu, do chatu ani do GitHubu.
+Instagram API od Mety s přístupovým tokenem. Je to jediná cesta automatizace, kterou
+Meta povoluje; i tak je nutné dodržovat pravidla obsahu a proti spamu (žádné hromadné
+akce). Heslo k účtu nikdy nedávej do kódu, do chatu ani do GitHubu.
 
 Stav podle dokumentace Meta k 25. 10. 2026 (Graph API v26.0).
 
@@ -13,21 +14,23 @@ Stav podle dokumentace Meta k 25. 10. 2026 (Graph API v26.0).
 1. Založ nový účet. Jméno, fotka a bio musí být vlastní, **ne napodobenina
    `organic__101_`** (to by bylo vydávání se za jiný účet a důvod ke smazání).
 2. *Nastavení → Typ účtu a nástroje → Přepnout na profesionální účet → **Autor (Creator)***.
-   Creator otevírá monetizační nástroje (předplatné, dárky, Marketplace).
-   Účet musí být **veřejný**.
+   API i monetizace (předplatné, dárky, Marketplace) fungují s jakýmkoli
+   profesionálním účtem; Creator volíme hlavně kvůli širší hudební knihovně.
+   Účet musí být **veřejný** a vlastník plnoletý.
 3. Zapni dvoufázové ověření.
 
 ## Krok 2: Business portfolio a aplikace v Meta for Developers
 
 Jsou dvě varianty:
 
-| | **A: Instagram Login** | **B: Unified / Facebook Login (doporučeno)** |
+| | **A: Instagram Login** | **B: Facebook Login (doporučeno)** nebo Unified Login |
 |---|---|---|
-| Co potřebuješ | jen IG účet | IG účet + Meta Business portfolio (zdarma) |
+| Co potřebuješ | jen IG účet | Facebook Login: IG účet propojený s Facebook stránkou (+ Business portfolio pro systémového uživatele). Unified Login: Business portfolio, HTTPS redirect URL a HTTPS webhook, stránka není potřeba |
 | Publikace postů, karuselů, stories, reels | ano | ano |
 | Statistiky vlastního účtu | ano | ano |
 | **Analýza podobných účtů (Business Discovery)** | **ne** | **ano** |
-| Platnost tokenu | 60 dní, bot ho sám prodlužuje | lze vydat token bez expirace |
+| Štítek placeného partnerství, ankety ve feedu, mazání přes API | ne | zdokumentováno pro Facebook Login; u Unified Login neověřeno |
+| Platnost tokenu | 60 dní, prodlužuješ příkazem `refresh-token` (ručně, před 60. dnem) | token systémového uživatele lze vydat bez expirace (Meta doporučuje expirující; i tak může být zneplatněn) |
 
 Pro náš plán (hledání a sledování podobných účtů) je potřeba **varianta B**.
 
@@ -43,43 +46,62 @@ Pro náš plán (hledání a sledování podobných účtů) je potřeba **varia
    Systémovému uživateli přiřaď aktiva: aplikaci a Instagram účet (případně stránku).
 4. *Vygenerovat nový token* → vyber aplikaci → expirace **Nikdy** → oprávnění:
    `instagram_basic`, `instagram_content_publish`, `instagram_manage_insights`,
-   `instagram_manage_comments`, `pages_show_list`, `pages_read_engagement`,
-   `business_management`.
+   `instagram_manage_comments`, `instagram_manage_contents` (mazání),
+   `pages_show_list`, `pages_read_engagement` a `ads_read` (role na stránce přes
+   Business portfolio to vyžaduje). `business_management` jen pokud ho Meta
+   při generování výslovně chce.
 5. Zjisti ID Instagram účtu, ideálně v *Graph API Explorer*:
    `GET /me/accounts?fields=instagram_business_account{id,username}`
-   (u Facebook Login přes stránku), nebo ho najdeš v nastavení API v dashboardu aplikace.
+   (Facebook Login přes stránku), u tokenu z Unified Login
+   `GET /me/assigned_instagram_accounts`.
 
 Protože aplikace slouží jen **tvému vlastnímu účtu**, stačí jí *Standard Access*:
-žádné App Review ani ověření firmy. Pokud by Meta App Review přesto chtěla
-(dokumentace si tu místy odporuje), projdeme to společně.
+App Review podle přehledu dokumentace potřeba není. Dokumentace si ale místy
+odporuje: návod k vytvoření aplikace uvádí, že přepnutí aplikace do režimu Live
+vyžaduje ověřenou firmu (Business Verification). Business Discovery je
+zdokumentované pro uživatelský token; s tokenem systémového uživatele to ověříme
+při prvním spuštění. Pokud Meta něco z toho bude chtít, projdeme to společně.
 
 Poznámky z dokumentace (stav 10/2026):
 - Meta teď pro nové aplikace doporučuje **Unified Login** (bez Facebook stránky,
-  ale s business portfoliem, systémovým tokenem a webhookem). Funguje se stejným
-  `IG_API_HOST=graph.facebook.com`. Varianta přes stránku a systémového uživatele
-  výše je jednodušší na první spuštění; obě umí Business Discovery.
+  ale s business portfoliem, HTTPS webhookem a tokenem systémového uživatele;
+  `instagram_manage_messages` je v něm povinné a `instagram_manage_insights`
+  se musí přidat ručně). Funguje se stejným `IG_API_HOST=graph.facebook.com`.
+  Varianta přes stránku výše je jednodušší na první spuštění; obě umí Business
+  Discovery. U čistého Unified Login je potřeba otestovat zkušební reels,
+  štítek partnerství, ankety a mazání.
 - Pokud stránka vyžaduje *Page Publishing Authorization* nebo dvoufázové ověření,
   musí být dokončené, jinak publikace selže.
 - Po první testovací publikaci ověř z jiného účtu, že je příspěvek veřejně
   vidět (aplikace v režimu Development může mít omezení).
-- Štítek „Placené partnerství“, ankety ve feedu a mazání příspěvků jdou přes API
-  jen s Facebook/Unified Login.
+- Štítek „Placené partnerství“, ankety ve feedu a mazání příspěvků jsou přes API
+  zdokumentované jen pro Facebook Login; štítek navíc vyžaduje způsobilost
+  k brandovanému obsahu.
 
 ### Varianta A (záložní, nejjednodušší)
 
-Aplikace typu Business → Instagram → *API setup with Instagram login* → přidat účet →
-**Generate token**. Token platí 60 dní; nastav `IG_API_HOST=graph.instagram.com`.
-Prodlužuje se příkazem `python -m igbot refresh-token` (nejpozději do 60 dní, jinak
-je nutné nové přihlášení).
+1. Aplikace typu Business (use case „Other“) → Instagram → *API setup with Instagram
+   business login* → přidat účet jako testera.
+2. Pozvánku přijmi na webu Instagramu: *Nastavení → Oprávnění webů → Aplikace
+   a weby → Pozvánky pro testery*.
+3. Vyplň *Business login settings* (redirect URL, deauthorize a data deletion URL;
+   pro vlastní účet stačí jednoduchá stránka).
+4. **Generate token** → token se ukáže jen jednou, hned ho zkopíruj. Platí 60 dní;
+   nastav `IG_API_HOST=graph.instagram.com`.
+5. Prodlužuje se příkazem `python -m igbot refresh-token`: nejdřív 24 hodin po
+   vydání, nejpozději do 60 dní (pak už nejde a je nutné nové přihlášení). Nový
+   token se uloží do `build/new_token.txt` a ty ho přepíšeš v GitHub secrets.
 
 ## Krok 3: Úložiště obrázků
 
 Instagram si obrázky stahuje z veřejné URL. Doporučení: **Cloudflare R2** (bezplatný
 tarif stačí):
 
-1. Cloudflare → R2 → vytvořit bucket (např. `ig-media`) → zapnout *Public access*
-   (r2.dev subdoména) → poznamenat veřejnou URL.
-2. *Manage R2 API Tokens* → token s právem *Object Read & Write* jen pro tento bucket.
+1. Cloudflare → R2 → vytvořit bucket (např. `ig-media`).
+2. Veřejný přístup: na zkoušku stačí subdoména r2.dev, ta je ale omezená a určená
+   pro vývoj. Pro ostrý provoz připoj vlastní doménu spravovanou v Cloudflare
+   (asi 10 $ ročně), např. `media.tvojedomena.cz`. Tu pak dej do `S3_PUBLIC_BASE_URL`.
+3. *Manage R2 API Tokens* → token s právem *Object Read & Write* jen pro tento bucket.
 
 Alternativa: `MEDIA_BACKEND=github`, ale jen pokud je tento repozitář **veřejný**,
 a pro zpeněžovaný účet ji nedoporučuju (GitHub není CDN pro média).
@@ -94,7 +116,7 @@ vyjde zhruba na 5–15 Kč.
 Pro popis, tagy a počty zhlédnutí, lajků a komentářů u YouTube odkazů v `inspect`: <https://console.cloud.google.com> →
 nový projekt → *APIs & Services → Library → YouTube Data API v3 → Enable* →
 *Credentials → Create credentials → API key* (omezit na YouTube Data API v3).
-Denní bezplatná kvóta stačí na stovky rozborů.
+Jeden rozbor stojí jednu jednotku z výchozí bezplatné denní kvóty (10 000 jednotek).
 
 ## Krok 5: Uložení do GitHubu
 
@@ -112,7 +134,7 @@ Denní bezplatná kvóta stačí na stovky rozborů.
 | Variable | `MEDIA_BACKEND` | `s3` |
 | Variable | `S3_BUCKET` | název bucketu |
 | Variable | `S3_ENDPOINT_URL` | `https://<account-id>.r2.cloudflarestorage.com` |
-| Variable | `S3_PUBLIC_BASE_URL` | veřejná URL bucketu (`https://pub-….r2.dev`) |
+| Variable | `S3_PUBLIC_BASE_URL` | veřejná URL bucketu (vlastní doména, na zkoušku `https://pub-….r2.dev`) |
 
 Dále *Settings → Actions → General → Workflow permissions*: zapnout
 **Read and write permissions** a **Allow GitHub Actions to create and approve pull requests**.

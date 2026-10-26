@@ -12,6 +12,7 @@ the GitHub web UI or phone as well as with `python -m igbot approve`.
 from __future__ import annotations
 
 from datetime import datetime
+import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -48,6 +49,10 @@ def save(item: dict, state: str) -> Path:
     return dest
 
 
+def exists(item_id: str) -> bool:
+    return any((folder(state) / f"{item_id}.yaml").exists() for state in STATES)
+
+
 def items(state: str) -> list[dict]:
     return sorted((load(p) for p in folder(state).glob("*.yaml")), key=lambda i: (i["date"], i["time"]))
 
@@ -62,8 +67,10 @@ def due(tz: str, now: datetime | None = None) -> list[dict]:
 
 
 MAX_HASHTAGS = 5  # Instagram's cap since Dec 2025; the API docs still say 30
-AD_LABELS = ("#reklama", "reklama", "placené partnerství", "sponzorovaný obsah")
+HASHTAG = re.compile(r"#\w*[^\W\d_]\w*")  # needs a letter, so "#1" in a list doesn't count
+AD_LABEL = re.compile(r"(#?reklama|placené partnerství|sponzorovaný obsah)(?!\w)")
 AI_DISCLOSURE = "Vytvořeno s pomocí AI."
+MISSING_VIDEO = "chybí video: natoč ho podle scénáře a připoj přes `igbot attach`"
 
 
 def validate(item: dict) -> list[str]:
@@ -77,7 +84,7 @@ def validate(item: dict) -> list[str]:
         full = full_caption(item)
         if len(full) > 2200:
             problems.append(f"popisek má {len(full)} znaků (max 2200)")
-        if full.count("#") > MAX_HASHTAGS:
+        if len(HASHTAG.findall(full)) > MAX_HASHTAGS:
             problems.append(f"víc než {MAX_HASHTAGS} hashtagů")
         if full.count("@") > 20:
             problems.append("víc než 20 zmínek @")
@@ -87,14 +94,16 @@ def validate(item: dict) -> list[str]:
     media = item.get("media") or []
     if kind == "reel":
         if not media:
-            problems.append("chybí video: natoč ho podle scénáře a doplň cestu do `media`")
+            problems.append(MISSING_VIDEO)
     elif not slides and not media:
         problems.append("chybí slidy i média")
-    if kind == "carousel" and not 2 <= len(slides or media) <= 20:
+    # Attached media wins over generated slides when publishing.
+    if kind == "carousel" and not 2 <= len(media or slides) <= 20:
         problems.append("karusel musí mít 2–20 položek")
-    # ČOI: the ad label belongs at the very start of the post, in Czech.
+    # Label at the very start of the post, in Czech (ČOI's position as reported
+    # by law firms; "Spolupráce s…" alone is not enough).
     first_line = caption.strip().split("\n", 1)[0].lower()
-    if item.get("sponsored") and not first_line.startswith(AD_LABELS):
+    if item.get("sponsored") and not AD_LABEL.match(first_line):
         problems.append("placený/affiliate obsah musí začínat označením „Reklama“ nebo „#reklama“")
     return problems
 
