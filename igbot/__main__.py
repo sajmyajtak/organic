@@ -34,6 +34,15 @@ def main() -> None:
     an.add_argument("username", help="uživatelské jméno bez @")
     an.add_argument("--limit", type=int, default=60, help="kolik posledních postů projít (API)")
     an.add_argument("--images", type=Path, help="složka se screenshoty místo API")
+    ins = sub.add_parser("inspect", help="rozbor odkazu z Instagramu, TikToku nebo YouTube")
+    ins.add_argument("urls", nargs="*", help="jeden nebo více odkazů")
+    ins.add_argument("--file", type=Path, help="soubor s odkazy, jeden na řádek")
+    ins.add_argument("--account", help="autor instagramového příspěvku, pokud není v odkazu")
+    ins.add_argument("--image", type=Path, action="append", default=[],
+                     help="screenshot k odkazu (lze opakovat); doplní čísla a obsah, které API nedá")
+    ins.add_argument("--note", help="vlastní poznámka k odkazu (co se ve videu děje, čísla…)")
+    ins.add_argument("--raw", action="store_true", help="jen vypiš stažená data, bez rozboru Claudem")
+
     sub.add_parser("quota", help="ukaž využití denního limitu publikací")
     sub.add_parser("refresh-token", help="prodluž long-lived token (Instagram Login)")
 
@@ -96,6 +105,8 @@ def main() -> None:
             from .instagram import Instagram
             ig = Instagram.from_env()
         print(f"Report: {run(cfg, args.username.lstrip('@'), args.limit, args.images, ig)}")
+    elif args.cmd == "inspect":
+        inspect_links(cfg, args)
     elif args.cmd == "quota":
         from .instagram import Instagram
         print(Instagram.from_env().publishing_quota())
@@ -106,6 +117,59 @@ def main() -> None:
         Path(BUILD_DIR).mkdir(exist_ok=True)
         (BUILD_DIR / "new_token.txt").write_text(data["access_token"], encoding="utf-8")
         print(f"Token prodloužen, platí {int(data.get('expires_in', 0)) // 86400} dní.")
+
+
+def inspect_links(cfg: dict, args) -> None:
+    import json
+
+    from . import links
+
+    urls = list(args.urls)
+    if args.file:
+        urls += [u.strip() for u in args.file.read_text(encoding="utf-8").splitlines()
+                 if u.strip() and not u.startswith("#")]
+    if not urls and not args.image:
+        raise SystemExit("Zadej aspoň jeden odkaz nebo screenshot (--image).")
+    if len(urls) > 1 and (args.image or args.note):
+        raise SystemExit("Screenshoty a poznámku lze přiložit jen k jednomu odkazu.")
+
+    ig = None
+    if any(links.classify(u)[0].startswith("instagram") for u in urls):
+        from .instagram import Instagram
+        try:
+            ig = Instagram.from_env()
+        except SystemExit:
+            if not args.image:
+                raise
+            print("Instagram API není připojené, rozbor jen ze screenshotu.")
+
+    failed = 0
+    for url in urls or [""]:
+        platform, details = links.classify(url)
+        try:
+            if platform == "instagram_profile" and not args.image:
+                from .analyze import run
+                print(f"Profil @{details['username']} → plná analýza účtu")
+                print(f"Report: {run(cfg, details['username'], 30, None, ig)}")
+                continue
+            try:
+                info = links.fetch(url, ig=ig, account=args.account) if url else links.screenshot_only("", "")
+            except (LookupError, SystemExit) as exc:
+                if not args.image:
+                    raise
+                info = links.screenshot_only(url, str(exc))
+            if args.raw:
+                print(json.dumps(info, ensure_ascii=False, indent=1))
+                continue
+            analysis = links.analyze(info, cfg, images=args.image, note=args.note)
+            text = links.render(info, analysis)
+            print(text)
+            print(f"Uloženo: {links.save(info, analysis, text)}\n")
+        except Exception as exc:  # one bad link shouldn't stop the batch
+            failed += 1
+            print(f"CHYBA {url}: {exc}")
+    if failed:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,60 @@
+name: Rozbor odkazu
+
+# Ruční spuštění: rozebere odkaz z Instagramu, TikToku nebo YouTube
+# a uloží report do reports/links/.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Odkaz (IG / TikTok / YouTube)"
+        required: true
+      account:
+        description: "Autor IG příspěvku, pokud není v odkazu"
+        required: false
+      note:
+        description: "Poznámka (co se ve videu děje, čísla…)"
+        required: false
+
+concurrency:
+  group: content-queue
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Rozebrat
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_API_HOST: ${{ vars.IG_API_HOST }}
+          IG_API_VERSION: ${{ vars.IG_API_VERSION }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          URL: ${{ inputs.url }}
+          ACCOUNT: ${{ inputs.account }}
+          NOTE: ${{ inputs.note }}
+        run: |
+          args=("$URL")
+          [ -n "$ACCOUNT" ] && args+=(--account "$ACCOUNT")
+          [ -n "$NOTE" ] && args+=(--note "$NOTE")
+          python -m igbot inspect "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Uložit report
+        run: |
+          git config user.name "igbot"
+          git config user.email "igbot@users.noreply.github.com"
+          git add reports data
+          git diff --cached --quiet && exit 0
+          git commit -m "rozbor odkazu $(date -u +%F)"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"

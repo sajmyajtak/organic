@@ -10,14 +10,35 @@ generovaný Claudem → schválení → automatická publikace → statistiky �
 |---|---|---|
 | `python -m igbot analyze <účet>` | po připojení účtu (viz [docs/NASTAVENI.md](docs/NASTAVENI.md)) | stáhne posledních N postů libovolného Business/Creator účtu: popisky, lajky, komentáře, zhlédnutí, obrázky. Claude každý post vyhodnotí (téma, formát, háček, vizuál, proč funguje) a napíše report do `reports/<účet>/` |
 | `python -m igbot analyze <účet> --images složka/` | hned, bez API | stejná analýza ze screenshotů (mřížka profilu, posty, reels) |
+| `python -m igbot inspect <odkaz>` | hned | rozbor jednoho odkazu z Instagramu, TikToku nebo YouTube: háček, formát, stavba, proč to funguje, nápady pro nás. Viz tabulka níže |
 | `python -m igbot discover` | každý týden automaticky | sleduje podobné účty a z jejich zmínek @ přidává další, takže okruh zdrojů postupně roste |
 
-Výstup analýzy (`data/niche_profile.yaml`) automaticky přebírá generátor obsahu.
+Výstup analýzy (`data/niche_profile.yaml`) i rozbory odkazů (`data/inspected_links.jsonl`)
+automaticky přebírá generátor obsahu.
+
+### Co `inspect` z jednotlivých sítí dostane
+
+Jen oficiální cesty, bez přihlašování a bez obcházení ochran proti botům:
+
+| Síť | Zdroj | Data |
+|---|---|---|
+| YouTube | YouTube Data API (s `YOUTUBE_API_KEY`), jinak oEmbed | název, popis, tagy, délka, zhlédnutí, lajky, komentáře, odběratelé kanálu, top komentáře, náhled |
+| Instagram | Business Discovery (připojený účet) | popisek, lajky, komentáře, zhlédnutí, obrázek, sledující autora. Autor musí být v odkazu (`instagram.com/<autor>/reel/…`) nebo v `--account` |
+| TikTok | oEmbed | jen ID videa a autor z odkazu. Čísla, popisek a obsah přilož screenshotem |
+
+Ke každému odkazu jde přiložit screenshot a poznámku, třeba u TikToku nebo u videa,
+kde je důležité, co se v něm děje:
+
+```bash
+python -m igbot inspect "https://www.tiktok.com/@autor/video/123" --image tiktok.png --note "1,2 mil. zhlédnutí, recept za 30 s"
+python -m igbot inspect --file odkazy.txt        # víc odkazů najednou
+```
 
 ## Příkazy
 
 ```bash
 python -m igbot analyze organic__101_ --limit 100   # analýza účtu → report
+python -m igbot inspect <odkaz> [--image shot.png]  # rozbor odkazu IG / TikTok / YouTube
 python -m igbot discover                            # podobné účty
 python -m igbot generate --days 7                   # koncepty na týden
 python -m igbot preview                             # grafika do build/preview

@@ -76,6 +76,13 @@ Alternativa: `MEDIA_BACKEND=github`, ale jen pokud je tento repozitář **veřej
 Na <https://console.anthropic.com> vytvoř API klíč. Vygenerování obsahu na týden
 vyjde zhruba na 5–15 Kč.
 
+## Krok 4b (volitelné): YouTube API klíč
+
+Pro čísla a komentáře u YouTube odkazů v `inspect`: <https://console.cloud.google.com> →
+nový projekt → *APIs & Services → Library → YouTube Data API v3 → Enable* →
+*Credentials → Create credentials → API key* (omezit na YouTube Data API v3).
+Denní bezplatná kvóta stačí na stovky rozborů.
+
 ## Krok 5: Uložení do GitHubu
 
 *Repozitář → Settings → Secrets and variables → Actions*:
@@ -85,6 +92,7 @@ vyjde zhruba na 5–15 Kč.
 | Secret | `IG_USER_ID` | ID Instagram účtu z kroku 2 |
 | Secret | `IG_ACCESS_TOKEN` | token z kroku 2 |
 | Secret | `ANTHROPIC_API_KEY` | klíč z kroku 4 |
+| Secret | `YOUTUBE_API_KEY` | klíč z kroku 4b (volitelné) |
 | Secret | `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY` | R2 token z kroku 3 |
 | Variable | `IG_API_HOST` | `graph.facebook.com` (B) nebo `graph.instagram.com` (A) |
 | Variable | `IG_API_VERSION` | `v26.0` |

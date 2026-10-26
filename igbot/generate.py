@@ -19,6 +19,7 @@ import yaml
 from pydantic import BaseModel
 
 from . import content
+from .links import recent_inspections
 from .config import DATA_DIR
 
 FALLBACK_BETA = "server-side-fallback-2026-07-01"
@@ -129,6 +130,7 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
         "uz_jsme_publikovali_neopakuj": _recent_captions(),
         "nase_nejlepsi_prispevky": _top_performers(),
         "co_funguje_u_podobnych_uctu_jen_jako_signal": _inspiration(),
+        "rozebrane_odkazy_jen_jako_signal": recent_inspections(),
     }, ensure_ascii=False, indent=1)
 
 
