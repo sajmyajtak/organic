@@ -168,7 +168,7 @@ class Instagram:
     # -- discovery (Facebook Login host only) ------------------------------
 
     MEDIA_FIELDS = ("caption,media_type,media_product_type,view_count,like_count,comments_count,"
-                    "permalink,timestamp,media_url")
+                    "permalink,shortcode,timestamp,media_url,thumbnail_url")
 
     def business_discovery(self, username: str, media_limit: int = 25, after: str | None = None,
                            media_fields: str = MEDIA_FIELDS) -> dict:

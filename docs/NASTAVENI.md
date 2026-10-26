@@ -78,7 +78,7 @@ vyjde zhruba na 5–15 Kč.
 
 ## Krok 4b (volitelné): YouTube API klíč
 
-Pro čísla a komentáře u YouTube odkazů v `inspect`: <https://console.cloud.google.com> →
+Pro popis, tagy a počty zhlédnutí, lajků a komentářů u YouTube odkazů v `inspect`: <https://console.cloud.google.com> →
 nový projekt → *APIs & Services → Library → YouTube Data API v3 → Enable* →
 *Credentials → Create credentials → API key* (omezit na YouTube Data API v3).
 Denní bezplatná kvóta stačí na stovky rozborů.

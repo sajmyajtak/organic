@@ -22,8 +22,8 @@ Jen oficiální cesty, bez přihlašování a bez obcházení ochran proti botů
 
 | Síť | Zdroj | Data |
 |---|---|---|
-| YouTube | YouTube Data API (s `YOUTUBE_API_KEY`), jinak oEmbed | název, popis, tagy, délka, zhlédnutí, lajky, komentáře, odběratelé kanálu, top komentáře, náhled |
-| Instagram | Business Discovery (připojený účet) | popisek, lajky, komentáře, zhlédnutí, obrázek, sledující autora. Autor musí být v odkazu (`instagram.com/<autor>/reel/…`) nebo v `--account` |
+| YouTube | YouTube Data API (s `YOUTUBE_API_KEY`), jinak oEmbed | název, popis, tagy, délka, počty zhlédnutí, lajků a komentářů, náhled. Odběratele a texty komentářů nestahuje a čísla neukládá déle než 30 dní (pravidla YouTube API) |
+| Instagram | Business Discovery (připojený účet) | popisek, lajky, komentáře, zhlédnutí, obrázek nebo náhled reelu, sledující autora. Autor musí být v odkazu (`instagram.com/<autor>/reel/…`) nebo v `--account`. Odkazy `instagram.com/share/…` nejdou |
 | TikTok | oEmbed | jen ID videa a autor z odkazu. Čísla, popisek a obsah přilož screenshotem |
 
 Ke každému odkazu jde přiložit screenshot a poznámku, třeba u TikToku nebo u videa,

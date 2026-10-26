@@ -34,6 +34,8 @@ def main() -> None:
     an.add_argument("username", help="uživatelské jméno bez @")
     an.add_argument("--limit", type=int, default=60, help="kolik posledních postů projít (API)")
     an.add_argument("--images", type=Path, help="složka se screenshoty místo API")
+    an.add_argument("--set-niche", action="store_true",
+                    help="ulož výsledek jako profil naší niky (u prvního účtu v competitors.seeds automaticky)")
     ins = sub.add_parser("inspect", help="rozbor odkazu z Instagramu, TikToku nebo YouTube")
     ins.add_argument("urls", nargs="*", help="jeden nebo více odkazů")
     ins.add_argument("--file", type=Path, help="soubor s odkazy, jeden na řádek")
@@ -104,7 +106,10 @@ def main() -> None:
         if not args.images:
             from .instagram import Instagram
             ig = Instagram.from_env()
-        print(f"Report: {run(cfg, args.username.lstrip('@'), args.limit, args.images, ig)}")
+        username = args.username.lstrip("@")
+        seeds = (cfg.get("competitors") or {}).get("seeds") or []
+        set_niche = args.set_niche or (bool(seeds) and username.lower() == seeds[0].lower())
+        print(f"Report: {run(cfg, username, args.limit, args.images, ig, update_niche_profile=set_niche)}")
     elif args.cmd == "inspect":
         inspect_links(cfg, args)
     elif args.cmd == "quota":
@@ -124,10 +129,12 @@ def inspect_links(cfg: dict, args) -> None:
 
     from . import links
 
-    urls = list(args.urls)
+    urls = [links.clean_url(u) for u in args.urls if links.clean_url(u)]
     if args.file:
-        urls += [u.strip() for u in args.file.read_text(encoding="utf-8").splitlines()
-                 if u.strip() and not u.startswith("#")]
+        for line in args.file.read_text(encoding="utf-8-sig").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#"):
+                urls.append(line)
     if not urls and not args.image:
         raise SystemExit("Zadej aspoň jeden odkaz nebo screenshot (--image).")
     if len(urls) > 1 and (args.image or args.note):
@@ -139,35 +146,38 @@ def inspect_links(cfg: dict, args) -> None:
         try:
             ig = Instagram.from_env()
         except SystemExit:
-            if not args.image:
-                raise
-            print("Instagram API není připojené, rozbor jen ze screenshotu.")
+            # Only the Instagram links fail (links.fetch raises per link without ig).
+            print("Instagram API není připojené (chybí IG_USER_ID / IG_ACCESS_TOKEN).")
 
     failed = 0
     for url in urls or [""]:
-        platform, details = links.classify(url)
+        platform, details = links.classify(url) if url else ("screenshot", {})
         try:
             if platform == "instagram_profile" and not args.image:
+                if args.raw:
+                    print(json.dumps({"platform": platform, **details}, ensure_ascii=False))
+                    continue
+                if ig is None:
+                    raise links.FetchError("Analýza profilu potřebuje připojený Instagram účet")
                 from .analyze import run
                 print(f"Profil @{details['username']} → plná analýza účtu")
-                print(f"Report: {run(cfg, details['username'], 30, None, ig)}")
+                print(f"Report: {run(cfg, details['username'], 30, None, ig, update_niche_profile=False)}")
                 continue
             try:
                 info = links.fetch(url, ig=ig, account=args.account) if url else links.screenshot_only("", "")
-            except (LookupError, SystemExit) as exc:
-                if not args.image:
+            except Exception as exc:
+                if not args.image and not args.note:
                     raise
                 info = links.screenshot_only(url, str(exc))
             if args.raw:
                 print(json.dumps(info, ensure_ascii=False, indent=1))
                 continue
             analysis = links.analyze(info, cfg, images=args.image, note=args.note)
-            text = links.render(info, analysis)
-            print(text)
-            print(f"Uloženo: {links.save(info, analysis, text)}\n")
-        except Exception as exc:  # one bad link shouldn't stop the batch
+            print(links.render(info, analysis))
+            print(f"Uloženo: {links.save(info, analysis)}\n")
+        except (Exception, SystemExit) as exc:  # one bad link shouldn't stop the batch
             failed += 1
-            print(f"CHYBA {url}: {exc}")
+            print(f"CHYBA {url or '(screenshot)'}: {exc}")
     if failed:
         raise SystemExit(1)
 

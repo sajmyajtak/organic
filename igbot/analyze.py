@@ -130,7 +130,9 @@ def from_api(ig, username: str, limit: int) -> tuple[dict, list[dict]]:
             "caption": m.get("caption") or "",
             "likes": likes, "comments": comments, "views": m.get("view_count"),
             "engagement_rate": round(engagement / followers, 4) if followers else None,
-            "media_url": m.get("media_url"),
+            # Reels: media_url is the video file (and is omitted for licensed audio),
+            # so use the thumbnail for the vision step.
+            "image_url": m.get("thumbnail_url") if m.get("media_type") == "VIDEO" else m.get("media_url"),
         })
     return profile, posts
 
@@ -141,15 +143,15 @@ def from_images(folder: Path) -> list[dict]:
 
 
 def cache_images(posts: list[dict], cache: Path) -> None:
-    """Download image posts for the vision step. Videos are analyzed from caption + metrics."""
+    """Download post images (video thumbnails for reels) for the vision step."""
     cache.mkdir(parents=True, exist_ok=True)
     for post in posts:
-        if post.get("image_path") or post.get("media_type") == "VIDEO" or not post.get("media_url"):
+        if post.get("image_path") or not post.get("image_url"):
             continue
         dest = cache / f"{post['ref']}.jpg"
         if not dest.exists():
             try:
-                resp = requests.get(post["media_url"], timeout=30)
+                resp = requests.get(post["image_url"], timeout=30)
                 resp.raise_for_status()
                 dest.write_bytes(resp.content)
             except requests.RequestException as exc:
@@ -245,7 +247,8 @@ def label_posts(client, cfg: dict, posts: list[dict]) -> list[dict]:
     return labels
 
 
-def write_report(client, cfg: dict, username: str, profile: dict, stats: dict, labels: list[dict]) -> Path:
+def write_report(client, cfg: dict, username: str, profile: dict, stats: dict, labels: list[dict],
+                 update_niche_profile: bool = True) -> Path:
     payload = {"ucet": username, "profil": {k: profile.get(k) for k in
                                              ("biography", "website", "followers_count", "media_count")},
                "statistiky": stats, "prispevky": labels}
@@ -259,11 +262,12 @@ def write_report(client, cfg: dict, username: str, profile: dict, stats: dict, l
         {"stats": stats, "labels": labels, "report": report.model_dump()}, ensure_ascii=False, indent=1),
         encoding="utf-8")
 
-    profile_path = DATA_DIR / "niche_profile.yaml"
-    profile_path.parent.mkdir(parents=True, exist_ok=True)
-    profile_path.write_text(yaml.safe_dump(
-        {"source": f"analýza @{username} {today}", **report.niche_profile.model_dump()},
-        allow_unicode=True, sort_keys=False), encoding="utf-8")
+    if update_niche_profile:
+        profile_path = DATA_DIR / "niche_profile.yaml"
+        profile_path.parent.mkdir(parents=True, exist_ok=True)
+        profile_path.write_text(yaml.safe_dump(
+            {"source": f"analýza @{username} {today}", **report.niche_profile.model_dump()},
+            allow_unicode=True, sort_keys=False), encoding="utf-8")
 
     md = out_dir / f"{today}.md"
     md.write_text(render_markdown(username, today, stats, report), encoding="utf-8")
@@ -297,11 +301,13 @@ def render_markdown(username: str, today: str, stats: dict, report: Report) -> s
     lines += [f"- {o}" for o in report.opportunities_for_us]
     lines += ["", "## Klíčová slova pro hledání podobných účtů", "",
               ", ".join(report.similar_account_keywords), "",
-              "Navržený profil niky pro generátor je v `data/niche_profile.yaml`.", ""]
+              "Navržený profil niky je v JSON reportu (pole niche_profile); u zdrojového účtu se"
+              " ukládá i do `data/niche_profile.yaml` pro generátor.", ""]
     return "\n".join(lines)
 
 
-def run(cfg: dict, username: str, limit: int = 60, images: Path | None = None, ig=None) -> Path:
+def run(cfg: dict, username: str, limit: int = 60, images: Path | None = None, ig=None,
+        update_niche_profile: bool = True) -> Path:
     tz = cfg["account"]["timezone"]
     if images:
         profile, posts = {}, from_images(images)
@@ -313,4 +319,4 @@ def run(cfg: dict, username: str, limit: int = 60, images: Path | None = None, i
     stats = compute_stats(profile, posts, tz)
     client = anthropic.Anthropic()
     labels = label_posts(client, cfg, posts)
-    return write_report(client, cfg, username, profile, stats, labels)
+    return write_report(client, cfg, username, profile, stats, labels, update_niche_profile)

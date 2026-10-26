@@ -45,6 +45,7 @@ jobs:
           ACCOUNT: ${{ inputs.account }}
           NOTE: ${{ inputs.note }}
         run: |
+          set -o pipefail
           args=("$URL")
           [ -n "$ACCOUNT" ] && args+=(--account "$ACCOUNT")
           [ -n "$NOTE" ] && args+=(--note "$NOTE")
