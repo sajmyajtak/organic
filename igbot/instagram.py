@@ -101,23 +101,36 @@ class Instagram:
         self.wait_until_ready(container_id)
         return self.post(f"{self.user_id}/media_publish", creation_id=container_id)["id"]
 
-    def publish_image(self, image_url: str, caption: str, alt_text: str = "", ai_generated: bool = False) -> str:
+    def _post_flags(self, params: dict, ai_generated: bool, paid_partnership: bool) -> dict:
+        if ai_generated:
+            params["is_ai_generated"] = "true"
+        if paid_partnership:
+            if self.host != "graph.facebook.com":
+                raise InstagramError("Štítek placeného partnerství přes API jde jen s Facebook/Unified Login; "
+                                     "označ příspěvek ručně v aplikaci")
+            params["is_paid_partnership"] = "true"
+        return params
+
+    def publish_image(self, image_url: str, caption: str, alt_text: str = "", ai_generated: bool = False,
+                      paid_partnership: bool = False) -> str:
         params = {"image_url": image_url, "caption": caption}
         if alt_text:
             params["alt_text"] = alt_text[:1000]
-        if ai_generated:
-            params["is_ai_generated"] = "true"
-        return self._publish(self._container(**params))
+        return self._publish(self._container(**self._post_flags(params, ai_generated, paid_partnership)))
 
-    def publish_carousel(self, image_urls: list[str], caption: str, ai_generated: bool = False) -> str:
+    def publish_carousel(self, image_urls: list[str], caption: str, alt_texts: list[str] | None = None,
+                         ai_generated: bool = False, paid_partnership: bool = False) -> str:
         # Children carry no caption and must not carry is_ai_generated (API error).
-        children = [self._container(image_url=url, is_carousel_item="true") for url in image_urls[:20]]
+        children = []
+        for n, url in enumerate(image_urls[:20]):
+            params = {"image_url": url, "is_carousel_item": "true"}
+            if alt_texts and n < len(alt_texts) and alt_texts[n]:
+                params["alt_text"] = alt_texts[n][:1000]
+            children.append(self._container(**params))
         for child in children:
             self.wait_until_ready(child)
         params = {"media_type": "CAROUSEL", "children": ",".join(children), "caption": caption}
-        if ai_generated:
-            params["is_ai_generated"] = "true"
-        return self._publish(self._container(**params))
+        return self._publish(self._container(**self._post_flags(params, ai_generated, paid_partnership)))
 
     def publish_story(self, image_url: str | None = None, video_url: str | None = None,
                       ai_generated: bool = False) -> str:
@@ -132,7 +145,8 @@ class Instagram:
         return self._publish(self._container(**params))
 
     def publish_reel(self, video_url: str, caption: str, cover_url: str | None = None,
-                     share_to_feed: bool = True, trial: bool = False, ai_generated: bool = False) -> str:
+                     share_to_feed: bool = True, trial: bool = False, ai_generated: bool = False,
+                     paid_partnership: bool = False) -> str:
         params = {"media_type": "REELS", "video_url": video_url, "caption": caption,
                   "share_to_feed": str(share_to_feed).lower()}
         if cover_url:
@@ -141,9 +155,7 @@ class Instagram:
             # Trial reels go to non-followers first and graduate to followers
             # automatically when they perform well.
             params["trial_params"] = '{"graduation_strategy":"SS_PERFORMANCE"}'
-        if ai_generated:
-            params["is_ai_generated"] = "true"
-        container = self._container(**params)
+        container = self._container(**self._post_flags(params, ai_generated, paid_partnership))
         self.wait_until_ready(container, timeout=600, interval=60)
         return self.post(f"{self.user_id}/media_publish", creation_id=container)["id"]
 

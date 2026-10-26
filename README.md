@@ -4,6 +4,9 @@ Automatizace Instagram účtu přes **oficiální Instagram API** (žádné při
 heslem, žádné boty v aplikaci). Postup: analýza účtů v nice → vlastní obsah
 generovaný Claudem → schválení → automatická publikace → statistiky → další kolo.
 
+- **Strategie, monetizace a 90denní plán:** [docs/PLAN.md](docs/PLAN.md)
+- **Připojení účtu a klíčů:** [docs/NASTAVENI.md](docs/NASTAVENI.md)
+
 ## Jak bot „prochází“ Instagram
 
 | Způsob | Kdy | Co umí |
@@ -40,7 +43,8 @@ python -m igbot inspect --file odkazy.txt        # víc odkazů najednou
 python -m igbot analyze organic__101_ --limit 100   # analýza účtu → report
 python -m igbot inspect <odkaz> [--image shot.png]  # rozbor odkazu IG / TikTok / YouTube
 python -m igbot discover                            # podobné účty
-python -m igbot generate --days 7                   # koncepty na týden
+python -m igbot generate --days 7                   # koncepty na týden (karusely, stories, scénáře reelů)
+python -m igbot attach <id> video.mp4               # připojit natočený reel
 python -m igbot preview                             # grafika do build/preview
 python -m igbot approve                             # schválit koncepty
 python -m igbot publish --dry-run                   # publikace (nanečisto)

@@ -16,35 +16,54 @@ from .render import Theme, render_item
 GRACE = timedelta(hours=6)
 
 
-def media_files(item: dict, theme: Theme) -> list[Path]:
+def media_sources(item: dict, theme: Theme) -> list[Path | str]:
+    """Files to upload (Path) or already public URLs (str), in publishing order."""
     if item.get("media"):
-        return [ROOT / m for m in item["media"]]
+        return [m if str(m).startswith(("https://", "http://")) else ROOT / m for m in item["media"]]
     return render_item(item, BUILD_DIR / "media", theme)
 
 
 def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list[str]:
-    files = media_files(item, theme)
+    sources = media_sources(item, theme)
+    files = [s for s in sources if isinstance(s, Path)]
     if dry_run:
-        urls = [f"https://example.invalid/{f.name}" for f in files]
-        print(f"[dry-run] {item['id']}: {len(files)} soubor(ů) → {[str(f.relative_to(ROOT)) for f in files]}")
+        uploaded = [f"https://example.invalid/{f.name}" for f in files]
+        print(f"[dry-run] {item['id']}: {len(sources)} médií → "
+              f"{[str(s.relative_to(ROOT)) if isinstance(s, Path) else s for s in sources]}")
     else:
-        urls = hosting.upload(files, prefix=item["id"])
+        uploaded = hosting.upload(files, prefix=item["id"]) if files else []
+    it = iter(uploaded)
+    urls = [next(it) if isinstance(s, Path) else s for s in sources]
 
     caption = content.full_caption(item)
     # Meta's "AI info" label is for AI-generated imagery/video. Text graphics
     # written with AI help and approved by a human don't need it.
     ai_media = bool(item.get("ai_media"))
+    paid = bool(item.get("paid_partnership"))
     kind = item["kind"]
     if kind == "story":
         # One story frame per file, published in order.
-        return [ig.publish_story(video_url=u, ai_generated=ai_media) if u.endswith(".mp4")
+        return [ig.publish_story(video_url=u, ai_generated=ai_media) if u.lower().split("?")[0].endswith((".mp4", ".mov"))
                 else ig.publish_story(image_url=u, ai_generated=ai_media) for u in urls]
     if kind == "reel":
         return [ig.publish_reel(urls[0], caption, cover_url=urls[1] if len(urls) > 1 else None,
-                                trial=bool(item.get("trial")), ai_generated=ai_media)]
+                                trial=bool(item.get("trial")), ai_generated=ai_media, paid_partnership=paid)]
     if kind == "carousel" and len(urls) > 1:
-        return [ig.publish_carousel(urls, caption, ai_generated=ai_media)]
-    return [ig.publish_image(urls[0], caption, item.get("alt_text", ""), ai_generated=ai_media)]
+        alts = [" ".join(filter(None, [s.get("title"), s.get("body")])) for s in item.get("slides") or []]
+        return [ig.publish_carousel(urls, caption, alts, ai_generated=ai_media, paid_partnership=paid)]
+    return [ig.publish_image(urls[0], caption, item.get("alt_text", ""), ai_generated=ai_media,
+                             paid_partnership=paid)]
+
+
+def quota_left(ig: Instagram) -> int | None:
+    """Remaining API publications in the rolling 24 h window (Meta docs say 50 or 100)."""
+    try:
+        quota = ig.publishing_quota()
+    except Exception as exc:  # the check is a safeguard, not a reason to stop publishing
+        print(f"limit publikací nezjištěn: {exc}")
+        return None
+    total = (quota.get("config") or {}).get("quota_total", 50)
+    return int(total) - int(quota.get("quota_usage") or 0)
 
 
 def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -> int:
@@ -63,7 +82,11 @@ def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -
             item["error"] = error
             content.save(item, "failed")
 
+    left = None if dry_run else quota_left(ig)
     for item in queue:
+        if left is not None and left <= 0:
+            print("Denní limit publikací přes API je vyčerpaný, zbytek počká na další běh.")
+            break
         if now - content.scheduled_at(item, tz) > GRACE:
             fail(item, f"zmeškaný termín (publikace neproběhla do {GRACE})")
             continue
@@ -78,6 +101,8 @@ def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -
             continue
         if dry_run:
             continue
+        if left is not None:
+            left -= len(ids)
         item["media_ids"] = ids
         item["published_at"] = now.isoformat(timespec="minutes")
         content.save(item, "published")

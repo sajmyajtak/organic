@@ -34,8 +34,12 @@ niche:
     - "strašení a zesměšňování"
 
 schedule:
-  feed_per_day: 1
+  # 1 příspěvek denně: reels jsou hlavní motor dosahu i monetizace, karusely
+  # sbírají uložení. Stories vidí jen sledující; víc než ~4–5 denně škodí dosahu.
   feed_time: "18:30"
+  weekly_mix:
+    reel: 4          # scénáře k natočení (video doplníš přes `igbot attach`)
+    carousel: 3      # grafiku vyrenderuje bot sám
   stories_per_day: 3
   story_times: ["08:00", "12:30", "20:30"]
 

@@ -61,6 +61,11 @@ def due(tz: str, now: datetime | None = None) -> list[dict]:
     return [i for i in items("approved") if scheduled_at(i, tz) <= now]
 
 
+MAX_HASHTAGS = 5  # Instagram's cap since Dec 2025; the API docs still say 30
+AD_LABELS = ("#reklama", "reklama", "placené partnerství", "sponzorovaný obsah")
+AI_DISCLOSURE = "Vytvořeno s pomocí AI."
+
+
 def validate(item: dict) -> list[str]:
     """Return a list of problems that would make Instagram reject the item."""
     problems = []
@@ -72,24 +77,31 @@ def validate(item: dict) -> list[str]:
         full = full_caption(item)
         if len(full) > 2200:
             problems.append(f"popisek má {len(full)} znaků (max 2200)")
-        if full.count("#") > 30:
-            problems.append("víc než 30 hashtagů")
+        if full.count("#") > MAX_HASHTAGS:
+            problems.append(f"víc než {MAX_HASHTAGS} hashtagů")
         if full.count("@") > 20:
             problems.append("víc než 20 zmínek @")
         if not caption.strip():
             problems.append("chybí popisek")
     slides = item.get("slides") or []
     media = item.get("media") or []
-    if not slides and not media:
+    if kind == "reel":
+        if not media:
+            problems.append("chybí video: natoč ho podle scénáře a doplň cestu do `media`")
+    elif not slides and not media:
         problems.append("chybí slidy i média")
-    if kind == "carousel" and not 2 <= len(slides or media) <= 10:
-        problems.append("karusel musí mít 2–10 položek")
-    if item.get("sponsored") and "#reklama" not in caption.lower() and "#spoluprace" not in caption.lower():
-        problems.append("placený/affiliate obsah musí být označený (#reklama)")
+    if kind == "carousel" and not 2 <= len(slides or media) <= 20:
+        problems.append("karusel musí mít 2–20 položek")
+    # ČOI: the ad label belongs at the very start of the post, in Czech.
+    first_line = caption.strip().split("\n", 1)[0].lower()
+    if item.get("sponsored") and not first_line.startswith(AD_LABELS):
+        problems.append("placený/affiliate obsah musí začínat označením „Reklama“ nebo „#reklama“")
     return problems
 
 
 def full_caption(item: dict) -> str:
     caption = (item.get("caption") or "").strip()
+    if item.get("ai_media") and AI_DISCLOSURE not in caption:
+        caption = f"{caption}\n\n{AI_DISCLOSURE}"
     tags = " ".join(f"#{t.lstrip('#')}" for t in item.get("hashtags") or [])
     return f"{caption}\n\n{tags}".strip() if tags else caption

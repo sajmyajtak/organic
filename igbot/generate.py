@@ -42,16 +42,34 @@ class FeedPost(BaseModel):
     inspired_by: str
 
 
+class ReelScript(BaseModel):
+    date: str
+    pillar: str
+    hook_spoken: str
+    hook_on_screen: str
+    shots: list[str]
+    voiceover: str
+    on_screen_text: list[str]
+    duration_s: int
+    filming_tips: str
+    caption: str
+    hashtags: list[str]
+    sponsored: bool
+    inspired_by: str
+
+
 class Story(BaseModel):
     date: str
     slot: int
     purpose: Literal["engagement", "traffic", "teaser", "behind_the_scenes", "question"]
     title: str
     body: str
+    sticker_idea: str
 
 
 class Plan(BaseModel):
     feed: list[FeedPost]
+    reels: list[ReelScript]
     stories: list[Story]
 
 
@@ -59,20 +77,36 @@ SYSTEM = """Jsi obsahový stratég a copywriter českého Instagram účtu. Pí�
 původní obsah v češtině. Nikdy nepřebíráš texty, grafiku ani konkrétní formulace
 jiných účtů: data o konkurenci ber jen jako signál, která témata a formáty lidi
 zajímají, a téma pak zpracuj vlastními slovy, vlastní strukturou a s vlastní
-přidanou hodnotou.
+přidanou hodnotou. Instagram od dubna 2026 přestává doporučovat účty, které
+převážně přebírají cizí obsah, takže originalita je podmínka dosahu.
 
-Co funguje na Instagramu (oficiální signály doporučování): lidé dokoukají/doposlouchají,
-ukládají, posílají dál a reagují. Proto:
-- první slide karuselu je silný háček (konkrétní přínos nebo zvědavost, max ~8 slov),
-- každý další slide nese jednu myšlenku, krátké věty, žádné vatové úvody,
-- poslední slide shrnuje a dává jednu jasnou výzvu (uložit / poslat / komentovat),
-- popisek doplní kontext, první řádek je háček, konec je otázka nebo výzva,
-- 3–5 relevantních hashtagů, žádné obecné spamové (#love, #instagood),
-- stories jsou krátké, osobní, vybízejí k odpovědi do DM nebo připomínají nový příspěvek.
+Co Instagram podle oficiálních popisů doporučování měří: dokoukání a čas strávený
+u příspěvku, sdílení do zpráv (u lidí, kteří nás nesledují, nejdůležitější signál),
+uložení, lajky na dosah, swipnutí celého karuselu. Návody, tipy a srovnání se sdílejí
+nejvíc. Proto:
+- REELS (hlavní motor růstu i jediný formát, který jde zpeněžit): háček v prvních
+  2 s mluveným slovem i textem na obrazovce, délka 7–45 s, jedna myšlenka, vlastní
+  hlas, záběry, které zvládne natočit jeden člověk s telefonem; text nesmí zakrývat
+  většinu obrazu; žádné vodoznaky jiných aplikací; konec s výzvou poslat/uložit.
+- KARUSELY: 5–10 slidů, slide 1 háček (max ~8 slov), slide 2 funguje i jako začátek
+  (Instagram ho někomu ukáže první), každý slide jedna myšlenka, poslední slide
+  shrnutí a jedna výzva. Uvádějte zdroje u faktických tvrzení.
+- POPISEK: první řádek háček s klíčovými slovy (hledání), konec otázka nebo výzva.
+  Maximálně 5 konkrétních hashtagů (Instagram víc nedovolí), žádné obecné (#love).
+- STORIES vidí jen sledující: osobní, krátké, otázky na odpověď do DM, upoutávka na
+  nový příspěvek. Nálepky (anketa, odkaz, otázka) přes API dát nejde, proto nápad na
+  nálepku dej do sticker_idea (přidá se ručně) a samotný text formuluj tak, aby
+  fungoval i bez ní.
 
-Pravidla: žádná zdravotní ani léčebná tvrzení, žádné strašení. Pokud je příspěvek
-z pilíře produktových doporučení, nastav sponsored=true a dej do popisku #reklama
-na začátek. Alt text popisuje obsah grafiky pro nevidomé."""
+Právní pravidla (Česko/EU), závazná:
+- Žádná léčebná tvrzení (léčí, vyléčí, detox proti nemocem) a žádné strašení.
+  Zdravotní tvrzení o potravinách jen v podobě schválené EU (nařízení 1924/2006);
+  když si nejsi jistý, tvrzení vynech.
+- U doplňků stravy vždy text „doplněk stravy“.
+- Syrové mléko nepropaguj; pokud se téma objeví, uveď povinné upozornění
+  „před použitím tepelně opracovat nebo pasterovat“.
+- Produktová doporučení a affiliate: sponsored=true a popisek začíná slovem „Reklama“.
+  Alt text popisuje obsah grafiky pro nevidomé."""
 
 
 def _recent_captions(limit: int = 30) -> list[str]:
@@ -117,12 +151,15 @@ def _niche_profile() -> dict | None:
 def build_prompt(cfg: dict, start: date, days: int) -> str:
     niche = cfg["niche"]
     sched = cfg["schedule"]
+    mix = sched.get("weekly_mix", {"reel": 4, "carousel": 3})
     dates = [(start + timedelta(days=d)).isoformat() for d in range(days)]
+    reels = round(mix.get("reel", 0) * days / 7)
     return json.dumps({
-        "ukol": (f"Naplánuj obsah na dny {dates[0]} až {dates[-1]}: každý den "
-                 f"{sched['feed_per_day']} příspěvek do feedu a {sched['stories_per_day']} stories "
-                 f"(slot 1..{sched['stories_per_day']}). Střídej pilíře podle podílů. "
-                 "Karusel 5–8 slidů, single image 1 slide. Story má 1 slide."),
+        "ukol": (f"Naplánuj obsah na dny {dates[0]} až {dates[-1]}. Každý den právě jeden příspěvek "
+                 f"do feedu: celkem {reels} scénářů reelů (pole reels) a {days - reels} karuselů nebo "
+                 f"obrázků (pole feed), rozložených rovnoměrně. Každý den {sched['stories_per_day']} "
+                 f"stories (slot 1..{sched['stories_per_day']}). Střídej pilíře podle podílů. "
+                 "Karusel 5–10 slidů, single image 1 slide, story 1 slide."),
         "dny": dates,
         "nika": niche,
         "nika_podle_analyzy_zdrojoveho_uctu": _niche_profile(),
@@ -174,6 +211,27 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
             "ai_generated": True,
         }
         created.append(item)
+    for reel in plan.reels:
+        per_day[reel.date] = per_day.get(reel.date, 0) + 1
+        created.append({
+            "id": f"{reel.date}-feed-{per_day[reel.date]}",
+            "date": reel.date,
+            "time": sched["feed_time"],
+            "kind": "reel",
+            "pillar": reel.pillar,
+            "script": {
+                "hook_spoken": reel.hook_spoken, "hook_on_screen": reel.hook_on_screen,
+                "shots": reel.shots, "voiceover": reel.voiceover,
+                "on_screen_text": reel.on_screen_text, "duration_s": reel.duration_s,
+                "filming_tips": reel.filming_tips,
+            },
+            "media": [],
+            "caption": reel.caption,
+            "hashtags": reel.hashtags,
+            "sponsored": reel.sponsored,
+            "inspired_by": reel.inspired_by,
+            "ai_generated": True,
+        })
     for story in plan.stories:
         slot = max(1, min(story.slot, len(sched["story_times"])))
         created.append({
@@ -183,6 +241,7 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
             "kind": "story",
             "purpose": story.purpose,
             "slides": [{"title": story.title, "body": story.body}],
+            "sticker_idea": story.sticker_idea,
             "ai_generated": True,
         })
     for item in created:

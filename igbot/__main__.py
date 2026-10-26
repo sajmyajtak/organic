@@ -21,6 +21,11 @@ def main() -> None:
     a = sub.add_parser("approve", help="schval koncepty (přesun drafts → approved)")
     a.add_argument("ids", nargs="*", help="ID položek; bez ID schválí všechny bez chyb")
 
+    at = sub.add_parser("attach", help="připoj natočené video/fotku ke konceptu (nahraje ho do úložiště)")
+    at.add_argument("id", help="ID položky, např. 2026-11-02-feed-1")
+    at.add_argument("files", nargs="+", type=Path, help="video (a volitelně obrázek obálky)")
+    at.add_argument("--ai", action="store_true", help="médium je generované AI (přidá štítek AI info)")
+
     sub.add_parser("preview", help="vyrenderuj grafiku všech konceptů a schválených položek do build/preview")
     sub.add_parser("check", help="zkontroluj frontu (validace, kolize termínů)")
 
@@ -59,12 +64,17 @@ def main() -> None:
         for item in content.items("drafts"):
             if args.ids and item["id"] not in args.ids:
                 continue
-            if item.get("problems") and not args.ids:
-                print(f"přeskočeno {item['id']}: {item['problems']}")
+            problems = content.validate(item)
+            if problems:
+                item["problems"] = problems
+                content.save(item, "drafts")
+                print(f"přeskočeno {item['id']}: {'; '.join(problems)}")
                 continue
             item.pop("problems", None)
             content.save(item, "approved")
             print(f"schváleno {item['id']}")
+    elif args.cmd == "attach":
+        attach_media(args)
     elif args.cmd == "preview":
         from .render import Theme, render_item
         theme = Theme.from_config(cfg)
@@ -122,6 +132,36 @@ def main() -> None:
         Path(BUILD_DIR).mkdir(exist_ok=True)
         (BUILD_DIR / "new_token.txt").write_text(data["access_token"], encoding="utf-8")
         print(f"Token prodloužen, platí {int(data.get('expires_in', 0)) // 86400} dní.")
+
+
+def attach_media(args) -> None:
+    """Upload the filmed reel (or photo) to public storage and link it to the item.
+
+    Videos are too big for git, so the item stores the public URL; publishing
+    then works the same from GitHub Actions as from this computer."""
+    from . import hosting
+
+    found = [i for state in ("drafts", "approved", "failed") for i in content.items(state) if i["id"] == args.id]
+    if not found:
+        raise SystemExit(f"Položka {args.id} není v drafts/approved/failed.")
+    item = found[0]
+    missing = [str(f) for f in args.files if not f.is_file()]
+    if missing:
+        raise SystemExit(f"Soubor neexistuje: {', '.join(missing)}")
+    item["media"] = hosting.upload(list(args.files), prefix=item["id"])
+    if args.ai:
+        item["ai_media"] = True
+    item.pop("error", None)
+    problems = content.validate(item)
+    if problems:
+        item["problems"] = problems
+        print(f"Médium připojeno, ale zbývá: {'; '.join(problems)}")
+    else:
+        item.pop("problems", None)
+    state = "approved" if Path(item["_path"]).parent.name == "approved" and not problems else "drafts"
+    content.save(item, state)
+    print(f"{item['id']}: {len(item['media'])} médií → content/{state}/ "
+          f"({'čeká na schválení' if state == 'drafts' else 'naplánováno'})")
 
 
 def inspect_links(cfg: dict, args) -> None:

@@ -53,6 +53,18 @@ Protože aplikace slouží jen **tvému vlastnímu účtu**, stačí jí *Standa
 žádné App Review ani ověření firmy. Pokud by Meta App Review přesto chtěla
 (dokumentace si tu místy odporuje), projdeme to společně.
 
+Poznámky z dokumentace (stav 10/2026):
+- Meta teď pro nové aplikace doporučuje **Unified Login** (bez Facebook stránky,
+  ale s business portfoliem, systémovým tokenem a webhookem). Funguje se stejným
+  `IG_API_HOST=graph.facebook.com`. Varianta přes stránku a systémového uživatele
+  výše je jednodušší na první spuštění; obě umí Business Discovery.
+- Pokud stránka vyžaduje *Page Publishing Authorization* nebo dvoufázové ověření,
+  musí být dokončené, jinak publikace selže.
+- Po první testovací publikaci ověř z jiného účtu, že je příspěvek veřejně
+  vidět (aplikace v režimu Development může mít omezení).
+- Štítek „Placené partnerství“, ankety ve feedu a mazání příspěvků jdou přes API
+  jen s Facebook/Unified Login.
+
 ### Varianta A (záložní, nejjednodušší)
 
 Aplikace typu Business → Instagram → *API setup with Instagram login* → přidat účet →
@@ -69,7 +81,8 @@ tarif stačí):
    (r2.dev subdoména) → poznamenat veřejnou URL.
 2. *Manage R2 API Tokens* → token s právem *Object Read & Write* jen pro tento bucket.
 
-Alternativa: `MEDIA_BACKEND=github`, ale jen pokud je tento repozitář **veřejný**.
+Alternativa: `MEDIA_BACKEND=github`, ale jen pokud je tento repozitář **veřejný**,
+a pro zpeněžovaný účet ji nedoporučuju (GitHub není CDN pro média).
 
 ## Krok 4: Claude API klíč
 
