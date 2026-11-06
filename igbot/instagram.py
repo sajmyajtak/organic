@@ -50,10 +50,12 @@ class Instagram:
     # -- low level ---------------------------------------------------------
 
     def _request(self, method: str, path: str, **params) -> dict:
-        params["access_token"] = self.token
+        # Token in the Authorization header, not the URL: it never lands in logs or
+        # error messages, and a network proxy can inject it instead.
+        headers = {"Authorization": f"Bearer {self.token}"}
         url = path if path.startswith("https://") else f"{self.base}/{path.lstrip('/')}"
         for attempt in range(4):
-            resp = requests.request(method, url, params=params if method == "GET" else None,
+            resp = requests.request(method, url, headers=headers, params=params if method == "GET" else None,
                                     data=params if method != "GET" else None, timeout=60)
             if resp.status_code < 500 and resp.status_code != 429:
                 break
