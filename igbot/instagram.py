@@ -24,6 +24,15 @@ from .config import env
 DEFAULT_VERSION = "v26.0"
 
 
+def _config_user_id() -> str | None:
+    """The account's IG user id is not secret, so it may live in config/account.yaml."""
+    from .config import load_config
+    try:
+        return str(load_config().get("account", {}).get("ig_user_id") or "") or None
+    except OSError:
+        return None
+
+
 class InstagramError(RuntimeError):
     pass
 
@@ -40,7 +49,7 @@ class Instagram:
     @classmethod
     def from_env(cls, dry_run: bool = False) -> "Instagram":
         return cls(
-            user_id=env("IG_USER_ID", required=not dry_run) or "dry-run",
+            user_id=env("IG_USER_ID") or _config_user_id() or ("dry-run" if dry_run else env("IG_USER_ID", required=True)),
             token=env("IG_ACCESS_TOKEN", required=not dry_run) or "dry-run",
             host=env("IG_API_HOST", "graph.facebook.com"),
             version=env("IG_API_VERSION", DEFAULT_VERSION),

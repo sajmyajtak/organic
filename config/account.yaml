@@ -3,7 +3,8 @@
 # a potvrzená nika (profil organic__101_ je bez přihlášení skrytý).
 
 account:
-  handle: ""                 # TODO: uživatelské jméno nového účtu (bez @)
+  handle: "naturizz"
+  ig_user_id: "17841466729247229"   # ID z Graph API (není tajné)
   language: en               # obsah v angličtině
   # Časy níže jsou v časovém pásmu publika (USA, východní pobřeží).
   # Po 2 týdnech je upravíme podle toho, kdy jsou sledující online (Insights).
