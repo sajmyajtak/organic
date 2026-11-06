@@ -11,33 +11,31 @@ account:
   timezone: America/New_York
 
 niche:
-  # ZÁSTUPNÁ HODNOTA, než nastudujeme organic__101_ (screenshoty nebo
-  # `python -m igbot analyze organic__101_`). Generátor bere přednostně
-  # data/niche_profile.yaml z analýzy. Texty jsou anglicky, protože jdou
-  # rovnou do generátoru anglického obsahu.
-  name: "Organic 101: natural whole-food living, made simple"
+  # Podle rozboru @organic__101_ (reports/organic__101_/2026-11-06.md).
+  # Generátor navíc čte data/niche_profile.yaml.
+  name: "naturizz: the art of natural, simple living"
   description: >
-    Practical, evidence-aware carousels for people who want to eat and live more
-    naturally: real-food swaps, reading labels, seasonal produce, simple recipes,
-    fewer unnecessary chemicals at home. No miracle claims, no fear-mongering.
-  audience: "English-speaking adults 22-45 (US, UK, CA, AU), beginners in natural living"
-  voice: "warm, direct, practical, short sentences, never preachy or alarmist"
-  pillars:                   # obsahové pilíře a jejich podíl ve feedu
-    - name: "How-to and swaps"         # uložitelné návody
+    Aesthetic moodboard carousels about a slower, more natural life: real food,
+    seasonal and regional traditions, natural home essentials, time outdoors,
+    old-school habits. Nostalgic and visual, never medical.
+  audience: "English-speaking adults 18-40, mostly US, into natural and 'simple life' aesthetics"
+  voice: "short, confident, warm, slightly nostalgic; one-line captions with an emoji"
+  pillars:
+    - name: "The art of ___ living (moodboards)"
       share: 0.4
-    - name: "Myth vs. fact"            # sdílitelné
+    - name: "Then vs now"
       share: 0.2
-    - name: "Recipes and seasonal food"
+    - name: "This, not that"
       share: 0.2
-    - name: "Product picks"            # monetizace (affiliate), max 1× týdně
-      share: 0.1
-    - name: "Community questions"
-      share: 0.1
+    - name: "Natural essentials lists"
+      share: 0.15
+    - name: "Free guide / community"
+      share: 0.05
   avoid:
-    - "disease or cure claims, 'detox' against illness"
-    - "copying text or graphics from other accounts"
-    - "fear-mongering and mocking people"
+    - "medical advice, vaccines, sunscreen, medication, disease or cure claims"
     - "raw milk promotion"
+    - "unlicensed photos, celebrities, film stills"
+    - "copying organic__101_'s titles, layouts, colours or 'maxxing' naming"
 
 schedule:
   # Jen karusely (bez reels): 1 denně. Stories vidí jen sledující;

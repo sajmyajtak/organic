@@ -190,8 +190,9 @@ class Instagram:
 
     # -- discovery (Facebook Login host only) ------------------------------
 
+    # `shortcode` is not readable through Business Discovery (error #100).
     MEDIA_FIELDS = ("caption,media_type,media_product_type,view_count,like_count,comments_count,"
-                    "permalink,shortcode,timestamp,media_url,thumbnail_url")
+                    "permalink,timestamp,media_url,thumbnail_url,children{media_url,media_type}")
 
     def business_discovery(self, username: str, media_limit: int = 25, after: str | None = None,
                            media_fields: str = MEDIA_FIELDS) -> dict:

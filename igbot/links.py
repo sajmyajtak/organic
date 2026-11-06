@@ -211,8 +211,7 @@ def fetch_instagram_post(ig, details: dict, account: str | None, url: str, scan:
     except RuntimeError as exc:  # InstagramError: personal/private account, wrong host, …
         raise FetchError(f"Business Discovery pro @{username}: {exc}") from None
     code = details["shortcode"]
-    post = next((p for p in posts if p.get("shortcode") == code
-                 or f"/{code}/" in (p.get("permalink") or "") + "/"), None)
+    post = next((p for p in posts if f"/{code}/" in (p.get("permalink") or "") + "/"), None)
     if not post:
         raise FetchError(f"Příspěvek {code} není mezi posledními {len(posts)} posty @{username}")
     is_video = post.get("media_type") == "VIDEO"
