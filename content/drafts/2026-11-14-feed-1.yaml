@@ -1,0 +1,136 @@
+id: 2026-11-14-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ topics (own wording and layout)'
+ai_generated: true
+date: '2026-11-14'
+format: moodboard
+kind: carousel
+pillar: The art of ___ living (moodboards)
+caption: 'Candles by four, cinnamon buns by three 🕯️
+
+  Save this for the dark months.'
+hashtags:
+- hygge
+- nordicliving
+alt_text: 'Moodboard of Nordic living: rye bread, cinnamon buns, candles, wool, birch logs and berries.'
+slides:
+- title: The art of Nordic living
+  items:
+  - label: Rye bread
+    queries:
+    - rye bread
+    - dark bread
+  - label: Cinnamon buns
+    queries:
+    - cinnamon buns
+    - cinnamon roll
+  - label: Candles
+    queries:
+    - candles
+  - label: Wool mittens
+    queries:
+    - knitted mittens
+    - mittens
+  - label: Birch logs
+    queries:
+    - birch logs
+    - birch wood
+  - label: Lingonberries
+    queries:
+    - lingonberries
+    - cranberries
+  - label: Coffee pot
+    queries:
+    - coffee pot
+    - kettle
+  - label: Wool socks
+    queries:
+    - wool socks
+  - label: Sheepskin
+    queries:
+    - sheepskin rug
+    - sheepskin
+  - label: Dried flowers
+    queries:
+    - dried flowers
+  - label: Ceramic mug
+    queries:
+    - ceramic mug
+- title: The Nordic kitchen
+  items:
+  - label: Smoked salmon
+    queries:
+    - smoked salmon
+    - salmon
+  - label: Fresh dill
+    queries:
+    - dill
+    - fresh herbs
+  - label: Cardamom
+    queries:
+    - cardamom
+    - spices
+  - label: New potatoes
+    queries:
+    - potatoes
+  - label: Butter
+    queries:
+    - butter
+  - label: Porridge
+    queries:
+    - porridge
+    - oatmeal bowl
+  - label: Berries
+    queries:
+    - blueberries
+    - berries
+  - label: Cheese
+    queries:
+    - cheese
+    - cheese wedge
+- title: The Nordic home
+  items:
+  - label: Linen throw
+    queries:
+    - linen throw
+    - linen
+  - label: Candle holders
+    queries:
+    - candle holder
+    - candlestick
+  - label: Ceramic vase
+    queries:
+    - ceramic vase
+    - vase
+  - label: Wooden chair
+    queries:
+    - wooden chair
+    - chair
+  - label: Wool blanket
+    queries:
+    - wool blanket
+  - label: Pendant lamp
+    queries:
+    - pendant lamp
+    - lamp
+  - label: Houseplant
+    queries:
+    - houseplant
+  - label: Woven basket
+    queries:
+    - woven basket
+    - basket
+- title: Save this for the darkest week of the year
+  items:
+  - label: Cinnamon buns
+    queries:
+    - cinnamon buns
+  - label: Candles
+    queries:
+    - candles
+  - label: Wool socks
+    queries:
+    - wool socks
+  body: Follow @naturizz for more simple, natural living.

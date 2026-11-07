@@ -71,6 +71,13 @@ competitors:
   seeds:
     - organic__101_
 
+media:
+  # Hotové slidy (`python -m igbot prepare`) leží v gitu ve složce media/ a Instagram
+  # si je stáhne z veřejné adresy repozitáře. Publikace z GitHub Actions pak nic
+  # nerenderuje (rembg tam není potřeba) a Simon v KLAPCE schvaluje přesně to,
+  # co vyjde. Repozitář musí zůstat veřejný.
+  base_url: "https://raw.githubusercontent.com/sajmyajtak/organic/main"
+
 generation:
   model: claude-opus-5-5
   effort: medium

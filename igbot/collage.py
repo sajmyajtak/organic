@@ -389,11 +389,11 @@ def is_collage(item: dict) -> bool:
 
 
 def render_item(item: dict, out_dir: Path, brand: dict | None = None, handle: str = "",
-                find=None) -> list[Path]:
+                find=None, seed: int = 0) -> list[Path]:
     """Slides of a queue item. The photo licence trail is stored on the item
     (`photo_credits`), so it is kept when the item is saved as published."""
     paths, credits = render_slides(item["slides"], out_dir, handle, Style.from_brand(brand), find,
-                                   seed=sum(map(ord, item["id"])), name=lambda n: f"{item['id']}-{n}.jpg")
+                                   seed=sum(map(ord, item["id"])) + seed, name=lambda n: f"{item['id']}-{n}.jpg")
     item["photo_credits"] = credits
     return paths
 

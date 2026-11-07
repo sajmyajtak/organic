@@ -1,0 +1,152 @@
+id: 2026-11-09-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ topics (own wording and layout)'
+ai_generated: true
+date: '2026-11-09'
+format: this_not_that
+kind: carousel
+pillar: This, not that
+caption: 'Small swaps, slower kitchen 🌿
+
+  Which one would you make first?'
+hashtags:
+- simpleliving
+- slowkitchen
+alt_text: 'This, not that: wooden, glass and whole-food kitchen items next to plastic and packaged ones.'
+slides:
+- title: 'This: a slow kitchen'
+  items:
+  - label: Wooden spoons
+    queries:
+    - wooden spoons
+    - wooden spoon
+  - label: Cast iron
+    queries:
+    - cast iron skillet
+  - label: Glass jars
+    queries:
+    - glass jars
+    - mason jar
+  - label: Linen towel
+    queries:
+    - linen towel
+    - kitchen towel
+  - label: Ceramic bowls
+    queries:
+    - ceramic bowls
+    - ceramic bowl
+  - label: Enamel kettle
+    queries:
+    - enamel kettle
+    - kettle
+  - label: Cutting board
+    queries:
+    - wooden cutting board
+    - cutting board
+  - label: Beeswax wraps
+    queries:
+    - beeswax wrap
+- title: 'Not that: a fast kitchen'
+  items:
+  - label: Plastic tubs
+    queries:
+    - plastic containers
+    - plastic box
+  - label: Paper towels
+    queries:
+    - paper towel roll
+    - paper towels
+  - label: Plastic bottles
+    queries:
+    - plastic bottles
+    - plastic bottle
+  - label: Paper cups
+    queries:
+    - disposable cup
+    - paper cup
+  - label: Cling film
+    queries:
+    - plastic wrap
+    - cling film
+  - label: Paper plates
+    queries:
+    - paper plates
+    - paper plate
+  - label: Plastic forks
+    queries:
+    - plastic cutlery
+    - plastic fork
+- title: 'This: a real pantry'
+  items:
+  - label: Dried beans
+    queries:
+    - dried beans
+    - beans
+  - label: Rolled oats
+    queries:
+    - rolled oats
+    - oats
+  - label: Raw honey
+    queries:
+    - honey jar
+    - honey
+  - label: Olive oil
+    queries:
+    - olive oil bottle
+    - olive oil
+  - label: Brown rice
+    queries:
+    - brown rice
+    - rice
+  - label: Whole spices
+    queries:
+    - spices
+    - peppercorns
+  - label: Sourdough
+    queries:
+    - sourdough bread
+    - bread
+  - label: Dried fruit
+    queries:
+    - dried apricots
+    - dried fruit
+- title: 'Not that: a snack drawer'
+  items:
+  - label: Chips
+    queries:
+    - potato chips
+    - chips
+  - label: Candy
+    queries:
+    - candy
+    - sweets
+  - label: Soda
+    queries:
+    - soda can
+    - soft drink
+  - label: Instant noodles
+    queries:
+    - instant noodles
+    - ramen noodles
+  - label: Gummies
+    queries:
+    - gummy bears
+    - gummy candy
+  - label: Packaged cookies
+    queries:
+    - cookies
+    - biscuits
+- title: Send this to someone who needs it
+  items:
+  - label: Wooden spoons
+    queries:
+    - wooden spoon
+  - label: Glass jars
+    queries:
+    - mason jar
+  - label: Raw honey
+    queries:
+    - honey jar
+  body: Follow @naturizz for more simple swaps.

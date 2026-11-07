@@ -1,0 +1,142 @@
+id: 2026-11-11-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ topics (own wording and layout)'
+ai_generated: true
+date: '2026-11-11'
+format: then_vs_now
+kind: carousel
+pillar: Then vs now
+caption: 'Not better or worse, just slower 🕰️
+
+  Then or now: which one is you?'
+hashtags:
+- slowliving
+- nostalgia
+alt_text: 'Then vs now: kitchens and evenings, old-fashioned objects next to modern ones.'
+slides:
+- title: Kitchens then
+  items:
+  - label: Enamel kettle
+    queries:
+    - enamel kettle
+    - kettle
+  - label: Cast iron pot
+    queries:
+    - cast iron pot
+    - dutch oven
+  - label: Rolling pin
+    queries:
+    - rolling pin
+  - label: Milk bottle
+    queries:
+    - glass milk bottle
+    - milk bottle
+  - label: Egg beater
+    queries:
+    - egg beater
+    - hand mixer
+  - label: Mason jars
+    queries:
+    - mason jars
+    - glass jar
+  - label: Bread box
+    queries:
+    - bread box
+    - bread bin
+  - label: Wooden bowl
+    queries:
+    - wooden bowl
+- title: Kitchens now
+  items:
+  - label: Air fryer
+    queries:
+    - air fryer
+  - label: Coffee pods
+    queries:
+    - coffee capsules
+    - coffee pods
+  - label: Microwave
+    queries:
+    - microwave oven
+    - microwave
+  - label: Plastic tubs
+    queries:
+    - plastic containers
+  - label: Blender
+    queries:
+    - blender
+  - label: Takeout box
+    queries:
+    - takeaway box
+    - takeout box
+  - label: Paper towels
+    queries:
+    - paper towel roll
+- title: Evenings then
+  items:
+  - label: Oil lamp
+    queries:
+    - oil lamp
+    - kerosene lamp
+  - label: Books
+    queries:
+    - old books
+    - book
+  - label: Board games
+    queries:
+    - chess board
+    - board game
+  - label: Yarn
+    queries:
+    - yarn ball
+    - yarn
+  - label: Old radio
+    queries:
+    - vintage radio
+    - radio
+  - label: Teapot
+    queries:
+    - teapot
+  - label: Playing cards
+    queries:
+    - playing cards
+  - label: Candles
+    queries:
+    - candle
+- title: Evenings now
+  items:
+  - label: Remote
+    queries:
+    - remote control
+  - label: Headphones
+    queries:
+    - headphones
+  - label: Game controller
+    queries:
+    - game controller
+    - gamepad
+  - label: Pizza box
+    queries:
+    - pizza box
+  - label: Energy drink
+    queries:
+    - energy drink
+    - soda can
+  - label: Chargers
+    queries:
+    - charging cable
+    - usb cable
+- title: 'Comment: then or now?'
+  items:
+  - label: Enamel kettle
+    queries:
+    - enamel kettle
+  - label: Oil lamp
+    queries:
+    - oil lamp
+  - label: Books
+    queries:
+    - old books
+  body: Follow @naturizz for more simple, natural living.

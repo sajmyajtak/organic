@@ -31,6 +31,11 @@ def main() -> None:
     co.add_argument("plan", type=Path, help="plán postu, např. assets/examples/autumn-living.json")
     co.add_argument("--seed", type=int, default=0, help="jiné číslo = jiné rozložení předmětů")
     sub.add_parser("check", help="zkontroluj frontu (validace, kolize termínů)")
+    pr = sub.add_parser("prepare", help="vyrenderuj slidy konceptů a schválených položek do media/ "
+                                        "(publikace z GitHubu je pak jen stáhne)")
+    pr.add_argument("ids", nargs="*", help="ID položek; bez ID všechny, které ještě nemají média")
+    pr.add_argument("--force", action="store_true", help="vyrenderuj znovu i hotové položky")
+    pr.add_argument("--seed", type=int, default=0, help="jiné číslo = jiné rozložení předmětů")
 
     p = sub.add_parser("publish", help="publikuj schválené položky, kterým nastal čas")
     p.add_argument("--dry-run", action="store_true", help="nic neposílej, jen ukaž, co by se stalo")
@@ -95,6 +100,8 @@ def main() -> None:
                     print(path.relative_to(Path.cwd()) if path.is_relative_to(Path.cwd()) else path)
     elif args.cmd == "collage":
         render_collage(cfg, args)
+    elif args.cmd == "prepare":
+        prepare_media(cfg, args)
     elif args.cmd == "check":
         seen, bad = {}, 0
         for state in ("drafts", "approved"):
@@ -169,6 +176,50 @@ def render_collage(cfg: dict, args) -> None:
     photos.save_credits(credits, out / "credits.json")
     sheet = collage.contact_sheet(paths, out / "overview.jpg")
     print(f"hotovo: {sheet.relative_to(Path.cwd()) if sheet.is_relative_to(Path.cwd()) else sheet}")
+
+
+def prepare_media(cfg: dict, args) -> None:
+    """Render drafts and approved items into media/ and point `media` at their public URLs.
+
+    The files only become reachable after they are pushed, so commit and push
+    media/ and content/ before `klapka-sync` (KLAPKA shows slide 1 as preview)
+    and before the publishing slot."""
+    from . import collage
+    from .config import ROOT
+    from .render import Theme, render_item
+
+    base = (cfg.get("media") or {}).get("base_url", "").rstrip("/")
+    if not base:
+        raise SystemExit("Chybí media.base_url v config/account.yaml.")
+    theme = Theme.from_config(cfg)
+    out = ROOT / "media"
+    done = 0
+    for state in ("drafts", "approved"):
+        for item in content.items(state):
+            if args.ids and item["id"] not in args.ids:
+                continue
+            if item["kind"] == "reel" or not item.get("slides"):
+                continue
+            if item.get("media") and not (args.force and item.get("media_from_slides")):
+                continue
+            for old in out.glob(f"{item['id']}-*.jpg"):
+                old.unlink()  # a re-render may have fewer slides
+            if collage.is_collage(item) and item["kind"] != "story":
+                paths = collage.render_item(item, out, cfg.get("brand"), theme.handle, seed=args.seed)
+            else:
+                paths = render_item(item, out, theme)
+            item["media"] = [f"{base}/media/{p.name}" for p in paths]
+            item["media_from_slides"] = True
+            problems = content.validate(item)
+            if problems:
+                item["problems"] = problems
+            else:
+                item.pop("problems", None)
+            content.save(item, state)
+            sheet = collage.contact_sheet(paths, BUILD_DIR / "prepare" / f"{item['id']}.jpg")
+            print(f"{item['id']}: {len(paths)} slidů, náhled {sheet}")
+            done += 1
+    print(f"Připraveno: {done}. Teď commit + push složek media/ a content/, pak `klapka-sync`.")
 
 
 def attach_media(args) -> None:

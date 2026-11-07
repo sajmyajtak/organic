@@ -1,0 +1,135 @@
+id: 2026-11-13-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ topics (own wording and layout)'
+ai_generated: true
+date: '2026-11-13'
+format: this_not_that
+kind: carousel
+pillar: This, not that
+caption: 'Same 30 minutes, very different start ☕
+
+  Send this to your slow-morning friend.'
+hashtags:
+- slowmorning
+- simpleliving
+alt_text: 'This, not that: a slow morning with tea and a notebook next to a rushed one with takeaway coffee,
+  and a calm bedroom next to a cluttered one.'
+slides:
+- title: 'This: a slow morning'
+  items:
+  - label: Teapot
+    queries:
+    - teapot
+  - label: Oatmeal
+    queries:
+    - oatmeal bowl
+    - porridge
+  - label: Notebook
+    queries:
+    - notebook
+    - journal
+  - label: Oranges
+    queries:
+    - oranges
+    - orange
+  - label: French press
+    queries:
+    - french press
+  - label: Eggs
+    queries:
+    - fried egg
+    - eggs
+  - label: Houseplant
+    queries:
+    - houseplant
+  - label: Linen napkin
+    queries:
+    - linen napkin
+    - napkin
+- title: 'Not that: a rushed morning'
+  items:
+  - label: Takeaway coffee
+    queries:
+    - takeaway coffee cup
+    - paper coffee cup
+  - label: Energy drink
+    queries:
+    - energy drink
+  - label: Alarm clock
+    queries:
+    - alarm clock
+  - label: Granola bar
+    queries:
+    - granola bar
+    - snack bar
+  - label: Car keys
+    queries:
+    - car keys
+    - keys
+  - label: Donut
+    queries:
+    - donut
+    - doughnut
+- title: 'This: a calm bedroom'
+  items:
+  - label: Linen bedding
+    queries:
+    - linen bedding
+    - pillow
+  - label: Wool blanket
+    queries:
+    - wool blanket
+  - label: Bedside book
+    queries:
+    - book
+  - label: Candle
+    queries:
+    - candle
+  - label: Plant
+    queries:
+    - potted plant
+  - label: Slippers
+    queries:
+    - slippers
+  - label: Ceramic mug
+    queries:
+    - ceramic mug
+  - label: Analog clock
+    queries:
+    - analog clock
+    - clock
+- title: 'Not that: a cluttered bedroom'
+  items:
+  - label: Laundry pile
+    queries:
+    - laundry pile
+    - pile of clothes
+  - label: Headphones
+    queries:
+    - headphones
+  - label: Chargers
+    queries:
+    - charging cable
+  - label: Takeout box
+    queries:
+    - takeaway box
+  - label: Remote
+    queries:
+    - remote control
+  - label: Soda cans
+    queries:
+    - soda can
+- title: Send this to your slow-morning friend
+  items:
+  - label: Teapot
+    queries:
+    - teapot
+  - label: Notebook
+    queries:
+    - notebook
+  - label: Oatmeal
+    queries:
+    - oatmeal bowl
+  body: Follow @naturizz for more simple, natural living.

@@ -71,9 +71,32 @@ Závislosti: `requirements.txt` (jádro, publikační workflow), `requirements-r
 | `klapka.py` | Sync fronty do KLAPKY (Airtable base `appGpk4fkNBGoMyBN`, tabulka SM Obsah) a rozhodnutí schválit/zamítnout zpět. Paměť syncu v YAML položky (`klapka:`), jen změny, rozpočet ~150 volání/měsíc. Tep automatu = technický řádek `__automat__` (`recKqXpfurb4jkWmD`, KLAPKA ho čte pro pruh „Automat běží“, sync ho nikdy nemaže). Volá se po generate/approve/publish, ručně `python -m igbot klapka-sync`. Token `AIRTABLE_TOKEN` v `.env`. |
 | `discover.py`, `insights.py` | Sledování podobných účtů, statistiky do `data/`. |
 
-Testy: `.venv/bin/python -m pytest -q` (70 prochází). GitHub Actions v `.github/workflows/`
+Testy: `.venv/bin/python -m pytest -q` (71 prochází). GitHub Actions v `.github/workflows/`
 (publikace každých 30 min, týdenní plán jako PR, statistiky) zatím nemají secrets.
 Dokumenty: `docs/PLAN.md` (strategie, monetizace, právo), `docs/NASTAVENI.md` (setup API).
+
+## Autopostování (zavedeno 7. 11. 2026, Simon: „Začni autopostovat content“)
+
+Pracuje se na větvi **`main`** (výchozí; jen na ní běží plánované GitHub Actions,
+které do ní zapisují stav fronty, takže před pushem vždy `git pull --rebase`).
+
+1. **Koncepty** píše Claude Code (bez `ANTHROPIC_API_KEY`; generátor `generate`
+   se použije, až klíč bude) do `content/drafts`, pravidla viz `SYSTEM` v `generate.py`.
+2. **`python -m igbot prepare`** vyrenderuje slidy lokálně (rembg) do `media/`
+   a do položky zapíše `media` = veřejné URL z `media.base_url` (raw.githubusercontent,
+   repo je veřejné) + `media_from_slides: true` (alt texty zůstávají ze slidů).
+   Náhled pro kontrolu: `build/prepare/<id>.jpg`. **Každou koláž zkontroluj
+   očima** (vision) a špatné předměty vyměň/vyhoď, pak `prepare <id> --force`.
+3. Commit + push `media/` a `content/`, pak `klapka-sync` → koncept je v KLAPCE
+   (SM Automation → Obsah) i s náhledem, Simon schválí/zamítne.
+4. GitHub Actions `publish.yml` (každých 30 min) čte rozhodnutí z KLAPKY
+   (01/07/13/19 UTC), publikuje schválené v `feed_time` a posílá tep. Nic
+   nerenderuje. Zapne se, až `scripts/github-klice.sh` nahraje secrets
+   (IG_ACCESS_TOKEN, AIRTABLE_TOKEN, nakonec IG_USER_ID).
+
+Pozor na cache: `build/cache/cutouts` je klíčovaná dotazem. Po přidání
+`PEXELS_API_KEY` ji smaž, jinak zůstanou staré výřezy z Openverse.
+Stories zatím negenerujeme (nový účet bez sledujících je nevidí).
 
 ## Proč přechod na lokální běh
 

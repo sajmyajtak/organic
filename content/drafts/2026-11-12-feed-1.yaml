@@ -1,0 +1,132 @@
+id: 2026-11-12-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ topics (own wording and layout)'
+ai_generated: true
+date: '2026-11-12'
+format: moodboard
+kind: carousel
+pillar: The art of ___ living (moodboards)
+caption: 'Woodsmoke, wool socks and nowhere to be 🌲
+
+  Save this for your next weekend away.'
+hashtags:
+- cabinlife
+- slowliving
+alt_text: 'Moodboard of cabin living: firewood, lanterns, cast iron, wool, enamel mugs and pine cones.'
+slides:
+- title: The art of cabin living
+  items:
+  - label: Firewood
+    queries:
+    - firewood
+  - label: Lantern
+    queries:
+    - lantern
+    - oil lamp
+  - label: Wool socks
+    queries:
+    - wool socks
+    - socks
+  - label: Flannel shirt
+    queries:
+    - flannel shirt
+    - plaid shirt
+  - label: Enamel mug
+    queries:
+    - enamel mug
+    - camping mug
+  - label: Hiking boots
+    queries:
+    - hiking boots
+    - leather boots
+  - label: Pine cones
+    queries:
+    - pine cones
+    - pine cone
+  - label: Wool blanket
+    queries:
+    - wool blanket
+  - label: Coffee pot
+    queries:
+    - coffee percolator
+    - coffee pot
+  - label: Axe
+    queries:
+    - axe
+  - label: Mushrooms
+    queries:
+    - wild mushrooms
+    - mushrooms
+- title: The cabin kitchen
+  items:
+  - label: Dutch oven
+    queries:
+    - dutch oven
+    - cast iron pot
+  - label: Rustic bread
+    queries:
+    - rustic bread
+    - bread loaf
+  - label: Cutting board
+    queries:
+    - wooden cutting board
+  - label: Enamel plates
+    queries:
+    - enamel plate
+    - camping plate
+  - label: Coffee beans
+    queries:
+    - coffee beans
+  - label: Wild honey
+    queries:
+    - honey jar
+  - label: Apples
+    queries:
+    - red apples
+    - apple
+  - label: Dried herbs
+    queries:
+    - dried herbs
+    - herb bundle
+- title: Cabin evenings
+  items:
+  - label: Candles
+    queries:
+    - candles
+  - label: Good books
+    queries:
+    - old books
+  - label: Playing cards
+    queries:
+    - playing cards
+  - label: Herbal tea
+    queries:
+    - herbal tea
+    - teacup
+  - label: Chess
+    queries:
+    - chess board
+  - label: Guitar
+    queries:
+    - acoustic guitar
+    - guitar
+  - label: Knitting
+    queries:
+    - yarn ball
+  - label: Wool slippers
+    queries:
+    - slippers
+- title: Save this for your next weekend away
+  items:
+  - label: Lantern
+    queries:
+    - lantern
+  - label: Enamel mug
+    queries:
+    - enamel mug
+  - label: Wool socks
+    queries:
+    - wool socks
+  body: Follow @naturizz for more simple, natural living.

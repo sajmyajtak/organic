@@ -1,0 +1,152 @@
+id: 2026-11-08-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ topics (own wording and layout)'
+ai_generated: true
+date: '2026-11-08'
+format: moodboard
+kind: carousel
+pillar: The art of ___ living (moodboards)
+caption: 'Slow mornings, warm kitchens, early nights 🍂
+
+  Save this for the first cold weekend.'
+hashtags:
+- autumnliving
+- slowliving
+alt_text: 'Moodboard of autumn living: pumpkins, apple pie, candles, wool and firewood.'
+slides:
+- title: The art of autumn living
+  items:
+  - label: Pumpkins
+    queries:
+    - pumpkin
+    - orange pumpkin
+  - label: Apple pie
+    queries:
+    - apple pie
+    - homemade pie
+  - label: Wool sweaters
+    queries:
+    - knitted sweater
+    - wool sweater
+  - label: Candlelight
+    queries:
+    - candle
+    - lit candle
+  - label: Hot cider
+    queries:
+    - apple cider
+    - hot cider mug
+  - label: Chestnuts
+    queries:
+    - roasted chestnuts
+    - chestnuts
+  - label: Firewood
+    queries:
+    - firewood
+    - stack of firewood
+  - label: Maple leaves
+    queries:
+    - maple leaf
+    - autumn leaf
+  - label: Herbal tea
+    queries:
+    - herbal tea cup
+    - teacup
+  - label: Pears
+    queries:
+    - pears
+    - pear
+  - label: Old books
+    queries:
+    - old books
+    - vintage books
+- title: The autumn kitchen
+  items:
+  - label: Homemade jam
+    queries:
+    - jam jar
+    - jam
+  - label: Cinnamon sticks
+    queries:
+    - cinnamon sticks
+    - cinnamon
+  - label: Butternut squash
+    queries:
+    - butternut squash
+    - squash
+  - label: Cast iron pan
+    queries:
+    - cast iron skillet
+    - cast iron pan
+  - label: Root vegetables
+    queries:
+    - carrots
+    - root vegetables
+  - label: Farm eggs
+    queries:
+    - brown eggs
+    - eggs
+  - label: Sourdough
+    queries:
+    - sourdough bread
+    - bread loaf
+  - label: Pumpkin soup
+    queries:
+    - pumpkin soup
+    - soup bowl
+  - label: Baked apples
+    queries:
+    - baked apple
+    - red apple
+  - label: Walnuts
+    queries:
+    - walnuts
+    - walnut
+- title: Cozy evenings
+  items:
+  - label: Wool blanket
+    queries:
+    - wool blanket
+    - plaid blanket
+  - label: Tea kettle
+    queries:
+    - tea kettle
+    - kettle
+  - label: Knitting
+    queries:
+    - knitting needles yarn
+    - yarn ball
+  - label: Oil lamp
+    queries:
+    - oil lamp
+    - lantern
+  - label: Board games
+    queries:
+    - chess board
+    - chess
+  - label: Slippers
+    queries:
+    - slippers
+    - wool slippers
+  - label: Hot cocoa
+    queries:
+    - hot chocolate
+    - cocoa mug
+  - label: Records
+    queries:
+    - vinyl record
+    - record player
+- title: Save this for the first cold morning
+  items:
+  - label: Pumpkins
+    queries:
+    - pumpkin
+  - label: Apple pie
+    queries:
+    - apple pie
+  - label: Hot cider
+    queries:
+    - apple cider
+  body: Follow @naturizz for more simple, natural living.

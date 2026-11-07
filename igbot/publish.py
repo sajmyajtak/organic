@@ -56,7 +56,8 @@ def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list
         return [ig.publish_reel(urls[0], caption, cover_url=urls[1] if len(urls) > 1 else None,
                                 trial=bool(item.get("trial")), ai_generated=ai_media, paid_partnership=paid)]
     if kind == "carousel" and len(urls) > 1:
-        slides = [] if item.get("media") else item.get("slides") or []  # alt text must describe what's shown
+        # Alt text must describe what's shown: the slides, unless other media replaced them.
+        slides = (item.get("slides") or []) if not item.get("media") or item.get("media_from_slides") else []
         alts = [alt_text(s) for s in slides]
         return [ig.publish_carousel(urls, caption, alts, ai_generated=ai_media, paid_partnership=paid)]
     return [ig.publish_image(urls[0], caption, item.get("alt_text", ""), ai_generated=ai_media,

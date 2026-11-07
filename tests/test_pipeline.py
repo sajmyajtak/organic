@@ -256,3 +256,32 @@ def test_english_ad_label_and_ai_disclosure():
     assert "Created with the help of AI." in content.full_caption(en)
     assert content.validate(carousel(sponsored=True, caption="Adding fiber is easy")) != []
     assert content.validate(carousel(sponsored=True, caption="#ad Paid link inside")) == []
+
+
+def test_prepare_renders_to_media_and_publish_keeps_alt_text(queue, monkeypatch, tmp_path):
+    from argparse import Namespace
+
+    import igbot.__main__ as cli
+    import igbot.config as config
+    monkeypatch.setattr(config, "ROOT", tmp_path)
+    monkeypatch.setattr(cli, "BUILD_DIR", tmp_path / "build")
+    content.save(carousel(time="11:30"), "drafts")
+    cfg = {"account": {"timezone": TZ, "handle": "ucet"}, "brand": {},
+           "media": {"base_url": "https://raw.example/repo/main/"}}
+
+    cli.prepare_media(cfg, Namespace(ids=[], force=False, seed=0))
+    item = content.items("drafts")[0]
+    assert item["media"] == [f"https://raw.example/repo/main/media/{item['id']}-{n}.jpg" for n in (1, 2)]
+    assert item["media_from_slides"] is True and "problems" not in item
+    assert sorted(p.name for p in (tmp_path / "media").iterdir()) == [f"{item['id']}-1.jpg", f"{item['id']}-2.jpg"]
+
+    cli.prepare_media(cfg, Namespace(ids=[], force=False, seed=0))  # already prepared: untouched
+    assert content.items("drafts")[0]["media"] == item["media"]
+
+    content.save(content.items("drafts")[0], "approved")
+    ig = RecordingIG(0)
+    monkeypatch.setattr(publish.Instagram, "from_env", classmethod(lambda cls, dry_run=False: ig))
+    monkeypatch.setattr(publish.hosting, "upload", lambda files, prefix: pytest.fail("nothing to upload"))
+    assert publish.publish_due(cfg, now=datetime(2026, 11, 2, 12, 0, tzinfo=ZoneInfo(TZ))) == 1
+    name, args, _ = ig.calls[0]
+    assert name == "publish_carousel" and args[0] == item["media"] and args[2] == ["Háček", "1. Tip Text tipu 😀"]
