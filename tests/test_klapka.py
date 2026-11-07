@@ -244,3 +244,20 @@ def test_failed_sync_turns_the_bar_red(queue, monkeypatch):
     klapka.after("approve")
     assert sent[0]["records"][0]["id"] == HEARTBEAT_RECORD
     assert "Airtable 503" in sent[0]["records"][0]["fields"][F_ERROR]
+
+
+def test_preview_goes_out_only_once_the_file_is_online(queue, monkeypatch):
+    online = set()
+    monkeypatch.setattr(klapka, "_reachable", {})
+    monkeypatch.setattr(klapka.requests, "head",
+                        lambda url, **kw: type("R", (), {"status_code": 200 if url in online else 404})())
+    at = FakeAirtable()
+    url = "https://raw.example/media/2026-11-10-feed-1-1.jpg"
+    content.save(post(1, media=[url], media_from_slides=True), "drafts")
+    klapka.sync("cli", client=at)
+    assert klapka.F_PREVIEW not in at.row("2026-11-10-feed-1")   # not pushed yet: no broken preview
+
+    online.add(url)
+    monkeypatch.setattr(klapka, "_reachable", {})
+    assert klapka.sync("approve", client=at)["updated"] == 1      # pushed: now it goes out
+    assert at.row("2026-11-10-feed-1")[klapka.F_PREVIEW] == [{"url": url}]

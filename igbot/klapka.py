@@ -149,11 +149,27 @@ def _slot(now: datetime, hours: tuple[int, ...]) -> bool:
     return now.hour in hours and now.minute < 30
 
 
+_reachable: dict[str, bool] = {}
+
+
+def _is_public(url: str) -> bool:
+    """Airtable downloads an attachment URL once; a 404 then stays an empty
+    preview for good, because the fingerprint says it was sent. So a preview
+    goes out only when the file is really online (pushed); until then the
+    field is left out and the next sync sends it."""
+    if url not in _reachable:
+        try:
+            _reachable[url] = requests.head(url, timeout=10, allow_redirects=True).status_code == 200
+        except requests.RequestException:
+            _reachable[url] = False
+    return _reachable[url]
+
+
 def _preview_url(item: dict) -> str | None:
     for m in item.get("media") or []:
         m = str(m)
         if m.startswith("https://") and not m.lower().split("?")[0].endswith((".mp4", ".mov")):
-            return m
+            return m if _is_public(m) else None
     return None
 
 
