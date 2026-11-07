@@ -165,7 +165,9 @@ NOT_PHOTOS = re.compile(r"ai[\s_-]?generated|midjourney|stable[\s_-]?diffusion|d
 # Commons titles name the brand ("Umbro slippers", "Barnes Naturals Apple Cider Vinegar").
 BRANDS = re.compile(r"\b(nike|adidas|umbro|puma|reebok|converse|vans|new balance|ugg|crocs|ikea|starbucks|"
                     r"coca[\s-]?cola|pepsi|nestl[eé]|heinz|kellogg|lindt|cadbury|nutella|barnes naturals|"
-                    r"bragg|lego|apple inc|samsung|walmart|costco|target|amazon|for sale|brand|®|™)\b", re.I)
+                    r"bragg|lego|apple inc|samsung|walmart|costco|target|amazon|sony|philips|braun|bosch|"
+                    r"kitchenaid|nespresso|keurig|lavazza|kerrygold|droste|bretel|equal exchange|jeno'?s|"
+                    r"gail'?s|for sale|brand|ads?|®|™)\b", re.I)
 
 
 def relevance(candidate: Candidate, query: str) -> int:

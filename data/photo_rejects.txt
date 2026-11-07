@@ -5,3 +5,39 @@ commons:104101053  # Hot cider: lahev octa Barnes Naturals (značkový výrobek)
 openverse:79fae0e1-d035-40d9-99ad-5019d82e7d2d  # Cinnamon sticks: sušené kroužky, ne skořice
 commons:137934201  # Slippers: pantofle Nike na prodej (značka)
 commons:104101044  # Hot cider: lahev octa Barnes Naturals (značkový výrobek)
+commons:38143552  # Linen towel: osmanský vyšívaný ručník z muzea
+commons:76740453  # Plastic tubs: průmyslové kontejnery
+commons:150399142  # Beeswax candles: ruka s dřevěným předmětem, nevhodné
+openverse:a00b8316-ea42-40cd-9f95-fd8c79eabc22  # Linen towels: vyšívaný polštář
+openverse:9dcc669a-17a1-4656-9931-6bf4aafa8e24  # Baking soda: pečivo
+openverse:2bcff3ce-16ea-4ec1-93a0-fe7286abaa44  # Cotton cloths: miska
+commons:150643659  # Bread box: talíř jídla
+commons:152805567  # Air fryer: reklama Jeno's
+openverse:e90636e8-044b-40c0-85fa-dbe80ffdaa35  # Blender: moka konvička
+openverse:79b2d3f7-afc5-4a29-ac5c-0515512c770b  # Oil lamp: nečitelný předmět
+commons:58709022  # Oil lamp: laboratorní sklo (MET)
+openverse:b766af4f-cea8-4fb5-aeb2-a6075960c172  # Candle(s): fialová skvrna
+commons:198212673  # Remote: ovladač Sony (značka)
+openverse:f85f6616-a2cc-4f7b-a3ca-d3b3974a6cdb  # Pizza box: pizza místo krabice
+openverse:fb48c079-8453-4f89-8ebb-e51b0ffa96dd  # Flannel shirt: člověk
+commons:53720936  # Mushrooms: nečitelné, divoké houby nechceme
+commons:90435771  # Coffee beans: Equal Exchange (značka), vypadá jako brýle
+commons:58708073  # Enamel mug: skleněný půllitr (MET)
+openverse:b3d4bdb6-b1c9-43b5-b593-792b296107d4  # Car keys: klíč s logem auta
+commons:30190131  # Ceramic mug: hrnek Droste (značka)
+commons:146429750  # Cinnamon buns: figurky z pekárny GAIL's
+openverse:72025c3b-3f9e-464f-87e7-8985da47d103  # Cardamom: barevné koření (chilli)
+commons:143124906  # Butter: plechovky Bretel (značka)
+commons:61664929  # Berries: vystřihla se modrá čepice
+commons:60297202  # Pendant lamp: byzantská olejová lampa
+commons:61660601  # Linen towel(s): talíř salátu
+openverse:7157131d-4b8b-493b-b5fa-613114ca78d1  # Cotton cloths: černobílá fotka ženy
+commons:58708123  # Enamel mug: skleněný půllitr (MET)
+commons:173079012  # Wool mittens: rozmazané rukavičky pro panenku
+commons:176995856  # Porridge: prázdná miska
+commons:173677711  # Berries: stánek pražírny s cenovkou
+openverse:607a6f97-cbeb-4a9f-8053-6be92694dfd4  # Pendant lamp: středověký zvon
+commons:50073046  # Air fryer: zlatá miska s jídlem z pikniku
+openverse:3aca12bf-d5fc-4109-b15a-2e58db4d4f2f  # Toaster: jen plátek toastu
+commons:34606975  # Pizza box: logo pizzerie s textem
+commons:62672657  # Enamel kettle: stříbrná konvice s kahanem, ne smaltovaná
