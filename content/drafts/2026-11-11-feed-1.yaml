@@ -43,23 +43,21 @@ slides:
     - glass jar
   - label: Bread box
     queries:
-    - bread box
+    - wooden bread box
     - bread bin
   - label: Wooden bowl
     queries:
     - wooden bowl
 - title: Kitchens now
   items:
-  - label: Air fryer
-    queries:
-    - air fryer
   - label: Microwave
     queries:
     - microwave oven
     - microwave
   - label: Plastic tubs
     queries:
-    - plastic containers
+    - plastic food containers
+    - plastic tupperware
   - label: Blender
     queries:
     - blender
@@ -70,15 +68,12 @@ slides:
   - label: Paper towels
     queries:
     - paper towel roll
-  - label: Toaster
-    queries:
-    - toaster
 - title: Evenings then
   items:
   - label: Oil lamp
-    queries:
-    - oil lamp
+    queries: &id001
     - kerosene lamp
+    - hurricane lamp
   - label: Books
     queries:
     - old books
@@ -103,7 +98,8 @@ slides:
     - playing cards
   - label: Candles
     queries:
-    - candle
+    - lit candles
+    - candles
 - title: Evenings now
   items:
   - label: Remote
@@ -112,9 +108,6 @@ slides:
   - label: Headphones
     queries:
     - headphones
-  - label: Pizza box
-    queries:
-    - pizza box
   - label: Chargers
     queries:
     - charging cable
@@ -129,12 +122,8 @@ slides:
     - popcorn
 - title: 'Comment: then or now?'
   items:
-  - label: Enamel kettle
-    queries:
-    - enamel kettle
   - label: Oil lamp
-    queries:
-    - oil lamp
+    queries: *id001
   - label: Books
     queries:
     - old books
@@ -142,3 +131,476 @@ slides:
 klapka:
   record: recRbiCS7TkzKe9cz
   sent: d29fa977157508e9
+photo_credits:
+- label: Enamel kettle
+  query: enamel kettle
+  provider: commons
+  id: '28951850'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Canton_Enamel_Hot_Water_Kettle_and_Burner%2C_Qianlong_Period%2C_1736-1795%2C_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG/960px-Canton_Enamel_Hot_Water_Kettle_and_Burner%2C_Qianlong_Period%2C_1736-1795%2C_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Canton_Enamel_Hot_Water_Kettle_and_Burner%2C_Qianlong_Period%2C_1736-1795%2C_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG/960px-Canton_Enamel_Hot_Water_Kettle_and_Burner%2C_Qianlong_Period%2C_1736-1795%2C_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Canton_Enamel_Hot_Water_Kettle_and_Burner,_Qianlong_Period,_1736-1795,_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG
+  creator: Daderot
+  title: Canton Enamel Hot Water Kettle and Burner, Qianlong Period, 1736-1795, enamel on brass - Huntington
+    Museum of Art - DSC05277
+  keywords: Canton Enamel Hot Water Kettle and Burner, Qianlong Period, 1736-1795, enamel on brass - Huntington
+    Museum of Art - DSC05277 Taken with Sony DSC-RX100 CC-Zero Self-published work Collections of the
+    Huntington Museum of Art from China Files uploaded by Daderot Metalwork of the Qing Dynasty Collections
+    of the Huntington Museum of Art from the 18th century Metalwork in the Huntington Museum of Art Exhibit
+    in the Huntington Museum of Art, Huntington, West Virginia, USA. Photography was permitted in the
+    museum without restriction. This artwork is in the public domain because the artist died more than
+    70 years ago.
+  width: 1800
+  score: 0.977
+  size:
+  - 578
+  - 911
+  match: 0.988
+- label: Cast iron pot
+  query: cast iron pot
+  provider: commons
+  id: '61777076'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Cast_Iron_Tea_Kettle_made_by_Steece.jpg/960px-Cast_Iron_Tea_Kettle_made_by_Steece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/e/e6/Cast_Iron_Tea_Kettle_made_by_Steece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Cast_Iron_Tea_Kettle_made_by_Steece.jpg
+  creator: Steece
+  title: Cast Iron Tea Kettle made by Steece
+  keywords: 'Cast Iron Tea Kettle made by Steece PD-Art (PD-US-expired) Images uploaded by Fæ Cast iron
+    pots and pans PD US expired Collections of the Missouri History Museum PD-Art missing SDC copyright
+    status PD-US missing SDC copyright status Black cast iron Steece kettle with embossing around body,
+    gooseneck spout,iron handle, and removable embossed lid Title: Cast Iron Tea Kettle made by Steece'
+  width: 1213
+  score: 0.912
+  size:
+  - 1020
+  - 977
+  match: 0.991
+- label: Rolling pin
+  query: rolling pin
+  provider: commons
+  id: '62008647'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Rolling_pin_2017.jpg/960px-Rolling_pin_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Rolling_pin_2017.jpg/960px-Rolling_pin_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Rolling_pin_2017.jpg
+  creator: Fructibus
+  title: Rolling pin 2017
+  keywords: Rolling pin 2017 CC-Zero Rolling pins Self-published work Taken by Fructibus with Samsung
+    Galaxy A5 (2017) Rolling pin
+  width: 1800
+  score: 0.763
+  size:
+  - 776
+  - 89
+  match: 0.731
+- label: Milk bottle
+  query: glass milk bottle
+  provider: openverse
+  id: ff32ad7a-dec4-4d50-9562-0c63c28cd0a2
+  preview_url: https://api.openverse.org/v1/images/ff32ad7a-dec4-4d50-9562-0c63c28cd0a2/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2xyL3VtZXN2a3NuZ3Vwc3M1Ni1pbWFnZS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/8896736/bottle
+  creator: ''
+  title: A bottle
+  keywords: A bottle craftsman glass glass jar green bottle jar milk vase
+  width: 1024
+  score: 0.925
+  size:
+  - 239
+  - 574
+  match: 0.999
+- label: Egg beater
+  query: egg beater
+  provider: openverse
+  id: 2bfe5d3f-2473-4d9c-aeed-37ef2243801c
+  preview_url: https://api.openverse.org/v1/images/2bfe5d3f-2473-4d9c-aeed-37ef2243801c/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEwL2VnZ19iZWF0ZXJfMTk0My44Ljk4NDguanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/8231540/egg-beater-1937-ivar-julius
+  creator: nationalgalleryofart
+  title: Egg Beater (1937) Ivar Julius
+  keywords: Egg Beater (1937) Ivar Julius art artist artworks image vintage
+  width: 1024
+  score: 0.799
+  size:
+  - 436
+  - 521
+  match: 0.728
+- label: Mason jars
+  query: mason jars
+  provider: commons
+  id: '100911195'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Canned_pears_in_mason_jars.jpg/960px-Canned_pears_in_mason_jars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Canned_pears_in_mason_jars.jpg/960px-Canned_pears_in_mason_jars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Canned_pears_in_mason_jars.jpg
+  creator: Nutrition, Food Safety &amp; Health
+  title: Canned pears in mason jars
+  keywords: Canned pears in mason jars CC-Zero Mason jars United States photographs taken on 2016-04-20
+    Flickr images reviewed by FlickreviewR 2 Home canning and jarring fruit The process of canning fruit
+  width: 1800
+  score: 0.953
+  size:
+  - 756
+  - 593
+  match: 0.994
+- label: Wooden bowl
+  query: wooden bowl
+  provider: commons
+  id: '61670694'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg/960px-Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg/960px-Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg
+  creator: Unknown author Unknown author
+  title: Carved Wooden Feast Bowl and Spoon Used by Black Hawk
+  keywords: 'Carved Wooden Feast Bowl and Spoon Used by Black Hawk Black Hawk Images uploaded by Fæ PD-old-100-expired
+    PD-Art (PD-old-100-expired) Wooden bowls Template Unknown (author) CC-PD-Mark Collections of the Missouri
+    History Museum Carved wooden feast bowl with accompanying spoon used by Black Hawk (1767-1838), Chief
+    of the Sauk nation, leader of the Sauk, Fox, and Kickapoo in the 1832 war named after him and an ally
+    of the British in the War of 1812. Title: Carved Wooden Feast Bowl and Spoon Used by Black Hawk'
+  width: 1800
+  score: 0.934
+  size:
+  - 837
+  - 592
+  match: 0.998
+- label: Microwave
+  query: microwave oven
+  provider: commons
+  id: '33348180'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/247_Home_Rescue_appliance_cover.jpg/960px-247_Home_Rescue_appliance_cover.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/247_Home_Rescue_appliance_cover.jpg/960px-247_Home_Rescue_appliance_cover.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:247_Home_Rescue_appliance_cover.jpg
+  creator: 247homerescue
+  title: 247 Home Rescue appliance cover
+  keywords: 247 Home Rescue appliance cover CC-Zero Microwave ovens Toaster ovens Self-published work
+    Objects on microwave ovens Pop-up toasters Domestic appliances, microwave, toaster, kitchen, kitchen
+    appliances http://247homerescue.co.uk
+  width: 1800
+  score: 0.892
+  size:
+  - 856
+  - 340
+  match: 0.997
+- label: Plastic tubs
+  query: plastic food containers
+  provider: commons
+  id: '93195304'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Plastic_food_containers_in_South_Korea.jpg/960px-Plastic_food_containers_in_South_Korea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Plastic_food_containers_in_South_Korea.jpg/960px-Plastic_food_containers_in_South_Korea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Plastic_food_containers_in_South_Korea.jpg
+  creator: Choi Kwang-mo
+  title: Plastic food containers in South Korea
+  keywords: Plastic food containers in South Korea CC-Zero FAL Self-published work Plastic food containers
+    Files with coordinates missing SDC location of creation 16 August 2020 Uploads by Choi Kwangmo Unidentified
+    places in South Korea
+  width: 1800
+  score: 0.995
+  size:
+  - 797
+  - 620
+  match: 0.999
+- label: Paper towels
+  query: paper towel roll
+  provider: openverse
+  id: c55ee7af-5a7c-4e01-a599-c02e9b939415
+  preview_url: https://api.openverse.org/v1/images/c55ee7af-5a7c-4e01-a599-c02e9b939415/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw4NDg2MzUyNzY5LWltYWdlLWt5YmVocjVuLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6042424/photo-image-paper-tape-public-domain
+  creator: ''
+  title: Roll toilet paper
+  keywords: Roll toilet paper bathroom paper towel tissue toilet toilet paper towel white
+  width: 1024
+  score: 0.848
+  size:
+  - 644
+  - 829
+  match: 0.955
+- label: Oil lamp
+  query: kerosene lamp
+  provider: openverse
+  id: 71193282-ff3f-41a6-9e8b-68b1325cab8d
+  preview_url: https://api.openverse.org/v1/images/71193282-ff3f-41a6-9e8b-68b1325cab8d/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw0NzQ1NzMwNDk5MS1pbWFnZS1reWJlaWtpei5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6042912/kerosene-lamp-free-public-domain-cc0-photo
+  creator: ''
+  title: Kerosene lamp
+  keywords: Kerosene lamp bell electric gold kerosene lamp lamp object technology
+  width: 1024
+  score: 0.816
+  size:
+  - 481
+  - 652
+  match: 0.976
+- label: Books
+  query: old books
+  provider: openverse
+  id: a28d2fd9-c6e8-41a8-aa28-2697f0a6040e
+  preview_url: https://api.openverse.org/v1/images/a28d2fd9-c6e8-41a8-aa28-2697f0a6040e/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtczEyNS1ha2U2ODg0LTAxYi5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/4062299/photo-image-background-aesthetic-golden
+  creator: Teddy
+  title: Old books, our own
+  keywords: Old books, our own background gold books grammar history history books literature racinet
+    roses
+  width: 1024
+  score: 0.658
+  size:
+  - 816
+  - 654
+  match: 0.995
+- label: Board games
+  query: chess board
+  provider: commons
+  id: '147765079'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chess_game_Staunton_No._6_perfil_view_8.jpg/960px-Chess_game_Staunton_No._6_perfil_view_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chess_game_Staunton_No._6_perfil_view_8.jpg/960px-Chess_game_Staunton_No._6_perfil_view_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg
+  creator: Wilfredor
+  title: Chess game Staunton No. 6 perfil view 8
+  keywords: Chess game Staunton No. 6 perfil view 8 CC-Zero Chess games Chess pieces Staunton Chess Set
+    Chessboards Chess sets Chess starting position Self-published work Featured pictures by User:Wilfredor
+    Files with Assessments template missing SDC Commons quality assessment Media created with Nikon Z7ii
+    provided by the Quebec WikiClub Chess by Wilfredor Studio photography by Wilfredor Focus stacked image
+    Chess set composed of Rio Staunton pieces by House of Chess and a Wegiel Handmade Wooden Chess Board.
+    The pieces are made of Ringy rosewood and boxwood, with triple internal weighting, beveled bases,
+    and green felt pads on the underside to reduce frictional wear on the board. The knight is hand-carv
+  width: 1800
+  score: 0.932
+  size:
+  - 770
+  - 564
+  match: 1.0
+- label: Yarn
+  query: yarn ball
+  provider: openverse
+  id: f58f381a-d80b-4a5a-8dce-8d814925cc14
+  preview_url: https://api.openverse.org/v1/images/f58f381a-d80b-4a5a-8dce-8d814925cc14/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDk3Nzg5LXdpa2ltZWRpYS1pbWFnZS1rb3dudGlhby5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3297847/free-photo-image-yarn-wool-knitting
+  creator: ''
+  title: orange wool ball yarn blanket
+  keywords: orange wool ball yarn blanket knit knitting linen wool wool ball wool yarn yarn yarn ball
+  width: 1024
+  score: 0.96
+  size:
+  - 479
+  - 481
+  match: 0.999
+- label: Old radio
+  query: vintage radio
+  provider: openverse
+  id: 5d46d1a0-66bc-44bc-a475-c71a5a7471e8
+  preview_url: https://api.openverse.org/v1/images/5d46d1a0-66bc-44bc-a475-c71a5a7471e8/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/62CBB24BEE.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/radios-vintage-62CBB24BEE
+  creator: Ryan McGuire
+  title: Radios Vintage
+  keywords: Radios Vintage oldschool radios vintage
+  width: 1024
+  score: 0.751
+  size:
+  - 364
+  - 433
+  match: 0.988
+- label: Teapot
+  query: teapot
+  provider: commons
+  id: '58713842'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Teapot_MET_DP156033.jpg/960px-Teapot_MET_DP156033.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Teapot_MET_DP156033.jpg/960px-Teapot_MET_DP156033.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Teapot_MET_DP156033.jpg
+  creator: Creator:Joseph Richardson Jr. Creator:Nathaniel Richardson
+  title: Teapot MET DP156033
+  keywords: Teapot MET DP156033 CC-Zero Artworks without Wikidata item Joseph Richardson Jr. Nathaniel
+    Richardson Artworks with known accession number Images from Metropolitan Museum of Art GWToolset Batch
+    Upload Silver in the Metropolitan Museum of Art (American Decorative Arts) American; Teapot; Silver
+  width: 1800
+  score: 0.905
+  size:
+  - 643
+  - 386
+  match: 0.998
+- label: Playing cards
+  query: playing cards
+  provider: commons
+  id: '150268352'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Whot-cards_Nigerian_playing_rules_example1.jpg/960px-Whot-cards_Nigerian_playing_rules_example1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/b/b0/Whot-cards_Nigerian_playing_rules_example1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Whot-cards_Nigerian_playing_rules_example1.jpg
+  creator: Wikinwg
+  title: Whot-cards Nigerian playing rules example1
+  keywords: Whot-cards Nigerian playing rules example1 Playing cards CC-Zero Whot! Self-published work
+    Whot-cards Nigerian playing rules example1
+  width: 1103
+  score: 0.746
+  size:
+  - 778
+  - 626
+  match: 0.948
+- label: Candles
+  query: lit candles
+  provider: openverse
+  id: 9e78ccef-a480-4762-8795-09856071ce82
+  preview_url: https://api.openverse.org/v1/images/9e78ccef-a480-4762-8795-09856071ce82/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4ODAxMzQtaW1hZ2Uta3d2eGRlcjQuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5920521/free-lit-candles-image-public-domain-cc0-photo
+  creator: ''
+  title: Free lit candles image
+  keywords: Free lit candles image candle candles fire places free candle lit candles public
+  width: 1024
+  score: 0.71
+  size:
+  - 179
+  - 294
+  match: 0.992
+- label: Remote
+  query: remote control
+  provider: commons
+  id: '154387677'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/AQUOS_Familink_Remote_Controller_%28Compatible_product%29.jpg/960px-AQUOS_Familink_Remote_Controller_%28Compatible_product%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/AQUOS_Familink_Remote_Controller_%28Compatible_product%29.jpg/960px-AQUOS_Familink_Remote_Controller_%28Compatible_product%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:AQUOS_Familink_Remote_Controller_(Compatible_product).jpg
+  creator: Mr.ちゅらさん
+  title: AQUOS Familink Remote Controller (Compatible product)
+  keywords: AQUOS Familink Remote Controller (Compatible product) CC-Zero Remote control Sharp AQUOS Self-published
+    work Japan photographs taken on 2024-10-27 AQUOS Familink Remote Controller (Compatible product)
+  width: 1800
+  score: 0.962
+  size:
+  - 238
+  - 959
+  match: 0.992
+- label: Headphones
+  query: headphones
+  provider: commons
+  id: '154812504'
+  preview_url: https://upload.wikimedia.org/wikipedia/commons/f/f9/High_Impedance_Radio_Engineering_Headphones.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled
+  full_url: https://upload.wikimedia.org/wikipedia/commons/f/f9/High_Impedance_Radio_Engineering_Headphones.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:High_Impedance_Radio_Engineering_Headphones.jpg
+  creator: Mojmir Churavy
+  title: High Impedance Radio Engineering Headphones
+  keywords: High Impedance Radio Engineering Headphones Headsets CC-Zero Headphones Self-published work
+    Illegal prison radio High-impedance (high-ohm, typically with an impedance of 2000 or 4000 ohms) radiotelegraphic
+    headsets used as electro-acoustic transducers for radio-crystals, simple radios or illegal radio sets.
+    Popular with radio amateurs in the 1940s and 1950s.
+  width: 870
+  score: 0.953
+  size:
+  - 769
+  - 749
+  match: 0.999
+- label: Chargers
+  query: charging cable
+  provider: openverse
+  id: fa4df672-ed9c-4364-9ca6-d3ec22f45c24
+  preview_url: https://api.openverse.org/v1/images/fa4df672-ed9c-4364-9ca6-d3ec22f45c24/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L2JzNTEtaW1hZ2UuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/11515807/black-iphone-charging-cable
+  creator: ''
+  title: Black iPhone charging cable
+  keywords: Black iPhone charging cable black black cable charging cable computer iphone pipe technology
+    usb cable
+  width: 1024
+  score: 0.817
+  size:
+  - 525
+  - 337
+  match: 0.999
+- label: Takeout pizza
+  query: pizza slice
+  provider: openverse
+  id: e8a1c5ec-a9d8-43ca-8d6e-154b9730beb4
+  preview_url: https://api.openverse.org/v1/images/e8a1c5ec-a9d8-43ca-8d6e-154b9730beb4/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3N2MTk0MTQ0LWltYWdlLWt3dnVpOHAxLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5902278/photo-image-background-public-domain-food
+  creator: ''
+  title: Free close pizza slice image
+  keywords: Free close pizza slice image bake food & drink photos pizza pizza cheese slice pizza close
+    up pizza photo pizza restaurant
+  width: 1024
+  score: 0.81
+  size:
+  - 739
+  - 425
+  match: 1.0
+- label: Popcorn
+  query: bowl of popcorn
+  provider: commons
+  id: '147560666'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Popcorn_in_a_bowl.jpg/960px-Popcorn_in_a_bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/c/c0/Popcorn_in_a_bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Popcorn_in_a_bowl.jpg
+  creator: Ziongarage
+  title: Popcorn in a bowl
+  keywords: Popcorn in a bowl CC-Zero Popcorn Self-published work Some popcorn poured out of a bag in
+    a bowl.
+  width: 1080
+  score: 0.99
+  size:
+  - 782
+  - 688
+  match: 0.999
+- label: Oil lamp
+  query: kerosene lamp
+  provider: commons
+  id: '77541673'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Burner_on_a_kerosene_lamp.jpg/960px-Burner_on_a_kerosene_lamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Burner_on_a_kerosene_lamp.jpg/960px-Burner_on_a_kerosene_lamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Burner_on_a_kerosene_lamp.jpg
+  creator: W.carter
+  title: Burner on a kerosene lamp
+  keywords: Burner on a kerosene lamp Taken with Panasonic Lumix DMC-FZ1000 CC-Zero Self-published work
+    Images by W.carter Files with coordinates missing SDC location of creation Kerosene table lamps Studio
+    photography by W.carter in Tuntorp, Brastad Burner on a kerosene, or Argand lamp , lamp photographed
+    in Tuntorp, Brastad, Lysekil Municipality, Sweden. The image has been focus stacked from 12 photos.
+  width: 1800
+  score: 0.72
+  size:
+  - 470
+  - 637
+  match: 0.978
+- label: Books
+  query: old books
+  provider: commons
+  id: '37987843'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Old_Books_03.JPG
+  creator: Ch. Maderthoner
+  title: Old Books 03
+  keywords: Old Books 03 Books CC-Zero Self-published work Alte Bücher
+  width: 1800
+  score: 0.9
+  size:
+  - 845
+  - 831
+  match: 0.994
+media:
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-1.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-2.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-3.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-4.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-5.jpg
+media_from_slides: true

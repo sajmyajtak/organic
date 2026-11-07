@@ -19,14 +19,10 @@ alt_text: 'Natural home essentials: beeswax candles, linen, wool blanket, bar so
 slides:
 - title: Natural home essentials
   items:
-  - label: Beeswax candles
+  - label: Candlelight
     queries:
-    - beeswax candles
-    - candles
-  - label: Linen towels
-    queries:
-    - linen towels
-    - linen
+    - beeswax taper candles
+    - taper candles
   - label: Wool blanket
     queries:
     - wool blanket
@@ -39,17 +35,10 @@ slides:
     queries:
     - wooden brush
     - scrub brush
-  - label: Baking soda
-    queries:
-    - baking soda
   - label: White vinegar
     queries:
     - vinegar bottle
     - vinegar
-  - label: Cotton cloths
-    queries:
-    - dish cloth
-    - cotton cloth
   - label: Houseplant
     queries:
     - houseplant
@@ -65,3 +54,158 @@ slides:
 klapka:
   record: rec4Lc4hX7aoY8QPF
   sent: 249dd8787de3d042
+photo_credits:
+- label: Candlelight
+  query: taper candles
+  provider: commons
+  id: '58872878'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bangkok_Vesak_-_2017-05-07_%28013%29.jpg/960px-Bangkok_Vesak_-_2017-05-07_%28013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bangkok_Vesak_-_2017-05-07_%28013%29.jpg/960px-Bangkok_Vesak_-_2017-05-07_%28013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Bangkok_Vesak_-_2017-05-07_(013).jpg
+  creator: Iudexvivorum
+  title: Bangkok Vesak - 2017-05-07 (013)
+  keywords: Bangkok Vesak - 2017-05-07 (013) CC-Zero Self-published work White candles Yellow candles
+    2 kinds Candles at Buddhist temples in Thailand Tapers (candles) Vesak Day in Bangkok 2017 Annual
+    Vesak Event at Indoor Stadium Huamark in Bangkok , Thailand
+  width: 1800
+  score: 0.852
+  size:
+  - 902
+  - 577
+  match: 0.965
+- label: Wool blanket
+  query: wool blanket
+  provider: commons
+  id: '98197107'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Transitional_Woman_chief_blanket_01.jpg
+  creator: Navajo artist
+  title: Transitional Woman chief blanket 01
+  keywords: Transitional Woman chief blanket 01 PD-Art (PD-old-70) Unknown date CC-PD-Mark Chief blankets
+    PD-Art missing SDC copyright status PD-old missing SDC copyright status Navajo blankets woven in handspun
+    wool, in natural ivory and dark brown, and aniline colors, with a woman's Chief-design, with a series
+    of stepped crosses alternating with striped panels. 61 1/2 in. by 58 1/4 in. private collection
+  width: 1800
+  score: 0.807
+  size:
+  - 900
+  - 826
+  match: 0.991
+- label: Bar soap
+  query: bar soap
+  provider: commons
+  id: '151576471'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg/960px-Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg/960px-Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Bars_of_pure_Marseille_and_Aleppo_soap,_2024.jpg
+  creator: DimiTalen
+  title: Bars of pure Marseille and Aleppo soap, 2024
+  keywords: Bars of pure Marseille and Aleppo soap, 2024 Taken with Nikon D3200 CC-Zero Aleppo soap Marseille
+    soap Self-published work 2024 photos by User:DimiTalen Belgium photographs taken on 2024-08-18 Olive
+    oil soap Green bar soap Bars of pure Marseille and Aleppo soap, 2024
+  width: 1800
+  score: 0.774
+  size:
+  - 848
+  - 508
+  match: 0.998
+- label: Wooden brush
+  query: wooden brush
+  provider: openverse
+  id: 1f56ed1c-0f82-4b37-9aef-b208e6490948
+  preview_url: https://api.openverse.org/v1/images/1f56ed1c-0f82-4b37-9aef-b208e6490948/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL2xyL21ldDIwMTM2Ny1pbWFnZS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/12851849/brush
+  creator: themet
+  title: Vintage ornate decorative brush
+  keywords: Vintage ornate decorative brush alastair cake cleaning design food vintage wooden
+  width: 1024
+  score: 0.966
+  size:
+  - 344
+  - 835
+  match: 0.993
+- label: White vinegar
+  query: vinegar bottle
+  provider: commons
+  id: '155601867'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg/960px-BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg/960px-BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg
+  creator: Avisadehh
+  title: BALSAMIC VINEGAR WITH PROTECTIVE GEOGRAPHICAL SIGN.חומץ בלסמי עם סימון הגנה גאוגרפי
+  keywords: BALSAMIC VINEGAR WITH PROTECTIVE GEOGRAPHICAL SIGN.חומץ בלסמי עם סימון הגנה גאוגרפי CC-Zero
+    Balsamic vinegar Protected geographical indication of Italy Self-published work Files with coordinates
+    missing SDC location of creation BALSAMIC VINEGAR BOTTLE WITH PROTECTIVE GEOGRAPHICAL SIGN
+  width: 1800
+  score: 0.985
+  size:
+  - 220
+  - 921
+  match: 0.999
+- label: Houseplant
+  query: houseplant
+  provider: commons
+  id: '120117726'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Peperomia_boivinii_in_cultivation.jpg/960px-Peperomia_boivinii_in_cultivation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/a/a1/Peperomia_boivinii_in_cultivation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Peperomia_boivinii_in_cultivation.jpg
+  creator: Gemena
+  title: Peperomia boivinii in cultivation
+  keywords: Peperomia boivinii in cultivation CC-Zero Houseplants Self-published work Peperomia boivinii
+    Peperomia boivinii plant kept as a houseplant in a hanging basket, approx. 2 years old single multi-branch
+    stem.
+  width: 1800
+  score: 0.943
+  size:
+  - 930
+  - 1800
+  match: 0.976
+- label: Terracotta pots
+  query: terracotta pot
+  provider: openverse
+  id: 4d29f024-49b0-4ae9-a550-278f4abcd462
+  preview_url: https://api.openverse.org/v1/images/4d29f024-49b0-4ae9-a550-278f4abcd462/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJ0ZXJyYWNvdHRhX3BvdHNfZmxvd2VyX3BvdHMtaW1hZ2Uta3ljZjZlOWQuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6048089/free-public-domain-cc0-photo
+  creator: ''
+  title: ''
+  keywords: ' flower lily products terracotta terracotta pot terracotta pottery'
+  width: 1024
+  score: 0.905
+  size:
+  - 921
+  - 593
+  match: 0.987
+- label: Wicker basket
+  query: wicker basket
+  provider: commons
+  id: '36356153'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG/960px-Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG/960px-Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG
+  creator: Daderot
+  title: Basket for chickens - Barambo - Royal Museum for Central Africa - DSC06916
+  keywords: Basket for chickens - Barambo - Royal Museum for Central Africa - DSC06916 Taken with Sony
+    DSC-RX100 CC-Zero Self-published work Wicker baskets Files uploaded by Daderot Transport of poultry
+    Barambo collection in the Royal Museum for Central Africa Exhibit in the Royal Museum for Central
+    Africa, Tervuren, Belgium. This object is old enough so that it is in the public domain. Photography
+    was permitted in the museum without restriction.
+  width: 1800
+  score: 0.947
+  size:
+  - 724
+  - 559
+  match: 0.999
+media:
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-1.jpg
+media_from_slides: true
