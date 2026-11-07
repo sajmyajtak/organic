@@ -54,9 +54,6 @@ slides:
     queries:
     - takeaway coffee cup
     - paper coffee cup
-  - label: Energy drink
-    queries:
-    - energy drink
   - label: Alarm clock
     queries:
     - alarm clock
@@ -70,8 +67,12 @@ slides:
     - keys
   - label: Donut
     queries:
+    - glazed donut
     - donut
-    - doughnut
+  - label: Pastry
+    queries:
+    - croissant
+    - pastry
 - title: 'This: a calm bedroom'
   items:
   - label: Linen bedding
@@ -118,9 +119,10 @@ slides:
   - label: Remote
     queries:
     - remote control
-  - label: Soda cans
+  - label: Junk food
     queries:
-    - soda can
+    - potato chips
+    - candy
 - title: Send this to your slow-morning friend
   items:
   - label: Teapot

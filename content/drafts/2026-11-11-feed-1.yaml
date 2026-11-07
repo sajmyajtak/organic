@@ -53,10 +53,6 @@ slides:
   - label: Air fryer
     queries:
     - air fryer
-  - label: Coffee pods
-    queries:
-    - coffee capsules
-    - coffee pods
   - label: Microwave
     queries:
     - microwave oven
@@ -69,11 +65,14 @@ slides:
     - blender
   - label: Takeout box
     queries:
+    - takeout food container
     - takeaway box
-    - takeout box
   - label: Paper towels
     queries:
     - paper towel roll
+  - label: Toaster
+    queries:
+    - toaster
 - title: Evenings then
   items:
   - label: Oil lamp
@@ -113,21 +112,21 @@ slides:
   - label: Headphones
     queries:
     - headphones
-  - label: Game controller
-    queries:
-    - game controller
-    - gamepad
   - label: Pizza box
     queries:
     - pizza box
-  - label: Energy drink
-    queries:
-    - energy drink
-    - soda can
   - label: Chargers
     queries:
     - charging cable
     - usb cable
+  - label: Takeout pizza
+    queries:
+    - pizza slice
+    - pizza
+  - label: Popcorn
+    queries:
+    - bowl of popcorn
+    - popcorn
 - title: 'Comment: then or now?'
   items:
   - label: Enamel kettle

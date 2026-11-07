@@ -19,9 +19,9 @@ slides:
 - title: The art of autumn living
   items:
   - label: Pumpkins
-    queries:
-    - pumpkin
+    queries: &id001
     - orange pumpkin
+    - pumpkin
   - label: Apple pie
     queries:
     - apple pie
@@ -32,24 +32,26 @@ slides:
     - wool sweater
   - label: Candlelight
     queries:
+    - burning candle
     - candle
-    - lit candle
   - label: Hot cider
-    queries:
-    - apple cider
-    - hot cider mug
+    queries: &id002
+    - mulled cider
+    - cider in a mug
+    - hot drink mug
   - label: Chestnuts
     queries:
     - roasted chestnuts
     - chestnuts
   - label: Firewood
     queries:
+    - firewood logs
+    - chopped firewood
     - firewood
-    - stack of firewood
   - label: Maple leaves
     queries:
+    - red maple leaf
     - maple leaf
-    - autumn leaf
   - label: Herbal tea
     queries:
     - herbal tea cup
@@ -108,8 +110,8 @@ slides:
   items:
   - label: Wool blanket
     queries:
+    - folded wool blanket
     - wool blanket
-    - plaid blanket
   - label: Tea kettle
     queries:
     - tea kettle
@@ -128,28 +130,580 @@ slides:
     - chess
   - label: Slippers
     queries:
-    - slippers
     - wool slippers
+    - felt slippers
+    - house slippers
   - label: Hot cocoa
     queries:
     - hot chocolate
     - cocoa mug
-  - label: Records
-    queries:
-    - vinyl record
-    - record player
 - title: Save this for the first cold morning
   items:
   - label: Pumpkins
-    queries:
-    - pumpkin
+    queries: *id001
   - label: Apple pie
     queries:
     - apple pie
-  - label: Hot cider
-    queries:
-    - apple cider
+  - label: Warm drinks
+    queries: *id002
   body: Follow @naturizz for more simple, natural living.
 klapka:
   record: recJkaEVx4oI8dP5m
   sent: 97c2c929451e17c9
+photo_credits:
+- label: Pumpkins
+  query: orange pumpkin
+  provider: openverse
+  id: 36e25d55-ac3f-489f-87c0-0b635dc35235
+  preview_url: https://api.openverse.org/v1/images/36e25d55-ac3f-489f-87c0-0b635dc35235/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4MTMzMzAyMi1pbWFnZS1rd3Z3MG5ndy5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5911771/image-public-domain-nature-food
+  creator: ''
+  title: Free close big orange pumpkin
+  keywords: Free close big orange pumpkin food free nature nature photo orange pumpkin vegetable
+  width: 1024
+  score: 0.991
+  size:
+  - 633
+  - 700
+  match: 0.998
+- label: Apple pie
+  query: apple pie
+  provider: openverse
+  id: f34ea0d5-3565-4f14-94f6-9f2ee975fbeb
+  preview_url: https://api.openverse.org/v1/images/f34ea0d5-3565-4f14-94f6-9f2ee975fbeb/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4MTE1NjUyMy1pbWFnZS1rd3Z3OGpsNS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5913194/free-apple-pie-image-public-domain-cc0-photo
+  creator: ''
+  title: Free apple pie image
+  keywords: Free apple pie image apple apple pie apple tarte leaf pie tart tarte tatin
+  width: 1024
+  score: 0.618
+  size:
+  - 889
+  - 616
+  match: 0.997
+- label: Wool sweaters
+  query: knitted sweater
+  provider: openverse
+  id: 37c4d672-db66-4658-be91-e8f84342f0bb
+  preview_url: https://api.openverse.org/v1/images/37c4d672-db66-4658-be91-e8f84342f0bb/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4MTIzMjUtaW1hZ2Uta3d2eGZvNDcuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5921020/photo-image-public-domain-fashion-free
+  creator: ''
+  title: Free classic clothes photo
+  keywords: Free classic clothes photo classic picture clothes crochet fashion knitting wool sweater textile
+  width: 1024
+  score: 0.934
+  size:
+  - 780
+  - 570
+  match: 1.0
+- label: Candlelight
+  query: burning candle
+  provider: openverse
+  id: ea8e95db-265d-4fe2-97a2-6bd6ee8c7fbb
+  preview_url: https://api.openverse.org/v1/images/ea8e95db-265d-4fe2-97a2-6bd6ee8c7fbb/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2JzODgxNi1pbWFnZS1rd3Z4MHFwNy5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5918534/burning-candles-free-public-domain-cc0-image
+  creator: ''
+  title: Burning candles
+  keywords: Burning candles burning candles candle fire flame free light
+  width: 1024
+  score: 0.708
+  size:
+  - 176
+  - 285
+  match: 0.993
+- label: Hot cider
+  query: cider in a mug
+  provider: openverse
+  id: 34cf1a92-0c12-4db1-b898-ac51a4892df4
+  preview_url: https://api.openverse.org/v1/images/34cf1a92-0c12-4db1-b898-ac51a4892df4/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2FpYzY3NDI5LWltYWdlLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/8943352/cider-jug-artist-unknown
+  creator: artinstitutechicago
+  title: Cider jug by Artist unknown
+  keywords: Cider jug by Artist unknown black ceramic cup drink image mug photo vase
+  width: 1024
+  score: 0.978
+  size:
+  - 588
+  - 710
+  match: 0.978
+- label: Chestnuts
+  query: roasted chestnuts
+  provider: commons
+  id: '153238579'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Sugar-roasted_chestnuts_%281%29.jpg/960px-Sugar-roasted_chestnuts_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Sugar-roasted_chestnuts_%281%29.jpg/960px-Sugar-roasted_chestnuts_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sugar-roasted_chestnuts_(1).jpg
+  creator: Fumikas Sagisavas
+  title: Sugar-roasted chestnuts (1)
+  keywords: Sugar-roasted chestnuts (1) CC-Zero Chestnuts as food Self-published work Files with coordinates
+    missing SDC location of creation Sugar-roasted chestnuts
+  width: 1800
+  score: 0.877
+  size:
+  - 855
+  - 557
+  match: 0.755
+- label: Firewood
+  query: firewood logs
+  provider: commons
+  id: '17173639'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY%2C_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg/960px-SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY%2C_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY%2C_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg/960px-SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY%2C_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY,_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg
+  creator: David Falconer
+  title: SAWING AND SPLITTING OF LOGS TOSSED ON THE BEACH NEAR LINCOLN CITY, WAS DONE TO CONSERVE ELECTRICITY
+    AND FIND A WAY... - NARA - 555472
+  keywords: 'SAWING AND SPLITTING OF LOGS TOSSED ON THE BEACH NEAR LINCOLN CITY, WAS DONE TO CONSERVE
+    ELECTRICITY AND FIND A WAY... - NARA - 555472 Chainsaws Firewood Images from the National Archives
+    and Records Administration Media contributed by the National Archives and Records Administration PD
+    US EPA Energy in Oregon Artworks without Wikidata item US National Archives series: DOCUMERICA: The
+    Environmental Protection Agency''s Program to Photographically Document Subjects of Environmental
+    Concern, compiled 1972 - 1977 Logging in Oregon January 1974 in Oregon Gas shortage of 1973 in the
+    United States DOCUMERICA photographs by David Falconer '
+  width: 1800
+  score: 0.932
+  size:
+  - 461
+  - 484
+  match: 0.989
+- label: Maple leaves
+  query: red maple leaf
+  provider: openverse
+  id: f1e59205-176c-45f8-9fef-4c92164f7ce5
+  preview_url: https://api.openverse.org/v1/images/f1e59205-176c-45f8-9fef-4c92164f7ce5/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/5CCRTPAWLM.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/seasonal-leaf-5CCRTPAWLM
+  creator: Seacoast Sage
+  title: Seasonal Leaf
+  keywords: Seasonal Leaf autumn background copyspace fall flatlay foliage green holiday leaf maple minimal
+    nature november october red rustic seasonal texture thanksgiving wallpaper
+  width: 1024
+  score: 0.913
+  size:
+  - 376
+  - 413
+  match: 0.998
+- label: Herbal tea
+  query: herbal tea cup
+  provider: openverse
+  id: 3e1c1ba9-9921-42ff-be3c-9d52b555c920
+  preview_url: https://api.openverse.org/v1/images/3e1c1ba9-9921-42ff-be3c-9d52b555c920/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L2JzMTM1LWltYWdlLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/11524498/cup-yellow-tea-next-tea-jar
+  creator: ''
+  title: Cup yellow tea next tea
+  keywords: Cup yellow tea next tea herbal herbs mug plant tape tea cup yellow
+  width: 1024
+  score: 0.824
+  size:
+  - 668
+  - 274
+  match: 1.0
+- label: Pears
+  query: pears
+  provider: commons
+  id: '57396131'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Pears-2.jpg/960px-Pears-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/1/1f/Pears-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pears-2.jpg
+  creator: MartinThoma
+  title: Pears-2
+  keywords: Pears-2 Taken with Panasonic Lumix DMC-TZ41 CC-Zero Location not applicable Self-published
+    work 2 fruit Pears on gray background Images by Martin Thoma/Food Two pears
+  width: 1402
+  score: 0.988
+  size:
+  - 1232
+  - 1212
+  match: 0.999
+- label: Old books
+  query: old books
+  provider: openverse
+  id: ed0d92db-37a0-4c1b-b225-71ba9e4e42df
+  preview_url: https://api.openverse.org/v1/images/ed0d92db-37a0-4c1b-b225-71ba9e4e42df/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxNDU2MTc1LWltYWdlLWt3dnh0enF5LWt3dnluaWdwLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5923483/photo-image-book-public-domain-vintage
+  creator: ''
+  title: Free pile old books image
+  keywords: Free pile old books image antique book books pile literature pile of vintage books stack of
+    books stack of vintage books stacked books
+  width: 1024
+  score: 0.88
+  size:
+  - 907
+  - 658
+  match: 0.994
+- label: Homemade jam
+  query: jam jar
+  provider: openverse
+  id: 7ff6fa4c-611e-4e5b-8f41-625e29bbf000
+  preview_url: https://api.openverse.org/v1/images/7ff6fa4c-611e-4e5b-8f41-625e29bbf000/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg1NDk3MTYtaW1hZ2Uta3d2eHE3a2kuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5923151/photo-image-public-domain-fruit-food
+  creator: ''
+  title: Free sweet plum jam jar
+  keywords: Free sweet plum jam jar cook eat food fruit jam jam plum jam sugar plums
+  width: 1024
+  score: 0.972
+  size:
+  - 590
+  - 616
+  match: 0.996
+- label: Cinnamon sticks
+  query: cinnamon sticks
+  provider: openverse
+  id: 80435883-3ed1-45b5-af8a-90652e5f03cd
+  preview_url: https://api.openverse.org/v1/images/80435883-3ed1-45b5-af8a-90652e5f03cd/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNjA4NC1pbWFnZS1rd3Z5ZmJueS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5927000/photo-image-public-domain-free
+  creator: ''
+  title: Free close cinnamon sticks image
+  keywords: Free close cinnamon sticks image cinnamon cinnamon sticks food free spice table wood
+  width: 1024
+  score: 0.975
+  size:
+  - 868
+  - 515
+  match: 0.994
+- label: Butternut squash
+  query: butternut squash
+  provider: commons
+  id: '61820513'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Pile_of_butternut_squash.jpg/960px-Pile_of_butternut_squash.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Pile_of_butternut_squash.jpg/960px-Pile_of_butternut_squash.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pile_of_butternut_squash.jpg
+  creator: Jeffery Martin
+  title: Pile of butternut squash
+  keywords: Pile of butternut squash Cucurbitales CC-Zero Cucurbita moschata bell group Self-published
+    work Pile of butternut squash in a grocery store.
+  width: 1800
+  score: 0.721
+  size:
+  - 887
+  - 647
+  match: 0.991
+- label: Cast iron pan
+  query: cast iron pan
+  provider: commons
+  id: '61834456'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Iron_Frying_Pan.jpg/960px-Iron_Frying_Pan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/a/a2/Iron_Frying_Pan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Iron_Frying_Pan.jpg
+  creator: Unknown author Unknown author
+  title: Iron Frying Pan
+  keywords: 'Iron Frying Pan PD-Art (PD-US-expired) Images uploaded by Fæ PD US expired Template Unknown
+    (author) Collections of the Missouri History Museum PD-Art missing SDC copyright status PD-US missing
+    SDC copyright status Large cast iron skillet with lid. Title: Iron Frying Pan'
+  width: 1705
+  score: 0.94
+  size:
+  - 1600
+  - 778
+  match: 0.99
+- label: Root vegetables
+  query: carrots
+  provider: commons
+  id: '102658384'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Raw_Carrots_in_Bowl.jpg/960px-Raw_Carrots_in_Bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Raw_Carrots_in_Bowl.jpg/960px-Raw_Carrots_in_Bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Raw_Carrots_in_Bowl.jpg
+  creator: Alabama Extension
+  title: Raw Carrots in Bowl
+  keywords: Raw Carrots in Bowl CC-Zero Carrot-based food Flickr images reviewed by FlickreviewR 2 ACES
+    | Janet Guynn
+  width: 1800
+  score: 0.921
+  size:
+  - 823
+  - 826
+  match: 1.0
+- label: Farm eggs
+  query: brown eggs
+  provider: openverse
+  id: c9c0e9ec-e8e4-4bc7-8e3e-c244e6f7f256
+  preview_url: https://api.openverse.org/v1/images/c9c0e9ec-e8e4-4bc7-8e3e-c244e6f7f256/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/ID1AWQL7SO.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/eggs-cloth-ID1AWQL7SO
+  creator: Rachael Gorjestani
+  title: Eggs Cloth
+  keywords: Eggs Cloth breakfast brown cloth eggs food still table white wooden
+  width: 1024
+  score: 0.937
+  size:
+  - 788
+  - 531
+  match: 0.993
+- label: Sourdough
+  query: sourdough bread
+  provider: commons
+  id: '100912030'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Loaf_of_sourdough_bread_cooling.jpg
+  creator: Nutrition, Food Safety &amp; Health
+  title: Loaf of sourdough bread cooling
+  keywords: Loaf of sourdough bread cooling CC-Zero Sour dough breads Flickr images reviewed by FlickreviewR
+    2 Baking sourdough bread
+  width: 1800
+  score: 0.98
+  size:
+  - 801
+  - 667
+  match: 0.999
+- label: Pumpkin soup
+  query: pumpkin soup
+  provider: openverse
+  id: 327ad73e-f2c0-4317-9d81-57b993af608d
+  preview_url: https://api.openverse.org/v1/images/327ad73e-f2c0-4317-9d81-57b993af608d/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmY2Njg2LWltYWdlLWt3dnlqcnliLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5927637/photo-image-public-domain-halloween-food
+  creator: ''
+  title: Free pumpkin soup bowl top
+  keywords: Free pumpkin soup bowl top autumn butternut soup halloween pumpkin pumpkin soup soup soup
+    vegan vegetarian
+  width: 1024
+  score: 0.771
+  size:
+  - 601
+  - 783
+  match: 0.999
+- label: Baked apples
+  query: baked apple
+  provider: openverse
+  id: ea853c48-78b7-478b-baf0-3528311f6c50
+  preview_url: https://api.openverse.org/v1/images/ea853c48-78b7-478b-baf0-3528311f6c50/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/TUKUBAALHJ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/homemade-pie-TUKUBAALHJ
+  creator: Foodie Girl
+  title: Homemade Pie
+  keywords: Homemade Pie american apple background baked baking brown cake cooking crust delicious dessert
+    food fruit golden homemade kitchen pastry pie rustic sweet thanksgiving warm
+  width: 1024
+  score: 0.755
+  size:
+  - 800
+  - 526
+  match: 0.947
+- label: Walnuts
+  query: walnuts
+  provider: commons
+  id: '151960559'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg/960px-Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg/960px-Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg
+  creator: Hamdigumus
+  title: Ceviz Kırılmamış
+  keywords: Ceviz Kırılmamış CC-Zero Walnuts Self-published work Walnut
+  width: 1800
+  score: 0.871
+  size:
+  - 331
+  - 302
+  match: 0.833
+- label: Wool blanket
+  query: wool blanket
+  provider: commons
+  id: '98197107'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Transitional_Woman_chief_blanket_01.jpg
+  creator: Navajo artist
+  title: Transitional Woman chief blanket 01
+  keywords: Transitional Woman chief blanket 01 PD-Art (PD-old-70) Unknown date CC-PD-Mark Chief blankets
+    PD-Art missing SDC copyright status PD-old missing SDC copyright status Navajo blankets woven in handspun
+    wool, in natural ivory and dark brown, and aniline colors, with a woman's Chief-design, with a series
+    of stepped crosses alternating with striped panels. 61 1/2 in. by 58 1/4 in. private collection
+  width: 1800
+  score: 0.807
+  size:
+  - 900
+  - 826
+  match: 0.991
+- label: Tea kettle
+  query: tea kettle
+  provider: commons
+  id: '80569211'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg/960px-Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg/960px-Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg
+  creator: alquibar
+  title: Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere
+  keywords: Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere CC-Zero Files from external sources with
+    reviewed licenses Ceramic tea pots Files with coordinates missing SDC location of creation Images
+    from Pxhere Teapot on grayscale gradient background.
+  width: 1800
+  score: 0.793
+  size:
+  - 551
+  - 405
+  match: 0.999
+- label: Knitting
+  query: knitting needles yarn
+  provider: commons
+  id: '66766419'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg/960px-Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg/960px-Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Knotten_breiwol_met_breinaalden,_Bestanddeelnr_190-0834.jpg
+  creator: Willem van de Poll
+  title: Knotten breiwol met breinaalden, Bestanddeelnr 190-0834
+  keywords: 'Knotten breiwol met breinaalden, Bestanddeelnr 190-0834 Knitting needles and tools CC-Zero
+    Images from Nationaal Archief Wool yarn Knitting in the Netherlands Commercial product photography
+    by Willem van de Poll Collectie / Archief : Fotocollectie Van de Poll Reportage / Serie : Reclamefotografie
+    Beschrijving : Knotten breiwol met breinaalden Datum : juli 1936 Trefwoorden : wol Fotograaf : Poll,
+    Willem van de Auteursrechthebbende : Nationaal Archief Materiaalsoort : Glasnegatief Nummer archiefinventaris
+    : b'
+  width: 1800
+  score: 0.784
+  size:
+  - 773
+  - 642
+  match: 0.999
+- label: Oil lamp
+  query: oil lamp
+  provider: openverse
+  id: 79b2d3f7-afc5-4a29-ac5c-0515512c770b
+  preview_url: https://api.openverse.org/v1/images/79b2d3f7-afc5-4a29-ac5c-0515512c770b/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZybGFtcF9nYXNfYWxpX29pbC1pbWFnZS1reWJiNmU4eS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6022354/oil-lamp-free-public-domain-cc0-photo
+  creator: ''
+  title: Oil lamp
+  keywords: Oil lamp background free lamp oil oil lamp photo rust
+  width: 1024
+  score: 0.838
+  size:
+  - 406
+  - 358
+  match: 0.937
+- label: Board games
+  query: chess board
+  provider: commons
+  id: '147765079'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chess_game_Staunton_No._6_perfil_view_8.jpg/960px-Chess_game_Staunton_No._6_perfil_view_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chess_game_Staunton_No._6_perfil_view_8.jpg/960px-Chess_game_Staunton_No._6_perfil_view_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg
+  creator: Wilfredor
+  title: Chess game Staunton No. 6 perfil view 8
+  keywords: Chess game Staunton No. 6 perfil view 8 CC-Zero Chess games Chess pieces Staunton Chess Set
+    Chessboards Chess sets Chess starting position Self-published work Featured pictures by User:Wilfredor
+    Files with Assessments template missing SDC Commons quality assessment Media created with Nikon Z7ii
+    provided by the Quebec WikiClub Chess by Wilfredor Studio photography by Wilfredor Focus stacked image
+    Chess set composed of Rio Staunton pieces by House of Chess and a Wegiel Handmade Wooden Chess Board.
+    The pieces are made of Ringy rosewood and boxwood, with triple internal weighting, beveled bases,
+    and green felt pads on the underside to reduce frictional wear on the board. The knight is hand-carv
+  width: 1800
+  score: 0.932
+  size:
+  - 770
+  - 564
+  match: 1.0
+- label: Hot cocoa
+  query: hot chocolate
+  provider: openverse
+  id: a02c14a3-5fb8-4981-b3c5-d21f91358bed
+  preview_url: https://api.openverse.org/v1/images/a02c14a3-5fb8-4981-b3c5-d21f91358bed/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/NOXXUWUBGJ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/hot-chocolate-NOXXUWUBGJ
+  creator: Tim Sullivan
+  title: Hot Chocolate
+  keywords: Hot Chocolate beverage cafe cappuccino chocolate cocoa counter cozy cream creamy cup dessert
+    drink glass granite hot light mug natural warm whipped
+  width: 1024
+  score: 0.912
+  size:
+  - 463
+  - 630
+  match: 0.999
+- label: Pumpkins
+  query: orange pumpkin
+  provider: openverse
+  id: e9947f16-235d-4685-a6ae-4b8c7e22f4ac
+  preview_url: https://api.openverse.org/v1/images/e9947f16-235d-4685-a6ae-4b8c7e22f4ac/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/TRLQLVII6S.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/pumpkin-table-TRLQLVII6S
+  creator: Solo Shutter
+  title: Pumpkin Table
+  keywords: Pumpkin Table autumn fall farm garden halloween harvest indoors lighting orange pumpkin table
+  width: 1024
+  score: 0.986
+  size:
+  - 527
+  - 524
+  match: 0.999
+- label: Apple pie
+  query: apple pie
+  provider: commons
+  id: '264106'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Motherhood_and_apple_pie.jpg/960px-Motherhood_and_apple_pie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Motherhood_and_apple_pie.jpg/960px-Motherhood_and_apple_pie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Motherhood_and_apple_pie.jpg
+  creator: Scott Bauer, USDA ARS
+  title: Motherhood and apple pie
+  keywords: Motherhood and apple pie Apple pies Baseball gloves Baseballs PD USDA ARS Files with derivative
+    versions Media created by the United States Agricultural Research Service with known IDs Flag of the
+    United States (1960–) Louisville Slugger baseball bats Pastry-topped pies Apple pie , baseball , and
+    the flag of the United States .
+  width: 1800
+  score: 0.758
+  size:
+  - 799
+  - 541
+  match: 1.0
+- label: Warm drinks
+  query: hot drink mug
+  provider: openverse
+  id: 329bf7f7-78e6-4b14-9664-d39c84cc7ca6
+  preview_url: https://api.openverse.org/v1/images/329bf7f7-78e6-4b14-9664-d39c84cc7ca6/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/CQQMILRZPU.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/coffee-cup-CQQMILRZPU
+  creator: phatonlaphat thongsriphong
+  title: Coffee Cup
+  keywords: Coffee Cup  aroma art background beans biscotti black brown cafe caffeine cappuccino closeup
+    coffee cuisine cup decoration delicious design drink espresso foam food froth heart hot latte mug
+    shop table taste white wooden
+  width: 1024
+  score: 0.98
+  size:
+  - 594
+  - 477
+  match: 0.973
+media:
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-08-feed-1-1.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-08-feed-1-2.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-08-feed-1-3.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-08-feed-1-4.jpg
+media_from_slides: true

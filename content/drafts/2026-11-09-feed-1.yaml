@@ -116,28 +116,27 @@ slides:
   items:
   - label: Chips
     queries:
+    - bowl of potato chips
     - potato chips
-    - chips
   - label: Candy
     queries:
-    - candy
-    - sweets
-  - label: Soda
-    queries:
-    - soda can
-    - soft drink
+    - colorful candy
+    - hard candy
   - label: Instant noodles
     queries:
+    - bowl of instant noodles
     - instant noodles
-    - ramen noodles
   - label: Gummies
     queries:
     - gummy bears
     - gummy candy
   - label: Packaged cookies
     queries:
+    - chocolate chip cookies
     - cookies
-    - biscuits
+  - label: Marshmallows
+    queries:
+    - marshmallows
 - title: Send this to someone who needs it
   items:
   - label: Wooden spoons
