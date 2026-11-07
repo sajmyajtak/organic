@@ -3,12 +3,17 @@
 Providers, best first:
   pexels     needs PEXELS_API_KEY. Pexels licence: free commercial use,
              modifications allowed, no attribution required.
+  commons    no key. Wikimedia Commons files whose structured data says CC0
+             or public domain (museum object photos, CC0 Unsplash imports).
   openverse  no key. Only CC0 and Public Domain Mark works, which may be used
-             commercially without attribution.
+             commercially without attribution. Only stock-photo sources:
+             Flickr returned scenes, people and even adult photos for
+             everyday words ("wool sweater"), so it is never searched.
 
 Search responses and downloaded images are cached under build/cache, and every
 photo keeps its provenance (licence, source page, author) so a post can always
-be traced back to the licences of the photos in it.
+be traced back to the licences of the photos in it. Photos rejected when a
+collage was reviewed are listed in data/photo_rejects.txt and never used again.
 """
 
 from __future__ import annotations
@@ -24,11 +29,16 @@ from pathlib import Path
 import requests
 from PIL import Image
 
-from .config import BUILD_DIR, env
+from .config import BUILD_DIR, ROOT, env
 
 CACHE = BUILD_DIR / "cache"
+REJECTS = ROOT / "data" / "photo_rejects.txt"
 OPENVERSE = "https://api.openverse.org/v1/images/"
+OPENVERSE_SOURCES = "stocksnap,wordpress,rawpixel"
 PEXELS = "https://api.pexels.com/v1/search"
+COMMONS = "https://commons.wikimedia.org/w/api.php"
+# Commons structured data: licence CC0 (P275=Q6938433) or copyright status public domain (P6216=Q19652).
+COMMONS_FREE = "haswbstatement:P275=Q6938433|P6216=Q19652"
 UA = {"User-Agent": "naturizz-igbot/1.0 (+https://github.com/sajmyajtak/organic)"}
 
 
@@ -84,10 +94,43 @@ def _pexels(query: str, limit: int) -> list[Candidate]:
             for p in data.get("photos", [])[:limit]]
 
 
+def _strip_html(text: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text or "")).strip()
+
+
+def _commons(query: str, limit: int) -> list[Candidate]:
+    data = _cached_json(f"commons-{slug(query)}", lambda: _get(COMMONS, headers=UA, params={
+        "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrlimit": 30,
+        "gsrsearch": f"{query} filetype:bitmap {COMMONS_FREE}",
+        "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": 800,
+        "iiextmetadatafilter": "LicenseShortName|ImageDescription|Categories|Artist"}).json())
+    pages = sorted(((data.get("query") or {}).get("pages") or {}).values(), key=lambda p: p.get("index", 99))
+    out = []
+    for p in pages:
+        info = (p.get("imageinfo") or [{}])[0]
+        meta = info.get("extmetadata") or {}
+        licence = (meta.get("LicenseShortName") or {}).get("value", "")
+        if not re.search(r"cc0|public domain", licence, re.I):
+            continue  # the search filter is a hint, the file page is the truth
+        width, height = info.get("width") or 0, info.get("height") or 0
+        if min(width, height) < 600 or not info.get("thumburl"):
+            continue
+        title = p["title"].split(":", 1)[-1].rsplit(".", 1)[0]
+        cats = _strip_html((meta.get("Categories") or {}).get("value", "")).replace("|", " ")
+        desc = _strip_html((meta.get("ImageDescription") or {}).get("value", ""))[:300]
+        # The full image as a ~1800 px thumbnail; Commons can't upscale, so small files are used as is.
+        full = info["thumburl"].replace("/800px-", "/1800px-") if width > 1800 else info["url"]
+        out.append(Candidate("commons", str(p["pageid"]), info["thumburl"], full, licence,
+                             info.get("descriptionurl", ""),
+                             _strip_html((meta.get("Artist") or {}).get("value", ""))[:120], title,
+                             keywords=f"{title} {cats} {desc}", width=min(width, 1800)))
+    return out[:limit]
+
+
 def _openverse(query: str, limit: int) -> list[Candidate]:
-    data = _cached_json(f"openverse-{slug(query)}", lambda: _get(
+    data = _cached_json(f"openverse-{OPENVERSE_SOURCES.replace(',', '-')}-{slug(query)}", lambda: _get(
         OPENVERSE, headers=UA, params={"q": query, "license": "cc0,pdm", "category": "photograph",
-                                       "page_size": 20, "mature": "false"}).json())
+                                       "source": OPENVERSE_SOURCES, "page_size": 20, "mature": "false"}).json())
     out = []
     for r in data.get("results", []):
         if min(r.get("width") or 0, r.get("height") or 0) < 400:
@@ -111,7 +154,18 @@ def _stem(word: str) -> str:
 
 # We want real photos only: AI images would need an "AI info" label.
 NOT_PHOTOS = re.compile(r"ai[\s_-]?generated|midjourney|stable[\s_-]?diffusion|dall[\s_-]?e|\bnft\b|"
-                        r"illustration|clip[\s_-]?art|drawing|render(ing)?\b|3d\b", re.I)
+                        r"illustration|clip[\s_-]?art|drawing|render(ing)?\b|3d\b|"
+                        # artworks and documents in museum/archive collections (Commons, rawpixel)
+                        r"painting|watercolou?r|engraving|lithograph|etching|woodcut|herbarium|botanical|"
+                        r"\bplate \d|köhler|\bmaps?\b|diagram|poster|advert|\blogo\b|\bicon\b|shader|"
+                        r"\bNGA\b|\(c\. ?\d{4}|\bc\. ?1[0-9]{3}\b|nude|nudity|erotic|sexy", re.I)
+
+
+# Product shots of a brand: logos on a sticker read as an ad (or a trademark problem).
+# Commons titles name the brand ("Umbro slippers", "Barnes Naturals Apple Cider Vinegar").
+BRANDS = re.compile(r"\b(nike|adidas|umbro|puma|reebok|converse|vans|new balance|ugg|crocs|ikea|starbucks|"
+                    r"coca[\s-]?cola|pepsi|nestl[eé]|heinz|kellogg|lindt|cadbury|nutella|barnes naturals|"
+                    r"bragg|lego|apple inc|samsung|walmart|costco|target|amazon|for sale|brand|®|™)\b", re.I)
 
 
 def relevance(candidate: Candidate, query: str) -> int:
@@ -120,7 +174,7 @@ def relevance(candidate: Candidate, query: str) -> int:
     Search engines match loosely ("apple pie" returns pumpkin pies), and a label
     that doesn't match the photo looks careless. The last word is the object and
     must appear; of the other words at least half."""
-    if NOT_PHOTOS.search(f"{candidate.title} {candidate.keywords}"):
+    if NOT_PHOTOS.search(f"{candidate.title} {candidate.keywords}") or BRANDS.search(candidate.title):
         return 0
     words = [w for w in re.findall(r"[a-z]+", query.lower()) if w not in FILLER]
     if not words:
@@ -136,13 +190,27 @@ def relevance(candidate: Candidate, query: str) -> int:
 def search(query: str, limit: int = 8) -> list[Candidate]:
     """Relevant candidates from every configured provider, best provider and best match first."""
     found: list[Candidate] = []
-    for provider in (_pexels, _openverse):
+    for provider in (_pexels, _commons, _openverse):
         try:
             ranked = [(relevance(c, query), c) for c in provider(query, limit * 2)]
             found += [c for r, c in sorted(ranked, key=lambda rc: -rc[0]) if r][:limit]
         except requests.RequestException as exc:  # one provider down shouldn't stop a post
             print(f"  {provider.__name__.lstrip('_')}: {exc}")
     return found
+
+
+def key(candidate_or_meta) -> str:
+    """"provider:id", the form used in data/photo_rejects.txt."""
+    get = candidate_or_meta.get if isinstance(candidate_or_meta, dict) else lambda k: getattr(candidate_or_meta, k)
+    return f"{get('provider')}:{get('id')}"
+
+
+def rejected() -> set[str]:
+    """Photos thrown out when a collage was reviewed ("provider:id  # why" per line)."""
+    if not REJECTS.exists():
+        return set()
+    lines = (line.split("#", 1)[0].strip() for line in REJECTS.read_text(encoding="utf-8").splitlines())
+    return {line for line in lines if line}
 
 
 def download(url: str, max_side: int = 1400) -> Image.Image | None:

@@ -14,7 +14,7 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
-from . import photos
+from . import photos, relevance
 
 MODEL = "isnet-general-use"
 _session = None
@@ -112,25 +112,39 @@ def _hires(cut: Image.Image, full: Image.Image) -> Image.Image | None:
 
 
 MIN_SIDE = 320  # px, longer side of a usable sticker
+MIN_MATCH = 0.6  # CLIP: below this the photo is more likely a person/scene/artwork than the object
 
 
 def find_cutout(query: str, cache: Path | None = None, candidates: int = 6,
-                good_enough: float = 0.72, exclude: set[str] | None = None) -> dict | None:
-    """Best cut-out for `query`: {"path": PNG, "score": .., provenance...}, cached by query."""
+                good_enough: float = 0.72, exclude: set[str] | None = None, cuts: int = 3) -> dict | None:
+    """Best cut-out for `query`: {"path": PNG, "score": .., provenance...}, cached by query.
+
+    Screens up to 2x`candidates` thumbnails with CLIP and cuts out at most `cuts`
+    of the best (rembg takes seconds per photo on the Intel Mac)."""
     cache = cache or photos.CACHE / "cutouts"
     png = cache / f"{photos.slug(query)}.png"
     meta_path = png.with_suffix(".json")
+    bad = photos.rejected()
     if png.exists() and meta_path.exists():
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
-        if not exclude or meta.get("id") not in exclude:
+        if (not exclude or meta.get("id") not in exclude) and photos.key(meta) not in bad:
             return {**meta, "path": png}
-    best = None
-    for cand in photos.search(query, limit=candidates):
-        if exclude and cand.id in exclude:
+    # Look at more photos than we cut: CLIP on a thumbnail is ~20x cheaper than rembg.
+    pool = []
+    for cand in photos.search(query, limit=candidates * 2):
+        if (exclude and cand.id in exclude) or photos.key(cand) in bad:
             continue
         img = photos.download(cand.preview_url, max_side=1000)
         if img is None:
             continue
+        m = relevance.match(img, query)
+        if m is not None and m < MIN_MATCH:
+            continue  # the photo isn't of the thing (a person, a scene, a painting...)
+        pool.append((m, cand, img))
+    if pool and pool[0][0] is not None:
+        pool.sort(key=lambda p: -p[0])
+    best = None
+    for m, cand, img in pool[:cuts if pool and pool[0][0] is not None else candidates]:
         cut = remove_background(img)
         s = score(cut)
         box = _object_box(cut)
@@ -138,13 +152,17 @@ def find_cutout(query: str, cache: Path | None = None, candidates: int = 6,
         reach = max(box[2] - box[0], box[3] - box[1]) * max(1.0, (cand.width or img.width) / img.width) if box else 0
         if reach < MIN_SIDE:
             s -= 0.3 * (1 - reach / MIN_SIDE)
+        # The cut-out can keep the wrong part of a good photo (the table, not the teapot).
+        mc = relevance.match(cut, query)
+        if mc is not None:
+            s = 0.7 * s + 0.3 * mc - (0.6 if mc < MIN_MATCH else 0)
         if best is None or s > best[0]:
-            best = (s, cand, cut)
+            best = (s, cand, cut, mc)
         if s >= good_enough:
             break
     if best is None:
         return None
-    s, cand, cut = best
+    s, cand, cut, mc = best
     if cand.full_url != cand.preview_url:
         full = photos.download(cand.full_url, max_side=1800)
         hi = _hires(cut, full) if full is not None else None
@@ -156,5 +174,7 @@ def find_cutout(query: str, cache: Path | None = None, candidates: int = 6,
     cache.mkdir(parents=True, exist_ok=True)
     final.save(png)
     meta = {**photos.provenance(cand, query), "score": round(s, 3), "size": list(final.size)}
+    if mc is not None:
+        meta["match"] = round(mc, 3)
     meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
     return {**meta, "path": png}

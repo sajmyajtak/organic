@@ -1,0 +1,7 @@
+# Fotky vyřazené při kontrole koláží: provider:id  # proč
+commons:160199573  # Slippers: sportovní pantofle s logem Umbro (značka)
+commons:104101045  # Hot cider: lahev octa Barnes Naturals (značkový výrobek)
+commons:104101053  # Hot cider: lahev octa Barnes Naturals (značkový výrobek)
+openverse:79fae0e1-d035-40d9-99ad-5019d82e7d2d  # Cinnamon sticks: sušené kroužky, ne skořice
+commons:137934201  # Slippers: pantofle Nike na prodej (značka)
+commons:104101044  # Hot cider: lahev octa Barnes Naturals (značkový výrobek)

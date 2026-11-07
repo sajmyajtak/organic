@@ -121,3 +121,34 @@ def test_queue_item_with_items_renders_as_collage_with_credits(tmp_path, monkeyp
     assert content.validate(item) == []
     item["slides"][0]["items"] = things[:2]
     assert any("2 předmětů" in p for p in content.validate(item))
+
+
+def test_find_cutout_skips_photos_clip_says_are_not_the_object(tmp_path, monkeypatch):
+    from igbot import cutout, photos, relevance
+
+    cyclist = photos.Candidate("commons", "1", "u1", "u1", "cc0", "s", "a", "With Bicycle at Walnut Beach")
+    nuts = photos.Candidate("commons", "2", "u2", "u2", "cc0", "s", "a", "Walnuts in a bowl")
+    monkeypatch.setattr(photos, "search", lambda q, limit: [cyclist, nuts])
+    monkeypatch.setattr(photos, "rejected", lambda: set())
+    seen = []
+    monkeypatch.setattr(relevance, "match", lambda img, what: seen.append(img.mode) or
+                        (0.05 if img.mode == "RGB" and img.getpixel((0, 0)) == (0, 0, 0) else 0.9))
+    cut = Image.new("RGBA", (600, 600), (0, 0, 0, 0))
+    cut.paste((120, 80, 40, 255), (150, 150, 450, 450))
+    monkeypatch.setattr(cutout, "remove_background", lambda img: cut.copy())
+    monkeypatch.setattr(photos, "download", lambda url, max_side=0: Image.new("RGB", (600, 600),
+                                                                             "black" if url == "u1" else "white"))
+    found = cutout.find_cutout("walnuts", cache=tmp_path)
+    assert found["id"] == "2" and found["match"] == 0.9
+    assert seen.count("RGB") == 2 and seen.count("RGBA") == 1  # both thumbnails screened, only nuts cut
+
+
+def test_rejected_photos_are_never_used(tmp_path, monkeypatch):
+    from igbot import photos
+
+    monkeypatch.setattr(photos, "REJECTS", tmp_path / "rejects.txt")
+    assert photos.rejected() == set()
+    photos.REJECTS.write_text("# komentář\ncommons:1  # cyklista\n\nopenverse:abc\n", encoding="utf-8")
+    assert photos.rejected() == {"commons:1", "openverse:abc"}
+    assert photos.key(photos.Candidate("commons", "1", "", "", "", "", "")) == "commons:1"
+    assert photos.key({"provider": "openverse", "id": "abc"}) == "openverse:abc"
