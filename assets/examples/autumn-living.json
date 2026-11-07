@@ -1,0 +1,222 @@
+{
+ "id": "autumn-living",
+ "caption": "Slow mornings, warm kitchens, early nights. Which one is yours? 🍂",
+ "slides": [
+  {
+   "title": "The art of autumn living",
+   "items": [
+    {
+     "label": "Pumpkins",
+     "queries": [
+      "pumpkin isolated",
+      "orange pumpkin",
+      "pumpkin"
+     ]
+    },
+    {
+     "label": "Apple pie",
+     "queries": [
+      "apple pie",
+      "homemade pie"
+     ]
+    },
+    {
+     "label": "Wool sweaters",
+     "queries": [
+      "sweater",
+      "knit sweater",
+      "wool sweater"
+     ]
+    },
+    {
+     "label": "Candlelight",
+     "queries": [
+      "candles",
+      "candle",
+      "lit candle"
+     ]
+    },
+    {
+     "label": "Hot cider",
+     "queries": [
+      "apple cider",
+      "mug",
+      "teacup"
+     ]
+    },
+    {
+     "label": "Roasted chestnuts",
+     "queries": [
+      "sweet chestnuts",
+      "chestnuts",
+      "chestnut"
+     ]
+    },
+    {
+     "label": "Firewood",
+     "queries": [
+      "firewood",
+      "stack of firewood"
+     ]
+    },
+    {
+     "label": "Maple leaves",
+     "queries": [
+      "maple leaf",
+      "autumn leaf isolated"
+     ]
+    },
+    {
+     "label": "Old books",
+     "queries": [
+      "old books",
+      "antique books",
+      "books"
+     ]
+    },
+    {
+     "label": "Pears",
+     "queries": [
+      "pears",
+      "pear fruit"
+     ]
+    },
+    {
+     "label": "Apple picking",
+     "queries": [
+      "basket of apples",
+      "apples basket"
+     ]
+    },
+    {
+     "label": "Herbal tea",
+     "queries": [
+      "teacup",
+      "tea cup",
+      "teapot"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The autumn kitchen",
+   "items": [
+    {
+     "label": "Pumpkin soup",
+     "queries": [
+      "pumpkin soup",
+      "soup bowl"
+     ]
+    },
+    {
+     "label": "Sourdough",
+     "queries": [
+      "sourdough bread",
+      "bread loaf"
+     ]
+    },
+    {
+     "label": "Cinnamon sticks",
+     "queries": [
+      "cinnamon sticks",
+      "cinnamon stick",
+      "cinnamon"
+     ]
+    },
+    {
+     "label": "Local honey",
+     "queries": [
+      "honey jar",
+      "jar of honey"
+     ]
+    },
+    {
+     "label": "Butternut squash",
+     "queries": [
+      "butternut squash",
+      "squash"
+     ]
+    },
+    {
+     "label": "Cast iron pan",
+     "queries": [
+      "cast iron skillet",
+      "cast iron pan"
+     ]
+    },
+    {
+     "label": "Homemade jam",
+     "queries": [
+      "jam jar",
+      "jar of jam"
+     ]
+    },
+    {
+     "label": "Baked apples",
+     "queries": [
+      "baked apples",
+      "red apples"
+     ]
+    },
+    {
+     "label": "Root vegetables",
+     "queries": [
+      "carrots",
+      "root vegetables"
+     ]
+    },
+    {
+     "label": "Walnuts",
+     "queries": [
+      "walnuts",
+      "walnut kernels",
+      "nuts"
+     ]
+    },
+    {
+     "label": "Farm eggs",
+     "queries": [
+      "brown eggs",
+      "eggs"
+     ]
+    },
+    {
+     "label": "Fresh rosemary",
+     "queries": [
+      "rosemary",
+      "rosemary herb"
+     ]
+    }
+   ]
+  }
+ ],
+ "cta": {
+  "title": "Save this for the first cold morning",
+  "body": "Follow @naturizz for more simple, seasonal living.",
+  "items": [
+   {
+    "label": "Slow mornings",
+    "queries": [
+     "coffee cup",
+     "mug of coffee",
+     "ceramic mug"
+    ]
+   },
+   {
+    "label": "Early nights",
+    "queries": [
+     "candle holder",
+     "candlestick",
+     "oil lamp"
+    ]
+   },
+   {
+    "label": "Long walks",
+    "queries": [
+     "hiking boots",
+     "leather boots"
+    ]
+   }
+  ]
+ }
+}

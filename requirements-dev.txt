@@ -1,2 +1,2 @@
--r requirements.txt
+-r requirements-render.txt
 pytest>=8

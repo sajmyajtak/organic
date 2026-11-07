@@ -191,14 +191,23 @@ def test_generate_never_overwrites_existing_ids(queue, monkeypatch):
     from igbot import generate as gen
     content.save(carousel(id="2026-11-02-feed-1", kind="reel", slides=[], media=["https://x/v.mp4"]), "drafts")
     plan = gen.Plan(
-        feed=[gen.FeedPost(date="2026-11-02", pillar="Tipy", kind="carousel",
-                           slides=[gen.Slide(title="A", body=""), gen.Slide(title="B", body="b")],
+        feed=[gen.FeedPost(date="2026-11-02", pillar="Tipy", format="moodboard", kind="carousel",
+                           slides=[gen.Slide(title="A", body="", items=[]), gen.Slide(title="B", body="b", items=[])],
                            caption="Popisek", hashtags=["tip"], alt_text="alt", sponsored=False, inspired_by="")],
         reels=[],
         stories=[gen.Story(date="2026-11-02", slot=9, purpose="question", title="Ahoj", body="", sticker_idea=""),
                  gen.Story(date="2026-11-02", slot=9, purpose="teaser", title="Dnes", body="", sticker_idea="")])
-    fake = SimpleNamespace(beta=SimpleNamespace(messages=SimpleNamespace(
-        parse=lambda **kw: SimpleNamespace(stop_reason="end_turn", parsed_output=plan))))
+    class FakeStream:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+        def get_final_message(self):
+            return SimpleNamespace(stop_reason="end_turn", parsed_output=plan)
+
+    fake = SimpleNamespace(beta=SimpleNamespace(messages=SimpleNamespace(stream=lambda **kw: FakeStream())))
     monkeypatch.setattr(gen.anthropic, "Anthropic", lambda: fake)
     cfg = {"niche": {}, "generation": {}, "schedule": {"feed_time": "18:30", "stories_per_day": 2,
                                                        "story_times": ["08:00", "12:00"]}}

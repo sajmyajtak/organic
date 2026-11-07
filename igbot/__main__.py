@@ -27,6 +27,9 @@ def main() -> None:
     at.add_argument("--ai", action="store_true", help="médium je generované AI (přidá štítek AI info)")
 
     sub.add_parser("preview", help="vyrenderuj grafiku všech konceptů a schválených položek do build/preview")
+    co = sub.add_parser("collage", help="vyrenderuj moodboard koláž z plánu (JSON) do build/collage")
+    co.add_argument("plan", type=Path, help="plán postu, např. assets/examples/autumn-living.json")
+    co.add_argument("--seed", type=int, default=0, help="jiné číslo = jiné rozložení předmětů")
     sub.add_parser("check", help="zkontroluj frontu (validace, kolize termínů)")
 
     p = sub.add_parser("publish", help="publikuj schválené položky, kterým nastal čas")
@@ -50,6 +53,9 @@ def main() -> None:
     ins.add_argument("--note", help="vlastní poznámka k odkazu (co se ve videu děje, čísla…)")
     ins.add_argument("--raw", action="store_true", help="jen vypiš stažená data, bez rozboru Claudem")
 
+    ks = sub.add_parser("klapka-sync", help="pošli frontu do KLAPKY (Airtable) a proveď rozhodnutí z ní")
+    ks.add_argument("--dry-run", action="store_true", help="jen ukaž, co by se poslalo (bez volání API)")
+
     sub.add_parser("quota", help="ukaž využití denního limitu publikací")
     sub.add_parser("refresh-token", help="prodluž long-lived token (Instagram Login)")
 
@@ -60,6 +66,8 @@ def main() -> None:
         from .generate import generate
         items = generate(cfg, args.start, args.days)
         print(f"Vytvořeno {len(items)} položek.")
+        from . import klapka
+        klapka.after("generate")
     elif args.cmd == "approve":
         for item in content.items("drafts"):
             if args.ids and item["id"] not in args.ids:
@@ -73,6 +81,8 @@ def main() -> None:
             item.pop("problems", None)
             content.save(item, "approved")
             print(f"schváleno {item['id']}")
+        from . import klapka
+        klapka.after("approve")
     elif args.cmd == "attach":
         attach_media(args)
     elif args.cmd == "preview":
@@ -83,6 +93,8 @@ def main() -> None:
             for item in content.items(state):
                 for path in render_item(item, out, theme):
                     print(path.relative_to(Path.cwd()) if path.is_relative_to(Path.cwd()) else path)
+    elif args.cmd == "collage":
+        render_collage(cfg, args)
     elif args.cmd == "check":
         seen, bad = {}, 0
         for state in ("drafts", "approved"):
@@ -105,6 +117,12 @@ def main() -> None:
         from .publish import publish_due
         n = publish_due(cfg, dry_run=args.dry_run)
         print(f"Publikováno: {n}")
+        if not args.dry_run:
+            from . import klapka
+            klapka.after("publish")
+    elif args.cmd == "klapka-sync":
+        from . import klapka
+        print(f"KLAPKA: {klapka.describe(klapka.sync('cli', dry_run=args.dry_run))}")
     elif args.cmd == "insights":
         from .insights import collect
         from .instagram import Instagram
@@ -136,6 +154,21 @@ def main() -> None:
         Path(BUILD_DIR).mkdir(exist_ok=True)
         (BUILD_DIR / "new_token.txt").write_text(data["access_token"], encoding="utf-8")
         print(f"Token prodloužen, platí {int(data.get('expires_in', 0)) // 86400} dní.")
+
+
+def render_collage(cfg: dict, args) -> None:
+    """Render a moodboard plan file, with a contact sheet and the photos' licence trail."""
+    import json
+
+    from . import collage, photos
+
+    plan = json.loads(args.plan.read_text(encoding="utf-8"))
+    out = BUILD_DIR / "collage" / (plan.get("id") or args.plan.stem)
+    paths, credits = collage.render_post(plan, out, cfg.get("account", {}).get("handle", ""),
+                                         collage.Style.from_brand(cfg.get("brand")), seed=args.seed)
+    photos.save_credits(credits, out / "credits.json")
+    sheet = collage.contact_sheet(paths, out / "overview.jpg")
+    print(f"hotovo: {sheet.relative_to(Path.cwd()) if sheet.is_relative_to(Path.cwd()) else sheet}")
 
 
 def attach_media(args) -> None:

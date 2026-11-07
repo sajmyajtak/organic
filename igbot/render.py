@@ -170,6 +170,10 @@ def render_item(item: dict, out_dir: Path, theme: Theme) -> list[Path]:
     slides = item.get("slides") or []
     if not slides:
         return []
+    if kind != "story" and any(s.get("items") for s in slides):
+        from .collage import render_item as render_collage  # photo collage (the feed format)
+        brand = {"background": theme.background, "foreground": theme.foreground, "accent": theme.accent}
+        return render_collage(item, out_dir, brand, theme.handle)
     size = STORY_SIZE if kind == "story" else FEED_SIZE
     total = len(slides)
     return [

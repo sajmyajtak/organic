@@ -16,9 +16,10 @@ s cílem růstu a monetizace. Uživatel chce postupovat společně a schvalovat 
 - Účet: dedikovaný účet tvůrce **@naturizz** (IG user id `17841466729247229`,
   propojený s FB stránkou `1464286703432419`). **Nikdy nepublikovat na
   @your_chloe_hart** (`17841448715162723`), je to jiný účet uživatele ve stejném tokenu.
-- Design má být **ve stylu @organic__101_** (koláž vystřižených fotek-„samolepek“,
-  velký serifový nadpis, papírové pozadí, malé popisky). Současná šablona
-  (`igbot/moodboard.py`, fotky v rámečcích na šalvějovém pozadí) se mu nelíbí.
+- Design: koláž vystřižených fotek-„samolepek“ kolem velkého serifového nadpisu
+  (technika @organic__101_, vlastní vzhled). **Vybraný styl „sticker“** (7. 11. 2026):
+  kraftový papír, bílý obrys nálepek, tmavě hnědý nadpis uprostřed, rezavý akcent;
+  barvy v `brand` v `config/account.yaml`. Varianta „journal“ zamítnuta.
 - Uživatel nechce řešit štítky AI. Proto preferujeme **skutečné fotky**
   (Pexels/Openverse CC0/PD), kde štítek není potřeba. Fotorealistické AI obrázky
   by podle EU AI Act čl. 50 označení vyžadovaly; upozornit, nevnucovat.
@@ -50,18 +51,27 @@ s cílem růstu a monetizace. Uživatel chce postupovat společně a schvalovat 
 
 ## Stav kódu (`igbot/`, Python 3.12+)
 
+Lokálně: Intel Mac (bez GPU), virtuální prostředí `.venv` na **Pythonu 3.13**
+(`uv venv --python 3.13 .venv`; pro 3.14 není `onnxruntime`, na kterém stojí `rembg`).
+Spouštěj `.venv/bin/python -m igbot …`. Klíče se načítají z `.env` (`config.load_dotenv`).
+Závislosti: `requirements.txt` (jádro, publikační workflow), `requirements-render.txt`
+(+ `rembg` pro koláže, jen lokálně), `requirements-dev.txt` (vše + pytest).
+
 | Soubor | Co dělá |
 |---|---|
 | `instagram.py` | Graph API klient (v26.0, host `graph.facebook.com`): publikace obrázek/karusel/story/reel, quota, insights, Business Discovery s `children{media_url}`. Token posílá v hlavičce `Authorization: Bearer`. Pole `shortcode` přes Business Discovery nejde. |
 | `analyze.py` | `python -m igbot analyze <účet>`: 100 postů přes API, statistiky, Claude vision rozbor, report. |
 | `links.py` | `inspect <odkaz>`: rozbor odkazu IG/TikTok/YouTube jen přes oficiální endpointy. |
-| `generate.py` | Claude (`claude-opus-5-5`, structured output) navrhne týden karuselů + stories. |
-| `moodboard.py` | Šablona karuselu + stahování CC0/PD fotek z Openverse. **K předělání.** |
+| `generate.py` | Claude (`claude-opus-5-5`, structured output, streamování) navrhne týden koláží (formáty moodboard, list, then_vs_now, this_not_that; každý slide = nadpis + předměty s popiskem a hledáním fotek, závěrečný slide s výzvou) + stories. |
+| `photos.py` | Hledání fotek: Pexels (s `PEXELS_API_KEY`) a Openverse CC0/PD, kontrola, že název/štítky fotky odpovídají předmětu, vyřazení AI obrázků, cache v `build/cache`, licence do `credits.json`. |
+| `cutout.py` | Vystřižení předmětu (`rembg`, model isnet-general-use, CPU), skóre kvality výřezu (celý předmět, jeden objekt, barevnost, ne obdélník), finální výřez z plného rozlišení. |
+| `collage.py` | Koláž (styl sticker): procedurální papír, nálepky s bílým obrysem, packer bez překryvů, závěrečný slide s předměty v řadě. `render.render_item` ji použije pro každou položku fronty, jejíž slidy mají `items` (preview i publish); licence fotek se uloží do `photo_credits` položky. Samostatně `python -m igbot collage <plan.json>` → `build/collage/<id>/`, ukázka `assets/examples/autumn-living.json`. |
 | `render.py` | Starší textové slidy (Pillow). |
 | `publish.py`, `content.py`, `hosting.py` | Fronta `content/{drafts,approved,published,failed}`, validace, upload na S3/R2, publikace. |
+| `klapka.py` | Sync fronty do KLAPKY (Airtable base `appGpk4fkNBGoMyBN`, tabulka SM Obsah) a rozhodnutí schválit/zamítnout zpět. Paměť syncu v YAML položky (`klapka:`), jen změny, rozpočet ~150 volání/měsíc. Tep automatu = technický řádek `__automat__` (`recKqXpfurb4jkWmD`, KLAPKA ho čte pro pruh „Automat běží“, sync ho nikdy nemaže). Volá se po generate/approve/publish, ručně `python -m igbot klapka-sync`. Token `AIRTABLE_TOKEN` v `.env`. |
 | `discover.py`, `insights.py` | Sledování podobných účtů, statistiky do `data/`. |
 
-Testy: `python -m pytest -q` (42 prochází). GitHub Actions v `.github/workflows/`
+Testy: `.venv/bin/python -m pytest -q` (70 prochází). GitHub Actions v `.github/workflows/`
 (publikace každých 30 min, týdenní plán jako PR, statistiky) zatím nemají secrets.
 Dokumenty: `docs/PLAN.md` (strategie, monetizace, právo), `docs/NASTAVENI.md` (setup API).
 
@@ -78,18 +88,17 @@ z veřejné URL, takže bez úložiště (Cloudflare R2) nešlo publikovat.
    instagram_content_publish, pages_show_list, pages_read_engagement,
    business_management), `ANTHROPIC_API_KEY`, později `PEXELS_API_KEY`, R2 klíče.
    `IG_USER_ID` není potřeba, je v `config/account.yaml`.
-2. **Předělat design** na koláž ve stylu @organic__101_, ale s vlastní identitou:
-   vystřižené předměty přes `rembg` (open-source, pip), 10–15 položek kolem
-   velkého nadpisu, papírová textura, popisky u předmětů, vlastní barvy/písmo
-   (DM Serif Display je v `assets/fonts/`). Fotky: Pexels API (komerčně OK, bez
-   uvedení autora) + Openverse CC0/PD; ideálně předmět na čistém pozadí.
-   Volitelně lokální AI (FLUX schnell / mflux na Macu), pokud má uživatel GPU.
-   Ukázat 2 varianty stejného postu, než se to zautomatizuje.
+2. ~~Design~~ hotovo (styl sticker, `collage.py`). **Kvalita fotek:** Openverse
+   vybírá podle názvů a často se netrefí (kolo místo vlašských ořechů). Potřeba:
+   `PEXELS_API_KEY` + kontrola vybraných výřezů Claudem (vision), jestli ukazují
+   předmět z popisku. Lokální AI obrázky nejdou (Intel Mac bez GPU).
 3. **Publikace:** první testovací post „The art of autumn living“ (renderuje se
    z `build/post1_plan.json`, `build/` je gitignored, takže lokálně ho vyrob znovu).
    Buď ručně v aplikaci, nebo zařídit Cloudflare R2 (`MEDIA_BACKEND=s3`) a pak
    `python -m igbot publish`.
-4. Generátor přizpůsobit novým formátům (moodboard, then vs now, this not that,
-   seznam) podle `data/niche_profile.yaml`; popisky krátké.
+4. ~~Generátor~~ navrhuje koláže (všechny formáty zatím jako koláže; vlastní
+   rozvržení pro then vs now / this not that později). Neověřeno živě, chybí
+   `ANTHROPIC_API_KEY`. Koláže se renderují lokálně (rembg); pro plnou automatizaci
+   je renderovat při schválení a nahrát na R2, publikace pak bere hotové URL.
 5. Lead magnet / komunita později (model @organic__101_), affiliate na přírodní
    produkty do domácnosti a kuchyně.

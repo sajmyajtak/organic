@@ -1,0 +1,8 @@
+# Vystřihování předmětů z fotek pro koláže (běží na CPU, model ~180 MB se stáhne
+# při prvním použití). Jen tam, kde se koláže renderují (lokálně), ne v publikačním
+# workflow, které běží každých 30 minut.
+-r requirements.txt
+rembg[cpu]>=2.0.60,<3
+# Novější numba/llvmlite už nemají sestavení pro Intel Mac (x86_64)
+numba<0.63; sys_platform == "darwin" and platform_machine == "x86_64"
+llvmlite<0.46; sys_platform == "darwin" and platform_machine == "x86_64"

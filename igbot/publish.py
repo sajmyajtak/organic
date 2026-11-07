@@ -23,6 +23,13 @@ def media_sources(item: dict, theme: Theme) -> list[Path | str]:
     return render_item(item, BUILD_DIR / "media", theme)
 
 
+def alt_text(slide: dict) -> str:
+    """What a blind user should hear: the text, and for a collage the things pictured."""
+    text = " ".join(filter(None, [slide.get("title"), slide.get("body")]))
+    things = [t.get("label") for t in slide.get("items") or [] if t.get("label")]
+    return f"{text}: {', '.join(things)}" if things else text
+
+
 def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list[str]:
     sources = media_sources(item, theme)
     files = [s for s in sources if isinstance(s, Path)]
@@ -50,7 +57,7 @@ def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list
                                 trial=bool(item.get("trial")), ai_generated=ai_media, paid_partnership=paid)]
     if kind == "carousel" and len(urls) > 1:
         slides = [] if item.get("media") else item.get("slides") or []  # alt text must describe what's shown
-        alts = [" ".join(filter(None, [s.get("title"), s.get("body")])) for s in slides]
+        alts = [alt_text(s) for s in slides]
         return [ig.publish_carousel(urls, caption, alts, ai_generated=ai_media, paid_partnership=paid)]
     return [ig.publish_image(urls[0], caption, item.get("alt_text", ""), ai_generated=ai_media,
                              paid_partnership=paid)]

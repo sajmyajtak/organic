@@ -25,14 +25,21 @@ from .config import DATA_DIR
 FALLBACK_BETA = "server-side-fallback-2026-07-01"
 
 
+class CollageItem(BaseModel):
+    label: str            # 1-3 words printed under the photo
+    queries: list[str]    # 2-3 stock-photo searches, most specific first
+
+
 class Slide(BaseModel):
     title: str
-    body: str
+    body: str             # empty on collage slides; the follow line on the closing slide
+    items: list[CollageItem]
 
 
 class FeedPost(BaseModel):
     date: str
     pillar: str
+    format: Literal["moodboard", "list", "then_vs_now", "this_not_that"]
     kind: Literal["carousel", "image"]
     slides: list[Slide]
     caption: str
@@ -82,16 +89,40 @@ value. Since April 2026 Instagram stops recommending accounts that mostly post
 other people's photos, carousels or reels, so originality is a condition of reach.
 
 What Instagram's published ranking explainers say it measures: time spent on a
-post, swiping through the whole carousel, saves, likes per reach and shares by DM
-(the share model favours informative posts: how-tos, comparisons, reviews). So:
-- CAROUSELS are the main format: 6-10 slides. Slide 1 is the hook (a concrete
-  benefit or curiosity gap, max ~8 words). Slide 2 must also work as an opener,
-  because Instagram shows it first to some people. One idea per slide, short
-  sentences, no filler. The last slide sums up and gives one clear call to action
-  (save / send to a friend / comment). Cite a source for factual claims.
-- CAPTION: first line is a hook with searchable keywords, the end is a question
-  or a call to action. At most 5 specific hashtags (Instagram allows no more),
-  no generic ones (#love, #instagood).
+post, swiping through the whole carousel, saves, likes per reach and shares by DM.
+In this niche the posts people save and share are aesthetic moodboards, so:
+- FEED POSTS are photo collages, the account's visual format. Every slide is a
+  big title with 8-12 real photos of physical things around it, cut out like
+  stickers, each with a short label. You write titles, labels and photo searches;
+  the photos are found on stock-photo sites and cut out automatically. Therefore:
+  - items are concrete physical things that photograph well on their own: food,
+    drinks, kitchen and home goods, tools, plants, clothes, natural materials.
+    Never people, places, scenes, brands, screens or abstract ideas. Show an
+    activity through its object ("Long walks" -> hiking boots).
+  - queries: 2-3 short English stock-photo searches per item, most specific
+    first, naming the object itself ("cinnamon sticks", "cinnamon"). No styling
+    words ("aesthetic", "isolated", "flat lay").
+  - label: 1-3 words, sentence case, at most ~18 characters ("Local honey").
+    The label may be poetic ("Slow mornings") as long as the photo is the object.
+  - no item twice in one post.
+- Formats (field format):
+  - moodboard: carousel of 4-6 slides. Slide 1 is the cover "The art of ___
+    living" (season, place, room, routine) with 10-12 items mixing the whole
+    theme; then one slide per sub-theme (kitchen, home, outdoors, rituals, ...)
+    titled in 2-4 words, 8-12 items each.
+  - list: a single image (kind image) with one slide, e.g. "Natural kitchen
+    essentials", 10-12 items.
+  - then_vs_now: carousel of 4-6 slides alternating "<topic> then" and "<topic>
+    now", 6-9 items each. Nostalgic, never shaming, never medical.
+  - this_not_that: carousel of 4-6 slides in pairs "This: <topic>" / "Not that:
+    <topic>", 6-9 items each: simple, natural choices vs their modern
+    counterparts. No health or safety claims about any product.
+- Every carousel ends with a closing slide: title = one short call to action
+  (save / send to a friend / follow), body = one short line with the handle,
+  exactly 3 items that echo the post. Single images have no closing slide.
+- Slide 1 is the hook: at most ~6 words in the title.
+- CAPTION: one short line with one emoji, then a call to action. At most 3
+  specific hashtags (Instagram allows 5), often none; never generic ones.
 - STORIES are seen by followers only: short, personal, ask for DM replies or tease
   the new post. Stickers (poll, link, question) cannot be added through the API,
   so put a sticker idea in sticker_idea (added by hand) and write the text so it
@@ -163,8 +194,10 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
                  f"images (field feed) and {reels} reel scripts (field reels), at most one feed post "
                  f"per day, spread evenly. Every day {sched['stories_per_day']} stories "
                  f"(slot 1..{sched['stories_per_day']}). Rotate pillars by their shares. "
-                 "Carousel 6-10 slides, single image 1 slide, story 1 slide."),
+                 "Carousel 4-6 collage slides plus the closing slide, single image 1 slide, story 1 slide. "
+                 "Stories have no items."),
         "language": cfg.get("account", {}).get("language", "en"),
+        "handle": cfg.get("account", {}).get("handle", ""),
         "days": dates,
         "niche": cfg["niche"],
         "niche_from_source_account_analysis": _niche_profile(),
@@ -176,19 +209,31 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
     }, ensure_ascii=False, indent=1)
 
 
+def _slide(slide: Slide) -> dict:
+    out = {"title": slide.title}
+    if slide.body:
+        out["body"] = slide.body
+    if slide.items:
+        out["items"] = [i.model_dump() for i in slide.items]
+    return out
+
+
 def generate(cfg: dict, start: date, days: int) -> list[dict]:
     gen = cfg.get("generation", {})
     client = anthropic.Anthropic()
-    response = client.beta.messages.parse(
+    # Streamed: a week of collages is long, and the SDK refuses non-streamed
+    # requests that may take over 10 minutes (max_tokens above ~21k).
+    with client.beta.messages.stream(
         model=gen.get("model", "claude-opus-5-5"),
-        max_tokens=32000,
+        max_tokens=64000,
         system=SYSTEM,
         messages=[{"role": "user", "content": build_prompt(cfg, start, days)}],
         output_config={"effort": gen.get("effort", "medium")},
         output_format=Plan,
         betas=[FALLBACK_BETA],
         fallbacks="default",
-    )
+    ) as stream:
+        response = stream.get_final_message()
     if response.stop_reason == "refusal":
         raise RuntimeError(f"Model odmítl požadavek: {response.stop_details}")
     if response.stop_reason == "max_tokens":
@@ -216,8 +261,9 @@ def generate(cfg: dict, start: date, days: int) -> list[dict]:
             "date": post.date,
             "time": sched["feed_time"],
             "kind": post.kind,
+            "format": post.format,
             "pillar": post.pillar,
-            "slides": [s.model_dump() for s in post.slides],
+            "slides": [_slide(s) for s in post.slides],
             "caption": post.caption,
             "hashtags": post.hashtags,
             "alt_text": post.alt_text,

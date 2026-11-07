@@ -100,6 +100,13 @@ def validate(item: dict) -> list[str]:
             problems.append(MISSING_VIDEO)
     elif not slides and not media:
         problems.append("chybí slidy i média")
+    if kind in ("carousel", "image") and not media and any(s.get("items") for s in slides):
+        for n, slide in enumerate(slides, start=1):
+            things = slide.get("items") or []
+            if not 3 <= len(things) <= 15:
+                problems.append(f"slide {n}: {len(things)} předmětů (koláž potřebuje 3–15)")
+            if any(not t.get("label") or not (t.get("queries") or t.get("query")) for t in things):
+                problems.append(f"slide {n}: předmět bez popisku nebo bez hledání fotky")
     # Attached media wins over generated slides when publishing.
     if kind == "carousel" and not 2 <= len(media or slides) <= 20:
         problems.append("karusel musí mít 2–20 položek")

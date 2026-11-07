@@ -48,10 +48,12 @@ schedule:
   story_times: ["08:30", "13:00", "20:00"]
 
 brand:
-  background: "#F4F1EA"
-  foreground: "#1F2A1F"
-  accent: "#4E7D3A"
-  muted: "#6B6B5E"
+  # Styl „sticker“ (vybraný 7. 11. 2026): kraftový papír, tmavě hnědé písmo, rezavý akcent.
+  # Používá ho koláž (igbot/collage.py) i textové slidy a stories (igbot/render.py).
+  background: "#E5D5BA"
+  foreground: "#3A2517"
+  accent: "#9C4F28"
+  muted: "#6B5A48"
 
 monetization:
   link_in_bio: ""            # TODO: odkaz na rozcestník / lead magnet

@@ -4,3 +4,5 @@ PyYAML>=6.0,<7
 Pillow>=11,<13
 pydantic>=2.10,<3
 boto3>=1.40,<2   # jen pro MEDIA_BACKEND=s3 (Cloudflare R2 / AWS S3)
+numpy>=2,<3      # koláže (papír, rozmístění předmětů)
+scipy>=1.13,<2
