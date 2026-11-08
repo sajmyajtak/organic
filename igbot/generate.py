@@ -41,7 +41,7 @@ class FeedPost(BaseModel):
     date: str
     pillar: str
     format: Literal["moodboard", "list", "then_vs_now", "this_not_that"]
-    kind: Literal["carousel", "image"]
+    kind: Literal["carousel"]   # every feed post is a carousel: cover, content, closing slide
     slides: list[Slide]
     caption: str
     hashtags: list[str]
@@ -121,8 +121,9 @@ In this niche the posts people save and share are aesthetic moodboards, so:
   - moodboard: carousel of 4-6 slides. Slide 1 is the cover "The art of ___
     living" (season, place, room, routine); then one slide per sub-theme
     (kitchen, home, outdoors, rituals, ...) titled in 2-4 words, 7-10 items each.
-  - list: a single image (kind image) with one slide, e.g. "Natural kitchen
-    essentials", 10-12 items.
+  - list: carousel of 3 slides: a mood cover ("Everything a calm home needs"),
+    the list itself titled e.g. "Natural kitchen essentials" with 10-12
+    labelled items, then the closing slide.
   - then_vs_now: carousel of 5-7 slides: a mood cover ("How we used to live",
     kicker "Then and now"), then pairs titled "<Topic> then" / "<Topic> now"
     with 5-8 items each. Nostalgic, never shaming, never medical.
@@ -133,7 +134,7 @@ In this niche the posts people save and share are aesthetic moodboards, so:
 - Every carousel ends with the closing slide: title = a follow call to action
   in at most 6 words ("Follow for more slow living"), body = one short second
   line asking to save, send or comment, without the handle (it is printed
-  automatically), items empty. Single images have no closing slide.
+  automatically), items empty.
 - CAPTION: one short line with one emoji, then a call to action. At most 3
   specific hashtags (Instagram allows 5), often none; never generic ones.
 - STORIES are seen by followers only: short, personal, ask for DM replies or tease
@@ -203,11 +204,11 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
     reels = max(0, round(mix.get("reel", 0) * days / 7))
     carousels = max(0, round(mix.get("carousel", 0) * days / 7))
     return json.dumps({
-        "task": (f"Plan content for {dates[0]} to {dates[-1]}: {carousels} carousels or single "
-                 f"images (field feed) and {reels} reel scripts (field reels), at most one feed post "
+        "task": (f"Plan content for {dates[0]} to {dates[-1]}: {carousels} carousels "
+                 f"(field feed) and {reels} reel scripts (field reels), at most one feed post "
                  f"per day, spread evenly. Every day {sched['stories_per_day']} stories "
                  f"(slot 1..{sched['stories_per_day']}). Rotate pillars by their shares. "
-                 "Carousel: cover, 3-5 inner collage slides and the closing slide; single image 1 slide; story 1 slide. "
+                 "Carousel: cover, 1-5 inner collage slides and the closing slide; story 1 slide. "
                  "Stories have no items."),
         "language": cfg.get("account", {}).get("language", "en"),
         "handle": cfg.get("account", {}).get("handle", ""),
