@@ -14,86 +14,75 @@ caption: 'Everything a calm home really needs 🕯️
 hashtags:
 - naturalhome
 - simpleliving
-alt_text: 'Natural home essentials: beeswax candles, linen, wool blanket, bar soap, wooden brush, baking
-  soda, vinegar, cotton cloths, houseplant, terracotta pot and wicker basket.'
+alt_text: 'Natural home essentials: candlelight, dried flowers, bar soap, a houseplant, terracotta pots,
+  a woven basket, linen pillows and a wooden bowl.'
 slides:
 - title: Natural home essentials
   items:
   - label: Candlelight
     queries:
-    - beeswax taper candles
-    - taper candles
-  - label: Wool blanket
+    - candle holder
+  - label: Dried flowers
     queries:
-    - wool blanket
-    - blanket
+    - dried flowers
   - label: Bar soap
     queries:
     - bar soap
-    - soap
-  - label: Wooden brush
-    queries:
-    - wooden brush
-    - scrub brush
-  - label: White vinegar
-    queries:
-    - vinegar bottle
-    - vinegar
   - label: Houseplant
     queries:
     - houseplant
-    - potted plant
   - label: Terracotta pots
     queries:
     - terracotta pot
-    - clay pot
-  - label: Wicker basket
+  - label: Woven basket
     queries:
-    - wicker basket
-    - basket
+    - woven basket
+  - label: Linen pillows
+    queries:
+    - linen bedding
+  - label: Wooden bowl
+    queries:
+    - wooden bowl
 klapka:
   record: rec4Lc4hX7aoY8QPF
   sent: b7ebed3786771fb6
 photo_credits:
 - label: Candlelight
-  query: taper candles
+  query: candle holder
   provider: commons
-  id: '58872878'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bangkok_Vesak_-_2017-05-07_%28013%29.jpg/960px-Bangkok_Vesak_-_2017-05-07_%28013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bangkok_Vesak_-_2017-05-07_%28013%29.jpg/960px-Bangkok_Vesak_-_2017-05-07_%28013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '62278475'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Candle_in_candle_holder_%28Unsplash%29.jpg/960px-Candle_in_candle_holder_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Candle_in_candle_holder_%28Unsplash%29.jpg/960px-Candle_in_candle_holder_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Bangkok_Vesak_-_2017-05-07_(013).jpg
-  creator: Iudexvivorum
-  title: Bangkok Vesak - 2017-05-07 (013)
-  keywords: Bangkok Vesak - 2017-05-07 (013) CC-Zero Self-published work White candles Yellow candles
-    2 kinds Candles at Buddhist temples in Thailand Tapers (candles) Vesak Day in Bangkok 2017 Annual
-    Vesak Event at Indoor Stadium Huamark in Bangkok , Thailand
+  source: https://commons.wikimedia.org/wiki/File:Candle_in_candle_holder_(Unsplash).jpg
+  creator: Janko Ferlič thepootphotographer
+  title: Candle in candle holder (Unsplash)
+  keywords: Candle in candle holder (Unsplash) CC-Zero Candlesticks Images uploaded by Fæ Images from
+    Unsplash Files with coordinates missing SDC location of creation (48° N, 2° E) Candles in Paris Paris,
+    France
   width: 1800
-  score: 0.852
+  score: 0.899
   size:
-  - 902
-  - 577
-  match: 0.965
-- label: Wool blanket
-  query: wool blanket
-  provider: commons
-  id: '98197107'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: Public domain
-  source: https://commons.wikimedia.org/wiki/File:Transitional_Woman_chief_blanket_01.jpg
-  creator: Navajo artist
-  title: Transitional Woman chief blanket 01
-  keywords: Transitional Woman chief blanket 01 PD-Art (PD-old-70) Unknown date CC-PD-Mark Chief blankets
-    PD-Art missing SDC copyright status PD-old missing SDC copyright status Navajo blankets woven in handspun
-    wool, in natural ivory and dark brown, and aniline colors, with a woman's Chief-design, with a series
-    of stepped crosses alternating with striped panels. 61 1/2 in. by 58 1/4 in. private collection
-  width: 1800
-  score: 0.807
+  - 427
+  - 622
+  match: 0.977
+- label: Dried flowers
+  query: dried flowers
+  provider: openverse
+  id: daf73245-62c4-4e10-a52b-6b31c457fbfe
+  preview_url: https://api.openverse.org/v1/images/daf73245-62c4-4e10-a52b-6b31c457fbfe/thumb/
+  full_url: https://pd.w.org/2022/05/8627f323a3bff76.54746621-2048x1365.jpg
+  license: cc0
+  source: https://wordpress.org/photos/photo/8627f323a3/
+  creator: kaorock72
+  title: Dried flowers
+  keywords: Dried flowers dried flower
+  width: 1024
+  score: 0.756
   size:
-  - 900
-  - 826
-  match: 0.991
+  - 387
+  - 486
+  match: 0.65
 - label: Bar soap
   query: bar soap
   provider: commons
@@ -113,42 +102,6 @@ photo_credits:
   - 848
   - 508
   match: 0.998
-- label: Wooden brush
-  query: wooden brush
-  provider: openverse
-  id: 1f56ed1c-0f82-4b37-9aef-b208e6490948
-  preview_url: https://api.openverse.org/v1/images/1f56ed1c-0f82-4b37-9aef-b208e6490948/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL2xyL21ldDIwMTM2Ny1pbWFnZS5qcGc.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/12851849/brush
-  creator: themet
-  title: Vintage ornate decorative brush
-  keywords: Vintage ornate decorative brush alastair cake cleaning design food vintage wooden
-  width: 1024
-  score: 0.966
-  size:
-  - 344
-  - 835
-  match: 0.993
-- label: White vinegar
-  query: vinegar bottle
-  provider: commons
-  id: '155601867'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg/960px-BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg/960px-BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:BALSAMIC_VINEGAR_WITH_PROTECTIVE_GEOGRAPHICAL_SIGN.%D7%97%D7%95%D7%9E%D7%A5_%D7%91%D7%9C%D7%A1%D7%9E%D7%99_%D7%A2%D7%9D_%D7%A1%D7%99%D7%9E%D7%95%D7%9F_%D7%94%D7%92%D7%A0%D7%94_%D7%92%D7%90%D7%95%D7%92%D7%A8%D7%A4%D7%99.jpg
-  creator: Avisadehh
-  title: BALSAMIC VINEGAR WITH PROTECTIVE GEOGRAPHICAL SIGN.חומץ בלסמי עם סימון הגנה גאוגרפי
-  keywords: BALSAMIC VINEGAR WITH PROTECTIVE GEOGRAPHICAL SIGN.חומץ בלסמי עם סימון הגנה גאוגרפי CC-Zero
-    Balsamic vinegar Protected geographical indication of Italy Self-published work Files with coordinates
-    missing SDC location of creation BALSAMIC VINEGAR BOTTLE WITH PROTECTIVE GEOGRAPHICAL SIGN
-  width: 1800
-  score: 0.985
-  size:
-  - 220
-  - 921
-  match: 0.999
 - label: Houseplant
   query: houseplant
   provider: commons
@@ -185,27 +138,63 @@ photo_credits:
   - 921
   - 593
   match: 0.987
-- label: Wicker basket
-  query: wicker basket
+- label: Woven basket
+  query: woven basket
   provider: commons
-  id: '36356153'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG/960px-Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG/960px-Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '195788438'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG
-  creator: Daderot
-  title: Basket for chickens - Barambo - Royal Museum for Central Africa - DSC06916
-  keywords: Basket for chickens - Barambo - Royal Museum for Central Africa - DSC06916 Taken with Sony
-    DSC-RX100 CC-Zero Self-published work Wicker baskets Files uploaded by Daderot Transport of poultry
-    Barambo collection in the Royal Museum for Central Africa Exhibit in the Royal Museum for Central
-    Africa, Tervuren, Belgium. This object is old enough so that it is in the public domain. Photography
-    was permitted in the museum without restriction.
+  source: https://commons.wikimedia.org/wiki/File:Woven_Basket_05.jpg
+  creator: PagesAndPathsPH
+  title: Woven Basket 05
+  keywords: Woven Basket 05 CC-Zero Self-published work All media needing categories as of 2026 Media
+    needing categories as of 17 July 2026 Woven basket
   width: 1800
-  score: 0.947
+  score: 0.975
   size:
-  - 724
-  - 559
+  - 636
+  - 817
   match: 0.999
+- label: Linen pillows
+  query: linen bedding
+  provider: openverse
+  id: 6d479ecc-8f1a-4ae4-9cb6-a31a69a3ff15
+  preview_url: https://api.openverse.org/v1/images/6d479ecc-8f1a-4ae4-9cb6-a31a69a3ff15/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/OJLOIYVJ9B.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/hotel-bed-OJLOIYVJ9B
+  creator: World Travel Adventures
+  title: Hotel Bed
+  keywords: Hotel Bed accomodation bed bedding clean comfort cotton elegance fresh furniture home hotel
+    indoor light linen mattress modern nobody pillows relaxation room soft style wall white
+  width: 1024
+  score: 0.822
+  size:
+  - 508
+  - 176
+  match: 0.759
+- label: Wooden bowl
+  query: wooden bowl
+  provider: commons
+  id: '61670694'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg/960px-Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg/960px-Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg
+  creator: Unknown author Unknown author
+  title: Carved Wooden Feast Bowl and Spoon Used by Black Hawk
+  keywords: 'Carved Wooden Feast Bowl and Spoon Used by Black Hawk Black Hawk Images uploaded by Fæ PD-old-100-expired
+    PD-Art (PD-old-100-expired) Wooden bowls Template Unknown (author) CC-PD-Mark Collections of the Missouri
+    History Museum Carved wooden feast bowl with accompanying spoon used by Black Hawk (1767-1838), Chief
+    of the Sauk nation, leader of the Sauk, Fox, and Kickapoo in the 1832 war named after him and an ally
+    of the British in the War of 1812. Title: Carved Wooden Feast Bowl and Spoon Used by Black Hawk'
+  width: 1800
+  score: 0.934
+  size:
+  - 837
+  - 592
+  match: 0.998
 media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-1.jpg
 media_from_slides: true
