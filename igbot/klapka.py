@@ -35,7 +35,9 @@ Pravidla:
 8. **Denní plán** (časy dnes a zítra + post, který na ně připadá, a proč) jede
    jako JSON v poli „Denní plán“ technického řádku. Nezávisí na aktuální minutě,
    takže se mění jen se skutečnými změnami (post, schválení, statistiky, nový
-   den); změna plánu je důvod k odeslání tepu.
+   den); změna plánu je důvod k odeslání tepu. KLAPKA (karta „Denní plán“, v3.14)
+   čte tz, pool, left_after, days[].date/per_day/slots[].at/status/post_id/
+   title/format/why: nová pole nevadí, přejmenování kartu schová.
 """
 
 from __future__ import annotations
