@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from . import content, hosting
+from . import content, hosting, scheduler
 from .config import BUILD_DIR, ROOT
 from .instagram import Instagram
 from .render import Theme, render_item
@@ -79,6 +79,13 @@ def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -
     tz = cfg["account"]["timezone"]
     now = now or datetime.now(ZoneInfo(tz))
     queue = content.due(tz, now)
+    plan = scheduler.plan(now, tz)
+    if plan["due"]:
+        print(f"plánovač: {plan['pick']['id']} ({plan['pick'].get('format')}), dnes {plan['today'] + 1}/{plan['per_day']}")
+        queue.append(plan["pick"])
+    else:
+        nxt = f", další okno {plan['next_slot']:%H:%M}" if plan["next_slot"] else ""
+        print(f"plánovač: teď nic ({plan['reason']}{nxt}; v zásobě {len(plan['pool'])})")
     if not queue:
         return 0
     theme = Theme.from_config(cfg)
@@ -96,7 +103,7 @@ def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -
         if left is not None and left <= 0:
             print("Denní limit publikací přes API je vyčerpaný, zbytek počká na další běh.")
             break
-        if now - content.scheduled_at(item, tz) > GRACE:
+        if item["kind"] in content.TIMED and now - content.scheduled_at(item, tz) > GRACE:
             fail(item, f"zmeškaný termín (publikace neproběhla do {GRACE})")
             continue
         problems = content.validate(item)

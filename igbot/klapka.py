@@ -24,10 +24,14 @@ Pravidla:
    chybu. Podle něj KLAPKA ukazuje „Automat Naturizz běží“ (okno 26 h), i když
    se ve frontě nic nemění. Sync ho jinak ignoruje: nemaže ho, nedává mu `gone`.
 6. **Rozpočet volání.** Airtable free má ~1 000 volání měsíčně pro celý
-   workspace (sdílené s leady a autoclippingem). Automatický běh po publikaci
-   (každých 30 minut) proto posílá změny jen ve dvou časech denně, chyby hned;
-   rozhodnutí čte jen když existují koncepty, nanejvýš 4× denně; z publikovaných
-   drží v tabulce posledních 30. Cíl: do ~150 volání měsíčně.
+   workspace (sdílené s leady a autoclippingem). GitHub pouští publikaci jen
+   jednou za pár hodin, takže automat se řídí uplynulým časem (stav v
+   content/.automat.json): změny a tep posílá po novém postu nebo chybě, jinak
+   nanejvýš jednou za 8 h; rozhodnutí čte nanejvýš jednou za 12 h a jen když
+   existují koncepty; z publikovaných drží v tabulce posledních 30.
+   Cíl: do ~150 volání měsíčně.
+7. **Žádné datum.** Plán se neposílá: schválené posty jsou zásoba a kdy který
+   půjde, rozhoduje plánovač (scheduler.py). Náhled nese všechny slidy.
 """
 
 from __future__ import annotations
@@ -36,7 +40,7 @@ import hashlib
 import json
 import time
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Callable
 
@@ -69,8 +73,10 @@ KIND_NAMES = {"carousel": "karusel", "image": "obrázek", "story": "story", "ree
 
 BATCH = 10               # Airtable bere max 10 záznamů na request
 KEEP_PUBLISHED = 30
-PUSH_HOURS_UTC = (1, 13)          # automatické odeslání změn (~21:00 a 9:00 v New Yorku)
-READ_HOURS_UTC = (1, 7, 13, 19)   # čtení rozhodnutí, jen když existují koncepty
+# GitHub runs the "every 30 minutes" publish job only every few hours in practice,
+# so the automatic run paces itself by elapsed time, not by clock windows.
+PUSH_EVERY = timedelta(hours=8)   # changes and heartbeat; a new post or error goes right away
+READ_EVERY = timedelta(hours=12)  # decisions, only while drafts exist
 KEY = "klapka"           # paměť syncu v YAML položky
 HEARTBEAT_POST_ID = "__automat__"
 HEARTBEAT_RECORD = "recKqXpfurb4jkWmD"  # založila KLAPKA; když zmizí, založíme nový
@@ -143,10 +149,24 @@ def _chunks(seq: list, n: int = BATCH):
         yield seq[i:i + n]
 
 
-def _slot(now: datetime, hours: tuple[int, ...]) -> bool:
-    """True in the first half of the given UTC hours (the publish cron runs at :07 and :37)."""
-    now = now.astimezone(timezone.utc)
-    return now.hour in hours and now.minute < 30
+def _state_file() -> Path:
+    # In content/, which the publish workflow commits. Only the automatic run
+    # writes it, so local runs never conflict with it on rebase.
+    return content.CONTENT_DIR / ".automat.json"
+
+
+def _state() -> dict:
+    try:
+        return json.loads(_state_file().read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def _since(state: dict, key: str, now: datetime) -> timedelta:
+    try:
+        return now - datetime.fromisoformat(state[key])
+    except (KeyError, ValueError, TypeError):
+        return timedelta.max
 
 
 _reachable: dict[str, bool] = {}
@@ -165,12 +185,11 @@ def _is_public(url: str) -> bool:
     return _reachable[url]
 
 
-def _preview_url(item: dict) -> str | None:
-    for m in item.get("media") or []:
-        m = str(m)
-        if m.startswith("https://") and not m.lower().split("?")[0].endswith((".mp4", ".mov")):
-            return m if _is_public(m) else None
-    return None
+def _preview_urls(item: dict) -> list[str]:
+    """Every slide in order, so KLAPKA can show the whole carousel; nothing until all are online."""
+    urls = [str(m) for m in item.get("media") or []
+            if str(m).startswith("https://") and not str(m).lower().split("?")[0].endswith((".mp4", ".mov"))]
+    return urls if urls and all(_is_public(u) for u in urls) else []
 
 
 def fields_for(item: dict, state: str, tz: str, account: str) -> dict:
@@ -187,14 +206,14 @@ def fields_for(item: dict, state: str, tz: str, account: str) -> dict:
         F_KIND: KIND_NAMES.get(item.get("kind")),
         F_CAPTION: content.full_caption(item) or None,
         F_SLIDES: len(item.get("media") or slides),
-        F_PLANNED: content.scheduled_at(item, tz).isoformat(),
+        F_PLANNED: None,  # no fixed date: the scheduler picks the moment from the approved pool
         F_PUBLISHED: _iso(item.get("published_at")),
         F_MEDIA_IDS: ",".join(str(m) for m in item.get("media_ids") or []) or None,
         F_ERROR: error,
     }
-    preview = _preview_url(item)
-    if preview:
-        fields[F_PREVIEW] = [{"url": preview}]
+    previews = _preview_urls(item)
+    if previews:
+        fields[F_PREVIEW] = [{"url": u} for u in previews]
     return fields
 
 
@@ -244,27 +263,31 @@ def _plural(n: int, one: str, few: str, many: str) -> str:
     return f"{n} {one if n == 1 else few if 2 <= n <= 4 else many}"
 
 
-def status(local: dict[str, tuple[str, dict]], tz: str) -> tuple[str, str | None]:
+def status(local: dict[str, tuple[str, dict]], tz: str, now: datetime | None = None) -> tuple[str, str | None]:
     """One short Czech sentence about the queue, and the current error (or None)."""
+    from . import scheduler
+
     by_state: dict[str, list[dict]] = {}
     for state, item in local.values():
         by_state.setdefault(state, []).append(item)
     parts = []
     if by_state.get("drafts"):
         parts.append(_plural(len(by_state["drafts"]), "koncept", "koncepty", "konceptů"))
-    approved = by_state.get("approved") or []
-    if approved:
-        parts.append(_plural(len(approved), "naplánovaný", "naplánované", "naplánovaných"))
-        when = min(content.scheduled_at(i, tz) for i in approved)
+    plan = scheduler.plan(now or datetime.now(timezone.utc), tz)
+    if plan["pool"]:
+        parts.append(f"{len(plan['pool'])} v zásobě")
+        parts.append(f"dnes {plan['today']}/{plan['per_day']}")
         zone = "NY" if tz == "America/New_York" else tz.rsplit("/", 1)[-1]
-        parts.append(f"další publikace {CZ_DAYS[when.weekday()]} {when:%H:%M} {zone}")
+        nxt = plan["next_slot"]
+        parts.append("publikuje se teď" if plan["due"] else
+                     f"další okno {nxt:%H:%M} {zone}" if nxt else "další post zítra")
     else:
-        parts.append("nic naplánováno")
+        parts.append("zásoba schválených je prázdná")
     line = ", ".join(parts)
     failed = by_state.get("failed") or []
     error = None
     if failed:
-        last = max(failed, key=lambda i: (i["date"], i["time"]))
+        last = max(failed, key=lambda i: (str(i.get("date") or ""), str(i.get("time") or ""), i["id"]))
         error = (f"{_plural(len(failed), 'položka selhala', 'položky selhaly', 'položek selhalo')}, "
                  f"poslední {last['id']}: {last.get('error') or 'bez popisu'}")[:500]
     return line[:1].upper() + line[1:], error
@@ -302,12 +325,13 @@ class _Op:
 
 
 def sync(trigger: str = "cli", now: datetime | None = None, dry_run: bool = False,
-         client: Airtable | None = None) -> dict:
+         client: Airtable | None = None, published: int = 0) -> dict:
     """Push queue changes to KLAPKA and apply its decisions. Returns a summary.
 
     trigger: "cli" (everything now), "generate"/"approve" (push now, a person is
-    waiting for it), "publish" (automatic run every 30 min: push only in
-    PUSH_HOURS_UTC or when there is a new error, read decisions in READ_HOURS_UTC).
+    waiting for it), "publish" (automatic run: push after a new post or error,
+    otherwise at most every PUSH_EVERY; read decisions every READ_EVERY while
+    drafts exist). `published` = posts this run just published.
     """
     token = env("AIRTABLE_TOKEN")
     if not token and client is None:
@@ -325,7 +349,10 @@ def sync(trigger: str = "cli", now: datetime | None = None, dry_run: bool = Fals
     has_drafts = any(state == "drafts" for state, _ in local.values())
     # Right after generate/approve nobody has decided anything yet, so only the
     # CLI and the automatic run read decisions.
-    read = not dry_run and (trigger == "cli" or (automatic and has_drafts and _slot(now, READ_HOURS_UTC)))
+    pace = _state() if automatic else {}
+    read = not dry_run and (trigger == "cli" or
+                            (automatic and has_drafts and _since(pace, "last_read", now) >= READ_EVERY))
+    push_due = automatic and (published > 0 or _since(pace, "last_push", now) >= PUSH_EVERY)
     clear_decision: set[str] = set()   # record ids whose decision we acted on
     to_delete: list[str] = []
 
@@ -412,7 +439,7 @@ def sync(trigger: str = "cli", now: datetime | None = None, dry_run: bool = Fals
 
     pending = bool(creates or updates or to_delete)
     urgent = any(state == "failed" for state, *_ in creates + updates)
-    if automatic and pending and not (read or urgent or _slot(now, PUSH_HOURS_UTC)):
+    if automatic and pending and not (read or urgent or push_due):
         summary["waiting"] = len(creates) + len(updates) + len(to_delete)
         summary["calls"] = at.calls - start
         return summary
@@ -444,9 +471,9 @@ def sync(trigger: str = "cli", now: datetime | None = None, dry_run: bool = Fals
 
     # The heartbeat rides along in a PATCH: always in the push slots, for the CLI
     # and with a new error; otherwise only when it fits into a batch for free.
-    beat_required = trigger == "cli" or (automatic and (urgent or _slot(now, PUSH_HOURS_UTC)))
+    beat_required = trigger == "cli" or (automatic and (urgent or push_due or read))
     if beat_required or (ops and len(ops) % BATCH):
-        line, error = status(local, tz)
+        line, error = status(local, tz, now)
         beat = {F_CHANGED: stamp, F_CAPTION: line, F_ERROR: error}
 
         def beat_done():
@@ -482,17 +509,25 @@ def sync(trigger: str = "cli", now: datetime | None = None, dry_run: bool = Fals
     for item in retire:
         _remember(item, "published", gone="starší publikované")
     summary["calls"] = at.calls - start
+    if automatic and summary["calls"]:
+        stamp_iso = now.astimezone(timezone.utc).isoformat(timespec="seconds")
+        if read:
+            pace["last_read"] = stamp_iso
+        if summary["calls"] > int(read):  # something was written, not only read
+            pace["last_push"] = stamp_iso
+        _state_file().parent.mkdir(parents=True, exist_ok=True)
+        _state_file().write_text(json.dumps(pace, indent=1) + "\n", encoding="utf-8")
     return summary
 
 
-def after(trigger: str) -> None:
+def after(trigger: str, published: int = 0) -> None:
     """Hook for generate/approve/publish: sync, but never break the caller."""
     try:
-        result = sync(trigger)
+        result = sync(trigger, published=published)
     except Exception as exc:  # KLAPKA is a mirror; the queue in git is the source of truth
         print(f"KLAPKA: sync selhal ({exc})")
         # Tell KLAPKA, but from the automatic run only in the push slots (budget).
-        if trigger != "publish" or _slot(datetime.now(timezone.utc), PUSH_HOURS_UTC):
+        if trigger != "publish" or _since(_state(), "last_push", datetime.now(timezone.utc)) >= PUSH_EVERY:
             try:
                 report_error(exc)
             except Exception:

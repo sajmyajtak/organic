@@ -22,6 +22,7 @@ from .config import CONTENT_DIR
 
 STATES = ("drafts", "approved", "published", "failed")
 KINDS = ("carousel", "image", "story", "reel")
+TIMED = ("story", "reel")  # published at their own date/time; feed posts go to the pool
 
 
 def folder(state: str) -> Path:
@@ -54,7 +55,8 @@ def exists(item_id: str) -> bool:
 
 
 def items(state: str) -> list[dict]:
-    return sorted((load(p) for p in folder(state).glob("*.yaml")), key=lambda i: (i["date"], i["time"]))
+    return sorted((load(p) for p in folder(state).glob("*.yaml")),
+                  key=lambda i: (str(i.get("date") or ""), str(i.get("time") or ""), i["id"]))
 
 
 def scheduled_at(item: dict, tz: str) -> datetime:
@@ -62,8 +64,11 @@ def scheduled_at(item: dict, tz: str) -> datetime:
 
 
 def due(tz: str, now: datetime | None = None) -> list[dict]:
+    """Approved items with a fixed slot that has come (stories, reels). Feed posts
+    have no slot: scheduler.plan picks them from the pool."""
     now = now or datetime.now(ZoneInfo(tz))
-    return [i for i in items("approved") if scheduled_at(i, tz) <= now]
+    return [i for i in items("approved") if i["kind"] in TIMED and i.get("date") and i.get("time")
+            and scheduled_at(i, tz) <= now]
 
 
 MAX_HASHTAGS = 5  # Instagram's cap since Dec 2025; the API docs still say 30

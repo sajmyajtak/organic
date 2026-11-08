@@ -68,23 +68,27 @@ def test_render_sizes_and_jpeg(tmp_path):
         assert img.size == STORY_SIZE
 
 
-def test_due_and_dry_run_publish_do_not_move_files(queue):
+def test_pool_post_waits_for_its_window_and_dry_run_moves_nothing(queue):
+    from igbot import scheduler
     content.save(carousel(), "approved")
-    later = datetime(2026, 11, 2, 18, 45, tzinfo=ZoneInfo(TZ))
-    earlier = datetime(2026, 11, 2, 18, 0, tzinfo=ZoneInfo(TZ))
-    assert content.due(TZ, earlier) == []
-    assert [i["id"] for i in content.due(TZ, later)] == ["2026-11-02-feed-1"]
+    morning = datetime(2026, 11, 2, 8, 0, tzinfo=ZoneInfo(TZ))
+    evening = datetime(2026, 11, 2, 18, 45, tzinfo=ZoneInfo(TZ))
+    assert content.due(TZ, evening) == []                 # feed posts have no fixed slot
+    assert scheduler.plan(morning, TZ)["due"] is False    # the day's window hasn't come yet
+    plan = scheduler.plan(evening, TZ)
+    assert plan["due"] and plan["pick"]["id"] == "2026-11-02-feed-1"
 
     cfg = {"account": {"timezone": TZ, "handle": "ucet"}, "brand": {}}
-    assert publish.publish_due(cfg, dry_run=True, now=later) == 0
+    assert publish.publish_due(cfg, dry_run=True, now=evening) == 0
     assert [p.name for p in (queue / "content" / "approved").glob("*.yaml")] == ["2026-11-02-feed-1.yaml"]
 
 
-def test_missed_slot_goes_to_failed(queue, monkeypatch):
+def test_missed_story_slot_goes_to_failed(queue, monkeypatch):
     monkeypatch.setenv("IG_USER_ID", "1")
     monkeypatch.setenv("IG_ACCESS_TOKEN", "t")
     monkeypatch.setattr(publish, "quota_left", lambda ig: None)
-    content.save(carousel(), "approved")
+    content.save({"id": "2026-11-02-story-1", "date": "2026-11-02", "time": "18:00", "kind": "story",
+                  "slides": [{"title": "Ahoj"}]}, "approved")
     cfg = {"account": {"timezone": TZ}, "brand": {}}
     publish.publish_due(cfg, now=datetime(2026, 11, 3, 9, 0, tzinfo=ZoneInfo(TZ)))
     failed = content.items("failed")

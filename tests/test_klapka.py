@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import pytest
 
@@ -76,8 +76,11 @@ def post(n=1, day="2026-11-10", **extra):
     return item
 
 
-NOON = datetime(2026, 11, 9, 13, 7, tzinfo=timezone.utc)      # push + read slot
-OFF = datetime(2026, 11, 9, 10, 37, tzinfo=timezone.utc)      # outside every slot
+T0 = datetime(2026, 11, 9, 13, 7, tzinfo=timezone.utc)
+
+
+def at_hour(h: float) -> datetime:
+    return T0 + timedelta(hours=h)
 
 
 def test_first_sync_creates_rows_then_sends_only_changes(queue):
@@ -89,7 +92,7 @@ def test_first_sync_creates_rows_then_sends_only_changes(queue):
     assert result["created"] == 2 and at.log == ["GET", "POST", "PATCH"]  # PATCH = heartbeat
     row = at.row("2026-11-10-feed-1")
     assert row[F_STATE] == "koncept" and row[F_KIND] == "karusel" and row[F_ACCOUNT] == "naturizz"
-    assert row[F_PLANNED] == "2026-11-10T11:30:00-05:00"
+    assert F_PLANNED not in row  # no fixed date: the scheduler picks the moment
     assert at.row("2026-11-10-feed-2")[F_STATE] == "schváleno"
 
     at.log.clear()
@@ -151,30 +154,43 @@ def test_row_deleted_in_klapka_is_never_sent_again(queue):
     assert at.queue_rows() == {} and at.beat()  # the heartbeat row is never touched by cleanup
 
 
-def test_automatic_run_batches_pushes_into_slots_but_sends_errors_now(queue):
+def test_automatic_run_paces_itself_but_sends_new_posts_and_errors_now(queue):
     at = FakeAirtable()
     content.save(post(1), "approved")
-    result = klapka.sync("publish", now=OFF, client=at)
-    assert result["waiting"] == 1 and at.calls == 0
+    assert klapka.sync("publish", now=T0, client=at)["created"] == 1   # first run: nothing sent yet
 
-    assert klapka.sync("publish", now=NOON, client=at)["created"] == 1
+    item = content.items("approved")[0]
+    item["caption"] = "edited"
+    content.save(item, "approved")
+    result = klapka.sync("publish", now=at_hour(2), client=at)
+    assert result["waiting"] == 1 and result["calls"] == 0          # pushed 2 h ago: waits
+    assert klapka.sync("publish", now=at_hour(9), client=at)["updated"] == 1   # 8 h passed
 
-    failed = content.items("approved")[0]
-    failed["error"] = "Instagram odmítl médium"
-    content.save(failed, "failed")
-    assert klapka.sync("publish", now=OFF, client=at)["updated"] == 1
+    item = content.items("approved")[0]
+    item["published_at"] = "2026-11-09T19:00-05:00"
+    content.save(item, "published")
+    assert klapka.sync("publish", now=at_hour(10), client=at, published=1)["updated"] == 1  # new post: now
+
+    item = content.items("published")[0]
+    item["error"] = "Instagram odmítl médium"
+    content.save(item, "failed")
+    assert klapka.sync("publish", now=at_hour(11), client=at)["updated"] == 1   # error: now
     assert at.row("2026-11-10-feed-1")[klapka.F_STATE] == "chyba"
     assert "Instagram odmítl médium" in at.beat()[F_ERROR]  # red bar in KLAPKA right away
 
 
-def test_automatic_run_reads_decisions_only_with_drafts(queue):
+def test_automatic_run_reads_decisions_only_with_drafts_and_twice_a_day(queue):
     at = FakeAirtable()
     content.save(post(1), "approved")
-    klapka.sync("publish", now=NOON, client=at)
+    klapka.sync("publish", now=T0, client=at)
     assert "GET" not in at.log
     content.save(post(2), "drafts")
-    klapka.sync("publish", now=NOON, client=at)
+    klapka.sync("publish", now=at_hour(1), client=at)
     assert at.log.count("GET") == 1
+    klapka.sync("publish", now=at_hour(5), client=at)
+    assert at.log.count("GET") == 1    # read 4 h ago
+    klapka.sync("publish", now=at_hour(13), client=at)
+    assert at.log.count("GET") == 2
 
 
 def test_only_the_newest_published_rows_stay(queue):
@@ -188,7 +204,7 @@ def test_only_the_newest_published_rows_stay(queue):
     # Ten newer posts: their rows come in, the ten oldest rows go out in one call.
     for n in range(36, 46):
         content.save(post(n, day="2026-11-20", published_at=f"2026-11-20T{n - 30:02d}:00-05:00"), "published")
-    result = klapka.sync("publish", now=NOON, client=at)
+    result = klapka.sync("publish", now=T0, client=at)
     assert result["created"] == 10 and result["deleted"] == 10
     assert len(at.queue_rows()) == klapka.KEEP_PUBLISHED and at.beat()
     assert klapka.sync("cli", client=at)["created"] == 0   # retired posts never come back
@@ -199,29 +215,34 @@ def test_without_token_sync_is_skipped(queue, monkeypatch):
     assert klapka.sync("publish") == {"skipped": "chybí AIRTABLE_TOKEN"}
 
 
-def test_status_sentence_and_error():
-    def it(n, state, **extra):
-        return f"x{n}", (state, {"id": f"x{n}", "date": "2026-11-13", "time": f"1{n}:30", **extra})
+def test_status_sentence_and_error(queue):
+    tz = "America/New_York"
+    morning = datetime(2026, 11, 9, 13, 0, tzinfo=timezone.utc)   # 8:00 in New York
+    for n in (1, 2):
+        content.save(post(n), "drafts")
+    for n in (3, 4, 5):
+        content.save(post(n), "approved")
+    line, error = klapka.status(klapka._local(), tz, morning)
+    assert line.startswith("2 koncepty, 3 v zásobě, dnes 0/2, další okno ") and line.endswith(" NY")
+    assert error is None
+    for path in queue.glob("content/*/*.yaml"):
+        path.unlink()
+    assert klapka.status({}, tz, morning) == ("Zásoba schválených je prázdná", None)
+    content.save(post(1, error="token vypršel"), "failed")
+    assert klapka.status(klapka._local(), tz, morning)[1] == "1 položka selhala, poslední 2026-11-10-feed-1: token vypršel"
 
-    local = dict([it(1, "drafts"), it(2, "drafts"), it(3, "approved"), it(4, "approved"), it(5, "approved")])
-    line, error = klapka.status(local, "America/New_York")
-    assert line == "2 koncepty, 3 naplánované, další publikace pá 13:30 NY" and error is None
-    assert klapka.status({}, "America/New_York") == ("Nic naplánováno", None)
-    local = dict([it(1, "failed", error="token vypršel")])
-    assert klapka.status(local, "America/New_York")[1] == "1 položka selhala, poslední x1: token vypršel"
 
-
-def test_heartbeat_goes_out_in_slots_even_with_a_quiet_queue(queue):
+def test_heartbeat_goes_out_every_8_hours_even_with_a_quiet_queue(queue):
     at = FakeAirtable()
     content.save(post(1), "approved")
-    klapka.sync("cli", client=at)
+    klapka.sync("publish", now=T0, client=at)
     at.log.clear()
-    assert klapka.sync("publish", now=OFF, client=at)["calls"] == 0
-    result = klapka.sync("publish", now=NOON, client=at)
+    assert klapka.sync("publish", now=at_hour(3), client=at)["calls"] == 0
+    result = klapka.sync("publish", now=at_hour(9), client=at)
     assert result["calls"] == 1 and result["heartbeat"] and at.log == ["PATCH"]
     beat = at.beat()
-    assert beat[F_CHANGED] == "2026-11-09T13:07:00Z"
-    assert beat[F_CAPTION] == "1 naplánovaný, další publikace út 11:30 NY" and F_ERROR not in beat
+    assert beat[F_CHANGED] == "2026-11-09T22:07:00Z"
+    assert beat[F_CAPTION].startswith("1 v zásobě, dnes 0/1, ") and F_ERROR not in beat
 
 
 def test_heartbeat_row_deleted_in_klapka_is_recreated_once(queue):
@@ -239,7 +260,7 @@ def test_heartbeat_row_deleted_in_klapka_is_recreated_once(queue):
 def test_failed_sync_turns_the_bar_red(queue, monkeypatch):
     sent = []
     monkeypatch.setenv("AIRTABLE_TOKEN", "t")
-    monkeypatch.setattr(klapka, "sync", lambda trigger: (_ for _ in ()).throw(RuntimeError("Airtable 503")))
+    monkeypatch.setattr(klapka, "sync", lambda trigger, **kw: (_ for _ in ()).throw(RuntimeError("Airtable 503")))
     monkeypatch.setattr(Airtable, "_request", lambda self, m, params=None, body=None: (sent.append(body), (200, {}))[1])
     klapka.after("approve")
     assert sent[0]["records"][0]["id"] == HEARTBEAT_RECORD
@@ -261,3 +282,19 @@ def test_preview_goes_out_only_once_the_file_is_online(queue, monkeypatch):
     monkeypatch.setattr(klapka, "_reachable", {})
     assert klapka.sync("approve", client=at)["updated"] == 1      # pushed: now it goes out
     assert at.row("2026-11-10-feed-1")[klapka.F_PREVIEW] == [{"url": url}]
+
+
+def test_preview_carries_the_whole_carousel_once_every_slide_is_online(queue, monkeypatch):
+    urls = [f"https://raw.example/media/2026-11-10-feed-1-{n}.jpg" for n in (1, 2, 3)]
+    online = set(urls[:2])
+    monkeypatch.setattr(klapka, "_reachable", {})
+    monkeypatch.setattr(klapka.requests, "head",
+                        lambda url, **kw: type("R", (), {"status_code": 200 if url in online else 404})())
+    at = FakeAirtable()
+    content.save(post(1, media=urls, media_from_slides=True), "drafts")
+    klapka.sync("cli", client=at)
+    assert klapka.F_PREVIEW not in at.row("2026-11-10-feed-1")   # slide 3 not online yet
+    online.add(urls[2])
+    monkeypatch.setattr(klapka, "_reachable", {})
+    klapka.sync("approve", client=at)
+    assert at.row("2026-11-10-feed-1")[klapka.F_PREVIEW] == [{"url": u} for u in urls]

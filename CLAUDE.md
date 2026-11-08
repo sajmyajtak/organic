@@ -89,10 +89,18 @@ které do ní zapisují stav fronty, takže před pushem vždy `git pull --rebas
    očima** (vision) a špatné předměty vyměň/vyhoď, pak `prepare <id> --force`.
 3. Commit + push `media/` a `content/`, pak `klapka-sync` → koncept je v KLAPCE
    (SM Automation → Obsah) i s náhledem, Simon schválí/zamítne.
-4. GitHub Actions `publish.yml` (každých 30 min) čte rozhodnutí z KLAPKY
-   (01/07/13/19 UTC), publikuje schválené v `feed_time` a posílá tep. Nic
-   nerenderuje. Zapne se, až `scripts/github-klice.sh` nahraje secrets
-   (IG_ACCESS_TOKEN, AIRTABLE_TOKEN, nakonec IG_USER_ID).
+4. **Schválené posty jsou zásoba bez data** (od 8. 11., Simon: „plánuj aktivně na základě
+   statů, postuj z galerie schválených jak se ti zachce“). `igbot/scheduler.py` při každém
+   běhu `publish.yml` rozhodne, jestli je chvíle a který post: 3 denně (≥6 v zásobě), jinak
+   2/1, rozestup ≥3 h, 7–22 h NY, časy z výchozího odhadu niky + zásahu našich postů podle
+   hodiny (`data/insights.csv`, workflow Statistiky), jedno okno denně zkouší méně ověřenou
+   hodinu; formát podle výkonu, nikdy dvakrát za sebou stejný. `python -m igbot plan`
+   ukáže dnešní okna a pořadí. Stories/reels mají dál pevný čas (`content.TIMED`).
+   GitHub ve skutečnosti pouští workflow jen jednou za 3–6 h, plánovač to dohání.
+   KLAPKA dostává všechny slidy v Náhledu a žádný Plán; sync se řídí uplynulým časem
+   (stav `content/.automat.json`, zapisuje jen automat): změny a tep po novém postu
+   nebo chybě, jinak ≤1× za 8 h, rozhodnutí ≤1× za 12 h. Rozbor a strategie:
+   `reports/naturizz/2026-11-08.md`.
 
 Pozor na cache: `build/cache/cutouts` je klíčovaná dotazem. Po přidání
 `PEXELS_API_KEY` ji smaž, jinak zůstanou staré výřezy z Openverse.

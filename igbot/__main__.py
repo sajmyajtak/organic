@@ -31,6 +31,7 @@ def main() -> None:
     co.add_argument("plan", type=Path, help="plán postu, např. assets/examples/autumn-living.json")
     co.add_argument("--seed", type=int, default=0, help="jiné číslo = jiné rozložení předmětů")
     sub.add_parser("check", help="zkontroluj frontu (validace, kolize termínů)")
+    sub.add_parser("plan", help="ukaž dnešní plán publikace (zásoba, okna, co půjde další)")
     pr = sub.add_parser("prepare", help="vyrenderuj slidy konceptů a schválených položek do media/ "
                                         "(publikace z GitHubu je pak jen stáhne)")
     pr.add_argument("ids", nargs="*", help="ID položek; bez ID všechny, které ještě nemají média")
@@ -111,22 +112,25 @@ def main() -> None:
                     # A reel script waiting to be filmed is normal, not a broken queue.
                     problems.remove(content.MISSING_VIDEO)
                     print(f"čeká na natočení: {item['id']}")
-                slot = (item["date"], item["time"], item["kind"] == "story")
-                if slot in seen:
-                    problems.append(f"stejný termín jako {seen[slot]}")
-                seen[slot] = item["id"]
+                if item["kind"] in content.TIMED and item.get("date") and item.get("time"):
+                    slot = (item["date"], item["time"], item["kind"] == "story")
+                    if slot in seen:
+                        problems.append(f"stejný termín jako {seen[slot]}")
+                    seen[slot] = item["id"]
                 if problems:
                     bad += 1
                     print(f"{state}/{item['id']}: {'; '.join(problems)}")
         print("Fronta je v pořádku." if not bad else f"{bad} položek s problémy.")
         raise SystemExit(1 if bad else 0)
+    elif args.cmd == "plan":
+        show_plan(cfg)
     elif args.cmd == "publish":
         from .publish import publish_due
         n = publish_due(cfg, dry_run=args.dry_run)
         print(f"Publikováno: {n}")
         if not args.dry_run:
             from . import klapka
-            klapka.after("publish")
+            klapka.after("publish", published=n)
     elif args.cmd == "klapka-sync":
         from . import klapka
         print(f"KLAPKA: {klapka.describe(klapka.sync('cli', dry_run=args.dry_run))}")
@@ -161,6 +165,23 @@ def main() -> None:
         Path(BUILD_DIR).mkdir(exist_ok=True)
         (BUILD_DIR / "new_token.txt").write_text(data["access_token"], encoding="utf-8")
         print(f"Token prodloužen, platí {int(data.get('expires_in', 0)) // 86400} dní.")
+
+
+def show_plan(cfg: dict) -> None:
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+
+    from . import scheduler
+    tz = cfg["account"]["timezone"]
+    now = datetime.now(ZoneInfo(tz))
+    p = scheduler.plan(now, tz)
+    print(f"Teď {now:%a %H:%M} ({tz}). Dnes {p['today']}/{p['per_day']} postů, v zásobě {len(p['pool'])}.")
+    print("Okna dnes:", ", ".join(f"{s:%H:%M}" for s in p["slots"]) or "žádná")
+    print("Teď publikovat:", "ano → " + p["pick"]["id"] if p["due"] else f"ne ({p['reason']})")
+    perf = scheduler.performance(tz)
+    last = max(content.items("published"), key=lambda i: i.get("published_at") or "", default={}).get("format")
+    for n, item in enumerate(scheduler.rank(p["pool"], perf, last), start=1):
+        print(f"  {n}. {item['id']} [{item.get('format')}] {(item.get('slides') or [{}])[0].get('title', '')}")
 
 
 def render_collage(cfg: dict, args) -> None:
