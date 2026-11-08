@@ -152,3 +152,67 @@ def test_rejected_photos_are_never_used(tmp_path, monkeypatch):
     assert photos.rejected() == {"commons:1", "openverse:abc"}
     assert photos.key(photos.Candidate("commons", "1", "", "", "", "", "")) == "commons:1"
     assert photos.key({"provider": "openverse", "id": "abc"}) == "openverse:abc"
+
+
+def test_slide_layout_by_position_and_override():
+    from igbot import content
+    slides = [{"title": "The art of cabin living"}, {"title": "Cabin evenings"},
+              {"title": "Follow for more slow living", "body": "Save this"}]
+    assert [content.slide_layout(slides, n) for n in range(3)] == ["cover", "board", "cta"]
+    assert content.slide_layout([{"title": "Natural home essentials"}], 0) == "board"  # single image
+    assert content.slide_layout([{"title": "A", "layout": "board"}, {"title": "B"}], 0) == "board"
+
+
+def test_cover_and_closing_slide_need_no_labels_but_inner_slides_do():
+    from igbot import content
+    things = [{"queries": [f"thing {n}"]} for n in range(4)]
+    item = {"id": "x", "kind": "carousel", "caption": "Slow ☕", "hashtags": [],
+            "slides": [{"title": "The art of slow mornings", "items": things},
+                       {"kicker": "This", "title": "A slow morning",
+                        "items": [{"label": f"Thing {n}", "queries": ["q"]} for n in range(4)]},
+                       {"title": "Follow for slower mornings", "body": "Send this to a friend"}]}
+    assert content.validate(item) == []
+    item["slides"][1]["items"][0]["label"] = ""
+    assert any("bez popisku" in p for p in content.validate(item))
+    item["slides"][1]["items"][0]["label"] = "Teapot"
+    item["slides"][1]["title"] = "This: a slow morning"
+    assert any("dvojtečkou" in p for p in content.validate(item))
+
+
+def test_cover_and_closing_slide_print_no_labels_and_closing_reuses_stickers(tmp_path, monkeypatch):
+    calls = []
+
+    def fake_find(query, exclude=None):
+        calls.append(query)
+        n = len(calls)
+        return {"id": f"id{n}", "score": 0.9, "license": "cc0",
+                "path": _blob(tmp_path / f"c{n}.png", (260 + 15 * (n % 4), 220))}
+
+    printed = []
+    real = collage._prepare
+    monkeypatch.setattr(collage, "_prepare", lambda label, *a, **kw: printed.append(label) or real(label, *a, **kw))
+    slides = [{"title": "The art of cabin living", "items": [{"label": f"Mood {n}", "queries": [f"m{n}"]} for n in range(9)]},
+              {"title": "Cabin evenings", "items": [{"label": f"Thing {n}", "queries": [f"t{n}"]} for n in range(5)]},
+              {"title": "Follow for more slow living", "body": "Save this", "echo": ["Mood 2", "Thing 1", "Nope"]}]
+    paths, credits = collage.render_slides(slides, tmp_path / "out", handle="naturizz", find=fake_find)
+    assert len(paths) == 3 and all(Image.open(p).size == collage.SIZE for p in paths)
+    assert len(calls) == 14 and len(credits) == 14          # the closing slide searched and credited nothing
+    assert set(printed) - {""} <= {f"Thing {n}" for n in range(5)}  # labels only on the inner slide
+    assert {f"Thing {n}" for n in range(5)} <= set(printed)
+
+
+def test_kicker_is_small_spaced_capitals_in_the_accent_colour():
+    lines = collage._title_lines("A slow kitchen", "", collage.STYLE, 900, 138, kicker="Not this")
+    assert lines[0].text == "NOT THIS" and lines[0].fill == collage.STYLE.accent and lines[0].tracking > 0
+    assert lines[0].font.size < lines[1].font.size
+    assert lines[0].width > collage._text_w(lines[0].font, "NOT THIS")
+
+
+def test_closing_fan_stays_inside_the_page(tmp_path):
+    import random
+    cuts = [Image.open(_blob(tmp_path / f"{n}.png", (600, 200))).convert("RGBA") for n in range(6)]
+    items = collage._fan(cuts, collage.STYLE, random.Random(0))
+    assert len(items) == collage.FAN_MAX
+    left = min(i.pos[0] for i in items) + collage.SIZE[0] / 2
+    right = max(i.pos[0] + i.image.width for i in items) + collage.SIZE[0] / 2
+    assert left >= 0 and right <= collage.SIZE[0]

@@ -26,14 +26,15 @@ FALLBACK_BETA = "server-side-fallback-2026-07-01"
 
 
 class CollageItem(BaseModel):
-    label: str            # 1-3 words printed under the photo
+    label: str            # 1-3 words printed under the photo (inner slides); alt text everywhere
     queries: list[str]    # 2-3 stock-photo searches, most specific first
 
 
 class Slide(BaseModel):
-    title: str
-    body: str             # empty on collage slides; the follow line on the closing slide
-    items: list[CollageItem]
+    kicker: str           # small capitals above the title ("This" / "Not this"), usually empty
+    title: str            # never a colon
+    body: str             # empty on collage slides; the second line of the closing slide
+    items: list[CollageItem]  # empty on the closing slide
 
 
 class FeedPost(BaseModel):
@@ -92,9 +93,17 @@ What Instagram's published ranking explainers say it measures: time spent on a
 post, swiping through the whole carousel, saves, likes per reach and shares by DM.
 In this niche the posts people save and share are aesthetic moodboards, so:
 - FEED POSTS are photo collages, the account's visual format. Every slide is a
-  big title with 8-12 real photos of physical things around it, cut out like
-  stickers, each with a short label. You write titles, labels and photo searches;
-  the photos are found on stock-photo sites and cut out automatically. Therefore:
+  big title with real photos of physical things around it, cut out like
+  stickers. You write titles, labels and photo searches; the photos are found
+  on stock-photo sites and cut out automatically. Three kinds of slide:
+  - cover (slide 1 of a carousel): pure mood. 9-12 items piled densely around
+    the title, NO labels printed (still write them: they become the alt text).
+    Pick the items that make the vibe of the whole post, not the ones repeated
+    on the inner slides. Title at most ~6 words.
+  - inner slides: title with 6-10 items, each with a short printed label.
+  - closing slide: no items; it reuses a few stickers of the post, prints the
+    title as the call to action and the handle on a pill (see below).
+  Therefore:
   - items are concrete physical things that photograph well on their own: food,
     drinks, kitchen and home goods, tools, plants, clothes, natural materials.
     Never people, places, scenes, brands, screens or abstract ideas. Show an
@@ -102,25 +111,29 @@ In this niche the posts people save and share are aesthetic moodboards, so:
   - queries: 2-3 short English stock-photo searches per item, most specific
     first, naming the object itself ("cinnamon sticks", "cinnamon"). No styling
     words ("aesthetic", "isolated", "flat lay").
-  - label: 1-3 words, sentence case, at most ~18 characters ("Local honey").
-    The label may be poetic ("Slow mornings") as long as the photo is the object.
+  - label: 1-3 words, sentence case, at most ~18 characters, naming exactly what
+    a stock photo of the object shows ("Glass jars", "Honey", "Wool socks").
+    No claims or adjectives the photo can't show ("Raw honey", "Organic eggs").
+  - titles never contain a colon. For contrast slides the small word goes in
+    kicker ("This" / "Not this") and the title is the topic ("A slow kitchen").
   - no item twice in one post.
 - Formats (field format):
   - moodboard: carousel of 4-6 slides. Slide 1 is the cover "The art of ___
-    living" (season, place, room, routine) with 10-12 items mixing the whole
-    theme; then one slide per sub-theme (kitchen, home, outdoors, rituals, ...)
-    titled in 2-4 words, 8-12 items each.
+    living" (season, place, room, routine); then one slide per sub-theme
+    (kitchen, home, outdoors, rituals, ...) titled in 2-4 words, 7-10 items each.
   - list: a single image (kind image) with one slide, e.g. "Natural kitchen
     essentials", 10-12 items.
-  - then_vs_now: carousel of 4-6 slides alternating "<topic> then" and "<topic>
-    now", 6-9 items each. Nostalgic, never shaming, never medical.
-  - this_not_that: carousel of 4-6 slides in pairs "This: <topic>" / "Not that:
-    <topic>", 6-9 items each: simple, natural choices vs their modern
-    counterparts. No health or safety claims about any product.
-- Every carousel ends with a closing slide: title = one short call to action
-  (save / send to a friend / follow), body = one short line with the handle,
-  exactly 3 items that echo the post. Single images have no closing slide.
-- Slide 1 is the hook: at most ~6 words in the title.
+  - then_vs_now: carousel of 5-7 slides: a mood cover ("How we used to live",
+    kicker "Then and now"), then pairs titled "<Topic> then" / "<Topic> now"
+    with 5-8 items each. Nostalgic, never shaming, never medical.
+  - this_not_that: carousel of 5-7 slides: a mood cover ("Small swaps for a
+    slower kitchen"), then pairs with kicker "This" / "Not this" and the topic
+    as title ("A slow morning" / "A rushed morning"), 5-8 items each: simple,
+    natural choices vs their modern counterparts. No health or safety claims.
+- Every carousel ends with the closing slide: title = a follow call to action
+  in at most 6 words ("Follow for more slow living"), body = one short second
+  line asking to save, send or comment, without the handle (it is printed
+  automatically), items empty. Single images have no closing slide.
 - CAPTION: one short line with one emoji, then a call to action. At most 3
   specific hashtags (Instagram allows 5), often none; never generic ones.
 - STORIES are seen by followers only: short, personal, ask for DM replies or tease
@@ -194,7 +207,7 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
                  f"images (field feed) and {reels} reel scripts (field reels), at most one feed post "
                  f"per day, spread evenly. Every day {sched['stories_per_day']} stories "
                  f"(slot 1..{sched['stories_per_day']}). Rotate pillars by their shares. "
-                 "Carousel 4-6 collage slides plus the closing slide, single image 1 slide, story 1 slide. "
+                 "Carousel: cover, 3-5 inner collage slides and the closing slide; single image 1 slide; story 1 slide. "
                  "Stories have no items."),
         "language": cfg.get("account", {}).get("language", "en"),
         "handle": cfg.get("account", {}).get("handle", ""),
@@ -210,7 +223,8 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
 
 
 def _slide(slide: Slide) -> dict:
-    out = {"title": slide.title}
+    out = {"kicker": slide.kicker} if slide.kicker else {}
+    out["title"] = slide.title
     if slide.body:
         out["body"] = slide.body
     if slide.items:

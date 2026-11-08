@@ -5,9 +5,15 @@ objects with small labels around a large title on paper), the look is our own:
 kraft paper, white die-cut outlines, title in the middle, colours from
 `brand` in config/account.yaml.
 
+Three layouts (content.slide_layout):
+  cover  first slide of a carousel: pure mood. Bigger stickers piled densely
+         around the title, overlapping a little, no labels.
+  board  inner slides and single images: title with labelled stickers.
+  cta    closing slide: a fan of the post's stickers without labels, the call
+         to action and the handle on an accent pill.
+
 Items are placed by a small packer, so any number of objects of any shape fits
-without covering the title, the labels or each other. The closing slide lines
-its objects up in one row under the call to action.
+without covering the title, the labels or (on boards) each other.
 """
 
 from __future__ import annotations
@@ -22,10 +28,13 @@ from PIL import Image, ImageColor, ImageDraw, ImageFilter, ImageFont
 from scipy import ndimage, signal
 
 from .config import ROOT
+from .content import slide_layout
 
 FONT_DIR = ROOT / "assets" / "fonts"
 SIZE = (1080, 1350)
 GRID = 6  # packer resolution in px
+BLEED = 30  # how far cover stickers may run off the page
+COVER_OVERLAP = 16  # px cover stickers may overlap: about the white border, so thin parts stay visible
 
 
 @dataclass(frozen=True)
@@ -118,11 +127,28 @@ class Line:
     font: ImageFont.FreeTypeFont
     fill: str
     gap_after: int = 0
+    tracking: float = 0          # extra space between letters, px
+
+    @property
+    def width(self) -> float:
+        return _text_w(self.font, self.text) + self.tracking * max(0, len(self.text) - 1)
+
+    @property
+    def height(self) -> float:
+        return self.font.getbbox(self.text or "x")[3]
 
 
-def _title_lines(title: str, body: str, style: Style, max_w: float, big: int) -> list[Line]:
+def _kicker(text: str, style: Style, size: int) -> Line:
+    """Small spaced capitals in the accent colour above a title ("THIS", "NOT THIS", "THEN")."""
+    return Line(text.upper(), _font("Inter-Bold.otf", size), style.accent, tracking=size * 0.28)
+
+
+def _title_lines(title: str, body: str, style: Style, max_w: float, big: int, kicker: str = "") -> list[Line]:
     serif = "DMSerifDisplay-Regular.ttf"
     lines: list[Line] = []
+    if kicker:
+        lines.append(_kicker(kicker, style, max(22, int(big * 0.2))))
+        lines[-1].gap_after = int(big * 0.16)
     main = title
     m = re.match(r"(?i)^(the art of)\s+(.+)$", title.strip())
     if m:
@@ -138,16 +164,26 @@ def _title_lines(title: str, body: str, style: Style, max_w: float, big: int) ->
 
 
 def _measure(lines: list[Line]) -> tuple[float, float]:
-    width = max(_text_w(l.font, l.text) for l in lines)
-    height = sum(l.font.getbbox(l.text)[3] + l.gap_after for l in lines) - lines[-1].gap_after
+    width = max(line.width for line in lines)
+    height = sum(line.height + line.gap_after for line in lines) - lines[-1].gap_after
     return width, height
+
+
+def _draw_text(draw, xy: tuple[float, float], line: Line) -> None:
+    if not line.tracking:
+        draw.text(xy, line.text, font=line.font, fill=line.fill)
+        return
+    x, y = xy
+    for ch in line.text:
+        draw.text((x, y), ch, font=line.font, fill=line.fill)
+        x += _text_w(line.font, ch) + line.tracking
 
 
 def _draw_lines(draw, lines: list[Line], x0: float, y0: float, block_w: float) -> None:
     y = y0
     for line in lines:
-        draw.text((x0 + (block_w - _text_w(line.font, line.text)) / 2, y), line.text, font=line.font, fill=line.fill)
-        y += line.font.getbbox(line.text)[3] + line.gap_after
+        _draw_text(draw, (x0 + (block_w - line.width) / 2, y), line)
+        y += line.height + line.gap_after
 
 
 # --- stickers ------------------------------------------------------------
@@ -185,14 +221,20 @@ class Item:
     pos: tuple[int, int] | None = None
 
 
-def _prepare(label: str, cut: Image.Image, side: float, style: Style, rnd: random.Random) -> Item:
+def _prepare(label: str, cut: Image.Image, side: float, style: Style, rnd: random.Random,
+             overlap: int = 0, angle: float | None = None) -> Item:
+    """A sized, outlined, rotated sticker and its footprint for the packer.
+
+    An empty label draws none. overlap > 0 shrinks the footprint by that many
+    px, so neighbouring stickers may overlap like a pile (cover slide)."""
     w, h = cut.size
     scale = side / (w * h) ** 0.5
     scale = min(scale, side * 1.45 / max(w, h))
     img = cut.resize((max(1, round(w * scale)), max(1, round(h * scale))), Image.LANCZOS)
     if style.outline:
         img = _outline(img, style.outline)
-    angle = rnd.uniform(-style.max_rotation, style.max_rotation)
+    if angle is None:
+        angle = rnd.uniform(-style.max_rotation, style.max_rotation)
     if abs(angle) > 0.3:
         img = img.rotate(angle, resample=Image.BICUBIC, expand=True)
     alpha = np.asarray(img.getchannel("A")) > 20
@@ -201,6 +243,12 @@ def _prepare(label: str, cut: Image.Image, side: float, style: Style, rnd: rando
 
     text = _clean(label)
     font = _font(style.label_font, style.label_size)
+    g = style.gap
+    if not text:
+        body = ndimage.distance_transform_edt(alpha) > overlap if overlap else alpha
+        full = np.pad(body, g)
+        full = ndimage.distance_transform_edt(~full) <= g if g else full
+        return Item("", img, font, _maxpool(full), (g, g), (obj_cx, obj_bottom))
     lw = _text_w(font, text)
     lh = font.getbbox(text)[3]
     label_top = obj_bottom + (8 if style.outline else 12)
@@ -209,7 +257,6 @@ def _prepare(label: str, cut: Image.Image, side: float, style: Style, rnd: rando
 
     fx0, fx1 = min(0, int(lx0)), max(img.width, int(np.ceil(lx1)))
     fy1 = max(img.height, int(np.ceil(ly1)))
-    g = style.gap
     full = np.zeros((fy1 + 2 * g, fx1 - fx0 + 2 * g), bool)
     ox, oy = -fx0 + g, g
     full[oy:oy + img.height, ox:ox + img.width] = alpha
@@ -236,96 +283,164 @@ def _place(occ: np.ndarray, fp: np.ndarray, rnd: random.Random) -> tuple[int, in
     return int(y), int(x)
 
 
-def _row(cuts: list[tuple[str, Image.Image]], style: Style, rnd: random.Random,
-         top: float, bottom: float, height: float = 300) -> list[Item]:
-    """Objects side by side, bottoms on one line, centred in the band [top, bottom]."""
-    slot = (SIZE[0] - 2 * style.margin) / len(cuts)
+FAN_MAX = 4  # stickers on the closing slide
+
+
+def _fan(cuts: list[Image.Image], style: Style, rnd: random.Random) -> list[Item]:
+    """The closing slide's stickers: a gentle arc tilted outwards, middle ones on top.
+    Positions are relative to the fan's top centre (0, 0); the caller moves them."""
+    cuts = cuts[:FAN_MAX]
+    n = len(cuts)
+    W = SIZE[0]
+    side = {1: 420, 2: 380, 3: 350}.get(n, 315)
     items = []
-    for label, cut in cuts:
-        w, h = cut.size
-        hh = min(height, (bottom - top) * 0.7, slot * 0.8 * h / w)  # wide objects get less height
-        items.append(_prepare(label, cut, hh * (w / h) ** 0.5, style, rnd))
-    tallest = max(i.image.height for i in items)
-    baseline = (top + bottom + tallest) / 2 - style.label_size - 12
-    for k, item in enumerate(items):
-        cx = style.margin + slot * (k + 0.5)
-        item.pos = (int(cx - item.label_box[0]), int(baseline - item.image.height))
-    return items
+    for k, cut in enumerate(cuts):
+        t = (k - (n - 1) / 2) / ((n - 1) / 2) if n > 1 else 0.0   # -1 .. 1
+        size = side * (1.1 - 0.14 * abs(t))
+        items.append((t, _prepare("", cut, size, style, rnd, angle=-10 * t + rnd.uniform(-3, 3))))
+    # centres spread so neighbours just touch, the whole fan inside the margins
+    widths = [i.image.width for _, i in items]
+    step = sum(widths) / n * 0.86
+    span = min(step * (n - 1), W - 2 * style.margin - (widths[0] + widths[-1]) / 2) if n > 1 else 0
+    tallest = max(i.image.height for _, i in items)
+    for t, item in items:
+        cx = t * span / 2
+        cy = tallest / 2 + 34 * t * t
+        item.pos = (int(cx - item.image.width / 2), int(cy - item.image.height / 2))
+    return [item for _, item in sorted(items, key=lambda ti: -abs(ti[0]))]   # outer first, middle on top
+
+
+def _composite(slide: Image.Image, placed: list[Item], style: Style) -> None:
+    """Stickers in order, each with its own soft shadow, so piled stickers shade the ones below."""
+    dx, dy, blur, opacity = style.shadow
+    pad = 3 * blur
+    for item in placed:
+        x, y = item.pos
+        a = item.image.getchannel("A")
+        sh = Image.new("L", (a.width + 2 * pad, a.height + 2 * pad), 0)
+        sh.paste(a, (pad, pad))
+        sh = sh.filter(ImageFilter.GaussianBlur(blur)).point(lambda v: int(v * opacity))
+        tint = Image.new("RGBA", sh.size, (52, 36, 22, 255))
+        tint.putalpha(sh)
+        _paste_clipped(slide, tint, (x + dx - pad, y + dy - pad))
+        _paste_clipped(slide, item.image, (x, y))
+
+
+def _paste_clipped(canvas: Image.Image, img: Image.Image, xy: tuple[int, int]) -> None:
+    """alpha_composite that tolerates images partly outside the canvas."""
+    x, y = xy
+    left, top = max(0, -x), max(0, -y)
+    right, bottom = min(img.width, canvas.width - x), min(img.height, canvas.height - y)
+    if right <= left or bottom <= top:
+        return
+    canvas.alpha_composite(img.crop((left, top, right, bottom)), (x + left, y + top))
+
+
+def _pill(draw, text: str, cx: float, top: float, style: Style, size: int = 34) -> tuple[float, float, float, float]:
+    """The handle on a rounded accent pill; returns its box."""
+    font = _font("Inter-Bold.otf", size)
+    tw = _text_w(font, text)
+    th = font.getbbox(text)[3]
+    px, py = size * 0.85, size * 0.5
+    box = (cx - tw / 2 - px, top, cx + tw / 2 + px, top + th + 2 * py)
+    draw.rounded_rectangle(box, radius=(box[3] - box[1]) / 2, fill=style.accent)
+    draw.text((cx - tw / 2, top + py - size * 0.06), text, font=font, fill=style.paper)
+    return box
 
 
 # --- slides --------------------------------------------------------------
 
 def render_slide(title: str, items: list[tuple[str, Path]], out: Path, style: Style = STYLE,
-                 seed: int = 0, handle: str = "", body: str = "", row: bool = False) -> Path:
-    """One collage slide; returns the JPEG path.
-
-    row=True lines the objects up in one row under the text (closing slide)
-    instead of scattering them around the title."""
+                 seed: int = 0, handle: str = "", body: str = "", layout: str = "board",
+                 kicker: str = "") -> Path:
+    """One collage slide; returns the JPEG path. layout: "cover", "board" or "cta"
+    (see the module docstring). Labels are drawn on boards only."""
     rnd = random.Random(seed)
     W, H = SIZE
     m = style.margin
     slide = paper(SIZE, style.paper, seed=seed, grain=style.grain).convert("RGBA")
     draw = ImageDraw.Draw(slide)
-    occ = np.zeros((H // GRID, W // GRID), bool)
+    cuts =[(label if layout == "board" else "", Image.open(path).convert("RGBA")) for label, path in items]
+    placed: list[Item] = []
+
+    if layout == "cta":
+        lines = _title_lines(_clean(title), _clean(body), style, W - 2 * m - 80, 116, kicker)
+        tw, th = _measure(lines)
+        placed = _fan([c for _, c in cuts], style, rnd) if cuts else []
+        fan_h = max((i.pos[1] + i.image.height for i in placed), default=0)
+        pill_h, gap_fan, gap_pill = 82, 70, 56
+        total = fan_h + (gap_fan if placed else 0) + th + (gap_pill + pill_h if handle else 0)
+        top = (H - total) / 2 - 10   # optically a touch above centre
+        for item in placed:
+            item.pos = (int(W / 2 + item.pos[0]), int(top + item.pos[1]))
+        y0 = top + fan_h + (gap_fan if placed else 0)
+        _draw_lines(draw, lines, (W - tw) / 2, y0, tw)
+        if handle:
+            _pill(draw, f"@{handle}", W / 2, y0 + th + gap_pill, style)
+        _composite(slide, placed, style)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        slide.convert("RGB").save(out, "JPEG", quality=93)
+        return out
+
+    cover = layout == "cover"
+    # The cover's stickers may run off the page edges (BLEED px), like a full collage.
+    bleed = BLEED if cover else 0
+    occ = np.zeros(((H + 2 * bleed) // GRID, (W + 2 * bleed) // GRID), bool)
 
     def block(x0, y0, x1, y1, pad=0):
+        x0, x1, y0, y1 = x0 + bleed, x1 + bleed, y0 + bleed, y1 + bleed
         occ[max(0, int((y0 - pad) // GRID)):int(np.ceil((y1 + pad) / GRID)),
             max(0, int((x0 - pad) // GRID)):int(np.ceil((x1 + pad) / GRID))] = True
 
-    # page frame: keep objects inside the margins
-    block(0, 0, W, m); block(0, H - m, W, H); block(0, 0, m, H); block(W - m, 0, W, H)
+    if not cover:
+        # page frame: keep objects inside the margins
+        block(0, 0, W, m); block(0, H - m, W, H); block(0, 0, m, H); block(W - m, 0, W, H)
 
-    lines = _title_lines(_clean(title), _clean(body), style, W - 2 * m - 40, 138)
+    lines = _title_lines(_clean(title), _clean(body), style, W - 2 * m - 40, 150 if cover else 138, kicker)
+    if cover and handle:
+        lines[-1].gap_after = 26
+        lines.append(_kicker(f"@{handle}", style, 24))
+        lines[-1].tracking = 3
     tw, th = _measure(lines)
-    x0, y0 = (W - tw) / 2, H * (0.36 if row else 0.47) - th / 2
+    x0, y0 = (W - tw) / 2, H * (0.5 if cover else 0.47) - th / 2
     _draw_lines(draw, lines, x0, y0, tw)
-    block(x0, y0, x0 + tw, y0 + th, pad=26)
+    block(x0, y0, x0 + tw, y0 + th, pad=34 if cover else 26)
 
-    if handle:
+    if handle and not cover:
         tag = f"@{handle}"
         f = _font("Inter-Bold.otf", 24)
         hw = _text_w(f, tag)
         draw.text(((W - hw) / 2, H - m - 14), tag, font=f, fill=style.ink)
         block((W - hw) / 2, H - m - 18, (W + hw) / 2, H, pad=12)
 
-    cuts = [(label, Image.open(path).convert("RGBA")) for label, path in items]
-    placed: list[Item] = []
-    if cuts and row:
-        placed = _row(cuts, style, rnd, y0 + th + 40, H - m - 50)
-    elif cuts:
+    if cuts:
         free_px = (~occ).sum() * GRID * GRID
-        side = (free_px * 0.36 / len(cuts)) ** 0.5
+        side = (free_px * (0.6 if cover else 0.36) / len(cuts)) ** 0.5
         sizes = [side * (1.18 if n == 0 else rnd.uniform(0.86, 1.1)) for n in range(len(cuts))]
         order = sorted(range(len(cuts)), key=lambda n: -sizes[n])
         for n in order:
             label, cut = cuts[n]
             for attempt in range(7):
-                item = _prepare(label, cut, sizes[n] * 0.9 ** attempt, style, rnd)
+                item = _prepare(label, cut, sizes[n] * 0.9 ** attempt, style, rnd, overlap=COVER_OVERLAP if cover else 0)
                 pos = _place(occ, item.footprint, rnd)
                 if pos:
                     gy, gx = pos
                     occ[gy:gy + item.footprint.shape[0], gx:gx + item.footprint.shape[1]] |= item.footprint
-                    item.pos = (gx * GRID + item.origin[0], gy * GRID + item.origin[1])
+                    item.pos = (gx * GRID + item.origin[0] - bleed, gy * GRID + item.origin[1] - bleed)
                     placed.append(item)
                     break
             else:
-                print(f"  bez místa: {label}")
+                print(f"  bez místa: {label or n + 1}")
 
-    if placed:
-        dx, dy, blur, opacity = style.shadow
-        shadow = Image.new("L", SIZE, 0)
-        for item in placed:
-            a = item.image.getchannel("A")
-            shadow.paste(a, (item.pos[0] + dx, item.pos[1] + dy), a)
-        shadow = shadow.filter(ImageFilter.GaussianBlur(blur)).point(lambda v: int(v * opacity))
-        tint = Image.new("RGBA", SIZE, (52, 36, 22, 255))
-        tint.putalpha(shadow)
-        slide.alpha_composite(tint)
+    if cover:
+        # Piled stickers: big ones underneath, so a small one never hides behind a big one.
+        placed.sort(key=lambda i: -int((np.asarray(i.image.getchannel("A")) > 20).sum()))
+    else:
         rnd.shuffle(placed)  # z-order doesn't follow size
-        for item in placed:
-            slide.alpha_composite(item.image, item.pos)
-        draw = ImageDraw.Draw(slide)
-        for item in placed:
+    _composite(slide, placed, style)
+    draw = ImageDraw.Draw(slide)
+    for item in placed:
+        if item.label:
             cx, ty = item.label_box
             lw = _text_w(item.label_font, item.label)
             draw.text((item.pos[0] + cx - lw / 2, item.pos[1] + ty), item.label, font=item.label_font,
@@ -340,14 +455,18 @@ def render_slides(slides: list[dict], out_dir: Path, handle: str = "", style: St
                   find=None, seed: int = 0, name=lambda n: f"{n:02d}.jpg") -> tuple[list[Path], list[dict]]:
     """All slides of one post plus the licence trail of its photos.
 
-    slide = {"title": .., "body": .. (closing slide), "items": [{"label": .., "queries": [..]}],
-             "row": bool (default: True when the slide has a body)}
+    slide = {"title": .., "kicker": small line above the title (optional),
+             "body": .. (closing slide), "items": [{"label": .., "queries": [..]}],
+             "layout": "cover" | "board" | "cta" (default: content.slide_layout),
+             "echo": [labels] (closing slide: which earlier stickers to show)}
+    A closing slide without items shows stickers of the post's other slides.
     """
     from . import cutout
 
     find = find or cutout.find_cutout
     used: set[str] = set()
     credits: list[dict] = []
+    seen: list[list[tuple[float, str, Path]]] = []   # per slide: (score, label, path)
 
     def collect(spec_items: list[dict]) -> list[tuple[str, Path]]:
         got = []
@@ -360,27 +479,50 @@ def render_slides(slides: list[dict], out_dir: Path, handle: str = "", style: St
                     best = found
                 if best and best["score"] >= 0.45:
                     break
+            label = spec.get("label") or queries[0]
             if not best or best["score"] < 0.15:
-                print(f"  bez fotky: {spec['label']}")
+                print(f"  bez fotky: {label}")
                 continue
             used.add(best["id"])
-            credits.append({"label": spec["label"], **{k: v for k, v in best.items() if k != "path"}})
-            got.append((spec["label"], Path(best["path"])))
+            credits.append({"label": label, **{k: v for k, v in best.items() if k != "path"}})
+            got.append((label, Path(best["path"])))
+            seen[-1].append((best["score"], label, Path(best["path"])))
         return got
+
+    def echo(labels: list[str] | None = None, count: int = FAN_MAX) -> list[tuple[str, Path]]:
+        """Stickers of earlier slides for the closing slide: the ones named in `labels`,
+        else the best sticker of each earlier slide in turn (cover first)."""
+        if labels:
+            by_label = {label.lower(): (label, path) for slide in seen for _, label, path in slide}
+            picked = [by_label[name.lower()] for name in labels if name.lower() in by_label]
+            if picked:
+                return picked[:count]
+        ranked = [sorted(slide, key=lambda x: -x[0]) for slide in seen if slide]
+        out: list[tuple[str, Path]] = []
+        for depth in range(max((len(r) for r in ranked), default=0)):
+            for r in ranked:
+                if depth < len(r) and len(out) < count:
+                    out.append(r[depth][1:])
+        return out
 
     paths = []
     for n, slide in enumerate(slides, start=1):
-        print(f"slide {n}/{len(slides)}: {slide['title']}")
-        body = slide.get("body") or ""
-        paths.append(render_slide(slide["title"], collect(slide.get("items") or []), out_dir / name(n), style,
-                                  seed=seed + n, handle=handle, body=body, row=slide.get("row", bool(body))))
+        layout = slide_layout(slides, n - 1)
+        print(f"slide {n}/{len(slides)} ({layout}): {slide['title']}")
+        seen.append([])
+        things = collect(slide.get("items") or [])
+        if layout == "cta" and not things:
+            things = echo(slide.get("echo"))
+        paths.append(render_slide(slide["title"], things, out_dir / name(n), style, seed=seed + n,
+                                  handle=handle, body=slide.get("body") or "", layout=layout,
+                                  kicker=slide.get("kicker") or ""))
     return paths, credits
 
 
 def render_post(plan: dict, out_dir: Path, handle: str = "", style: Style = STYLE,
                 find=None, seed: int = 0) -> tuple[list[Path], list[dict]]:
     """A plan file: {"slides": [...], "cta": {"title", "body", "items"}} (cta = closing slide)."""
-    slides = list(plan["slides"]) + ([{**plan["cta"], "row": True}] if plan.get("cta") else [])
+    slides = list(plan["slides"]) + ([{**plan["cta"], "layout": "cta"}] if plan.get("cta") else [])
     return render_slides(slides, out_dir, handle, style, find, seed)
 
 

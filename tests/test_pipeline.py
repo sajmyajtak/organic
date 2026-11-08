@@ -196,7 +196,8 @@ def test_generate_never_overwrites_existing_ids(queue, monkeypatch):
     content.save(carousel(id="2026-11-02-feed-1", kind="reel", slides=[], media=["https://x/v.mp4"]), "drafts")
     plan = gen.Plan(
         feed=[gen.FeedPost(date="2026-11-02", pillar="Tipy", format="moodboard", kind="carousel",
-                           slides=[gen.Slide(title="A", body="", items=[]), gen.Slide(title="B", body="b", items=[])],
+                           slides=[gen.Slide(kicker="", title="A", body="", items=[]),
+                                   gen.Slide(kicker="This", title="B", body="b", items=[])],
                            caption="Popisek", hashtags=["tip"], alt_text="alt", sponsored=False, inspired_by="")],
         reels=[],
         stories=[gen.Story(date="2026-11-02", slot=9, purpose="question", title="Ahoj", body="", sticker_idea=""),

@@ -41,3 +41,22 @@ commons:50073046  # Air fryer: zlatá miska s jídlem z pikniku
 openverse:3aca12bf-d5fc-4109-b15a-2e58db4d4f2f  # Toaster: jen plátek toastu
 commons:34606975  # Pizza box: logo pizzerie s textem
 commons:62672657  # Enamel kettle: stříbrná konvice s kahanem, ne smaltovaná
+commons:61777076  # Cast iron pot: konvice s muzejním měřítkem vedle
+commons:61834456  # Cast iron pan: muzejní měřítko vedle hrnce
+commons:114035314  # Lantern: japonská kamenná lucerna z chrámu
+openverse:9b5d2d36-d111-4109-bd9f-a140e9668980  # Herbal tea: značka Twinings na sáčcích
+commons:86893177  # Disposable cup: logo Smoothie King
+commons:157074626  # Mulled cider: lidé u stánku
+commons:202377413  # Sheepskin: kožich, ne ovčí kůže
+commons:153813315  # Smoked salmon: sušené maso, ne losos
+openverse:1f56ed1c-0f82-4b37-9aef-b208e6490948  # Wooden brush: zdobená štětka se střapcem
+openverse:ad7bbbc3-1bb4-40c6-b1f9-e3a250d007e1  # Lingonberries: výřez vypadá jako jablka
+commons:147388117  # French press: sklenice s tmavým nápojem
+openverse:34cf1a92-0c12-4db1-b898-ac51a4892df4  # Cider in a mug: černý džbán
+commons:61661539  # Oatmeal bowl: vypadá jako sušenka
+openverse:6ec1ddb3-d77f-46a0-982c-205f40cb5be8  # Notebook: nejasný předmět
+commons:158041448  # Wool slippers: výšivka, rozpadlý výřez
+openverse:788a8246-d33f-4849-9881-16254082ea11  # Plastic wrap: hliněná nádoba na vodu
+openverse:dc2034b3-22ea-41ed-bdb6-bb8caed79cfb  # Folded wool blanket: hromada triček
+commons:107198977  # Beeswax wrap: výřez vypadá jako růžová žehlička
+openverse:b8d660b7-c1e0-4362-a26d-91ed4b715f88  # Linen towels: osuška, slabý výřez

@@ -108,10 +108,19 @@ def validate(item: dict) -> list[str]:
     if kind in ("carousel", "image") and not media and any(s.get("items") for s in slides):
         for n, slide in enumerate(slides, start=1):
             things = slide.get("items") or []
-            if not 3 <= len(things) <= 15:
+            role = slide_layout(slides, n - 1)
+            if role == "cta":
+                if len(things) > 8:
+                    problems.append(f"slide {n}: závěrečný slide má {len(things)} předmětů (max 8)")
+            elif not 3 <= len(things) <= 15:
                 problems.append(f"slide {n}: {len(things)} předmětů (koláž potřebuje 3–15)")
-            if any(not t.get("label") or not (t.get("queries") or t.get("query")) for t in things):
-                problems.append(f"slide {n}: předmět bez popisku nebo bez hledání fotky")
+            if any(not (t.get("queries") or t.get("query")) for t in things):
+                problems.append(f"slide {n}: předmět bez hledání fotky")
+            # Cover and closing slide show no labels; inner slides do (the label is the content).
+            if role == "board" and any(not t.get("label") for t in things):
+                problems.append(f"slide {n}: předmět bez popisku")
+            if ":" in str(slide.get("title") or ""):
+                problems.append(f"slide {n}: nadpis s dvojtečkou (použij `kicker` nad nadpisem)")
     # Attached media wins over generated slides when publishing.
     if kind == "carousel" and not 2 <= len(media or slides) <= 20:
         problems.append("karusel musí mít 2–20 položek")
@@ -120,6 +129,20 @@ def validate(item: dict) -> list[str]:
     if item.get("sponsored") and not AD_LABEL.match(first_line):
         problems.append("placený/affiliate obsah musí začínat označením „Ad“ / „#ad“ (česky „Reklama“)")
     return problems
+
+
+def slide_layout(slides: list[dict], index: int) -> str:
+    """How a collage slide is laid out: "cover" (first slide of a carousel: pure
+    mood, no labels), "cta" (closing slide with a body line: call to follow, no
+    labels) or "board" (title with labelled photos). `layout` on the slide wins."""
+    slide = slides[index]
+    if slide.get("layout") in ("cover", "cta", "board"):
+        return slide["layout"]
+    if len(slides) > 1 and index == 0:
+        return "cover"
+    if index > 0 and index == len(slides) - 1 and slide.get("body"):
+        return "cta"
+    return "board"
 
 
 def full_caption(item: dict) -> str:
