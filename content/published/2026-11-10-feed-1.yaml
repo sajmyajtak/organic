@@ -6,7 +6,7 @@ inspired_by: '@organic__101_ topics (own wording and layout)'
 ai_generated: true
 date: '2026-11-10'
 format: list
-kind: image
+kind: carousel
 pillar: Natural essentials lists
 caption: 'Everything a calm home really needs 🕯️
 
@@ -17,6 +17,38 @@ hashtags:
 alt_text: 'Natural home essentials: candlelight, dried flowers, bar soap, a houseplant, terracotta pots,
   a woven basket, linen pillows and a wooden bowl.'
 slides:
+- title: Everything a calm home needs
+  items:
+  - label: Ceramic vase
+    queries:
+    - ceramic vase
+  - label: Knitted sweater
+    queries:
+    - knitted sweater
+  - label: Yarn
+    queries:
+    - yarn ball
+  - label: Teapot
+    queries:
+    - tea kettle
+  - label: Pears
+    queries:
+    - pears
+  - label: Old books
+    queries:
+    - old books
+  - label: Candles
+    queries:
+    - lit candles
+  - label: Ceramic bowls
+    queries:
+    - ceramic bowls
+  - label: Slippers
+    queries:
+    - slippers
+  - label: Morning latte
+    queries:
+    - hot drink mug
 - title: Natural home essentials
   items:
   - label: Candlelight
@@ -43,10 +75,196 @@ slides:
   - label: Wooden bowl
     queries:
     - wooden bowl
+- title: Follow for more natural living
+  body: Save this for your next shopping trip
+  echo:
+  - Teapot
+  - Houseplant
+  - Terracotta pots
+  - Dried flowers
 klapka:
   record: rec4Lc4hX7aoY8QPF
   sent: 0bffb97562bdc0dc
 photo_credits:
+- label: Ceramic vase
+  query: ceramic vase
+  provider: openverse
+  id: bcf5737f-a21e-4df0-9626-8d390f2de269
+  preview_url: https://api.openverse.org/v1/images/bcf5737f-a21e-4df0-9626-8d390f2de269/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTA5NmFmLWltYWdlLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/14262287/jug
+  creator: thegetty
+  title: Ancient ceramic vase with texture
+  keywords: Ancient ceramic vase with texture art craft glass green history ring texture
+  width: 1024
+  score: 0.953
+  size:
+  - 396
+  - 746
+  match: 0.998
+- label: Knitted sweater
+  query: knitted sweater
+  provider: openverse
+  id: 37c4d672-db66-4658-be91-e8f84342f0bb
+  preview_url: https://api.openverse.org/v1/images/37c4d672-db66-4658-be91-e8f84342f0bb/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4MTIzMjUtaW1hZ2Uta3d2eGZvNDcuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5921020/photo-image-public-domain-fashion-free
+  creator: ''
+  title: Free classic clothes photo
+  keywords: Free classic clothes photo classic picture clothes crochet fashion knitting wool sweater textile
+  width: 1024
+  score: 0.934
+  size:
+  - 780
+  - 570
+  match: 1.0
+- label: Yarn
+  query: yarn ball
+  provider: openverse
+  id: f58f381a-d80b-4a5a-8dce-8d814925cc14
+  preview_url: https://api.openverse.org/v1/images/f58f381a-d80b-4a5a-8dce-8d814925cc14/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDk3Nzg5LXdpa2ltZWRpYS1pbWFnZS1rb3dudGlhby5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3297847/free-photo-image-yarn-wool-knitting
+  creator: ''
+  title: orange wool ball yarn blanket
+  keywords: orange wool ball yarn blanket knit knitting linen wool wool ball wool yarn yarn yarn ball
+  width: 1024
+  score: 0.96
+  size:
+  - 479
+  - 481
+  match: 0.999
+- label: Teapot
+  query: tea kettle
+  provider: commons
+  id: '80569211'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg/960px-Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg/960px-Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg
+  creator: alquibar
+  title: Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere
+  keywords: Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere CC-Zero Files from external sources with
+    reviewed licenses Ceramic tea pots Files with coordinates missing SDC location of creation Images
+    from Pxhere Teapot on grayscale gradient background.
+  width: 1800
+  score: 0.793
+  size:
+  - 551
+  - 405
+  match: 0.999
+- label: Pears
+  query: pears
+  provider: commons
+  id: '57396131'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Pears-2.jpg/960px-Pears-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/1/1f/Pears-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pears-2.jpg
+  creator: MartinThoma
+  title: Pears-2
+  keywords: Pears-2 Taken with Panasonic Lumix DMC-TZ41 CC-Zero Location not applicable Self-published
+    work 2 fruit Pears on gray background Images by Martin Thoma/Food Two pears
+  width: 1402
+  score: 0.988
+  size:
+  - 1232
+  - 1212
+  match: 0.999
+- label: Old books
+  query: old books
+  provider: commons
+  id: '37987843'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Old_Books_03.JPG
+  creator: Ch. Maderthoner
+  title: Old Books 03
+  keywords: Old Books 03 Books CC-Zero Self-published work Alte Bücher
+  width: 1800
+  score: 0.9
+  size:
+  - 845
+  - 831
+  match: 0.994
+- label: Candles
+  query: lit candles
+  provider: openverse
+  id: 9e78ccef-a480-4762-8795-09856071ce82
+  preview_url: https://api.openverse.org/v1/images/9e78ccef-a480-4762-8795-09856071ce82/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4ODAxMzQtaW1hZ2Uta3d2eGRlcjQuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5920521/free-lit-candles-image-public-domain-cc0-photo
+  creator: ''
+  title: Free lit candles image
+  keywords: Free lit candles image candle candles fire places free candle lit candles public
+  width: 1024
+  score: 0.71
+  size:
+  - 179
+  - 294
+  match: 0.992
+- label: Ceramic bowls
+  query: ceramic bowls
+  provider: commons
+  id: '108792550'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Preclassic_Central_Plateau_Ceramic_Bowls_%289777918126%29.jpg/960px-Preclassic_Central_Plateau_Ceramic_Bowls_%289777918126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Preclassic_Central_Plateau_Ceramic_Bowls_%289777918126%29.jpg/960px-Preclassic_Central_Plateau_Ceramic_Bowls_%289777918126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Preclassic_Central_Plateau_Ceramic_Bowls_(9777918126).jpg
+  creator: Gary Todd from Xinzheng, China
+  title: Preclassic Central Plateau Ceramic Bowls (9777918126)
+  keywords: Preclassic Central Plateau Ceramic Bowls (9777918126) CC-Zero Photographs by Gary Lee Todd
+    Files with coordinates missing SDC location of creation Flickr images reviewed by FlickreviewR 2 Files
+    uploaded by Orizan National Museum of Anthropology - Preclassic pottery Preclassic Central Plateau
+    Gallery, INAH, National Museum of Anthropology, Mexico City. Complete indexed photo collection at
+    WorldHistoryPics.com.
+  width: 1800
+  score: 0.811
+  size:
+  - 884
+  - 359
+  match: 0.999
+- label: Slippers
+  query: slippers
+  provider: openverse
+  id: 27b7bebc-0e18-412b-b9e9-6dc01b6b3f4c
+  preview_url: https://api.openverse.org/v1/images/27b7bebc-0e18-412b-b9e9-6dc01b6b3f4c/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAyL2xhY21hMjQ3ODYyLWltYWdlLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/9309923/mans-slippers
+  creator: lacma
+  title: Man's Slippers
+  keywords: Man's Slippers clothing mans photo shoe slippers
+  width: 1024
+  score: 0.787
+  size:
+  - 874
+  - 559
+  match: 0.954
+- label: Morning latte
+  query: hot drink mug
+  provider: openverse
+  id: 329bf7f7-78e6-4b14-9664-d39c84cc7ca6
+  preview_url: https://api.openverse.org/v1/images/329bf7f7-78e6-4b14-9664-d39c84cc7ca6/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/CQQMILRZPU.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/coffee-cup-CQQMILRZPU
+  creator: phatonlaphat thongsriphong
+  title: Coffee Cup
+  keywords: Coffee Cup  aroma art background beans biscotti black brown cafe caffeine cappuccino closeup
+    coffee cuisine cup decoration delicious design drink espresso foam food froth heart hot latte mug
+    shop table taste white wooden
+  width: 1024
+  score: 0.98
+  size:
+  - 594
+  - 477
+  match: 0.973
 - label: Candlelight
   query: candle holder
   provider: commons
@@ -196,8 +414,15 @@ photo_credits:
   - 592
   match: 0.998
 media:
-- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-1.jpg?v=8fe7f0b4
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-1.jpg?v=dc1516b2
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-2.jpg?v=54604434
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-3.jpg?v=b9a62ff9
 media_from_slides: true
+replaced:
+  media_ids:
+  - '18155958763547223'
+  published_at: 2026-11-08T11:50-05:00
+  why: vyšel jako samostatný obrázek, nahrazen celým karuselem
 media_ids:
-- '18155958763547223'
-published_at: 2026-11-08T11:50-05:00
+- '18596242327064557'
+published_at: 2026-11-08T12:01-05:00
