@@ -30,8 +30,12 @@ Pravidla:
    nanejvýš jednou za 8 h; rozhodnutí čte nanejvýš jednou za 12 h a jen když
    existují koncepty; z publikovaných drží v tabulce posledních 30.
    Cíl: do ~150 volání měsíčně.
-7. **Žádné datum.** Plán se neposílá: schválené posty jsou zásoba a kdy který
-   půjde, rozhoduje plánovač (scheduler.py). Náhled nese všechny slidy.
+7. **Žádné datum u postů.** Schválené posty jsou zásoba a kdy který půjde,
+   rozhoduje plánovač (scheduler.py). Náhled nese všechny slidy.
+8. **Denní plán** (časy dnes a zítra + post, který na ně připadá, a proč) jede
+   jako JSON v poli „Denní plán“ technického řádku. Nezávisí na aktuální minutě,
+   takže se mění jen se skutečnými změnami (post, schválení, statistiky, nový
+   den); změna plánu je důvod k odeslání tepu.
 """
 
 from __future__ import annotations
@@ -67,6 +71,7 @@ F_ERROR = "fldyUPw5nNcMhMw9u"
 F_CHANGED = "fldXluE8c6Oz8OlDp"
 F_PREVIEW = "fldKg2cDaYiqZlBv9"
 F_DECISION = "fldwwq94Hgty34Frw"  # lidské pole, jen čteme a po provedení mažeme
+F_DAY_PLAN = "fldxEWfA8KfeInd3U"  # JSON denního plánu, jen v technickém řádku
 
 STATE_NAMES = {"drafts": "koncept", "approved": "schváleno", "published": "publikováno", "failed": "chyba"}
 KIND_NAMES = {"carousel": "karusel", "image": "obrázek", "story": "story", "reel": "reel"}
@@ -293,6 +298,19 @@ def status(local: dict[str, tuple[str, dict]], tz: str, now: datetime | None = N
     return line[:1].upper() + line[1:], error
 
 
+def day_plan(tz: str, now: datetime) -> tuple[str | None, str | None]:
+    """The scheduler's day plan as JSON for KLAPKA, and its fingerprint."""
+    from . import scheduler
+
+    try:
+        data = scheduler.day_plan(now, tz)
+    except Exception as exc:  # a broken plan must not stop the queue sync
+        print(f"KLAPKA: denní plán selhal ({exc})")
+        return None, None
+    text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    return text, _fingerprint(data)
+
+
 def _recreate_heartbeat(at: "Airtable", fields: dict, account: str) -> None:
     """The row is gone (deleted in KLAPKA): find another one with our PostId, else make it."""
     found = [r for r in at.rows([F_POST_ID]) if r["fields"].get(F_POST_ID) == HEARTBEAT_POST_ID]
@@ -352,7 +370,9 @@ def sync(trigger: str = "cli", now: datetime | None = None, dry_run: bool = Fals
     pace = _state() if automatic else {}
     read = not dry_run and (trigger == "cli" or
                             (automatic and has_drafts and _since(pace, "last_read", now) >= READ_EVERY))
-    push_due = automatic and (published > 0 or _since(pace, "last_push", now) >= PUSH_EVERY)
+    plan_text, plan_fp = day_plan(tz, now)
+    plan_changed = automatic and plan_fp is not None and pace.get("plan") != plan_fp
+    push_due = automatic and (published > 0 or plan_changed or _since(pace, "last_push", now) >= PUSH_EVERY)
     clear_decision: set[str] = set()   # record ids whose decision we acted on
     to_delete: list[str] = []
 
@@ -475,6 +495,8 @@ def sync(trigger: str = "cli", now: datetime | None = None, dry_run: bool = Fals
     if beat_required or (ops and len(ops) % BATCH):
         line, error = status(local, tz, now)
         beat = {F_CHANGED: stamp, F_CAPTION: line, F_ERROR: error}
+        if plan_text is not None:
+            beat[F_DAY_PLAN] = plan_text
 
         def beat_done():
             summary["heartbeat"] = True
@@ -515,6 +537,8 @@ def sync(trigger: str = "cli", now: datetime | None = None, dry_run: bool = Fals
             pace["last_read"] = stamp_iso
         if summary["calls"] > int(read):  # something was written, not only read
             pace["last_push"] = stamp_iso
+        if summary.get("heartbeat") and plan_fp:
+            pace["plan"] = plan_fp
         _state_file().parent.mkdir(parents=True, exist_ok=True)
         _state_file().write_text(json.dumps(pace, indent=1) + "\n", encoding="utf-8")
     return summary

@@ -298,3 +298,29 @@ def test_preview_carries_the_whole_carousel_once_every_slide_is_online(queue, mo
     monkeypatch.setattr(klapka, "_reachable", {})
     klapka.sync("approve", client=at)
     assert at.row("2026-11-10-feed-1")[klapka.F_PREVIEW] == [{"url": u} for u in urls]
+
+
+def test_heartbeat_carries_the_day_plan_and_a_new_plan_goes_out_right_away(queue):
+    import json
+
+    at = FakeAirtable()
+    content.save(post(1, format="list"), "approved")
+    klapka.sync("publish", now=T0, client=at)
+    plan = json.loads(at.beat()[klapka.F_DAY_PLAN])
+    [today, tomorrow] = plan["days"]
+    assert today["date"] == "2026-11-09" and [s["post_id"] for s in today["slots"]] == ["2026-11-10-feed-1"]
+    assert tomorrow["slots"] == []
+    assert klapka.F_DAY_PLAN not in at.row("2026-11-10-feed-1")   # only the technical row has it
+
+    at.log.clear()
+    assert klapka.sync("publish", now=at_hour(2), client=at)["calls"] == 0   # same plan: nothing to send
+    content.save(post(2, format="moodboard"), "approved")                  # approved locally: new plan
+    result = klapka.sync("publish", now=at_hour(3), client=at)
+    assert result["heartbeat"] and result["created"] == 1
+    plan = json.loads(at.beat()[klapka.F_DAY_PLAN])
+    assert len(plan["days"][0]["slots"]) == 2
+    at.log.clear()
+    assert klapka.sync("publish", now=at_hour(4), client=at)["calls"] == 0
+    # A new day is a new plan, sent with the first run after midnight in New York.
+    assert klapka.sync("publish", now=at_hour(10), client=at)["calls"] == 0     # 18:07 NY, still today
+    assert klapka.sync("publish", now=at_hour(16), client=at)["heartbeat"]      # 00:07 NY, next day

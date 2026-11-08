@@ -95,3 +95,42 @@ def test_performance_reads_the_latest_snapshot_per_post(queue):
     [p] = scheduler.performance(TZ)
     assert p["hour"] == 20 and p["format"] == "list" and p["reach"] == 40
     assert p["quality"] == pytest.approx((3 * 2 + 4 * 1 + 4) / 40)
+
+
+def test_day_plan_puts_a_post_on_every_slot_without_repeating_formats(queue):
+    fmts = ["moodboard", "moodboard", "list", "list", "then_vs_now", "this_not_that", "moodboard"]
+    for n, fmt in enumerate(fmts, start=10):
+        content.save(post(n, fmt), "approved")
+    morning = scheduler.day_plan(ny(9, 6), TZ)
+    today, tomorrow = morning["days"]
+    assert today["per_day"] == 3 and [s["status"] for s in today["slots"]] == ["planned"] * 3
+    assert [datetime.fromisoformat(s["at"]) for s in today["slots"]] == scheduler.slots(ny(9, 6), 3, [], TZ)
+    picked = [s["post_id"] for d in (today, tomorrow) for s in d["slots"]]
+    assert len(picked) == len(set(picked))                      # each post once
+    formats = [s["format"] for d in (today, tomorrow) for s in d["slots"]]
+    assert all(a != b for a, b in zip(formats, formats[1:]))    # never the same format twice in a row
+    assert all(s["why"] for s in today["slots"])
+    # The first planned post is the one the publish run will pick, and the plan
+    # doesn't change with the minute, only with facts.
+    first = today["slots"][0]
+    assert scheduler.plan(datetime.fromisoformat(first["at"]) + timedelta(minutes=5), TZ)["pick"]["id"] == first["post_id"]
+    assert scheduler.day_plan(ny(9, 9, 41), TZ) == morning
+
+
+def test_day_plan_shows_published_posts_and_keeps_the_gap(queue):
+    for n in range(10, 13):
+        content.save(post(n, "list" if n % 2 else "moodboard"), "approved")
+    slot = scheduler.slots(ny(9, 6), 2, [], TZ)[0]
+    late = slot + timedelta(hours=2, minutes=50)                 # GitHub ran late
+    item = content.items("approved")[0]
+    item["published_at"] = late.isoformat(timespec="minutes")
+    content.save(item, "published")
+    today = scheduler.day_plan(ny(9, 6), TZ)["days"][0]
+    assert today["slots"][0]["status"] == "published" and today["slots"][0]["post_id"] == item["id"]
+    nxt = [datetime.fromisoformat(s["at"]) for s in today["slots"][1:]]
+    assert all(t - late >= scheduler.MIN_GAP for t in nxt)
+
+
+def test_day_plan_with_an_empty_pool(queue):
+    plan = scheduler.day_plan(ny(9, 6), TZ)
+    assert plan["pool"] == 0 and all(d["slots"] == [] and d["per_day"] == 0 for d in plan["days"])

@@ -95,7 +95,9 @@ které do ní zapisují stav fronty, takže před pushem vždy `git pull --rebas
    2/1, rozestup ≥3 h, 7–22 h NY, časy z výchozího odhadu niky + zásahu našich postů podle
    hodiny (`data/insights.csv`, workflow Statistiky), jedno okno denně zkouší méně ověřenou
    hodinu; formát podle výkonu, nikdy dvakrát za sebou stejný. `python -m igbot plan`
-   ukáže dnešní okna a pořadí. Stories/reels mají dál pevný čas (`content.TIMED`).
+   ukáže denní plán (dnes a zítra: čas → post → proč, `scheduler.day_plan`); stejný plán
+   jde jako JSON do pole „Denní plán“ technického řádku v KLAPCE (přehled ho ukazuje).
+   Stories/reels mají dál pevný čas (`content.TIMED`).
    GitHub ve skutečnosti pouští workflow jen jednou za 3–6 h, plánovač to dohání.
    KLAPKA dostává všechny slidy v Náhledu a žádný Plán; sync se řídí uplynulým časem
    (stav `content/.automat.json`, zapisuje jen automat): změny a tep po novém postu

@@ -178,10 +178,21 @@ def show_plan(cfg: dict) -> None:
     print(f"Teď {now:%a %H:%M} ({tz}). Dnes {p['today']}/{p['per_day']} postů, v zásobě {len(p['pool'])}.")
     print("Okna dnes:", ", ".join(f"{s:%H:%M}" for s in p["slots"]) or "žádná")
     print("Teď publikovat:", "ano → " + p["pick"]["id"] if p["due"] else f"ne ({p['reason']})")
-    perf = scheduler.performance(tz)
-    last = max(content.items("published"), key=lambda i: i.get("published_at") or "", default={}).get("format")
-    for n, item in enumerate(scheduler.rank(p["pool"], perf, last), start=1):
-        print(f"  {n}. {item['id']} [{item.get('format')}] {(item.get('slides') or [{}])[0].get('title', '')}")
+    prague = ZoneInfo("Europe/Prague")
+    days = scheduler.day_plan(now, tz)
+    for day in days["days"]:
+        label = "Dnes" if day["date"] == f"{now:%Y-%m-%d}" else "Zítra"
+        print(f"{label} ({day['date']}), {day['per_day']} za den:")
+        for s in day["slots"] or [{"at": None}]:
+            if s["at"] is None:
+                print("  nic (zásoba schválených je prázdná)")
+                continue
+            at = datetime.fromisoformat(s["at"])
+            mark = "✓" if s["status"] == "published" else "·"
+            why = f"  ({s['why']})" if s.get("why") else ""
+            print(f"  {mark} {at:%H:%M} NY / {at.astimezone(prague):%H:%M} Praha  {s['post_id']} "
+                  f"[{s.get('format')}] {s['title']}{why}")
+    print(f"V zásobě po těchto dnech zbude: {days['left_after']}")
 
 
 def render_collage(cfg: dict, args) -> None:

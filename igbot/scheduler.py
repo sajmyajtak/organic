@@ -89,8 +89,8 @@ def hour_scores(perf: list[dict]) -> dict[int, tuple[float, float]]:
     return scores
 
 
-def slots(day: datetime, n: int, perf: list[dict], tz: str) -> list[datetime]:
-    """The day's posting times: the best hours, spaced out, one of them exploring."""
+def slot_plan(day: datetime, n: int, perf: list[dict], tz: str) -> list[tuple[datetime, bool]]:
+    """The day's posting times as (time, exploring): the best hours, spaced out, one exploring."""
     if n <= 0:
         return []
     rnd = random.Random(day.strftime("%Y-%m-%d"))
@@ -104,21 +104,37 @@ def slots(day: datetime, n: int, perf: list[dict], tz: str) -> list[datetime]:
             break
         if all(abs(h - c) >= gap for c in chosen):
             chosen.append(h)
+    explored = None
     if explore:
         # the least-observed of the plausible hours that still fit between the others
         free = [h for h in scores if HOUR_PRIOR[h] >= 0.6 and all(abs(h - c) >= gap for c in chosen)]
         if free:
             least = min(scores[h][1] for h in free)
-            chosen.append(rnd.choice([h for h in free if scores[h][1] <= least + 0.5]))
+            explored = rnd.choice([h for h in free if scores[h][1] <= least + 0.5])
+            chosen.append(explored)
     zone = ZoneInfo(tz)
     base = day.astimezone(zone).date()
-    return sorted(datetime.combine(base, time(h, rnd.randrange(0, 46, 5)), zone) for h in chosen)
+    picked = sorted((datetime.combine(base, time(h, rnd.randrange(0, 46, 5)), zone), h == explored)
+                    for h in chosen)
+    # Hours are >= 3 apart, but the minute jitter could leave 2:45 between two
+    # slots, and a run would then wait for MIN_GAP anyway. Say the real time.
+    out: list[tuple[datetime, bool]] = []
+    for t, exploring in picked:
+        if out and t - out[-1][0] < MIN_GAP:
+            t = out[-1][0] + MIN_GAP
+        out.append((t, exploring))
+    return out
 
 
-def rank(pool: list[dict], perf: list[dict], last_format: str | None) -> list[dict]:
-    """Pool items, best first."""
-    # Each post as "how it did against our typical post" (1.0 = typical), half
-    # engagement quality, half reach, so it is on the same scale as the prior.
+def slots(day: datetime, n: int, perf: list[dict], tz: str) -> list[datetime]:
+    """The day's posting times: the best hours, spaced out, one of them exploring."""
+    return [t for t, _ in slot_plan(day, n, perf, tz)]
+
+
+def format_scores(perf: list[dict]) -> dict[str, list[float]]:
+    """{format: [each post as "how it did against our typical post", 1.0 = typical]}.
+
+    Half engagement quality, half reach, so it is on the same scale as the prior."""
     mid_q = median([p["quality"] for p in perf]) if perf else 0
     mid_r = median([p["reach"] for p in perf]) if perf else 0
     by_format: dict[str, list[float]] = {}
@@ -127,6 +143,12 @@ def rank(pool: list[dict], perf: list[dict], last_format: str | None) -> list[di
             rel_q = p["quality"] / mid_q if mid_q else 1.0
             rel_r = p["reach"] / mid_r if mid_r else 1.0
             by_format.setdefault(p["format"], []).append(0.5 * rel_q + 0.5 * rel_r)
+    return by_format
+
+
+def rank(pool: list[dict], perf: list[dict], last_format: str | None) -> list[dict]:
+    """Pool items, best first."""
+    by_format = format_scores(perf)
 
     def score(item: dict) -> float:
         fmt = item.get("format") or ""
@@ -183,3 +205,74 @@ def plan(now: datetime, tz: str) -> dict:
         "due": reason is None, "reason": reason,
         "pick": rank(pool, perf, last_format)[0] if pool and reason is None else None,
     }
+
+
+FORMAT_NAMES = {"moodboard": "moodboard", "list": "seznam", "then_vs_now": "dřív a dnes",
+                "this_not_that": "tohle, ne tamto"}
+
+
+def _title(item: dict) -> str:
+    slides = item.get("slides") or []
+    return str((slides[0].get("title") if slides else "") or item["id"])
+
+
+def _hour_why(hour: int, scores: dict[int, tuple[float, float]], exploring: bool) -> str:
+    if exploring:
+        return "test méně ověřené hodiny"
+    if scores[hour][1] >= 1:
+        return "nejlepší zásah našich postů"
+    return "silná hodina podle rozboru niky"
+
+
+def _post_why(item: dict, by_format: dict[str, list[float]]) -> str:
+    fmt = item.get("format") or ""
+    name = FORMAT_NAMES.get(fmt, fmt or "post")
+    seen = by_format.get(fmt)
+    if not seen:
+        return f"formát {name} ještě nemá data, zkoušíme ho"
+    return f"formát {name} zatím {sum(seen) / len(seen):.1f}× náš průměr"
+
+
+def day_plan(now: datetime, tz: str, days: int = 2) -> dict:
+    """Today's (and tomorrow's) posting times with the post planned for each.
+
+    The same rules as `plan`: per_day from the pool, the day's slots, MIN_GAP
+    after the previous post, best-ranked pool item for each slot, never the same
+    format twice in a row. Times are windows: a run publishes at the first run
+    after one (GitHub starts the job every few hours). Nothing here depends on
+    the current minute, so the result only changes when facts change (a post,
+    an approval, new stats, a new day), and so does its fingerprint."""
+    zone = ZoneInfo(tz)
+    now = now.astimezone(zone)
+    pool = [i for i in content.items("approved") if i["kind"] not in content.TIMED and not content.validate(i)]
+    remaining = list(pool)
+    published = [i for i in content.items("published") if i["kind"] not in content.TIMED and _parse(i.get("published_at"))]
+    published.sort(key=lambda i: _parse(i["published_at"]))
+    perf = performance(tz)
+    scores = hour_scores(perf)
+    by_format = format_scores(perf)
+    last_time = _parse(published[-1]["published_at"]) if published else None
+    last_format = published[-1].get("format") if published else None
+    out = []
+    for offset in range(days):
+        date = now.date() + timedelta(days=offset)
+        noon = datetime.combine(date, time(12), zone)
+        done = [i for i in published if _parse(i["published_at"]).astimezone(zone).date() == date]
+        n = per_day(len(remaining) + len(done))
+        entries = [{"at": _parse(i["published_at"]).astimezone(zone).isoformat(timespec="minutes"),
+                    "status": "published", "post_id": i["id"], "title": _title(i), "format": i.get("format"),
+                    "why": None} for i in done]
+        for slot, exploring in slot_plan(noon, n, perf, tz)[len(done):]:
+            if not remaining:
+                break
+            at = max(slot, last_time + MIN_GAP) if last_time else slot
+            if at.astimezone(zone).date() != date or at.astimezone(zone).hour > LAST_HOUR:
+                break  # pushed past the posting hours by a late post: nothing more that day
+            pick = rank(remaining, perf, last_format)[0]
+            remaining.remove(pick)
+            entries.append({"at": at.astimezone(zone).isoformat(timespec="minutes"), "status": "planned",
+                            "post_id": pick["id"], "title": _title(pick), "format": pick.get("format"),
+                            "why": f"{_hour_why(slot.hour, scores, exploring)}; {_post_why(pick, by_format)}"})
+            last_time, last_format = at, pick.get("format")
+        out.append({"date": date.isoformat(), "per_day": n, "slots": entries})
+    return {"tz": tz, "pool": len(pool), "days": out, "left_after": len(remaining)}
