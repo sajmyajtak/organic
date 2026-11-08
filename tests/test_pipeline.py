@@ -276,7 +276,10 @@ def test_prepare_renders_to_media_and_publish_keeps_alt_text(queue, monkeypatch,
 
     cli.prepare_media(cfg, Namespace(ids=[], force=False, seed=0))
     item = content.items("drafts")[0]
-    assert item["media"] == [f"https://raw.example/repo/main/media/{item['id']}-{n}.jpg" for n in (1, 2)]
+    import hashlib
+    assert item["media"] == [f"https://raw.example/repo/main/media/{item['id']}-{n}.jpg?v="
+                             + hashlib.sha1((tmp_path / "media" / f"{item['id']}-{n}.jpg").read_bytes()).hexdigest()[:8]
+                             for n in (1, 2)]  # the hash makes KLAPKA and caches fetch a re-rendered slide
     assert item["media_from_slides"] is True and "problems" not in item
     assert sorted(p.name for p in (tmp_path / "media").iterdir()) == [f"{item['id']}-1.jpg", f"{item['id']}-2.jpg"]
 

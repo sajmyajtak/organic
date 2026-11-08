@@ -214,8 +214,12 @@ def prepare_media(cfg: dict, args) -> None:
     """Render drafts and approved items into media/ and point `media` at their public URLs.
 
     The files only become reachable after they are pushed, so commit and push
-    media/ and content/ before `klapka-sync` (KLAPKA shows slide 1 as preview)
-    and before the publishing slot."""
+    media/ and content/ before `klapka-sync` (KLAPKA shows every slide) and
+    before the publishing slot. Each URL carries a hash of the file (?v=...):
+    a re-render keeps the file name, and without it KLAPKA, Airtable and the
+    raw.githubusercontent cache would keep showing the old slide."""
+    import hashlib
+
     from . import collage
     from .config import ROOT
     from .render import Theme, render_item
@@ -240,7 +244,8 @@ def prepare_media(cfg: dict, args) -> None:
                 paths = collage.render_item(item, out, cfg.get("brand"), theme.handle, seed=args.seed)
             else:
                 paths = render_item(item, out, theme)
-            item["media"] = [f"{base}/media/{p.name}" for p in paths]
+            item["media"] = [f"{base}/media/{p.name}?v={hashlib.sha1(p.read_bytes()).hexdigest()[:8]}"
+                             for p in paths]
             item["media_from_slides"] = True
             problems = content.validate(item)
             if problems:
