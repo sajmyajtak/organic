@@ -25,31 +25,31 @@ slides:
   - label: Knitted sweater
     queries:
     - knitted sweater
-  - label: Yarn
-    queries:
-    - yarn ball
   - label: Teapot
     queries:
     - tea kettle
   - label: Pears
     queries:
     - pears
-  - label: Old books
-    queries:
-    - old books
   - label: Candles
     queries:
     - lit candles
   - label: Ceramic bowls
     queries:
     - ceramic bowls
-  - label: Slippers
-    queries:
-    - slippers
   - label: Morning latte
     queries:
     - hot drink mug
-- title: Natural home essentials
+  - label: Cinnamon sticks
+    queries:
+    - cinnamon sticks
+  - label: Red apples
+    queries:
+    - red apples
+  - label: Pine cones
+    queries:
+    - pine cones
+- title: Living room essentials
   items:
   - label: Candlelight
     queries:
@@ -57,31 +57,77 @@ slides:
   - label: Dried flowers
     queries:
     - dried flowers
-  - label: Bar soap
+  - label: Woven basket
     queries:
-    - bar soap
+    - woven basket
   - label: Houseplant
     queries:
     - houseplant
   - label: Terracotta pots
     queries:
     - terracotta pot
-  - label: Woven basket
-    queries:
-    - woven basket
   - label: Linen pillows
     queries:
     - linen bedding
+  - label: Woven blanket
+    queries:
+    - wool blanket
+  - label: Wall clock
+    queries:
+    - analog clock
+- title: Kitchen essentials
+  items:
   - label: Wooden bowl
     queries:
     - wooden bowl
+  - label: Wooden spoon
+    queries:
+    - wooden spoon
+  - label: Enamel mug
+    queries:
+    - enamel mug
+  - label: Olive oil
+    queries:
+    - olive oil bottle
+  - label: Glass jars
+    queries:
+    - glass jars
+  - label: Cutting board
+    queries:
+    - wooden cutting board
+  - label: Brown eggs
+    queries:
+    - brown eggs
+- title: Cozy essentials
+  items:
+  - label: Wool socks
+    queries:
+    - wool socks
+  - label: Hot cocoa
+    queries:
+    - hot chocolate
+  - label: Knitting
+    queries:
+    - knitting needles yarn
+  - label: Tea lights
+    queries:
+    - candles
+  - label: Slippers
+    queries:
+    - slippers
+  - label: Old books
+    queries:
+    - old books
+  - label: Evening tea
+    queries:
+    - herbal tea cup
 - title: Follow for more natural living
   body: Save this for your next shopping trip
   echo:
-  - Teapot
   - Houseplant
   - Terracotta pots
-  - Dried flowers
+  - Wool socks
+  - Enamel mug
 klapka:
   record: rec4Lc4hX7aoY8QPF
   sent: 025fc4bcc3ae374f
@@ -120,23 +166,6 @@ photo_credits:
   - 780
   - 570
   match: 1.0
-- label: Yarn
-  query: yarn ball
-  provider: openverse
-  id: f58f381a-d80b-4a5a-8dce-8d814925cc14
-  preview_url: https://api.openverse.org/v1/images/f58f381a-d80b-4a5a-8dce-8d814925cc14/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDk3Nzg5LXdpa2ltZWRpYS1pbWFnZS1rb3dudGlhby5qcGc.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/3297847/free-photo-image-yarn-wool-knitting
-  creator: ''
-  title: orange wool ball yarn blanket
-  keywords: orange wool ball yarn blanket knit knitting linen wool wool ball wool yarn yarn yarn ball
-  width: 1024
-  score: 0.96
-  size:
-  - 479
-  - 481
-  match: 0.999
 - label: Teapot
   query: tea kettle
   provider: commons
@@ -174,23 +203,6 @@ photo_credits:
   - 1232
   - 1212
   match: 0.999
-- label: Old books
-  query: old books
-  provider: commons
-  id: '37987843'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Old_Books_03.JPG
-  creator: Ch. Maderthoner
-  title: Old Books 03
-  keywords: Old Books 03 Books CC-Zero Self-published work Alte Bücher
-  width: 1800
-  score: 0.9
-  size:
-  - 845
-  - 831
-  match: 0.994
 - label: Candles
   query: lit candles
   provider: openverse
@@ -229,23 +241,6 @@ photo_credits:
   - 884
   - 359
   match: 0.999
-- label: Slippers
-  query: slippers
-  provider: openverse
-  id: 27b7bebc-0e18-412b-b9e9-6dc01b6b3f4c
-  preview_url: https://api.openverse.org/v1/images/27b7bebc-0e18-412b-b9e9-6dc01b6b3f4c/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAyL2xhY21hMjQ3ODYyLWltYWdlLmpwZw.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/9309923/mans-slippers
-  creator: lacma
-  title: Man's Slippers
-  keywords: Man's Slippers clothing mans photo shoe slippers
-  width: 1024
-  score: 0.787
-  size:
-  - 874
-  - 559
-  match: 0.954
 - label: Morning latte
   query: hot drink mug
   provider: openverse
@@ -265,6 +260,58 @@ photo_credits:
   - 594
   - 477
   match: 0.973
+- label: Cinnamon sticks
+  query: cinnamon sticks
+  provider: openverse
+  id: 80435883-3ed1-45b5-af8a-90652e5f03cd
+  preview_url: https://api.openverse.org/v1/images/80435883-3ed1-45b5-af8a-90652e5f03cd/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNjA4NC1pbWFnZS1rd3Z5ZmJueS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5927000/photo-image-public-domain-free
+  creator: ''
+  title: Free close cinnamon sticks image
+  keywords: Free close cinnamon sticks image cinnamon cinnamon sticks food free spice table wood
+  width: 1024
+  score: 0.975
+  size:
+  - 868
+  - 515
+  match: 0.994
+- label: Red apples
+  query: red apples
+  provider: openverse
+  id: 539ad7b6-00df-4693-a869-cfef8619539f
+  preview_url: https://api.openverse.org/v1/images/539ad7b6-00df-4693-a869-cfef8619539f/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNjYxNTc1LXdpa2ltZWRpYS1pbWFnZS1rb3diMmE3ZC5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3282977/free-photo-image-food-red-apple
+  creator: ''
+  title: Red apples wrapped towels
+  keywords: Red apples wrapped towels apple apple background food fruit red red apple still life
+  width: 1024
+  score: 0.837
+  size:
+  - 643
+  - 668
+  match: 0.999
+- label: Pine cones
+  query: pine cones
+  provider: openverse
+  id: ffb85210-3431-48e5-81e2-3e07de4c1ecc
+  preview_url: https://api.openverse.org/v1/images/ffb85210-3431-48e5-81e2-3e07de4c1ecc/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/WQGTDB1UEZ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/pine-cones-WQGTDB1UEZ
+  creator: Nature's Beauty
+  title: Pine Cones
+  keywords: Pine Cones background branch cedar christmas cones conifer fir forest holiday nature needles
+    pine seed tree
+  width: 1024
+  score: 0.905
+  size:
+  - 189
+  - 366
+  match: 0.998
 - label: Candlelight
   query: candle holder
   provider: commons
@@ -301,25 +348,24 @@ photo_credits:
   - 387
   - 486
   match: 0.65
-- label: Bar soap
-  query: bar soap
+- label: Woven basket
+  query: woven basket
   provider: commons
-  id: '151576471'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg/960px-Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg/960px-Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '195788438'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Bars_of_pure_Marseille_and_Aleppo_soap,_2024.jpg
-  creator: DimiTalen
-  title: Bars of pure Marseille and Aleppo soap, 2024
-  keywords: Bars of pure Marseille and Aleppo soap, 2024 Taken with Nikon D3200 CC-Zero Aleppo soap Marseille
-    soap Self-published work 2024 photos by User:DimiTalen Belgium photographs taken on 2024-08-18 Olive
-    oil soap Green bar soap Bars of pure Marseille and Aleppo soap, 2024
+  source: https://commons.wikimedia.org/wiki/File:Woven_Basket_05.jpg
+  creator: PagesAndPathsPH
+  title: Woven Basket 05
+  keywords: Woven Basket 05 CC-Zero Self-published work All media needing categories as of 2026 Media
+    needing categories as of 17 July 2026 Woven basket
   width: 1800
-  score: 0.774
+  score: 0.975
   size:
-  - 848
-  - 508
-  match: 0.998
+  - 636
+  - 817
+  match: 0.999
 - label: Houseplant
   query: houseplant
   provider: commons
@@ -356,24 +402,6 @@ photo_credits:
   - 921
   - 593
   match: 0.987
-- label: Woven basket
-  query: woven basket
-  provider: commons
-  id: '195788438'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Woven_Basket_05.jpg
-  creator: PagesAndPathsPH
-  title: Woven Basket 05
-  keywords: Woven Basket 05 CC-Zero Self-published work All media needing categories as of 2026 Media
-    needing categories as of 17 July 2026 Woven basket
-  width: 1800
-  score: 0.975
-  size:
-  - 636
-  - 817
-  match: 0.999
 - label: Linen pillows
   query: linen bedding
   provider: openverse
@@ -392,6 +420,43 @@ photo_credits:
   - 508
   - 176
   match: 0.759
+- label: Woven blanket
+  query: wool blanket
+  provider: commons
+  id: '98197107'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Transitional_Woman_chief_blanket_01.jpg
+  creator: Navajo artist
+  title: Transitional Woman chief blanket 01
+  keywords: Transitional Woman chief blanket 01 PD-Art (PD-old-70) Unknown date CC-PD-Mark Chief blankets
+    PD-Art missing SDC copyright status PD-old missing SDC copyright status Navajo blankets woven in handspun
+    wool, in natural ivory and dark brown, and aniline colors, with a woman's Chief-design, with a series
+    of stepped crosses alternating with striped panels. 61 1/2 in. by 58 1/4 in. private collection
+  width: 1800
+  score: 0.807
+  size:
+  - 900
+  - 826
+  match: 0.991
+- label: Wall clock
+  query: analog clock
+  provider: openverse
+  id: c76f2233-e873-48bc-bc38-8e71f25f59cd
+  preview_url: https://api.openverse.org/v1/images/c76f2233-e873-48bc-bc38-8e71f25f59cd/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2lzMTU4NDgtaW1hZ2Uta3d2d3U4d3guanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5917288/free-analog-clock-hanging-public-domain-cc0-photo
+  creator: ''
+  title: Free analog clock hanging
+  keywords: Free analog clock hanging architecture building clock clock tower free time tower
+  width: 1024
+  score: 0.96
+  size:
+  - 770
+  - 678
+  match: 0.999
 - label: Wooden bowl
   query: wooden bowl
   provider: commons
@@ -413,16 +478,257 @@ photo_credits:
   - 837
   - 592
   match: 0.998
+- label: Wooden spoon
+  query: wooden spoon
+  provider: commons
+  id: '14626850'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Doi_%28wooden_spoon%29.JPG/960px-Doi_%28wooden_spoon%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Doi_%28wooden_spoon%29.JPG/960px-Doi_%28wooden_spoon%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Doi_(wooden_spoon).JPG
+  creator: Miansari66
+  title: Doi (wooden spoon)
+  keywords: Doi (wooden spoon) Taken with Sony DSC-W50 CC-Zero Wooden spoons Self-published work Kitchenware
+    of Pakistan Uploads by Miansari66 Kitchenware of Hyderabad, India wooden spoon is called doi in Punjabi
+  width: 1800
+  score: 0.901
+  size:
+  - 784
+  - 330
+  match: 0.995
+- label: Enamel mug
+  query: enamel mug
+  provider: commons
+  id: '198057093'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg/960px-Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg/960px-Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg
+  creator: Joostik
+  title: Enamel mug from the Tashkent Porcelain Factory
+  keywords: Enamel mug from the Tashkent Porcelain Factory CC-Zero Tashkent Karakul (sheep) Self-published
+    work Uploaded with Mobile/Android Enamel mugs Photographs taken on 2026-08-23 Enamel mug from the
+    Tashkent Porcelain Factory
+  width: 1800
+  score: 0.985
+  size:
+  - 614
+  - 515
+  match: 0.998
+- label: Olive oil
+  query: olive oil bottle
+  provider: commons
+  id: '68082033'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Bottiglia_olio_salentino_cellina_ogliarola.jpg/960px-Bottiglia_olio_salentino_cellina_ogliarola.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/c/cb/Bottiglia_olio_salentino_cellina_ogliarola.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Bottiglia_olio_salentino_cellina_ogliarola.jpg
+  creator: Florixc
+  title: Bottiglia olio salentino cellina ogliarola
+  keywords: Bottiglia olio salentino cellina ogliarola CC-Zero Salento Self-published work Olive oil from
+    Italy Olive oil bottles Bottiglia olio salentino cellina ogliarola
+  width: 1728
+  score: 0.97
+  size:
+  - 214
+  - 908
+  match: 0.999
+- label: Glass jars
+  query: glass jars
+  provider: commons
+  id: '61688'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/PreservedFood1.jpg/960px-PreservedFood1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/PreservedFood1.jpg/960px-PreservedFood1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:PreservedFood1.jpg
+  creator: ''
+  title: PreservedFood1
+  keywords: 'PreservedFood1 Canned food Images from the Library of Congress Files with no machine-readable
+    author Files with no machine-readable source Mason jars Media missing infobox template 1940s photographs
+    of the United States Home canning and jarring PD US FSA/OWI Objects on gray background Step-wise Glass
+    food jars Color photographs from the Farm Security Administration Ball brand jars Stacks of jars '
+  width: 1800
+  score: 0.925
+  size:
+  - 670
+  - 391
+  match: 0.893
+- label: Cutting board
+  query: wooden cutting board
+  provider: commons
+  id: '62008648'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Wooden_cutting_board_2017.jpg/960px-Wooden_cutting_board_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Wooden_cutting_board_2017.jpg/960px-Wooden_cutting_board_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Wooden_cutting_board_2017.jpg
+  creator: Fructibus
+  title: Wooden cutting board 2017
+  keywords: Wooden cutting board 2017 CC-Zero Self-published work Wooden cutting boards Taken by Fructibus
+    with Samsung Galaxy A5 (2017) Wooden cutting board
+  width: 1800
+  score: 0.968
+  size:
+  - 862
+  - 454
+  match: 0.996
+- label: Brown eggs
+  query: brown eggs
+  provider: openverse
+  id: c9c0e9ec-e8e4-4bc7-8e3e-c244e6f7f256
+  preview_url: https://api.openverse.org/v1/images/c9c0e9ec-e8e4-4bc7-8e3e-c244e6f7f256/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/ID1AWQL7SO.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/eggs-cloth-ID1AWQL7SO
+  creator: Rachael Gorjestani
+  title: Eggs Cloth
+  keywords: Eggs Cloth breakfast brown cloth eggs food still table white wooden
+  width: 1024
+  score: 0.937
+  size:
+  - 788
+  - 531
+  match: 0.993
+- label: Wool socks
+  query: wool socks
+  provider: openverse
+  id: 2be373f1-e26f-466f-9ab3-2ea5a8d61115
+  preview_url: https://api.openverse.org/v1/images/2be373f1-e26f-466f-9ab3-2ea5a8d61115/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL2xyL21ldDE1ODM1MS1pbWFnZS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/12850627/stockings
+  creator: themet
+  title: Stockings
+  keywords: Stockings american indian pattern art hungarian pattern philosophy wool socks
+  width: 1024
+  score: 0.84
+  size:
+  - 652
+  - 879
+  match: 1.0
+- label: Hot cocoa
+  query: hot chocolate
+  provider: openverse
+  id: a02c14a3-5fb8-4981-b3c5-d21f91358bed
+  preview_url: https://api.openverse.org/v1/images/a02c14a3-5fb8-4981-b3c5-d21f91358bed/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/NOXXUWUBGJ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/hot-chocolate-NOXXUWUBGJ
+  creator: Tim Sullivan
+  title: Hot Chocolate
+  keywords: Hot Chocolate beverage cafe cappuccino chocolate cocoa counter cozy cream creamy cup dessert
+    drink glass granite hot light mug natural warm whipped
+  width: 1024
+  score: 0.912
+  size:
+  - 463
+  - 630
+  match: 0.999
+- label: Knitting
+  query: knitting needles yarn
+  provider: commons
+  id: '66766419'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg/960px-Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg/960px-Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Knotten_breiwol_met_breinaalden,_Bestanddeelnr_190-0834.jpg
+  creator: Willem van de Poll
+  title: Knotten breiwol met breinaalden, Bestanddeelnr 190-0834
+  keywords: 'Knotten breiwol met breinaalden, Bestanddeelnr 190-0834 Knitting needles and tools CC-Zero
+    Images from Nationaal Archief Wool yarn Knitting in the Netherlands Commercial product photography
+    by Willem van de Poll Collectie / Archief : Fotocollectie Van de Poll Reportage / Serie : Reclamefotografie
+    Beschrijving : Knotten breiwol met breinaalden Datum : juli 1936 Trefwoorden : wol Fotograaf : Poll,
+    Willem van de Auteursrechthebbende : Nationaal Archief Materiaalsoort : Glasnegatief Nummer archiefinventaris
+    : b'
+  width: 1800
+  score: 0.784
+  size:
+  - 773
+  - 642
+  match: 0.999
+- label: Tea lights
+  query: candles
+  provider: openverse
+  id: e77205b9-8393-42bb-a441-44d2494b2131
+  preview_url: https://api.openverse.org/v1/images/e77205b9-8393-42bb-a441-44d2494b2131/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/NXJ0DEK459.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/dark-candle-NXJ0DEK459
+  creator: George Becker
+  title: Dark Candle
+  keywords: Dark Candle blur candle dark fire flame light night
+  width: 1024
+  score: 0.729
+  size:
+  - 784
+  - 153
+  match: 0.997
+- label: Slippers
+  query: slippers
+  provider: openverse
+  id: 27b7bebc-0e18-412b-b9e9-6dc01b6b3f4c
+  preview_url: https://api.openverse.org/v1/images/27b7bebc-0e18-412b-b9e9-6dc01b6b3f4c/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAyL2xhY21hMjQ3ODYyLWltYWdlLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/9309923/mans-slippers
+  creator: lacma
+  title: Man's Slippers
+  keywords: Man's Slippers clothing mans photo shoe slippers
+  width: 1024
+  score: 0.787
+  size:
+  - 874
+  - 559
+  match: 0.954
+- label: Old books
+  query: old books
+  provider: commons
+  id: '37987843'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Old_Books_03.JPG
+  creator: Ch. Maderthoner
+  title: Old Books 03
+  keywords: Old Books 03 Books CC-Zero Self-published work Alte Bücher
+  width: 1800
+  score: 0.9
+  size:
+  - 845
+  - 831
+  match: 0.994
+- label: Evening tea
+  query: herbal tea cup
+  provider: openverse
+  id: 3e1c1ba9-9921-42ff-be3c-9d52b555c920
+  preview_url: https://api.openverse.org/v1/images/3e1c1ba9-9921-42ff-be3c-9d52b555c920/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L2JzMTM1LWltYWdlLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/11524498/cup-yellow-tea-next-tea-jar
+  creator: ''
+  title: Cup yellow tea next tea
+  keywords: Cup yellow tea next tea herbal herbs mug plant tape tea cup yellow
+  width: 1024
+  score: 0.824
+  size:
+  - 668
+  - 274
+  match: 1.0
 media:
-- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-1.jpg?v=dc1516b2
-- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-2.jpg?v=54604434
-- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-3.jpg?v=b9a62ff9
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-1.jpg?v=60f3abb6
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-2.jpg?v=96be9861
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-3.jpg?v=1b92868e
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-4.jpg?v=80727b4d
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-5.jpg?v=874d1dc7
 media_from_slides: true
 replaced:
-  media_ids:
+- media_ids:
   - '18155958763547223'
   published_at: 2026-11-08T11:50-05:00
   why: vyšel jako samostatný obrázek, nahrazen celým karuselem
+- media_ids:
+  - '18596242327064557'
+  published_at: 2026-11-08T12:01-05:00
+  why: jen 3 slidy, Simon chce 4–5, nahrazen 5slidovým karuselem
 media_ids:
-- '18596242327064557'
-published_at: 2026-11-08T12:01-05:00
+- '18229589356339147'
+published_at: 2026-11-08T12:22-05:00
