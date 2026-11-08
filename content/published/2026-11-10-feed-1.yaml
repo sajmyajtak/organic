@@ -45,7 +45,7 @@ slides:
     - wooden bowl
 klapka:
   record: rec4Lc4hX7aoY8QPF
-  sent: 9546de0b9c5f6d0b
+  sent: 0bffb97562bdc0dc
 photo_credits:
 - label: Candlelight
   query: candle holder
@@ -198,3 +198,6 @@ photo_credits:
 media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-10-feed-1-1.jpg?v=8fe7f0b4
 media_from_slides: true
+media_ids:
+- '18155958763547223'
+published_at: 2026-11-08T11:50-05:00
