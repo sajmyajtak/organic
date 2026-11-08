@@ -14,141 +14,289 @@ caption: 'Small swaps, slower kitchen 🌿
 hashtags:
 - simpleliving
 - slowkitchen
-alt_text: 'This, not that: wooden, glass and whole-food kitchen items next to plastic and packaged ones.'
+alt_text: 'Kitchen swaps: wooden spoons, cast iron, glass jars and a real pantry instead of plastic tubs,
+  paper plates and a snack drawer.'
 slides:
-- title: 'This: a slow kitchen'
+- title: Small swaps for a slower kitchen
+  items:
+  - label: Sourdough
+    queries:
+    - sourdough bread
+  - label: Carrots
+    queries:
+    - carrots
+  - label: Pumpkin soup
+    queries:
+    - pumpkin soup
+  - label: Butternut squash
+    queries:
+    - butternut squash
+  - label: Wooden spoon
+    queries:
+    - wooden spoon
+  - label: Apple pie
+    queries:
+    - apple pie
+  - label: Walnuts
+    queries:
+    - walnuts
+  - label: Pumpkin
+    queries:
+    - orange pumpkin
+  - label: Brown eggs
+    queries:
+    - brown eggs
+- kicker: This
+  title: A slow kitchen
   items:
   - label: Wooden spoons
     queries:
     - wooden spoons
-    - wooden spoon
-  - label: Cast iron
+  - label: Cast iron skillet
     queries:
     - cast iron skillet
   - label: Glass jars
     queries:
     - glass jars
-    - mason jar
   - label: Ceramic bowls
     queries:
     - ceramic bowls
-    - ceramic bowl
-  - label: Enamel kettle
-    queries:
-    - enamel kettle
-    - kettle
   - label: Cutting board
     queries:
     - wooden cutting board
-    - cutting board
-  - label: Beeswax wraps
+  - label: Hand whisk
     queries:
-    - beeswax wrap
-- title: 'Not that: a fast kitchen'
+    - egg beater
+- kicker: Not this
+  title: A plastic kitchen
   items:
   - label: Plastic tubs
     queries:
     - plastic food containers
-    - plastic tupperware
   - label: Paper towels
     queries:
     - paper towel roll
-    - paper towels
   - label: Plastic bottles
     queries:
-    - plastic bottles
     - plastic bottle
-  - label: Paper cups
-    queries:
-    - disposable cup
-    - paper cup
-  - label: Cling film
-    queries:
-    - plastic wrap
-    - cling film
   - label: Paper plates
     queries:
     - paper plates
-    - paper plate
   - label: Plastic forks
     queries:
     - plastic cutlery
-    - plastic fork
-- title: 'This: a real pantry'
+- kicker: This
+  title: A real pantry
   items:
-  - label: Dried beans
-    queries:
-    - dried beans
-    - beans
   - label: Rolled oats
     queries:
-    - rolled oats
     - oats
-  - label: Raw honey
+  - label: Honey
     queries:
     - honey jar
-    - honey
   - label: Olive oil
     queries:
     - olive oil bottle
-    - olive oil
   - label: Brown rice
     queries:
     - brown rice
-    - rice
   - label: Whole spices
     queries:
     - spices
-    - peppercorns
-  - label: Sourdough
+  - label: Home preserves
     queries:
-    - sourdough bread
-    - bread
-  - label: Dried fruit
-    queries:
-    - dried apricots
-    - dried fruit
-- title: 'Not that: a snack drawer'
+    - mason jars
+- kicker: Not this
+  title: A snack drawer
   items:
   - label: Chips
     queries:
     - bowl of potato chips
-    - potato chips
-  - label: Candy
-    queries:
-    - colorful candy
-    - hard candy
-  - label: Instant noodles
-    queries:
-    - bowl of instant noodles
-    - instant noodles
-  - label: Gummies
+  - label: Gummy bears
     queries:
     - gummy bears
-    - gummy candy
-  - label: Packaged cookies
+  - label: Instant noodles
+    queries:
+    - instant noodles
+  - label: Candy
+    queries:
+    - hard candy
+  - label: Cookies
     queries:
     - chocolate chip cookies
-    - cookies
-  - label: Marshmallows
-    queries:
-    - marshmallows
-- title: Send this to someone who needs it
-  items:
-  - label: Wooden spoons
-    queries:
-    - wooden spoon
-  - label: Glass jars
-    queries:
-    - mason jar
-  - label: Raw honey
-    queries:
-    - honey jar
-  body: Follow @naturizz for more simple swaps.
+- title: Follow for more simple swaps
+  body: Send this to someone who needs it
+  echo:
+  - Wooden spoons
+  - Glass jars
+  - Honey
+  - Cast iron skillet
+  - Sourdough
 klapka:
   record: recBnQc6uSV1a50TA
   sent: a8820825ed365838
 photo_credits:
+- label: Sourdough
+  query: sourdough bread
+  provider: commons
+  id: '100912030'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Loaf_of_sourdough_bread_cooling.jpg
+  creator: Nutrition, Food Safety &amp; Health
+  title: Loaf of sourdough bread cooling
+  keywords: Loaf of sourdough bread cooling CC-Zero Sour dough breads Flickr images reviewed by FlickreviewR
+    2 Baking sourdough bread
+  width: 1800
+  score: 0.98
+  size:
+  - 801
+  - 667
+  match: 0.999
+- label: Carrots
+  query: carrots
+  provider: commons
+  id: '102658384'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Raw_Carrots_in_Bowl.jpg/960px-Raw_Carrots_in_Bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Raw_Carrots_in_Bowl.jpg/960px-Raw_Carrots_in_Bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Raw_Carrots_in_Bowl.jpg
+  creator: Alabama Extension
+  title: Raw Carrots in Bowl
+  keywords: Raw Carrots in Bowl CC-Zero Carrot-based food Flickr images reviewed by FlickreviewR 2 ACES
+    | Janet Guynn
+  width: 1800
+  score: 0.921
+  size:
+  - 823
+  - 826
+  match: 1.0
+- label: Pumpkin soup
+  query: pumpkin soup
+  provider: openverse
+  id: 327ad73e-f2c0-4317-9d81-57b993af608d
+  preview_url: https://api.openverse.org/v1/images/327ad73e-f2c0-4317-9d81-57b993af608d/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmY2Njg2LWltYWdlLWt3dnlqcnliLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5927637/photo-image-public-domain-halloween-food
+  creator: ''
+  title: Free pumpkin soup bowl top
+  keywords: Free pumpkin soup bowl top autumn butternut soup halloween pumpkin pumpkin soup soup soup
+    vegan vegetarian
+  width: 1024
+  score: 0.771
+  size:
+  - 601
+  - 783
+  match: 0.999
+- label: Butternut squash
+  query: butternut squash
+  provider: commons
+  id: '61820513'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Pile_of_butternut_squash.jpg/960px-Pile_of_butternut_squash.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Pile_of_butternut_squash.jpg/960px-Pile_of_butternut_squash.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pile_of_butternut_squash.jpg
+  creator: Jeffery Martin
+  title: Pile of butternut squash
+  keywords: Pile of butternut squash Cucurbitales CC-Zero Cucurbita moschata bell group Self-published
+    work Pile of butternut squash in a grocery store.
+  width: 1800
+  score: 0.721
+  size:
+  - 887
+  - 647
+  match: 0.991
+- label: Wooden spoon
+  query: wooden spoon
+  provider: commons
+  id: '14626850'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Doi_%28wooden_spoon%29.JPG/960px-Doi_%28wooden_spoon%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Doi_%28wooden_spoon%29.JPG/960px-Doi_%28wooden_spoon%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Doi_(wooden_spoon).JPG
+  creator: Miansari66
+  title: Doi (wooden spoon)
+  keywords: Doi (wooden spoon) Taken with Sony DSC-W50 CC-Zero Wooden spoons Self-published work Kitchenware
+    of Pakistan Uploads by Miansari66 Kitchenware of Hyderabad, India wooden spoon is called doi in Punjabi
+  width: 1800
+  score: 0.901
+  size:
+  - 784
+  - 330
+  match: 0.995
+- label: Apple pie
+  query: apple pie
+  provider: commons
+  id: '264106'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Motherhood_and_apple_pie.jpg/960px-Motherhood_and_apple_pie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Motherhood_and_apple_pie.jpg/960px-Motherhood_and_apple_pie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Motherhood_and_apple_pie.jpg
+  creator: Scott Bauer, USDA ARS
+  title: Motherhood and apple pie
+  keywords: Motherhood and apple pie Apple pies Baseball gloves Baseballs PD USDA ARS Files with derivative
+    versions Media created by the United States Agricultural Research Service with known IDs Flag of the
+    United States (1960–) Louisville Slugger baseball bats Pastry-topped pies Apple pie , baseball , and
+    the flag of the United States .
+  width: 1800
+  score: 0.758
+  size:
+  - 799
+  - 541
+  match: 1.0
+- label: Walnuts
+  query: walnuts
+  provider: commons
+  id: '151960559'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg/960px-Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg/960px-Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Ceviz_K%C4%B1r%C4%B1lmam%C4%B1%C5%9F.jpg
+  creator: Hamdigumus
+  title: Ceviz Kırılmamış
+  keywords: Ceviz Kırılmamış CC-Zero Walnuts Self-published work Walnut
+  width: 1800
+  score: 0.871
+  size:
+  - 331
+  - 302
+  match: 0.833
+- label: Pumpkin
+  query: orange pumpkin
+  provider: openverse
+  id: e9947f16-235d-4685-a6ae-4b8c7e22f4ac
+  preview_url: https://api.openverse.org/v1/images/e9947f16-235d-4685-a6ae-4b8c7e22f4ac/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/TRLQLVII6S.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/pumpkin-table-TRLQLVII6S
+  creator: Solo Shutter
+  title: Pumpkin Table
+  keywords: Pumpkin Table autumn fall farm garden halloween harvest indoors lighting orange pumpkin table
+  width: 1024
+  score: 0.986
+  size:
+  - 527
+  - 524
+  match: 0.999
+- label: Brown eggs
+  query: brown eggs
+  provider: openverse
+  id: c9c0e9ec-e8e4-4bc7-8e3e-c244e6f7f256
+  preview_url: https://api.openverse.org/v1/images/c9c0e9ec-e8e4-4bc7-8e3e-c244e6f7f256/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/ID1AWQL7SO.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/eggs-cloth-ID1AWQL7SO
+  creator: Rachael Gorjestani
+  title: Eggs Cloth
+  keywords: Eggs Cloth breakfast brown cloth eggs food still table white wooden
+  width: 1024
+  score: 0.937
+  size:
+  - 788
+  - 531
+  match: 0.993
 - label: Wooden spoons
   query: wooden spoons
   provider: commons
@@ -167,7 +315,7 @@ photo_credits:
   - 634
   - 841
   match: 0.995
-- label: Cast iron
+- label: Cast iron skillet
   query: cast iron skillet
   provider: openverse
   id: 4e8ed9ed-8ec3-4d65-891f-8cf081a324f3
@@ -225,30 +373,6 @@ photo_credits:
   - 884
   - 359
   match: 0.999
-- label: Enamel kettle
-  query: enamel kettle
-  provider: commons
-  id: '28951850'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Canton_Enamel_Hot_Water_Kettle_and_Burner%2C_Qianlong_Period%2C_1736-1795%2C_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG/960px-Canton_Enamel_Hot_Water_Kettle_and_Burner%2C_Qianlong_Period%2C_1736-1795%2C_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Canton_Enamel_Hot_Water_Kettle_and_Burner%2C_Qianlong_Period%2C_1736-1795%2C_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG/960px-Canton_Enamel_Hot_Water_Kettle_and_Burner%2C_Qianlong_Period%2C_1736-1795%2C_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Canton_Enamel_Hot_Water_Kettle_and_Burner,_Qianlong_Period,_1736-1795,_enamel_on_brass_-_Huntington_Museum_of_Art_-_DSC05277.JPG
-  creator: Daderot
-  title: Canton Enamel Hot Water Kettle and Burner, Qianlong Period, 1736-1795, enamel on brass - Huntington
-    Museum of Art - DSC05277
-  keywords: Canton Enamel Hot Water Kettle and Burner, Qianlong Period, 1736-1795, enamel on brass - Huntington
-    Museum of Art - DSC05277 Taken with Sony DSC-RX100 CC-Zero Self-published work Collections of the
-    Huntington Museum of Art from China Files uploaded by Daderot Metalwork of the Qing Dynasty Collections
-    of the Huntington Museum of Art from the 18th century Metalwork in the Huntington Museum of Art Exhibit
-    in the Huntington Museum of Art, Huntington, West Virginia, USA. Photography was permitted in the
-    museum without restriction. This artwork is in the public domain because the artist died more than
-    70 years ago.
-  width: 1800
-  score: 0.977
-  size:
-  - 578
-  - 911
-  match: 0.988
 - label: Cutting board
   query: wooden cutting board
   provider: commons
@@ -267,6 +391,23 @@ photo_credits:
   - 862
   - 454
   match: 0.996
+- label: Hand whisk
+  query: egg beater
+  provider: openverse
+  id: 2bfe5d3f-2473-4d9c-aeed-37ef2243801c
+  preview_url: https://api.openverse.org/v1/images/2bfe5d3f-2473-4d9c-aeed-37ef2243801c/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEwL2VnZ19iZWF0ZXJfMTk0My44Ljk4NDguanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/8231540/egg-beater-1937-ivar-julius
+  creator: nationalgalleryofart
+  title: Egg Beater (1937) Ivar Julius
+  keywords: Egg Beater (1937) Ivar Julius art artist artworks image vintage
+  width: 1024
+  score: 0.799
+  size:
+  - 436
+  - 521
+  match: 0.728
 - label: Plastic tubs
   query: plastic food containers
   provider: commons
@@ -321,28 +462,6 @@ photo_credits:
   - 262
   - 921
   match: 0.999
-- label: Paper cups
-  query: disposable cup
-  provider: commons
-  id: '86893177'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Smoothie_King_crushed_plastic_cup.jpg/960px-Smoothie_King_crushed_plastic_cup.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Smoothie_King_crushed_plastic_cup.jpg/960px-Smoothie_King_crushed_plastic_cup.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Smoothie_King_crushed_plastic_cup.jpg
-  creator: Visviva
-  title: Smoothie King crushed plastic cup
-  keywords: 'Smoothie King crushed plastic cup CC-Zero Smoothie King Plastic cups (disposable) Self-published
-    work Uploaded with Mobile/Android Files with coordinates missing SDC location of creation United States
-    photographs taken on 2020-02-10 Branded litter Fast food litter A clear plastic cup from the Smoothie
-    King fast food chain, showing two initial mechanisms of plastic degradation: physical crushing and
-    impregnation with soil. Observed on roadside in Springfield Illinois, where it had likely been transported
-    from the road surface by snowplow activity prior to a re'
-  width: 1800
-  score: 0.873
-  size:
-  - 497
-  - 429
-  match: 0.769
 - label: Paper plates
   query: paper plates
   provider: commons
@@ -395,24 +514,23 @@ photo_credits:
   - 654
   - 624
   match: 0.841
-- label: Raw honey
+- label: Honey
   query: honey jar
-  provider: commons
-  id: '128153879'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg/960px-Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg/960px-Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg
-  creator: Alabama Extension
-  title: Small Honey Jar with Honeycomb - 51331363379
-  keywords: Small Honey Jar with Honeycomb - 51331363379 CC-Zero Beekeeping in the United States Flickr
-    images reviewed by FlickreviewR 2 ACES | Devontae Lindsey
-  width: 1800
-  score: 0.742
+  provider: openverse
+  id: cdb0a41e-1edf-4e42-9c87-9838b15b3112
+  preview_url: https://api.openverse.org/v1/images/cdb0a41e-1edf-4e42-9c87-9838b15b3112/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/97LJAKWL36.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/honey-jars-97LJAKWL36
+  creator: Krzysztof%20Puszczy%u0144ski
+  title: Honey Jars
+  keywords: Honey Jars food honey jars
+  width: 1024
+  score: 0.996
   size:
-  - 414
-  - 500
-  match: 0.993
+  - 616
+  - 468
+  match: 0.995
 - label: Olive oil
   query: olive oil bottle
   provider: commons
@@ -467,42 +585,24 @@ photo_credits:
   - 736
   - 233
   match: 0.999
-- label: Sourdough
-  query: sourdough bread
+- label: Home preserves
+  query: mason jars
   provider: commons
-  id: '100912030'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '100911195'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Canned_pears_in_mason_jars.jpg/960px-Canned_pears_in_mason_jars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Canned_pears_in_mason_jars.jpg/960px-Canned_pears_in_mason_jars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Loaf_of_sourdough_bread_cooling.jpg
+  source: https://commons.wikimedia.org/wiki/File:Canned_pears_in_mason_jars.jpg
   creator: Nutrition, Food Safety &amp; Health
-  title: Loaf of sourdough bread cooling
-  keywords: Loaf of sourdough bread cooling CC-Zero Sour dough breads Flickr images reviewed by FlickreviewR
-    2 Baking sourdough bread
+  title: Canned pears in mason jars
+  keywords: Canned pears in mason jars CC-Zero Mason jars United States photographs taken on 2016-04-20
+    Flickr images reviewed by FlickreviewR 2 Home canning and jarring fruit The process of canning fruit
   width: 1800
-  score: 0.98
+  score: 0.953
   size:
-  - 801
-  - 667
-  match: 0.999
-- label: Dried fruit
-  query: dried apricots
-  provider: commons
-  id: '151972030'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Turkey_dried_apricots.jpg/960px-Turkey_dried_apricots.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Turkey_dried_apricots.jpg/960px-Turkey_dried_apricots.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Turkey_dried_apricots.jpg
-  creator: Fumikas Sagisavas
-  title: Turkey dried apricots
-  keywords: Turkey dried apricots CC-Zero Dried apricots Self-published work Files with coordinates missing
-    SDC location of creation Dried fruit textures Turkey dried apricots
-  width: 1800
-  score: 0.822
-  size:
-  - 947
-  - 561
-  match: 0.868
+  - 756
+  - 593
+  match: 0.994
 - label: Chips
   query: bowl of potato chips
   provider: commons
@@ -521,6 +621,41 @@ photo_credits:
   size:
   - 636
   - 392
+  match: 0.999
+- label: Gummy bears
+  query: gummy bears
+  provider: openverse
+  id: 33b3fa5a-0221-4777-91c9-0dcee531dad6
+  preview_url: https://api.openverse.org/v1/images/33b3fa5a-0221-4777-91c9-0dcee531dad6/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJndW1taWJfYzNfYTRyY2hlbl9ndW1taV8xNy1pbWFnZS1reWNndW1zcy5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6060219/free-public-domain-cc0-photo
+  creator: ''
+  title: ''
+  keywords: ' bears colorful haribo haribo gummy bears jelly jelly bear jelly sweets'
+  width: 1024
+  score: 0.688
+  size:
+  - 998
+  - 447
+  match: 0.998
+- label: Instant noodles
+  query: instant noodles
+  provider: openverse
+  id: 6b9e610e-4d84-4ae7-baf3-5ef6aa889e6a
+  preview_url: https://api.openverse.org/v1/images/6b9e610e-4d84-4ae7-baf3-5ef6aa889e6a/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXM5ODUyLWltYWdlLWt3dndyYTM4LmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5916687/image-public-domain-food-free
+  creator: ''
+  title: Free ramen spoon image
+  keywords: Free ramen spoon image free ramen instant noodles japanese japanese food meal noodles soup
+    ramen soup
+  width: 1024
+  score: 0.918
+  size:
+  - 684
+  - 475
   match: 0.999
 - label: Candy
   query: hard candy
@@ -541,42 +676,7 @@ photo_credits:
   - 921
   - 535
   match: 0.919
-- label: Instant noodles
-  query: instant noodles
-  provider: openverse
-  id: 6b9e610e-4d84-4ae7-baf3-5ef6aa889e6a
-  preview_url: https://api.openverse.org/v1/images/6b9e610e-4d84-4ae7-baf3-5ef6aa889e6a/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXM5ODUyLWltYWdlLWt3dndyYTM4LmpwZw.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/5916687/image-public-domain-food-free
-  creator: ''
-  title: Free ramen spoon image
-  keywords: Free ramen spoon image free ramen instant noodles japanese japanese food meal noodles soup
-    ramen soup
-  width: 1024
-  score: 0.918
-  size:
-  - 684
-  - 475
-  match: 0.999
-- label: Gummies
-  query: gummy bears
-  provider: openverse
-  id: 33b3fa5a-0221-4777-91c9-0dcee531dad6
-  preview_url: https://api.openverse.org/v1/images/33b3fa5a-0221-4777-91c9-0dcee531dad6/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJndW1taWJfYzNfYTRyY2hlbl9ndW1taV8xNy1pbWFnZS1reWNndW1zcy5qcGc.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/6060219/free-public-domain-cc0-photo
-  creator: ''
-  title: ''
-  keywords: ' bears colorful haribo haribo gummy bears jelly jelly bear jelly sweets'
-  width: 1024
-  score: 0.688
-  size:
-  - 998
-  - 447
-  match: 0.998
-- label: Packaged cookies
+- label: Cookies
   query: chocolate chip cookies
   provider: openverse
   id: 70110e8a-e2eb-4734-b9fd-d4ac3defb2cc
@@ -594,80 +694,11 @@ photo_credits:
   - 925
   - 514
   match: 0.999
-- label: Marshmallows
-  query: marshmallows
-  provider: openverse
-  id: aae18036-c5c2-48d9-9614-c369d8694f08
-  preview_url: https://api.openverse.org/v1/images/aae18036-c5c2-48d9-9614-c369d8694f08/thumb/
-  full_url: https://cdn.stocksnap.io/img-thumbs/960w/TKMJJ9D81G.jpg
-  license: cc0
-  source: https://stocksnap.io/photo/hot-chocolate-TKMJJ9D81G
-  creator: Tohm Brigitte
-  title: Hot Chocolate
-  keywords: Hot Chocolate chocolate cup drink food hot leaves marshmallow
-  width: 1024
-  score: 0.823
-  size:
-  - 370
-  - 369
-  match: 0.65
-- label: Wooden spoons
-  query: wooden spoon
-  provider: commons
-  id: '14626850'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Doi_%28wooden_spoon%29.JPG/960px-Doi_%28wooden_spoon%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Doi_%28wooden_spoon%29.JPG/960px-Doi_%28wooden_spoon%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Doi_(wooden_spoon).JPG
-  creator: Miansari66
-  title: Doi (wooden spoon)
-  keywords: Doi (wooden spoon) Taken with Sony DSC-W50 CC-Zero Wooden spoons Self-published work Kitchenware
-    of Pakistan Uploads by Miansari66 Kitchenware of Hyderabad, India wooden spoon is called doi in Punjabi
-  width: 1800
-  score: 0.901
-  size:
-  - 784
-  - 330
-  match: 0.995
-- label: Glass jars
-  query: mason jar
-  provider: commons
-  id: '100900891'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Mason_jar_being_used_for_conditioning_tomatoes.jpg/960px-Mason_jar_being_used_for_conditioning_tomatoes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Mason_jar_being_used_for_conditioning_tomatoes.jpg/960px-Mason_jar_being_used_for_conditioning_tomatoes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Mason_jar_being_used_for_conditioning_tomatoes.jpg
-  creator: Nutrition, Food Safety &amp; Health
-  title: Mason jar being used for conditioning tomatoes
-  keywords: Mason jar being used for conditioning tomatoes CC-Zero Flickr images reviewed by FlickreviewR
-    2 Dried tomatoes Food dehydration
-  width: 1800
-  score: 0.981
-  size:
-  - 524
-  - 778
-  match: 0.997
-- label: Raw honey
-  query: honey jar
-  provider: openverse
-  id: cdb0a41e-1edf-4e42-9c87-9838b15b3112
-  preview_url: https://api.openverse.org/v1/images/cdb0a41e-1edf-4e42-9c87-9838b15b3112/thumb/
-  full_url: https://cdn.stocksnap.io/img-thumbs/960w/97LJAKWL36.jpg
-  license: cc0
-  source: https://stocksnap.io/photo/honey-jars-97LJAKWL36
-  creator: Krzysztof%20Puszczy%u0144ski
-  title: Honey Jars
-  keywords: Honey Jars food honey jars
-  width: 1024
-  score: 0.996
-  size:
-  - 616
-  - 468
-  match: 0.995
 media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-09-feed-1-1.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-09-feed-1-2.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-09-feed-1-3.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-09-feed-1-4.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-09-feed-1-5.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-09-feed-1-6.jpg
 media_from_slides: true

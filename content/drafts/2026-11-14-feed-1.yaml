@@ -14,502 +14,95 @@ caption: 'Candles by four, cinnamon buns by three 🕯️
 hashtags:
 - hygge
 - nordicliving
-alt_text: 'Moodboard of Nordic living: rye bread, cinnamon buns, candles, wool, birch logs and berries.'
+alt_text: 'The art of Nordic living: cinnamon buns, a brass candlestick, wool socks and tea; a Nordic
+  kitchen with rye bread, butter, dill and potatoes; a Nordic home with ceramics, brass and wool.'
 slides:
 - title: The art of Nordic living
   items:
-  - label: Rye bread
-    queries:
-    - rye bread
-    - dark bread
   - label: Cinnamon buns
     queries:
     - cinnamon buns
-    - cinnamon roll
-  - label: Candles
-    queries:
-    - candles
-  - label: Birch logs
-    queries:
-    - birch logs
-    - birch wood
-  - label: Lingonberries
-    queries:
-    - lingonberries
-    - cranberries
-  - label: Coffee pot
-    queries:
-    - coffee pot
-    - kettle
-  - label: Wool socks
-    queries:
-    - wool socks
-  - label: Sheepskin
-    queries:
-    - sheepskin rug
-    - sheepskin
   - label: Dried flowers
     queries:
     - dried flowers
-  - label: Ceramic mug
+  - label: Teapot
     queries:
-    - ceramic mug
-- title: The Nordic kitchen
-  items:
-  - label: Smoked salmon
+    - tea kettle
+  - label: Pears
     queries:
-    - smoked salmon
-    - salmon
-  - label: Fresh dill
-    queries:
-    - dill
-    - fresh herbs
-  - label: Cardamom
-    queries:
-    - cardamom pods
-    - green cardamom
-  - label: New potatoes
-    queries:
-    - potatoes
-  - label: Butter
-    queries:
-    - butter
-  - label: Cheese
-    queries:
-    - cheese
-    - cheese wedge
-- title: The Nordic home
-  items:
-  - label: Linen throw
-    queries:
-    - linen throw
-    - linen
-  - label: Candle holders
-    queries:
-    - candle holder
-    - candlestick
-  - label: Ceramic vase
-    queries:
-    - ceramic vase
-    - vase
-  - label: Wooden chair
-    queries:
-    - wooden chair
-    - chair
-  - label: Wool blanket
-    queries:
-    - wool blanket
-  - label: Houseplant
-    queries:
-    - houseplant
-  - label: Woven basket
-    queries:
-    - woven basket
-    - basket
-- title: Save this for the darkest week of the year
-  items:
-  - label: Cinnamon buns
-    queries:
-    - cinnamon buns
-  - label: Candles
-    queries:
-    - candles
+    - pears
   - label: Wool socks
     queries:
     - wool socks
-  body: Follow @naturizz for more simple, natural living.
+  - label: Brass candlestick
+    queries:
+    - candle holder
+  - label: Cinnamon sticks
+    queries:
+    - cinnamon sticks
+  - label: Hot chocolate
+    queries:
+    - hot chocolate
+- title: The Nordic kitchen
+  items:
+  - label: Cardamom buns
+    queries:
+    - cardamom
+  - label: Rye bread
+    queries:
+    - rye bread
+  - label: Butter
+    queries:
+    - butter
+  - label: Fresh dill
+    queries:
+    - dill
+  - label: Potatoes
+    queries:
+    - potatoes
+  - label: Brown eggs
+    queries:
+    - brown eggs
+  - label: Pour-over coffee
+    queries:
+    - coffee pot
+  - label: Cardamom pods
+    queries:
+    - cardamom pods
+- title: The Nordic home
+  items:
+  - label: Ceramic vase
+    queries:
+    - ceramic vase
+  - label: Ceramic jug
+    queries:
+    - ceramic mug
+  - label: Wall clock
+    queries:
+    - analog clock
+  - label: Brass candlesticks
+    queries:
+    - taper candles
+  - label: Ceramic bowls
+    queries:
+    - ceramic bowls
+  - label: Yarn
+    queries:
+    - yarn ball
+  - label: Knitted sweater
+    queries:
+    - knitted sweater
+- title: Follow for more cozy living
+  body: Save this for the darkest week of the year
+  echo:
+  - Pears
+  - Hot chocolate
+  - Wool socks
+  - Teapot
 klapka:
   record: recD9OE0rFyKyk8EQ
   sent: 4474fdb7feea6047
 photo_credits:
-- label: Rye bread
-  query: rye bread
-  provider: commons
-  id: '161309082'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Rye_bread_Roggenbengel_2025-02-14_13.jpg/960px-Rye_bread_Roggenbengel_2025-02-14_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Rye_bread_Roggenbengel_2025-02-14_13.jpg/960px-Rye_bread_Roggenbengel_2025-02-14_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Rye_bread_Roggenbengel_2025-02-14_13.jpg
-  creator: Leonhard Lenz
-  title: Rye bread Roggenbengel 2025-02-14 13
-  keywords: Rye bread Roggenbengel 2025-02-14 13 CC-Zero Self-published work Photographs by Leonhard Lenz
-    Images from Wiki Loves Folklore 2025 Images from Wiki Loves Folklore 2025 in Germany Rye bread of
-    Germany Rye bread in the variation Roggenbengel produced by the Ufa bakery in Berlin.
-  width: 1800
-  score: 0.949
-  size:
-  - 816
-  - 445
-  match: 0.999
-- label: Cinnamon buns
-  query: cinnamon buns
-  provider: openverse
-  id: 72d5f500-7065-41cd-91ad-e779fcc6b438
-  preview_url: https://api.openverse.org/v1/images/72d5f500-7065-41cd-91ad-e779fcc6b438/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmYzMDQyLWltYWdlLWt3dnlsZWVyLmpwZw.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/5928289/photo-image-public-domain-hands-person
-  creator: ''
-  title: Free vegan cinnamon rolls image
-  keywords: Free vegan cinnamon rolls image baking cinnamon cinnamon bread cinnamon buns cinnamon roll
-    dessert bread person photo sweet roll
-  width: 1024
-  score: 0.618
-  size:
-  - 676
-  - 714
-  match: 0.997
-- label: Candles
-  query: candles
-  provider: commons
-  id: '16077430'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Black_candles_Speyer_3.jpg/960px-Black_candles_Speyer_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Black_candles_Speyer_3.jpg/960px-Black_candles_Speyer_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Black_candles_Speyer_3.jpg
-  creator: Vassil
-  title: Black candles Speyer 3
-  keywords: Black candles Speyer 3 Taken with Nikon D90 CC-Zero Self-published work Black candles Chandelles
-    noires.
-  width: 1800
-  score: 0.709
-  size:
-  - 309
-  - 646
-  match: 0.985
-- label: Lingonberries
-  query: lingonberries
-  provider: openverse
-  id: ad7bbbc3-1bb4-40c6-b1f9-e3a250d007e1
-  preview_url: https://api.openverse.org/v1/images/ad7bbbc3-1bb4-40c6-b1f9-e3a250d007e1/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZybGluZ29uYmVycmllc19jb3diZXJyaWVzX2JlcnJpZXNfODUyMzA4LWltYWdlLWt5YmQ4dXc1LmpwZw.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/6035330/photo-image-public-domain-leaf-tree
-  creator: ''
-  title: Closeup lingonberries
-  keywords: Closeup lingonberries background leaf lingonberry nature nature photo plant tree
-  width: 1024
-  score: 0.856
-  size:
-  - 331
-  - 261
-  match: 0.83
-- label: Coffee pot
-  query: coffee pot
-  provider: commons
-  id: '152229715'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/CHEMEX6_Classic_Coffee_Pot.jpg/960px-CHEMEX6_Classic_Coffee_Pot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/CHEMEX6_Classic_Coffee_Pot.jpg/960px-CHEMEX6_Classic_Coffee_Pot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:CHEMEX6_Classic_Coffee_Pot.jpg
-  creator: Fumikas Sagisavas
-  title: CHEMEX6 Classic Coffee Pot
-  keywords: CHEMEX6 Classic Coffee Pot Coffee pots CC-Zero Self-published work Files with coordinates
-    missing SDC location of creation CHEMEX6 Classic Coffee Pot
-  width: 1800
-  score: 0.985
-  size:
-  - 508
-  - 817
-  match: 0.994
-- label: Wool socks
-  query: wool socks
-  provider: commons
-  id: '193422332'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Socks_-_Komi-Permyak_-_Meshkov_house.jpg/960px-Socks_-_Komi-Permyak_-_Meshkov_house.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Socks_-_Komi-Permyak_-_Meshkov_house.jpg/960px-Socks_-_Komi-Permyak_-_Meshkov_house.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Socks_-_Komi-Permyak_-_Meshkov_house.jpg
-  creator: Лапоть
-  title: Socks - Komi-Permyak - Meshkov house
-  keywords: Socks - Komi-Permyak - Meshkov house CC-Zero Perm Regional Museum Self-published work Wool
-    socks Clothing of Komi people Perm museum of local history. Meshkov house.
-  width: 1800
-  score: 0.958
-  size:
-  - 769
-  - 445
-  match: 0.958
-- label: Sheepskin
-  query: sheepskin
-  provider: commons
-  id: '202377413'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Sheepskin_coat%2C_D%C3%BCsseldorf%2C_October_2026_%282%29.jpg/960px-Sheepskin_coat%2C_D%C3%BCsseldorf%2C_October_2026_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://upload.wikimedia.org/wikipedia/commons/4/4a/Sheepskin_coat%2C_D%C3%BCsseldorf%2C_October_2026_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Sheepskin_coat,_D%C3%BCsseldorf,_October_2026_(2).jpg
-  creator: Kürschner ( talk ) 17:26, 28 October 2026 (UTC)
-  title: Sheepskin coat, Düsseldorf, October 2026 (2)
-  keywords: Sheepskin coat, Düsseldorf, October 2026 (2) CC-Zero Sheepskin (clothing) Benrather Straße
-    (Düsseldorf) Clothing shop windows in Düsseldorf Fur fashion in 2026 Düsseldorf photographs taken
-    on 2026-10-28 Düsseldorf photographs taken on 2026-10-29 Lammfellmantel , Düsseldorf, Oktober 2026.
-  width: 1001
-  score: 0.801
-  size:
-  - 956
-  - 1564
-  match: 0.87
-- label: Dried flowers
-  query: dried flowers
-  provider: openverse
-  id: daf73245-62c4-4e10-a52b-6b31c457fbfe
-  preview_url: https://api.openverse.org/v1/images/daf73245-62c4-4e10-a52b-6b31c457fbfe/thumb/
-  full_url: https://pd.w.org/2022/05/8627f323a3bff76.54746621-2048x1365.jpg
-  license: cc0
-  source: https://wordpress.org/photos/photo/8627f323a3/
-  creator: kaorock72
-  title: Dried flowers
-  keywords: Dried flowers dried flower
-  width: 1024
-  score: 0.756
-  size:
-  - 387
-  - 486
-  match: 0.65
-- label: Ceramic mug
-  query: ceramic mug
-  provider: openverse
-  id: adc18e70-3e3b-417a-a43a-6fb7b74341d4
-  preview_url: https://api.openverse.org/v1/images/adc18e70-3e3b-417a-a43a-6fb7b74341d4/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA4L2xyL21pYTUzNjMtaW1hZ2UuanBn.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/7652046/photo-image-vintage-art-tree
-  creator: ''
-  title: ceramic mug handle flaired foot;
-  keywords: ceramic mug handle flaired foot; art birds blue white porcelain ceramic mug delftware tree
-    vintage
-  width: 1024
-  score: 0.986
-  size:
-  - 684
-  - 775
-  match: 0.998
-- label: Smoked salmon
-  query: smoked salmon
-  provider: commons
-  id: '153813315'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Pride_in_Ukiah_-_June_2024_-_Sarah_Stierch_02.jpg/960px-Pride_in_Ukiah_-_June_2024_-_Sarah_Stierch_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Pride_in_Ukiah_-_June_2024_-_Sarah_Stierch_02.jpg/960px-Pride_in_Ukiah_-_June_2024_-_Sarah_Stierch_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Pride_in_Ukiah_-_June_2024_-_Sarah_Stierch_02.jpg
-  creator: Missvain
-  title: Pride in Ukiah - June 2024 - Sarah Stierch 02
-  keywords: Pride in Ukiah - June 2024 - Sarah Stierch 02 CC-Zero Smoked salmon Self-published work Files
-    with coordinates missing SDC location of creation June 2024 in California United States photographs
-    taken on 2024-06-28 LGBT events in California Food photos by Sarah Stierch Food in Ukiah, California
-    Seafood dishes in California 2024 in Ukiah, California Smoked salmon at a private Pride party in Ukiah,
-    California
-  width: 1800
-  score: 0.984
-  size:
-  - 752
-  - 530
-  match: 0.999
-- label: Fresh dill
-  query: dill
-  provider: commons
-  id: '60400075'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/20170617Anethum_graveolens1.jpg/960px-20170617Anethum_graveolens1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://upload.wikimedia.org/wikipedia/commons/f/f7/20170617Anethum_graveolens1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:20170617Anethum_graveolens1.jpg
-  creator: AnRo0002
-  title: 20170617Anethum graveolens1
-  keywords: 20170617Anethum graveolens1 Anethum graveolens CC-Zero Self-published work Flora of Saar in
-    Saarbrücken (right bank) - Apiales Saarbrücken photographs taken on 2017-06-17 Apioideae in Sankt
-    Johann (Saar) Apiales in Saarbrücken in June 2017 Files with coordinates missing SDC location of creation
-    (49° N, 7° E) Apioideae in the Northern Hemisphere in June 2017 Verwilderter Dill ( Anethum graveolens
-    ) an der Saar in Saarbrücken
-  width: 1500
-  score: 0.847
-  size:
-  - 1228
-  - 1036
-  match: 0.713
-- label: Cardamom
-  query: cardamom pods
-  provider: commons
-  id: '151971310'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Green_Cardamom_Pods.jpg/960px-Green_Cardamom_Pods.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Green_Cardamom_Pods.jpg/960px-Green_Cardamom_Pods.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Green_Cardamom_Pods.jpg
-  creator: Misterneedlemouse
-  title: Green Cardamom Pods
-  keywords: Green Cardamom Pods CC-Zero Self-published work Spices of Tamil Nadu Elettaria cardamomum
-    (fruit) Cardamom in India Whole, dried green cardamom pods from Tamil Nadu, India in a bowl.
-  width: 1800
-  score: 0.867
-  size:
-  - 894
-  - 898
-  match: 0.948
-- label: New potatoes
-  query: potatoes
-  provider: openverse
-  id: fc183caf-b243-4105-b7a6-7dd12006f2ba
-  preview_url: https://api.openverse.org/v1/images/fc183caf-b243-4105-b7a6-7dd12006f2ba/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJwb3RhdG9lc192ZWdldGFibGVzX3Bvd2VyX2Zvb2QtaW1hZ2Uta3liY3d2dWYuanBn.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/6033152/photo-image-public-domain-food-free
-  creator: ''
-  title: Potatoes, vegetable power food
-  keywords: Potatoes, vegetable power food agriculture backgrounds plant potato potato background potato
-    farming public
-  width: 1024
-  score: 0.983
-  size:
-  - 760
-  - 461
-  match: 0.997
-- label: Butter
-  query: butter
-  provider: commons
-  id: '138043557'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Butter_and_Knive_%28cropped%29.jpg/960px-Butter_and_Knive_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Butter_and_Knive_%28cropped%29.jpg/960px-Butter_and_Knive_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Butter_and_Knive_(cropped).jpg
-  creator: Julikalucky
-  title: Butter and Knive (cropped)
-  keywords: Butter and Knive (cropped) CC-Zero Butter Self-published work Extracted images Schneiden von
-    Butter
-  width: 1800
-  score: 0.78
-  size:
-  - 933
-  - 459
-  match: 0.98
-- label: Cheese
-  query: cheese
-  provider: commons
-  id: '44884682'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Cheese_at_Fort_Ross_State_Historic_Park_-_Jenner%2C_California_-_Sarah_Stierch_-_B.jpg/960px-Cheese_at_Fort_Ross_State_Historic_Park_-_Jenner%2C_California_-_Sarah_Stierch_-_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Cheese_at_Fort_Ross_State_Historic_Park_-_Jenner%2C_California_-_Sarah_Stierch_-_B.jpg/960px-Cheese_at_Fort_Ross_State_Historic_Park_-_Jenner%2C_California_-_Sarah_Stierch_-_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Cheese_at_Fort_Ross_State_Historic_Park_-_Jenner,_California_-_Sarah_Stierch_-_B.jpg
-  creator: Sarah Stierch
-  title: Cheese at Fort Ross State Historic Park - Jenner, California - Sarah Stierch - B
-  keywords: Cheese at Fort Ross State Historic Park - Jenner, California - Sarah Stierch - B CC-Zero Cheese
-    from the United States Self-published work Unidentified cheeses Food photos by Sarah Stierch 2015
-    Fort Ross Harvest Festival Food in the United States photographed in 2015 Cheese tasting at the 2015
-    Fort Ross State Historic Park Harvest Festival
-  width: 1800
-  score: 0.9
-  size:
-  - 568
-  - 284
-  match: 0.909
-- label: Candle holders
-  query: candle holder
-  provider: commons
-  id: '62278475'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Candle_in_candle_holder_%28Unsplash%29.jpg/960px-Candle_in_candle_holder_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Candle_in_candle_holder_%28Unsplash%29.jpg/960px-Candle_in_candle_holder_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Candle_in_candle_holder_(Unsplash).jpg
-  creator: Janko Ferlič thepootphotographer
-  title: Candle in candle holder (Unsplash)
-  keywords: Candle in candle holder (Unsplash) CC-Zero Candlesticks Images uploaded by Fæ Images from
-    Unsplash Files with coordinates missing SDC location of creation (48° N, 2° E) Candles in Paris Paris,
-    France
-  width: 1800
-  score: 0.899
-  size:
-  - 427
-  - 622
-  match: 0.977
-- label: Ceramic vase
-  query: ceramic vase
-  provider: openverse
-  id: bcf5737f-a21e-4df0-9626-8d390f2de269
-  preview_url: https://api.openverse.org/v1/images/bcf5737f-a21e-4df0-9626-8d390f2de269/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTA5NmFmLWltYWdlLmpwZw.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/14262287/jug
-  creator: thegetty
-  title: Ancient ceramic vase with texture
-  keywords: Ancient ceramic vase with texture art craft glass green history ring texture
-  width: 1024
-  score: 0.953
-  size:
-  - 396
-  - 746
-  match: 0.998
-- label: Wooden chair
-  query: wooden chair
-  provider: openverse
-  id: 8dcd12d6-a039-4a37-b882-2dea07e39ae1
-  preview_url: https://api.openverse.org/v1/images/8dcd12d6-a039-4a37-b882-2dea07e39ae1/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTAzcnQ5LWltYWdlLmpwZw.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/14248467/armchair
-  creator: thegetty
-  title: Elegant vintage wooden chair design
-  keywords: Elegant vintage wooden chair design arm chair design furniture marquetry palace vintage wooden
-  width: 1024
-  score: 0.99
-  size:
-  - 610
-  - 896
-  match: 0.989
-- label: Wool blanket
-  query: wool blanket
-  provider: commons
-  id: '98197107'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: Public domain
-  source: https://commons.wikimedia.org/wiki/File:Transitional_Woman_chief_blanket_01.jpg
-  creator: Navajo artist
-  title: Transitional Woman chief blanket 01
-  keywords: Transitional Woman chief blanket 01 PD-Art (PD-old-70) Unknown date CC-PD-Mark Chief blankets
-    PD-Art missing SDC copyright status PD-old missing SDC copyright status Navajo blankets woven in handspun
-    wool, in natural ivory and dark brown, and aniline colors, with a woman's Chief-design, with a series
-    of stepped crosses alternating with striped panels. 61 1/2 in. by 58 1/4 in. private collection
-  width: 1800
-  score: 0.807
-  size:
-  - 900
-  - 826
-  match: 0.991
-- label: Houseplant
-  query: houseplant
-  provider: commons
-  id: '120117726'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Peperomia_boivinii_in_cultivation.jpg/960px-Peperomia_boivinii_in_cultivation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://upload.wikimedia.org/wikipedia/commons/a/a1/Peperomia_boivinii_in_cultivation.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Peperomia_boivinii_in_cultivation.jpg
-  creator: Gemena
-  title: Peperomia boivinii in cultivation
-  keywords: Peperomia boivinii in cultivation CC-Zero Houseplants Self-published work Peperomia boivinii
-    Peperomia boivinii plant kept as a houseplant in a hanging basket, approx. 2 years old single multi-branch
-    stem.
-  width: 1800
-  score: 0.943
-  size:
-  - 930
-  - 1800
-  match: 0.976
-- label: Woven basket
-  query: woven basket
-  provider: commons
-  id: '195788438'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Woven_Basket_05.jpg
-  creator: PagesAndPathsPH
-  title: Woven Basket 05
-  keywords: Woven Basket 05 CC-Zero Self-published work All media needing categories as of 2026 Media
-    needing categories as of 17 July 2026 Woven basket
-  width: 1800
-  score: 0.975
-  size:
-  - 636
-  - 817
-  match: 0.999
 - label: Cinnamon buns
   query: cinnamon buns
   provider: commons
@@ -532,23 +125,60 @@ photo_credits:
   - 857
   - 558
   match: 0.927
-- label: Candles
-  query: candles
+- label: Dried flowers
+  query: dried flowers
   provider: openverse
-  id: e77205b9-8393-42bb-a441-44d2494b2131
-  preview_url: https://api.openverse.org/v1/images/e77205b9-8393-42bb-a441-44d2494b2131/thumb/
-  full_url: https://cdn.stocksnap.io/img-thumbs/960w/NXJ0DEK459.jpg
+  id: daf73245-62c4-4e10-a52b-6b31c457fbfe
+  preview_url: https://api.openverse.org/v1/images/daf73245-62c4-4e10-a52b-6b31c457fbfe/thumb/
+  full_url: https://pd.w.org/2022/05/8627f323a3bff76.54746621-2048x1365.jpg
   license: cc0
-  source: https://stocksnap.io/photo/dark-candle-NXJ0DEK459
-  creator: George Becker
-  title: Dark Candle
-  keywords: Dark Candle blur candle dark fire flame light night
+  source: https://wordpress.org/photos/photo/8627f323a3/
+  creator: kaorock72
+  title: Dried flowers
+  keywords: Dried flowers dried flower
   width: 1024
-  score: 0.729
+  score: 0.756
   size:
-  - 784
-  - 153
-  match: 0.997
+  - 387
+  - 486
+  match: 0.65
+- label: Teapot
+  query: tea kettle
+  provider: commons
+  id: '80569211'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg/960px-Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg/960px-Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere.jpg
+  creator: alquibar
+  title: Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere
+  keywords: Tea-teapot-cup-ceramic-kettle-drink-617935-pxhere CC-Zero Files from external sources with
+    reviewed licenses Ceramic tea pots Files with coordinates missing SDC location of creation Images
+    from Pxhere Teapot on grayscale gradient background.
+  width: 1800
+  score: 0.793
+  size:
+  - 551
+  - 405
+  match: 0.999
+- label: Pears
+  query: pears
+  provider: commons
+  id: '57396131'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Pears-2.jpg/960px-Pears-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/1/1f/Pears-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pears-2.jpg
+  creator: MartinThoma
+  title: Pears-2
+  keywords: Pears-2 Taken with Panasonic Lumix DMC-TZ41 CC-Zero Location not applicable Self-published
+    work 2 fruit Pears on gray background Images by Martin Thoma/Food Two pears
+  width: 1402
+  score: 0.988
+  size:
+  - 1232
+  - 1212
+  match: 0.999
 - label: Wool socks
   query: wool socks
   provider: openverse
@@ -565,6 +195,337 @@ photo_credits:
   size:
   - 652
   - 879
+  match: 1.0
+- label: Brass candlestick
+  query: candle holder
+  provider: commons
+  id: '62278475'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Candle_in_candle_holder_%28Unsplash%29.jpg/960px-Candle_in_candle_holder_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Candle_in_candle_holder_%28Unsplash%29.jpg/960px-Candle_in_candle_holder_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Candle_in_candle_holder_(Unsplash).jpg
+  creator: Janko Ferlič thepootphotographer
+  title: Candle in candle holder (Unsplash)
+  keywords: Candle in candle holder (Unsplash) CC-Zero Candlesticks Images uploaded by Fæ Images from
+    Unsplash Files with coordinates missing SDC location of creation (48° N, 2° E) Candles in Paris Paris,
+    France
+  width: 1800
+  score: 0.899
+  size:
+  - 427
+  - 622
+  match: 0.977
+- label: Cinnamon sticks
+  query: cinnamon sticks
+  provider: openverse
+  id: 80435883-3ed1-45b5-af8a-90652e5f03cd
+  preview_url: https://api.openverse.org/v1/images/80435883-3ed1-45b5-af8a-90652e5f03cd/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXMxNjA4NC1pbWFnZS1rd3Z5ZmJueS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5927000/photo-image-public-domain-free
+  creator: ''
+  title: Free close cinnamon sticks image
+  keywords: Free close cinnamon sticks image cinnamon cinnamon sticks food free spice table wood
+  width: 1024
+  score: 0.975
+  size:
+  - 868
+  - 515
+  match: 0.994
+- label: Hot chocolate
+  query: hot chocolate
+  provider: openverse
+  id: a02c14a3-5fb8-4981-b3c5-d21f91358bed
+  preview_url: https://api.openverse.org/v1/images/a02c14a3-5fb8-4981-b3c5-d21f91358bed/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/NOXXUWUBGJ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/hot-chocolate-NOXXUWUBGJ
+  creator: Tim Sullivan
+  title: Hot Chocolate
+  keywords: Hot Chocolate beverage cafe cappuccino chocolate cocoa counter cozy cream creamy cup dessert
+    drink glass granite hot light mug natural warm whipped
+  width: 1024
+  score: 0.912
+  size:
+  - 463
+  - 630
+  match: 0.999
+- label: Cardamom buns
+  query: cardamom
+  provider: commons
+  id: '187652198'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Sesame_%26_Cardamom_Morning_Bun_-_GAIL%27s_Bakery_2026-03-26.jpg/960px-Sesame_%26_Cardamom_Morning_Bun_-_GAIL%27s_Bakery_2026-03-26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Sesame_%26_Cardamom_Morning_Bun_-_GAIL%27s_Bakery_2026-03-26.jpg/960px-Sesame_%26_Cardamom_Morning_Bun_-_GAIL%27s_Bakery_2026-03-26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sesame_%26_Cardamom_Morning_Bun_-_GAIL%27s_Bakery_2026-03-26.jpg
+  creator: Andy Li
+  title: Sesame & Cardamom Morning Bun - GAIL's Bakery 2026-03-26
+  keywords: 'Sesame & Cardamom Morning Bun - GAIL''s Bakery 2026-03-26 CC-Zero Self-published work Files
+    with coordinates missing SDC location of creation (50° N, 1° W) March 2026 in West Sussex Cardamom-based
+    food England photographs taken on 2026-03-26 2026 in Worthing GAIL''s Bakery, Warwick Street, Worthing
+    Food in the United Kingdom photographed in 2026 Description on the product webpage: "Cardamom-studded
+    brioche dough, laminated with butter, filled with sesame and cardamom filling, hand braided and rolled
+    in spiced, salted demerara sugar before baking."'
+  width: 1800
+  score: 0.202
+  size:
+  - 386
+  - 362
+  match: 0.58
+- label: Rye bread
+  query: rye bread
+  provider: commons
+  id: '161309082'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Rye_bread_Roggenbengel_2025-02-14_13.jpg/960px-Rye_bread_Roggenbengel_2025-02-14_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Rye_bread_Roggenbengel_2025-02-14_13.jpg/960px-Rye_bread_Roggenbengel_2025-02-14_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Rye_bread_Roggenbengel_2025-02-14_13.jpg
+  creator: Leonhard Lenz
+  title: Rye bread Roggenbengel 2025-02-14 13
+  keywords: Rye bread Roggenbengel 2025-02-14 13 CC-Zero Self-published work Photographs by Leonhard Lenz
+    Images from Wiki Loves Folklore 2025 Images from Wiki Loves Folklore 2025 in Germany Rye bread of
+    Germany Rye bread in the variation Roggenbengel produced by the Ufa bakery in Berlin.
+  width: 1800
+  score: 0.949
+  size:
+  - 816
+  - 445
+  match: 0.999
+- label: Butter
+  query: butter
+  provider: commons
+  id: '138043557'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Butter_and_Knive_%28cropped%29.jpg/960px-Butter_and_Knive_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Butter_and_Knive_%28cropped%29.jpg/960px-Butter_and_Knive_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Butter_and_Knive_(cropped).jpg
+  creator: Julikalucky
+  title: Butter and Knive (cropped)
+  keywords: Butter and Knive (cropped) CC-Zero Butter Self-published work Extracted images Schneiden von
+    Butter
+  width: 1800
+  score: 0.78
+  size:
+  - 933
+  - 459
+  match: 0.98
+- label: Fresh dill
+  query: dill
+  provider: commons
+  id: '60400075'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/20170617Anethum_graveolens1.jpg/960px-20170617Anethum_graveolens1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/f/f7/20170617Anethum_graveolens1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:20170617Anethum_graveolens1.jpg
+  creator: AnRo0002
+  title: 20170617Anethum graveolens1
+  keywords: 20170617Anethum graveolens1 Anethum graveolens CC-Zero Self-published work Flora of Saar in
+    Saarbrücken (right bank) - Apiales Saarbrücken photographs taken on 2017-06-17 Apioideae in Sankt
+    Johann (Saar) Apiales in Saarbrücken in June 2017 Files with coordinates missing SDC location of creation
+    (49° N, 7° E) Apioideae in the Northern Hemisphere in June 2017 Verwilderter Dill ( Anethum graveolens
+    ) an der Saar in Saarbrücken
+  width: 1500
+  score: 0.847
+  size:
+  - 1228
+  - 1036
+  match: 0.713
+- label: Potatoes
+  query: potatoes
+  provider: openverse
+  id: fc183caf-b243-4105-b7a6-7dd12006f2ba
+  preview_url: https://api.openverse.org/v1/images/fc183caf-b243-4105-b7a6-7dd12006f2ba/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJwb3RhdG9lc192ZWdldGFibGVzX3Bvd2VyX2Zvb2QtaW1hZ2Uta3liY3d2dWYuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6033152/photo-image-public-domain-food-free
+  creator: ''
+  title: Potatoes, vegetable power food
+  keywords: Potatoes, vegetable power food agriculture backgrounds plant potato potato background potato
+    farming public
+  width: 1024
+  score: 0.983
+  size:
+  - 760
+  - 461
+  match: 0.997
+- label: Brown eggs
+  query: brown eggs
+  provider: openverse
+  id: c9c0e9ec-e8e4-4bc7-8e3e-c244e6f7f256
+  preview_url: https://api.openverse.org/v1/images/c9c0e9ec-e8e4-4bc7-8e3e-c244e6f7f256/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/ID1AWQL7SO.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/eggs-cloth-ID1AWQL7SO
+  creator: Rachael Gorjestani
+  title: Eggs Cloth
+  keywords: Eggs Cloth breakfast brown cloth eggs food still table white wooden
+  width: 1024
+  score: 0.937
+  size:
+  - 788
+  - 531
+  match: 0.993
+- label: Pour-over coffee
+  query: coffee pot
+  provider: commons
+  id: '152229715'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/CHEMEX6_Classic_Coffee_Pot.jpg/960px-CHEMEX6_Classic_Coffee_Pot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/CHEMEX6_Classic_Coffee_Pot.jpg/960px-CHEMEX6_Classic_Coffee_Pot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:CHEMEX6_Classic_Coffee_Pot.jpg
+  creator: Fumikas Sagisavas
+  title: CHEMEX6 Classic Coffee Pot
+  keywords: CHEMEX6 Classic Coffee Pot Coffee pots CC-Zero Self-published work Files with coordinates
+    missing SDC location of creation CHEMEX6 Classic Coffee Pot
+  width: 1800
+  score: 0.985
+  size:
+  - 508
+  - 817
+  match: 0.994
+- label: Cardamom pods
+  query: cardamom pods
+  provider: commons
+  id: '151971310'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Green_Cardamom_Pods.jpg/960px-Green_Cardamom_Pods.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Green_Cardamom_Pods.jpg/960px-Green_Cardamom_Pods.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Green_Cardamom_Pods.jpg
+  creator: Misterneedlemouse
+  title: Green Cardamom Pods
+  keywords: Green Cardamom Pods CC-Zero Self-published work Spices of Tamil Nadu Elettaria cardamomum
+    (fruit) Cardamom in India Whole, dried green cardamom pods from Tamil Nadu, India in a bowl.
+  width: 1800
+  score: 0.867
+  size:
+  - 894
+  - 898
+  match: 0.948
+- label: Ceramic vase
+  query: ceramic vase
+  provider: openverse
+  id: bcf5737f-a21e-4df0-9626-8d390f2de269
+  preview_url: https://api.openverse.org/v1/images/bcf5737f-a21e-4df0-9626-8d390f2de269/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL2xyL2dldHR5MTA5NmFmLWltYWdlLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/14262287/jug
+  creator: thegetty
+  title: Ancient ceramic vase with texture
+  keywords: Ancient ceramic vase with texture art craft glass green history ring texture
+  width: 1024
+  score: 0.953
+  size:
+  - 396
+  - 746
+  match: 0.998
+- label: Ceramic jug
+  query: ceramic mug
+  provider: openverse
+  id: adc18e70-3e3b-417a-a43a-6fb7b74341d4
+  preview_url: https://api.openverse.org/v1/images/adc18e70-3e3b-417a-a43a-6fb7b74341d4/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA4L2xyL21pYTUzNjMtaW1hZ2UuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/7652046/photo-image-vintage-art-tree
+  creator: ''
+  title: ceramic mug handle flaired foot;
+  keywords: ceramic mug handle flaired foot; art birds blue white porcelain ceramic mug delftware tree
+    vintage
+  width: 1024
+  score: 0.986
+  size:
+  - 684
+  - 775
+  match: 0.998
+- label: Wall clock
+  query: analog clock
+  provider: openverse
+  id: c76f2233-e873-48bc-bc38-8e71f25f59cd
+  preview_url: https://api.openverse.org/v1/images/c76f2233-e873-48bc-bc38-8e71f25f59cd/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2lzMTU4NDgtaW1hZ2Uta3d2d3U4d3guanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5917288/free-analog-clock-hanging-public-domain-cc0-photo
+  creator: ''
+  title: Free analog clock hanging
+  keywords: Free analog clock hanging architecture building clock clock tower free time tower
+  width: 1024
+  score: 0.96
+  size:
+  - 770
+  - 678
+  match: 0.999
+- label: Brass candlesticks
+  query: taper candles
+  provider: commons
+  id: '58872878'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bangkok_Vesak_-_2017-05-07_%28013%29.jpg/960px-Bangkok_Vesak_-_2017-05-07_%28013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bangkok_Vesak_-_2017-05-07_%28013%29.jpg/960px-Bangkok_Vesak_-_2017-05-07_%28013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Bangkok_Vesak_-_2017-05-07_(013).jpg
+  creator: Iudexvivorum
+  title: Bangkok Vesak - 2017-05-07 (013)
+  keywords: Bangkok Vesak - 2017-05-07 (013) CC-Zero Self-published work White candles Yellow candles
+    2 kinds Candles at Buddhist temples in Thailand Tapers (candles) Vesak Day in Bangkok 2017 Annual
+    Vesak Event at Indoor Stadium Huamark in Bangkok , Thailand
+  width: 1800
+  score: 0.852
+  size:
+  - 902
+  - 577
+  match: 0.965
+- label: Ceramic bowls
+  query: ceramic bowls
+  provider: commons
+  id: '108792550'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Preclassic_Central_Plateau_Ceramic_Bowls_%289777918126%29.jpg/960px-Preclassic_Central_Plateau_Ceramic_Bowls_%289777918126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Preclassic_Central_Plateau_Ceramic_Bowls_%289777918126%29.jpg/960px-Preclassic_Central_Plateau_Ceramic_Bowls_%289777918126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Preclassic_Central_Plateau_Ceramic_Bowls_(9777918126).jpg
+  creator: Gary Todd from Xinzheng, China
+  title: Preclassic Central Plateau Ceramic Bowls (9777918126)
+  keywords: Preclassic Central Plateau Ceramic Bowls (9777918126) CC-Zero Photographs by Gary Lee Todd
+    Files with coordinates missing SDC location of creation Flickr images reviewed by FlickreviewR 2 Files
+    uploaded by Orizan National Museum of Anthropology - Preclassic pottery Preclassic Central Plateau
+    Gallery, INAH, National Museum of Anthropology, Mexico City. Complete indexed photo collection at
+    WorldHistoryPics.com.
+  width: 1800
+  score: 0.811
+  size:
+  - 884
+  - 359
+  match: 0.999
+- label: Yarn
+  query: yarn ball
+  provider: openverse
+  id: f58f381a-d80b-4a5a-8dce-8d814925cc14
+  preview_url: https://api.openverse.org/v1/images/f58f381a-d80b-4a5a-8dce-8d814925cc14/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDk3Nzg5LXdpa2ltZWRpYS1pbWFnZS1rb3dudGlhby5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3297847/free-photo-image-yarn-wool-knitting
+  creator: ''
+  title: orange wool ball yarn blanket
+  keywords: orange wool ball yarn blanket knit knitting linen wool wool ball wool yarn yarn yarn ball
+  width: 1024
+  score: 0.96
+  size:
+  - 479
+  - 481
+  match: 0.999
+- label: Knitted sweater
+  query: knitted sweater
+  provider: openverse
+  id: 37c4d672-db66-4658-be91-e8f84342f0bb
+  preview_url: https://api.openverse.org/v1/images/37c4d672-db66-4658-be91-e8f84342f0bb/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4MTIzMjUtaW1hZ2Uta3d2eGZvNDcuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5921020/photo-image-public-domain-fashion-free
+  creator: ''
+  title: Free classic clothes photo
+  keywords: Free classic clothes photo classic picture clothes crochet fashion knitting wool sweater textile
+  width: 1024
+  score: 0.934
+  size:
+  - 780
+  - 570
   match: 1.0
 media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-14-feed-1-1.jpg

@@ -14,92 +14,99 @@ caption: 'Not better or worse, just slower 🕰️
 hashtags:
 - slowliving
 - nostalgia
-alt_text: 'Then vs now: kitchens and evenings, old-fashioned objects next to modern ones.'
+alt_text: 'Then and now: kitchens with rolling pins and home preserves next to microwaves and plastic
+  tubs; evenings with a radio and board games next to remotes and takeout.'
 slides:
+- kicker: Then and now
+  title: How we used to live
+  items:
+  - label: Oil lamp
+    queries:
+    - kerosene lamp
+  - label: Yarn
+    queries:
+    - yarn ball
+  - label: Enamel plate
+    queries:
+    - enamel plate
+  - label: Bar soap
+    queries:
+    - bar soap
+  - label: Wire basket
+    queries:
+    - wicker basket
+  - label: Rustic bread
+    queries:
+    - rustic bread
+  - label: Baked apple
+    queries:
+    - baked apple
+  - label: Brass candlestick
+    queries:
+    - candle holder
+  - label: Red apples
+    queries:
+    - red apples
 - title: Kitchens then
   items:
-  - label: Enamel kettle
-    queries:
-    - enamel kettle
-    - kettle
-  - label: Cast iron pot
-    queries:
-    - cast iron pot
-    - dutch oven
   - label: Rolling pin
     queries:
     - rolling pin
-  - label: Milk bottle
-    queries:
-    - glass milk bottle
-    - milk bottle
-  - label: Egg beater
-    queries:
-    - egg beater
-    - hand mixer
-  - label: Mason jars
-    queries:
-    - mason jars
-    - glass jar
-  - label: Bread box
-    queries:
-    - wooden bread box
-    - bread bin
   - label: Wooden bowl
     queries:
     - wooden bowl
+  - label: Glass bottle
+    queries:
+    - glass milk bottle
+  - label: Porcelain kettle
+    queries:
+    - enamel kettle
+  - label: Butter
+    queries:
+    - butter
+  - label: Jam
+    queries:
+    - jam jar
 - title: Kitchens now
   items:
   - label: Microwave
     queries:
     - microwave oven
-    - microwave
   - label: Plastic tubs
     queries:
     - plastic food containers
-    - plastic tupperware
-  - label: Blender
-    queries:
-    - blender
-  - label: Takeout box
-    queries:
-    - takeout food container
-    - takeaway box
   - label: Paper towels
     queries:
     - paper towel roll
+  - label: Coffee to go
+    queries:
+    - takeaway coffee cup
+  - label: Instant noodles
+    queries:
+    - instant noodles
 - title: Evenings then
   items:
-  - label: Oil lamp
-    queries: &id001
-    - kerosene lamp
-    - hurricane lamp
-  - label: Books
-    queries:
-    - old books
-    - book
-  - label: Board games
-    queries:
-    - chess board
-    - board game
-  - label: Yarn
-    queries:
-    - yarn ball
-    - yarn
-  - label: Old radio
+  - label: Radio
     queries:
     - vintage radio
-    - radio
-  - label: Teapot
+  - label: Chess
     queries:
-    - teapot
+    - chess board
+  - label: Old books
+    queries:
+    - old books
   - label: Playing cards
     queries:
     - playing cards
+  - label: Knitting
+    queries:
+    - knitting needles yarn
   - label: Candles
     queries:
     - lit candles
-    - candles
+  - label: Teapot
+    queries:
+    - teapot
 - title: Evenings now
   items:
   - label: Remote
@@ -111,28 +118,249 @@ slides:
   - label: Chargers
     queries:
     - charging cable
-    - usb cable
   - label: Takeout pizza
     queries:
     - pizza slice
-    - pizza
   - label: Popcorn
     queries:
     - bowl of popcorn
-    - popcorn
-- title: 'Comment: then or now?'
-  items:
-  - label: Oil lamp
-    queries: *id001
-  - label: Books
-    queries:
-    - old books
-  body: Follow @naturizz for more simple, natural living.
+- title: Follow for more of the old ways
+  body: Then or now? Tell me in the comments
+  echo:
+  - Oil lamp
+  - Radio
+  - Old books
+  - Yarn
 klapka:
   record: recRbiCS7TkzKe9cz
   sent: d5fcb710ab37a5b1
 photo_credits:
-- label: Enamel kettle
+- label: Oil lamp
+  query: kerosene lamp
+  provider: commons
+  id: '77541673'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Burner_on_a_kerosene_lamp.jpg/960px-Burner_on_a_kerosene_lamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Burner_on_a_kerosene_lamp.jpg/960px-Burner_on_a_kerosene_lamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Burner_on_a_kerosene_lamp.jpg
+  creator: W.carter
+  title: Burner on a kerosene lamp
+  keywords: Burner on a kerosene lamp Taken with Panasonic Lumix DMC-FZ1000 CC-Zero Self-published work
+    Images by W.carter Files with coordinates missing SDC location of creation Kerosene table lamps Studio
+    photography by W.carter in Tuntorp, Brastad Burner on a kerosene, or Argand lamp , lamp photographed
+    in Tuntorp, Brastad, Lysekil Municipality, Sweden. The image has been focus stacked from 12 photos.
+  width: 1800
+  score: 0.72
+  size:
+  - 470
+  - 637
+  match: 0.978
+- label: Yarn
+  query: yarn ball
+  provider: openverse
+  id: f58f381a-d80b-4a5a-8dce-8d814925cc14
+  preview_url: https://api.openverse.org/v1/images/f58f381a-d80b-4a5a-8dce-8d814925cc14/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDk3Nzg5LXdpa2ltZWRpYS1pbWFnZS1rb3dudGlhby5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3297847/free-photo-image-yarn-wool-knitting
+  creator: ''
+  title: orange wool ball yarn blanket
+  keywords: orange wool ball yarn blanket knit knitting linen wool wool ball wool yarn yarn yarn ball
+  width: 1024
+  score: 0.96
+  size:
+  - 479
+  - 481
+  match: 0.999
+- label: Enamel plate
+  query: enamel plate
+  provider: commons
+  id: '17503189'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Miniature_enameled_gold_plate%2C_North_India%2C_18th-19th_century%2C_Honolulu_Academy_of_Arts.JPG/960px-Miniature_enameled_gold_plate%2C_North_India%2C_18th-19th_century%2C_Honolulu_Academy_of_Arts.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Miniature_enameled_gold_plate%2C_North_India%2C_18th-19th_century%2C_Honolulu_Academy_of_Arts.JPG/960px-Miniature_enameled_gold_plate%2C_North_India%2C_18th-19th_century%2C_Honolulu_Academy_of_Arts.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Miniature_enameled_gold_plate,_North_India,_18th-19th_century,_Honolulu_Academy_of_Arts.JPG
+  creator: Hiart
+  title: Miniature enameled gold plate, North India, 18th-19th century, Honolulu Academy of Arts
+  keywords: Miniature enameled gold plate, North India, 18th-19th century, Honolulu Academy of Arts CC-Zero
+    2016 photographs of the United States Self-published work Gold plates Gold objects in India Painted
+    enamel Mughal art in the Honolulu Museum of Art Enamel in the Honolulu Museum of Art Miniature enameled
+    gold plate, North India, 18th-19th century, Honolulu Academy of Arts
+  width: 1800
+  score: 0.872
+  size:
+  - 917
+  - 845
+  match: 0.999
+- label: Bar soap
+  query: bar soap
+  provider: commons
+  id: '151576471'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg/960px-Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg/960px-Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Bars_of_pure_Marseille_and_Aleppo_soap,_2024.jpg
+  creator: DimiTalen
+  title: Bars of pure Marseille and Aleppo soap, 2024
+  keywords: Bars of pure Marseille and Aleppo soap, 2024 Taken with Nikon D3200 CC-Zero Aleppo soap Marseille
+    soap Self-published work 2024 photos by User:DimiTalen Belgium photographs taken on 2024-08-18 Olive
+    oil soap Green bar soap Bars of pure Marseille and Aleppo soap, 2024
+  width: 1800
+  score: 0.774
+  size:
+  - 848
+  - 508
+  match: 0.998
+- label: Wire basket
+  query: wicker basket
+  provider: commons
+  id: '36356153'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG/960px-Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG/960px-Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Basket_for_chickens_-_Barambo_-_Royal_Museum_for_Central_Africa_-_DSC06916.JPG
+  creator: Daderot
+  title: Basket for chickens - Barambo - Royal Museum for Central Africa - DSC06916
+  keywords: Basket for chickens - Barambo - Royal Museum for Central Africa - DSC06916 Taken with Sony
+    DSC-RX100 CC-Zero Self-published work Wicker baskets Files uploaded by Daderot Transport of poultry
+    Barambo collection in the Royal Museum for Central Africa Exhibit in the Royal Museum for Central
+    Africa, Tervuren, Belgium. This object is old enough so that it is in the public domain. Photography
+    was permitted in the museum without restriction.
+  width: 1800
+  score: 0.947
+  size:
+  - 724
+  - 559
+  match: 0.999
+- label: Rustic bread
+  query: rustic bread
+  provider: openverse
+  id: 101d752a-2193-4367-839d-5282027a4b06
+  preview_url: https://api.openverse.org/v1/images/101d752a-2193-4367-839d-5282027a4b06/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/QISPKMTTBD.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/homemade-bread-QISPKMTTBD
+  creator: Foodie Girl
+  title: Homemade Bread
+  keywords: Homemade Bread above baked baking bread brown calorie eating flour food fresh garlic healthy
+    homemade loaf meal nourishment nutrition nutritious rosemary rustic
+  width: 1024
+  score: 0.947
+  size:
+  - 609
+  - 527
+  match: 0.987
+- label: Baked apple
+  query: baked apple
+  provider: openverse
+  id: ea853c48-78b7-478b-baf0-3528311f6c50
+  preview_url: https://api.openverse.org/v1/images/ea853c48-78b7-478b-baf0-3528311f6c50/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/TUKUBAALHJ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/homemade-pie-TUKUBAALHJ
+  creator: Foodie Girl
+  title: Homemade Pie
+  keywords: Homemade Pie american apple background baked baking brown cake cooking crust delicious dessert
+    food fruit golden homemade kitchen pastry pie rustic sweet thanksgiving warm
+  width: 1024
+  score: 0.755
+  size:
+  - 800
+  - 526
+  match: 0.947
+- label: Brass candlestick
+  query: candle holder
+  provider: commons
+  id: '62278475'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Candle_in_candle_holder_%28Unsplash%29.jpg/960px-Candle_in_candle_holder_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Candle_in_candle_holder_%28Unsplash%29.jpg/960px-Candle_in_candle_holder_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Candle_in_candle_holder_(Unsplash).jpg
+  creator: Janko Ferlič thepootphotographer
+  title: Candle in candle holder (Unsplash)
+  keywords: Candle in candle holder (Unsplash) CC-Zero Candlesticks Images uploaded by Fæ Images from
+    Unsplash Files with coordinates missing SDC location of creation (48° N, 2° E) Candles in Paris Paris,
+    France
+  width: 1800
+  score: 0.899
+  size:
+  - 427
+  - 622
+  match: 0.977
+- label: Red apples
+  query: red apples
+  provider: openverse
+  id: 539ad7b6-00df-4693-a869-cfef8619539f
+  preview_url: https://api.openverse.org/v1/images/539ad7b6-00df-4693-a869-cfef8619539f/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNjYxNTc1LXdpa2ltZWRpYS1pbWFnZS1rb3diMmE3ZC5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3282977/free-photo-image-food-red-apple
+  creator: ''
+  title: Red apples wrapped towels
+  keywords: Red apples wrapped towels apple apple background food fruit red red apple still life
+  width: 1024
+  score: 0.837
+  size:
+  - 643
+  - 668
+  match: 0.999
+- label: Rolling pin
+  query: rolling pin
+  provider: commons
+  id: '62008647'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Rolling_pin_2017.jpg/960px-Rolling_pin_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Rolling_pin_2017.jpg/960px-Rolling_pin_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Rolling_pin_2017.jpg
+  creator: Fructibus
+  title: Rolling pin 2017
+  keywords: Rolling pin 2017 CC-Zero Rolling pins Self-published work Taken by Fructibus with Samsung
+    Galaxy A5 (2017) Rolling pin
+  width: 1800
+  score: 0.763
+  size:
+  - 776
+  - 89
+  match: 0.731
+- label: Wooden bowl
+  query: wooden bowl
+  provider: commons
+  id: '61670694'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg/960px-Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg/960px-Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg
+  creator: Unknown author Unknown author
+  title: Carved Wooden Feast Bowl and Spoon Used by Black Hawk
+  keywords: 'Carved Wooden Feast Bowl and Spoon Used by Black Hawk Black Hawk Images uploaded by Fæ PD-old-100-expired
+    PD-Art (PD-old-100-expired) Wooden bowls Template Unknown (author) CC-PD-Mark Collections of the Missouri
+    History Museum Carved wooden feast bowl with accompanying spoon used by Black Hawk (1767-1838), Chief
+    of the Sauk nation, leader of the Sauk, Fox, and Kickapoo in the 1832 war named after him and an ally
+    of the British in the War of 1812. Title: Carved Wooden Feast Bowl and Spoon Used by Black Hawk'
+  width: 1800
+  score: 0.934
+  size:
+  - 837
+  - 592
+  match: 0.998
+- label: Glass bottle
+  query: glass milk bottle
+  provider: openverse
+  id: ff32ad7a-dec4-4d50-9562-0c63c28cd0a2
+  preview_url: https://api.openverse.org/v1/images/ff32ad7a-dec4-4d50-9562-0c63c28cd0a2/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2xyL3VtZXN2a3NuZ3Vwc3M1Ni1pbWFnZS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/8896736/bottle
+  creator: ''
+  title: A bottle
+  keywords: A bottle craftsman glass glass jar green bottle jar milk vase
+  width: 1024
+  score: 0.925
+  size:
+  - 239
+  - 574
+  match: 0.999
+- label: Porcelain kettle
   query: enamel kettle
   provider: commons
   id: '28951850'
@@ -156,117 +384,41 @@ photo_credits:
   - 578
   - 911
   match: 0.988
-- label: Cast iron pot
-  query: cast iron pot
+- label: Butter
+  query: butter
   provider: commons
-  id: '61777076'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Cast_Iron_Tea_Kettle_made_by_Steece.jpg/960px-Cast_Iron_Tea_Kettle_made_by_Steece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://upload.wikimedia.org/wikipedia/commons/e/e6/Cast_Iron_Tea_Kettle_made_by_Steece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
-  license: Public domain
-  source: https://commons.wikimedia.org/wiki/File:Cast_Iron_Tea_Kettle_made_by_Steece.jpg
-  creator: Steece
-  title: Cast Iron Tea Kettle made by Steece
-  keywords: 'Cast Iron Tea Kettle made by Steece PD-Art (PD-US-expired) Images uploaded by Fæ Cast iron
-    pots and pans PD US expired Collections of the Missouri History Museum PD-Art missing SDC copyright
-    status PD-US missing SDC copyright status Black cast iron Steece kettle with embossing around body,
-    gooseneck spout,iron handle, and removable embossed lid Title: Cast Iron Tea Kettle made by Steece'
-  width: 1213
-  score: 0.912
-  size:
-  - 1020
-  - 977
-  match: 0.991
-- label: Rolling pin
-  query: rolling pin
-  provider: commons
-  id: '62008647'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Rolling_pin_2017.jpg/960px-Rolling_pin_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Rolling_pin_2017.jpg/960px-Rolling_pin_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '138043557'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Butter_and_Knive_%28cropped%29.jpg/960px-Butter_and_Knive_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Butter_and_Knive_%28cropped%29.jpg/960px-Butter_and_Knive_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Rolling_pin_2017.jpg
-  creator: Fructibus
-  title: Rolling pin 2017
-  keywords: Rolling pin 2017 CC-Zero Rolling pins Self-published work Taken by Fructibus with Samsung
-    Galaxy A5 (2017) Rolling pin
+  source: https://commons.wikimedia.org/wiki/File:Butter_and_Knive_(cropped).jpg
+  creator: Julikalucky
+  title: Butter and Knive (cropped)
+  keywords: Butter and Knive (cropped) CC-Zero Butter Self-published work Extracted images Schneiden von
+    Butter
   width: 1800
-  score: 0.763
+  score: 0.78
   size:
-  - 776
-  - 89
-  match: 0.731
-- label: Milk bottle
-  query: glass milk bottle
+  - 933
+  - 459
+  match: 0.98
+- label: Jam
+  query: jam jar
   provider: openverse
-  id: ff32ad7a-dec4-4d50-9562-0c63c28cd0a2
-  preview_url: https://api.openverse.org/v1/images/ff32ad7a-dec4-4d50-9562-0c63c28cd0a2/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL2xyL3VtZXN2a3NuZ3Vwc3M1Ni1pbWFnZS5qcGc.jpg
+  id: 7ff6fa4c-611e-4e5b-8f41-625e29bbf000
+  preview_url: https://api.openverse.org/v1/images/7ff6fa4c-611e-4e5b-8f41-625e29bbf000/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg1NDk3MTYtaW1hZ2Uta3d2eHE3a2kuanBn.jpg
   license: cc0
-  source: https://www.rawpixel.com/image/8896736/bottle
+  source: https://www.rawpixel.com/image/5923151/photo-image-public-domain-fruit-food
   creator: ''
-  title: A bottle
-  keywords: A bottle craftsman glass glass jar green bottle jar milk vase
+  title: Free sweet plum jam jar
+  keywords: Free sweet plum jam jar cook eat food fruit jam jam plum jam sugar plums
   width: 1024
-  score: 0.925
+  score: 0.972
   size:
-  - 239
-  - 574
-  match: 0.999
-- label: Egg beater
-  query: egg beater
-  provider: openverse
-  id: 2bfe5d3f-2473-4d9c-aeed-37ef2243801c
-  preview_url: https://api.openverse.org/v1/images/2bfe5d3f-2473-4d9c-aeed-37ef2243801c/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEwL2VnZ19iZWF0ZXJfMTk0My44Ljk4NDguanBn.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/8231540/egg-beater-1937-ivar-julius
-  creator: nationalgalleryofart
-  title: Egg Beater (1937) Ivar Julius
-  keywords: Egg Beater (1937) Ivar Julius art artist artworks image vintage
-  width: 1024
-  score: 0.799
-  size:
-  - 436
-  - 521
-  match: 0.728
-- label: Mason jars
-  query: mason jars
-  provider: commons
-  id: '100911195'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Canned_pears_in_mason_jars.jpg/960px-Canned_pears_in_mason_jars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Canned_pears_in_mason_jars.jpg/960px-Canned_pears_in_mason_jars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Canned_pears_in_mason_jars.jpg
-  creator: Nutrition, Food Safety &amp; Health
-  title: Canned pears in mason jars
-  keywords: Canned pears in mason jars CC-Zero Mason jars United States photographs taken on 2016-04-20
-    Flickr images reviewed by FlickreviewR 2 Home canning and jarring fruit The process of canning fruit
-  width: 1800
-  score: 0.953
-  size:
-  - 756
-  - 593
-  match: 0.994
-- label: Wooden bowl
-  query: wooden bowl
-  provider: commons
-  id: '61670694'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg/960px-Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg/960px-Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: Public domain
-  source: https://commons.wikimedia.org/wiki/File:Carved_Wooden_Feast_Bowl_and_Spoon_Used_by_Black_Hawk.jpg
-  creator: Unknown author Unknown author
-  title: Carved Wooden Feast Bowl and Spoon Used by Black Hawk
-  keywords: 'Carved Wooden Feast Bowl and Spoon Used by Black Hawk Black Hawk Images uploaded by Fæ PD-old-100-expired
-    PD-Art (PD-old-100-expired) Wooden bowls Template Unknown (author) CC-PD-Mark Collections of the Missouri
-    History Museum Carved wooden feast bowl with accompanying spoon used by Black Hawk (1767-1838), Chief
-    of the Sauk nation, leader of the Sauk, Fox, and Kickapoo in the 1832 war named after him and an ally
-    of the British in the War of 1812. Title: Carved Wooden Feast Bowl and Spoon Used by Black Hawk'
-  width: 1800
-  score: 0.934
-  size:
-  - 837
-  - 592
-  match: 0.998
+  - 590
+  - 616
+  match: 0.996
 - label: Microwave
   query: microwave oven
   provider: commons
@@ -322,42 +474,60 @@ photo_credits:
   - 644
   - 829
   match: 0.955
-- label: Oil lamp
-  query: kerosene lamp
+- label: Coffee to go
+  query: takeaway coffee cup
   provider: openverse
-  id: 71193282-ff3f-41a6-9e8b-68b1325cab8d
-  preview_url: https://api.openverse.org/v1/images/71193282-ff3f-41a6-9e8b-68b1325cab8d/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw0NzQ1NzMwNDk5MS1pbWFnZS1reWJlaWtpei5qcGc.jpg
+  id: 24d9208e-5cb0-4506-9551-9349afb6f5fc
+  preview_url: https://api.openverse.org/v1/images/24d9208e-5cb0-4506-9551-9349afb6f5fc/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3Vwd2s2MjI1MjI3MS13aWtpbWVkaWEtaW1hZ2Uta293bXJiZGUuanBn.jpg
   license: cc0
-  source: https://www.rawpixel.com/image/6042912/kerosene-lamp-free-public-domain-cc0-photo
+  source: https://www.rawpixel.com/image/3295706/free-photo-image-cafeteria-beverage-cafe
   creator: ''
-  title: Kerosene lamp
-  keywords: Kerosene lamp bell electric gold kerosene lamp lamp object technology
+  title: takeaway coffee mug protective heat
+  keywords: takeaway coffee mug protective heat cafeteria christmas christmas coffee coffee coffee cup
+    restaurant wood
   width: 1024
-  score: 0.816
+  score: 0.928
   size:
-  - 481
-  - 652
-  match: 0.976
-- label: Books
-  query: old books
+  - 312
+  - 460
+  match: 0.996
+- label: Instant noodles
+  query: instant noodles
   provider: openverse
-  id: a28d2fd9-c6e8-41a8-aa28-2697f0a6040e
-  preview_url: https://api.openverse.org/v1/images/a28d2fd9-c6e8-41a8-aa28-2697f0a6040e/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtczEyNS1ha2U2ODg0LTAxYi5qcGc.jpg
+  id: 6b9e610e-4d84-4ae7-baf3-5ef6aa889e6a
+  preview_url: https://api.openverse.org/v1/images/6b9e610e-4d84-4ae7-baf3-5ef6aa889e6a/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvaXM5ODUyLWltYWdlLWt3dndyYTM4LmpwZw.jpg
   license: cc0
-  source: https://www.rawpixel.com/image/4062299/photo-image-background-aesthetic-golden
-  creator: Teddy
-  title: Old books, our own
-  keywords: Old books, our own background gold books grammar history history books literature racinet
-    roses
+  source: https://www.rawpixel.com/image/5916687/image-public-domain-food-free
+  creator: ''
+  title: Free ramen spoon image
+  keywords: Free ramen spoon image free ramen instant noodles japanese japanese food meal noodles soup
+    ramen soup
   width: 1024
-  score: 0.658
+  score: 0.918
   size:
-  - 816
-  - 654
-  match: 0.995
-- label: Board games
+  - 684
+  - 475
+  match: 0.999
+- label: Radio
+  query: vintage radio
+  provider: openverse
+  id: 5d46d1a0-66bc-44bc-a475-c71a5a7471e8
+  preview_url: https://api.openverse.org/v1/images/5d46d1a0-66bc-44bc-a475-c71a5a7471e8/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/62CBB24BEE.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/radios-vintage-62CBB24BEE
+  creator: Ryan McGuire
+  title: Radios Vintage
+  keywords: Radios Vintage oldschool radios vintage
+  width: 1024
+  score: 0.751
+  size:
+  - 364
+  - 433
+  match: 0.988
+- label: Chess
   query: chess board
   provider: commons
   id: '147765079'
@@ -380,40 +550,80 @@ photo_credits:
   - 770
   - 564
   match: 1.0
-- label: Yarn
-  query: yarn ball
-  provider: openverse
-  id: f58f381a-d80b-4a5a-8dce-8d814925cc14
-  preview_url: https://api.openverse.org/v1/images/f58f381a-d80b-4a5a-8dce-8d814925cc14/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDk3Nzg5LXdpa2ltZWRpYS1pbWFnZS1rb3dudGlhby5qcGc.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/3297847/free-photo-image-yarn-wool-knitting
-  creator: ''
-  title: orange wool ball yarn blanket
-  keywords: orange wool ball yarn blanket knit knitting linen wool wool ball wool yarn yarn yarn ball
-  width: 1024
-  score: 0.96
+- label: Old books
+  query: old books
+  provider: commons
+  id: '37987843'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Old_Books_03.JPG
+  creator: Ch. Maderthoner
+  title: Old Books 03
+  keywords: Old Books 03 Books CC-Zero Self-published work Alte Bücher
+  width: 1800
+  score: 0.9
   size:
-  - 479
-  - 481
+  - 845
+  - 831
+  match: 0.994
+- label: Playing cards
+  query: playing cards
+  provider: commons
+  id: '150268352'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Whot-cards_Nigerian_playing_rules_example1.jpg/960px-Whot-cards_Nigerian_playing_rules_example1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/b/b0/Whot-cards_Nigerian_playing_rules_example1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Whot-cards_Nigerian_playing_rules_example1.jpg
+  creator: Wikinwg
+  title: Whot-cards Nigerian playing rules example1
+  keywords: Whot-cards Nigerian playing rules example1 Playing cards CC-Zero Whot! Self-published work
+    Whot-cards Nigerian playing rules example1
+  width: 1103
+  score: 0.746
+  size:
+  - 778
+  - 626
+  match: 0.948
+- label: Knitting
+  query: knitting needles yarn
+  provider: commons
+  id: '66766419'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg/960px-Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg/960px-Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Knotten_breiwol_met_breinaalden,_Bestanddeelnr_190-0834.jpg
+  creator: Willem van de Poll
+  title: Knotten breiwol met breinaalden, Bestanddeelnr 190-0834
+  keywords: 'Knotten breiwol met breinaalden, Bestanddeelnr 190-0834 Knitting needles and tools CC-Zero
+    Images from Nationaal Archief Wool yarn Knitting in the Netherlands Commercial product photography
+    by Willem van de Poll Collectie / Archief : Fotocollectie Van de Poll Reportage / Serie : Reclamefotografie
+    Beschrijving : Knotten breiwol met breinaalden Datum : juli 1936 Trefwoorden : wol Fotograaf : Poll,
+    Willem van de Auteursrechthebbende : Nationaal Archief Materiaalsoort : Glasnegatief Nummer archiefinventaris
+    : b'
+  width: 1800
+  score: 0.784
+  size:
+  - 773
+  - 642
   match: 0.999
-- label: Old radio
-  query: vintage radio
+- label: Candles
+  query: lit candles
   provider: openverse
-  id: 5d46d1a0-66bc-44bc-a475-c71a5a7471e8
-  preview_url: https://api.openverse.org/v1/images/5d46d1a0-66bc-44bc-a475-c71a5a7471e8/thumb/
-  full_url: https://cdn.stocksnap.io/img-thumbs/960w/62CBB24BEE.jpg
+  id: 9e78ccef-a480-4762-8795-09856071ce82
+  preview_url: https://api.openverse.org/v1/images/9e78ccef-a480-4762-8795-09856071ce82/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4ODAxMzQtaW1hZ2Uta3d2eGRlcjQuanBn.jpg
   license: cc0
-  source: https://stocksnap.io/photo/radios-vintage-62CBB24BEE
-  creator: Ryan McGuire
-  title: Radios Vintage
-  keywords: Radios Vintage oldschool radios vintage
+  source: https://www.rawpixel.com/image/5920521/free-lit-candles-image-public-domain-cc0-photo
+  creator: ''
+  title: Free lit candles image
+  keywords: Free lit candles image candle candles fire places free candle lit candles public
   width: 1024
-  score: 0.751
+  score: 0.71
   size:
-  - 364
-  - 433
-  match: 0.988
+  - 179
+  - 294
+  match: 0.992
 - label: Teapot
   query: teapot
   provider: commons
@@ -433,41 +643,6 @@ photo_credits:
   - 643
   - 386
   match: 0.998
-- label: Playing cards
-  query: playing cards
-  provider: commons
-  id: '150268352'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Whot-cards_Nigerian_playing_rules_example1.jpg/960px-Whot-cards_Nigerian_playing_rules_example1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://upload.wikimedia.org/wikipedia/commons/b/b0/Whot-cards_Nigerian_playing_rules_example1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Whot-cards_Nigerian_playing_rules_example1.jpg
-  creator: Wikinwg
-  title: Whot-cards Nigerian playing rules example1
-  keywords: Whot-cards Nigerian playing rules example1 Playing cards CC-Zero Whot! Self-published work
-    Whot-cards Nigerian playing rules example1
-  width: 1103
-  score: 0.746
-  size:
-  - 778
-  - 626
-  match: 0.948
-- label: Candles
-  query: lit candles
-  provider: openverse
-  id: 9e78ccef-a480-4762-8795-09856071ce82
-  preview_url: https://api.openverse.org/v1/images/9e78ccef-a480-4762-8795-09856071ce82/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4ODAxMzQtaW1hZ2Uta3d2eGRlcjQuanBn.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/5920521/free-lit-candles-image-public-domain-cc0-photo
-  creator: ''
-  title: Free lit candles image
-  keywords: Free lit candles image candle candles fire places free candle lit candles public
-  width: 1024
-  score: 0.71
-  size:
-  - 179
-  - 294
-  match: 0.992
 - label: Remote
   query: remote control
   provider: commons
@@ -560,47 +735,11 @@ photo_credits:
   - 782
   - 688
   match: 0.999
-- label: Oil lamp
-  query: kerosene lamp
-  provider: commons
-  id: '77541673'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Burner_on_a_kerosene_lamp.jpg/960px-Burner_on_a_kerosene_lamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Burner_on_a_kerosene_lamp.jpg/960px-Burner_on_a_kerosene_lamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Burner_on_a_kerosene_lamp.jpg
-  creator: W.carter
-  title: Burner on a kerosene lamp
-  keywords: Burner on a kerosene lamp Taken with Panasonic Lumix DMC-FZ1000 CC-Zero Self-published work
-    Images by W.carter Files with coordinates missing SDC location of creation Kerosene table lamps Studio
-    photography by W.carter in Tuntorp, Brastad Burner on a kerosene, or Argand lamp , lamp photographed
-    in Tuntorp, Brastad, Lysekil Municipality, Sweden. The image has been focus stacked from 12 photos.
-  width: 1800
-  score: 0.72
-  size:
-  - 470
-  - 637
-  match: 0.978
-- label: Books
-  query: old books
-  provider: commons
-  id: '37987843'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Old_Books_03.JPG/960px-Old_Books_03.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Old_Books_03.JPG
-  creator: Ch. Maderthoner
-  title: Old Books 03
-  keywords: Old Books 03 Books CC-Zero Self-published work Alte Bücher
-  width: 1800
-  score: 0.9
-  size:
-  - 845
-  - 831
-  match: 0.994
 media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-1.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-2.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-3.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-4.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-5.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-6.jpg
 media_from_slides: true

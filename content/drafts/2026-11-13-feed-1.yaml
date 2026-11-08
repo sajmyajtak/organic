@@ -14,242 +14,195 @@ caption: 'Same 30 minutes, very different start ☕
 hashtags:
 - slowmorning
 - simpleliving
-alt_text: 'This, not that: a slow morning with tea and a notebook next to a rushed one with takeaway coffee,
-  and a calm bedroom next to a cluttered one.'
+alt_text: A slow morning with tea, oranges and a journal instead of coffee to go and an alarm clock; a
+  calm bedroom with linen and candlelight instead of laundry and chargers.
 slides:
-- title: 'This: a slow morning'
+- title: A slower start to the day
+  items:
+  - label: Morning latte
+    queries:
+    - hot drink mug
+  - label: Croissant
+    queries:
+    - croissant
+  - label: Pears
+    queries:
+    - pears
+  - label: Honey
+    queries:
+    - honey jar
+  - label: Houseplant
+    queries:
+    - houseplant
+  - label: Sourdough
+    queries:
+    - sourdough bread
+  - label: Wall clock
+    queries:
+    - analog clock
+  - label: Jam
+    queries:
+    - jam jar
+  - label: Butter
+    queries:
+    - butter
+- kicker: This
+  title: A slow morning
   items:
   - label: Teapot
     queries:
     - teapot
-  - label: Oatmeal
-    queries:
-    - oatmeal bowl
-    - porridge
-  - label: Notebook
-    queries:
-    - notebook
-    - journal
   - label: Oranges
     queries:
     - oranges
-    - orange
-  - label: French press
-    queries:
-    - french press
-  - label: Eggs
+  - label: Fried eggs
     queries:
     - fried egg
-    - eggs
-  - label: Houseplant
+  - label: Journal
     queries:
-    - houseplant
-  - label: Linen napkin
+    - journal
+  - label: Rolled oats
     queries:
-    - linen napkin
-    - napkin
-- title: 'Not that: a rushed morning'
+    - oats
+- kicker: Not this
+  title: A rushed morning
   items:
-  - label: Takeaway coffee
+  - label: Coffee to go
     queries:
     - takeaway coffee cup
-    - paper coffee cup
   - label: Alarm clock
     queries:
     - alarm clock
-  - label: Granola bar
-    queries:
-    - granola bar
-    - snack bar
   - label: Car keys
     queries:
     - keys on a keyring
-    - keys
   - label: Donut
     queries:
     - glazed donut
-    - donut
-  - label: Pastry
+  - label: Granola bar
     queries:
-    - croissant
-    - pastry
-- title: 'This: a calm bedroom'
+    - granola bar
+- kicker: This
+  title: A calm bedroom
   items:
-  - label: Linen bedding
+  - label: Linen pillows
     queries:
     - linen bedding
-    - pillow
-  - label: Wool blanket
-    queries:
-    - wool blanket
-  - label: Bedside book
+  - label: Bedside books
     queries:
     - book
   - label: Candle
     queries:
     - lit candle
-    - candle
-  - label: Plant
-    queries:
-    - potted plant
   - label: Slippers
     queries:
     - slippers
-  - label: Ceramic mug
+  - label: Evening tea
     queries:
-    - ceramic mug
-  - label: Analog clock
+    - herbal tea cup
+  - label: Potted plant
     queries:
-    - analog clock
-    - clock
-- title: 'Not that: a cluttered bedroom'
+    - potted plant
+- kicker: Not this
+  title: A cluttered bedroom
   items:
   - label: Laundry pile
     queries:
     - laundry pile
-    - pile of clothes
-  - label: Headphones
-    queries:
-    - headphones
   - label: Chargers
     queries:
     - charging cable
-  - label: Takeout box
-    queries:
-    - takeaway box
-  - label: Remote
-    queries:
-    - remote control
-  - label: Junk food
+  - label: Chips
     queries:
     - potato chips
-    - candy
-- title: Send this to your slow-morning friend
-  items:
-  - label: Teapot
+  - label: Headphones
     queries:
-    - teapot
-  - label: Notebook
-    queries:
-    - notebook
-  - label: Oatmeal
-    queries:
-    - oatmeal bowl
-  body: Follow @naturizz for more simple, natural living.
+    - headphones
+- title: Follow for slower mornings
+  body: Send this to your slow-morning friend
+  echo:
+  - Teapot
+  - Croissant
+  - Oranges
+  - Journal
+  - Morning latte
 klapka:
   record: recWIccPgm1KcVqaP
   sent: b398d01e9f1a467f
 photo_credits:
-- label: Teapot
-  query: teapot
-  provider: commons
-  id: '58713654'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Teapot_MET_DP164180.jpg/960px-Teapot_MET_DP164180.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Teapot_MET_DP164180.jpg/960px-Teapot_MET_DP164180.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Teapot_MET_DP164180.jpg
-  creator: Creator:Jabez Halsey
-  title: Teapot MET DP164180
-  keywords: Teapot MET DP164180 CC-Zero Artworks without Wikidata item Artworks with known accession number
-    Images from Metropolitan Museum of Art GWToolset Batch Upload Silver in the Metropolitan Museum of
-    Art (American Decorative Arts) Jabez Halsey American; Teapot; Silver
-  width: 1800
-  score: 0.806
-  size:
-  - 729
-  - 427
-  match: 0.998
-- label: Oatmeal
-  query: oatmeal bowl
+- label: Morning latte
+  query: hot drink mug
   provider: openverse
-  id: df6d872d-35b8-4801-bb24-4508ad4d38aa
-  preview_url: https://api.openverse.org/v1/images/df6d872d-35b8-4801-bb24-4508ad4d38aa/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNjYxNTM5LXdpa2ltZWRpYS1pbWFnZS1rb3dsejJneS5qcGc.jpg
+  id: 329bf7f7-78e6-4b14-9664-d39c84cc7ca6
+  preview_url: https://api.openverse.org/v1/images/329bf7f7-78e6-4b14-9664-d39c84cc7ca6/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/CQQMILRZPU.jpg
   license: cc0
-  source: https://www.rawpixel.com/image/3294324/free-photo-image-oat-meal-cereal-and-oatmeal
-  creator: ''
-  title: bowl oatmeal plate bananas cooked
-  keywords: bowl oatmeal plate bananas cooked banana oatmeal breakfast pizza cereal flat lay oat meal
-    oatmeal raisin
+  source: https://stocksnap.io/photo/coffee-cup-CQQMILRZPU
+  creator: phatonlaphat thongsriphong
+  title: Coffee Cup
+  keywords: Coffee Cup  aroma art background beans biscotti black brown cafe caffeine cappuccino closeup
+    coffee cuisine cup decoration delicious design drink espresso foam food froth heart hot latte mug
+    shop table taste white wooden
   width: 1024
-  score: 0.945
+  score: 0.98
   size:
-  - 504
-  - 520
-  match: 0.929
-- label: Notebook
-  query: journal
-  provider: openverse
-  id: c8f57c0b-34be-4e64-bbad-b176f4109e2a
-  preview_url: https://api.openverse.org/v1/images/c8f57c0b-34be-4e64-bbad-b176f4109e2a/thumb/
-  full_url: https://cdn.stocksnap.io/img-thumbs/960w/PTKN5GSISX.jpg
-  license: cc0
-  source: https://stocksnap.io/photo/journal-desk-PTKN5GSISX
-  creator: Kristin Hardwick
-  title: Journal Desk
-  keywords: Journal Desk bag business closed cover desk diary flatlay journal note notebook object reminder
-    top view
-  width: 1024
-  score: 0.715
-  size:
-  - 796
-  - 665
-  match: 0.706
-- label: Oranges
-  query: oranges
+  - 594
+  - 477
+  match: 0.973
+- label: Croissant
+  query: croissant
   provider: commons
-  id: '61665491'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Orange_Fruit_%28Unsplash%29.jpg/960px-Orange_Fruit_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Orange_Fruit_%28Unsplash%29.jpg/960px-Orange_Fruit_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '151256499'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Freshippo_croissant_bread.jpg/960px-Freshippo_croissant_bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Freshippo_croissant_bread.jpg/960px-Freshippo_croissant_bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Orange_Fruit_(Unsplash).jpg
-  creator: Keilidh Ewan keilidhewan
-  title: Orange Fruit (Unsplash)
-  keywords: Orange Fruit (Unsplash) CC-Zero Oranges Images uploaded by Fæ Images from Unsplash Images
-    from Unsplash (review needed) Keilidh Ewan 2017
+  source: https://commons.wikimedia.org/wiki/File:Freshippo_croissant_bread.jpg
+  creator: Fumikas Sagisavas
+  title: Freshippo croissant bread
+  keywords: Freshippo croissant bread CC-Zero Self-published work Files with coordinates missing SDC location
+    of creation Croissant in China Bread textures Supermarket bakeries Freshippo products Freshippo products
+    - Bakeries Freshippo croissant bread
   width: 1800
-  score: 0.819
+  score: 0.902
   size:
-  - 260
-  - 228
-  match: 0.998
-- label: French press
-  query: french press
+  - 346
+  - 328
+  match: 0.99
+- label: Pears
+  query: pears
   provider: commons
-  id: '147388117'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Coffee_press_with_coffee.jpg/960px-Coffee_press_with_coffee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Coffee_press_with_coffee.jpg/960px-Coffee_press_with_coffee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '57396131'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Pears-2.jpg/960px-Pears-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/1/1f/Pears-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Coffee_press_with_coffee.jpg
-  creator: Corn cheese
-  title: Coffee press with coffee
-  keywords: Coffee press with coffee CC-Zero Coffee French presses Clear glass Self-published work Black
-    beverages A french press in the kitchen.
-  width: 1800
-  score: 0.842
+  source: https://commons.wikimedia.org/wiki/File:Pears-2.jpg
+  creator: MartinThoma
+  title: Pears-2
+  keywords: Pears-2 Taken with Panasonic Lumix DMC-TZ41 CC-Zero Location not applicable Self-published
+    work 2 fruit Pears on gray background Images by Martin Thoma/Food Two pears
+  width: 1402
+  score: 0.988
   size:
-  - 496
-  - 677
-  match: 0.909
-- label: Eggs
-  query: fried egg
-  provider: commons
-  id: '103733288'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Fried_egg_sunny_side_up_4.jpg/960px-Fried_egg_sunny_side_up_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Fried_egg_sunny_side_up_4.jpg/960px-Fried_egg_sunny_side_up_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Fried_egg_sunny_side_up_4.jpg
-  creator: Kurt Kaiser
-  title: Fried egg sunny side up 4
-  keywords: Fried egg sunny side up 4 Fried eggs CC-Zero Self-published work Uploaded with Mobile/Android
-    Files with coordinates missing SDC location of creation Photographs taken on 2019-02-18 breakfast
-    meal
-  width: 1800
-  score: 0.991
-  size:
-  - 746
-  - 557
+  - 1232
+  - 1212
   match: 0.999
+- label: Honey
+  query: honey jar
+  provider: openverse
+  id: cdb0a41e-1edf-4e42-9c87-9838b15b3112
+  preview_url: https://api.openverse.org/v1/images/cdb0a41e-1edf-4e42-9c87-9838b15b3112/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/97LJAKWL36.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/honey-jars-97LJAKWL36
+  creator: Krzysztof%20Puszczy%u0144ski
+  title: Honey Jars
+  keywords: Honey Jars food honey jars
+  width: 1024
+  score: 0.996
+  size:
+  - 616
+  - 468
+  match: 0.995
 - label: Houseplant
   query: houseplant
   provider: commons
@@ -269,28 +222,168 @@ photo_credits:
   - 930
   - 1800
   match: 0.976
-- label: Linen napkin
-  query: linen napkin
+- label: Sourdough
+  query: sourdough bread
   provider: commons
-  id: '61585231'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Napkin_from_Wedding_Trousseau_of_Maria_Doering.jpg/960px-Napkin_from_Wedding_Trousseau_of_Maria_Doering.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Napkin_from_Wedding_Trousseau_of_Maria_Doering.jpg/960px-Napkin_from_Wedding_Trousseau_of_Maria_Doering.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: Public domain
-  source: https://commons.wikimedia.org/wiki/File:Napkin_from_Wedding_Trousseau_of_Maria_Doering.jpg
-  creator: Dцring, Maria Elisabeth Senge, 1788-1847?
-  title: Napkin from Wedding Trousseau of Maria Doering
-  keywords: 'Napkin from Wedding Trousseau of Maria Doering PD-Art (PD-US-expired) Images uploaded by
-    Fæ PD US expired Collections of the Missouri History Museum Wedding trousseau White linen napkin from
-    the wedding trousseau of Frau Doering (nee Maria Elisabeth Senge). She supposedly spun the linen herself
-    and had it woven by the village weaver. Maria married Johann Peter Doering on November 12, 1807 in
-    Germany. Title: Napkin from Wedding Trousseau of Maria Doering'
+  id: '100912030'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Loaf_of_sourdough_bread_cooling.jpg
+  creator: Nutrition, Food Safety &amp; Health
+  title: Loaf of sourdough bread cooling
+  keywords: Loaf of sourdough bread cooling CC-Zero Sour dough breads Flickr images reviewed by FlickreviewR
+    2 Baking sourdough bread
   width: 1800
-  score: 0.874
+  score: 0.98
   size:
-  - 903
-  - 584
+  - 801
+  - 667
+  match: 0.999
+- label: Wall clock
+  query: analog clock
+  provider: openverse
+  id: c76f2233-e873-48bc-bc38-8e71f25f59cd
+  preview_url: https://api.openverse.org/v1/images/c76f2233-e873-48bc-bc38-8e71f25f59cd/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2lzMTU4NDgtaW1hZ2Uta3d2d3U4d3guanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5917288/free-analog-clock-hanging-public-domain-cc0-photo
+  creator: ''
+  title: Free analog clock hanging
+  keywords: Free analog clock hanging architecture building clock clock tower free time tower
+  width: 1024
+  score: 0.96
+  size:
+  - 770
+  - 678
+  match: 0.999
+- label: Jam
+  query: jam jar
+  provider: openverse
+  id: 7ff6fa4c-611e-4e5b-8f41-625e29bbf000
+  preview_url: https://api.openverse.org/v1/images/7ff6fa4c-611e-4e5b-8f41-625e29bbf000/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg1NDk3MTYtaW1hZ2Uta3d2eHE3a2kuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5923151/photo-image-public-domain-fruit-food
+  creator: ''
+  title: Free sweet plum jam jar
+  keywords: Free sweet plum jam jar cook eat food fruit jam jam plum jam sugar plums
+  width: 1024
+  score: 0.972
+  size:
+  - 590
+  - 616
+  match: 0.996
+- label: Butter
+  query: butter
+  provider: commons
+  id: '138043557'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Butter_and_Knive_%28cropped%29.jpg/960px-Butter_and_Knive_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Butter_and_Knive_%28cropped%29.jpg/960px-Butter_and_Knive_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Butter_and_Knive_(cropped).jpg
+  creator: Julikalucky
+  title: Butter and Knive (cropped)
+  keywords: Butter and Knive (cropped) CC-Zero Butter Self-published work Extracted images Schneiden von
+    Butter
+  width: 1800
+  score: 0.78
+  size:
+  - 933
+  - 459
+  match: 0.98
+- label: Teapot
+  query: teapot
+  provider: commons
+  id: '58713842'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Teapot_MET_DP156033.jpg/960px-Teapot_MET_DP156033.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Teapot_MET_DP156033.jpg/960px-Teapot_MET_DP156033.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Teapot_MET_DP156033.jpg
+  creator: Creator:Joseph Richardson Jr. Creator:Nathaniel Richardson
+  title: Teapot MET DP156033
+  keywords: Teapot MET DP156033 CC-Zero Artworks without Wikidata item Joseph Richardson Jr. Nathaniel
+    Richardson Artworks with known accession number Images from Metropolitan Museum of Art GWToolset Batch
+    Upload Silver in the Metropolitan Museum of Art (American Decorative Arts) American; Teapot; Silver
+  width: 1800
+  score: 0.905
+  size:
+  - 643
+  - 386
   match: 0.998
-- label: Takeaway coffee
+- label: Oranges
+  query: oranges
+  provider: commons
+  id: '61665491'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Orange_Fruit_%28Unsplash%29.jpg/960px-Orange_Fruit_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Orange_Fruit_%28Unsplash%29.jpg/960px-Orange_Fruit_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Orange_Fruit_(Unsplash).jpg
+  creator: Keilidh Ewan keilidhewan
+  title: Orange Fruit (Unsplash)
+  keywords: Orange Fruit (Unsplash) CC-Zero Oranges Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Keilidh Ewan 2017
+  width: 1800
+  score: 0.819
+  size:
+  - 260
+  - 228
+  match: 0.998
+- label: Fried eggs
+  query: fried egg
+  provider: commons
+  id: '103733288'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Fried_egg_sunny_side_up_4.jpg/960px-Fried_egg_sunny_side_up_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Fried_egg_sunny_side_up_4.jpg/960px-Fried_egg_sunny_side_up_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Fried_egg_sunny_side_up_4.jpg
+  creator: Kurt Kaiser
+  title: Fried egg sunny side up 4
+  keywords: Fried egg sunny side up 4 Fried eggs CC-Zero Self-published work Uploaded with Mobile/Android
+    Files with coordinates missing SDC location of creation Photographs taken on 2019-02-18 breakfast
+    meal
+  width: 1800
+  score: 0.991
+  size:
+  - 746
+  - 557
+  match: 0.999
+- label: Journal
+  query: journal
+  provider: openverse
+  id: c8f57c0b-34be-4e64-bbad-b176f4109e2a
+  preview_url: https://api.openverse.org/v1/images/c8f57c0b-34be-4e64-bbad-b176f4109e2a/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/PTKN5GSISX.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/journal-desk-PTKN5GSISX
+  creator: Kristin Hardwick
+  title: Journal Desk
+  keywords: Journal Desk bag business closed cover desk diary flatlay journal note notebook object reminder
+    top view
+  width: 1024
+  score: 0.715
+  size:
+  - 796
+  - 665
+  match: 0.706
+- label: Rolled oats
+  query: oats
+  provider: openverse
+  id: 426f05d5-b187-41c4-a65e-d2c7585a2097
+  preview_url: https://api.openverse.org/v1/images/426f05d5-b187-41c4-a65e-d2c7585a2097/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw1MDU5NDg2NjI3Ni1pbWFnZS1reWNpbnF1bC5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6074367/oats
+  creator: ''
+  title: Nutritious oats in bowl
+  keywords: Nutritious oats in bowl food grain plant table vegetable wooden wooden table
+  width: 1024
+  score: 0.918
+  size:
+  - 654
+  - 624
+  match: 0.841
+- label: Coffee to go
   query: takeaway coffee cup
   provider: openverse
   id: 24d9208e-5cb0-4506-9551-9349afb6f5fc
@@ -325,23 +418,6 @@ photo_credits:
   - 367
   - 462
   match: 0.995
-- label: Granola bar
-  query: granola bar
-  provider: commons
-  id: '151811897'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Granola_bars.jpg/960px-Granola_bars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://upload.wikimedia.org/wikipedia/commons/9/97/Granola_bars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Granola_bars.jpg
-  creator: LironOmri12
-  title: Granola bars
-  keywords: Granola bars CC-Zero Granola bars Self-published work Granola bars
-  width: 1280
-  score: 0.999
-  size:
-  - 905
-  - 853
-  match: 1.0
 - label: Car keys
   query: keys on a keyring
   provider: commons
@@ -378,26 +454,24 @@ photo_credits:
   - 617
   - 302
   match: 0.999
-- label: Pastry
-  query: croissant
+- label: Granola bar
+  query: granola bar
   provider: commons
-  id: '151256499'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Freshippo_croissant_bread.jpg/960px-Freshippo_croissant_bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Freshippo_croissant_bread.jpg/960px-Freshippo_croissant_bread.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '151811897'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Granola_bars.jpg/960px-Granola_bars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/9/97/Granola_bars.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Freshippo_croissant_bread.jpg
-  creator: Fumikas Sagisavas
-  title: Freshippo croissant bread
-  keywords: Freshippo croissant bread CC-Zero Self-published work Files with coordinates missing SDC location
-    of creation Croissant in China Bread textures Supermarket bakeries Freshippo products Freshippo products
-    - Bakeries Freshippo croissant bread
-  width: 1800
-  score: 0.902
+  source: https://commons.wikimedia.org/wiki/File:Granola_bars.jpg
+  creator: LironOmri12
+  title: Granola bars
+  keywords: Granola bars CC-Zero Granola bars Self-published work Granola bars
+  width: 1280
+  score: 0.999
   size:
-  - 346
-  - 328
-  match: 0.99
-- label: Linen bedding
+  - 905
+  - 853
+  match: 1.0
+- label: Linen pillows
   query: linen bedding
   provider: openverse
   id: 6d479ecc-8f1a-4ae4-9cb6-a31a69a3ff15
@@ -415,27 +489,7 @@ photo_credits:
   - 508
   - 176
   match: 0.759
-- label: Wool blanket
-  query: wool blanket
-  provider: commons
-  id: '98197107'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transitional_Woman_chief_blanket_01.jpg/960px-Transitional_Woman_chief_blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: Public domain
-  source: https://commons.wikimedia.org/wiki/File:Transitional_Woman_chief_blanket_01.jpg
-  creator: Navajo artist
-  title: Transitional Woman chief blanket 01
-  keywords: Transitional Woman chief blanket 01 PD-Art (PD-old-70) Unknown date CC-PD-Mark Chief blankets
-    PD-Art missing SDC copyright status PD-old missing SDC copyright status Navajo blankets woven in handspun
-    wool, in natural ivory and dark brown, and aniline colors, with a woman's Chief-design, with a series
-    of stepped crosses alternating with striped panels. 61 1/2 in. by 58 1/4 in. private collection
-  width: 1800
-  score: 0.807
-  size:
-  - 900
-  - 826
-  match: 0.991
-- label: Bedside book
+- label: Bedside books
   query: book
   provider: openverse
   id: 130ea816-f58e-49db-9251-7dd9fd8454c6
@@ -469,24 +523,6 @@ photo_credits:
   - 179
   - 294
   match: 0.964
-- label: Plant
-  query: potted plant
-  provider: commons
-  id: '42128000'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Potted_plant._%28Maceta%29.jpg/960px-Potted_plant._%28Maceta%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Potted_plant._%28Maceta%29.jpg/960px-Potted_plant._%28Maceta%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Potted_plant._(Maceta).jpg
-  creator: Omar García
-  title: Potted plant. (Maceta)
-  keywords: Potted plant. (Maceta) CC-Zero Potted plants Self-published work Una maceta con una planta.
-    Foto tomada en Coacalco, Edo. de México
-  width: 1800
-  score: 0.738
-  size:
-  - 632
-  - 523
-  match: 0.99
 - label: Slippers
   query: slippers
   provider: openverse
@@ -504,41 +540,41 @@ photo_credits:
   - 874
   - 559
   match: 0.954
-- label: Ceramic mug
-  query: ceramic mug
+- label: Evening tea
+  query: herbal tea cup
   provider: openverse
-  id: adc18e70-3e3b-417a-a43a-6fb7b74341d4
-  preview_url: https://api.openverse.org/v1/images/adc18e70-3e3b-417a-a43a-6fb7b74341d4/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA4L2xyL21pYTUzNjMtaW1hZ2UuanBn.jpg
+  id: 3e1c1ba9-9921-42ff-be3c-9d52b555c920
+  preview_url: https://api.openverse.org/v1/images/3e1c1ba9-9921-42ff-be3c-9d52b555c920/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L2JzMTM1LWltYWdlLmpwZw.jpg
   license: cc0
-  source: https://www.rawpixel.com/image/7652046/photo-image-vintage-art-tree
+  source: https://www.rawpixel.com/image/11524498/cup-yellow-tea-next-tea-jar
   creator: ''
-  title: ceramic mug handle flaired foot;
-  keywords: ceramic mug handle flaired foot; art birds blue white porcelain ceramic mug delftware tree
-    vintage
+  title: Cup yellow tea next tea
+  keywords: Cup yellow tea next tea herbal herbs mug plant tape tea cup yellow
   width: 1024
-  score: 0.986
+  score: 0.824
   size:
-  - 684
-  - 775
-  match: 0.998
-- label: Analog clock
-  query: analog clock
-  provider: openverse
-  id: c76f2233-e873-48bc-bc38-8e71f25f59cd
-  preview_url: https://api.openverse.org/v1/images/c76f2233-e873-48bc-bc38-8e71f25f59cd/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2lzMTU4NDgtaW1hZ2Uta3d2d3U4d3guanBn.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/5917288/free-analog-clock-hanging-public-domain-cc0-photo
-  creator: ''
-  title: Free analog clock hanging
-  keywords: Free analog clock hanging architecture building clock clock tower free time tower
-  width: 1024
-  score: 0.96
+  - 668
+  - 274
+  match: 1.0
+- label: Potted plant
+  query: potted plant
+  provider: commons
+  id: '42128000'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Potted_plant._%28Maceta%29.jpg/960px-Potted_plant._%28Maceta%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Potted_plant._%28Maceta%29.jpg/960px-Potted_plant._%28Maceta%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Potted_plant._(Maceta).jpg
+  creator: Omar García
+  title: Potted plant. (Maceta)
+  keywords: Potted plant. (Maceta) CC-Zero Potted plants Self-published work Una maceta con una planta.
+    Foto tomada en Coacalco, Edo. de México
+  width: 1800
+  score: 0.738
   size:
-  - 770
-  - 678
-  match: 0.999
+  - 632
+  - 523
+  match: 0.99
 - label: Laundry pile
   query: laundry pile
   provider: openverse
@@ -556,6 +592,41 @@ photo_credits:
   size:
   - 948
   - 403
+  match: 0.999
+- label: Chargers
+  query: charging cable
+  provider: openverse
+  id: fa4df672-ed9c-4364-9ca6-d3ec22f45c24
+  preview_url: https://api.openverse.org/v1/images/fa4df672-ed9c-4364-9ca6-d3ec22f45c24/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L2JzNTEtaW1hZ2UuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/11515807/black-iphone-charging-cable
+  creator: ''
+  title: Black iPhone charging cable
+  keywords: Black iPhone charging cable black black cable charging cable computer iphone pipe technology
+    usb cable
+  width: 1024
+  score: 0.817
+  size:
+  - 525
+  - 337
+  match: 0.999
+- label: Chips
+  query: potato chips
+  provider: openverse
+  id: 6f88ab5e-63f5-47b8-9c87-004673391529
+  preview_url: https://api.openverse.org/v1/images/6f88ab5e-63f5-47b8-9c87-004673391529/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJzbmFja19zbmFja2luZ19wb3RhdG9fZm9vZF8wLWltYWdlLWt5Y2ZneGV4LmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6050213/free-public-domain-cc0-photo
+  creator: ''
+  title: ''
+  keywords: ' greasy food potato chips potato chips bowl potato crisp salt chips snacks bowl spicy snacks'
+  width: 1024
+  score: 0.97
+  size:
+  - 749
+  - 570
   match: 0.999
 - label: Headphones
   query: headphones
@@ -577,100 +648,11 @@ photo_credits:
   - 769
   - 749
   match: 0.999
-- label: Chargers
-  query: charging cable
-  provider: openverse
-  id: fa4df672-ed9c-4364-9ca6-d3ec22f45c24
-  preview_url: https://api.openverse.org/v1/images/fa4df672-ed9c-4364-9ca6-d3ec22f45c24/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L2JzNTEtaW1hZ2UuanBn.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/11515807/black-iphone-charging-cable
-  creator: ''
-  title: Black iPhone charging cable
-  keywords: Black iPhone charging cable black black cable charging cable computer iphone pipe technology
-    usb cable
-  width: 1024
-  score: 0.817
-  size:
-  - 525
-  - 337
-  match: 0.999
-- label: Remote
-  query: remote control
-  provider: commons
-  id: '154387677'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/AQUOS_Familink_Remote_Controller_%28Compatible_product%29.jpg/960px-AQUOS_Familink_Remote_Controller_%28Compatible_product%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/AQUOS_Familink_Remote_Controller_%28Compatible_product%29.jpg/960px-AQUOS_Familink_Remote_Controller_%28Compatible_product%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:AQUOS_Familink_Remote_Controller_(Compatible_product).jpg
-  creator: Mr.ちゅらさん
-  title: AQUOS Familink Remote Controller (Compatible product)
-  keywords: AQUOS Familink Remote Controller (Compatible product) CC-Zero Remote control Sharp AQUOS Self-published
-    work Japan photographs taken on 2024-10-27 AQUOS Familink Remote Controller (Compatible product)
-  width: 1800
-  score: 0.962
-  size:
-  - 238
-  - 959
-  match: 0.992
-- label: Junk food
-  query: potato chips
-  provider: openverse
-  id: 6f88ab5e-63f5-47b8-9c87-004673391529
-  preview_url: https://api.openverse.org/v1/images/6f88ab5e-63f5-47b8-9c87-004673391529/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJzbmFja19zbmFja2luZ19wb3RhdG9fZm9vZF8wLWltYWdlLWt5Y2ZneGV4LmpwZw.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/6050213/free-public-domain-cc0-photo
-  creator: ''
-  title: ''
-  keywords: ' greasy food potato chips potato chips bowl potato crisp salt chips snacks bowl spicy snacks'
-  width: 1024
-  score: 0.97
-  size:
-  - 749
-  - 570
-  match: 0.999
-- label: Teapot
-  query: teapot
-  provider: commons
-  id: '58713842'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Teapot_MET_DP156033.jpg/960px-Teapot_MET_DP156033.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Teapot_MET_DP156033.jpg/960px-Teapot_MET_DP156033.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Teapot_MET_DP156033.jpg
-  creator: Creator:Joseph Richardson Jr. Creator:Nathaniel Richardson
-  title: Teapot MET DP156033
-  keywords: Teapot MET DP156033 CC-Zero Artworks without Wikidata item Joseph Richardson Jr. Nathaniel
-    Richardson Artworks with known accession number Images from Metropolitan Museum of Art GWToolset Batch
-    Upload Silver in the Metropolitan Museum of Art (American Decorative Arts) American; Teapot; Silver
-  width: 1800
-  score: 0.905
-  size:
-  - 643
-  - 386
-  match: 0.998
-- label: Oatmeal
-  query: oatmeal bowl
-  provider: commons
-  id: '61661539'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Healthy_Breakfast_%28Unsplash%29.jpg/960px-Healthy_Breakfast_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Healthy_Breakfast_%28Unsplash%29.jpg/960px-Healthy_Breakfast_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Healthy_Breakfast_(Unsplash).jpg
-  creator: Federica Diliberto federyka
-  title: Healthy Breakfast (Unsplash)
-  keywords: Healthy Breakfast (Unsplash) Custards CC-Zero Oatmeal Images uploaded by Fæ Images from Unsplash
-    Images from Unsplash (review needed) Banana-based food Federica Diliberto 2015
-  width: 1800
-  score: 0.953
-  size:
-  - 492
-  - 509
-  match: 0.957
 media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-1.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-2.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-3.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-4.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-5.jpg
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-6.jpg
 media_from_slides: true

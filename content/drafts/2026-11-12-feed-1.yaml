@@ -14,117 +14,109 @@ caption: 'Woodsmoke, wool socks and nowhere to be 🌲
 hashtags:
 - cabinlife
 - slowliving
-alt_text: 'Moodboard of cabin living: firewood, lanterns, cast iron, wool, enamel mugs and pine cones.'
+alt_text: 'The art of cabin living: a campfire, an axe, hiking boots, an enamel mug and pine cones; a
+  cabin kitchen with cast iron and rustic bread; evenings with a guitar, cocoa and knitting.'
 slides:
 - title: The art of cabin living
   items:
-  - label: Firewood
+  - label: Campfire
     queries:
     - firewood
-  - label: Lantern
-    queries:
-    - lantern
-    - oil lamp
-  - label: Wool socks
-    queries:
-    - wool socks
-    - socks
-  - label: Enamel mug
-    queries:
-    - enamel mug
-    - camping mug
-  - label: Hiking boots
-    queries:
-    - hiking boots
-    - leather boots
-  - label: Pine cones
-    queries:
-    - pine cones
-    - pine cone
-  - label: Wool blanket
-    queries:
-    - wool blanket
-  - label: Coffee pot
-    queries:
-    - coffee percolator
-    - coffee pot
   - label: Axe
     queries:
     - axe
-- title: The cabin kitchen
-  items:
-  - label: Dutch oven
+  - label: Hiking boots
+    queries:
+    - hiking boots
+  - label: Enamel mug
+    queries:
+    - enamel mug
+  - label: Pine cones
+    queries:
+    - pine cones
+  - label: Oil lamp
+    queries:
+    - kerosene lamp
+  - label: Enamel coffee pots
     queries:
     - dutch oven
-    - cast iron pot
+  - label: Maple leaf
+    queries:
+    - red maple leaf
+  - label: Roasted chestnuts
+    queries:
+    - roasted chestnuts
+  - label: Woven blanket
+    queries:
+    - wool blanket
+  - label: Firewood
+    queries:
+    - firewood logs
+- title: The cabin kitchen
+  items:
+  - label: Cast iron skillet
+    queries:
+    - cast iron skillet
   - label: Rustic bread
     queries:
     - rustic bread
-    - bread loaf
-  - label: Cutting board
-    queries:
-    - wooden cutting board
-  - label: Enamel plates
-    queries:
-    - enamel plate
-    - camping plate
   - label: Coffee beans
     queries:
     - roasted coffee beans
-    - coffee beans
-  - label: Wild honey
+  - label: Honey
     queries:
     - honey jar
-  - label: Apples
+  - label: Red apples
     queries:
     - red apples
-    - apple
-  - label: Dried herbs
+  - label: Wooden spoons
     queries:
-    - dried herbs
-    - herb bundle
+    - wooden spoons
+  - label: Cutting board
+    queries:
+    - wooden cutting board
+  - label: Jam
+    queries:
+    - jam jar
 - title: Cabin evenings
   items:
-  - label: Candles
+  - label: Guitar
     queries:
-    - candles
-  - label: Good books
+    - acoustic guitar
+  - label: Chess
+    queries:
+    - chess board
+  - label: Old books
     queries:
     - old books
   - label: Playing cards
     queries:
     - playing cards
-  - label: Herbal tea
+  - label: Hot cocoa
     queries:
-    - herbal tea
-    - teacup
-  - label: Chess
-    queries:
-    - chess board
-  - label: Guitar
-    queries:
-    - acoustic guitar
-    - guitar
+    - marshmallows
   - label: Knitting
     queries:
-    - yarn ball
-  - label: Wool slippers
+    - knitting needles yarn
+  - label: Candlelight
+    queries:
+    - lit candles
+  - label: Slippers
     queries:
     - slippers
-- title: Save this for your next weekend away
-  items:
-  - label: Lantern
-    queries:
-    - lantern
-  - label: Wool socks
-    queries:
-    - wool socks
-  body: Follow @naturizz for more simple, natural living.
+- title: Follow for more slow living
+  body: Save this for your next weekend away
+  echo:
+  - Enamel mug
+  - Pine cones
+  - Campfire
+  - Oil lamp
+  - Hiking boots
 klapka:
   record: reczX5EZrxESrYQo8
   sent: f024428efe75a5ca
 photo_credits:
-- label: Firewood
+- label: Campfire
   query: firewood
   provider: openverse
   id: 2592f74f-be87-4198-8670-cdbb42446d91
@@ -141,61 +133,23 @@ photo_credits:
   - 1024
   - 669
   match: 0.932
-- label: Lantern
-  query: lantern
-  provider: commons
-  id: '157311286'
-  preview_url: https://upload.wikimedia.org/wikipedia/commons/d/dc/Todaiji_Octagonal_Lantern.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled
-  full_url: https://upload.wikimedia.org/wikipedia/commons/d/dc/Todaiji_Octagonal_Lantern.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
-  license: Public domain
-  source: https://commons.wikimedia.org/wiki/File:Todaiji_Octagonal_Lantern.jpg
-  creator: Ogawa Kazumasa
-  title: Todaiji Octagonal Lantern
-  keywords: Todaiji Octagonal Lantern Author died more than 70 years ago public domain images Octagonal
-    Lantern, Todaiji CC-PD-Mark PD-old missing SDC copyright status Photographs by Ogawa Kazumasa Octagonal
-    Lantern of Todaiji.
-  width: 843
-  score: 0.971
-  size:
-  - 766
-  - 948
-  match: 0.983
-- label: Wool socks
-  query: wool socks
+- label: Axe
+  query: axe
   provider: openverse
-  id: 2be373f1-e26f-466f-9ab3-2ea5a8d61115
-  preview_url: https://api.openverse.org/v1/images/2be373f1-e26f-466f-9ab3-2ea5a8d61115/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL2xyL21ldDE1ODM1MS1pbWFnZS5qcGc.jpg
+  id: a4fbe848-6c6c-4464-a9c2-a7b7f435999a
+  preview_url: https://api.openverse.org/v1/images/a4fbe848-6c6c-4464-a9c2-a7b7f435999a/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJtYWNoYWRvX2N1dF93b29kX3RyZWUtaW1hZ2Uta3liZDlkajUuanBn.jpg
   license: cc0
-  source: https://www.rawpixel.com/image/12850627/stockings
-  creator: themet
-  title: Stockings
-  keywords: Stockings american indian pattern art hungarian pattern philosophy wool socks
+  source: https://www.rawpixel.com/image/6035358/axe-ground-free-public-domain-cc0-image
+  creator: ''
+  title: Axe ground
+  keywords: Axe ground axe axe forest farm axe forest tree tree trunk woods
   width: 1024
-  score: 0.84
+  score: 0.922
   size:
-  - 652
-  - 879
-  match: 1.0
-- label: Enamel mug
-  query: enamel mug
-  provider: commons
-  id: '198057093'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg/960px-Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg/960px-Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg
-  creator: Joostik
-  title: Enamel mug from the Tashkent Porcelain Factory
-  keywords: Enamel mug from the Tashkent Porcelain Factory CC-Zero Tashkent Karakul (sheep) Self-published
-    work Uploaded with Mobile/Android Enamel mugs Photographs taken on 2026-08-23 Enamel mug from the
-    Tashkent Porcelain Factory
-  width: 1800
-  score: 0.985
-  size:
-  - 614
-  - 515
-  match: 0.998
+  - 605
+  - 815
+  match: 0.988
 - label: Hiking boots
   query: hiking boots
   provider: commons
@@ -217,6 +171,25 @@ photo_credits:
   - 740
   - 720
   match: 0.994
+- label: Enamel mug
+  query: enamel mug
+  provider: commons
+  id: '198057093'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg/960px-Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg/960px-Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Enamel_mug_from_the_Tashkent_Porcelain_Factory.jpg
+  creator: Joostik
+  title: Enamel mug from the Tashkent Porcelain Factory
+  keywords: Enamel mug from the Tashkent Porcelain Factory CC-Zero Tashkent Karakul (sheep) Self-published
+    work Uploaded with Mobile/Android Enamel mugs Photographs taken on 2026-08-23 Enamel mug from the
+    Tashkent Porcelain Factory
+  width: 1800
+  score: 0.985
+  size:
+  - 614
+  - 515
+  match: 0.998
 - label: Pine cones
   query: pine cones
   provider: openverse
@@ -235,7 +208,80 @@ photo_credits:
   - 189
   - 366
   match: 0.998
-- label: Wool blanket
+- label: Oil lamp
+  query: kerosene lamp
+  provider: commons
+  id: '77541673'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Burner_on_a_kerosene_lamp.jpg/960px-Burner_on_a_kerosene_lamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Burner_on_a_kerosene_lamp.jpg/960px-Burner_on_a_kerosene_lamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Burner_on_a_kerosene_lamp.jpg
+  creator: W.carter
+  title: Burner on a kerosene lamp
+  keywords: Burner on a kerosene lamp Taken with Panasonic Lumix DMC-FZ1000 CC-Zero Self-published work
+    Images by W.carter Files with coordinates missing SDC location of creation Kerosene table lamps Studio
+    photography by W.carter in Tuntorp, Brastad Burner on a kerosene, or Argand lamp , lamp photographed
+    in Tuntorp, Brastad, Lysekil Municipality, Sweden. The image has been focus stacked from 12 photos.
+  width: 1800
+  score: 0.72
+  size:
+  - 470
+  - 637
+  match: 0.978
+- label: Enamel coffee pots
+  query: dutch oven
+  provider: openverse
+  id: 823d754f-46da-418f-9617-f8d362568345
+  preview_url: https://api.openverse.org/v1/images/823d754f-46da-418f-9617-f8d362568345/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxNzE1MzY1LXdpa2ltZWRpYS1pbWFnZS1rb3dsb3BiYS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3293892/free-photo-image-boiling-bonfire-cc0
+  creator: ''
+  title: Original public domain image Wikimedia
+  keywords: Original public domain image Wikimedia background dutch oven fire flame food oven photo
+  width: 1024
+  score: 0.173
+  size:
+  - 722
+  - 455
+  match: 0.273
+- label: Maple leaf
+  query: red maple leaf
+  provider: openverse
+  id: f1e59205-176c-45f8-9fef-4c92164f7ce5
+  preview_url: https://api.openverse.org/v1/images/f1e59205-176c-45f8-9fef-4c92164f7ce5/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/5CCRTPAWLM.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/seasonal-leaf-5CCRTPAWLM
+  creator: Seacoast Sage
+  title: Seasonal Leaf
+  keywords: Seasonal Leaf autumn background copyspace fall flatlay foliage green holiday leaf maple minimal
+    nature november october red rustic seasonal texture thanksgiving wallpaper
+  width: 1024
+  score: 0.913
+  size:
+  - 376
+  - 413
+  match: 0.998
+- label: Roasted chestnuts
+  query: roasted chestnuts
+  provider: commons
+  id: '153238579'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Sugar-roasted_chestnuts_%281%29.jpg/960px-Sugar-roasted_chestnuts_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Sugar-roasted_chestnuts_%281%29.jpg/960px-Sugar-roasted_chestnuts_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sugar-roasted_chestnuts_(1).jpg
+  creator: Fumikas Sagisavas
+  title: Sugar-roasted chestnuts (1)
+  keywords: Sugar-roasted chestnuts (1) CC-Zero Chestnuts as food Self-published work Files with coordinates
+    missing SDC location of creation Sugar-roasted chestnuts
+  width: 1800
+  score: 0.877
+  size:
+  - 855
+  - 557
+  match: 0.755
+- label: Woven blanket
   query: wool blanket
   provider: commons
   id: '98197107'
@@ -255,61 +301,47 @@ photo_credits:
   - 900
   - 826
   match: 0.991
-- label: Coffee pot
-  query: coffee percolator
+- label: Firewood
+  query: firewood logs
   provider: commons
-  id: '180910210'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Perkolator_Aromator_2.jpg/960px-Perkolator_Aromator_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Perkolator_Aromator_2.jpg/960px-Perkolator_Aromator_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Perkolator_Aromator_2.jpg
-  creator: HelgeRieder
-  title: Perkolator Aromator 2
-  keywords: Perkolator Aromator 2 CC-Zero Percolators Self-published work Roscheider Hof - Coffee Machines
-    Perkolator Aromator der Porzellanfabrik von Greiner &amp; Herda in Oberkotzau - ganze Kanne
-  width: 1800
-  score: 0.981
-  size:
-  - 716
-  - 872
-  match: 0.976
-- label: Axe
-  query: axe
-  provider: openverse
-  id: a4fbe848-6c6c-4464-a9c2-a7b7f435999a
-  preview_url: https://api.openverse.org/v1/images/a4fbe848-6c6c-4464-a9c2-a7b7f435999a/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJtYWNoYWRvX2N1dF93b29kX3RyZWUtaW1hZ2Uta3liZDlkajUuanBn.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/6035358/axe-ground-free-public-domain-cc0-image
-  creator: ''
-  title: Axe ground
-  keywords: Axe ground axe axe forest farm axe forest tree tree trunk woods
-  width: 1024
-  score: 0.922
-  size:
-  - 605
-  - 815
-  match: 0.988
-- label: Dutch oven
-  query: cast iron pot
-  provider: commons
-  id: '61777076'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Cast_Iron_Tea_Kettle_made_by_Steece.jpg/960px-Cast_Iron_Tea_Kettle_made_by_Steece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://upload.wikimedia.org/wikipedia/commons/e/e6/Cast_Iron_Tea_Kettle_made_by_Steece.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  id: '17173639'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY%2C_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg/960px-SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY%2C_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY%2C_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg/960px-SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY%2C_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
   license: Public domain
-  source: https://commons.wikimedia.org/wiki/File:Cast_Iron_Tea_Kettle_made_by_Steece.jpg
-  creator: Steece
-  title: Cast Iron Tea Kettle made by Steece
-  keywords: 'Cast Iron Tea Kettle made by Steece PD-Art (PD-US-expired) Images uploaded by Fæ Cast iron
-    pots and pans PD US expired Collections of the Missouri History Museum PD-Art missing SDC copyright
-    status PD-US missing SDC copyright status Black cast iron Steece kettle with embossing around body,
-    gooseneck spout,iron handle, and removable embossed lid Title: Cast Iron Tea Kettle made by Steece'
-  width: 1213
-  score: 0.912
+  source: https://commons.wikimedia.org/wiki/File:SAWING_AND_SPLITTING_OF_LOGS_TOSSED_ON_THE_BEACH_NEAR_LINCOLN_CITY,_WAS_DONE_TO_CONSERVE_ELECTRICITY_AND_FIND_A_WAY..._-_NARA_-_555472.jpg
+  creator: David Falconer
+  title: SAWING AND SPLITTING OF LOGS TOSSED ON THE BEACH NEAR LINCOLN CITY, WAS DONE TO CONSERVE ELECTRICITY
+    AND FIND A WAY... - NARA - 555472
+  keywords: 'SAWING AND SPLITTING OF LOGS TOSSED ON THE BEACH NEAR LINCOLN CITY, WAS DONE TO CONSERVE
+    ELECTRICITY AND FIND A WAY... - NARA - 555472 Chainsaws Firewood Images from the National Archives
+    and Records Administration Media contributed by the National Archives and Records Administration PD
+    US EPA Energy in Oregon Artworks without Wikidata item US National Archives series: DOCUMERICA: The
+    Environmental Protection Agency''s Program to Photographically Document Subjects of Environmental
+    Concern, compiled 1972 - 1977 Logging in Oregon January 1974 in Oregon Gas shortage of 1973 in the
+    United States DOCUMERICA photographs by David Falconer '
+  width: 1800
+  score: 0.932
   size:
-  - 1020
-  - 977
-  match: 0.991
+  - 461
+  - 484
+  match: 0.989
+- label: Cast iron skillet
+  query: cast iron skillet
+  provider: openverse
+  id: 4e8ed9ed-8ec3-4d65-891f-8cf081a324f3
+  preview_url: https://api.openverse.org/v1/images/4e8ed9ed-8ec3-4d65-891f-8cf081a324f3/thumb/
+  full_url: https://pd.w.org/2022/04/554624b775548bbc0.78271394-1536x2048.jpg
+  license: cc0
+  source: https://wordpress.org/photos/photo/554624b775/
+  creator: mdburnette
+  title: Skillet of shepherd’s pie
+  keywords: Skillet of shepherd’s pie cast iron food pie shepherd skillet spoon
+  width: 1024
+  score: 0.232
+  size:
+  - 1255
+  - 1151
+  match: 0.561
 - label: Rustic bread
   query: rustic bread
   provider: openverse
@@ -328,44 +360,6 @@ photo_credits:
   - 609
   - 527
   match: 0.987
-- label: Cutting board
-  query: wooden cutting board
-  provider: commons
-  id: '62008648'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Wooden_cutting_board_2017.jpg/960px-Wooden_cutting_board_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Wooden_cutting_board_2017.jpg/960px-Wooden_cutting_board_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Wooden_cutting_board_2017.jpg
-  creator: Fructibus
-  title: Wooden cutting board 2017
-  keywords: Wooden cutting board 2017 CC-Zero Self-published work Wooden cutting boards Taken by Fructibus
-    with Samsung Galaxy A5 (2017) Wooden cutting board
-  width: 1800
-  score: 0.968
-  size:
-  - 862
-  - 454
-  match: 0.996
-- label: Enamel plates
-  query: enamel plate
-  provider: commons
-  id: '17503189'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Miniature_enameled_gold_plate%2C_North_India%2C_18th-19th_century%2C_Honolulu_Academy_of_Arts.JPG/960px-Miniature_enameled_gold_plate%2C_North_India%2C_18th-19th_century%2C_Honolulu_Academy_of_Arts.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Miniature_enameled_gold_plate%2C_North_India%2C_18th-19th_century%2C_Honolulu_Academy_of_Arts.JPG/960px-Miniature_enameled_gold_plate%2C_North_India%2C_18th-19th_century%2C_Honolulu_Academy_of_Arts.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Miniature_enameled_gold_plate,_North_India,_18th-19th_century,_Honolulu_Academy_of_Arts.JPG
-  creator: Hiart
-  title: Miniature enameled gold plate, North India, 18th-19th century, Honolulu Academy of Arts
-  keywords: Miniature enameled gold plate, North India, 18th-19th century, Honolulu Academy of Arts CC-Zero
-    2016 photographs of the United States Self-published work Gold plates Gold objects in India Painted
-    enamel Mughal art in the Honolulu Museum of Art Enamel in the Honolulu Museum of Art Miniature enameled
-    gold plate, North India, 18th-19th century, Honolulu Academy of Arts
-  width: 1800
-  score: 0.872
-  size:
-  - 917
-  - 845
-  match: 0.999
 - label: Coffee beans
   query: roasted coffee beans
   provider: commons
@@ -385,7 +379,7 @@ photo_credits:
   - 887
   - 413
   match: 1.0
-- label: Wild honey
+- label: Honey
   query: honey jar
   provider: openverse
   id: cdb0a41e-1edf-4e42-9c87-9838b15b3112
@@ -402,7 +396,7 @@ photo_credits:
   - 616
   - 468
   match: 0.995
-- label: Apples
+- label: Red apples
   query: red apples
   provider: openverse
   id: 539ad7b6-00df-4693-a869-cfef8619539f
@@ -419,43 +413,100 @@ photo_credits:
   - 643
   - 668
   match: 0.999
-- label: Dried herbs
-  query: dried herbs
-  provider: openverse
-  id: 5b2710b7-17c2-462e-9c12-40fc8e03e7ec
-  preview_url: https://api.openverse.org/v1/images/5b2710b7-17c2-462e-9c12-40fc8e03e7ec/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4OTc1NzQ1LWltYWdlLWt3dnVxMDZoLmpwZw.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/5903601/photo-image-public-domain-leaves-plant
-  creator: ''
-  title: Free dried herb photo
-  keywords: Free dried herb photo drying fresh oregano herbs nature photo oregano oregano leaf oregano
-    leaves dried oregano plant spice
-  width: 1024
-  score: 0.839
-  size:
-  - 536
-  - 369
-  match: 0.859
-- label: Candles
-  query: candles
+- label: Wooden spoons
+  query: wooden spoons
   provider: commons
-  id: '16077430'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Black_candles_Speyer_3.jpg/960px-Black_candles_Speyer_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Black_candles_Speyer_3.jpg/960px-Black_candles_Speyer_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  id: '10582034'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Wooden_Spoons.015.JPG/960px-Wooden_Spoons.015.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Wooden_Spoons.015.JPG/960px-Wooden_Spoons.015.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
   license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Black_candles_Speyer_3.jpg
-  creator: Vassil
-  title: Black candles Speyer 3
-  keywords: Black candles Speyer 3 Taken with Nikon D90 CC-Zero Self-published work Black candles Chandelles
-    noires.
+  source: https://commons.wikimedia.org/wiki/File:Wooden_Spoons.015.JPG
+  creator: Mflan1977
+  title: Wooden Spoons.015
+  keywords: Wooden Spoons.015 Taken with Canon PowerShot A590 IS CC-Zero Wooden spoons German stoneware
+    wooden spoon collection in a creamware pot
   width: 1800
-  score: 0.709
+  score: 0.974
   size:
-  - 309
-  - 646
-  match: 0.985
-- label: Good books
+  - 634
+  - 841
+  match: 0.995
+- label: Cutting board
+  query: wooden cutting board
+  provider: commons
+  id: '62008648'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Wooden_cutting_board_2017.jpg/960px-Wooden_cutting_board_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Wooden_cutting_board_2017.jpg/960px-Wooden_cutting_board_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Wooden_cutting_board_2017.jpg
+  creator: Fructibus
+  title: Wooden cutting board 2017
+  keywords: Wooden cutting board 2017 CC-Zero Self-published work Wooden cutting boards Taken by Fructibus
+    with Samsung Galaxy A5 (2017) Wooden cutting board
+  width: 1800
+  score: 0.968
+  size:
+  - 862
+  - 454
+  match: 0.996
+- label: Jam
+  query: jam jar
+  provider: openverse
+  id: 7ff6fa4c-611e-4e5b-8f41-625e29bbf000
+  preview_url: https://api.openverse.org/v1/images/7ff6fa4c-611e-4e5b-8f41-625e29bbf000/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg1NDk3MTYtaW1hZ2Uta3d2eHE3a2kuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5923151/photo-image-public-domain-fruit-food
+  creator: ''
+  title: Free sweet plum jam jar
+  keywords: Free sweet plum jam jar cook eat food fruit jam jam plum jam sugar plums
+  width: 1024
+  score: 0.972
+  size:
+  - 590
+  - 616
+  match: 0.996
+- label: Guitar
+  query: acoustic guitar
+  provider: openverse
+  id: 51e6f347-b0be-4019-bad8-95545fe8a19c
+  preview_url: https://api.openverse.org/v1/images/51e6f347-b0be-4019-bad8-95545fe8a19c/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/LBCPMZCQPT.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/acoustic-guitar-LBCPMZCQPT
+  creator: Pawel Kadysz
+  title: Acoustic Guitar
+  keywords: Acoustic Guitar acoustic guitar instrument music
+  width: 1024
+  score: 0.924
+  size:
+  - 365
+  - 968
+  match: 0.998
+- label: Chess
+  query: chess board
+  provider: commons
+  id: '147765079'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chess_game_Staunton_No._6_perfil_view_8.jpg/960px-Chess_game_Staunton_No._6_perfil_view_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chess_game_Staunton_No._6_perfil_view_8.jpg/960px-Chess_game_Staunton_No._6_perfil_view_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg
+  creator: Wilfredor
+  title: Chess game Staunton No. 6 perfil view 8
+  keywords: Chess game Staunton No. 6 perfil view 8 CC-Zero Chess games Chess pieces Staunton Chess Set
+    Chessboards Chess sets Chess starting position Self-published work Featured pictures by User:Wilfredor
+    Files with Assessments template missing SDC Commons quality assessment Media created with Nikon Z7ii
+    provided by the Quebec WikiClub Chess by Wilfredor Studio photography by Wilfredor Focus stacked image
+    Chess set composed of Rio Staunton pieces by House of Chess and a Wegiel Handmade Wooden Chess Board.
+    The pieces are made of Ringy rosewood and boxwood, with triple internal weighting, beveled bases,
+    and green felt pads on the underside to reduce frictional wear on the board. The knight is hand-carv
+  width: 1800
+  score: 0.932
+  size:
+  - 770
+  - 564
+  match: 1.0
+- label: Old books
   query: old books
   provider: commons
   id: '37987843'
@@ -490,81 +541,63 @@ photo_credits:
   - 778
   - 626
   match: 0.948
-- label: Herbal tea
-  query: herbal tea
+- label: Hot cocoa
+  query: marshmallows
   provider: openverse
-  id: 9b5d2d36-d111-4109-bd9f-a140e9668980
-  preview_url: https://api.openverse.org/v1/images/9b5d2d36-d111-4109-bd9f-a140e9668980/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZyaGVyYmFsX3RlYV90ZWFiYWdzX2JldmVyYWdlLWltYWdlLWt6MmUzem5pLmpwZw.jpg
+  id: aae18036-c5c2-48d9-9614-c369d8694f08
+  preview_url: https://api.openverse.org/v1/images/aae18036-c5c2-48d9-9614-c369d8694f08/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/TKMJJ9D81G.jpg
   license: cc0
-  source: https://www.rawpixel.com/image/6112547/photo-image-public-domain-free-tea
-  creator: ''
-  title: Twinings, herbal tea, location unknown
-  keywords: Twinings, herbal tea, location unknown brand free herbal tea photo tea
+  source: https://stocksnap.io/photo/hot-chocolate-TKMJJ9D81G
+  creator: Tohm Brigitte
+  title: Hot Chocolate
+  keywords: Hot Chocolate chocolate cup drink food hot leaves marshmallow
   width: 1024
-  score: 0.97
+  score: 0.823
   size:
-  - 863
-  - 640
-  match: 0.984
-- label: Chess
-  query: chess board
-  provider: commons
-  id: '147765079'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chess_game_Staunton_No._6_perfil_view_8.jpg/960px-Chess_game_Staunton_No._6_perfil_view_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chess_game_Staunton_No._6_perfil_view_8.jpg/960px-Chess_game_Staunton_No._6_perfil_view_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg
-  creator: Wilfredor
-  title: Chess game Staunton No. 6 perfil view 8
-  keywords: Chess game Staunton No. 6 perfil view 8 CC-Zero Chess games Chess pieces Staunton Chess Set
-    Chessboards Chess sets Chess starting position Self-published work Featured pictures by User:Wilfredor
-    Files with Assessments template missing SDC Commons quality assessment Media created with Nikon Z7ii
-    provided by the Quebec WikiClub Chess by Wilfredor Studio photography by Wilfredor Focus stacked image
-    Chess set composed of Rio Staunton pieces by House of Chess and a Wegiel Handmade Wooden Chess Board.
-    The pieces are made of Ringy rosewood and boxwood, with triple internal weighting, beveled bases,
-    and green felt pads on the underside to reduce frictional wear on the board. The knight is hand-carv
-  width: 1800
-  score: 0.932
-  size:
-  - 770
-  - 564
-  match: 1.0
-- label: Guitar
-  query: acoustic guitar
-  provider: openverse
-  id: 51e6f347-b0be-4019-bad8-95545fe8a19c
-  preview_url: https://api.openverse.org/v1/images/51e6f347-b0be-4019-bad8-95545fe8a19c/thumb/
-  full_url: https://cdn.stocksnap.io/img-thumbs/960w/LBCPMZCQPT.jpg
-  license: cc0
-  source: https://stocksnap.io/photo/acoustic-guitar-LBCPMZCQPT
-  creator: Pawel Kadysz
-  title: Acoustic Guitar
-  keywords: Acoustic Guitar acoustic guitar instrument music
-  width: 1024
-  score: 0.924
-  size:
-  - 365
-  - 968
-  match: 0.998
+  - 370
+  - 369
+  match: 0.65
 - label: Knitting
-  query: yarn ball
-  provider: openverse
-  id: f58f381a-d80b-4a5a-8dce-8d814925cc14
-  preview_url: https://api.openverse.org/v1/images/f58f381a-d80b-4a5a-8dce-8d814925cc14/thumb/
-  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyMDk3Nzg5LXdpa2ltZWRpYS1pbWFnZS1rb3dudGlhby5qcGc.jpg
-  license: cc0
-  source: https://www.rawpixel.com/image/3297847/free-photo-image-yarn-wool-knitting
-  creator: ''
-  title: orange wool ball yarn blanket
-  keywords: orange wool ball yarn blanket knit knitting linen wool wool ball wool yarn yarn yarn ball
-  width: 1024
-  score: 0.96
+  query: knitting needles yarn
+  provider: commons
+  id: '66766419'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg/960px-Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg/960px-Knotten_breiwol_met_breinaalden%2C_Bestanddeelnr_190-0834.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Knotten_breiwol_met_breinaalden,_Bestanddeelnr_190-0834.jpg
+  creator: Willem van de Poll
+  title: Knotten breiwol met breinaalden, Bestanddeelnr 190-0834
+  keywords: 'Knotten breiwol met breinaalden, Bestanddeelnr 190-0834 Knitting needles and tools CC-Zero
+    Images from Nationaal Archief Wool yarn Knitting in the Netherlands Commercial product photography
+    by Willem van de Poll Collectie / Archief : Fotocollectie Van de Poll Reportage / Serie : Reclamefotografie
+    Beschrijving : Knotten breiwol met breinaalden Datum : juli 1936 Trefwoorden : wol Fotograaf : Poll,
+    Willem van de Auteursrechthebbende : Nationaal Archief Materiaalsoort : Glasnegatief Nummer archiefinventaris
+    : b'
+  width: 1800
+  score: 0.784
   size:
-  - 479
-  - 481
+  - 773
+  - 642
   match: 0.999
-- label: Wool slippers
+- label: Candlelight
+  query: lit candles
+  provider: openverse
+  id: 9e78ccef-a480-4762-8795-09856071ce82
+  preview_url: https://api.openverse.org/v1/images/9e78ccef-a480-4762-8795-09856071ce82/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4ODAxMzQtaW1hZ2Uta3d2eGRlcjQuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5920521/free-lit-candles-image-public-domain-cc0-photo
+  creator: ''
+  title: Free lit candles image
+  keywords: Free lit candles image candle candles fire places free candle lit candles public
+  width: 1024
+  score: 0.71
+  size:
+  - 179
+  - 294
+  match: 0.992
+- label: Slippers
   query: slippers
   provider: openverse
   id: 27b7bebc-0e18-412b-b9e9-6dc01b6b3f4c
@@ -581,42 +614,6 @@ photo_credits:
   - 874
   - 559
   match: 0.954
-- label: Lantern
-  query: lantern
-  provider: commons
-  id: '114035314'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/20190121_T%C5%8Ddai-ji_lantern-1.jpg/960px-20190121_T%C5%8Ddai-ji_lantern-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/20190121_T%C5%8Ddai-ji_lantern-1.jpg/960px-20190121_T%C5%8Ddai-ji_lantern-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:20190121_T%C5%8Ddai-ji_lantern-1.jpg
-  creator: Balon Greyjoy
-  title: 20190121 Tōdai-ji lantern-1
-  keywords: 20190121 Tōdai-ji lantern-1 CC-Zero Octagonal Lantern, Todaiji Self-published work Files with
-    coordinates missing SDC location of creation A lantern at the Tōdai-ji temple in Nara.
-  width: 1800
-  score: 0.733
-  size:
-  - 598
-  - 914
-  match: 0.896
-- label: Wool socks
-  query: wool socks
-  provider: commons
-  id: '193422332'
-  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Socks_-_Komi-Permyak_-_Meshkov_house.jpg/960px-Socks_-_Komi-Permyak_-_Meshkov_house.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Socks_-_Komi-Permyak_-_Meshkov_house.jpg/960px-Socks_-_Komi-Permyak_-_Meshkov_house.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
-  license: CC0
-  source: https://commons.wikimedia.org/wiki/File:Socks_-_Komi-Permyak_-_Meshkov_house.jpg
-  creator: Лапоть
-  title: Socks - Komi-Permyak - Meshkov house
-  keywords: Socks - Komi-Permyak - Meshkov house CC-Zero Perm Regional Museum Self-published work Wool
-    socks Clothing of Komi people Perm museum of local history. Meshkov house.
-  width: 1800
-  score: 0.958
-  size:
-  - 769
-  - 445
-  match: 0.958
 media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-12-feed-1-1.jpg
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-12-feed-1-2.jpg
