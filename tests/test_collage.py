@@ -118,7 +118,7 @@ def test_queue_item_with_items_renders_as_collage_with_credits(tmp_path, monkeyp
     assert publish.alt_text(item["slides"][0]) == "The art of slow mornings: Thing 0, Thing 1, Thing 2, Thing 3"
 
     from igbot import content
-    assert content.validate(item) == []
+    assert content.validate(item) == ["karusel má jen 2 slidy (koláž potřebuje titul, aspoň 2 slidy a závěr: min 4)"]
     item["slides"][0]["items"] = things[:2]
     assert any("2 předmětů" in p for p in content.validate(item))
 
@@ -170,8 +170,12 @@ def test_cover_and_closing_slide_need_no_labels_but_inner_slides_do():
             "slides": [{"title": "The art of slow mornings", "items": things},
                        {"kicker": "This", "title": "A slow morning",
                         "items": [{"label": f"Thing {n}", "queries": ["q"]} for n in range(4)]},
+                       {"kicker": "Not this", "title": "A rushed morning",
+                        "items": [{"label": f"Other {n}", "queries": ["q"]} for n in range(4)]},
                        {"title": "Follow for slower mornings", "body": "Send this to a friend"}]}
     assert content.validate(item) == []
+    short = {**item, "slides": item["slides"][:1] + item["slides"][2:]}   # cover, one slide, closing: too short
+    assert any("min 4" in p for p in content.validate(short))
     item["slides"][1]["items"][0]["label"] = ""
     assert any("bez popisku" in p for p in content.validate(item))
     item["slides"][1]["items"][0]["label"] = "Teapot"

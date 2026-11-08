@@ -71,6 +71,7 @@ def due(tz: str, now: datetime | None = None) -> list[dict]:
             and scheduled_at(i, tz) <= now]
 
 
+MIN_COLLAGE_SLIDES = 4  # cover, at least two content slides, closing slide (Simon: 4-5 in total)
 MAX_HASHTAGS = 5  # Instagram's cap since Dec 2025; the API docs still say 30
 HASHTAG = re.compile(r"#\w*[^\W\d_]\w*")  # needs a letter, so "#1" in a list doesn't count
 # Disclosure has to open the post, in the post's language (ČOI's position as
@@ -105,6 +106,9 @@ def validate(item: dict) -> list[str]:
             problems.append(MISSING_VIDEO)
     elif not slides and not media:
         problems.append("chybí slidy i média")
+    if kind == "carousel" and any(s.get("items") for s in slides) and len(slides) < MIN_COLLAGE_SLIDES:
+        problems.append(f"karusel má jen {len(slides)} slidy (koláž potřebuje titul, aspoň 2 slidy a závěr: "
+                        f"min {MIN_COLLAGE_SLIDES})")
     if kind in ("carousel", "image") and not media and any(s.get("items") for s in slides):
         for n, slide in enumerate(slides, start=1):
             things = slide.get("items") or []

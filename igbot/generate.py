@@ -118,16 +118,18 @@ In this niche the posts people save and share are aesthetic moodboards, so:
     kicker ("This" / "Not this") and the title is the topic ("A slow kitchen").
   - no item twice in one post.
 - Formats (field format):
-  - moodboard: carousel of 4-6 slides. Slide 1 is the cover "The art of ___
+  - Length: 4-5 slides in total (cover, content slides, closing slide); the
+    contrast formats below may use 6 for two pairs. Never fewer than 4.
+  - moodboard: carousel of 4-5 slides. Slide 1 is the cover "The art of ___
     living" (season, place, room, routine); then one slide per sub-theme
     (kitchen, home, outdoors, rituals, ...) titled in 2-4 words, 7-10 items each.
-  - list: carousel of 3 slides: a mood cover ("Everything a calm home needs"),
-    the list itself titled e.g. "Natural kitchen essentials" with 10-12
-    labelled items, then the closing slide.
-  - then_vs_now: carousel of 5-7 slides: a mood cover ("How we used to live",
+  - list: carousel of 4-5 slides: a mood cover ("Everything a calm home needs"),
+    2-3 list slides, one per room or use ("Living room essentials",
+    "Bathroom essentials"), 7-10 labelled items each, then the closing slide.
+  - then_vs_now: carousel of 4 or 6 slides: a mood cover ("How we used to live",
     kicker "Then and now"), then pairs titled "<Topic> then" / "<Topic> now"
     with 5-8 items each. Nostalgic, never shaming, never medical.
-  - this_not_that: carousel of 5-7 slides: a mood cover ("Small swaps for a
+  - this_not_that: carousel of 4 or 6 slides: a mood cover ("Small swaps for a
     slower kitchen"), then pairs with kicker "This" / "Not this" and the topic
     as title ("A slow morning" / "A rushed morning"), 5-8 items each: simple,
     natural choices vs their modern counterparts. No health or safety claims.
@@ -208,7 +210,7 @@ def build_prompt(cfg: dict, start: date, days: int) -> str:
                  f"(field feed) and {reels} reel scripts (field reels), at most one feed post "
                  f"per day, spread evenly. Every day {sched['stories_per_day']} stories "
                  f"(slot 1..{sched['stories_per_day']}). Rotate pillars by their shares. "
-                 "Carousel: cover, 1-5 inner collage slides and the closing slide; story 1 slide. "
+                 "Carousel: cover, 2-4 inner collage slides and the closing slide (4-6 in total); story 1 slide. "
                  "Stories have no items."),
         "language": cfg.get("account", {}).get("language", "en"),
         "handle": cfg.get("account", {}).get("handle", ""),
