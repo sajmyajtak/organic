@@ -31,6 +31,11 @@ STD = np.array([0.26862954, 0.26130258, 0.27577711], dtype=np.float32)
 SCALE = 100.0  # CLIP's logit scale
 
 # What a cut-out sticker must not be. The object prompt competes with these.
+MODERN = ["a modern color photograph", "a recent smartphone photo", "a stock photo"]
+OLD_OR_ART = ["a painting", "an oil painting", "a drawing", "a watercolor", "a woodblock print", "an engraving",
+              "an old black and white photograph", "a sepia vintage photograph", "a faded old photo", "a postcard",
+              "a sign with text", "a museum object photo"]
+
 # What a photo of a scene must not be.
 ARCHIVE = ["a painting", "a drawing", "an illustration", "a cartoon", "an old black and white photo",
            "an old faded vintage photograph", "a framed picture on a wall", "a sign with text",
@@ -109,6 +114,16 @@ class Clip:
         p = np.exp(logits - logits.max())
         return float(p[0] / p.sum())
 
+    def modern_photo(self, img: Image.Image) -> float:
+        """Probability (0-1) that `img` is a present-day colour photograph at all. No subject
+        in the prompts: with one, CLIP calls Van Gogh's cafe "a photo of a cafe terrace".
+        Modern stock scores 0.3-0.9, paintings, prints and old photos 0.01-0.1."""
+        emb = self.image(img)
+        prompts = MODERN + OLD_OR_ART
+        logits = SCALE * np.array([emb @ self.text(p) for p in prompts])
+        p = np.exp(logits - logits.max())
+        return float(p[:len(MODERN)].sum() / p.sum())
+
     def similarity(self, img: Image.Image, what: str) -> float:
         """Cosine similarity of `img` and "a photo of <what>" (matches ~0.27-0.35, misses ~0.15-0.22).
         For scenes and activities, where people and landscapes are the point."""
@@ -150,3 +165,9 @@ def is_photo_of(img: Image.Image, what: str) -> float | None:
     """See Clip.is_photo_of; None when the check is off or the model can't load."""
     model = _model()
     return None if model is None else model.is_photo_of(img, what)
+
+
+def modern_photo(img: Image.Image) -> float | None:
+    """See Clip.modern_photo; None when the check is off or the model can't load."""
+    model = _model()
+    return None if model is None else model.modern_photo(img)

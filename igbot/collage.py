@@ -229,6 +229,9 @@ class Item:
     origin: tuple[int, int]     # image top-left inside the footprint, px
     label_box: tuple[float, float]  # label centre x and top y, relative to image
     pos: tuple[int, int] | None = None
+    grid: tuple[int, int] | None = None   # footprint's top-left cell once placed
+    remake: object = None                 # side -> the same thing at another size (for growing)
+    side: float = 0.0
 
 
 def _crop_to(img: Image.Image, aspect: float) -> Image.Image:
@@ -526,6 +529,117 @@ def _things(items: list) -> list[tuple[str, Image.Image, bool, bool]]:
     return out
 
 
+def _fit_box(label: str, img: Image.Image, photo: bool, box_w: float, box_h: float, style: Style,
+             rnd: random.Random) -> tuple[Image.Image, list[str]]:
+    """The thing (outlined cut-out or framed photo, slightly turned) as big as fits in
+    box_w x box_h with its label underneath, and the label's lines."""
+    font = _font(style.label_font, style.label_size)
+    lines = _label_lines(font, _clean(label), box_w - 8) if _clean(label) else []
+    label_h = (font.getbbox("Hg")[3] + 2) * len(lines) + (8 if lines else 0)
+    room_w, room_h = box_w, max(40.0, box_h - label_h)
+    angle = rnd.uniform(-style.max_rotation, style.max_rotation) * (0.45 if photo else 0.8)
+    k = rnd.uniform(0.92, 1.0)
+    for _ in range(6):   # as big as the box allows, then shrink until the turned picture fits
+        if photo:
+            src = img.convert("RGB")
+            aspect = min(1.35, max(0.75, src.width / src.height))
+            side = min(room_w / aspect ** 0.5, room_h * aspect ** 0.5)
+            pic = _framed(src, side * k, style, aspect)
+        else:
+            w, h = img.size
+            sc = min(room_w / w, room_h / h) * k
+            pic = img.resize((max(1, round(w * sc)), max(1, round(h * sc))), Image.LANCZOS)
+            pic = _outline(pic, style.outline) if style.outline else pic
+        if abs(angle) > 0.3:
+            pic = pic.rotate(angle, resample=Image.BICUBIC, expand=True)
+        fit = min(room_w / pic.width, room_h / pic.height)
+        if fit >= 0.995:
+            break
+        k *= fit * 0.99
+    box = pic.getchannel("A").getbbox()
+    return (pic.crop(box) if box else pic), lines
+
+
+def _grid_board(slide: Image.Image, cuts: list, hero_box: tuple[float, float, float, float],
+                title_box: tuple[float, float, float, float], style: Style, rnd: random.Random) -> list[Item]:
+    """The niche's board, made regular: two columns of things beside the hero, rows of
+    things under the title, every thing as big as its cell allows, label underneath."""
+    W, H = SIZE
+    m, gap = style.margin, 14
+    n = len(cuts)
+    hx0, hy0, hx1, hy1 = hero_box
+    side_rows = 2 if n <= 14 else 3
+    side_cells = []
+    for x0, x1 in ((m, hx0 - gap), (hx1 + gap, W - m)):
+        ch = (hy1 - m) / side_rows
+        side_cells += [(x0, m + r * ch, x1, m + (r + 1) * ch) for r in range(side_rows)]
+    rest = n - len(side_cells)
+    top = title_box[3] + 18
+    rows = 2 if rest <= 10 else 3
+    per_row = [rest // rows + (1 if r < rest % rows else 0) for r in range(rows)]
+    rh = (H - m - top) / rows
+    bottom_cells = []
+    for r, k in enumerate(per_row):
+        cw = (W - 2 * m) / max(1, k)
+        bottom_cells += [(m + c * cw, top + r * rh, m + (c + 1) * cw, top + (r + 1) * rh) for c in range(k)]
+    cells = (side_cells + bottom_cells)[:n]
+    # Photos and cut-outs alternate, so neither clumps in one corner.
+    photos_ = [c for c in cuts if c[2]]
+    others = [c for c in cuts if not c[2]]
+    order, pi, oi = [], 0, 0
+    for k in range(n):
+        want_photo = photos_ and (k % 3 == 1 or not others[oi:])
+        if want_photo and pi < len(photos_):
+            order.append(photos_[pi]); pi += 1
+        elif oi < len(others):
+            order.append(others[oi]); oi += 1
+        else:
+            order.append(photos_[pi]); pi += 1
+    rnd.shuffle(cells)
+    items = []
+    font = _font(style.label_font, style.label_size)
+    line_h = font.getbbox("Hg")[3] + 2
+    for (label, img, photo, _), (x0, y0, x1, y1) in zip(order, cells):
+        pic, lines = _fit_box(label, img, photo, x1 - x0 - 8, y1 - y0 - 8, style, rnd)
+        block_h = pic.height + (8 + line_h * len(lines) if lines else 0)
+        px = (x0 + x1) / 2 - pic.width / 2 + rnd.uniform(-6, 6)
+        py = (y0 + y1) / 2 - block_h / 2 + rnd.uniform(-5, 5)
+        item = Item("\n".join(lines), pic, font, np.zeros((1, 1), bool), (0, 0),
+                    (pic.width / 2, pic.height + 6))
+        item.pos = (int(px), int(py))
+        items.append(item)
+    return items
+
+
+def _grow(occ: np.ndarray, placed: list[Item], bleed: int, rounds: int = 6, step: float = 1.08) -> None:
+    """Fill the holes the packer leaves: each thing grows in place, around its own centre,
+    as long as it touches nothing new. The board ends up as full as the niche's boards."""
+    H, W = occ.shape
+    for _ in range(rounds):
+        grew = False
+        for k, item in enumerate(placed):
+            if item.remake is None:
+                continue
+            gy, gx = item.grid
+            fh, fw = item.footprint.shape
+            occ[gy:gy + fh, gx:gx + fw] &= ~item.footprint
+            bigger = item.remake(item.side * step)
+            bh, bw = bigger.footprint.shape
+            ny, nx = round(gy + fh / 2 - bh / 2), round(gx + fw / 2 - bw / 2)
+            fits = (0 <= ny and 0 <= nx and ny + bh <= H and nx + bw <= W
+                    and not (occ[ny:ny + bh, nx:nx + bw] & bigger.footprint).any())
+            if fits:
+                occ[ny:ny + bh, nx:nx + bw] |= bigger.footprint
+                bigger.pos = (nx * GRID + bigger.origin[0] - bleed, ny * GRID + bigger.origin[1] - bleed)
+                bigger.grid, bigger.remake, bigger.side = (ny, nx), item.remake, item.side * step
+                placed[k] = bigger
+                grew = True
+            else:
+                occ[gy:gy + fh, gx:gx + fw] |= item.footprint
+        if not grew:
+            break
+
+
 def _pair(things: list, title: str, body: str, kicker: str, style: Style, out: Path) -> Path:
     """Then and now, the way the niche's best comparison carousel does it: four photos edge
     to edge, the top two captioned with `title` ("Evenings then"), the bottom two with
@@ -661,10 +775,12 @@ def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
         # The big picture above the title, like the flag or figure of the niche's best boards.
         label, img, photo, _ = hero
         cuts.remove(hero)
-        room_h = title_y - m - 8
-        side = min(room_h, W * 0.56) * (0.86 if photo else 0.92)
-        item = _prepare("", img, side, style, rnd, angle=rnd.uniform(-2, 2), photo=photo)
-        k = min(1.0, room_h / item.image.height, W * 0.62 / item.image.width)
+        room_h = title_y - m - 4
+        if photo:   # a near-square crop fills the band above the title and leaves two columns
+            img = _crop_to(img.convert("RGB"), 1.08)
+        side = min(room_h, W * 0.46) * (0.98 if photo else 0.92)
+        item = _prepare("", img, side, style, rnd, angle=rnd.uniform(-1.5, 1.5), photo=photo)
+        k = min(1.0, room_h / item.image.height, W * 0.48 / item.image.width)
         if k < 1:
             item = _prepare("", img, side * k, style, rnd, angle=0, photo=photo)
         hx = int((W - item.image.width) / 2)
@@ -676,6 +792,13 @@ def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
         h_, w_ = min(fp.shape[0], occ.shape[0] - gy), min(fp.shape[1], occ.shape[1] - gx)
         occ[gy:gy + h_, gx:gx + w_] |= fp[:h_, :w_]
         placed.append(item)
+
+    if cuts and hero and not cover:
+        hx0, hy0 = placed[0].pos
+        hero_box = (hx0, hy0, hx0 + placed[0].image.width, hy0 + placed[0].image.height)
+        bottom = title_y + th + (46 if tag else 10)
+        placed += _grid_board(slide, cuts, hero_box, (x0, title_y, x0 + tw, bottom), style, rnd)
+        cuts = []
 
     if cuts:
         free_px = (~occ).sum() * GRID * GRID
@@ -690,13 +813,18 @@ def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
             for n in order:
                 label, cut, photo, _ = cuts[n]
                 for attempt in range(8):   # a thing that doesn't fit shrinks alone first
-                    item = _prepare(label, cut, sizes[n] * scale * 0.94 ** attempt, style, rnd,
-                                    overlap=COVER_OVERLAP if cover else BOARD_OVERLAP, photo=photo)
-                    pos = _place(occ, item.footprint, rnd, snug=not cover)
+                    side_now = sizes[n] * scale * 0.94 ** attempt
+                    angle = rnd.uniform(-style.max_rotation, style.max_rotation) * (0.5 if photo else 1)
+                    remake = (lambda sd, label=label, cut=cut, photo=photo, angle=angle:
+                              _prepare(label, cut, sd, style, rnd, angle=angle, photo=photo,
+                                       overlap=COVER_OVERLAP if cover else BOARD_OVERLAP))
+                    item = remake(side_now)
+                    pos = _place(occ, item.footprint, rnd, snug=False)
                     if pos:
                         gy, gx = pos
                         occ[gy:gy + item.footprint.shape[0], gx:gx + item.footprint.shape[1]] |= item.footprint
                         item.pos = (gx * GRID + item.origin[0] - bleed, gy * GRID + item.origin[1] - bleed)
+                        item.grid, item.remake, item.side = (gy, gx), remake, side_now
                         placed.append(item)
                         break
                 else:
@@ -707,6 +835,8 @@ def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
                 break
         for label in missing:
             print(f"  bez místa: {label}")
+        if not cover:
+            _grow(occ, placed, bleed)
 
     if cover:
         # Piled stickers: big ones underneath, so a small one never hides behind a big one.

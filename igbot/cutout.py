@@ -181,6 +181,7 @@ def find_cutout(query: str, cache: Path | None = None, candidates: int = 5,
 
 
 SCENE_MIN = 0.22   # CLIP cosine below which a photo most likely shows something else
+MODERN_MIN = 0.15  # relevance.modern_photo below this: an artwork, an old print or a sign
 
 
 def _brightness(img: Image.Image) -> float:
@@ -203,7 +204,8 @@ def find_photo(query: str, cache: Path | None = None, candidates: int = 8,
     if jpg.exists() and meta_path.exists():
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
         if (not exclude or meta.get("id") not in exclude) and photos.key(meta) not in bad:
-            return {**meta, "path": jpg}
+            if meta.get("modern", 1.0) >= MODERN_MIN:
+                return {**meta, "path": jpg}
     best = None
     # Modern stock (Pexels, Unsplash) first and alone if it has anything: the
     # archives answer "cafe terrace" with Van Gogh and "slow tea" with a 1900s print.
@@ -215,9 +217,13 @@ def find_photo(query: str, cache: Path | None = None, candidates: int = 8,
         img = photos.download(cand.preview_url, max_side=800)
         if img is None or min(img.size) < 300:
             continue
-        real = relevance.is_photo_of(img, query)
-        if real is not None and real < 0.5:
+        # Pexels and Unsplash are modern stock by definition; the archives need the check
+        # (it also dislikes snowy, misty and pale photos, so only where it's needed).
+        trusted = cand.provider == "pexels" or "unsplash" in f"{cand.title} {cand.keywords}".lower()
+        modern = None if trusted else relevance.modern_photo(img)
+        if modern is not None and modern < MODERN_MIN:
             continue  # a painting, an old print, a sign...
+        cand.modern = modern
         sim = relevance.similarity(img, query)
         s = 0.5 if sim is None else max(0.0, min(1.0, (sim - 0.17) / 0.15))
         if sim is not None and sim < SCENE_MIN:
@@ -236,5 +242,7 @@ def find_photo(query: str, cache: Path | None = None, candidates: int = 8,
     meta = {**photos.provenance(cand, query), "score": round(s, 3), "size": list(full.size)}
     if sim is not None:
         meta["match"] = round(sim, 3)
+    if getattr(cand, "modern", None) is not None:
+        meta["modern"] = round(cand.modern, 3)
     meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
     return {**meta, "path": jpg}
