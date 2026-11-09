@@ -101,7 +101,7 @@ slides:
   - Teapot
 klapka:
   record: recD9OE0rFyKyk8EQ
-  sent: 505efc889edd8758
+  sent: ece33c6321098857
 photo_credits:
 - label: Cinnamon buns
   query: cinnamon buns
@@ -558,3 +558,7 @@ music:
     title: Autumn Days
     artist: Morunas
     trending: true
+published_as: reel
+media_ids:
+- '18071246096782782'
+published_at: 2026-11-09T14:03-05:00
