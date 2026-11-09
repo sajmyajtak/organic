@@ -211,6 +211,14 @@ FORMAT_NAMES = {"moodboard": "moodboard", "list": "seznam", "then_vs_now": "dÅ™Ã
                 "this_not_that": "tohle, ne tamto"}
 
 
+def _kind(item: dict) -> dict:
+    """How the post goes (or went) out, and its song if it is a Reel."""
+    from .music import label
+
+    reel = item.get("published_as") == "reel" or ("published_at" not in item and (item.get("reel") or {}).get("video"))
+    return {"kind": "reel" if reel else item.get("kind"), "music": label(item.get("music")) if reel else None}
+
+
 def _title(item: dict) -> str:
     slides = item.get("slides") or []
     return str((slides[0].get("title") if slides else "") or item["id"])
@@ -261,7 +269,7 @@ def day_plan(now: datetime, tz: str, days: int = 2) -> dict:
         n = per_day(len(remaining) + len(done))
         entries = [{"at": _parse(i["published_at"]).astimezone(zone).isoformat(timespec="minutes"),
                     "status": "published", "post_id": i["id"], "title": _title(i), "format": i.get("format"),
-                    "why": None} for i in done]
+                    "why": None, **_kind(i)} for i in done]
         for slot, exploring in slot_plan(noon, n, perf, tz)[len(done):]:
             if not remaining:
                 break
@@ -272,7 +280,8 @@ def day_plan(now: datetime, tz: str, days: int = 2) -> dict:
             remaining.remove(pick)
             entries.append({"at": at.astimezone(zone).isoformat(timespec="minutes"), "status": "planned",
                             "post_id": pick["id"], "title": _title(pick), "format": pick.get("format"),
-                            "why": f"{_hour_why(slot.hour, scores, exploring)}; {_post_why(pick, by_format)}"})
+                            "why": f"{_hour_why(slot.hour, scores, exploring)}; {_post_why(pick, by_format)}",
+                            **_kind(pick)})
             last_time, last_format = at, pick.get("format")
         out.append({"date": date.isoformat(), "per_day": n, "slots": entries})
     return {"tz": tz, "pool": len(pool), "days": out, "left_after": len(remaining)}

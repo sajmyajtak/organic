@@ -12,7 +12,10 @@ s cílem růstu a monetizace. Uživatel chce postupovat společně a schvalovat 
 ## Rozhodnutí uživatele
 
 - Jazyk obsahu: **angličtina** (publikum USA/UK/CA/AU, časy `America/New_York`).
-- Formát: **jen karusely (a obrázky), žádné reels**, 1 post denně + 3 stories.
+- Formát: **karusely vycházejí jako Reely s populární hudbou** (od 9. 11. 2026, Simon:
+  „postuj to jako karusel v reels a dávej tam populární hudbu na niche“): video, ve kterém
+  se slidy karuselu posouvají (`reel.py`), písničku přidá Instagram (Audio API umí hudbu
+  jen u Reelů). Přepínač `feed.publish_as` v `config/account.yaml`. Natáčené reels ne.
 - Účet: dedikovaný účet tvůrce **@naturizz** (IG user id `17841466729247229`,
   propojený s FB stránkou `1464286703432419`). **Nikdy nepublikovat na
   @your_chloe_hart** (`17841448715162723`), je to jiný účet uživatele ve stejném tokenu.
@@ -66,6 +69,8 @@ Závislosti: `requirements.txt` (jádro, publikační workflow), `requirements-r
 | `photos.py` | Hledání fotek: Pexels (s `PEXELS_API_KEY`) a Openverse CC0/PD, kontrola, že název/štítky fotky odpovídají předmětu, vyřazení AI obrázků, cache v `build/cache`, licence do `credits.json`. |
 | `cutout.py` | Vystřižení předmětu (`rembg`, model isnet-general-use, CPU), skóre kvality výřezu (celý předmět, jeden objekt, barevnost, ne obdélník), finální výřez z plného rozlišení. |
 | `collage.py` | Koláž (styl sticker): procedurální papír, nálepky s bílým obrysem, packer. Tři rozvržení (`content.slide_layout`): **titul** (1. slide karuselu) = čistá nálada, hustá koláž až k okrajům, bez popisků; **vnitřní slidy** s popisky (nadpis bez dvojtečky, kontrast přes `kicker` „This“ / „Not this“); **závěr** (slide s `body`) = vějíř 3–4 nálepek z postu bez popisků (`echo: [popisky]`), výzva k follow a @naturizz na rezavé pilulce. Popisky musí odpovídat fotce, špatné fotky do `data/photo_rejects.txt`. `render.render_item` ji použije pro každou položku fronty, jejíž slidy mají `items` (preview i publish); licence fotek se uloží do `photo_credits` položky. Samostatně `python -m igbot collage <plan.json>` → `build/collage/<id>/`, ukázka `assets/examples/autumn-living.json`. |
+| `reel.py` | Karusel jako Reel: slidy jako karty na tmavém pozadí se posouvají jako karusel (tečky, okraj další karty), 1080×1920, H.264 + tichá AAC stopa, ~17 s, ~3 MB, ffmpeg z `imageio-ffmpeg`. `prepare` ho uloží do `media/<id>.mp4` + `-cover.jpg`, položka dostane `reel: {video, cover}`. |
+| `music.py` | Hudba k Reelu: hity jdou přes API najít jen v trendech (`GET /ig_audio` bez dotazu), hledání vrací jen knihovnu. Výběr z `data/music.yaml` (kurátorované trendy pro niku s náladami; rozšiřuj při přípravě postů) + aktuální trendy, které názvem sedí k nice; nálada postu podle formátu a nadpisu (`music_moods` ručně), bez opakování v posledních postech; záloha knihovna. Publikace zkusí písničku, alternativy, pak karusel. |
 | `render.py` | Starší textové slidy (Pillow). |
 | `publish.py`, `content.py`, `hosting.py` | Fronta `content/{drafts,approved,published,failed}`, validace, upload na S3/R2, publikace. |
 | `klapka.py` | Sync fronty do KLAPKY (Airtable base `appGpk4fkNBGoMyBN`, tabulka SM Obsah) a rozhodnutí schválit/zamítnout zpět. Paměť syncu v YAML položky (`klapka:`), jen změny, rozpočet ~150 volání/měsíc. Tep automatu = technický řádek `__automat__` (`recKqXpfurb4jkWmD`, KLAPKA ho čte pro pruh „Automat běží“, sync ho nikdy nemaže). Volá se po generate/approve/publish, ručně `python -m igbot klapka-sync`. Token `AIRTABLE_TOKEN` v `.env`. |

@@ -656,3 +656,28 @@ media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-5.jpg?v=478aad45
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-6.jpg?v=ef2fa7f1
 media_from_slides: true
+reel:
+  video: https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1.mp4?v=3ecda860
+  cover: https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-cover.jpg?v=66f5cdfe
+music:
+  audio_id: '1305568027191616'
+  title: Little Life
+  artist: Robert Gromotka
+  trending: true
+  moods:
+  - calm
+  - home
+  - morning
+  alternatives:
+  - audio_id: '504545510323499'
+    title: What A Wonderful World
+    artist: Louis Armstrong
+    trending: true
+  - audio_id: '1115857888092269'
+    title: November
+    artist: Onoychenko
+    trending: true
+  - audio_id: '521711751036658'
+    title: Twinkling Lights (Reimagined)
+    artist: Auni
+    trending: true
