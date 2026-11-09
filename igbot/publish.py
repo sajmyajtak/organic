@@ -30,7 +30,7 @@ def alt_text(slide: dict) -> str:
     return f"{text}: {', '.join(things)}" if things else text
 
 
-def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list[str]:
+def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool, as_reel: bool = False) -> list[str]:
     sources = media_sources(item, theme)
     files = [s for s in sources if isinstance(s, Path)]
     if dry_run:
@@ -55,7 +55,7 @@ def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list
     if kind == "reel":
         return [ig.publish_reel(urls[0], caption, cover_url=urls[1] if len(urls) > 1 else None,
                                 trial=bool(item.get("trial")), ai_generated=ai_media, paid_partnership=paid)]
-    if kind == "carousel" and (item.get("reel") or {}).get("video"):
+    if as_reel and kind == "carousel" and (item.get("reel") or {}).get("video"):
         try:
             return publish_as_reel(ig, item, caption, ai_media, paid)
         except InstagramError as exc:
@@ -150,7 +150,7 @@ def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -
             fail(item, "; ".join(problems))
             continue
         try:
-            ids = publish_item(ig, item, theme, dry_run)
+            ids = publish_item(ig, item, theme, dry_run, as_reel=(cfg.get("feed") or {}).get("publish_as") == "reel")
         except Exception as exc:  # keep going with the rest of the queue
             fail(item, str(exc))
             continue

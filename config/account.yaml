@@ -38,12 +38,12 @@ niche:
     - "copying organic__101_'s titles, layouts, colours or 'maxxing' naming"
 
 feed:
-  # Od 9. 11. 2026 (Simon: „postuj to jako karusel v reels a dávej tam populární
-  # hudbu na niche“): každý karusel vyjde jako Reel, ve kterém se jeho slidy
-  # posouvají jako karusel, s populární písničkou z Instagramu (Audio API umí
-  # hudbu jen u Reelů). `prepare` vyrenderuje video a vybere hudbu
-  # (igbot/reel.py, igbot/music.py, data/music.yaml). "carousel" = klasický karusel.
-  publish_as: reel
+  # Posty jsou fotokarusely přes celý formát (slidy se swipují). 9. 11. 2026 jsme
+  # zkusili karusel jako video Reel s hudbou; Simon chce fotky, ne video. Hudbu
+  # Instagram API připojí jen k Reelu (videu): u obrázku, položky karuselu ani
+  # karuselu ji odmítne (ověřeno živě 9. 11. 2026, „Invalid parameter“).
+  # "reel" = karusel jako video s hudbou (igbot/reel.py, igbot/music.py).
+  publish_as: carousel
 
 schedule:
   # Kdy a kolik postů rozhoduje plánovač (igbot/scheduler.py); tohle platí

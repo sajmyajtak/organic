@@ -124,18 +124,24 @@ def reel_item(**extra):
 
 def test_carousel_goes_out_as_a_reel_with_its_song(queue):
     ig, item = ReelIG(), reel_item()
-    assert publish.publish_item(ig, item, None, dry_run=False) == ["r1"]
+    assert publish.publish_item(ig, item, None, dry_run=False, as_reel=True) == ["r1"]
     assert ig.calls == [("reel", "https://x/v.mp4", "https://x/c.jpg", "1")]
     assert item["published_as"] == "reel"
 
 
 def test_refused_song_falls_back_to_the_next_then_to_the_carousel(queue):
     ig, item = ReelIG(refuse={"1"}), reel_item()
-    assert publish.publish_item(ig, item, None, dry_run=False) == ["r1"]
+    assert publish.publish_item(ig, item, None, dry_run=False, as_reel=True) == ["r1"]
     assert [c[3] for c in ig.calls] == ["1", "2"] and item["music"]["audio_id"] == "2"
     assert item["music"]["requested"] == "Little Life – R"
 
     ig, item = ReelIG(refuse={"*"}), reel_item()
-    assert publish.publish_item(ig, item, None, dry_run=False) == ["c1"]
+    assert publish.publish_item(ig, item, None, dry_run=False, as_reel=True) == ["c1"]
     assert [c[3] for c in ig.calls[:-1]] == ["1", "2", None] and ig.calls[-1][0] == "carousel"
     assert "audio not available" in item["reel_error"] and "published_as" not in item
+
+
+def test_without_reel_mode_the_carousel_stays_a_carousel(queue):
+    ig, item = ReelIG(), reel_item()
+    assert publish.publish_item(ig, item, None, dry_run=False) == ["c1"]
+    assert ig.calls == [("carousel", ["https://x/1.jpg", "https://x/2.jpg"])]
