@@ -133,7 +133,7 @@ slides:
   - Yarn
 klapka:
   record: recRbiCS7TkzKe9cz
-  sent: b16b687949809a00
+  sent: 0c89cfaecb7ee0b0
 photo_credits:
 - label: Oil lamp
   query: kerosene lamp
@@ -743,3 +743,6 @@ media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-5.jpg?v=ba388e78
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-11-feed-1-6.jpg?v=45b9a3f2
 media_from_slides: true
+media_ids:
+- '18605208082069902'
+published_at: 2026-11-08T21:36-05:00
