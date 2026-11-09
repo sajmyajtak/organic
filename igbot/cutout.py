@@ -205,9 +205,10 @@ def find_photo(query: str, cache: Path | None = None, candidates: int = 8,
         if (not exclude or meta.get("id") not in exclude) and photos.key(meta) not in bad:
             return {**meta, "path": jpg}
     best = None
-    # Pexels first and alone if it has anything: the archives answer "cafe terrace"
-    # with Van Gogh and "slow tea" with a 1900s print.
-    found = photos.search(query, limit=candidates, providers=("pexels",)) or photos.search(query, limit=candidates)
+    # Modern stock (Pexels, Unsplash) first and alone if it has anything: the
+    # archives answer "cafe terrace" with Van Gogh and "slow tea" with a 1900s print.
+    found = (photos.search(query, limit=candidates, providers=("pexels", "unsplash"))
+             or photos.search(query, limit=candidates))
     for cand in found:
         if (exclude and cand.id in exclude) or photos.key(cand) in bad:
             continue

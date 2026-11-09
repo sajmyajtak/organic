@@ -1,8 +1,12 @@
 """Find licensed photos for collage items.
 
 Providers, best first:
-  pexels     needs PEXELS_API_KEY. Pexels licence: free commercial use,
-             modifications allowed, no attribution required.
+  pexels     needs PEXELS_API_KEY (Pexels stopped issuing new keys in 11/2026).
+             Pexels licence: free commercial use, modifications allowed, no
+             attribution required.
+  unsplash   no key. The ~31,000 Unsplash photos imported to Wikimedia Commons
+             under CC0 (category "Images from Unsplash"): modern, sharp stock
+             photos of food, things, places and people.
   commons    no key. Wikimedia Commons files whose structured data says CC0
              or public domain (museum object photos, CC0 Unsplash imports).
   openverse  no key. Only CC0 and Public Domain Mark works, which may be used
@@ -39,6 +43,7 @@ PEXELS = "https://api.pexels.com/v1/search"
 COMMONS = "https://commons.wikimedia.org/w/api.php"
 # Commons structured data: licence CC0 (P275=Q6938433) or copyright status public domain (P6216=Q19652).
 COMMONS_FREE = "haswbstatement:P275=Q6938433|P6216=Q19652"
+UNSPLASH = 'incategory:"Images_from_Unsplash"'   # CC0 imports from Unsplash
 UA = {"User-Agent": "naturizz-igbot/1.0 (+https://github.com/sajmyajtak/organic)"}
 
 
@@ -98,10 +103,14 @@ def _strip_html(text: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text or "")).strip()
 
 
-def _commons(query: str, limit: int) -> list[Candidate]:
-    data = _cached_json(f"commons-{slug(query)}", lambda: _get(COMMONS, headers=UA, params={
+def _unsplash(query: str, limit: int) -> list[Candidate]:
+    return _commons(query, limit, within=UNSPLASH)
+
+
+def _commons(query: str, limit: int, within: str = "") -> list[Candidate]:
+    data = _cached_json(f"commons-{'unsplash-' if within else ''}{slug(query)}", lambda: _get(COMMONS, headers=UA, params={
         "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrlimit": 30,
-        "gsrsearch": f"{query} filetype:bitmap {COMMONS_FREE}",
+        "gsrsearch": f"{query} filetype:bitmap {within or COMMONS_FREE}",
         "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": 800,
         "iiextmetadatafilter": "LicenseShortName|ImageDescription|Categories|Artist"}).json())
     pages = sorted(((data.get("query") or {}).get("pages") or {}).values(), key=lambda p: p.get("index", 99))
@@ -189,10 +198,11 @@ def relevance(candidate: Candidate, query: str) -> int:
     return 2 if " ".join(words) in title and len(title.split()) <= len(words) + 4 else 1
 
 
-def search(query: str, limit: int = 8, providers: tuple[str, ...] = ("pexels", "commons", "openverse")) -> list[Candidate]:
+def search(query: str, limit: int = 8,
+           providers: tuple[str, ...] = ("pexels", "unsplash", "commons", "openverse")) -> list[Candidate]:
     """Relevant candidates from the given providers, best provider and best match first."""
     found: list[Candidate] = []
-    by_name = {"pexels": _pexels, "commons": _commons, "openverse": _openverse}
+    by_name = {"pexels": _pexels, "unsplash": _unsplash, "commons": _commons, "openverse": _openverse}
     for provider in (by_name[p] for p in providers):
         if len(found) >= max(3, limit // 2):
             break  # Pexels gave enough: the free archives are slower and rougher
