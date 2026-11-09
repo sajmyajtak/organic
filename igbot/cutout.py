@@ -205,12 +205,18 @@ def find_photo(query: str, cache: Path | None = None, candidates: int = 8,
         if (not exclude or meta.get("id") not in exclude) and photos.key(meta) not in bad:
             return {**meta, "path": jpg}
     best = None
-    for cand in photos.search(query, limit=candidates):
+    # Pexels first and alone if it has anything: the archives answer "cafe terrace"
+    # with Van Gogh and "slow tea" with a 1900s print.
+    found = photos.search(query, limit=candidates, providers=("pexels",)) or photos.search(query, limit=candidates)
+    for cand in found:
         if (exclude and cand.id in exclude) or photos.key(cand) in bad:
             continue
         img = photos.download(cand.preview_url, max_side=800)
         if img is None or min(img.size) < 300:
             continue
+        real = relevance.is_photo_of(img, query)
+        if real is not None and real < 0.5:
+            continue  # a painting, an old print, a sign...
         sim = relevance.similarity(img, query)
         s = 0.5 if sim is None else max(0.0, min(1.0, (sim - 0.17) / 0.15))
         if sim is not None and sim < SCENE_MIN:

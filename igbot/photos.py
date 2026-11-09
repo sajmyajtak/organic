@@ -189,10 +189,11 @@ def relevance(candidate: Candidate, query: str) -> int:
     return 2 if " ".join(words) in title and len(title.split()) <= len(words) + 4 else 1
 
 
-def search(query: str, limit: int = 8) -> list[Candidate]:
-    """Relevant candidates from every configured provider, best provider and best match first."""
+def search(query: str, limit: int = 8, providers: tuple[str, ...] = ("pexels", "commons", "openverse")) -> list[Candidate]:
+    """Relevant candidates from the given providers, best provider and best match first."""
     found: list[Candidate] = []
-    for provider in (_pexels, _commons, _openverse):
+    by_name = {"pexels": _pexels, "commons": _commons, "openverse": _openverse}
+    for provider in (by_name[p] for p in providers):
         if len(found) >= max(3, limit // 2):
             break  # Pexels gave enough: the free archives are slower and rougher
         try:

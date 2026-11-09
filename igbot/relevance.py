@@ -31,6 +31,11 @@ STD = np.array([0.26862954, 0.26130258, 0.27577711], dtype=np.float32)
 SCALE = 100.0  # CLIP's logit scale
 
 # What a cut-out sticker must not be. The object prompt competes with these.
+# What a photo of a scene must not be.
+ARCHIVE = ["a painting", "a drawing", "an illustration", "a cartoon", "an old black and white photo",
+           "an old faded vintage photograph", "a framed picture on a wall", "a sign with text",
+           "a screenshot", "a page of text"]
+
 NEGATIVES = ["a photo of a person", "a photo of a group of people", "a photo of a landscape",
              "a photo of a building", "a photo of a street", "a photo of a room",
              "a painting", "a drawing", "a page of text", "a screenshot"]
@@ -95,6 +100,15 @@ class Clip:
         return float(p[0] / p.sum())
 
 
+    def is_photo_of(self, img: Image.Image, what: str) -> float:
+        """Probability (0-1) that `img` is a present-day photo of `what` rather than an
+        artwork, an old print, a sign or a screenshot (archives are full of those)."""
+        prompts = [f"a color photo of {what.lower()}"] + ARCHIVE
+        emb = self.image(img)
+        logits = SCALE * np.array([emb @ self.text(p) for p in prompts])
+        p = np.exp(logits - logits.max())
+        return float(p[0] / p.sum())
+
     def similarity(self, img: Image.Image, what: str) -> float:
         """Cosine similarity of `img` and "a photo of <what>" (matches ~0.27-0.35, misses ~0.15-0.22).
         For scenes and activities, where people and landscapes are the point."""
@@ -130,3 +144,9 @@ def similarity(img: Image.Image, what: str) -> float | None:
     """See Clip.similarity; None when the check is off or the model can't load."""
     model = _model()
     return None if model is None else model.similarity(img, what)
+
+
+def is_photo_of(img: Image.Image, what: str) -> float | None:
+    """See Clip.is_photo_of; None when the check is off or the model can't load."""
+    model = _model()
+    return None if model is None else model.is_photo_of(img, what)

@@ -60,3 +60,24 @@ openverse:788a8246-d33f-4849-9881-16254082ea11  # Plastic wrap: hliněná nádob
 openverse:dc2034b3-22ea-41ed-bdb6-bb8caed79cfb  # Folded wool blanket: hromada triček
 commons:107198977  # Beeswax wrap: výřez vypadá jako růžová žehlička
 openverse:b8d660b7-c1e0-4362-a26d-91ed4b715f88  # Linen towels: osuška, slabý výřez
+# 9. 11. 2026, kontrola „Slow living around the world“
+commons:122601048  # „Olives“: prázdná keramická miska bez oliv
+openverse:ece6eb1c-ee3a-4bab-b732-dfce17a4724f  # „Matcha“: prázdná miska
+commons:17368948  # „Wooden sandals“: gumové žabky z tábora
+commons:74228341  # „Bento lunches“: zabalená krabice, bento není vidět
+openverse:6c52f9e1-b862-464d-b2be-1d432e5ad702  # „Waffles with jam“: vafle na tyčce s mlýnkem
+commons:59660643  # „Berets“: muzejní baret na figuríně
+commons:199094642  # „Provence village“: cedule s nápisem
+commons:50839628  # „Paris cafe“: obraz Van Gogha
+commons:193007219  # „Cafe terraces“: obraz Van Gogha
+commons:90042401  # „Long lunches outside“: karikatura
+commons:183070099  # „Mount Fuji“: výhled z okna vlaku, rám okna
+commons:148802971  # „Cherry blossom picnics“: zarámovaná stará fotka
+commons:117368561  # „Slow tea“: stará černobílá fotka
+commons:16930752  # „River picnics“: stará archivní fotka
+commons:152925084  # „Reading in the park“: regál v knihkupectví
+commons:33088273  # „Fjords“: stará kolorovaná pohlednice
+commons:61909737  # „Cabin weekends“: kůlna se sudy
+commons:92814828  # „Sauna evenings“: muzejní roubenka
+commons:195976314  # „Kyoto temple“: tmavá noční fotka
+commons:30452091  # „Fresh flowers“ (Francie): trh ve Vietnamu

@@ -116,6 +116,9 @@ def validate(item: dict) -> list[str]:
             if role == "cta":
                 if len(things) > 8:
                     problems.append(f"slide {n}: závěrečný slide má {len(things)} předmětů (max 8)")
+            elif role == "pair":
+                if len(things) != 4:
+                    problems.append(f"slide {n}: dřív/dnes potřebuje 4 fotky (2 nahoře, 2 dole), má {len(things)}")
             elif not 3 <= len(things) <= 22:
                 problems.append(f"slide {n}: {len(things)} předmětů (koláž potřebuje 3–22)")
             if sum(bool(t.get("hero")) for t in things) > 1:
@@ -123,7 +126,7 @@ def validate(item: dict) -> list[str]:
             if any(not (t.get("queries") or t.get("query")) for t in things):
                 problems.append(f"slide {n}: předmět bez hledání fotky")
             # Cover and closing slide show no labels; inner slides do (the label is the content).
-            if role == "board" and any(not t.get("label") for t in things):
+            if role in ("board", "pair") and any(not t.get("label") for t in things):
                 problems.append(f"slide {n}: předmět bez popisku")
             if ":" in str(slide.get("title") or ""):
                 problems.append(f"slide {n}: nadpis s dvojtečkou (použij `kicker` nad nadpisem)")
@@ -142,7 +145,7 @@ def slide_layout(slides: list[dict], index: int) -> str:
     mood, no labels), "cta" (closing slide with a body line: call to follow, no
     labels) or "board" (title with labelled photos). `layout` on the slide wins."""
     slide = slides[index]
-    if slide.get("layout") in ("cover", "cta", "board"):
+    if slide.get("layout") in ("cover", "cta", "board", "pair"):
         return slide["layout"]
     if len(slides) > 1 and index == 0:
         return "cover"

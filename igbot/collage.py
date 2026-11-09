@@ -24,6 +24,7 @@ without covering the title, the labels or (on boards) each other.
 
 from __future__ import annotations
 
+import os
 import random
 import re
 from dataclasses import dataclass, replace
@@ -41,6 +42,7 @@ SIZE = (1080, 1350)
 GRID = 6  # packer resolution in px
 BLEED = 30  # how far cover stickers may run off the page
 COVER_OVERLAP = 16  # px cover stickers may overlap: about the white border, so thin parts stay visible
+BOARD_OVERLAP = 6   # px neighbours on a board may tuck under each other, like a hand-made collage
 
 
 @dataclass(frozen=True)
@@ -314,7 +316,8 @@ def _prepare(label: str, cut: Image.Image, side: float, style: Style, rnd: rando
     fy1 = max(img.height, int(np.ceil(ly1)))
     full = np.zeros((fy1 + 2 * g, fx1 - fx0 + 2 * g), bool)
     ox, oy = -fx0 + g, g
-    full[oy:oy + img.height, ox:ox + img.width] = alpha
+    body = ndimage.distance_transform_edt(alpha) > overlap if overlap else alpha
+    full[oy:oy + img.height, ox:ox + img.width] = body
     full = ndimage.distance_transform_edt(~full) <= g if g else full
     full[int(ly0) + oy:int(ly1) + oy, int(lx0) + ox:int(np.ceil(lx1)) + ox] = True
     return Item(text, img, font, _maxpool(full), (ox, oy), (obj_cx, label_top))
@@ -523,6 +526,45 @@ def _things(items: list) -> list[tuple[str, Image.Image, bool, bool]]:
     return out
 
 
+def _pair(things: list, title: str, body: str, kicker: str, style: Style, out: Path) -> Path:
+    """Then and now, the way the niche's best comparison carousel does it: four photos edge
+    to edge, the top two captioned with `title` ("Evenings then"), the bottom two with
+    `body` ("Evenings now"), and an optional word on the seam (`kicker`, e.g. "Why?")."""
+    W, H = SIZE
+    slide = Image.new("RGB", SIZE, style.board)
+    cw, ch = W // 2, H // 2
+    for k, (_, img, _, _) in enumerate(things[:4]):
+        tile = _crop_to(img.convert("RGB"), cw / ch).resize((cw, ch), Image.LANCZOS)
+        slide.paste(tile, ((k % 2) * cw, (k // 2) * ch))
+    slide = slide.convert("RGBA")
+
+    def caption(text: str, cy: float, size: int, font_name: str = "Inter-Bold.otf") -> None:
+        text = _clean(text)
+        if not text:
+            return
+        font = _font(font_name, size)
+        while _text_w(font, text) > W - 120 and size > 40:
+            size -= 4
+            font = _font(font_name, size)
+        tw, th = _text_w(font, text), font.getbbox(text)[3]
+        x, y = (W - tw) / 2, cy - th / 2 - size * 0.12
+        shadow = Image.new("L", SIZE, 0)
+        ImageDraw.Draw(shadow).text((x, y + 3), text, font=font, fill=255)
+        shadow = shadow.filter(ImageFilter.GaussianBlur(9)).point(lambda v: int(v * 0.75))
+        dark = Image.new("RGBA", SIZE, (0, 0, 0, 255))
+        dark.putalpha(shadow)
+        slide.alpha_composite(dark)
+        ImageDraw.Draw(slide).text((x, y), text, font=font, fill="#FFFFFF")
+
+    caption(title, ch * 0.5, 66)
+    caption(body, ch * 1.5, 66)
+    if kicker:
+        caption(kicker, ch, 110, "DMSerifDisplay-Regular.ttf")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    slide.convert("RGB").save(out, "JPEG", quality=93)
+    return out
+
+
 def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
                  seed: int = 0, handle: str = "", body: str = "", layout: str = "board",
                  kicker: str = "") -> Path:
@@ -533,6 +575,8 @@ def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
     W, H = SIZE
     m = style.margin
     things = _things(items)
+    if layout == "pair":
+        return _pair(things, title, body, kicker, style, out)
     photos_ = [img for _, img, photo, _ in things if photo]
     cuts_only = [img for _, img, photo, _ in things if not photo]
 
@@ -645,9 +689,9 @@ def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
             occ, placed, missing = base.copy(), list(fixed), []
             for n in order:
                 label, cut, photo, _ = cuts[n]
-                for attempt in range(4):
+                for attempt in range(8):   # a thing that doesn't fit shrinks alone first
                     item = _prepare(label, cut, sizes[n] * scale * 0.94 ** attempt, style, rnd,
-                                    overlap=COVER_OVERLAP if cover else 0, photo=photo)
+                                    overlap=COVER_OVERLAP if cover else BOARD_OVERLAP, photo=photo)
                     pos = _place(occ, item.footprint, rnd, snug=not cover)
                     if pos:
                         gy, gx = pos
@@ -657,6 +701,8 @@ def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
                         break
                 else:
                     missing.append(label or str(n + 1))
+            if os.environ.get("IGBOT_DEBUG_PACK"):
+                print("  scale", scale, "side", round(side), "missing", missing)
             if not missing:
                 break
         for label in missing:
@@ -704,11 +750,11 @@ def render_slides(slides: list[dict], out_dir: Path, handle: str = "", style: St
     credits: list[dict] = []
     seen: list[list[tuple[float, str, Path, bool]]] = []   # per slide: (score, label, path, photo)
 
-    def collect(spec_items: list[dict]) -> list[tuple[str, Path, dict]]:
+    def collect(spec_items: list[dict], pair: bool = False) -> list[tuple[str, Path, dict]]:
         got = []
         for spec in spec_items:
             queries = spec.get("queries") or [spec.get("query") or spec["label"]]
-            photo = bool(spec.get("photo"))
+            photo = bool(spec.get("photo")) or pair
             finder = find_photo if photo else find
             best = None
             for q in queries:
@@ -755,7 +801,7 @@ def render_slides(slides: list[dict], out_dir: Path, handle: str = "", style: St
         layout = slide_layout(slides, n - 1)
         print(f"slide {n}/{len(slides)} ({layout}): {slide['title']}")
         seen.append([])
-        things = collect(slide.get("items") or [])
+        things = collect(slide.get("items") or [], pair=layout == "pair")
         if layout == "cta" and not things:
             things = echo(slide.get("echo"))
         paths.append(render_slide(slide["title"], things, out_dir / name(n), style, seed=seed + n,

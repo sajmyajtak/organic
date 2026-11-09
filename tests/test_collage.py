@@ -294,3 +294,21 @@ def test_snug_packing_hugs_what_is_already_there():
     fp = np.ones((8, 8), bool)
     y, x = collage._place(occ, fp, random.Random(0), snug=True)
     assert x in (10, 52) and y in (0, 52)  # in a corner against the wall or the page edge, not adrift
+
+
+def test_then_and_now_pair_is_four_photos_edge_to_edge(tmp_path):
+    colors = [(200, 60, 40), (40, 160, 70), (40, 90, 200), (210, 180, 40)]
+    items = [(f"P{n}", _photo(tmp_path / f"q{n}.jpg", color=c), {"photo": True}) for n, c in enumerate(colors)]
+    out = collage.render_slide("Evenings then", items, tmp_path / "pair.jpg", body="Evenings now", layout="pair")
+    img = Image.open(out).convert("RGB")
+    W, H = collage.SIZE
+    assert img.getpixel((10, 10))[0] > 150 and img.getpixel((W - 10, H - 10))[1] > 150   # corners: photos 1 and 4
+    assert img.getpixel((W // 2, H // 4)) == (255, 255, 255) or max(img.getpixel((W // 2, H // 4))) > 200
+
+    from igbot import content
+    item = {"id": "x", "kind": "carousel", "caption": "c", "slides": [
+        {"title": "How we lived", "layout": "pair", "body": "How we live", "items": [{"label": "a", "queries": ["a"]}] * 3},
+        {"title": "B", "items": [{"label": "b", "queries": ["b"]}] * 3},
+        {"title": "C", "items": [{"label": "c", "queries": ["c"]}] * 3},
+        {"title": "Follow", "body": "Save"}]}
+    assert any("4 fotky" in p for p in content.validate(item))
