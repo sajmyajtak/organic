@@ -2,7 +2,7 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
-from igbot import content, klapka
+from igbot import content, klapka, scheduler
 from igbot.klapka import (F_ACCOUNT, F_CAPTION, F_CHANGED, F_DECISION, F_ERROR, F_KIND, F_PLANNED, F_POST_ID,
                           F_STATE, HEARTBEAT_POST_ID, HEARTBEAT_RECORD, Airtable)
 
@@ -65,6 +65,7 @@ def queue(tmp_path, monkeypatch):
     monkeypatch.setattr(klapka, "load_config",
                         lambda: {"account": {"timezone": "America/New_York", "handle": "naturizz"}})
     monkeypatch.setattr(klapka.time, "sleep", lambda s: None)
+    monkeypatch.setattr(scheduler, "DATA_DIR", tmp_path / "data")  # our real stats would move the slots
     return tmp_path
 
 
@@ -324,3 +325,16 @@ def test_heartbeat_carries_the_day_plan_and_a_new_plan_goes_out_right_away(queue
     # A new day is a new plan, sent with the first run after midnight in New York.
     assert klapka.sync("publish", now=at_hour(10), client=at)["calls"] == 0     # 18:07 NY, still today
     assert klapka.sync("publish", now=at_hour(16), client=at)["heartbeat"]      # 00:07 NY, next day
+
+
+def test_a_carousel_going_out_as_a_reel_shows_as_a_reel_with_its_song(queue, monkeypatch):
+    monkeypatch.setattr(klapka, "_is_public", lambda url: True)
+    item = post(1, reel={"video": "https://x/v.mp4", "cover": "https://x/c.jpg"},
+                music={"audio_id": "1", "title": "Little Life", "artist": "Robert Gromotka"})
+    fields = klapka.fields_for(item, "approved", "America/New_York", "naturizz")
+    assert fields[F_KIND] == "reel" and fields[klapka.F_MUSIC] == "Little Life – Robert Gromotka"
+    assert fields[klapka.F_VIDEO] == "https://x/v.mp4"
+    # Published as a carousel after all (Reel refused): it shows as what it is.
+    done = dict(item, reel_error="refused", published_at="2026-11-10T11:30-05:00")
+    fields = klapka.fields_for(done, "published", "America/New_York", "naturizz")
+    assert fields[F_KIND] == "karusel" and fields[klapka.F_MUSIC] is None

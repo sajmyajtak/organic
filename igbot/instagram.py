@@ -15,6 +15,7 @@ URL, wait until it is FINISHED, then publish it.
 
 from __future__ import annotations
 
+import json
 import time
 
 import requests
@@ -155,9 +156,10 @@ class Instagram:
             params["image_url"] = image_url
         return self._publish(self._container(**params))
 
-    def publish_reel(self, video_url: str, caption: str, cover_url: str | None = None,
-                     share_to_feed: bool = True, trial: bool = False, ai_generated: bool = False,
-                     paid_partnership: bool = False) -> str:
+    def reel_container(self, video_url: str, caption: str, cover_url: str | None = None,
+                       share_to_feed: bool = True, trial: bool = False, ai_generated: bool = False,
+                       paid_partnership: bool = False, audio_id: str | None = None) -> str:
+        """A finished, not yet published Reel container (unpublished ones expire after 24 h)."""
         params = {"media_type": "REELS", "video_url": video_url, "caption": caption,
                   "share_to_feed": str(share_to_feed).lower()}
         if cover_url:
@@ -166,8 +168,18 @@ class Instagram:
             # Trial reels go to non-followers first and graduate to followers
             # automatically when they perform well.
             params["trial_params"] = '{"graduation_strategy":"SS_PERFORMANCE"}'
+        if audio_id:
+            # Audio API: a song from Instagram's library, added by Instagram (Reels only).
+            params["audio_configuration"] = json.dumps({"audio_id": str(audio_id)})
         container = self._container(**self._post_flags(params, ai_generated, paid_partnership))
-        self.wait_until_ready(container, timeout=600, interval=60)
+        self.wait_until_ready(container, timeout=600, interval=30)
+        return container
+
+    def publish_reel(self, video_url: str, caption: str, cover_url: str | None = None,
+                     share_to_feed: bool = True, trial: bool = False, ai_generated: bool = False,
+                     paid_partnership: bool = False, audio_id: str | None = None) -> str:
+        container = self.reel_container(video_url, caption, cover_url, share_to_feed, trial, ai_generated,
+                                        paid_partnership, audio_id)
         return self.post(f"{self.user_id}/media_publish", creation_id=container)["id"]
 
     def publishing_quota(self) -> dict:

@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 
 from . import content, hosting, scheduler
 from .config import BUILD_DIR, ROOT
-from .instagram import Instagram
+from .instagram import Instagram, InstagramError
 from .render import Theme, render_item
 
 # Items that missed their slot by more than this (e.g. the scheduler was down)
@@ -55,6 +55,13 @@ def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list
     if kind == "reel":
         return [ig.publish_reel(urls[0], caption, cover_url=urls[1] if len(urls) > 1 else None,
                                 trial=bool(item.get("trial")), ai_generated=ai_media, paid_partnership=paid)]
+    if kind == "carousel" and (item.get("reel") or {}).get("video"):
+        try:
+            return publish_as_reel(ig, item, caption, ai_media, paid)
+        except InstagramError as exc:
+            # The post still goes out, as the carousel it was rendered from.
+            print(f"{item['id']}: Reel neprošel, publikuji jako karusel ({exc})")
+            item["reel_error"] = str(exc)[:300]
     if kind == "carousel" and len(urls) > 1:
         # Alt text must describe what's shown: the slides, unless other media replaced them.
         slides = (item.get("slides") or []) if not item.get("media") or item.get("media_from_slides") else []
@@ -62,6 +69,38 @@ def publish_item(ig: Instagram, item: dict, theme: Theme, dry_run: bool) -> list
         return [ig.publish_carousel(urls, caption, alts, ai_generated=ai_media, paid_partnership=paid)]
     return [ig.publish_image(urls[0], caption, item.get("alt_text", ""), ai_generated=ai_media,
                              paid_partnership=paid)]
+
+
+def publish_as_reel(ig: Instagram, item: dict, caption: str, ai_media: bool, paid: bool) -> list[str]:
+    """The carousel as a Reel (its slides swiping by) with a popular song from Instagram.
+
+    The song was picked when the post was prepared; if Instagram refuses it
+    (songs leave the library), the alternatives are tried, then the Reel
+    goes out without music rather than not at all."""
+    from . import music
+
+    tune = item.get("music")
+    if not tune:
+        try:
+            tune = item["music"] = music.pick(ig, item)
+        except Exception as exc:  # no music is better than no post
+            print(f"{item['id']}: hudba nevybrána ({exc})")
+    options = ([tune] + list(tune.get("alternatives") or []))[:4] if tune else []
+    error = None
+    for option in options + [None]:
+        try:
+            media_id = ig.publish_reel(item["reel"]["video"], caption, cover_url=item["reel"].get("cover"),
+                                       ai_generated=ai_media, paid_partnership=paid,
+                                       audio_id=option["audio_id"] if option else None)
+        except InstagramError as exc:
+            error = exc
+            print(f"{item['id']}: Reel s hudbou {music.label(option) or 'bez hudby'} neprošel ({exc})")
+            continue
+        if tune and option is not tune:
+            item["music"] = dict(option or {}, requested=music.label(tune))  # what really played
+        item["published_as"] = "reel"
+        return [media_id]
+    raise InstagramError(f"Reel se nepodařilo vytvořit: {error}")
 
 
 def quota_left(ig: Instagram) -> int | None:

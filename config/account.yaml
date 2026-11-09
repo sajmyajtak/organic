@@ -37,9 +37,17 @@ niche:
     - "unlicensed photos, celebrities, film stills"
     - "copying organic__101_'s titles, layouts, colours or 'maxxing' naming"
 
+feed:
+  # Od 9. 11. 2026 (Simon: „postuj to jako karusel v reels a dávej tam populární
+  # hudbu na niche“): každý karusel vyjde jako Reel, ve kterém se jeho slidy
+  # posouvají jako karusel, s populární písničkou z Instagramu (Audio API umí
+  # hudbu jen u Reelů). `prepare` vyrenderuje video a vybere hudbu
+  # (igbot/reel.py, igbot/music.py, data/music.yaml). "carousel" = klasický karusel.
+  publish_as: reel
+
 schedule:
-  # Jen karusely (bez reels): 1 denně. Stories vidí jen sledující;
-  # víc než ~4–5 denně prý škodí dosahu (neověřeno).
+  # Kdy a kolik postů rozhoduje plánovač (igbot/scheduler.py); tohle platí
+  # jen pro stories. Stories vidí jen sledující.
   feed_time: "11:30"
   weekly_mix:
     carousel: 7

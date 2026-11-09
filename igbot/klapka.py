@@ -52,7 +52,7 @@ from typing import Callable
 
 import requests
 
-from . import content
+from . import content, music
 from .config import env, load_config
 
 API = "https://api.airtable.com/v0"
@@ -74,6 +74,8 @@ F_CHANGED = "fldXluE8c6Oz8OlDp"
 F_PREVIEW = "fldKg2cDaYiqZlBv9"
 F_DECISION = "fldwwq94Hgty34Frw"  # lidské pole, jen čteme a po provedení mažeme
 F_DAY_PLAN = "fldxEWfA8KfeInd3U"  # JSON denního plánu, jen v technickém řádku
+F_MUSIC = "fldFCLGScbAI7N79w"     # „Název – Interpret“ písničky k Reelu
+F_VIDEO = "fldPWd31Jj5BEd4yJ"     # veřejná adresa videa Reelu (bez hudby)
 
 STATE_NAMES = {"drafts": "koncept", "approved": "schváleno", "published": "publikováno", "failed": "chyba"}
 KIND_NAMES = {"carousel": "karusel", "image": "obrázek", "story": "story", "reel": "reel"}
@@ -205,18 +207,23 @@ def fields_for(item: dict, state: str, tz: str, account: str) -> dict:
     title = ((slides[0].get("title") if slides else "") or (item.get("script") or {}).get("hook_on_screen")
              or item["id"])
     error = item.get("error") or ("; ".join(item["problems"]) if item.get("problems") else None)
+    # A carousel that goes (or went) out as a Reel with music shows as a reel.
+    video = (item.get("reel") or {}).get("video")
+    as_reel = item.get("published_as") == "reel" or (state != "published" and bool(video))
     fields = {
         F_POST_ID: item["id"],
         F_TITLE: str(title)[:250],
         F_ACCOUNT: account,
         F_STATE: STATE_NAMES[state],
-        F_KIND: KIND_NAMES.get(item.get("kind")),
+        F_KIND: KIND_NAMES.get("reel" if as_reel else item.get("kind")),
         F_CAPTION: content.full_caption(item) or None,
         F_SLIDES: len(item.get("media") or slides),
         F_PLANNED: None,  # no fixed date: the scheduler picks the moment from the approved pool
         F_PUBLISHED: _iso(item.get("published_at")),
         F_MEDIA_IDS: ",".join(str(m) for m in item.get("media_ids") or []) or None,
         F_ERROR: error,
+        F_MUSIC: music.label(item.get("music")) if as_reel else None,
+        F_VIDEO: video if as_reel and video and _is_public(video) else None,
     }
     previews = _preview_urls(item)
     if previews:

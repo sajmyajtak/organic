@@ -1,0 +1,26 @@
+# Hudba pro Reely @naturizz (igbot/music.py).
+#
+# Instagram (Audio API) vrací populární písničky jen v seznamu trendů
+# (GET /ig_audio bez dotazu, podle regionu účtu); hledání podle názvu najde
+# jen knihovní hudbu, ne hity. Proto tenhle výběr: skladby z trendů, které sedí
+# k nice (klidné, útulné, nostalgické, sezónní), s náladami pro výběr k postu.
+# Nové trendy se k nim přidávají samy, když název zní k nice (viz NICHE v music.py),
+# tady je rozšiřuj ručně při přípravě postů.
+#
+# moods: cozy, calm, home, morning, autumn, winter, cabin, nostalgic
+# popular: true = hit z trendů; false = knihovní hudba (záloha)
+# months: jen v těchto měsících (vánoční písničky)
+
+tracks:
+  - {id: "1305568027191616", title: "Little Life", artist: "Robert Gromotka", popular: true, moods: [cozy, home, morning, calm]}
+  - {id: "263896829897972", title: "November", artist: "Past Day", popular: true, moods: [autumn, cozy, cabin]}
+  - {id: "504545510323499", title: "What A Wonderful World", artist: "Louis Armstrong", popular: true, moods: [nostalgic, calm, home]}
+  - {id: "431803750912946", title: "Yellow", artist: "Coldplay", popular: true, moods: [calm, home, morning]}
+  - {id: "856093300426979", title: "Winter Magic", artist: "Winterbell", popular: true, moods: [winter, cozy]}
+  - {id: "521711751036658", title: "Twinkling Lights (Reimagined)", artist: "Auni", popular: true, moods: [winter, cozy, calm]}
+  - {id: "1115857888092269", title: "November", artist: "Onoychenko", popular: true, moods: [autumn, calm]}
+  - {id: "1302843157949715", title: "Autumn Days", artist: "Morunas", popular: true, moods: [autumn, cozy]}
+  - {id: "1731272001910374", title: "Christmas Market", artist: "Eoneun", popular: true, moods: [winter], months: [12]}
+  - {id: "775990388248999", title: "Somewhere in My Memory", artist: "The City of Prague Philharmonic Orchestra", popular: true, moods: [winter, nostalgic], months: [12]}
+  - {id: "1011178941789966", title: "Riverbank", artist: "Goldenrod", popular: false, moods: [cozy, cabin, morning]}
+  - {id: "1549201939908190", title: "Orange Trees", artist: "Jesse Robitaille", popular: false, moods: [cozy, morning, home]}

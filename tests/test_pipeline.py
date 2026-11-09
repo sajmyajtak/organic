@@ -5,7 +5,7 @@ from zoneinfo import ZoneInfo
 import pytest
 from PIL import Image
 
-from igbot import content, discover, publish
+from igbot import content, discover, publish, scheduler
 from igbot.render import FEED_SIZE, STORY_SIZE, Theme, render_item
 
 TZ = "Europe/Prague"
@@ -15,6 +15,7 @@ TZ = "Europe/Prague"
 def queue(tmp_path, monkeypatch):
     monkeypatch.setattr(content, "CONTENT_DIR", tmp_path / "content")
     monkeypatch.setattr(publish, "BUILD_DIR", tmp_path / "build")
+    monkeypatch.setattr(scheduler, "DATA_DIR", tmp_path / "data")  # our real stats would move the slots
     return tmp_path
 
 

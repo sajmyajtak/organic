@@ -37,6 +37,7 @@ def main() -> None:
     pr.add_argument("ids", nargs="*", help="ID položek; bez ID všechny, které ještě nemají média")
     pr.add_argument("--force", action="store_true", help="vyrenderuj znovu i hotové položky")
     pr.add_argument("--seed", type=int, default=0, help="jiné číslo = jiné rozložení předmětů")
+    pr.add_argument("--music", action="store_true", help="vyber hudbu k Reelu znovu (podle dnešních trendů)")
 
     p = sub.add_parser("publish", help="publikuj schválené položky, kterým nastal čas")
     p.add_argument("--dry-run", action="store_true", help="nic neposílej, jen ukaž, co by se stalo")
@@ -213,6 +214,10 @@ def render_collage(cfg: dict, args) -> None:
 def prepare_media(cfg: dict, args) -> None:
     """Render drafts and approved items into media/ and point `media` at their public URLs.
 
+    With `feed.publish_as: reel` every carousel also gets its Reel: a video of
+    the slides swiping by (media/<id>.mp4 + cover) and a popular song picked
+    for it (igbot/music.py), which Instagram adds when it publishes.
+
     The files only become reachable after they are pushed, so commit and push
     media/ and content/ before `klapka-sync` (KLAPKA shows every slide) and
     before the publishing slot. Each URL carries a hash of the file (?v=...):
@@ -220,7 +225,7 @@ def prepare_media(cfg: dict, args) -> None:
     raw.githubusercontent cache would keep showing the old slide."""
     import hashlib
 
-    from . import collage
+    from . import collage, music, reel
     from .config import ROOT
     from .render import Theme, render_item
 
@@ -228,33 +233,61 @@ def prepare_media(cfg: dict, args) -> None:
     if not base:
         raise SystemExit("Chybí media.base_url v config/account.yaml.")
     theme = Theme.from_config(cfg)
+    as_reel = (cfg.get("feed") or {}).get("publish_as") == "reel"
     out = ROOT / "media"
+    ig = None
     done = 0
+
+    def url(path: Path) -> str:
+        return f"{base}/media/{path.name}?v={hashlib.sha1(path.read_bytes()).hexdigest()[:8]}"
+
     for state in ("drafts", "approved"):
         for item in content.items(state):
             if args.ids and item["id"] not in args.ids:
                 continue
             if item["kind"] == "reel" or not item.get("slides"):
                 continue
-            if item.get("media") and not (args.force and item.get("media_from_slides")):
+            changed = False
+            if not item.get("media") or (args.force and item.get("media_from_slides")):
+                for old in out.glob(f"{item['id']}-*.jpg"):
+                    old.unlink()  # a re-render may have fewer slides
+                if collage.is_collage(item) and item["kind"] != "story":
+                    paths = collage.render_item(item, out, cfg.get("brand"), theme.handle, seed=args.seed)
+                else:
+                    paths = render_item(item, out, theme)
+                item["media"] = [url(p) for p in paths]
+                item["media_from_slides"] = True
+                item.pop("reel", None)  # new slides, new video
+                sheet = collage.contact_sheet(paths, BUILD_DIR / "prepare" / f"{item['id']}.jpg")
+                print(f"{item['id']}: {len(paths)} slidů, náhled {sheet}")
+                changed = True
+            if as_reel and item["kind"] == "carousel" and item.get("media_from_slides"):
+                slides = [out / str(m).split("?")[0].rsplit("/", 1)[-1] for m in item["media"]]
+                if not item.get("reel") and all(p.exists() for p in slides):
+                    video = reel.render(slides, out / f"{item['id']}.mp4", cfg.get("brand") or {})
+                    cover = reel.cover(slides, out / f"{item['id']}-cover.jpg", cfg.get("brand") or {})
+                    item["reel"] = {"video": url(video), "cover": url(cover)}
+                    print(f"{item['id']}: Reel {reel.duration(len(slides)):.0f} s, {video.stat().st_size / 1e6:.1f} MB")
+                    changed = True
+                if not item.get("music") or args.music:
+                    try:
+                        if ig is None:
+                            from .instagram import Instagram
+                            ig = Instagram.from_env()
+                        item["music"] = music.pick(ig, item)
+                        print(f"{item['id']}: hudba {music.label(item['music'])}"
+                              f"{' (v trendech)' if item['music'] and item['music']['trending'] else ''}")
+                        changed = True
+                    except Exception as exc:  # publishing picks one later if this fails
+                        print(f"{item['id']}: hudba nevybrána ({exc})")
+            if not changed:
                 continue
-            for old in out.glob(f"{item['id']}-*.jpg"):
-                old.unlink()  # a re-render may have fewer slides
-            if collage.is_collage(item) and item["kind"] != "story":
-                paths = collage.render_item(item, out, cfg.get("brand"), theme.handle, seed=args.seed)
-            else:
-                paths = render_item(item, out, theme)
-            item["media"] = [f"{base}/media/{p.name}?v={hashlib.sha1(p.read_bytes()).hexdigest()[:8]}"
-                             for p in paths]
-            item["media_from_slides"] = True
             problems = content.validate(item)
             if problems:
                 item["problems"] = problems
             else:
                 item.pop("problems", None)
             content.save(item, state)
-            sheet = collage.contact_sheet(paths, BUILD_DIR / "prepare" / f"{item['id']}.jpg")
-            print(f"{item['id']}: {len(paths)} slidů, náhled {sheet}")
             done += 1
     print(f"Připraveno: {done}. Teď commit + push složek media/ a content/, pak `klapka-sync`.")
 
