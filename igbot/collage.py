@@ -1,16 +1,22 @@
-"""Moodboard collage slides: cut-out photo "stickers" around a big serif title.
+"""Moodboard collage slides, built the way the niche's best carousels are.
 
-The technique follows the best-performing format of the niche (10-15 cut-out
-objects with small labels around a large title on paper), the look is our own:
-kraft paper, white die-cut outlines, title in the middle, colours from
-`brand` in config/account.yaml.
+Taken apart from @organic__101_'s top posts (country / season "maxxing",
+6.000-18.500 likes): a cover that is a full-bleed wall of photos with a torn
+paper strip carrying the title; inner slides on light paper with one big hero
+picture above the title and 14-18 big things all around it, each with a short
+lifestyle label ("Buying lemons", "Lake swimming", "Fresh pasta"). Things are
+either cut-outs (food, objects) or rectangular photos of scenes and
+activities. Colours, type and the white die-cut edge are ours (`brand` in
+config/account.yaml).
 
 Three layouts (content.slide_layout):
-  cover  first slide of a carousel: pure mood. Bigger stickers piled densely
-         around the title, overlapping a little, no labels.
-  board  inner slides and single images: title with labelled stickers.
-  cta    closing slide: a fan of the post's stickers without labels, the call
+  cover  first slide: photos edge to edge above and below a torn paper strip
+         with the title; cut-out stickers overlap the strip's edges; no labels.
+  board  inner slides: hero on top, title, labelled things packed around.
+  cta    closing slide: the cover's look with the post's own photos, the call
          to action and the handle on an accent pill.
+Item flags in the post: `photo: true` (a rectangular photo of a scene or an
+activity, not cut out) and `hero: true` (the big picture above the title).
 
 Items are placed by a small packer, so any number of objects of any shape fits
 without covering the title, the labels or (on boards) each other.
@@ -40,17 +46,19 @@ COVER_OVERLAP = 16  # px cover stickers may overlap: about the white border, so 
 @dataclass(frozen=True)
 class Style:
     paper: str = "#E5D5BA"
+    board: str = "#F1EADF"        # inner slides: light paper, so the photos carry the colour
     ink: str = "#3A2517"          # title
     label: str = "#3A2517"
     accent: str = "#9C4F28"
-    outline: int = 9              # white die-cut border in px
-    max_rotation: float = 7
+    outline: int = 7              # white die-cut border in px
+    frame: int = 7                # white border of a rectangular photo
+    max_rotation: float = 6
     shadow: tuple[int, int, int, float] = (4, 9, 9, 0.30)  # dx, dy, blur, opacity
     label_font: str = "Inter-Regular.otf"
-    label_size: int = 25
+    label_size: int = 29
     grain: float = 1.0
-    margin: int = 46
-    gap: int = 10                 # min space between objects
+    margin: int = 34
+    gap: int = 8                  # min space between objects
 
     @classmethod
     def from_brand(cls, brand: dict | None) -> "Style":
@@ -212,8 +220,8 @@ def _maxpool(mask: np.ndarray, g: int = GRID) -> np.ndarray:
 
 @dataclass
 class Item:
-    label: str
-    image: Image.Image          # styled, rotated sticker (no shadow)
+    label: str                  # may hold a line break
+    image: Image.Image          # styled, rotated sticker or framed photo (no shadow)
     label_font: ImageFont.FreeTypeFont
     footprint: np.ndarray       # grid mask: object + gap + label
     origin: tuple[int, int]     # image top-left inside the footprint, px
@@ -221,20 +229,64 @@ class Item:
     pos: tuple[int, int] | None = None
 
 
+def _crop_to(img: Image.Image, aspect: float) -> Image.Image:
+    """Centre crop to width/height = aspect (a little above centre: horizons, faces)."""
+    w, h = img.size
+    if w / h > aspect:
+        nw = round(h * aspect)
+        return img.crop(((w - nw) // 2, 0, (w - nw) // 2 + nw, h))
+    nh = round(w / aspect)
+    top = max(0, min(h - nh, round((h - nh) * 0.4)))
+    return img.crop((0, top, w, top + nh))
+
+
+def _framed(photo: Image.Image, side: float, style: Style, aspect: float | None = None) -> Image.Image:
+    """A rectangular photo with a thin white border, like a print."""
+    img = photo.convert("RGB")
+    if aspect is None:   # keep the photo's shape, within reason
+        aspect = min(1.35, max(0.75, img.width / img.height))
+    img = _crop_to(img, aspect)
+    w = side * aspect ** 0.5
+    h = side / aspect ** 0.5
+    img = img.resize((max(1, round(w)), max(1, round(h))), Image.LANCZOS)
+    b = style.frame
+    out = Image.new("RGBA", (img.width + 2 * b, img.height + 2 * b), (255, 252, 245, 255))
+    out.paste(img, (b, b))
+    return out
+
+
+def _label_lines(font, text: str, max_w: float) -> list[str]:
+    """One line if it fits, else two balanced lines (never more)."""
+    if _text_w(font, text) <= max_w or " " not in text:
+        return [text]
+    words = text.split()
+    best = None
+    for k in range(1, len(words)):
+        a, b = " ".join(words[:k]), " ".join(words[k:])
+        width = max(_text_w(font, a), _text_w(font, b))
+        if best is None or width < best[0]:
+            best = (width, [a, b])
+    return best[1]
+
+
 def _prepare(label: str, cut: Image.Image, side: float, style: Style, rnd: random.Random,
-             overlap: int = 0, angle: float | None = None) -> Item:
-    """A sized, outlined, rotated sticker and its footprint for the packer.
+             overlap: int = 0, angle: float | None = None, photo: bool = False) -> Item:
+    """A sized, outlined (or framed), rotated thing and its footprint for the packer.
 
     An empty label draws none. overlap > 0 shrinks the footprint by that many
-    px, so neighbouring stickers may overlap like a pile (cover slide)."""
-    w, h = cut.size
-    scale = side / (w * h) ** 0.5
-    scale = min(scale, side * 1.45 / max(w, h))
-    img = cut.resize((max(1, round(w * scale)), max(1, round(h * scale))), Image.LANCZOS)
-    if style.outline:
-        img = _outline(img, style.outline)
+    px, so neighbouring stickers may overlap like a pile. photo=True keeps the
+    picture rectangular with a white border instead of a die-cut outline."""
+    if photo:
+        img = _framed(cut, side, style)
+    else:
+        w, h = cut.size
+        scale = side / (w * h) ** 0.5
+        scale = min(scale, side * 1.45 / max(w, h))
+        img = cut.resize((max(1, round(w * scale)), max(1, round(h * scale))), Image.LANCZOS)
+        if style.outline:
+            img = _outline(img, style.outline)
     if angle is None:
-        angle = rnd.uniform(-style.max_rotation, style.max_rotation)
+        angle = rnd.uniform(-style.max_rotation, style.max_rotation) * (0.5 if photo else 1)
     if abs(angle) > 0.3:
         img = img.rotate(angle, resample=Image.BICUBIC, expand=True)
     alpha = np.asarray(img.getchannel("A")) > 20
@@ -249,9 +301,12 @@ def _prepare(label: str, cut: Image.Image, side: float, style: Style, rnd: rando
         full = np.pad(body, g)
         full = ndimage.distance_transform_edt(~full) <= g if g else full
         return Item("", img, font, _maxpool(full), (g, g), (obj_cx, obj_bottom))
-    lw = _text_w(font, text)
-    lh = font.getbbox(text)[3]
-    label_top = obj_bottom + (8 if style.outline else 12)
+    lines = _label_lines(font, text, max(img.width * 1.15, 250))
+    text = "\n".join(lines)
+    lw = max(_text_w(font, t) for t in lines)
+    line_h = font.getbbox("Hg")[3]
+    lh = line_h * len(lines) + 2 * (len(lines) - 1)
+    label_top = obj_bottom + 6
     lx0, ly0 = obj_cx - lw / 2 - 6, label_top - 4
     lx1, ly1 = obj_cx + lw / 2 + 6, label_top + lh + 6
 
@@ -265,20 +320,35 @@ def _prepare(label: str, cut: Image.Image, side: float, style: Style, rnd: rando
     return Item(text, img, font, _maxpool(full), (ox, oy), (obj_cx, label_top))
 
 
-def _place(occ: np.ndarray, fp: np.ndarray, rnd: random.Random) -> tuple[int, int] | None:
-    """Top-left grid cell where `fp` overlaps nothing and sits deepest in free space."""
+def _place(occ: np.ndarray, fp: np.ndarray, rnd: random.Random, snug: bool = False) -> tuple[int, int] | None:
+    """Top-left grid cell where `fp` overlaps nothing.
+
+    Default: deepest in free space (things spread out). snug=True: where the
+    footprint touches the most of what is already there (other things, the
+    title, the page margin), so a board fills up densely like the niche's
+    boards instead of leaving holes between scattered things."""
     fh, fw = fp.shape
     if fh > occ.shape[0] or fw > occ.shape[1]:
         return None
-    overlap = signal.fftconvolve(occ.astype(np.float32), fp[::-1, ::-1].astype(np.float32), mode="valid")
+    occ_f = occ.astype(np.float32)
+    overlap = signal.fftconvolve(occ_f, fp[::-1, ::-1].astype(np.float32), mode="valid")
     valid = overlap < 0.5
     if not valid.any():
         return None
-    clearance = ndimage.distance_transform_edt(~occ)
-    cy, cx = fh // 2, fw // 2
-    score = clearance[cy:cy + valid.shape[0], cx:cx + valid.shape[1]]
     noise = np.random.default_rng(rnd.randrange(1 << 30)).uniform(0, 2.5, valid.shape)
-    score = np.where(valid, score + noise, -1)
+    if snug:
+        r = 3
+        padded = np.pad(fp, r)
+        ring = ndimage.binary_dilation(padded, iterations=r) & ~padded
+        # The page edge counts as something to lean on.
+        occ_p = np.pad(occ_f, r, constant_values=1.0)
+        contact = signal.fftconvolve(occ_p, ring[::-1, ::-1].astype(np.float32), mode="valid")
+        score = np.where(valid, contact + noise, -1)
+    else:
+        clearance = ndimage.distance_transform_edt(~occ)
+        cy, cx = fh // 2, fw // 2
+        score = clearance[cy:cy + valid.shape[0], cx:cx + valid.shape[1]]
+        score = np.where(valid, score + noise, -1)
     y, x = np.unravel_index(int(np.argmax(score)), score.shape)
     return int(y), int(x)
 
@@ -348,25 +418,156 @@ def _pill(draw, text: str, cx: float, top: float, style: Style, size: int = 34) 
     return box
 
 
+# --- full-bleed cover and closing slide ------------------------------------
+
+def _torn_strip(size: tuple[int, int], y0: float, y1: float, color: str, seed: int) -> tuple[Image.Image, Image.Image]:
+    """A strip of paper torn along both long edges, and its shadow (both RGBA, page-sized)."""
+    W, H = size
+    rng = np.random.default_rng(seed)
+    xs = np.arange(W, dtype=np.float32)
+
+    def edge(base: float) -> np.ndarray:
+        n = np.zeros(W, np.float32)
+        for scale, amp in ((260, 26), (70, 10), (14, 4), (3, 1.6)):   # long waves, then fibres
+            pts = rng.standard_normal(W // scale + 3).astype(np.float32)
+            n += amp * np.interp(xs / scale, np.arange(len(pts)), pts)
+        return base + n
+
+    top, bottom = edge(y0), edge(y1)
+    yy = np.arange(H, dtype=np.float32)[:, None]
+    mask = (yy >= top[None, :]) & (yy <= bottom[None, :])
+    sheet = np.asarray(paper(size, color, seed=seed + 7, grain=0.9), np.float32)
+    # The torn edge shows the paper's lighter core: a ragged pale rim.
+    depth = ndimage.distance_transform_edt(mask)
+    rim_w = 3.0 + 2.5 * np.abs(ndimage.gaussian_filter1d(rng.standard_normal(W), 3))[None, :]
+    rim = (depth > 0) & (depth < rim_w)
+    sheet[rim] = sheet[rim] * 0.25 + np.array([252, 250, 245], np.float32) * 0.75
+    layer = Image.fromarray(np.clip(sheet, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
+    layer.putalpha(Image.fromarray((mask * 255).astype(np.uint8), "L"))
+    sh = Image.fromarray((mask * 255).astype(np.uint8), "L").filter(ImageFilter.GaussianBlur(10))
+    sh = ImageChops_offset(sh, 0, 6).point(lambda v: int(v * 0.42))
+    shadow = Image.new("RGBA", size, (40, 28, 18, 255))
+    shadow.putalpha(sh)
+    return layer, shadow
+
+
+def ImageChops_offset(img: Image.Image, dx: int, dy: int) -> Image.Image:
+    out = Image.new(img.mode, img.size, 0)
+    out.paste(img, (dx, dy))
+    return out
+
+
+def _band(slide: Image.Image, photos: list[Image.Image], y0: int, y1: int, rnd: random.Random) -> None:
+    """Photos edge to edge across the page between y0 and y1, in columns of varied width."""
+    if not photos:
+        return
+    W = slide.width
+    weights = [rnd.uniform(0.75, 1.35) for _ in photos]
+    total = sum(weights)
+    x = 0
+    for n, (img, wt) in enumerate(zip(photos, weights)):
+        w = W - x if n == len(photos) - 1 else round(W * wt / total)
+        tile = _crop_to(img.convert("RGB"), w / (y1 - y0)).resize((w, y1 - y0), Image.LANCZOS)
+        slide.paste(tile, (x, y0))
+        x += w
+
+
+def _banded(slide: Image.Image, photos: list[Image.Image], stickers: list[Image.Image], style: Style,
+            rnd: random.Random, seed: int, strip: tuple[float, float]) -> tuple[float, float]:
+    """The cover look: photo wall above and below a torn paper strip, stickers on its edges.
+    Returns the strip's (top, bottom) in px; the caller writes on it."""
+    W, H = SIZE
+    s0, s1 = H * strip[0], H * strip[1]
+    half = (len(photos) + 1) // 2
+    _band(slide, photos[:half], 0, int(s0) + 40, rnd)
+    _band(slide, photos[half:] or photos[:half], int(s1) - 40, H, rnd)
+    layer, shadow = _torn_strip(SIZE, s0, s1, style.board, seed)
+    slide.alpha_composite(shadow)
+    slide.alpha_composite(layer)
+    # Stickers sit on the strip's torn edges, away from the text in its middle.
+    n_top = (len(stickers) + 1) // 2
+    placed = []
+    for k, cut in enumerate(stickers):
+        top = k < n_top
+        row = n_top if top else len(stickers) - n_top
+        i = k if top else k - n_top
+        cx = W * (i + 0.5) / row + rnd.uniform(-40, 40) + (0 if top else W * 0.08 * (1 if i % 2 else -1))
+        item = _prepare("", cut, rnd.uniform(250, 310), style, rnd)
+        cy = s0 - item.image.height * 0.32 if top else s1 + item.image.height * 0.30
+        item.pos = (int(min(max(cx - item.image.width / 2, -20), W - item.image.width + 20)),
+                    int(cy - item.image.height / 2))
+        placed.append(item)
+    _composite(slide, placed, style)
+    return s0, s1
+
+
 # --- slides --------------------------------------------------------------
 
-def render_slide(title: str, items: list[tuple[str, Path]], out: Path, style: Style = STYLE,
+def _draw_label(draw, item: Item, style: Style) -> None:
+    cx, ty = item.label_box
+    line_h = item.label_font.getbbox("Hg")[3] + 2
+    for k, line in enumerate(item.label.split("\n")):
+        lw = _text_w(item.label_font, line)
+        draw.text((item.pos[0] + cx - lw / 2, item.pos[1] + ty + k * line_h), line, font=item.label_font,
+                  fill=style.label)
+
+
+def _things(items: list) -> list[tuple[str, Image.Image, bool, bool]]:
+    """(label, image, photo, hero) from (label, path) or (label, path, {"photo":.., "hero":..})."""
+    out = []
+    for it in items:
+        label, path, flags = (it if len(it) == 3 else (*it, {}))
+        img = Image.open(path)
+        photo = bool(flags.get("photo"))
+        out.append((label, img.convert("RGB" if photo else "RGBA"), photo, bool(flags.get("hero"))))
+    return out
+
+
+def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
                  seed: int = 0, handle: str = "", body: str = "", layout: str = "board",
                  kicker: str = "") -> Path:
     """One collage slide; returns the JPEG path. layout: "cover", "board" or "cta"
-    (see the module docstring). Labels are drawn on boards only."""
+    (see the module docstring). Labels are drawn on boards only. items:
+    (label, path) or (label, path, {"photo": bool, "hero": bool})."""
     rnd = random.Random(seed)
     W, H = SIZE
     m = style.margin
-    slide = paper(SIZE, style.paper, seed=seed, grain=style.grain).convert("RGBA")
+    things = _things(items)
+    photos_ = [img for _, img, photo, _ in things if photo]
+    cuts_only = [img for _, img, photo, _ in things if not photo]
+
+    # Cover and closing slide with photos: the full-bleed wall with a torn strip.
+    if layout in ("cover", "cta") and len(photos_) >= 2:
+        slide = paper(SIZE, style.board, seed=seed, grain=0.6).convert("RGBA")
+        strip = (0.355, 0.635) if layout == "cover" else (0.33, 0.67)
+        s0, s1 = _banded(slide, photos_, cuts_only[:6 if layout == "cover" else 4], style, rnd, seed, strip)
+        draw = ImageDraw.Draw(slide)
+        lines = _title_lines(_clean(title), _clean(body), style, W - 2 * m - 90, 132 if layout == "cover" else 112,
+                             kicker)
+        if layout == "cover" and handle:
+            lines[-1].gap_after = 22
+            lines.append(_kicker(f"@{handle}", style, 24))
+            lines[-1].tracking = 3
+        tw, th = _measure(lines)
+        pill_h = 82 if layout == "cta" and handle else 0
+        y0 = (s0 + s1) / 2 - (th + (40 + pill_h if pill_h else 0)) / 2 + 4
+        _draw_lines(draw, lines, (W - tw) / 2, y0, tw)
+        if pill_h:
+            _pill(draw, f"@{handle}", W / 2, y0 + th + 40, style)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        slide.convert("RGB").save(out, "JPEG", quality=93)
+        return out
+
+    slide = paper(SIZE, style.paper if layout != "board" else style.board, seed=seed,
+                  grain=style.grain if layout != "board" else 0.6).convert("RGBA")
     draw = ImageDraw.Draw(slide)
-    cuts =[(label if layout == "board" else "", Image.open(path).convert("RGBA")) for label, path in items]
+    cuts = [(label if layout == "board" else "", img, photo, hero) for label, img, photo, hero in things]
     placed: list[Item] = []
 
     if layout == "cta":
         lines = _title_lines(_clean(title), _clean(body), style, W - 2 * m - 80, 116, kicker)
         tw, th = _measure(lines)
-        placed = _fan([c for _, c in cuts], style, rnd) if cuts else []
+        placed = _fan([c for _, c, photo, _ in cuts if not photo], style, rnd) if cuts else []
         fan_h = max((i.pos[1] + i.image.height for i in placed), default=0)
         pill_h, gap_fan, gap_pill = 82, 70, 56
         total = fan_h + (gap_fan if placed else 0) + th + (gap_pill + pill_h if handle else 0)
@@ -396,55 +597,87 @@ def render_slide(title: str, items: list[tuple[str, Path]], out: Path, style: St
         # page frame: keep objects inside the margins
         block(0, 0, W, m); block(0, H - m, W, H); block(0, 0, m, H); block(W - m, 0, W, H)
 
-    lines = _title_lines(_clean(title), _clean(body), style, W - 2 * m - 40, 150 if cover else 138, kicker)
+    lines = _title_lines(_clean(title), _clean(body), style, W - 2 * m - 40, 150 if cover else 124, kicker)
+    tw, th = _measure(lines)
+    hero = next((c for c in cuts if c[3]), None) if not cover else None
+    title_y = H * (0.5 if cover else (0.5 if hero else 0.47)) - th / 2
     if cover and handle:
         lines[-1].gap_after = 26
         lines.append(_kicker(f"@{handle}", style, 24))
         lines[-1].tracking = 3
-    tw, th = _measure(lines)
-    x0, y0 = (W - tw) / 2, H * (0.5 if cover else 0.47) - th / 2
-    _draw_lines(draw, lines, x0, y0, tw)
-    block(x0, y0, x0 + tw, y0 + th, pad=34 if cover else 26)
+        tw, th = _measure(lines)
+    x0 = (W - tw) / 2
+    block(x0, title_y, x0 + tw, title_y + th, pad=34 if cover else 22)
+    tag, tag_font = (f"@{handle}", _font("Inter-Bold.otf", 22)) if handle and not cover else ("", None)
+    if tag:
+        hw = _text_w(tag_font, tag)
+        block((W - hw) / 2, title_y + th + 10, (W + hw) / 2, title_y + th + 42, pad=8)
 
-    if handle and not cover:
-        tag = f"@{handle}"
-        f = _font("Inter-Bold.otf", 24)
-        hw = _text_w(f, tag)
-        draw.text(((W - hw) / 2, H - m - 14), tag, font=f, fill=style.ink)
-        block((W - hw) / 2, H - m - 18, (W + hw) / 2, H, pad=12)
+    if hero:
+        # The big picture above the title, like the flag or figure of the niche's best boards.
+        label, img, photo, _ = hero
+        cuts.remove(hero)
+        room_h = title_y - m - 8
+        side = min(room_h, W * 0.56) * (0.86 if photo else 0.92)
+        item = _prepare("", img, side, style, rnd, angle=rnd.uniform(-2, 2), photo=photo)
+        k = min(1.0, room_h / item.image.height, W * 0.62 / item.image.width)
+        if k < 1:
+            item = _prepare("", img, side * k, style, rnd, angle=0, photo=photo)
+        hx = int((W - item.image.width) / 2)
+        hy = int(title_y + 10 - item.image.height)
+        item.pos = (hx, hy)
+        alpha = np.asarray(item.image.getchannel("A")) > 20
+        fp = _maxpool(np.pad(alpha, style.gap) if style.gap else alpha)
+        gy, gx = max(0, (hy - style.gap) // GRID), max(0, (hx - style.gap) // GRID)
+        h_, w_ = min(fp.shape[0], occ.shape[0] - gy), min(fp.shape[1], occ.shape[1] - gx)
+        occ[gy:gy + h_, gx:gx + w_] |= fp[:h_, :w_]
+        placed.append(item)
 
     if cuts:
         free_px = (~occ).sum() * GRID * GRID
-        side = (free_px * (0.6 if cover else 0.36) / len(cuts)) ** 0.5
-        sizes = [side * (1.18 if n == 0 else rnd.uniform(0.86, 1.1)) for n in range(len(cuts))]
+        side = (free_px * (0.6 if cover else 0.52) / len(cuts)) ** 0.5
+        sizes = [side * (1.12 if n == 0 else rnd.uniform(0.88, 1.08)) * (1.08 if c[2] else 1.0)
+                 for n, c in enumerate(cuts)]
         order = sorted(range(len(cuts)), key=lambda n: -sizes[n])
-        for n in order:
-            label, cut = cuts[n]
-            for attempt in range(7):
-                item = _prepare(label, cut, sizes[n] * 0.9 ** attempt, style, rnd, overlap=COVER_OVERLAP if cover else 0)
-                pos = _place(occ, item.footprint, rnd)
-                if pos:
-                    gy, gx = pos
-                    occ[gy:gy + item.footprint.shape[0], gx:gx + item.footprint.shape[1]] |= item.footprint
-                    item.pos = (gx * GRID + item.origin[0] - bleed, gy * GRID + item.origin[1] - bleed)
-                    placed.append(item)
-                    break
-            else:
-                print(f"  bez místa: {label or n + 1}")
+        base, fixed = occ.copy(), list(placed)
+        # Everything has to fit: if something finds no room, pack again a size smaller.
+        for scale in (1.0, 0.92, 0.85, 0.78, 0.72, 0.66):
+            occ, placed, missing = base.copy(), list(fixed), []
+            for n in order:
+                label, cut, photo, _ = cuts[n]
+                for attempt in range(4):
+                    item = _prepare(label, cut, sizes[n] * scale * 0.94 ** attempt, style, rnd,
+                                    overlap=COVER_OVERLAP if cover else 0, photo=photo)
+                    pos = _place(occ, item.footprint, rnd, snug=not cover)
+                    if pos:
+                        gy, gx = pos
+                        occ[gy:gy + item.footprint.shape[0], gx:gx + item.footprint.shape[1]] |= item.footprint
+                        item.pos = (gx * GRID + item.origin[0] - bleed, gy * GRID + item.origin[1] - bleed)
+                        placed.append(item)
+                        break
+                else:
+                    missing.append(label or str(n + 1))
+            if not missing:
+                break
+        for label in missing:
+            print(f"  bez místa: {label}")
 
     if cover:
         # Piled stickers: big ones underneath, so a small one never hides behind a big one.
         placed.sort(key=lambda i: -int((np.asarray(i.image.getchannel("A")) > 20).sum()))
     else:
-        rnd.shuffle(placed)  # z-order doesn't follow size
+        first = placed[:1] if hero else []
+        rest = placed[len(first):]
+        rnd.shuffle(rest)  # z-order doesn't follow size
+        placed = first + rest
     _composite(slide, placed, style)
     draw = ImageDraw.Draw(slide)
+    _draw_lines(draw, lines, x0, title_y, tw)   # after the pictures: the hero may tuck under the title
+    if tag:
+        draw.text(((W - _text_w(tag_font, tag)) / 2, title_y + th + 14), tag, font=tag_font, fill=style.accent)
     for item in placed:
         if item.label:
-            cx, ty = item.label_box
-            lw = _text_w(item.label_font, item.label)
-            draw.text((item.pos[0] + cx - lw / 2, item.pos[1] + ty), item.label, font=item.label_font,
-                      fill=style.label)
+            _draw_label(draw, item, style)
 
     out.parent.mkdir(parents=True, exist_ok=True)
     slide.convert("RGB").save(out, "JPEG", quality=93)
@@ -452,29 +685,34 @@ def render_slide(title: str, items: list[tuple[str, Path]], out: Path, style: St
 
 
 def render_slides(slides: list[dict], out_dir: Path, handle: str = "", style: Style = STYLE,
-                  find=None, seed: int = 0, name=lambda n: f"{n:02d}.jpg") -> tuple[list[Path], list[dict]]:
+                  find=None, seed: int = 0, name=lambda n: f"{n:02d}.jpg",
+                  find_photo=None) -> tuple[list[Path], list[dict]]:
     """All slides of one post plus the licence trail of its photos.
 
     slide = {"title": .., "kicker": small line above the title (optional),
-             "body": .. (closing slide), "items": [{"label": .., "queries": [..]}],
+             "body": .. (closing slide), "items": [{"label": .., "queries": [..],
+             "photo": true (scene, not cut out), "hero": true (big, above the title)}],
              "layout": "cover" | "board" | "cta" (default: content.slide_layout),
              "echo": [labels] (closing slide: which earlier stickers to show)}
-    A closing slide without items shows stickers of the post's other slides.
+    A closing slide without items shows pictures of the post's other slides.
     """
     from . import cutout
 
     find = find or cutout.find_cutout
+    find_photo = find_photo or cutout.find_photo
     used: set[str] = set()
     credits: list[dict] = []
-    seen: list[list[tuple[float, str, Path]]] = []   # per slide: (score, label, path)
+    seen: list[list[tuple[float, str, Path, bool]]] = []   # per slide: (score, label, path, photo)
 
-    def collect(spec_items: list[dict]) -> list[tuple[str, Path]]:
+    def collect(spec_items: list[dict]) -> list[tuple[str, Path, dict]]:
         got = []
         for spec in spec_items:
             queries = spec.get("queries") or [spec.get("query") or spec["label"]]
+            photo = bool(spec.get("photo"))
+            finder = find_photo if photo else find
             best = None
             for q in queries:
-                found = find(q, exclude=used)
+                found = finder(q, exclude=used)
                 if found and (best is None or found["score"] > best["score"]):
                     best = found
                 if best and best["score"] >= 0.45:
@@ -485,25 +723,32 @@ def render_slides(slides: list[dict], out_dir: Path, handle: str = "", style: St
                 continue
             used.add(best["id"])
             credits.append({"label": label, **{k: v for k, v in best.items() if k != "path"}})
-            got.append((label, Path(best["path"])))
-            seen[-1].append((best["score"], label, Path(best["path"])))
+            got.append((label, Path(best["path"]), {"photo": photo, "hero": bool(spec.get("hero"))}))
+            seen[-1].append((best["score"], label, Path(best["path"]), photo))
         return got
 
-    def echo(labels: list[str] | None = None, count: int = FAN_MAX) -> list[tuple[str, Path]]:
-        """Stickers of earlier slides for the closing slide: the ones named in `labels`,
-        else the best sticker of each earlier slide in turn (cover first)."""
-        if labels:
-            by_label = {label.lower(): (label, path) for slide in seen for _, label, path in slide}
-            picked = [by_label[name.lower()] for name in labels if name.lower() in by_label]
-            if picked:
-                return picked[:count]
-        ranked = [sorted(slide, key=lambda x: -x[0]) for slide in seen if slide]
-        out: list[tuple[str, Path]] = []
+    def echo(labels: list[str] | None = None) -> list[tuple[str, Path, dict]]:
+        """Pictures of earlier slides for the closing slide: a wall of up to 8 photos (one
+        from each slide in turn) with 4 stickers, or without photos a fan of stickers.
+        Stickers named in `labels` come first, then the best of each slide."""
+        named = [n.lower() for n in labels or []]
+        order = seen[1:] + seen[:1]           # inner slides first, the cover last
+        ranked = [sorted(slide, key=lambda x: -x[0]) for slide in order]
+        wall: list = []
         for depth in range(max((len(r) for r in ranked), default=0)):
             for r in ranked:
-                if depth < len(r) and len(out) < count:
-                    out.append(r[depth][1:])
-        return out
+                photos_here = [x for x in r if x[3]]
+                if depth < len(photos_here) and len(wall) < 8:
+                    wall.append(photos_here[depth])
+        cuts: list = [x for name in named for slide in order for x in slide if not x[3] and x[1].lower() == name]
+        for depth in range(max((len(r) for r in ranked), default=0)):
+            for r in ranked:
+                stickers = [x for x in r if not x[3]]
+                if depth < len(stickers) and stickers[depth] not in cuts:
+                    cuts.append(stickers[depth])
+        if len(wall) >= 2:
+            return [(x[1], x[2], {"photo": True}) for x in wall] + [(x[1], x[2], {}) for x in cuts[:4]]
+        return [(x[1], x[2], {}) for x in cuts[:FAN_MAX]]
 
     paths = []
     for n, slide in enumerate(slides, start=1):

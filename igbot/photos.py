@@ -193,11 +193,13 @@ def search(query: str, limit: int = 8) -> list[Candidate]:
     """Relevant candidates from every configured provider, best provider and best match first."""
     found: list[Candidate] = []
     for provider in (_pexels, _commons, _openverse):
+        if len(found) >= max(3, limit // 2):
+            break  # Pexels gave enough: the free archives are slower and rougher
         try:
             ranked = [(relevance(c, query), c) for c in provider(query, limit * 2)]
             found += [c for r, c in sorted(ranked, key=lambda rc: -rc[0]) if r][:limit]
         except requests.RequestException as exc:  # one provider down shouldn't stop a post
-            print(f"  {provider.__name__.lstrip('_')}: {exc}")
+            print(f"  {provider.__name__.lstrip('_')}: {str(exc)[:80]}")
     return found
 
 

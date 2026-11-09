@@ -26,8 +26,10 @@ FALLBACK_BETA = "server-side-fallback-2026-07-01"
 
 
 class CollageItem(BaseModel):
-    label: str            # 1-3 words printed under the photo (inner slides); alt text everywhere
+    label: str            # 1-4 words printed under the picture (inner slides); alt text everywhere
     queries: list[str]    # 2-3 stock-photo searches, most specific first
+    photo: bool = False   # a rectangular photo of a scene or activity instead of a cut-out
+    hero: bool = False    # the big picture above the title (one per inner slide, with photo=true)
 
 
 class Slide(BaseModel):
@@ -92,47 +94,49 @@ other people's photos, carousels or reels, so originality is a condition of reac
 What Instagram's published ranking explainers say it measures: time spent on a
 post, swiping through the whole carousel, saves, likes per reach and shares by DM.
 In this niche the posts people save and share are aesthetic moodboards, so:
-- FEED POSTS are photo collages, the account's visual format. Every slide is a
-  big title with real photos of physical things around it, cut out like
-  stickers. You write titles, labels and photo searches; the photos are found
-  on stock-photo sites and cut out automatically. Three kinds of slide:
-  - cover (slide 1 of a carousel): pure mood. 9-12 items piled densely around
-    the title, NO labels printed (still write them: they become the alt text).
-    Pick the items that make the vibe of the whole post, not the ones repeated
-    on the inner slides. Title at most ~6 words.
-  - inner slides: title with 6-10 items, each with a short printed label.
-  - closing slide: no items; it reuses a few stickers of the post, prints the
+- FEED POSTS are photo collages built like the niche's best carousels (the
+  "country" and "season" moodboards of @organic__101_: same structure and
+  technique, our own photos, words and colours). 5-6 slides:
+  - cover (slide 1): a wall of photos edge to edge above and below a torn paper
+    strip with the title. 8 items with photo=true (places, landscapes, seasons:
+    the vibe of the whole post) and 4-6 cut-out items that sit on the strip's
+    edges. No labels are printed (still write them: they become the alt text).
+    Title at most ~6 words.
+  - inner slides (3-4): one topic each (a country, a season, a room, a routine).
+    One item with hero=true and photo=true: the big iconic picture above the
+    title (a coastline, a mountain, a field). Then 14-16 items: ~10 cut-outs
+    (food, drinks, objects, clothes) and ~4 photo=true scenes (activities and
+    moments: "Lake swimming", "Morning market", "Chopping wood").
+  - closing slide: no items; it shows a wall of the post's photos, prints the
     title as the call to action and the handle on a pill (see below).
   Therefore:
-  - items are concrete physical things that photograph well on their own: food,
-    drinks, kitchen and home goods, tools, plants, clothes, natural materials.
-    Never people, places, scenes, brands, screens or abstract ideas. Show an
-    activity through its object ("Long walks" -> hiking boots).
+  - cut-out items are concrete physical things that photograph well on their
+    own: food, drinks, kitchen and home goods, tools, plants, clothes. Never
+    brands or screens.
+  - photo items show a scene or an activity; people may be in them (never
+    celebrities, never brands).
   - queries: 2-3 short English stock-photo searches per item, most specific
-    first, naming the object itself ("cinnamon sticks", "cinnamon"). No styling
-    words ("aesthetic", "isolated", "flat lay").
-  - label: 1-3 words, sentence case, at most ~18 characters, naming exactly what
-    a stock photo of the object shows ("Glass jars", "Honey", "Wool socks").
-    No claims or adjectives the photo can't show ("Raw honey", "Organic eggs").
-  - titles never contain a colon. For contrast slides the small word goes in
-    kicker ("This" / "Not this") and the title is the topic ("A slow kitchen").
+    first, naming exactly what must be in the picture ("cinnamon sticks",
+    "cinnamon"; "people swimming in the sea"). No styling words ("aesthetic",
+    "isolated", "flat lay") and no extra things ("lemons", not "lemons with leaves").
+  - label: 1-4 words, sentence case, the habit or the thing as a way of life
+    ("Fresh pasta", "Riding a Vespa", "Olive oil on everything", "Lake swimming"),
+    matching exactly what the picture shows. No health claims ("Raw honey",
+    "Grass-fed", "Detox").
+  - titles never contain a colon. Inner slides are titled by their topic in 2-4
+    words ("The Italian way", "Slow autumn"); contrast slides put the small word
+    in kicker ("This" / "Not this").
   - no item twice in one post.
 - Formats (field format):
-  - Length: 4-5 slides in total (cover, content slides, closing slide); the
-    contrast formats below may use 6 for two pairs. Never fewer than 4.
-  - moodboard: carousel of 4-5 slides. Slide 1 is the cover "The art of ___
-    living" (season, place, room, routine); then one slide per sub-theme
-    (kitchen, home, outdoors, rituals, ...) titled in 2-4 words, 7-10 items each.
-  - list: carousel of 4-5 slides: a mood cover ("Everything a calm home needs"),
-    2-3 list slides, one per room or use ("Living room essentials",
-    "Bathroom essentials"), 7-10 labelled items each, then the closing slide.
-  - then_vs_now: carousel of 4 or 6 slides: a mood cover ("How we used to live",
-    kicker "Then and now"), then pairs titled "<Topic> then" / "<Topic> now"
-    with 5-8 items each. Nostalgic, never shaming, never medical.
-  - this_not_that: carousel of 4 or 6 slides: a mood cover ("Small swaps for a
-    slower kitchen"), then pairs with kicker "This" / "Not this" and the topic
-    as title ("A slow morning" / "A rushed morning"), 5-8 items each: simple,
-    natural choices vs their modern counterparts. No health or safety claims.
+  - moodboard: cover "The art of ___ living" or a topic line ("Slow living
+    around the world"), then one board per country / season / room / routine.
+  - list: a mood cover, then 3-4 boards, one per room or use ("Kitchen
+    essentials"), then the closing slide.
+  - then_vs_now: a mood cover (kicker "Then and now"), then pairs titled
+    "<Topic> then" / "<Topic> now". Nostalgic, never shaming, never medical.
+  - this_not_that: a mood cover, then pairs with kicker "This" / "Not this" and
+    the topic as title ("A slow morning" / "A rushed morning"). No health or
+    safety claims.
 - Every carousel ends with the closing slide: title = a follow call to action
   in at most 6 words ("Follow for more slow living"), body = one short second
   line asking to save, send or comment, without the handle (it is printed

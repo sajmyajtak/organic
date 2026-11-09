@@ -95,12 +95,18 @@ class Clip:
         return float(p[0] / p.sum())
 
 
+    def similarity(self, img: Image.Image, what: str) -> float:
+        """Cosine similarity of `img` and "a photo of <what>" (matches ~0.27-0.35, misses ~0.15-0.22).
+        For scenes and activities, where people and landscapes are the point."""
+        return float(self.image(img) @ self.text(f"a photo of {what.lower()}"))
+
+
 _clip: Clip | None = None
 _failed = False
 
 
-def match(img: Image.Image, what: str) -> float | None:
-    """See Clip.match; None when the check is off (IGBOT_CLIP=0) or the model can't load."""
+def _model() -> Clip | None:
+    """The CLIP model, loaded once; None when the check is off (IGBOT_CLIP=0) or can't load."""
     global _clip, _failed
     if _failed or env("IGBOT_CLIP", "1") == "0":
         return None
@@ -111,4 +117,16 @@ def match(img: Image.Image, what: str) -> float | None:
             print(f"  kontrola fotek (CLIP) vypnutá: {exc}")
             _failed = True
             return None
-    return _clip.match(img, what)
+    return _clip
+
+
+def match(img: Image.Image, what: str) -> float | None:
+    """See Clip.match; None when the check is off or the model can't load."""
+    model = _model()
+    return None if model is None else model.match(img, what)
+
+
+def similarity(img: Image.Image, what: str) -> float | None:
+    """See Clip.similarity; None when the check is off or the model can't load."""
+    model = _model()
+    return None if model is None else model.similarity(img, what)

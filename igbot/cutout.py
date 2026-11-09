@@ -115,8 +115,8 @@ MIN_SIDE = 320  # px, longer side of a usable sticker
 MIN_MATCH = 0.6  # CLIP: below this the photo is more likely a person/scene/artwork than the object
 
 
-def find_cutout(query: str, cache: Path | None = None, candidates: int = 6,
-                good_enough: float = 0.72, exclude: set[str] | None = None, cuts: int = 3) -> dict | None:
+def find_cutout(query: str, cache: Path | None = None, candidates: int = 5,
+                good_enough: float = 0.72, exclude: set[str] | None = None, cuts: int = 2) -> dict | None:
     """Best cut-out for `query`: {"path": PNG, "score": .., provenance...}, cached by query.
 
     Screens up to 2x`candidates` thumbnails with CLIP and cuts out at most `cuts`
@@ -178,3 +178,56 @@ def find_cutout(query: str, cache: Path | None = None, candidates: int = 6,
         meta["match"] = round(mc, 3)
     meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
     return {**meta, "path": png}
+
+
+SCENE_MIN = 0.22   # CLIP cosine below which a photo most likely shows something else
+
+
+def _brightness(img: Image.Image) -> float:
+    """0..1: light and colourful (1) versus dark or grey (0)."""
+    arr = np.asarray(img.convert("RGB").resize((64, 64)), dtype=np.float32) / 255.0
+    lum = float(arr.mean())
+    sat = float(np.mean((arr.max(axis=2) - arr.min(axis=2)) / np.maximum(arr.max(axis=2), 1e-3)))
+    return max(0.0, min(1.0, 0.6 * min(1.0, lum / 0.55) + 0.4 * min(1.0, sat / 0.35)))
+
+
+def find_photo(query: str, cache: Path | None = None, candidates: int = 8,
+               exclude: set[str] | None = None) -> dict | None:
+    """Best rectangular photo for a scene or activity ("lake swimming", "farmers market"):
+    {"path": JPEG, "score": .., provenance...}, cached by query. Not cut out: the
+    whole picture is the point. Pexels first (sharp, people and landscapes)."""
+    cache = cache or photos.CACHE / "photos"
+    jpg = cache / f"{photos.slug(query)}.jpg"
+    meta_path = jpg.with_suffix(".json")
+    bad = photos.rejected()
+    if jpg.exists() and meta_path.exists():
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        if (not exclude or meta.get("id") not in exclude) and photos.key(meta) not in bad:
+            return {**meta, "path": jpg}
+    best = None
+    for cand in photos.search(query, limit=candidates):
+        if (exclude and cand.id in exclude) or photos.key(cand) in bad:
+            continue
+        img = photos.download(cand.preview_url, max_side=800)
+        if img is None or min(img.size) < 300:
+            continue
+        sim = relevance.similarity(img, query)
+        s = 0.5 if sim is None else max(0.0, min(1.0, (sim - 0.17) / 0.15))
+        if sim is not None and sim < SCENE_MIN:
+            s *= 0.5
+        s += 0.15 * _brightness(img)   # bright, colourful pictures carry a slide; dark ones sink
+        if best is None or s > best[0]:
+            best = (s, cand, sim)
+    if best is None:
+        return None
+    s, cand, sim = best
+    full = photos.download(cand.full_url, max_side=1600) or photos.download(cand.preview_url, max_side=1600)
+    if full is None:
+        return None
+    cache.mkdir(parents=True, exist_ok=True)
+    full.save(jpg, "JPEG", quality=92)
+    meta = {**photos.provenance(cand, query), "score": round(s, 3), "size": list(full.size)}
+    if sim is not None:
+        meta["match"] = round(sim, 3)
+    meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+    return {**meta, "path": jpg}

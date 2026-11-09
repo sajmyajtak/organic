@@ -116,8 +116,10 @@ def validate(item: dict) -> list[str]:
             if role == "cta":
                 if len(things) > 8:
                     problems.append(f"slide {n}: závěrečný slide má {len(things)} předmětů (max 8)")
-            elif not 3 <= len(things) <= 15:
-                problems.append(f"slide {n}: {len(things)} předmětů (koláž potřebuje 3–15)")
+            elif not 3 <= len(things) <= 22:
+                problems.append(f"slide {n}: {len(things)} předmětů (koláž potřebuje 3–22)")
+            if sum(bool(t.get("hero")) for t in things) > 1:
+                problems.append(f"slide {n}: víc než jeden hero")
             if any(not (t.get("queries") or t.get("query")) for t in things):
                 problems.append(f"slide {n}: předmět bez hledání fotky")
             # Cover and closing slide show no labels; inner slides do (the label is the content).

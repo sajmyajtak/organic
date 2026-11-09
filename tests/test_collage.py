@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from PIL import Image, ImageDraw
+from PIL import Image, ImageColor, ImageDraw
 
 from igbot import collage, cutout, photos
 
@@ -220,3 +220,77 @@ def test_closing_fan_stays_inside_the_page(tmp_path):
     left = min(i.pos[0] for i in items) + collage.SIZE[0] / 2
     right = max(i.pos[0] + i.image.width for i in items) + collage.SIZE[0] / 2
     assert left >= 0 and right <= collage.SIZE[0]
+
+
+def _photo(path, size=(640, 480), color=(40, 120, 200)):
+    Image.new("RGB", size, color).save(path)
+    return path
+
+
+def test_board_with_a_hero_and_scene_photos_fits_everything(tmp_path, capsys):
+    items = [("", _photo(tmp_path / "hero.jpg", (900, 600)), {"photo": True, "hero": True})]
+    items += [(f"Scene {n}", _photo(tmp_path / f"p{n}.jpg"), {"photo": True}) for n in range(4)]
+    items += [(f"Thing number {n}", _blob(tmp_path / f"{n}.png", (300, 260)), {}) for n in range(10)]
+    out = collage.render_slide("The Italian way", items, tmp_path / "b.jpg", handle="naturizz")
+    assert Image.open(out).size == collage.SIZE
+    assert "bez místa" not in capsys.readouterr().out
+    hero_px = Image.open(out).convert("RGB").getpixel((collage.SIZE[0] // 2, 380))
+    assert abs(hero_px[2] - 200) < 30            # the hero photo sits above the title, centred
+
+
+def test_cover_with_photos_is_a_full_bleed_wall_with_a_torn_strip(tmp_path):
+    colors = [(200, 60, 40), (40, 160, 70), (40, 90, 200), (210, 180, 40)] * 2
+    items = [("", _photo(tmp_path / f"w{n}.jpg", color=c), {"photo": True}) for n, c in enumerate(colors)]
+    items += [("", _blob(tmp_path / f"s{n}.png"), {}) for n in range(4)]
+    out = collage.render_slide("The art of seasonal living", items, tmp_path / "c.jpg", handle="naturizz",
+                               layout="cover")
+    img = Image.open(out).convert("RGB")
+    paper_rgb = ImageColor.getrgb(collage.STYLE.board)
+    corner = img.getpixel((4, 4))
+    assert sum(abs(a - b) for a, b in zip(corner, paper_rgb)) > 60   # photos reach the corner
+    mid = img.getpixel((40, collage.SIZE[1] // 2))
+    assert sum(abs(a - b) for a, b in zip(mid, paper_rgb)) < 40      # the strip in the middle is paper
+
+
+def test_closing_slide_shows_a_wall_of_the_posts_photos(tmp_path, monkeypatch):
+    def fake_find(query, exclude=None):
+        return {"id": f"c-{query}", "score": 0.9, "license": "cc0", "path": _blob(tmp_path / f"{query}.png")}
+
+    def fake_photo(query, exclude=None):
+        return {"id": f"p-{query}", "score": 0.9, "license": "pexels", "path": _photo(tmp_path / f"{query}.jpg")}
+
+    captured = {}
+    real = collage.render_slide
+
+    def spy(title, items, out, *a, **kw):
+        captured[kw.get("layout")] = items
+        return real(title, items, out, *a, **kw)
+
+    monkeypatch.setattr(collage, "render_slide", spy)
+    slides = [{"title": "The art of x", "items": [{"label": "A", "queries": ["a"], "photo": True},
+                                                  {"label": "B", "queries": ["b"], "photo": True},
+                                                  {"label": "C", "queries": ["c"]}]},
+              {"title": "Inner", "items": [{"label": "D", "queries": ["d"], "photo": True},
+                                           {"label": "E", "queries": ["e"]}, {"label": "F", "queries": ["f"]}]},
+              {"title": "Follow for more", "body": "Save this", "echo": ["F"]}]
+    paths, credits = collage.render_slides(slides, tmp_path / "out", handle="naturizz", find=fake_find,
+                                           find_photo=fake_photo)
+    cta = captured["cta"]
+    assert [x[0] for x in cta if x[2].get("photo")] == ["D", "A", "B"]   # inner slides first
+    assert [x[0] for x in cta if not x[2].get("photo")][0] == "F"         # the named sticker first
+    assert len(credits) == 6
+
+
+def test_long_labels_break_into_two_balanced_lines():
+    font = collage._font(collage.STYLE.label_font, collage.STYLE.label_size)
+    assert collage._label_lines(font, "Lemons", 250) == ["Lemons"]
+    assert collage._label_lines(font, "Olive oil on everything", 250) == ["Olive oil on", "everything"]
+
+
+def test_snug_packing_hugs_what_is_already_there():
+    import random
+    occ = np.zeros((60, 60), bool)
+    occ[:, :10] = True                    # a wall on the left
+    fp = np.ones((8, 8), bool)
+    y, x = collage._place(occ, fp, random.Random(0), snug=True)
+    assert x in (10, 52) and y in (0, 52)  # in a corner against the wall or the page edge, not adrift
