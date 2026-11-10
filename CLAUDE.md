@@ -69,7 +69,7 @@ Závislosti: `requirements.txt` (jádro, publikační workflow), `requirements-r
 | `analyze.py` | `python -m igbot analyze <účet>`: 100 postů přes API, statistiky, Claude vision rozbor, report. |
 | `links.py` | `inspect <odkaz>`: rozbor odkazu IG/TikTok/YouTube jen přes oficiální endpointy. |
 | `generate.py` | Claude (`claude-opus-5-5`, structured output, streamování) navrhne týden koláží (formáty moodboard, list, then_vs_now, this_not_that; každý post je karusel: titul, slidy s předměty s popiskem a hledáním fotek, závěrečný slide s výzvou; i seznam má titul + seznam + výzvu, od 8. 11. 2026 žádné samostatné obrázky) + stories. |
-| `photos.py` | Hledání fotek: Pexels (s `PEXELS_API_KEY`) a Openverse CC0/PD, kontrola, že název/štítky fotky odpovídají předmětu, vyřazení AI obrázků, cache v `build/cache`, licence do `credits.json`. |
+| `photos.py` | Hledání fotek: **Unsplash fotky na Wikimedia Commons** (kategorie „Images from Unsplash“, ~31 tis., CC0, bez klíče) jako hlavní zdroj, pak Commons CC0/PD a Openverse. Pexels jen s `PEXELS_API_KEY` (11/2026 nové klíče nevydává, Simon ho nemá). Kontrola, že název/štítky odpovídají předmětu, vyřazení AI obrázků a značek, cache v `build/cache`, licence do `photo_credits`. Fotky scén z archivů projdou CLIP kontrolou „moderní fotka vs malba/starý tisk/cedule“ (`relevance.modern_photo`). |
 | `cutout.py` | Vystřižení předmětu (`rembg`, model isnet-general-use, CPU), skóre kvality výřezu (celý předmět, jeden objekt, barevnost, ne obdélník), finální výřez z plného rozlišení. |
 | `collage.py` | Koláž podle rozboru nejlepších karuselů @organic__101_ (9. 11. 2026): **titul** = stěna fotek přes celý formát nahoře a dole, uprostřed natržený papír s nadpisem, výřezy na okrajích pruhu, bez popisků; **vnitřní slidy** = světlý papír, nahoře velká hero fotka (`hero: true`), nadpis, kolem 14–16 věcí natěsno (packer „snug“, když se něco nevejde, celé se zmenší): výřezy (jídlo, věci, bílý obrys) a obdélníkové fotky scén/aktivit (`photo: true`, `cutout.find_photo`, CLIP podobnost + jas), popisky jako životní styl („Riding a Vespa“), až na 2 řádky; **závěr** = stěna fotek z postu + výzva + @naturizz na pilulce. 5–6 slidů. Popisky musí odpovídat fotce, špatné fotky do `data/photo_rejects.txt`. Samostatně `python -m igbot collage <plan.json>`. |
 | `reel.py` | Karusel jako Reel: slidy jako karty na tmavém pozadí se posouvají jako karusel (tečky, okraj další karty), 1080×1920, H.264 + tichá AAC stopa, ~17 s, ~3 MB, ffmpeg z `imageio-ffmpeg`. `prepare` ho uloží do `media/<id>.mp4` + `-cover.jpg`, položka dostane `reel: {video, cover}`. |
@@ -79,7 +79,7 @@ Závislosti: `requirements.txt` (jádro, publikační workflow), `requirements-r
 | `klapka.py` | Sync fronty do KLAPKY (Airtable base `appGpk4fkNBGoMyBN`, tabulka SM Obsah) a rozhodnutí schválit/zamítnout zpět. Paměť syncu v YAML položky (`klapka:`), jen změny, rozpočet ~150 volání/měsíc. Tep automatu = technický řádek `__automat__` (`recKqXpfurb4jkWmD`, KLAPKA ho čte pro pruh „Automat běží“, sync ho nikdy nemaže). Volá se po generate/approve/publish, ručně `python -m igbot klapka-sync`. Token `AIRTABLE_TOKEN` v `.env`. |
 | `discover.py`, `insights.py` | Sledování podobných účtů, statistiky do `data/`. |
 
-Testy: `.venv/bin/python -m pytest -q` (71 prochází). GitHub Actions v `.github/workflows/`
+Testy: `.venv/bin/python -m pytest -q` (106 prochází). GitHub Actions v `.github/workflows/`
 (publikace každých 30 min, týdenní plán jako PR, statistiky) zatím nemají secrets.
 Dokumenty: `docs/PLAN.md` (strategie, monetizace, právo), `docs/NASTAVENI.md` (setup API).
 
@@ -112,8 +112,10 @@ které do ní zapisují stav fronty, takže před pushem vždy `git pull --rebas
    nebo chybě, jinak ≤1× za 8 h, rozhodnutí ≤1× za 12 h. Rozbor a strategie:
    `reports/naturizz/2026-11-08.md`.
 
-Pozor na cache: `build/cache/cutouts` je klíčovaná dotazem. Po přidání
-`PEXELS_API_KEY` ji smaž, jinak zůstanou staré výřezy z Openverse.
+Pozor na cache: `build/cache/cutouts` a `build/cache/photos` jsou klíčované dotazem.
+Po změně zdroje fotek je smaž, jinak zůstanou staré výsledky. I tak každý slide
+zkontroluj očima: při kontrole prvních tří postů v novém stylu (10. 11.) se ručně
+měnilo ~50 fotek (Van Gogh, celebrity, značky, kůň místo postele…).
 Stories zatím negenerujeme (nový účet bez sledujících je nevidí).
 
 ## Proč přechod na lokální běh
