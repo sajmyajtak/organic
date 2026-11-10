@@ -337,4 +337,13 @@ def test_a_carousel_going_out_as_a_reel_shows_as_a_reel_with_its_song(queue, mon
     # Published as a carousel after all (Reel refused): it shows as what it is.
     done = dict(item, reel_error="refused", published_at="2026-11-10T11:30-05:00")
     fields = klapka.fields_for(done, "published", "America/New_York", "naturizz")
-    assert fields[F_KIND] == "karusel" and fields[klapka.F_MUSIC] is None
+    assert fields[F_KIND] == "karusel"
+    assert fields[klapka.F_MUSIC] == "Little Life – Robert Gromotka"   # to add in the app
+
+
+def test_published_carousel_carries_its_song_and_link_for_the_app(queue):
+    item = post(1, published_at="2026-11-10T11:30-05:00", permalink="https://www.instagram.com/p/x/",
+                music={"audio_id": "1", "title": "Yellow", "artist": "Coldplay"})
+    fields = klapka.fields_for(item, "published", "America/New_York", "naturizz")
+    assert fields[klapka.F_MUSIC] == "Yellow – Coldplay" and fields[klapka.F_LINK] == "https://www.instagram.com/p/x/"
+    assert klapka.F_MUSIC_DONE not in fields      # Simon's box: never written by the sync

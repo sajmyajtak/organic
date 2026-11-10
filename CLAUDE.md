@@ -17,6 +17,12 @@ s cílem růstu a monetizace. Uživatel chce postupovat společně a schvalovat 
   „karusel na reelsku neznamená video ale fotky zvlášť“. Hudbu ale Instagram API připojí
   jen k Reelu (videu), k obrázku ani karuselu ne (ověřeno živě, „Invalid parameter“),
   takže karusely jdou bez hudby. Přepínač `feed.publish_as` (`carousel` / `reel`).
+  **Hudba se přidává ručně po zveřejnění** (10. 11. 2026, Simon ověřil, že v aplikaci jde
+  ke zveřejněnému karuselu přidat hudbu přes Upravit): automat při publikaci vybere
+  populární písničku z trendů (`publish.after_publish`, `music.pick`), uloží odkaz na post
+  (`permalink`) a obojí pošle do KLAPKY (pole Hudba, Odkaz na post). Simon písničku přidá
+  a zaškrtne „Hudba přidána“ (lidské pole, sync ho nepřepisuje). API nepozná, jestli
+  karusel hudbu má (`media_audio_type` u karuselů nevrací nic).
 - Účet: dedikovaný účet tvůrce **@naturizz** (IG user id `17841466729247229`,
   propojený s FB stránkou `1464286703432419`). **Nikdy nepublikovat na
   @your_chloe_hart** (`17841448715162723`), je to jiný účet uživatele ve stejném tokenu.

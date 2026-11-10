@@ -710,3 +710,26 @@ media_from_slides: true
 media_ids:
 - '18344985850285714'
 published_at: 2026-11-07T13:48-05:00
+permalink: https://www.instagram.com/p/Dfc3L3hmxuG/
+music:
+  audio_id: '263896829897972'
+  title: November
+  artist: Past Day
+  trending: true
+  moods:
+  - cozy
+  - autumn
+  - home
+  alternatives:
+  - audio_id: '1305568027191616'
+    title: Little Life
+    artist: Robert Gromotka
+    trending: true
+  - audio_id: '1302843157949715'
+    title: Autumn Days
+    artist: Morunas
+    trending: true
+  - audio_id: '739006735379398'
+    title: Golden Brown (Slowed Down Version)
+    artist: The Stranglers
+    trending: true

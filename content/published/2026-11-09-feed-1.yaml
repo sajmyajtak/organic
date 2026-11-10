@@ -705,3 +705,25 @@ media_from_slides: true
 media_ids:
 - '18110375426250873'
 published_at: 2026-11-09T22:28-05:00
+permalink: https://www.instagram.com/p/Dfi8TAUlH87/
+music:
+  audio_id: '856093300426979'
+  title: Winter Magic
+  artist: Winterbell
+  trending: true
+  moods:
+  - calm
+  - home
+  alternatives:
+  - audio_id: '504545510323499'
+    title: What A Wonderful World
+    artist: Louis Armstrong
+    trending: true
+  - audio_id: '1549201939908190'
+    title: Orange Trees
+    artist: Jesse Robitaille
+    trending: false
+  - audio_id: '1305568027191616'
+    title: Little Life
+    artist: Robert Gromotka
+    trending: true

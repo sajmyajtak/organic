@@ -656,3 +656,25 @@ media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-5.jpg?v=478aad45
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-13-feed-1-6.jpg?v=ef2fa7f1
 media_from_slides: true
+music:
+  audio_id: '431803750912946'
+  title: Yellow
+  artist: Coldplay
+  trending: false
+  moods:
+  - calm
+  - home
+  - morning
+  alternatives:
+  - audio_id: '1549201939908190'
+    title: Orange Trees
+    artist: Jesse Robitaille
+    trending: false
+  - audio_id: '1305568027191616'
+    title: Little Life
+    artist: Robert Gromotka
+    trending: true
+  - audio_id: '856093300426979'
+    title: Winter Magic
+    artist: Winterbell
+    trending: true

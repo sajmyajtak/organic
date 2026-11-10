@@ -269,17 +269,19 @@ def prepare_media(cfg: dict, args) -> None:
                     item["reel"] = {"video": url(video), "cover": url(cover)}
                     print(f"{item['id']}: Reel {reel.duration(len(slides)):.0f} s, {video.stat().st_size / 1e6:.1f} MB")
                     changed = True
-                if not item.get("music") or args.music:
-                    try:
-                        if ig is None:
-                            from .instagram import Instagram
-                            ig = Instagram.from_env()
-                        item["music"] = music.pick(ig, item)
-                        print(f"{item['id']}: hudba {music.label(item['music'])}"
-                              f"{' (v trendech)' if item['music'] and item['music']['trending'] else ''}")
-                        changed = True
-                    except Exception as exc:  # publishing picks one later if this fails
-                        print(f"{item['id']}: hudba nevybrána ({exc})")
+            if item["kind"] == "carousel" and item.get("media_from_slides") and (not item.get("music") or getattr(args, "music", False)):
+                # The song to add in the app after publishing (the API can't put music on a
+                # carousel); picked again from that day's trends when the post goes out.
+                try:
+                    if ig is None:
+                        from .instagram import Instagram
+                        ig = Instagram.from_env()
+                    item["music"] = music.pick(ig, item)
+                    print(f"{item['id']}: hudba {music.label(item['music'])}"
+                          f"{' (v trendech)' if item['music'] and item['music']['trending'] else ''}")
+                    changed = True
+                except Exception as exc:  # publishing picks one later if this fails
+                    print(f"{item['id']}: hudba nevybrána ({exc})")
             if not changed:
                 continue
             problems = content.validate(item)

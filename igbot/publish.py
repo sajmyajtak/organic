@@ -103,6 +103,27 @@ def publish_as_reel(ig: Instagram, item: dict, caption: str, ai_media: bool, pai
     raise InstagramError(f"Reel se nepodařilo vytvořit: {error}")
 
 
+def after_publish(ig: Instagram, item: dict, media_id: str) -> None:
+    """What a person still does in the app: Instagram's API can't put music on a carousel
+    (only on Reels), but the app can add it to the published post (Edit -> music). So the
+    post gets a popular song picked for it now, from today's trends, and its link, and
+    KLAPKA shows both until the box "Hudba přidána" is ticked."""
+    from . import music
+
+    try:
+        item["permalink"] = ig.get(media_id, fields="permalink").get("permalink")
+    except Exception as exc:  # the post is out; the link is a convenience
+        print(f"{item['id']}: odkaz na post nezjištěn ({exc})")
+    if item.get("published_as") == "reel":
+        return
+    try:
+        tune = music.pick(ig, item)
+        if tune:
+            item["music"] = tune
+    except Exception as exc:  # keep the song picked when the post was prepared
+        print(f"{item['id']}: písnička nevybrána ({exc})")
+
+
 def quota_left(ig: Instagram) -> int | None:
     """Remaining API publications in the rolling 24 h window (Meta docs say 50 or 100)."""
     try:
@@ -160,6 +181,8 @@ def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -
             left -= len(ids)
         item["media_ids"] = ids
         item["published_at"] = now.isoformat(timespec="minutes")
+        if item["kind"] in ("carousel", "image") and ids:
+            after_publish(ig, item, ids[0])
         content.save(item, "published")
         published += 1
         print(f"OK {item['id']} → {ids}")

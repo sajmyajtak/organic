@@ -28,9 +28,12 @@ CURATED = DATA_DIR / "music.yaml"
 TRENDING_PAGES = 2
 RECENT = 4            # don't repeat a song within this many posts
 # A trending track not in music.yaml is used only if its title sounds like the niche.
-NICHE = re.compile(r"\b(autumn|fall|november|winter|snow|cozy|cosy|piano|acoustic|lullaby|morning|sunday|"
-                   r"home|garden|rain|coffee|candle|fireplace|cabin|forest|meadow|folk|little life|"
-                   r"wonderful world|golden|harvest|slow)\b", re.I)
+# Only words that say what the music is like; a title like "Golden Brown" (a song about
+# heroin) must not slip in because it contains a nice word.
+NICHE = re.compile(r"\b(autumn|november|winter|snow|cozy|cosy|piano|acoustic|lullaby|morning|"
+                   r"rain|coffee|candle|fireplace|cabin|forest|meadow|folk)\b", re.I)
+# Trending songs never suggested, whatever their title says.
+BLOCKED = re.compile(r"golden brown|heroin|cocaine|weed|drunk|sex|kill", re.I)
 SEASONAL = re.compile(r"christmas|xmas|santa|jingle|sleigh", re.I)
 LIBRARY_QUERIES = {"cozy": "cozy folk", "calm": "soft piano", "home": "slow living", "morning": "morning coffee",
                    "autumn": "autumn", "winter": "winter piano", "cabin": "acoustic guitar calm",
@@ -99,7 +102,8 @@ def pick(ig, item: dict, today: date | None = None, taken: list[str] | None = No
     hot = {str(t["audio_id"]): t for t in trending(ig)}
     tracks = {t["id"]: t for t in curated()}
     for aid, t in hot.items():   # new trending songs that sound like the niche
-        if aid not in tracks and NICHE.search(t.get("title") or ""):
+        title = t.get("title") or ""
+        if aid not in tracks and NICHE.search(title) and not BLOCKED.search(title):
             tracks[aid] = {"id": aid, "title": t.get("title"), "artist": t.get("display_artist"),
                            "popular": True, "moods": ["cozy", "calm"]}
 

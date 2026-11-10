@@ -216,7 +216,9 @@ def _kind(item: dict) -> dict:
     from .music import label
 
     reel = item.get("published_as") == "reel" or ("published_at" not in item and (item.get("reel") or {}).get("video"))
-    return {"kind": "reel" if reel else item.get("kind"), "music": label(item.get("music")) if reel else None}
+    # A carousel's song is added in the app after it goes out; a Reel gets it from Instagram.
+    return {"kind": "reel" if reel else item.get("kind"), "music": label(item.get("music")),
+            "permalink": item.get("permalink")}
 
 
 def _title(item: dict) -> str:

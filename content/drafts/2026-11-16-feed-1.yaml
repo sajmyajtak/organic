@@ -1767,3 +1767,24 @@ media_from_slides: true
 klapka:
   record: recYZwWrXmCoiMmK8
   sent: 2fd3942376967239
+music:
+  audio_id: '1302843157949715'
+  title: Autumn Days
+  artist: Morunas
+  trending: true
+  moods:
+  - cozy
+  - calm
+  alternatives:
+  - audio_id: '856093300426979'
+    title: Winter Magic
+    artist: Winterbell
+    trending: true
+  - audio_id: '263896829897972'
+    title: November
+    artist: Past Day
+    trending: true
+  - audio_id: '431803750912946'
+    title: Yellow
+    artist: Coldplay
+    trending: false

@@ -30,7 +30,11 @@ Pravidla:
    nanejvýš jednou za 8 h; rozhodnutí čte nanejvýš jednou za 12 h a jen když
    existují koncepty; z publikovaných drží v tabulce posledních 30.
    Cíl: do ~150 volání měsíčně.
-7. **Žádné datum u postů.** Schválené posty jsou zásoba a kdy který půjde,
+7. **Hudba ke karuselu se přidává v aplikaci.** API ji ke karuselu nedá (jen k Reelu),
+   ale v aplikaci jde přidat ke zveřejněnému postu (Upravit → hudba). Pole Hudba nese
+   navrženou populární písničku (vybranou při zveřejnění z trendů), Odkaz na post
+   permalink; „Hudba přidána“ zaškrtává Simon a sync ho nikdy nepřepisuje.
+7b. **Žádné datum u postů.** Schválené posty jsou zásoba a kdy který půjde,
    rozhoduje plánovač (scheduler.py). Náhled nese všechny slidy.
 8. **Denní plán** (časy dnes a zítra + post, který na ně připadá, a proč) jede
    jako JSON v poli „Denní plán“ technického řádku. Nezávisí na aktuální minutě,
@@ -76,6 +80,8 @@ F_DECISION = "fldwwq94Hgty34Frw"  # lidské pole, jen čteme a po provedení ma�
 F_DAY_PLAN = "fldxEWfA8KfeInd3U"  # JSON denního plánu, jen v technickém řádku
 F_MUSIC = "fldFCLGScbAI7N79w"     # „Název – Interpret“ písničky k Reelu
 F_VIDEO = "fldPWd31Jj5BEd4yJ"     # veřejná adresa videa Reelu (bez hudby)
+F_LINK = "fld2WEtkCMhl7KSjw"      # odkaz na zveřejněný post
+F_MUSIC_DONE = "fldSvMzj69ywdFaId"  # lidské pole: Simon zaškrtne, až hudbu v aplikaci přidá
 
 STATE_NAMES = {"drafts": "koncept", "approved": "schváleno", "published": "publikováno", "failed": "chyba"}
 KIND_NAMES = {"carousel": "karusel", "image": "obrázek", "story": "story", "reel": "reel"}
@@ -222,7 +228,10 @@ def fields_for(item: dict, state: str, tz: str, account: str) -> dict:
         F_PUBLISHED: _iso(item.get("published_at")),
         F_MEDIA_IDS: ",".join(str(m) for m in item.get("media_ids") or []) or None,
         F_ERROR: error,
-        F_MUSIC: music.label(item.get("music")) if as_reel else None,
+        # The song: a Reel gets it from Instagram; a carousel needs it added in the app
+        # (Edit -> music), the API can't. Either way KLAPKA shows which one.
+        F_MUSIC: music.label(item.get("music")) if item.get("kind") in ("carousel", "image", "reel") else None,
+        F_LINK: item.get("permalink"),
         F_VIDEO: video if as_reel and video and _is_public(video) else None,
     }
     previews = _preview_urls(item)

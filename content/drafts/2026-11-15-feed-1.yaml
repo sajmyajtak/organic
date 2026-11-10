@@ -1692,3 +1692,24 @@ media:
 klapka:
   record: recEX9POQ0IvTYdvu
   sent: 1102bed20d73e960
+music:
+  audio_id: '1115857888092269'
+  title: November
+  artist: Onoychenko
+  trending: true
+  moods:
+  - calm
+  - cozy
+  alternatives:
+  - audio_id: '1302843157949715'
+    title: Autumn Days
+    artist: Morunas
+    trending: true
+  - audio_id: '856093300426979'
+    title: Winter Magic
+    artist: Winterbell
+    trending: true
+  - audio_id: '263896829897972'
+    title: November
+    artist: Past Day
+    trending: true

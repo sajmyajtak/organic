@@ -145,3 +145,22 @@ def test_without_reel_mode_the_carousel_stays_a_carousel(queue):
     ig, item = ReelIG(), reel_item()
     assert publish.publish_item(ig, item, None, dry_run=False) == ["c1"]
     assert ig.calls == [("carousel", ["https://x/1.jpg", "https://x/2.jpg"])]
+
+
+def test_after_publish_saves_the_link_and_todays_song(queue, monkeypatch):
+    class IG:
+        def get(self, media_id, **params):
+            return {"permalink": f"https://www.instagram.com/p/{media_id}/"}
+    monkeypatch.setattr(music, "pick", lambda ig, item: {"audio_id": "1", "title": "Little Life", "artist": "R"})
+    item = reel_item()
+    item.pop("reel")
+    publish.after_publish(IG(), item, "abc")
+    assert item["permalink"] == "https://www.instagram.com/p/abc/" and item["music"]["title"] == "Little Life"
+
+    class Broken:
+        def get(self, *a, **k):
+            raise InstagramError("down")
+    monkeypatch.setattr(music, "pick", lambda ig, item: (_ for _ in ()).throw(InstagramError("down")))
+    item = reel_item()
+    publish.after_publish(Broken(), item, "abc")   # never breaks the publish run
+    assert "permalink" not in item and item["music"]["audio_id"] == "1"

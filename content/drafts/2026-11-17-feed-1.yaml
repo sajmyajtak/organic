@@ -563,3 +563,23 @@ media_from_slides: true
 klapka:
   record: recfcIxMI4YkKBbKk
   sent: fdee32877f0ee85e
+music:
+  audio_id: '263896829897972'
+  title: November
+  artist: Past Day
+  trending: true
+  moods:
+  - nostalgic
+  alternatives:
+  - audio_id: '856093300426979'
+    title: Winter Magic
+    artist: Winterbell
+    trending: true
+  - audio_id: '431803750912946'
+    title: Yellow
+    artist: Coldplay
+    trending: false
+  - audio_id: '1549201939908190'
+    title: Orange Trees
+    artist: Jesse Robitaille
+    trending: false
