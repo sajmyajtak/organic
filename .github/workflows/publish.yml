@@ -43,6 +43,7 @@ jobs:
         id: publish
         env:
           IGBOT_GIT_COMMIT: "1"   # každý post hned commitnout a pushnout
+          PYTHONUNBUFFERED: "1"   # log průběžně (běh čeká hodiny)
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_API_HOST: ${{ vars.IG_API_HOST }}
