@@ -302,7 +302,9 @@ def test_then_and_now_pair_is_four_photos_edge_to_edge(tmp_path):
     out = collage.render_slide("Evenings then", items, tmp_path / "pair.jpg", body="Evenings now", layout="pair")
     img = Image.open(out).convert("RGB")
     W, H = collage.SIZE
-    assert img.getpixel((10, 10))[0] > 150 and img.getpixel((W - 10, H - 10))[1] > 150   # corners: photos 1 and 4
+    r, g, b = img.getpixel((10, 10))
+    assert r > g > b and r - b < 120                         # "then" row: a warm, faded print
+    assert img.getpixel((W - 10, H - 10))[1] > 150           # "now" row keeps its colours
     assert img.getpixel((W // 2, H // 4)) == (255, 255, 255) or max(img.getpixel((W // 2, H // 4))) > 200
 
     from igbot import content

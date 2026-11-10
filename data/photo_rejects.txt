@@ -96,3 +96,37 @@ commons:182632672  # „Long lunches outside“: prázdná terasa hotelu s kule�
 commons:50085617  # „Slow tea“: stará kolorovaná pohlednice
 commons:128872260  # „Real butter“: máslové mochi, vypadá jako buchty
 commons:159161691  # „River picnics“: piknikový stůl v poušti
+# 10. 11. 2026, kontrola „The art of seasonal living“
+commons:63564661  # „Dried orange slices“: bonbony v balení se značkou
+commons:50741738  # „Walks in the rain“: holínka na neoprenu
+commons:59017041  # „First picnic“: farma, žádný piknik
+openverse:90284d60-5acb-45b3-86c3-4594890d9ed0  # „Herbs on the sill“: sukulenty
+commons:104102115  # „Watermelon“: žlutý meloun, vypadá jako cukrový
+commons:152595118  # „Peaches“: celý strom
+commons:24271763  # „Straw hats“: kovbojský klobouk
+commons:147308207  # „Berry picking“: muzejní košík s jalovcem
+commons:190516633  # „Homemade lemonade“: značkový čaj v kanystru
+commons:140172862  # „Heirloom tomatoes“: výřez vypadá jako citrusy
+commons:31423053  # „Barefoot on the grass“: tenisky Converse
+commons:157925058  # „Wool sweaters“: muzejní svetr pro panenku
+commons:17836817  # „Soups on the stove“: prázdný hrnec
+commons:98197107  # „Wool blankets“: muzejní deka
+commons:153912766  # „Cinnamon sticks“: muzejní předmět
+openverse:6d479ecc-8f1a-4ae4-9cb6-a31a69a3ff15  # „Sleeping in“: hotelová postel jako výřez
+commons:63564668  # „Dried orange slices“: želé bonbony
+commons:172111433  # „Cinnamon sticks“: skořicový šnek
+commons:61116228  # „Bringing in pine“: výřez je šedá změť
+commons:62240471  # „Sleeping in“: kůň ve sněhu
+# 10. 11. 2026, kontrola „How we used to live“
+commons:61691232  # „Working late“: DJ na večírku
+commons:29608068  # „Reading by the fire“: knihovna s hodinami
+commons:62048475  # „Scrolling in bed“: ruka na posteli, telefon nevidět
+openverse:2a3bcc4b-d007-4e87-ab40-cbc8ba5282cb  # „Baking bread at home“: rozmazané
+commons:40055446  # „Ready meals“: značkové jídlo Amy's
+commons:148256740  # „Climbing trees“: had na stromě
+commons:92898945  # „Video games“: iPad, značka
+commons:63201793  # „Tablets“: logo Apple
+commons:61666554  # „Phones at the cafe“: prázdná kavárna
+commons:176504700  # „Baking bread at home“: prázdná kovová mísa
+commons:70770216  # „Screens“: vesnice se skluzavkou
+commons:3837535  # „Screens“: Terri and Bindi Irwin 2 (bez obrazovky)

@@ -1,0 +1,562 @@
+id: 2026-11-17-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ then vs now carousel (structure and technique)'
+ai_generated: true
+date: '2026-11-17'
+format: then_vs_now
+kind: carousel
+pillar: Then vs now
+caption: 'Some things were worth keeping 🕰️
+
+  Which one do you miss most?'
+hashtags:
+- slowliving
+- nostalgia
+alt_text: 'Then and now: picnics, board games, home baking and children playing outside next to phones,
+  TV, fast food and tablets.'
+music_moods:
+- nostalgic
+slides:
+- layout: pair
+  title: How we used to live
+  body: How we live now
+  items:
+  - label: Family picnic
+    queries:
+    - family picnic vintage
+    - family picnic
+    photo: true
+  - label: Dinner around the table
+    queries:
+    - family dinner table
+    - family eating together
+    photo: true
+  - label: People on their phones
+    queries:
+    - people looking at phones
+    - people using smartphones
+    photo: true
+  - label: Stuck in traffic
+    queries:
+    - traffic jam
+    - cars in traffic
+    photo: true
+  kicker: What changed?
+- layout: pair
+  title: Evenings then
+  body: Evenings now
+  items:
+  - label: Board games at the table
+    queries:
+    - family playing board game
+    - board game table
+    photo: true
+  - label: Reading by the fire
+    queries:
+    - reading a book by fireplace
+    - woman reading book
+    photo: true
+  - label: TV on the couch
+    queries:
+    - watching tv living room
+    - tv remote control
+    photo: true
+  - label: Scrolling
+    queries:
+    - person holding smartphone
+    - using smartphone
+    photo: true
+- layout: pair
+  title: Food then
+  body: Food now
+  items:
+  - label: Baking bread at home
+    queries:
+    - homemade bread loaf
+    - fresh bread
+    - baking bread
+    photo: true
+  - label: Vegetables from the garden
+    queries:
+    - vegetable garden harvest
+    - garden vegetables basket
+    photo: true
+  - label: Fast food
+    queries:
+    - burger and fries
+    - fast food
+    photo: true
+  - label: Ready meals
+    queries:
+    - instant noodles cup
+    - frozen pizza
+    photo: true
+- layout: pair
+  title: Childhood then
+  body: Childhood now
+  items:
+  - label: Playing outside
+    queries:
+    - children playing outside
+    - kids playing outdoors
+    photo: true
+  - label: Climbing trees
+    queries:
+    - boy climbing tree
+    - kids in tree
+    photo: true
+  - label: Video games
+    queries:
+    - video game controller
+    - gaming controller
+    photo: true
+  - label: Screens
+    queries:
+    - sofa tablet
+    - babies sofa tablet
+    - smartphone in hand
+    photo: true
+- layout: pair
+  title: Weekends then
+  body: Weekends now
+  items:
+  - label: Fishing at the lake
+    queries:
+    - fishing lake
+    - man fishing lake
+    photo: true
+  - label: Picnics in the park
+    queries:
+    - picnic in the park
+    - picnic blanket park
+    photo: true
+  - label: Shopping malls
+    queries:
+    - shopping mall
+    - mall interior
+    photo: true
+  - label: Phones at the table
+    queries:
+    - friends looking at phones
+    - people using phones
+    photo: true
+- title: Follow for more slow living
+  body: Then or now, which one are you?
+photo_credits:
+- label: Family picnic
+  query: family picnic
+  provider: commons
+  id: '16909204'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Family_picnic_Buena_Vista_Lagoon-557488.jpg/960px-Family_picnic_Buena_Vista_Lagoon-557488.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Family_picnic_Buena_Vista_Lagoon-557488.jpg/960px-Family_picnic_Buena_Vista_Lagoon-557488.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Family_picnic_Buena_Vista_Lagoon-557488.jpg
+  creator: Charles O'Rear
+  title: Family picnic Buena Vista Lagoon-557488
+  keywords: 'Family picnic Buena Vista Lagoon-557488 Retouched pictures Images from the National Archives
+    and Records Administration Media contributed by the National Archives and Records Administration PD
+    US EPA Parks in San Diego County, California Buena Vista Lagoon People of San Diego County, California
+    Artworks without Wikidata item June 1975 in California Picnic tables in California Picnics in California
+    US National Archives series: DOCUMERICA: The Environmental Protection Agency''s Program to Photographically
+    Document Subjects of Environmental Concern, compiled 1972 - 1977 Charles O''Rear photos of California
+    Digital Public Library of America files missing creator Digital Public Library of America files missing
+    DPLA-mandated SDC statements '
+  width: 1800
+  score: 0.669
+  size:
+  - 800
+  - 546
+  match: 0.255
+  modern: 0.266
+- label: Dinner around the table
+  query: family dinner table
+  provider: commons
+  id: '24036618'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Family_eating_meal.jpg/960px-Family_eating_meal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Family_eating_meal.jpg/960px-Family_eating_meal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Family_eating_meal.jpg
+  creator: National Cancer Institute
+  title: Family eating meal
+  keywords: Family eating meal National Institutes of Health images Dining tables Images uploaded by Fæ
+    PD US NIH CC-PD-Mark Media from National Cancer Institute Visuals Online Mexican American history
+    of 1995 People eating together Media from National Cancer Institute Visuals Online with known IDs
+    People eating dinner Families eating in the United States Title Family Eating Meal Description A Hispanic
+    family (male adult, two female adults, female child, and male child) enjoy a meal at the dinner table.
+    Topics/Categories Food and Drink People -- Adult People -- Child People -- Family/Friends Type Color,
+    Photo Source National Cancer Institute
+  width: 1800
+  score: 0.986
+  size:
+  - 800
+  - 533
+  match: 0.297
+  modern: 0.483
+- label: People on their phones
+  query: people looking at phones
+  provider: commons
+  id: '61874433'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Person_looks_down_at_phone_%28Unsplash%29.jpg/960px-Person_looks_down_at_phone_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Person_looks_down_at_phone_%28Unsplash%29.jpg/960px-Person_looks_down_at_phone_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Person_looks_down_at_phone_(Unsplash).jpg
+  creator: James Sutton jamessutton_photography
+  title: Person looks down at phone (Unsplash)
+  keywords: Person looks down at phone (Unsplash) CC-Zero Images uploaded by Fæ People holding smartphones
+    Images from Unsplash Images from Unsplash (review needed) People sitting on benches James Sutton 2017-01-11
+  width: 1800
+  score: 0.75
+  size:
+  - 800
+  - 533
+  match: 0.266
+  modern: 0.672
+- label: Stuck in traffic
+  query: traffic jam
+  provider: commons
+  id: '61879176'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Traffic_jam_in_Bangkok_%28Unsplash%29.jpg/960px-Traffic_jam_in_Bangkok_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Traffic_jam_in_Bangkok_%28Unsplash%29.jpg/960px-Traffic_jam_in_Bangkok_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Traffic_jam_in_Bangkok_(Unsplash).jpg
+  creator: Peter Hershey peterhershey
+  title: Traffic jam in Bangkok (Unsplash)
+  keywords: Traffic jam in Bangkok (Unsplash) Streets in Bangkok CC-Zero Images uploaded by Fæ Images
+    from Unsplash Images from Unsplash (review needed) Traffic congestion in Thailand Files with coordinates
+    missing SDC location of creation Traffic in Bangkok Bangkok, Thailand
+  width: 1800
+  score: 0.915
+  size:
+  - 800
+  - 533
+  match: 0.29
+- label: Board games at the table
+  query: family playing board game
+  provider: commons
+  id: '24029752'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Family_playing_a_board.jpg/960px-Family_playing_a_board.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Family_playing_a_board.jpg/960px-Family_playing_a_board.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Family_playing_a_board.jpg
+  creator: Bill Branson (Photographer)
+  title: Family playing a board
+  keywords: Family playing a board National Institutes of Health images PD-author Families of the United
+    States Images uploaded by Fæ PD US NIH CC-PD-Mark 21st-century family portraits Media from National
+    Cancer Institute Visuals Online 4 people in the United States Men with watches Media from National
+    Cancer Institute Visuals Online with known IDs People playing Monopoly Title Family Playing a Board
+    Description A Caucasian family (adult male and female and two children, male and female) are sitting
+    around a coffee table playing a board game. Topics/Categories People -- Adult People -- Child People
+    -- Family/Friends People -- Recreation Type Color, Photo Source Natio
+  width: 1800
+  score: 1.135
+  size:
+  - 800
+  - 532
+  match: 0.323
+  modern: 0.351
+- label: Reading by the fire
+  query: reading a book by fireplace
+  provider: openverse
+  id: 599f7da3-0661-42f5-938d-a354d7ff1321
+  preview_url: https://api.openverse.org/v1/images/599f7da3-0661-42f5-938d-a354d7ff1321/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/BD0AC07780.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/book-pages-BD0AC07780
+  creator: Pavan Trikutam
+  title: Book Pages
+  keywords: Book Pages book fireplace flame pages reading
+  width: 1024
+  score: 1.066
+  size:
+  - 960
+  - 640
+  match: 0.317
+  modern: 0.359
+- label: TV on the couch
+  query: tv remote control
+  provider: commons
+  id: '147748444'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/TW_%E5%8F%B0%E6%B9%BE_Taipei_%E5%8F%B0%E5%8C%97_Hotel_Metropolitan_Premier_Taipei_%E9%85%92%E5%BA%97%E6%88%BF%E9%96%93_hotel_room_TV_set_remote_control_March_2024_R12S_02.jpg/960px-TW_%E5%8F%B0%E6%B9%BE_Taipei_%E5%8F%B0%E5%8C%97_Hotel_Metropolitan_Premier_Taipei_%E9%85%92%E5%BA%97%E6%88%BF%E9%96%93_hotel_room_TV_set_remote_control_March_2024_R12S_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/TW_%E5%8F%B0%E6%B9%BE_Taipei_%E5%8F%B0%E5%8C%97_Hotel_Metropolitan_Premier_Taipei_%E9%85%92%E5%BA%97%E6%88%BF%E9%96%93_hotel_room_TV_set_remote_control_March_2024_R12S_02.jpg/960px-TW_%E5%8F%B0%E6%B9%BE_Taipei_%E5%8F%B0%E5%8C%97_Hotel_Metropolitan_Premier_Taipei_%E9%85%92%E5%BA%97%E6%88%BF%E9%96%93_hotel_room_TV_set_remote_control_March_2024_R12S_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E6%B9%BE_Taipei_%E5%8F%B0%E5%8C%97_Hotel_Metropolitan_Premier_Taipei_%E9%85%92%E5%BA%97%E6%88%BF%E9%96%93_hotel_room_TV_set_remote_control_March_2024_R12S_02.jpg
+  creator: Ounfs Robmmy 238
+  title: TW 台湾 Taipei 台北 Hotel Metropolitan Premier Taipei 酒店房間 hotel room TV set remote control March
+    2024 R12S 02
+  keywords: TW 台湾 Taipei 台北 Hotel Metropolitan Premier Taipei 酒店房間 hotel room TV set remote control March
+    2024 R12S 02 CC-Zero Self-published work Files with coordinates missing SDC location of creation March
+    2024 in Taipei Taiwan photographs taken on 2024-03-15 2024 in Hotel Metropolitan Premier Taipei Hotel
+    Metropolitan Premier Taipei - Hotel rooms TW 台湾 Taipei 台北 Hotel Metropolitan Premier Taipei 酒店房間 hotel
+    room in March 2024
+  width: 1800
+  score: 1.127
+  size:
+  - 800
+  - 600
+  match: 0.321
+  modern: 0.619
+- label: Scrolling
+  query: person holding smartphone
+  provider: commons
+  id: '61875571'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Sweden_%28Unsplash_ZVsPI1s2w0U%29.jpg/960px-Sweden_%28Unsplash_ZVsPI1s2w0U%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Sweden_%28Unsplash_ZVsPI1s2w0U%29.jpg/960px-Sweden_%28Unsplash_ZVsPI1s2w0U%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sweden_(Unsplash_ZVsPI1s2w0U).jpg
+  creator: Christian Widell christianwidell
+  title: Sweden (Unsplash ZVsPI1s2w0U)
+  keywords: Sweden (Unsplash ZVsPI1s2w0U) Norrtälje Municipality CC-Zero Smartphones Sunrises Images uploaded
+    by Fæ Images from Unsplash Images from Unsplash (review needed) Human hands holding objects Files
+    with coordinates missing SDC location of creation Sweden
+  width: 1800
+  score: 0.927
+  size:
+  - 800
+  - 532
+  match: 0.289
+- label: Baking bread at home
+  query: homemade bread loaf
+  provider: openverse
+  id: 24a13266-29ef-459d-9eff-746a8e668ddc
+  preview_url: https://api.openverse.org/v1/images/24a13266-29ef-459d-9eff-746a8e668ddc/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/WOBV6IVUD0.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/homemade-bread-WOBV6IVUD0
+  creator: Matt Bango
+  title: Homemade Bread
+  keywords: Homemade Bread artisan baker baking board bread bun crust cuisine flour food fresh homemade
+    kitchen loaf round rustic sourdough wood
+  width: 1024
+  score: 0.958
+  size:
+  - 960
+  - 1440
+  match: 0.294
+  modern: 0.238
+- label: Vegetables from the garden
+  query: vegetable garden harvest
+  provider: commons
+  id: '61771912'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Vegetable_Garden_Harvest_%28Unsplash%29.jpg/960px-Vegetable_Garden_Harvest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Vegetable_Garden_Harvest_%28Unsplash%29.jpg/960px-Vegetable_Garden_Harvest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Vegetable_Garden_Harvest_(Unsplash).jpg
+  creator: Gemma Evans stayandroam
+  title: Vegetable Garden Harvest (Unsplash)
+  keywords: Vegetable Garden Harvest (Unsplash) CC-Zero Images uploaded by Fæ Cucurbita moschata bell
+    group Images from Unsplash Images from Unsplash (review needed) Gemma Evans 2016-10-14
+  width: 1800
+  score: 0.768
+  size:
+  - 800
+  - 600
+  match: 0.268
+  modern: 0.307
+- label: Fast food
+  query: burger and fries
+  provider: commons
+  id: '61663423'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Burger%2C_Fries%2C_and_Juice_%28Unsplash%29.jpg/960px-Burger%2C_Fries%2C_and_Juice_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Burger%2C_Fries%2C_and_Juice_%28Unsplash%29.jpg/960px-Burger%2C_Fries%2C_and_Juice_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Burger,_Fries,_and_Juice_(Unsplash).jpg
+  creator: Javier Molina javier1997mo
+  title: Burger, Fries, and Juice (Unsplash)
+  keywords: Burger, Fries, and Juice (Unsplash) CC-Zero Beet juice Hamburgers with tomatoes Hamburgers
+    on sesame seed buns Images uploaded by Fæ February 2017 Hamburgers with lettuce Hamburgers with jalapeños
+    Images from Unsplash French fry holders Hamburgers in unidentified countries Cheeseburgers and fries
+    Hamburgers with mayonnaise Javier Molina 2017
+  width: 1800
+  score: 0.88
+  size:
+  - 800
+  - 533
+  match: 0.283
+  modern: 0.479
+- label: Ready meals
+  query: instant noodles cup
+  provider: commons
+  id: '76515018'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Sapporo-ichiban_Shio_ramen_%28instant_cup_noodle%29.jpg/960px-Sapporo-ichiban_Shio_ramen_%28instant_cup_noodle%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Sapporo-ichiban_Shio_ramen_%28instant_cup_noodle%29.jpg/960px-Sapporo-ichiban_Shio_ramen_%28instant_cup_noodle%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sapporo-ichiban_Shio_ramen_(instant_cup_noodle).jpg
+  creator: 毒島みるく
+  title: Sapporo-ichiban Shio ramen (instant cup noodle)
+  keywords: Sapporo-ichiban Shio ramen (instant cup noodle) CC-Zero Self-published work Sapporo ichiban
+    shio ramen (cupped) サンヨー食品 サッポロ一番 塩らーめん（即席カップ麺）
+  width: 1800
+  score: 1.029
+  size:
+  - 800
+  - 800
+  match: 0.304
+  modern: 0.653
+- label: Playing outside
+  query: children playing outside
+  provider: commons
+  id: '61777895'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Children_backyard_swimming_%28Unsplash_XtOKVEyHP2s%29.jpg/960px-Children_backyard_swimming_%28Unsplash_XtOKVEyHP2s%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Children_backyard_swimming_%28Unsplash_XtOKVEyHP2s%29.jpg/960px-Children_backyard_swimming_%28Unsplash_XtOKVEyHP2s%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Children_backyard_swimming_(Unsplash_XtOKVEyHP2s).jpg
+  creator: Brandon Morgan littleppl85
+  title: Children backyard swimming (Unsplash XtOKVEyHP2s)
+  keywords: Children backyard swimming (Unsplash XtOKVEyHP2s) CC-Zero Personality rights warning Images
+    uploaded by Fæ Boys playing Children playing outside Images from Unsplash Images from Unsplash (review
+    needed) Boys jumping Brandon Morgan 2015-05-11
+  width: 1800
+  score: 0.896
+  size:
+  - 800
+  - 532
+  match: 0.284
+  modern: 0.704
+- label: Climbing trees
+  query: boy climbing tree
+  provider: commons
+  id: '39439165'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Beyond_The_Horizons_-_Guatemala_140505-A-BZ540-091.jpg/960px-Beyond_The_Horizons_-_Guatemala_140505-A-BZ540-091.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Beyond_The_Horizons_-_Guatemala_140505-A-BZ540-091.jpg/960px-Beyond_The_Horizons_-_Guatemala_140505-A-BZ540-091.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Beyond_The_Horizons_-_Guatemala_140505-A-BZ540-091.jpg
+  creator: Sgt. Austin Berner
+  title: Beyond The Horizons - Guatemala 140505-A-BZ540-091
+  keywords: 'Beyond The Horizons - Guatemala 140505-A-BZ540-091 PD US Army Files created by the United
+    States Army with known IDs Images from DoD uploaded by Fæ Guatemala photographs taken on 2014-05-05
+    Beyond the Horizon 2014 in Guatemala A local Guatemala boy climbs a tree during Beyond the Horizon,
+    Zacapa, Guatemala, May 5, 2014. Beyond the Horizon is an annual exercise that embraces the partnership
+    between the United States and Guatemala, to provide focused humanitarian assistance through various
+    medical, dental, and civic action '
+  width: 1800
+  score: 1.065
+  size:
+  - 533
+  - 800
+  match: 0.315
+  modern: 0.583
+- label: Video games
+  query: video game controller
+  provider: commons
+  id: '58828754'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Pawel_Kadysz_2013_%28Unsplash%29.jpg/960px-Pawel_Kadysz_2013_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Pawel_Kadysz_2013_%28Unsplash%29.jpg/960px-Pawel_Kadysz_2013_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pawel_Kadysz_2013_(Unsplash).jpg
+  creator: Pawel Kadysz pawelkadysz
+  title: Pawel Kadysz 2013 (Unsplash)
+  keywords: Pawel Kadysz 2013 (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Unidentified
+    game controllers Pawel Kadysz 2013
+  width: 1800
+  score: 0.998
+  size:
+  - 800
+  - 533
+  match: 0.302
+- label: Screens
+  query: sofa tablet
+  provider: commons
+  id: '105036312'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Two_babies_and_woman_sitting_on_sofa_while_holding_baby_and_watching_on_tablet.jpg/960px-Two_babies_and_woman_sitting_on_sofa_while_holding_baby_and_watching_on_tablet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Two_babies_and_woman_sitting_on_sofa_while_holding_baby_and_watching_on_tablet.jpg/960px-Two_babies_and_woman_sitting_on_sofa_while_holding_baby_and_watching_on_tablet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Two_babies_and_woman_sitting_on_sofa_while_holding_baby_and_watching_on_tablet.jpg
+  creator: Alexander Dummer
+  title: Two babies and woman sitting on sofa while holding baby and watching on tablet
+  keywords: Two babies and woman sitting on sofa while holding baby and watching on tablet CC-Zero License
+    review needed Images from Unsplash Babies in 2016 Babies sitting Women holding babies Women in 2016
+    Women sitting on couches People using tablet computers two babies and woman sitting on sofa while
+    holding baby and watching on tablet
+  width: 1800
+  score: 0.702
+  size:
+  - 800
+  - 534
+  match: 0.256
+- label: Fishing at the lake
+  query: fishing lake
+  provider: commons
+  id: '62170202'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Fishing_Inle_lake_%28Unsplash%29.jpg/960px-Fishing_Inle_lake_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Fishing_Inle_lake_%28Unsplash%29.jpg/960px-Fishing_Inle_lake_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Fishing_Inle_lake_(Unsplash).jpg
+  creator: Edmundas Stundzius cruxas
+  title: Fishing Inle lake (Unsplash)
+  keywords: Fishing Inle lake (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Files with coordinates missing SDC location of creation Fishing at Inle Lake
+    Inle Lake, Myanmar (Burma)
+  width: 1800
+  score: 0.866
+  size:
+  - 800
+  - 530
+  match: 0.279
+  modern: 0.392
+- label: Picnics in the park
+  query: picnic in the park
+  provider: commons
+  id: '61664199'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Hanging_Out_in_the_Park_%28Unsplash%29.jpg/960px-Hanging_Out_in_the_Park_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Hanging_Out_in_the_Park_%28Unsplash%29.jpg/960px-Hanging_Out_in_the_Park_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Hanging_Out_in_the_Park_(Unsplash).jpg
+  creator: Rob Bye robertbye
+  title: Hanging Out in the Park (Unsplash)
+  keywords: Hanging Out in the Park (Unsplash) CC-Zero Images uploaded by Fæ London Fields, London Images
+    from Unsplash Images from Unsplash (review needed) 2016 in the London Borough of Hackney Files with
+    coordinates missing SDC location of creation (51° N, 1° W) London Fields, London
+  width: 1800
+  score: 1.002
+  size:
+  - 800
+  - 600
+  match: 0.303
+  modern: 0.492
+- label: Shopping malls
+  query: shopping mall
+  provider: commons
+  id: '61828559'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Mall_Shopping_%28Unsplash%29.jpg/960px-Mall_Shopping_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Mall_Shopping_%28Unsplash%29.jpg/960px-Mall_Shopping_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Mall_Shopping_(Unsplash).jpg
+  creator: freestocks.org freestocks
+  title: Mall Shopping (Unsplash)
+  keywords: Mall Shopping (Unsplash) CC-Zero People of Olsztyn Images uploaded by Fæ Images from Unsplash
+    Files with coordinates missing SDC location of creation Olsztyn, Poland
+  width: 1800
+  score: 0.884
+  size:
+  - 800
+  - 533
+  match: 0.284
+  modern: 0.353
+- label: Phones at the table
+  query: people using phones
+  provider: commons
+  id: '61717933'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Businessman_with_coffee_outdoors_%28Unsplash%29.jpg/960px-Businessman_with_coffee_outdoors_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Businessman_with_coffee_outdoors_%28Unsplash%29.jpg/960px-Businessman_with_coffee_outdoors_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Businessman_with_coffee_outdoors_(Unsplash).jpg
+  creator: Rohit Tandon rohittandon
+  title: Businessman with coffee outdoors (Unsplash)
+  keywords: Businessman with coffee outdoors (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash
+    Human hands holding phones Rohit Tandon 2016-06-27
+  width: 1800
+  score: 0.834
+  size:
+  - 800
+  - 530
+  match: 0.278
+media:
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-17-feed-1-1.jpg?v=8b4ba756
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-17-feed-1-2.jpg?v=83b1f0e0
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-17-feed-1-3.jpg?v=af131a03
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-17-feed-1-4.jpg?v=31192bec
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-17-feed-1-5.jpg?v=c635d122
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-17-feed-1-6.jpg?v=8c2acd21
+media_from_slides: true

@@ -1,0 +1,1766 @@
+id: 2026-11-16-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ season carousel (structure and technique)'
+ai_generated: true
+date: '2026-11-16'
+format: moodboard
+kind: carousel
+pillar: The art of ___ living (moodboards)
+caption: 'Every season has its own pace 🍂
+
+  Which one is yours?'
+hashtags:
+- slowliving
+- seasonalliving
+alt_text: 'Slow living through the year: spring, summer, autumn and winter, each with its food, habits
+  and outdoor moments.'
+music_moods:
+- cozy
+- calm
+slides:
+- title: The art of seasonal living
+  items:
+  - label: Spring meadow
+    queries:
+    - spring meadow flowers
+    - wildflower meadow
+    photo: true
+  - label: Summer lake
+    queries:
+    - summer lake
+    - lake summer
+    photo: true
+  - label: Autumn forest
+    queries:
+    - autumn forest
+    - fall forest
+    photo: true
+  - label: Snowy forest
+    queries:
+    - snowy forest
+    - winter forest
+    photo: true
+  - label: Sunflower field
+    queries:
+    - sunflower field
+    - sunflowers
+    photo: true
+  - label: Pumpkin patch
+    queries:
+    - pumpkin patch
+    - pumpkins field
+    photo: true
+  - label: Blossom branches
+    queries:
+    - apple blossom
+    - blossom tree
+    photo: true
+  - label: Snowy cabin
+    queries:
+    - snowy cabin
+    - cabin in snow
+    photo: true
+  - label: Peonies
+    queries:
+    - peonies
+    - peony bouquet
+  - label: Pomegranate
+    queries:
+    - pomegranate
+    - pomegranates
+  - label: Orange slices
+    queries:
+    - sliced orange
+    - orange slice
+  - label: Pine cones
+    queries:
+    - pine cones
+    - pine cone
+  - label: Plums
+    queries:
+    - plums
+    - plum
+  - label: Acorns
+    queries:
+    - acorns
+    - acorn
+- title: Slow spring
+  items:
+  - label: Blossoms
+    queries:
+    - cherry blossom tree
+    - spring blossom
+    hero: true
+    photo: true
+  - label: Tulips
+    queries:
+    - tulips bouquet
+    - tulips
+  - label: Eggs from the market
+    queries:
+    - eggs basket
+    - brown eggs
+  - label: Asparagus
+    queries:
+    - asparagus
+    - asparagus bunch
+  - label: Radishes
+    queries:
+    - radishes bunch
+    - radishes
+  - label: Strawberries
+    queries:
+    - strawberries
+    - fresh strawberries
+  - label: Rhubarb
+    queries:
+    - rhubarb
+    - rhubarb stalks
+  - label: Fresh peas
+    queries:
+    - green peas pods
+    - peas
+  - label: Walks in the rain
+    queries:
+    - rain boots
+    - wellington boots
+  - label: Watering the garden
+    queries:
+    - watering can
+    - metal watering can
+  - label: Birds singing again
+    queries:
+    - robin bird
+    - european robin
+  - label: Windows wide open
+    queries:
+    - open window curtains
+    - open window
+    photo: true
+  - label: Planting seedlings
+    queries:
+    - planting seedlings garden
+    - seedlings
+    photo: true
+  - label: First picnic
+    queries:
+    - picnic blanket basket
+    - picnic
+    photo: true
+  - label: Herbs in pots
+    queries:
+    - herbs in pots
+    - basil pot
+    photo: true
+- title: Slow summer
+  items:
+  - label: Lake days
+    queries:
+    - lake summer swimming
+    - swimming in a lake
+    hero: true
+    photo: true
+  - label: Watermelon
+    queries:
+    - watermelon slices
+    - watermelon
+  - label: Peaches
+    queries:
+    - peaches
+    - peach fruit
+  - label: Straw hats
+    queries:
+    - straw hat
+    - sun hat
+  - label: Corn on the cob
+    queries:
+    - corn on the cob
+    - corn
+  - label: Berry picking
+    queries:
+    - raspberries bowl
+    - strawberries basket
+  - label: Homemade lemonade
+    queries:
+    - lemonade glass
+    - lemonade pitcher
+  - label: Garden tomatoes
+    queries:
+    - tomatoes
+    - cherry tomatoes
+  - label: Afternoon naps
+    queries:
+    - hammock
+    - rope hammock
+  - label: Ice cream
+    queries:
+    - ice cream cone
+    - ice cream
+  - label: Barefoot on the grass
+    queries:
+    - barefoot on grass
+    - bare feet grass
+    photo: true
+  - label: Watching the sunset
+    queries:
+    - sunset beach
+    - sunset sea
+    photo: true
+  - label: Dinners outside
+    queries:
+    - summer dinner garden table
+    - outdoor dinner
+    photo: true
+  - label: Camping by the water
+    queries:
+    - tent camping lake
+    - camping tent
+    photo: true
+  - label: Cycling everywhere
+    queries:
+    - bicycle country road
+    - cycling countryside
+    photo: true
+- title: Slow autumn
+  items:
+  - label: Autumn walks
+    queries:
+    - autumn forest path
+    - autumn path
+    hero: true
+    photo: true
+  - label: Foraging mushrooms
+    queries:
+    - basket of mushrooms
+    - mushrooms basket
+  - label: Apple picking
+    queries:
+    - apples basket
+    - basket of apples
+  - label: Pumpkins
+    queries:
+    - pumpkins
+    - pumpkin
+  - label: Roasted chestnuts
+    queries:
+    - roasted chestnuts
+    - chestnuts
+  - label: Wool sweaters
+    queries:
+    - wool sweater
+    - cozy sweater
+  - label: Soup on the stove
+    queries:
+    - soup bowl
+    - bowl of soup
+  - label: Sourdough
+    queries:
+    - sourdough bread
+    - sourdough
+  - label: Collecting leaves
+    queries:
+    - autumn leaves
+    - maple leaves
+  - label: Figs
+    queries:
+    - figs
+    - fresh figs
+  - label: Candles by five
+    queries:
+    - taper candles
+    - candles burning
+  - label: Pears
+    queries:
+    - pears
+    - pear
+  - label: Chopping wood
+    queries:
+    - chopping firewood axe
+    - chopping wood
+    photo: true
+  - label: Reading on rainy days
+    queries:
+    - rain window reading
+    - reading by window
+    photo: true
+  - label: Golden afternoons
+    queries:
+    - golden hour autumn
+    - autumn sunlight
+    photo: true
+- title: Slow winter
+  items:
+  - label: Snow days
+    queries:
+    - snowy village
+    - snowy landscape
+    hero: true
+    photo: true
+  - label: Clementines
+    queries:
+    - clementines
+    - tangerines
+  - label: Hot cocoa
+    queries:
+    - hot chocolate mug
+    - hot cocoa
+  - label: Wool blankets
+    queries:
+    - knitted blanket
+    - chunky knit blanket
+  - label: Gingerbread
+    queries:
+    - gingerbread cookies
+    - gingerbread
+  - label: Cinnamon sticks
+    queries:
+    - cinnamon sticks bundle
+    - cinnamon bark
+  - label: Knitting
+    queries:
+    - knitting needles yarn
+    - knitting
+  - label: Mittens
+    queries:
+    - wool mittens
+    - knitted gloves
+  - label: Slow-cooked stews
+    queries:
+    - beef stew bowl
+    - stew
+  - label: Bringing in pine
+    queries:
+    - pine branch
+    - evergreen branch
+  - label: Sleeping in
+    queries:
+    - cozy bed blanket
+    - unmade bed morning
+    photo: true
+  - label: By the fire
+    queries:
+    - fireplace fire
+    - fireplace
+    photo: true
+  - label: Playing in the snow
+    queries:
+    - playing in snow
+    - snow fun
+    photo: true
+  - label: Ice skating outside
+    queries:
+    - ice skating outdoor
+    - ice skating
+    photo: true
+  - label: Morning sun on snow
+    queries:
+    - winter morning sunlight snow
+    - winter sunrise
+    photo: true
+- title: Follow for more slow living
+  body: Which season is yours?
+  echo:
+  - Peonies
+  - Watermelon
+  - Pumpkins
+  - Hot cocoa
+photo_credits:
+- label: Spring meadow
+  query: spring meadow flowers
+  provider: commons
+  id: '61809227'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Tiny_white_flowers_in_the_meadow_%28Unsplash%29.jpg/960px-Tiny_white_flowers_in_the_meadow_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Tiny_white_flowers_in_the_meadow_%28Unsplash%29.jpg/960px-Tiny_white_flowers_in_the_meadow_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Tiny_white_flowers_in_the_meadow_(Unsplash).jpg
+  creator: Ashley Rowe ashelizabethphotos
+  title: Tiny white flowers in the meadow (Unsplash)
+  keywords: Tiny white flowers in the meadow (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Unidentified Achillea Ashley Rowe 2015-01-14
+  width: 1800
+  score: 0.821
+  size:
+  - 800
+  - 530
+  match: 0.279
+  modern: 0.484
+- label: Summer lake
+  query: summer lake
+  provider: commons
+  id: '61898524'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Mountain_lake_in_the_summer_%28Unsplash%29.jpg/960px-Mountain_lake_in_the_summer_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Mountain_lake_in_the_summer_%28Unsplash%29.jpg/960px-Mountain_lake_in_the_summer_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Mountain_lake_in_the_summer_(Unsplash).jpg
+  creator: Jaser Cervantes jacerv
+  title: Mountain lake in the summer (Unsplash)
+  keywords: Mountain lake in the summer (Unsplash) CC-Zero Embalse de Guadalest Images uploaded by Fæ
+    Images from Unsplash Images from Unsplash (review needed) Files with coordinates missing SDC location
+    of creation Landscapes of Marina Baixa Guadalest, El Castell de Guadalest
+  width: 1800
+  score: 0.802
+  size:
+  - 800
+  - 533
+  match: 0.272
+  modern: 0.247
+- label: Autumn forest
+  query: autumn forest
+  provider: commons
+  id: '61771655'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Beautiful_autumn_forest_%28Unsplash%29.jpg/960px-Beautiful_autumn_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Beautiful_autumn_forest_%28Unsplash%29.jpg/960px-Beautiful_autumn_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Beautiful_autumn_forest_(Unsplash).jpg
+  creator: Layne Lawson laynelawson
+  title: Beautiful autumn forest (Unsplash)
+  keywords: Beautiful autumn forest (Unsplash) Logan Canyon Taken with DJI FC300X CC-Zero Images uploaded
+    by Fæ Autumn in Utah Images from Unsplash Files with coordinates missing SDC location of creation
+    September 2016 in Utah Richmond, United States
+  width: 1800
+  score: 0.995
+  size:
+  - 800
+  - 600
+  match: 0.302
+  modern: 0.774
+- label: Snowy forest
+  query: snowy forest
+  provider: commons
+  id: '61891056'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Path_into_the_snowy_forest_%28Unsplash%29.jpg/960px-Path_into_the_snowy_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Path_into_the_snowy_forest_%28Unsplash%29.jpg/960px-Path_into_the_snowy_forest_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Path_into_the_snowy_forest_(Unsplash).jpg
+  creator: Artem Kulikov kul_art
+  title: Path into the snowy forest (Unsplash)
+  keywords: Path into the snowy forest (Unsplash) Taken with Lenovo Vibe X CC-Zero Images uploaded by
+    Fæ Trees in snow Images from Unsplash Images from Unsplash (review needed) Artem Kulikov 2017
+  width: 1800
+  score: 0.952
+  size:
+  - 800
+  - 450
+  match: 0.298
+  modern: 0.212
+- label: Sunflower field
+  query: sunflower field
+  provider: commons
+  id: '61809097'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Sunflowers_field_%28Unsplash%29.jpg/960px-Sunflowers_field_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Sunflowers_field_%28Unsplash%29.jpg/960px-Sunflowers_field_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sunflowers_field_(Unsplash).jpg
+  creator: Aleksandr Eremin notevilbird
+  title: Sunflowers field (Unsplash)
+  keywords: Sunflowers field (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Flora of Donetsk Files with coordinates missing SDC location of creation
+    Donetsk, Ukraine
+  width: 1800
+  score: 1.15
+  size:
+  - 800
+  - 536
+  match: 0.326
+  modern: 0.559
+- label: Pumpkin patch
+  query: pumpkin patch
+  provider: commons
+  id: '61769899'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Pumpkins_with_patches_%28Unsplash%29.jpg/960px-Pumpkins_with_patches_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Pumpkins_with_patches_%28Unsplash%29.jpg/960px-Pumpkins_with_patches_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pumpkins_with_patches_(Unsplash).jpg
+  creator: sydney zentz srz
+  title: Pumpkins with patches (Unsplash)
+  keywords: Pumpkins with patches (Unsplash) Pumpkins CC-Zero Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) sydney zentz 2016-10-18
+  width: 1800
+  score: 0.9
+  size:
+  - 800
+  - 533
+  match: 0.286
+  modern: 0.598
+- label: Blossom branches
+  query: apple blossom
+  provider: commons
+  id: '32968569'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Apple_Blossom_Ontario.jpg/960px-Apple_Blossom_Ontario.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Apple_Blossom_Ontario.jpg/960px-Apple_Blossom_Ontario.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Apple_Blossom_Ontario.jpg
+  creator: El tommo
+  title: Apple Blossom Ontario
+  keywords: Apple Blossom Ontario Taken with Canon EOS 400D CC-Zero Ontario (apple) Self-published work
+    Blossom of the apple variety Ontario
+  width: 1800
+  score: 1.103
+  size:
+  - 800
+  - 600
+  match: 0.33
+  modern: 0.635
+- label: Snowy cabin
+  query: snowy cabin
+  provider: commons
+  id: '58798324'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Paul_itkin_2015_%28Unsplash%29.jpg/960px-Paul_itkin_2015_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Paul_itkin_2015_%28Unsplash%29.jpg/960px-Paul_itkin_2015_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Paul_itkin_2015_(Unsplash).jpg
+  creator: paul itkin itkin
+  title: Paul itkin 2015 (Unsplash)
+  keywords: Paul itkin 2015 (Unsplash) CC-Zero Night sky Log cabins Forest edges Images uploaded by Fæ
+    Images from Unsplash Images from Unsplash (review needed) Snowy landscapes in unidentified locations
+    paul itkin 2015
+  width: 1800
+  score: 0.98
+  size:
+  - 800
+  - 533
+  match: 0.302
+  modern: 0.164
+- label: Peonies
+  query: peonies
+  provider: commons
+  id: '61810795'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Supple_pink_peonies_%28Unsplash%29.jpg/960px-Supple_pink_peonies_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Supple_pink_peonies_%28Unsplash%29.jpg/960px-Supple_pink_peonies_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Supple_pink_peonies_(Unsplash).jpg
+  creator: Kristine Weilert kristineweilert
+  title: Supple pink peonies (Unsplash)
+  keywords: Supple pink peonies (Unsplash) CC-Zero Images uploaded by Fæ Flowers in Oregon Images from
+    Unsplash Flora of Portland, Oregon Images from Unsplash (review needed) Files with coordinates missing
+    SDC location of creation Portland, United States
+  width: 1800
+  score: 0.959
+  size:
+  - 601
+  - 628
+  match: 0.923
+- label: Pomegranate
+  query: pomegranate
+  provider: commons
+  id: '61853770'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Samay_Bhavsar_2016_%28Unsplash%29.jpg/960px-Samay_Bhavsar_2016_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Samay_Bhavsar_2016_%28Unsplash%29.jpg/960px-Samay_Bhavsar_2016_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Samay_Bhavsar_2016_(Unsplash).jpg
+  creator: Samay Bhavsar samaybhavsar
+  title: Samay Bhavsar 2016 (Unsplash)
+  keywords: Samay Bhavsar 2016 (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Sliced pomegranates Samay Bhavsar 2016
+  width: 1800
+  score: 0.938
+  size:
+  - 384
+  - 366
+  match: 0.997
+- label: Orange slices
+  query: sliced orange
+  provider: commons
+  id: '181533883'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/USDA_2026_Orange_slice.png/960px-USDA_2026_Orange_slice.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/USDA_2026_Orange_slice.png/960px-USDA_2026_Orange_slice.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:USDA_2026_Orange_slice.png
+  creator: U.S. Department of Health and Human Services
+  title: USDA 2026 Orange slice
+  keywords: USDA 2026 Orange slice PD US PD US Government CC-PD-Mark Orange (fruit) icons Images from
+    The New Pyramid Slice of orange from The New Pyramid in the Dietary Guidelines For Americans (2025–2030)
+  width: 1800
+  score: 0.944
+  size:
+  - 807
+  - 435
+  match: 0.999
+- label: Pine cones
+  query: pine cones
+  provider: commons
+  id: '61898419'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Pine_cone_in_winter_%28Unsplash%29.jpg/960px-Pine_cone_in_winter_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Pine_cone_in_winter_%28Unsplash%29.jpg/960px-Pine_cone_in_winter_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pine_cone_in_winter_(Unsplash).jpg
+  creator: Jeremiah Brashaw bradshawjg
+  title: Pine cone in winter (Unsplash)
+  keywords: Pine cone in winter (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Files with coordinates missing SDC location of creation Nature of Boone,
+    North Carolina Boone, United States
+  width: 1800
+  score: 0.778
+  size:
+  - 190
+  - 237
+  match: 0.961
+- label: Plums
+  query: plum
+  provider: commons
+  id: '382912'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Bluebyrd_plum.jpg/960px-Bluebyrd_plum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Bluebyrd_plum.jpg/960px-Bluebyrd_plum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Bluebyrd_plum.jpg
+  creator: Scott Bauer, USDA ARS
+  title: Bluebyrd plum
+  keywords: Bluebyrd plum Plums PD USDA ARS Unknown date Media created by the United States Agricultural
+    Research Service with known IDs Bluebyrd plum .
+  width: 1800
+  score: 0.97
+  size:
+  - 631
+  - 631
+  match: 0.958
+- label: Acorns
+  query: acorns
+  provider: commons
+  id: '178534717'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Lithocarpus_glaber_acorns.jpg/960px-Lithocarpus_glaber_acorns.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Lithocarpus_glaber_acorns.jpg/960px-Lithocarpus_glaber_acorns.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Lithocarpus_glaber_acorns.jpg
+  creator: GiveMeMollusks
+  title: Lithocarpus glaber acorns
+  keywords: Lithocarpus glaber acorns Lithocarpus glaber Acorns CC-Zero Flora of Taiwan Self-published
+    work Files with coordinates missing SDC location of creation Branch of Lithocarpus glaber tree bearing
+    acorns and leaves in Huisun Forest Area, Taiwan
+  width: 1800
+  score: 0.81
+  size:
+  - 696
+  - 906
+  match: 0.652
+- label: Blossoms
+  query: cherry blossom tree
+  provider: commons
+  id: '61792292'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/White_blossom_on_cherry_trees_%28Unsplash%29.jpg/960px-White_blossom_on_cherry_trees_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/White_blossom_on_cherry_trees_%28Unsplash%29.jpg/960px-White_blossom_on_cherry_trees_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:White_blossom_on_cherry_trees_(Unsplash).jpg
+  creator: Caleb Wright cswright
+  title: White blossom on cherry trees (Unsplash)
+  keywords: White blossom on cherry trees (Unsplash) Prunus in flower CC-Zero Images uploaded by Fæ Images
+    from Unsplash Images from Unsplash (review needed) Caleb Wright 2015-04-14
+  width: 1800
+  score: 1.014
+  size:
+  - 800
+  - 530
+  match: 0.301
+  modern: 0.548
+- label: Tulips
+  query: tulips bouquet
+  provider: commons
+  id: '61808353'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Alisa_Anton_2016-03-16_%28Unsplash%29.jpg/960px-Alisa_Anton_2016-03-16_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Alisa_Anton_2016-03-16_%28Unsplash%29.jpg/960px-Alisa_Anton_2016-03-16_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Alisa_Anton_2016-03-16_(Unsplash).jpg
+  creator: Alisa Anton alisaanton
+  title: Alisa Anton 2016-03-16 (Unsplash)
+  keywords: Alisa Anton 2016-03-16 (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Pink tulips White tulips Yellow tulips Red tulips People with flower
+    bouquets Unidentified Tulipa cultivars Orange and yellow tulips Bouquets of tulips People with tulips
+    Alisa Anton 2016-03-16
+  width: 1800
+  score: 0.892
+  size:
+  - 712
+  - 640
+  match: 0.999
+- label: Eggs from the market
+  query: eggs basket
+  provider: openverse
+  id: 3f83716d-faf1-4aca-a3ef-0b0c02e1032c
+  preview_url: https://api.openverse.org/v1/images/3f83716d-faf1-4aca-a3ef-0b0c02e1032c/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/T497TDUZKU.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/eggs-basket-T497TDUZKU
+  creator: Foodie Girl
+  title: Eggs Basket
+  keywords: Eggs Basket assortment basket boiled breakfast chicken cooking cuisine detail eggs food fresh
+    healthy ingredient minimal shell white
+  width: 1024
+  score: 0.849
+  size:
+  - 814
+  - 1001
+  match: 0.999
+- label: Asparagus
+  query: asparagus
+  provider: commons
+  id: '68800938'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Steam-boiling_green_asparagus.jpg/960px-Steam-boiling_green_asparagus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Steam-boiling_green_asparagus.jpg/960px-Steam-boiling_green_asparagus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Steam-boiling_green_asparagus.jpg
+  creator: W.carter
+  title: Steam-boiling green asparagus
+  keywords: Steam-boiling green asparagus Green asparagus CC-Zero Retouched pictures Boiling water Self-published
+    work Featured pictures on Wikipedia, Vietnamese Featured pictures of food Images by W.carter Files
+    with coordinates missing SDC location of creation Featured pictures of Lysekil Municipality Featured
+    pictures of Asparagaceae Featured pictures of liquid Featured pictures of objects in Sweden Featured
+    photographs in the public domain Featured pictures taken with compact digital camera Stainless steel
+    cookware Cooking with cooking pots Brown, gray, green, white Studio photography by W.carter in Tuntorp,
+    Brastad Picture of the day by W.carter on various projects Featured pictures by W.carter Steam-boiling
+    green asparagus ( Asparagus officinalis ) in a stainless steel pot in Tuntorp, Brastad, Lysekil Municipality,
+    Sweden. By not submerging the whole asparagus, the tender tops of the shoots will only be steamed
+    and retain their crispiness. The image is focus stacked from five photos.
+  width: 1800
+  score: 0.92
+  size:
+  - 737
+  - 880
+  match: 0.999
+- label: Radishes
+  query: radishes bunch
+  provider: commons
+  id: '62053089'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Fresh_radishes_%28Unsplash%29.jpg/960px-Fresh_radishes_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Fresh_radishes_%28Unsplash%29.jpg/960px-Fresh_radishes_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Fresh_radishes_(Unsplash).jpg
+  creator: Damien Creatz creatz
+  title: Fresh radishes (Unsplash)
+  keywords: Fresh radishes (Unsplash) Radishes CC-Zero Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Files with coordinates missing SDC location of creation (48° N, 2° E)
+    Versailles, France
+  width: 1800
+  score: 0.845
+  size:
+  - 626
+  - 588
+  match: 0.987
+- label: Strawberries
+  query: strawberries
+  provider: commons
+  id: '61666119'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Pia%C8%9Ba_Dacia%2C_Bra%C8%99ov%2C_Romania_%28Unsplash%29.jpg/960px-Pia%C8%9Ba_Dacia%2C_Bra%C8%99ov%2C_Romania_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Pia%C8%9Ba_Dacia%2C_Bra%C8%99ov%2C_Romania_%28Unsplash%29.jpg/960px-Pia%C8%9Ba_Dacia%2C_Bra%C8%99ov%2C_Romania_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pia%C8%9Ba_Dacia,_Bra%C8%99ov,_Romania_(Unsplash).jpg
+  creator: Anton Darius | Sollers thesollers
+  title: Piața Dacia, Brașov, Romania (Unsplash)
+  keywords: Piața Dacia, Brașov, Romania (Unsplash) CC-Zero Strawberries Images uploaded by Fæ Images
+    from Unsplash Images from Unsplash (review needed) Files with coordinates missing SDC location of
+    creation Strawberries in Romania Piața Dacia, Brașov, Romania
+  width: 1800
+  score: 0.908
+  size:
+  - 861
+  - 285
+  match: 0.998
+- label: Fresh peas
+  query: peas
+  provider: commons
+  id: '128999197'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Pisum_sativum_%28fruit%29_7.jpg/960px-Pisum_sativum_%28fruit%29_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Pisum_sativum_%28fruit%29_7.jpg/960px-Pisum_sativum_%28fruit%29_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pisum_sativum_(fruit)_7.jpg
+  creator: Андрей Перцев
+  title: Pisum sativum (fruit) 7
+  keywords: Pisum sativum (fruit) 7 CC-Zero Self-published work Green peas Pea seeds Pisum sativum (fruit)
+    Pisum sativum (fruit)
+  width: 1800
+  score: 0.441
+  size:
+  - 960
+  - 680
+  match: 0.939
+- label: Walks in the rain
+  query: wellington boots
+  provider: openverse
+  id: a3b2639a-ba0e-45f8-bea2-71acbf96c3e7
+  preview_url: https://api.openverse.org/v1/images/a3b2639a-ba0e-45f8-bea2-71acbf96c3e7/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAyL2xhY21hMjM1ODU1LWltYWdlLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/9285313/mans-boots-wellington
+  creator: lacma
+  title: Man's Boots (Wellington)
+  keywords: Man's Boots (Wellington) clothing cowboy boot leather mans photo shoe
+  width: 1024
+  score: 0.845
+  size:
+  - 736
+  - 863
+  match: 0.992
+- label: Watering the garden
+  query: watering can
+  provider: commons
+  id: '44156107'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Watering_can_%2814811313052%29.jpg/960px-Watering_can_%2814811313052%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Watering_can_%2814811313052%29.jpg/960px-Watering_can_%2814811313052%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Watering_can_(14811313052).jpg
+  creator: Benjamin Balázs from Hungary
+  title: Watering can (14811313052)
+  keywords: Watering can (14811313052) Watering cans CC-Zero Flickr images reviewed by FlickreviewR White
+    containers Photographs taken on Fujifilm films Objects on grass Files from Benjamin Balázs Flickr
+    stream Canon EOS 50E Canon 100/2.8 macro USM Fuji Superia 200 Expired in 2009
+  width: 1800
+  score: 0.841
+  size:
+  - 482
+  - 413
+  match: 0.819
+- label: Birds singing again
+  query: robin bird
+  provider: commons
+  id: '190996293'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Erithacus_Rubecula_Oulu_20100419_02.jpg/960px-Erithacus_Rubecula_Oulu_20100419_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/5/59/Erithacus_Rubecula_Oulu_20100419_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Erithacus_Rubecula_Oulu_20100419_02.jpg
+  creator: Estormiz
+  title: Erithacus Rubecula Oulu 20100419 02
+  keywords: Erithacus Rubecula Oulu 20100419 02 Erithacus rubecula rubecula Taken with Canon EOS 450D
+    CC-Zero Self-published work Photographs by Estormiz Files with coordinates missing SDC location of
+    creation Finland photographs taken on 2010-04-19 April 2010 in Oulu Birds of Oulu A European robin
+    (Erithacus rubecula) in the Hollihaka district of Oulu.
+  width: 1350
+  score: 0.917
+  size:
+  - 753
+  - 658
+  match: 0.997
+- label: Windows wide open
+  query: open window curtains
+  provider: commons
+  id: '62135369'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Window_frame_shadow_on_a_curtain_%28Unsplash%29.jpg/960px-Window_frame_shadow_on_a_curtain_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Window_frame_shadow_on_a_curtain_%28Unsplash%29.jpg/960px-Window_frame_shadow_on_a_curtain_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Window_frame_shadow_on_a_curtain_(Unsplash).jpg
+  creator: Steinar Engeland steinart
+  title: Window frame shadow on a curtain (Unsplash)
+  keywords: Window frame shadow on a curtain (Unsplash) CC-Zero Curtains Shadows Images uploaded by Fæ
+    Windows in Norway Images from Unsplash Images from Unsplash (review needed) Files with coordinates
+    missing SDC location of creation Nordfjordeid, Norway
+  width: 1800
+  score: 0.76
+  size:
+  - 800
+  - 517
+  match: 0.268
+- label: Planting seedlings
+  query: planting seedlings garden
+  provider: commons
+  id: '172377240'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Pawpaw_seedlings_Huron_River_restoration_1.jpg/960px-Pawpaw_seedlings_Huron_River_restoration_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/8/85/Pawpaw_seedlings_Huron_River_restoration_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pawpaw_seedlings_Huron_River_restoration_1.jpg
+  creator: Cbarlow
+  title: Pawpaw seedlings Huron River restoration 1
+  keywords: Pawpaw seedlings Huron River restoration 1 Garden trowels CC-Zero Ecological restoration Self-published
+    work Four pawpaw seedlings were planted in a weeded patch of post-industrial recovering forest along
+    the Huron River, southeastern Michigan, 2025. Three are visible along the left side of this weeded
+    patch, and the smallest in front of the trowel. The two rotting logs are likely a native species of
+    ash t
+  width: 1000
+  score: 0.868
+  size:
+  - 1000
+  - 1332
+  match: 0.285
+  modern: 0.355
+- label: First picnic
+  query: picnic blanket basket
+  provider: openverse
+  id: 556b6005-5c1f-4c7d-b6c7-067af8d4c349
+  preview_url: https://api.openverse.org/v1/images/556b6005-5c1f-4c7d-b6c7-067af8d4c349/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/KOOJZRUJRZ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/outdoor-picnic-KOOJZRUJRZ
+  creator: Travel Adventures
+  title: Outdoor Picnic
+  keywords: Outdoor Picnic basket blanket bread cheese cloth daytime food grapes grass lawn lifestyle
+    meal nature nobody outdoor outside picnic snack summer sunlight travel vacation wine
+  width: 1024
+  score: 0.899
+  size:
+  - 960
+  - 1438
+  match: 0.285
+  modern: 0.385
+- label: Herbs in pots
+  query: herbs in pots
+  provider: commons
+  id: '61759639'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Weathered_Pots_%28Unsplash%29.jpg/960px-Weathered_Pots_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Weathered_Pots_%28Unsplash%29.jpg/960px-Weathered_Pots_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Weathered_Pots_(Unsplash).jpg
+  creator: Igor Ovsyannykov igorovsyannykov
+  title: Weathered Pots (Unsplash)
+  keywords: Weathered Pots (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from Unsplash
+    (review needed) Potted plants in India 2016 in New Delhi Files with coordinates missing SDC location
+    of creation Green Park, New Delhi, India
+  width: 1800
+  score: 0.867
+  size:
+  - 800
+  - 533
+  match: 0.281
+- label: Lake days
+  query: lake summer swimming
+  provider: commons
+  id: '42448082'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Best_Swimming_Spot_in_Lake_Awosting.JPG/960px-Best_Swimming_Spot_in_Lake_Awosting.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Best_Swimming_Spot_in_Lake_Awosting.JPG/960px-Best_Swimming_Spot_in_Lake_Awosting.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Best_Swimming_Spot_in_Lake_Awosting.JPG
+  creator: Anthony22 at English Wikipedia
+  title: Best Swimming Spot in Lake Awosting
+  keywords: Best Swimming Spot in Lake Awosting Lakes of New York (state) CC-Zero Wawarsing, New York
+    Summer in Ulster County, New York The best swimming spot in Lake Awosting. The rock shelf is on a
+    small peninsula and provides the best swimming experience in the entire lake. Although swimming is
+    technically prohibited in this area for liability reasons, park visitors take a dip here all the time.
+  width: 1800
+  score: 0.9
+  size:
+  - 800
+  - 598
+  match: 0.285
+  modern: 0.365
+- label: Watermelon
+  query: watermelon
+  provider: commons
+  id: '61903073'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Summer_%28Unsplash%29.jpg/960px-Summer_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Summer_%28Unsplash%29.jpg/960px-Summer_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Summer_(Unsplash).jpg
+  creator: Juja Han juja_han
+  title: Summer (Unsplash)
+  keywords: Summer (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from Unsplash
+    (review needed) Watermelons as food Juja Han 2017-05-29
+  width: 1800
+  score: 0.965
+  size:
+  - 757
+  - 308
+  match: 0.998
+- label: Peaches
+  query: peach fruit
+  provider: commons
+  id: '73617732'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/A_Bowl_Of_Peaches_%28168126787%29.jpg/960px-A_Bowl_Of_Peaches_%28168126787%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/A_Bowl_Of_Peaches_%28168126787%29.jpg/960px-A_Bowl_Of_Peaches_%28168126787%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:A_Bowl_Of_Peaches_(168126787).jpg
+  creator: Janos Virag
+  title: A Bowl Of Peaches (168126787)
+  keywords: 'A Bowl Of Peaches (168126787) CC-Zero Peaches Fruit bowls Photos imported with import-500px
+    500px provided description: My page: &lt;a href="janosvirag.org"&gt;janosvirag.org&lt;/a&gt; More
+    photos: &lt;a href="realgraphy.org"&gt;realgraphy.org&lt;/a&gt; [#food ,#fruit ,#bowl ,#appricot]'
+  width: 1800
+  score: 0.988
+  size:
+  - 749
+  - 400
+  match: 0.999
+- label: Straw hats
+  query: sun hat
+  provider: commons
+  id: '29826644'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Keenan_Adams_models_the_new_uniform_sun_hat%21_%284820176350%29.jpg/960px-Keenan_Adams_models_the_new_uniform_sun_hat%21_%284820176350%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Keenan_Adams_models_the_new_uniform_sun_hat%21_%284820176350%29.jpg/960px-Keenan_Adams_models_the_new_uniform_sun_hat%21_%284820176350%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Keenan_Adams_models_the_new_uniform_sun_hat!_(4820176350).jpg
+  creator: U.S. Fish and Wildlife Service Southeast Region
+  title: Keenan Adams models the new uniform sun hat! (4820176350)
+  keywords: Keenan Adams models the new uniform sun hat! (4820176350) Taken with Nikon Coolpix P80 PD
+    US FWS People of the United States Fish and Wildlife Service Flickr images reviewed by File Upload
+    Bot (Magnus Manske) Men wearing hats Files from the U.S. Fish and Wildlife Service Southeast Region
+    Flickr stream July 20, 2010 Destin, FL - Keenan Adams models the new uniform sun hat - which was added
+    to the FWS uniform selection just in time for the intense sunsine of the Gulf..... Photo by Bonnie
+    Strawser, USFWS www.fws.gov/home/dhoilspill
+  width: 1800
+  score: 0.397
+  size:
+  - 794
+  - 702
+  match: 0.741
+- label: Corn on the cob
+  query: corn on the cob
+  provider: commons
+  id: '20278701'
+  preview_url: https://upload.wikimedia.org/wikipedia/commons/0/01/Hillview_Farms_corn_on_the_cob.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled
+  full_url: https://upload.wikimedia.org/wikipedia/commons/0/01/Hillview_Farms_corn_on_the_cob.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Hillview_Farms_corn_on_the_cob.jpg
+  creator: Tomwsulcer
+  title: Hillview Farms corn on the cob
+  keywords: Hillview Farms corn on the cob Taken with Sony DSC-W530 CC-Zero Maize ears Self-published
+    work Corn in a basket on a farm in Gillette, New Jersey
+  width: 732
+  score: 0.774
+  size:
+  - 633
+  - 972
+  match: 1.0
+- label: Berry picking
+  query: raspberries bowl
+  provider: commons
+  id: '20201464'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Red_raspberries_in_a_bowl.jpg/960px-Red_raspberries_in_a_bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/4/49/Red_raspberries_in_a_bowl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Red_raspberries_in_a_bowl.jpg
+  creator: Tomwsulcer
+  title: Red raspberries in a bowl
+  keywords: Red raspberries in a bowl Taken with Sony DSC-W530 CC-Zero Raspberries Self-published work
+    Red raspberries picked off bushes in Riverdale, New Jersey, and put in a bowl.
+  width: 1551
+  score: 0.963
+  size:
+  - 1339
+  - 1206
+  match: 0.999
+- label: Homemade lemonade
+  query: lemonade glass
+  provider: commons
+  id: '54628003'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Crystal_Light_lemonade.jpg/960px-Crystal_Light_lemonade.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Crystal_Light_lemonade.jpg/960px-Crystal_Light_lemonade.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Crystal_Light_lemonade.jpg
+  creator: Mx. Granger
+  title: Crystal Light lemonade
+  keywords: Crystal Light lemonade CC-Zero Lemonade Kraft products Self-published work Olive and purple
+    Uploaded with Mobile/Android Uploaded with Mobile/Android (Jul 2016 - Jun 2017) Photographs taken
+    on 2016-12-29 Soft drink glasses A glass of lemonade made from one packet of Crystal Light lemonade
+    drink mix and two cups of water.
+  width: 1800
+  score: 0.974
+  size:
+  - 357
+  - 764
+  match: 0.978
+- label: Garden tomatoes
+  query: tomatoes
+  provider: commons
+  id: '62052042'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Healthy_Vegetables_%28Unsplash%29.jpg/960px-Healthy_Vegetables_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Healthy_Vegetables_%28Unsplash%29.jpg/960px-Healthy_Vegetables_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Healthy_Vegetables_(Unsplash).jpg
+  creator: Ivan Timov ivantimov
+  title: Healthy Vegetables (Unsplash)
+  keywords: Healthy Vegetables (Unsplash) Tomatoes CC-Zero Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Files with coordinates missing SDC location of creation Stock
+    photographs Plovdiv, Bulgaria
+  width: 1800
+  score: 0.993
+  size:
+  - 528
+  - 543
+  match: 0.999
+- label: Afternoon naps
+  query: hammock
+  provider: commons
+  id: '61898783'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Campsite_hammocks_%28Unsplash%29.jpg/960px-Campsite_hammocks_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Campsite_hammocks_%28Unsplash%29.jpg/960px-Campsite_hammocks_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Campsite_hammocks_(Unsplash).jpg
+  creator: Jake Ingle ingle_jake
+  title: Campsite hammocks (Unsplash)
+  keywords: Campsite hammocks (Unsplash) CC-Zero Hammocks Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Jake Ingle 2016-09-22
+  width: 1800
+  score: 0.898
+  size:
+  - 442
+  - 228
+  match: 0.981
+- label: Ice cream
+  query: ice cream cone
+  provider: commons
+  id: '61664701'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ice_Cream_Dessert_%28Unsplash%29.jpg/960px-Ice_Cream_Dessert_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ice_Cream_Dessert_%28Unsplash%29.jpg/960px-Ice_Cream_Dessert_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Ice_Cream_Dessert_(Unsplash).jpg
+  creator: Alex Jones alexjones
+  title: Ice Cream Dessert (Unsplash)
+  keywords: Ice Cream Dessert (Unsplash) CC-Zero Files from external sources with reviewed licenses Images
+    uploaded by Fæ Images from Unsplash Ice cream waffle cones People with ice cream cones An hand outstretched,
+    holding an ice cream waffle cone. The bottom part of the cone is covered by a waxy white paper cone.
+  width: 1800
+  score: 0.901
+  size:
+  - 166
+  - 450
+  match: 0.999
+- label: Barefoot on the grass
+  query: barefoot on grass
+  provider: commons
+  id: '61658239'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0%2C_Nova_Odesa%2C_Ukraine_%28Unsplash%29.jpg/960px-%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0%2C_Nova_Odesa%2C_Ukraine_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0%2C_Nova_Odesa%2C_Ukraine_%28Unsplash%29.jpg/960px-%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0%2C_Nova_Odesa%2C_Ukraine_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0,_Nova_Odesa,_Ukraine_(Unsplash).jpg
+  creator: Roksolana Zasiadko cieloadentro
+  title: Новая Одесса, Nova Odesa, Ukraine (Unsplash)
+  keywords: Новая Одесса, Nova Odesa, Ukraine (Unsplash) CC-Zero Nova Odesa 21st-century women of Ukraine
+    Images uploaded by Fæ People of Mykolaiv Raion Sitting with legs horizontally Unidentified women Images
+    from Unsplash Images from Unsplash (review needed) Files with coordinates missing SDC location of
+    creation Barefoot women sitting Women with long brown hair Barefoot women with brown hair Kupala wreath
+    in Ukraine Women sitting on grass Female people of Ukraine wearing flower crowns Новая Одесса, Nova
+    Odesa, Ukraine
+  width: 1800
+  score: 0.735
+  size:
+  - 533
+  - 800
+  match: 0.264
+- label: Watching the sunset
+  query: sunset beach
+  provider: commons
+  id: '61702351'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Sunset_over_the_beach_%28Unsplash%29.jpg/960px-Sunset_over_the_beach_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Sunset_over_the_beach_%28Unsplash%29.jpg/960px-Sunset_over_the_beach_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sunset_over_the_beach_(Unsplash).jpg
+  creator: Bagus Ghufron bagusghufron
+  title: Sunset over the beach (Unsplash)
+  keywords: Sunset over the beach (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Many people Unidentified beaches Sunsets in unidentified locations Photographic
+    silhouettes of people against sunsets Bagus Ghufron 2015
+  width: 1800
+  score: 0.89
+  size:
+  - 800
+  - 533
+  match: 0.288
+  modern: 0.572
+- label: Dinners outside
+  query: outdoor dinner
+  provider: commons
+  id: '62049760'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Outdoor_wine_dinner_%28Unsplash%29.jpg/960px-Outdoor_wine_dinner_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Outdoor_wine_dinner_%28Unsplash%29.jpg/960px-Outdoor_wine_dinner_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Outdoor_wine_dinner_(Unsplash).jpg
+  creator: Serge Esteve sce767
+  title: Outdoor wine dinner (Unsplash)
+  keywords: Outdoor wine dinner (Unsplash) Taken with Sony DSC-RX1R CC-Zero Images uploaded by Fæ Images
+    from Unsplash Images from Unsplash (review needed) Glasses of red wine Serge Esteve 2015-01-31
+  width: 1800
+  score: 0.743
+  size:
+  - 800
+  - 800
+  match: 0.264
+  modern: 0.624
+- label: Camping by the water
+  query: tent camping lake
+  provider: commons
+  id: '96579859'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Tent_camping_Lake_crescent_campground_orange_nps_photo_%2822350549763%29.jpg/960px-Tent_camping_Lake_crescent_campground_orange_nps_photo_%2822350549763%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Tent_camping_Lake_crescent_campground_orange_nps_photo_%2822350549763%29.jpg/960px-Tent_camping_Lake_crescent_campground_orange_nps_photo_%2822350549763%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Tent_camping_Lake_crescent_campground_orange_nps_photo_(22350549763).jpg
+  creator: Olympic National Park
+  title: Tent camping Lake crescent campground orange nps photo (22350549763)
+  keywords: Tent camping Lake crescent campground orange nps photo (22350549763) PD US NPS Campgrounds
+    in Olympic National Park Flickr images reviewed by FlickreviewR 2 Images from Olympic NPS Flickr stream
+    tent_camping_Lake_crescent_campground_orange_nps_photo
+  width: 1800
+  score: 1.115
+  size:
+  - 800
+  - 600
+  match: 0.322
+  modern: 0.51
+- label: Cycling everywhere
+  query: bicycle country road
+  provider: commons
+  id: '133739645'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/The_cycle_that_I_rode_at_Shantiniketan.jpg/960px-The_cycle_that_I_rode_at_Shantiniketan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/The_cycle_that_I_rode_at_Shantiniketan.jpg/960px-The_cycle_that_I_rode_at_Shantiniketan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:The_cycle_that_I_rode_at_Shantiniketan.jpg
+  creator: Kaustav Das Modak
+  title: The cycle that I rode at Shantiniketan
+  keywords: The cycle that I rode at Shantiniketan CC-Zero Bicycles in West Bengal Country roads in West
+    Bengal Flickr images missing SDC creator Flickr images missing SDC source of file Flickr images reviewed
+    by FlickreviewR 2 Roads in Santiniketan The cycle that I rode at Shantiniketan
+  width: 1800
+  score: 1.013
+  size:
+  - 800
+  - 772
+  match: 0.303
+  modern: 0.241
+- label: Autumn walks
+  query: autumn forest path
+  provider: commons
+  id: '58790422'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Bad_Pyrmont%2C_Deutschland_%28Unsplash_CoD2Q92UaEg%29.jpg/960px-Bad_Pyrmont%2C_Deutschland_%28Unsplash_CoD2Q92UaEg%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Bad_Pyrmont%2C_Deutschland_%28Unsplash_CoD2Q92UaEg%29.jpg/960px-Bad_Pyrmont%2C_Deutschland_%28Unsplash_CoD2Q92UaEg%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Bad_Pyrmont,_Deutschland_(Unsplash_CoD2Q92UaEg).jpg
+  creator: Sebastian Unrau sebastian_unrau
+  title: Bad Pyrmont, Deutschland (Unsplash CoD2Q92UaEg)
+  keywords: Bad Pyrmont, Deutschland (Unsplash CoD2Q92UaEg) Forest paths in Germany CC-Zero Leaves in
+    autumn Bad Pyrmont Images uploaded by Fæ Images from Unsplash Files with coordinates missing SDC location
+    of creation (51° N, 9° E) Bad Pyrmont, Deutschland
+  width: 1800
+  score: 1.044
+  size:
+  - 800
+  - 468
+  match: 0.306
+  modern: 0.494
+- label: Foraging mushrooms
+  query: basket of mushrooms
+  provider: commons
+  id: '52060251'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Mushrooms_-_Funghi_%2814563956840%29.jpg/960px-Mushrooms_-_Funghi_%2814563956840%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Mushrooms_-_Funghi_%2814563956840%29.jpg/960px-Mushrooms_-_Funghi_%2814563956840%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Mushrooms_-_Funghi_(14563956840).jpg
+  creator: fotokoci
+  title: Mushrooms - Funghi (14563956840)
+  keywords: Mushrooms - Funghi (14563956840) CC-Zero Photos uploaded from Flickr by Fæ using a script
+    Flickr images reviewed by FlickreviewR Fungi in July Photographs taken on 2014-07-25 Baskets with
+    food Cantharellus cibarius as food Photographs by Kostandin Minga Can I use this photo? Read &lt;a
+    href=" https://www.flickr.com/people/fotokoci "&gt;here&lt;/a&gt; for more informations.
+  width: 1800
+  score: 0.646
+  size:
+  - 879
+  - 644
+  match: 0.997
+- label: Apple picking
+  query: apples basket
+  provider: commons
+  id: '176765722'
+  preview_url: https://upload.wikimedia.org/wikipedia/commons/3/32/Three_baskets_with_apples.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled
+  full_url: https://upload.wikimedia.org/wikipedia/commons/3/32/Three_baskets_with_apples.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Three_baskets_with_apples.png
+  creator: Salnitrum
+  title: Three baskets with apples
+  keywords: Three baskets with apples Natural numbers CC-Zero Apples in baskets Three baskets with numbered
+    apples
+  width: 870
+  score: 0.74
+  size:
+  - 729
+  - 610
+  match: 0.999
+- label: Pumpkins
+  query: pumpkins
+  provider: commons
+  id: '61769939'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Yellow_Halloween_pumpkins_%28Unsplash%29.jpg/960px-Yellow_Halloween_pumpkins_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Yellow_Halloween_pumpkins_%28Unsplash%29.jpg/960px-Yellow_Halloween_pumpkins_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Yellow_Halloween_pumpkins_(Unsplash).jpg
+  creator: John Silliman john_silliman
+  title: Yellow Halloween pumpkins (Unsplash)
+  keywords: Yellow Halloween pumpkins (Unsplash) CC-Zero Images uploaded by Fæ Pumpkins in New York (state)
+    Images from Unsplash Images from Unsplash (review needed) John Silliman 2016
+  width: 1800
+  score: 0.455
+  size:
+  - 960
+  - 510
+  match: 0.992
+- label: Roasted chestnuts
+  query: roasted chestnuts
+  provider: commons
+  id: '153238579'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Sugar-roasted_chestnuts_%281%29.jpg/960px-Sugar-roasted_chestnuts_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Sugar-roasted_chestnuts_%281%29.jpg/960px-Sugar-roasted_chestnuts_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sugar-roasted_chestnuts_(1).jpg
+  creator: Fumikas Sagisavas
+  title: Sugar-roasted chestnuts (1)
+  keywords: Sugar-roasted chestnuts (1) CC-Zero Chestnuts as food Self-published work Files with coordinates
+    missing SDC location of creation Sugar-roasted chestnuts
+  width: 1800
+  score: 0.877
+  size:
+  - 855
+  - 557
+  match: 0.755
+- label: Wool sweaters
+  query: wool sweater
+  provider: commons
+  id: '157893610'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Doll%27s_Peach_Wool_Sweater_-_DPLA_-_4641f061daf2306840af6c6dea8bea6a_%28page_1%29.jpg/960px-Doll%27s_Peach_Wool_Sweater_-_DPLA_-_4641f061daf2306840af6c6dea8bea6a_%28page_1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Doll%27s_Peach_Wool_Sweater_-_DPLA_-_4641f061daf2306840af6c6dea8bea6a_%28page_1%29.jpg/960px-Doll%27s_Peach_Wool_Sweater_-_DPLA_-_4641f061daf2306840af6c6dea8bea6a_%28page_1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Doll%27s_Peach_Wool_Sweater_-_DPLA_-_4641f061daf2306840af6c6dea8bea6a_(page_1).jpg
+  creator: ''
+  title: Doll's Peach Wool Sweater - DPLA - 4641f061daf2306840af6c6dea8bea6a (page 1)
+  keywords: Doll's Peach Wool Sweater - DPLA - 4641f061daf2306840af6c6dea8bea6a (page 1) PD US Files with
+    no machine-readable author Media contributed by the Digital Public Library of America Artworks without
+    Wikidata item Digital Public Library of America files missing creator Media contributed by Heartland
+    Hub Media contributed by Missouri Historical Society Doll's peach wool sweater.
+  width: 1800
+  score: 0.986
+  size:
+  - 890
+  - 445
+  match: 0.999
+- label: Soup on the stove
+  query: soup bowl
+  provider: commons
+  id: '171361317'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Noodle_soup_in_Asia_Bowl_2025-07-26.jpg/960px-Noodle_soup_in_Asia_Bowl_2025-07-26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Noodle_soup_in_Asia_Bowl_2025-07-26.jpg/960px-Noodle_soup_in_Asia_Bowl_2025-07-26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Noodle_soup_in_Asia_Bowl_2025-07-26.jpg
+  creator: Andy Li
+  title: Noodle soup in Asia Bowl 2025-07-26
+  keywords: 'Noodle soup in Asia Bowl 2025-07-26 CC-Zero Noodle soups Self-published work Lunch in the
+    United Kingdom 2025 in Taunton, Somerset Files with coordinates missing SDC location of creation (51°
+    N, 4° W) July 2025 in Somerset England photographs taken on 2025-07-26 Food in the United Kingdom
+    photographed in 2025 Asia Bowl, Magdalene Lane, Taunton The options I selected: Soup Base: Pork Bone
+    - Rice Noodles, Bean Sprouts, Pickled Sour Mustard included Topping A: Hong Kong Style Pork Chop Topping
+    B: Beancurd Sheets'
+  width: 1800
+  score: 0.985
+  size:
+  - 752
+  - 532
+  match: 0.993
+- label: Sourdough
+  query: sourdough bread
+  provider: commons
+  id: '100912030'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Loaf_of_sourdough_bread_cooling.jpg/960px-Loaf_of_sourdough_bread_cooling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Loaf_of_sourdough_bread_cooling.jpg
+  creator: Nutrition, Food Safety &amp; Health
+  title: Loaf of sourdough bread cooling
+  keywords: Loaf of sourdough bread cooling CC-Zero Sour dough breads Flickr images reviewed by FlickreviewR
+    2 Baking sourdough bread
+  width: 1800
+  score: 0.98
+  size:
+  - 800
+  - 667
+  match: 0.999
+- label: Collecting leaves
+  query: maple leaves
+  provider: commons
+  id: '61776276'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Red_Maple_Leaf_Palm_%28Unsplash%29.jpg/960px-Red_Maple_Leaf_Palm_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Red_Maple_Leaf_Palm_%28Unsplash%29.jpg/960px-Red_Maple_Leaf_Palm_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Red_Maple_Leaf_Palm_(Unsplash).jpg
+  creator: Ksenia Makagonova dearseymour
+  title: Red Maple Leaf Palm (Unsplash)
+  keywords: Red Maple Leaf Palm (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Human hands holding plants Unidentified Acer (leaves) Ksenia Makagonova 2017-04-25
+  width: 1800
+  score: 0.665
+  size:
+  - 559
+  - 518
+  match: 0.766
+- label: Figs
+  query: figs
+  provider: openverse
+  id: cc2c10d5-94c8-464b-af58-212525cd10ac
+  preview_url: https://api.openverse.org/v1/images/cc2c10d5-94c8-464b-af58-212525cd10ac/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/YVDRQAGWOP.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/figs-fruits-YVDRQAGWOP
+  creator: Jaroslaw%20Puszczy%u0144ski
+  title: Figs Fruits
+  keywords: Figs Fruits figs food fruits healthy
+  width: 1024
+  score: 0.984
+  size:
+  - 676
+  - 438
+  match: 0.973
+- label: Candles by five
+  query: taper candles
+  provider: commons
+  id: '58872878'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bangkok_Vesak_-_2017-05-07_%28013%29.jpg/960px-Bangkok_Vesak_-_2017-05-07_%28013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Bangkok_Vesak_-_2017-05-07_%28013%29.jpg/960px-Bangkok_Vesak_-_2017-05-07_%28013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Bangkok_Vesak_-_2017-05-07_(013).jpg
+  creator: Iudexvivorum
+  title: Bangkok Vesak - 2017-05-07 (013)
+  keywords: Bangkok Vesak - 2017-05-07 (013) CC-Zero Self-published work White candles Yellow candles
+    2 kinds Candles at Buddhist temples in Thailand Tapers (candles) Vesak Day in Bangkok 2017 Annual
+    Vesak Event at Indoor Stadium Huamark in Bangkok , Thailand
+  width: 1800
+  score: 0.849
+  size:
+  - 902
+  - 577
+  match: 0.966
+- label: Pears
+  query: pears
+  provider: commons
+  id: '62051722'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Sergey_Zolkin_2014-10-19_%28Unsplash%29.jpg/960px-Sergey_Zolkin_2014-10-19_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Sergey_Zolkin_2014-10-19_%28Unsplash%29.jpg/960px-Sergey_Zolkin_2014-10-19_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sergey_Zolkin_2014-10-19_(Unsplash).jpg
+  creator: Sergey Zolkin szolkin
+  title: Sergey Zolkin 2014-10-19 (Unsplash)
+  keywords: Sergey Zolkin 2014-10-19 (Unsplash) Pears CC-Zero Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Sergey Zolkin 2014-10-19
+  width: 1800
+  score: 0.952
+  size:
+  - 458
+  - 528
+  match: 0.989
+- label: Chopping wood
+  query: chopping firewood axe
+  provider: commons
+  id: '57005794'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/I_was_chopping_up_the_last_big_pieces_of_firewood_to_stack%2C_and_on_the_last_swing_the_axe_head_was_gone_-_I_ducked_thinking_it_was_flung_in_the_air%2C_but_it_just_completely_separated_from_the_handle._%282543296343%29.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/I_was_chopping_up_the_last_big_pieces_of_firewood_to_stack%2C_and_on_the_last_swing_the_axe_head_was_gone_-_I_ducked_thinking_it_was_flung_in_the_air%2C_but_it_just_completely_separated_from_the_handle._%282543296343%29.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:I_was_chopping_up_the_last_big_pieces_of_firewood_to_stack,_and_on_the_last_swing_the_axe_head_was_gone_-_I_ducked_thinking_it_was_flung_in_the_air,_but_it_just_completely_separated_from_the_handle._(2543296343).jpg
+  creator: cogdogblog
+  title: I was chopping up the last big pieces of firewood to stack, and on the last swing the axe head
+    was gone - I ducked thinking it was flung in the air, but it just completely separated from the handle.
+    (2543296343)
+  keywords: I was chopping up the last big pieces of firewood to stack, and on the last swing the axe
+    head was gone - I ducked thinking it was flung in the air, but it just completely separated from the
+    handle. (2543296343) Lumberjacks CC-Zero Photos uploaded from Flickr by Fæ using a script Flickr images
+    reviewed by FlickreviewR Photographs by Alan Levine I was chopping up the last big pieces of firewood
+    to stack, and on the last swing the axe head was gone.. I ducked thinking it was flung in the air,
+    but it just completely separated from the handle. It is certainly not a testimony to strength.
+  width: 1800
+  score: 0.907
+  size:
+  - 800
+  - 600
+  match: 0.29
+  modern: 0.258
+- label: Reading on rainy days
+  query: rain window reading
+  provider: commons
+  id: '61659046'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Rainy_window_and_table_book_%28Unsplash%29.jpg/960px-Rainy_window_and_table_book_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Rainy_window_and_table_book_%28Unsplash%29.jpg/960px-Rainy_window_and_table_book_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Rainy_window_and_table_book_(Unsplash).jpg
+  creator: Rosalind Chang rosalindjchang
+  title: Rainy window and table book (Unsplash)
+  keywords: Rainy window and table book (Unsplash) CC-Zero Reading Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Rosalind Chang 2016
+  width: 1800
+  score: 0.909
+  size:
+  - 800
+  - 532
+  match: 0.289
+  modern: 0.294
+- label: Golden afternoons
+  query: golden hour autumn
+  provider: commons
+  id: '123269196'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Autumn_Golden_Hour_Caribou-Targhee_NF_Lisa_Baker_%2851769950501%29.jpg/960px-Autumn_Golden_Hour_Caribou-Targhee_NF_Lisa_Baker_%2851769950501%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Autumn_Golden_Hour_Caribou-Targhee_NF_Lisa_Baker_%2851769950501%29.jpg/960px-Autumn_Golden_Hour_Caribou-Targhee_NF_Lisa_Baker_%2851769950501%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Autumn_Golden_Hour_Caribou-Targhee_NF_Lisa_Baker_(51769950501).jpg
+  creator: Intermountain Forest Service, USDA Region 4 Photography
+  title: Autumn Golden Hour Caribou-Targhee NF Lisa Baker (51769950501)
+  keywords: Autumn Golden Hour Caribou-Targhee NF Lisa Baker (51769950501) Autumn PD US USDA FS Flickr
+    images reviewed by trusted users Files with coordinates missing SDC location of creation Files from
+    the U.S. Forest Service Intermountain Region Flickr stream Bridge…just like Autumn bridges summer
+    to winter, Cherry Springs Recreation Area, Caribou-Targhee National Forest. USDA Forest Service photo
+    by Lisa Baker.
+  width: 1800
+  score: 0.938
+  size:
+  - 600
+  - 800
+  match: 0.29
+  modern: 0.825
+- label: Snow days
+  query: snowy village
+  provider: commons
+  id: '61671753'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Snowy_village_and_mountains_%28Unsplash%29.jpg/960px-Snowy_village_and_mountains_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Snowy_village_and_mountains_%28Unsplash%29.jpg/960px-Snowy_village_and_mountains_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Snowy_village_and_mountains_(Unsplash).jpg
+  creator: Toa Heftiba heftiba
+  title: Snowy village and mountains (Unsplash)
+  keywords: Snowy village and mountains (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Files with coordinates missing SDC location of creation Nature
+    of Entrevaux Les 2 Alpes, Entrevaux, France
+  width: 1800
+  score: 0.875
+  size:
+  - 800
+  - 533
+  match: 0.285
+- label: Clementines
+  query: tangerines
+  provider: commons
+  id: '62051969'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Jonathan_Pielmayer_2016-12-17_%28Unsplash%29.jpg/960px-Jonathan_Pielmayer_2016-12-17_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Jonathan_Pielmayer_2016-12-17_%28Unsplash%29.jpg/960px-Jonathan_Pielmayer_2016-12-17_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Jonathan_Pielmayer_2016-12-17_(Unsplash).jpg
+  creator: Jonathan Pielmayer jonathanpielmayer
+  title: Jonathan Pielmayer 2016-12-17 (Unsplash)
+  keywords: Jonathan Pielmayer 2016-12-17 (Unsplash) Tangerines CC-Zero Images uploaded by Fæ Images from
+    Unsplash Images from Unsplash (review needed) Jonathan Pielmayer 2016-12-17
+  width: 1800
+  score: 0.878
+  size:
+  - 749
+  - 577
+  match: 0.667
+- label: Hot cocoa
+  query: hot chocolate mug
+  provider: openverse
+  id: a02c14a3-5fb8-4981-b3c5-d21f91358bed
+  preview_url: https://api.openverse.org/v1/images/a02c14a3-5fb8-4981-b3c5-d21f91358bed/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/NOXXUWUBGJ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/hot-chocolate-NOXXUWUBGJ
+  creator: Tim Sullivan
+  title: Hot Chocolate
+  keywords: Hot Chocolate beverage cafe cappuccino chocolate cocoa counter cozy cream creamy cup dessert
+    drink glass granite hot light mug natural warm whipped
+  width: 1024
+  score: 0.912
+  size:
+  - 462
+  - 630
+  match: 0.999
+- label: Wool blankets
+  query: knitted blanket
+  provider: openverse
+  id: 65fdb03f-db01-41b3-87eb-1bef1ca14dfb
+  preview_url: https://api.openverse.org/v1/images/65fdb03f-db01-41b3-87eb-1bef1ca14dfb/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3Vwd2s2MTc3NzE3Ny13aWtpbWVkaWEtaW1hZ2Uta293cWQ2MWwuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3302335/free-photo-image-blanket-apparel-bath-towel
+  creator: ''
+  title: Original public domain image Wikimedia
+  keywords: Original public domain image Wikimedia blanket knit blanket knitted blanket knitted hat scarf
+    knitted scarf knitting scarf
+  width: 1024
+  score: 0.976
+  size:
+  - 784
+  - 449
+  match: 0.998
+- label: Gingerbread
+  query: gingerbread cookies
+  provider: commons
+  id: '131377200'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Gingerbread_cookies_and_milk_%2831502263902%29.jpg/960px-Gingerbread_cookies_and_milk_%2831502263902%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Gingerbread_cookies_and_milk_%2831502263902%29.jpg/960px-Gingerbread_cookies_and_milk_%2831502263902%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Gingerbread_cookies_and_milk_(31502263902).jpg
+  creator: freestocks.org from Olsztyn, Poland
+  title: Gingerbread cookies and milk (31502263902)
+  keywords: Gingerbread cookies and milk (31502263902) CC-Zero Flickr images reviewed by FlickreviewR
+    2 Stock photographs Gingerbread cookies and milk (31502263902).jpg
+  width: 1800
+  score: 0.889
+  size:
+  - 589
+  - 281
+  match: 0.85
+- label: Cinnamon sticks
+  query: cinnamon bark
+  provider: openverse
+  id: c98fa51c-fd85-4531-bd46-3ed7213efaf4
+  preview_url: https://api.openverse.org/v1/images/c98fa51c-fd85-4531-bd46-3ed7213efaf4/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMzUzMjc1LWltYWdlLWt3dncxcHdoLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5912114/image-background-public-domain-fruit
+  creator: ''
+  title: Free cinnamon image
+  keywords: Free cinnamon image cinnamon cinnamon bark diet food food & drink root root spice spices
+  width: 1024
+  score: 0.525
+  size:
+  - 548
+  - 750
+  match: 0.948
+- label: Knitting
+  query: knitting needles yarn
+  provider: commons
+  id: '62214112'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Knitting_needles_and_yarn_%28Unsplash%29.jpg/960px-Knitting_needles_and_yarn_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Knitting_needles_and_yarn_%28Unsplash%29.jpg/960px-Knitting_needles_and_yarn_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Knitting_needles_and_yarn_(Unsplash).jpg
+  creator: Olliss fomaolea
+  title: Knitting needles and yarn (Unsplash)
+  keywords: Knitting needles and yarn (Unsplash) Knitting needles and tools CC-Zero Images uploaded by
+    Fæ Images from Unsplash Images from Unsplash (review needed) Olliss 2016-10-04
+  width: 1800
+  score: 0.925
+  size:
+  - 451
+  - 463
+  match: 0.996
+- label: Mittens
+  query: wool mittens
+  provider: commons
+  id: '97441138'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Estonian_traditional_mittens.jpg/960px-Estonian_traditional_mittens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Estonian_traditional_mittens.jpg/960px-Estonian_traditional_mittens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Estonian_traditional_mittens.jpg
+  creator: Liilia Moroz
+  title: Estonian traditional mittens
+  keywords: Estonian traditional mittens Textiles of Estonia CC-Zero Traditional clothing of Estonia Self-published
+    work Wool mittens Estonian traditional wool mittens (example of a pattern)
+  width: 1800
+  score: 0.902
+  size:
+  - 917
+  - 851
+  match: 0.884
+- label: Slow-cooked stews
+  query: beef stew bowl
+  provider: openverse
+  id: f4e93532-65b6-4ae9-9354-9fee3a98df6f
+  preview_url: https://api.openverse.org/v1/images/f4e93532-65b6-4ae9-9354-9fee3a98df6f/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbnMxODA2NC1pbWFnZS1rd3Z5YTFmYy5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5925978/photo-image-background-public-domain-food
+  creator: ''
+  title: Free chili bowl food image
+  keywords: Free chili bowl food image beef stew chili chili bowl cooking cooking pot pot stew stew cooking
+  width: 1024
+  score: 0.931
+  size:
+  - 779
+  - 341
+  match: 0.885
+- label: Sleeping in
+  query: cozy bed blanket
+  provider: openverse
+  id: 3dbb0432-47f3-4f0e-afcf-b2f1651480dd
+  preview_url: https://api.openverse.org/v1/images/3dbb0432-47f3-4f0e-afcf-b2f1651480dd/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3Vwd2s2MTg0Nzg3NC13aWtpbWVkaWEtaW1hZ2Uta293cGc1MTAuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3300836/free-photo-image-bed-anthropologie-bedding
+  creator: ''
+  title: Original public domain image Wikimedia
+  keywords: Original public domain image Wikimedia bed blanket bed morning cozy bedroom farmhouse farmhouse
+    interior farmhouse wall shiplap
+  width: 1024
+  score: 0.914
+  size:
+  - 1024
+  - 819
+  match: 0.294
+  modern: 0.499
+- label: By the fire
+  query: fireplace fire
+  provider: commons
+  id: '62318761'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Glowing_Embers_%28Unsplash%29.jpg/960px-Glowing_Embers_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Glowing_Embers_%28Unsplash%29.jpg/960px-Glowing_Embers_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Glowing_Embers_(Unsplash).jpg
+  creator: Peter Forster peter_forster
+  title: Glowing Embers (Unsplash)
+  keywords: Glowing Embers (Unsplash) CC-Zero Fireplaces Embers Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Fireplaces with fire Peter Forster 2017-05-28
+  width: 1800
+  score: 0.968
+  size:
+  - 800
+  - 533
+  match: 0.304
+  modern: 0.448
+- label: Playing in the snow
+  query: playing in snow
+  provider: commons
+  id: '61766159'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Girl_in_Snow_%28Unsplash%29.jpg/960px-Girl_in_Snow_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Girl_in_Snow_%28Unsplash%29.jpg/960px-Girl_in_Snow_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Girl_in_Snow_(Unsplash).jpg
+  creator: Jeremiah Higgins jerem1ah_h1gg1ns
+  title: Girl in Snow (Unsplash)
+  keywords: Girl in Snow (Unsplash) CC-Zero Bolingbrook, Illinois Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Files with coordinates missing SDC location of creation December
+    2016 in Illinois Children playing with snow DuPage River Park, Naperville, United States
+  width: 1800
+  score: 0.82
+  size:
+  - 800
+  - 533
+  match: 0.275
+  modern: 0.221
+- label: Ice skating outside
+  query: ice skating outdoor
+  provider: commons
+  id: '163919986'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Ice_rink_at_Place_D%E2%80%99Youville%2C_Quebec_City.jpg/960px-Ice_rink_at_Place_D%E2%80%99Youville%2C_Quebec_City.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Ice_rink_at_Place_D%E2%80%99Youville%2C_Quebec_City.jpg/960px-Ice_rink_at_Place_D%E2%80%99Youville%2C_Quebec_City.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Ice_rink_at_Place_D%E2%80%99Youville,_Quebec_City.jpg
+  creator: Wilfredor
+  title: Ice rink at Place D’Youville, Quebec City
+  keywords: Ice rink at Place D’Youville, Quebec City CC-Zero Self-published work December 2024 in Quebec
+    City Media created with Nikon Z7ii provided by the Quebec WikiClub Ice skating in Quebec City Place
+    D'Youville Ice rink, Quebec City Living city by Wilfredor Photographs of Quebec City by Wilfredor
+    Skaters on the outdoor rink of the Place D’Youville, with the wooden chalets of the German Christmas
+    market behind, in December 2024. Quebec City, Quebec, Canada.
+  width: 1800
+  score: 0.56
+  size:
+  - 800
+  - 533
+  match: 0.239
+  modern: 0.352
+- label: Morning sun on snow
+  query: winter morning sunlight snow
+  provider: commons
+  id: '162403354'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Sunstar_on_Snow_%2850952955536%29.jpg/960px-Sunstar_on_Snow_%2850952955536%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Sunstar_on_Snow_%2850952955536%29.jpg/960px-Sunstar_on_Snow_%2850952955536%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Sunstar_on_Snow_(50952955536).jpg
+  creator: ShenandoahNPS
+  title: Sunstar on Snow (50952955536)
+  keywords: Sunstar on Snow (50952955536) PD US NPS Flickr images reviewed by FlickreviewR 2 United States
+    photographs taken on 2020-12-18 U.S. National Park Service Flickr files uploaded by OptimusPrimeBot
+    United States National Park Service images (review needed) Files from Shenandoah NPS Flickr stream
+    NPS | N. Lewis Morning sunlight illuminates a wintery scene of ancient, snow-covered rocks and barren
+    trees. (20201218_NL67322_SnowSunstar_HazelMtnOverlook_nl)
+  width: 1800
+  score: 0.988
+  size:
+  - 800
+  - 533
+  match: 0.3
+  modern: 0.253
+media:
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-16-feed-1-1.jpg?v=f70d78fa
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-16-feed-1-2.jpg?v=9c011119
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-16-feed-1-3.jpg?v=9f7abc8a
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-16-feed-1-4.jpg?v=e221f944
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-16-feed-1-5.jpg?v=578e301d
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-16-feed-1-6.jpg?v=e52db5f4
+media_from_slides: true

@@ -640,6 +640,17 @@ def _grow(occ: np.ndarray, placed: list[Item], bleed: int, rounds: int = 6, step
             break
 
 
+def _vintage(img: Image.Image, seed: int = 0) -> Image.Image:
+    """A faded warm print: mostly sepia, lifted blacks, softer highlights, fine grain."""
+    arr = np.asarray(img.convert("RGB"), np.float32) / 255.0
+    gray = arr @ np.array([0.299, 0.587, 0.114], np.float32)
+    sepia = np.stack([gray * 1.07 + 0.05, gray * 0.93 + 0.03, gray * 0.74 + 0.01], axis=-1)
+    out = 0.72 * sepia + 0.28 * arr
+    out = 0.07 + out * 0.86
+    out += np.random.default_rng(seed).normal(0, 0.022, gray.shape)[..., None]
+    return Image.fromarray((np.clip(out, 0, 1) * 255).astype(np.uint8), "RGB")
+
+
 def _pair(things: list, title: str, body: str, kicker: str, style: Style, out: Path) -> Path:
     """Then and now, the way the niche's best comparison carousel does it: four photos edge
     to edge, the top two captioned with `title` ("Evenings then"), the bottom two with
@@ -649,6 +660,8 @@ def _pair(things: list, title: str, body: str, kicker: str, style: Style, out: P
     cw, ch = W // 2, H // 2
     for k, (_, img, _, _) in enumerate(things[:4]):
         tile = _crop_to(img.convert("RGB"), cw / ch).resize((cw, ch), Image.LANCZOS)
+        if k < 2:   # "then": an old print's warm, faded tones, so the comparison reads at a glance
+            tile = _vintage(tile, seed=k)
         slide.paste(tile, ((k % 2) * cw, (k // 2) * ch))
     slide = slide.convert("RGBA")
 
