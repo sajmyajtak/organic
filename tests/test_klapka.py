@@ -180,7 +180,7 @@ def test_automatic_run_paces_itself_but_sends_new_posts_and_errors_now(queue):
     assert "Instagram odmítl médium" in at.beat()[F_ERROR]  # red bar in KLAPKA right away
 
 
-def test_automatic_run_reads_decisions_only_with_drafts_and_twice_a_day(queue):
+def test_automatic_run_reads_decisions_only_with_drafts_every_two_hours(queue):
     at = FakeAirtable()
     content.save(post(1), "approved")
     klapka.sync("publish", now=T0, client=at)
@@ -188,10 +188,10 @@ def test_automatic_run_reads_decisions_only_with_drafts_and_twice_a_day(queue):
     content.save(post(2), "drafts")
     klapka.sync("publish", now=at_hour(1), client=at)
     assert at.log.count("GET") == 1
-    klapka.sync("publish", now=at_hour(5), client=at)
-    assert at.log.count("GET") == 1    # read 4 h ago
-    klapka.sync("publish", now=at_hour(13), client=at)
-    assert at.log.count("GET") == 2
+    klapka.sync("publish", now=at_hour(2), client=at)
+    assert at.log.count("GET") == 1    # read an hour ago
+    klapka.sync("publish", now=at_hour(3.5), client=at)
+    assert at.log.count("GET") == 2    # an approval in KLAPKA counts within two hours
 
 
 def test_only_the_newest_published_rows_stay(queue):

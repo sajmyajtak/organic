@@ -112,10 +112,14 @@ které do ní zapisují stav fronty, takže před pushem vždy `git pull --rebas
    ukáže denní plán (dnes a zítra: čas → post → proč, `scheduler.day_plan`); stejný plán
    jde jako JSON do pole „Denní plán“ technického řádku v KLAPCE (přehled ho ukazuje).
    Stories/reels mají dál pevný čas (`content.TIMED`).
-   GitHub ve skutečnosti pouští workflow jen jednou za 3–6 h, plánovač to dohání.
+   GitHub ve skutečnosti pouští workflow jen jednou za 4–8 h, proto běh čeká
+   (`publish --wait 330`, `publish.run_until`): publikuje přesně v oknech, každý post
+   hned pushne (`gitstate`), každých 30 min si stáhne novinky a přečte KLAPKU; když další
+   dnešní okno připadne až za konec běhu, spustí další běh (`gh workflow run`, řetěz přes
+   den, v noci končí). Od 10. 11. 2026, předtím posty chodily o hodiny pozdě.
    KLAPKA dostává všechny slidy v Náhledu a žádný Plán; sync se řídí uplynulým časem
    (stav `content/.automat.json`, zapisuje jen automat): změny a tep po novém postu
-   nebo chybě, jinak ≤1× za 8 h, rozhodnutí ≤1× za 12 h. Rozbor a strategie:
+   nebo chybě, jinak ≤1× za 8 h, rozhodnutí ≤1× za 2 h (jen když jsou koncepty). Rozbor a strategie:
    `reports/naturizz/2026-11-08.md`.
 
 Pozor na cache: `build/cache/cutouts` a `build/cache/photos` jsou klíčované dotazem.

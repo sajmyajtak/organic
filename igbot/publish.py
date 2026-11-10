@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -187,3 +188,47 @@ def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -
         published += 1
         print(f"OK {item['id']} → {ids}")
     return published
+
+
+POLL = timedelta(minutes=30)   # how often a waiting run wakes up (KLAPKA decisions, new approvals)
+
+
+def run_until(cfg: dict, minutes: int, dry_run: bool = False, sleep=time.sleep, clock=None,
+              after=None, save=None) -> tuple[int, datetime | None]:
+    """Publish in the scheduler's windows for up to `minutes`, then stop.
+
+    GitHub starts the publish job only every few hours, whatever the cron says, so a
+    run doesn't just look once: it waits for the next window and publishes in it,
+    again and again, waking every POLL to pick up KLAPKA decisions. Each publication
+    is pushed at once (gitstate). Returns (posts published, the next window today
+    that lies beyond this run, or None), so the workflow can start the next run in time."""
+    from . import gitstate, klapka
+
+    tz = cfg["account"]["timezone"]
+    clock = clock or (lambda: datetime.now(ZoneInfo(tz)))
+    after = after or (lambda n: klapka.after("publish", published=n))
+    save = save or gitstate.save
+    refresh = gitstate.refresh if save is gitstate.save else (lambda: None)
+    deadline = clock() + timedelta(minutes=minutes)
+    total = 0
+    while True:
+        refresh()
+        now = clock()
+        n = publish_due(cfg, dry_run=dry_run, now=now)
+        total += n
+        if dry_run:
+            return total, None              # a rehearsal looks once
+        after(n)
+        save(f"content: publikace {now:%Y-%m-%d %H:%M}")
+        plan = scheduler.plan(clock(), tz)
+        nxt = plan["next_slot"]
+        if plan["due"] and not n:
+            nxt = None   # due but nothing went out (limit, error): try again at the next wake-up
+        if not plan["due"] and nxt is None:
+            return total, None          # nothing more today
+        if nxt is not None and nxt > deadline:
+            return total, nxt           # the next window is for the next run
+        wake = min(nxt or deadline, clock() + POLL, deadline)
+        if wake >= deadline and (nxt is None or nxt > deadline):
+            return total, nxt
+        sleep(max(1.0, (wake - clock()).total_seconds() + 20))

@@ -1,7 +1,11 @@
 name: Publikace
 
-# Každých 30 minut (celý den, publikum je v USA) zkontroluje frontu a publikuje
-# schválené položky, kterým nastal čas v časovém pásmu z config/account.yaml.
+# GitHub pouští naplánované běhy jen jednou za 4–8 h, ať je cron jakýkoli. Proto běh
+# jen nezkontroluje frontu: počká na okna plánovače (igbot/scheduler.py) a publikuje
+# přesně v nich, každý post hned pushne, mezitím každých 30 min přečte rozhodnutí
+# z KLAPKY. Když další dnešní okno připadne až za konec běhu (5,5 h), spustí další
+# běh sám, takže řetěz pokryje den; v noci skončí a ráno ho nastartuje cron.
+# Veřejný repozitář: minuty Actions jsou zdarma.
 on:
   schedule:
     - cron: "7,37 * * * *"
@@ -11,6 +15,10 @@ on:
         description: "Jen zkouška (nic nepublikovat)"
         type: boolean
         default: true
+      wait:
+        description: "Kolik minut čekat na okna plánovače"
+        type: string
+        default: "330"
 
 concurrency:
   group: content-queue
@@ -18,11 +26,12 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write   # spustit další běh řetězu (workflow_dispatch přes GITHUB_TOKEN)
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,7 +40,9 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Publikovat
+        id: publish
         env:
+          IGBOT_GIT_COMMIT: "1"   # každý post hned commitnout a pushnout
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_API_HOST: ${{ vars.IG_API_HOST }}
@@ -49,9 +60,10 @@ jobs:
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             python -m igbot publish --dry-run
           else
-            python -m igbot publish
+            python -m igbot publish --wait "${{ inputs.wait || '330' }}"
           fi
       - name: Uložit stav fronty
+        if: always()
         run: |
           git config user.name "igbot"
           git config user.email "igbot@users.noreply.github.com"
@@ -60,3 +72,8 @@ jobs:
           git commit -m "content: publikace $(date -u +%F\ %H:%M)"
           git pull --rebase origin "${{ github.ref_name }}"
           git push origin "HEAD:${{ github.ref_name }}"
+      - name: Spustit další běh (další dnešní okno je až po konci tohoto)
+        if: ${{ steps.publish.outputs.next != '' && inputs.dry_run != true }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish.yml -R "${{ github.repository }}" --ref "${{ github.ref_name }}" -f dry_run=false

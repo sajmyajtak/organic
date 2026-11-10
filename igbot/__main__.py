@@ -41,6 +41,8 @@ def main() -> None:
 
     p = sub.add_parser("publish", help="publikuj schválené položky, kterým nastal čas")
     p.add_argument("--dry-run", action="store_true", help="nic neposílej, jen ukaž, co by se stalo")
+    p.add_argument("--wait", type=int, default=0, metavar="MINUT",
+                   help="čekej na okna plánovače a publikuj přesně v nich (GitHub Actions)")
 
     sub.add_parser("insights", help="stáhni statistiky postů a účtu do data/")
     sub.add_parser("discover", help="analyzuj podobné účty a rozšiř jejich seznam")
@@ -125,6 +127,15 @@ def main() -> None:
         raise SystemExit(1 if bad else 0)
     elif args.cmd == "plan":
         show_plan(cfg)
+    elif args.cmd == "publish" and args.wait:
+        import os
+
+        from .publish import run_until
+        n, nxt = run_until(cfg, args.wait, dry_run=args.dry_run)
+        print(f"Publikováno: {n}" + (f"; další okno {nxt:%H:%M} až v dalším běhu" if nxt else ""))
+        if os.environ.get("GITHUB_OUTPUT"):
+            with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+                fh.write(f"next={nxt.isoformat() if nxt else ''}\n")
     elif args.cmd == "publish":
         from .publish import publish_due
         n = publish_due(cfg, dry_run=args.dry_run)

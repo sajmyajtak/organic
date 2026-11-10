@@ -194,9 +194,14 @@ def plan(now: datetime, tz: str) -> dict:
         reason = "mimo hodiny publikace"
     if reason is None:
         next_slot = now
-    elif len(today) < n:
-        earliest = max(now, last + MIN_GAP) if last else now
-        next_slot = next((s for s in day_slots if s > earliest), None)
+    elif len(today) < min(n, len(day_slots)):
+        # The next window is the next one in turn, held back if the last post went out late
+        # (a post a few seconds after its window must not cost the next window).
+        nxt = day_slots[len(today)]
+        if last:
+            nxt = max(nxt, last + MIN_GAP)
+        nxt = max(nxt, now)
+        next_slot = nxt if nxt.date() == now.date() and nxt.hour <= LAST_HOUR else None
     else:
         next_slot = None  # tomorrow
     return {

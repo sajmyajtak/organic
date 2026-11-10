@@ -27,7 +27,7 @@ Pravidla:
    workspace (sdílené s leady a autoclippingem). GitHub pouští publikaci jen
    jednou za pár hodin, takže automat se řídí uplynulým časem (stav v
    content/.automat.json): změny a tep posílá po novém postu nebo chybě, jinak
-   nanejvýš jednou za 8 h; rozhodnutí čte nanejvýš jednou za 12 h a jen když
+   nanejvýš jednou za 8 h; rozhodnutí čte nanejvýš jednou za 2 h a jen když
    existují koncepty; z publikovaných drží v tabulce posledních 30.
    Cíl: do ~150 volání měsíčně.
 7. **Hudba ke karuselu se přidává v aplikaci.** API ji ke karuselu nedá (jen k Reelu),
@@ -91,7 +91,7 @@ KEEP_PUBLISHED = 30
 # GitHub runs the "every 30 minutes" publish job only every few hours in practice,
 # so the automatic run paces itself by elapsed time, not by clock windows.
 PUSH_EVERY = timedelta(hours=8)   # changes and heartbeat; a new post or error goes right away
-READ_EVERY = timedelta(hours=12)  # decisions, only while drafts exist
+READ_EVERY = timedelta(hours=2)   # decisions, only while drafts exist (a waiting run polls)
 KEY = "klapka"           # paměť syncu v YAML položky
 HEARTBEAT_POST_ID = "__automat__"
 HEARTBEAT_RECORD = "recKqXpfurb4jkWmD"  # založila KLAPKA; když zmizí, založíme nový
