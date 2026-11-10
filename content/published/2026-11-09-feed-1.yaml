@@ -134,7 +134,7 @@ slides:
   - Sourdough
 klapka:
   record: recBnQc6uSV1a50TA
-  sent: b29a90904ce290dd
+  sent: 900047e9be61f640
 photo_credits:
 - label: Sourdough
   query: sourdough bread
@@ -702,3 +702,6 @@ media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-09-feed-1-5.jpg?v=c5ac4f48
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-09-feed-1-6.jpg?v=27955cab
 media_from_slides: true
+media_ids:
+- '18110375426250873'
+published_at: 2026-11-09T22:28-05:00
