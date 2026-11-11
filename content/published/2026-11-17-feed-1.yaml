@@ -562,24 +562,28 @@ media:
 media_from_slides: true
 klapka:
   record: recfcIxMI4YkKBbKk
-  sent: df902be36d226a5f
+  sent: e839da922e9d6809
 music:
-  audio_id: '263896829897972'
-  title: November
-  artist: Past Day
+  audio_id: '1305568027191616'
+  title: Little Life
+  artist: Robert Gromotka
   trending: true
   moods:
   - nostalgic
   alternatives:
-  - audio_id: '856093300426979'
-    title: Winter Magic
-    artist: Winterbell
+  - audio_id: '263896829897972'
+    title: November
+    artist: Past Day
     trending: true
-  - audio_id: '431803750912946'
-    title: Yellow
-    artist: Coldplay
-    trending: false
+  - audio_id: '791187672677388'
+    title: Forest Green
+    artist: Trout Recording
+    trending: true
   - audio_id: '1549201939908190'
     title: Orange Trees
     artist: Jesse Robitaille
     trending: false
+media_ids:
+- '17991346746088291'
+published_at: 2026-11-10T20:00-05:00
+permalink: https://www.instagram.com/p/DflQIEbDCpC/
