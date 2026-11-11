@@ -1766,25 +1766,29 @@ media:
 media_from_slides: true
 klapka:
   record: recYZwWrXmCoiMmK8
-  sent: 2537340bc42afbb6
+  sent: 61cc5abe9eb3d484
 music:
-  audio_id: '1302843157949715'
-  title: Autumn Days
-  artist: Morunas
+  audio_id: '2150015712260414'
+  title: Vintage November
+  artist: Peaceful Reveries
   trending: true
   moods:
   - cozy
   - calm
   alternatives:
-  - audio_id: '856093300426979'
-    title: Winter Magic
-    artist: Winterbell
+  - audio_id: '504545510323499'
+    title: What A Wonderful World
+    artist: Louis Armstrong
     trending: true
   - audio_id: '263896829897972'
     title: November
     artist: Past Day
     trending: true
-  - audio_id: '431803750912946'
-    title: Yellow
-    artist: Coldplay
+  - audio_id: '1302843157949715'
+    title: Autumn Days
+    artist: Morunas
     trending: false
+media_ids:
+- '18639652204028964'
+published_at: 2026-11-11T12:20-05:00
+permalink: https://www.instagram.com/p/DfnASKVl6LI/
