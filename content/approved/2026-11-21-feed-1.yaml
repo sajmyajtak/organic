@@ -1,0 +1,562 @@
+id: 2026-11-21-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ then vs now carousel (structure and technique)'
+ai_generated: true
+date: '2026-11-21'
+format: then_vs_now
+kind: carousel
+pillar: Then vs now
+caption: 'The best gifts used to take an afternoon 🎄
+
+  Which holidays do you miss?'
+hashtags:
+- holidays
+- nostalgia
+alt_text: 'Holidays then and now: handmade gifts, paper garlands, baking together and carols next to delivery
+  boxes, plastic decorations, takeout and screens.'
+music_moods:
+- winter
+- nostalgic
+slides:
+- layout: pair
+  title: How we used to celebrate
+  body: How we celebrate now
+  items:
+  - label: Family around the tree
+    queries:
+    - family decorating christmas tree
+    - christmas tree family
+  - label: Baking cookies
+    queries:
+    - baking christmas cookies
+    - christmas cookies
+  - label: Delivery boxes
+    queries:
+    - cardboard boxes stack
+    - delivery packages
+  - label: Phones at the table
+    queries:
+    - people using phones
+    - phones
+  kicker: What changed?
+- layout: pair
+  title: Gifts then
+  body: Gifts now
+  items:
+  - label: Handmade gifts
+    queries:
+    - handmade gift
+    - wrapped gift
+  - label: Knitting
+    queries:
+    - knitting
+    - knitting needles
+  - label: Packages at the door
+    queries:
+    - package delivery box
+    - cardboard package
+  - label: Shopping bags
+    queries:
+    - shopping bags
+    - paper shopping bags
+- layout: pair
+  title: Decorations then
+  body: Decorations now
+  items:
+  - label: Handmade ornaments
+    queries:
+    - handmade christmas ornaments
+    - paper garland
+  - label: Pine branches
+    queries:
+    - pine branches christmas
+    - fir branches
+  - label: Inflatable decorations
+    queries:
+    - inflatable christmas
+    - christmas inflatable
+  - label: Plastic lights
+    queries:
+    - christmas lights
+    - led lights
+- layout: pair
+  title: Holiday meals then
+  body: Holiday meals now
+  items:
+  - label: Roast dinner
+    queries:
+    - roast dinner
+    - holiday roast
+  - label: Gingerbread
+    queries:
+    - gingerbread cookies
+    - gingerbread
+  - label: Takeout
+    queries:
+    - takeout food
+    - takeaway boxes
+  - label: Store-bought cake
+    queries:
+    - store cake
+    - supermarket bakery
+- layout: pair
+  title: Evenings then
+  body: Evenings now
+  items:
+  - label: Singing carols
+    queries:
+    - christmas carols
+    - people singing
+  - label: Board games
+    queries:
+    - board game family
+    - board game
+  - label: Watching TV
+    queries:
+    - tv screen living room
+    - watching tv
+  - label: Scrolling
+    queries:
+    - smartphone in hand
+    - phone hand
+- title: Follow for more slow living
+  body: Which holidays do you miss?
+photo_credits:
+- label: Family around the tree
+  query: family decorating christmas tree
+  provider: commons
+  id: '186321217'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/NAVSTA_Rota_Chapel_Christmas_decorating_%289415325%29.jpg/960px-NAVSTA_Rota_Chapel_Christmas_decorating_%289415325%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/NAVSTA_Rota_Chapel_Christmas_decorating_%289415325%29.jpg/960px-NAVSTA_Rota_Chapel_Christmas_decorating_%289415325%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:NAVSTA_Rota_Chapel_Christmas_decorating_(9415325).jpg
+  creator: U.S. Navy photo by Petty Officer 2nd Class Jett Morgan
+  title: NAVSTA Rota Chapel Christmas decorating (9415325)
+  keywords: 'NAVSTA Rota Chapel Christmas decorating (9415325) PD US Navy Files created by the United
+    States Navy with known IDs CC-PD-Mark DVIDS files uploaded by OptimusPrimeBot Spain photographs taken
+    on 2025-11-23 Milimedia files, Spain (review needed) NAVAL STATION ROTA, Spain (Nov. 24, 2025) Volunteers
+    decorate a Christmas tree at the Naval Station (NAVSTA) Rota Chapel onboard NAVSTA Rota, Spain, Nov.
+    24, 2025. NAVSTA Rota is a force multiplier, capable of promptly deploying and supporting combat-ready
+    forces through land, air and sea, enabling '
+  width: 1800
+  score: 0.96
+  size:
+  - 532
+  - 800
+  match: 0.297
+  modern: 0.22
+- label: Baking cookies
+  query: baking christmas cookies
+  provider: commons
+  id: '61666549'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Cookie_Traditions_%28Unsplash%29.jpg/960px-Cookie_Traditions_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Cookie_Traditions_%28Unsplash%29.jpg/960px-Cookie_Traditions_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Cookie_Traditions_(Unsplash).jpg
+  creator: Kari Shea karishea
+  title: Cookie Traditions (Unsplash)
+  keywords: Cookie Traditions (Unsplash) CC-Zero Christmas cookies Images uploaded by Fæ Images from Unsplash
+    Files with coordinates missing SDC location of creation Cookies of the United States Kentwood, United
+    States
+  width: 1800
+  score: 0.935
+  size:
+  - 800
+  - 533
+  match: 0.295
+- label: Delivery boxes
+  query: cardboard boxes stack
+  provider: commons
+  id: '180480366'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/EFTA00002252_-_Cluttered_storage_room_filled_with_stacked_cardboard_boxes_tools_and_equipment.jpg/960px-EFTA00002252_-_Cluttered_storage_room_filled_with_stacked_cardboard_boxes_tools_and_equipment.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/2/23/EFTA00002252_-_Cluttered_storage_room_filled_with_stacked_cardboard_boxes_tools_and_equipment.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:EFTA00002252_-_Cluttered_storage_room_filled_with_stacked_cardboard_boxes_tools_and_equipment.jpg
+  creator: Federal Bureau of Investigation
+  title: EFTA00002252 - Cluttered storage room filled with stacked cardboard boxes tools and equipment
+  keywords: EFTA00002252 - Cluttered storage room filled with stacked cardboard boxes tools and equipment
+    PD US Government Uploaded with pattypan PD US DOJ CC-PD-Mark PD-USGov missing SDC copyright status
+    2019 FBI raid on Epstein's private island Part of Epstein Files released by the DOJ on December 19
+    2025
+  width: 1152
+  score: 1.069
+  size:
+  - 1152
+  - 768
+  match: 0.316
+  modern: 0.271
+- label: Phones at the table
+  query: people using phones
+  provider: commons
+  id: '61717933'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Businessman_with_coffee_outdoors_%28Unsplash%29.jpg/960px-Businessman_with_coffee_outdoors_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Businessman_with_coffee_outdoors_%28Unsplash%29.jpg/960px-Businessman_with_coffee_outdoors_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Businessman_with_coffee_outdoors_(Unsplash).jpg
+  creator: Rohit Tandon rohittandon
+  title: Businessman with coffee outdoors (Unsplash)
+  keywords: Businessman with coffee outdoors (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash
+    Human hands holding phones Rohit Tandon 2016-06-27
+  width: 1800
+  score: 0.834
+  size:
+  - 800
+  - 530
+  match: 0.278
+- label: Handmade gifts
+  query: handmade gift
+  provider: commons
+  id: '157446303'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/A_Christmas_gift_2.jpg/960px-A_Christmas_gift_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/6/66/A_Christmas_gift_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:A_Christmas_gift_2.jpg
+  creator: Bim24
+  title: A Christmas gift 2
+  keywords: A Christmas gift 2 CC-Zero Christmas in the Philippines Self-published work A Christmas gift
+    is a present given during the Christmas season as a way to show love, appreciation, and joy to loved
+    ones. It can be something needed or desired by the recipient, such as clothes, gadgets, books, toys,
+    or even simple handmade gifts. A Christmas gift holds significance in the celebra
+  width: 1632
+  score: 0.81
+  size:
+  - 1600
+  - 1200
+  match: 0.27
+  modern: 0.181
+- label: Knitting
+  query: knitting
+  provider: commons
+  id: '62214112'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Knitting_needles_and_yarn_%28Unsplash%29.jpg/960px-Knitting_needles_and_yarn_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Knitting_needles_and_yarn_%28Unsplash%29.jpg/960px-Knitting_needles_and_yarn_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Knitting_needles_and_yarn_(Unsplash).jpg
+  creator: Olliss fomaolea
+  title: Knitting needles and yarn (Unsplash)
+  keywords: Knitting needles and yarn (Unsplash) Knitting needles and tools CC-Zero Images uploaded by
+    Fæ Images from Unsplash Images from Unsplash (review needed) Olliss 2016-10-04
+  width: 1800
+  score: 0.934
+  size:
+  - 960
+  - 640
+  match: 0.292
+- label: Packages at the door
+  query: package delivery box
+  provider: openverse
+  id: 0e1e6986-96b9-46b9-bc91-4a02665f2122
+  preview_url: https://api.openverse.org/v1/images/0e1e6986-96b9-46b9-bc91-4a02665f2122/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMzIzNjc3LWltYWdlLWt3dncydWxyLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5912255/image-public-domain-technology-camera
+  creator: ''
+  title: Free drone delivering package image
+  keywords: Free drone delivering package image automation box drone delivery delivery drone delivery
+    service drone package package drone
+  width: 1024
+  score: 0.625
+  size:
+  - 1024
+  - 768
+  match: 0.248
+  modern: 0.541
+- label: Shopping bags
+  query: shopping bags
+  provider: commons
+  id: '61828141'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Woman_shopping_car_%28Unsplash%29.jpg/960px-Woman_shopping_car_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Woman_shopping_car_%28Unsplash%29.jpg/960px-Woman_shopping_car_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Woman_shopping_car_(Unsplash).jpg
+  creator: freestocks.org freestocks
+  title: Woman shopping car (Unsplash)
+  keywords: Woman shopping car (Unsplash) CC-Zero People of Olsztyn Images uploaded by Fæ Images from
+    Unsplash Images from Unsplash (review needed) Files with coordinates missing SDC location of creation
+    Women with automobiles Women walking with paper handbags Olsztyn, Poland
+  width: 1800
+  score: 0.739
+  size:
+  - 800
+  - 533
+  match: 0.267
+- label: Handmade ornaments
+  query: handmade christmas ornaments
+  provider: commons
+  id: '53498071'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Handmade_Ornaments_for_the_2016_Capitol_Christmas_Tree_%2830696573546%29.jpg/960px-Handmade_Ornaments_for_the_2016_Capitol_Christmas_Tree_%2830696573546%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Handmade_Ornaments_for_the_2016_Capitol_Christmas_Tree_%2830696573546%29.jpg/960px-Handmade_Ornaments_for_the_2016_Capitol_Christmas_Tree_%2830696573546%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Handmade_Ornaments_for_the_2016_Capitol_Christmas_Tree_(30696573546).jpg
+  creator: USCapitol
+  title: Handmade Ornaments for the 2016 Capitol Christmas Tree (30696573546)
+  keywords: Handmade Ornaments for the 2016 Capitol Christmas Tree (30696573546) Images of the Architect
+    of the Capitol Flickr images reviewed by FlickreviewR Files from US Capitol Flickr stream 2016 Capitol
+    Christmas Tree Christmas ornaments Flickr images missing SDC published in The 2016 Capitol Christmas
+    Tree was selected from the Payette National Forest in Idaho. The 80' Engelmann Spruce will take a
+    2,500-mile journey to the United States Capitol. AOC's Superintendent of the Capitol Grounds selected
+    this Idaho gem to grace the Capitol lawn. Read the full story.
+  width: 1800
+  score: 0.709
+  size:
+  - 800
+  - 600
+  match: 0.258
+  modern: 0.318
+- label: Pine branches
+  query: pine branches christmas
+  provider: openverse
+  id: dae5b00c-ec81-41f0-bcd3-2bc1fe313df6
+  preview_url: https://api.openverse.org/v1/images/dae5b00c-ec81-41f0-bcd3-2bc1fe313df6/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/LFM2SSWMXQ.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/tree-pine-LFM2SSWMXQ
+  creator: Marina Pershina
+  title: Tree Pine
+  keywords: Tree Pine branch christmas crystals green hoarfrost needles pine snow tree winter winterforest
+  width: 1024
+  score: 0.978
+  size:
+  - 960
+  - 640
+  match: 0.299
+  modern: 0.598
+- label: Inflatable decorations
+  query: inflatable christmas
+  provider: commons
+  id: '179959570'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Coppel_inflatable_holiday_decorations.jpg/960px-Coppel_inflatable_holiday_decorations.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Coppel_inflatable_holiday_decorations.jpg/960px-Coppel_inflatable_holiday_decorations.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Coppel_inflatable_holiday_decorations.jpg
+  creator: Sour Patch Fernada
+  title: Coppel inflatable holiday decorations
+  keywords: Coppel inflatable holiday decorations Inflatable objects CC-Zero Christmas decorations Inflatable
+    animals Artificial Christmas trees Inflatable dogs Coppel Self-published work Photographs taken on
+    2024-11-29 Artificial snowmen Christmas gifts in art Directional signposts in art Taken with Samsung
+    Galaxy A04e Dinosaurs in decorative and applied arts Best to use it for Christmas
+  width: 1800
+  score: 0.835
+  size:
+  - 800
+  - 600
+  match: 0.278
+  modern: 0.331
+- label: Plastic lights
+  query: christmas lights
+  provider: commons
+  id: '61766718'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Festive_Christmas_lights_create_bokeh_%28Unsplash%29.jpg/960px-Festive_Christmas_lights_create_bokeh_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Festive_Christmas_lights_create_bokeh_%28Unsplash%29.jpg/960px-Festive_Christmas_lights_create_bokeh_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Festive_Christmas_lights_create_bokeh_(Unsplash).jpg
+  creator: Charlotte Coneybeer she_sees
+  title: Festive Christmas lights create bokeh (Unsplash)
+  keywords: Festive Christmas lights create bokeh (Unsplash) CC-Zero Images uploaded by Fæ Nicon House
+    Images from Unsplash Images from Unsplash (review needed) Files with coordinates missing SDC location
+    of creation (51° N, 1° W) Enfield, United Kingdom
+  width: 1800
+  score: 0.958
+  size:
+  - 533
+  - 800
+  match: 0.301
+- label: Roast dinner
+  query: roast dinner
+  provider: commons
+  id: '2133683'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/NCI_Visuals_Food_Meal_Dinner.jpg/960px-NCI_Visuals_Food_Meal_Dinner.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/NCI_Visuals_Food_Meal_Dinner.jpg/960px-NCI_Visuals_Food_Meal_Dinner.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:NCI_Visuals_Food_Meal_Dinner.jpg
+  creator: Unknown photographer/artist
+  title: NCI Visuals Food Meal Dinner
+  keywords: NCI Visuals Food Meal Dinner National Institutes of Health images Roasted beef PD US NIH CC-PD-Mark
+    Green bean-based food Media from National Cancer Institute Visuals Online with known IDs Dinner meals
+    Potato as a side dish A dinner is set up on black, gold-rimmed dishes on a black tabletop. There is
+    a mug, a bowl of cut strawberries, and a plate full of green beans, small potatoes and roast beef.
+    A dark multicolored napkin with gold thread is curved around the plate.
+  width: 1800
+  score: 0.704
+  size:
+  - 800
+  - 533
+  match: 0.261
+  modern: 0.692
+- label: Gingerbread
+  query: gingerbread cookies
+  provider: commons
+  id: '61667030'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Polka-dot_mug_%28Unsplash%29.jpg/960px-Polka-dot_mug_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Polka-dot_mug_%28Unsplash%29.jpg/960px-Polka-dot_mug_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Polka-dot_mug_(Unsplash).jpg
+  creator: andrea di anddante
+  title: Polka-dot mug (Unsplash)
+  keywords: Polka-dot mug (Unsplash) CC-Zero Cups of coffee Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Black glasses Files with coordinates missing SDC location of
+    creation Gingerbread hearts (cookies) Coffee and biscuits Göteborg, Gothenburg, Sweden
+  width: 1800
+  score: 0.705
+  size:
+  - 960
+  - 640
+  match: 0.256
+- label: Takeout
+  query: takeout food
+  provider: commons
+  id: '140349589'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Beelzebab_takeaway_2023-11-05.jpg/960px-Beelzebab_takeaway_2023-11-05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Beelzebab_takeaway_2023-11-05.jpg/960px-Beelzebab_takeaway_2023-11-05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Beelzebab_takeaway_2023-11-05.jpg
+  creator: Andy Li
+  title: Beelzebab takeaway 2023-11-05
+  keywords: 'Beelzebab takeaway 2023-11-05 CC-Zero Self-published work Vegan food in the United Kingdom
+    Take-out food in the United Kingdom Beelzebab at The Hope and Ruin, Brighton Items and their description
+    on menu: Big Ben - "a Beelzebab® with a 9" tofu dog on top!" Hoisin Beneath My VVings - "three chicken
+    style VVings on a stick lathered in hoisin sauce, topped with sesame seeds"'
+  width: 1800
+  score: 0.733
+  size:
+  - 800
+  - 600
+  match: 0.261
+  modern: 0.674
+- label: Store-bought cake
+  query: store cake
+  provider: commons
+  id: '61660621'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Cake_store_%28Unsplash%29.jpg/960px-Cake_store_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Cake_store_%28Unsplash%29.jpg/960px-Cake_store_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Cake_store_(Unsplash).jpg
+  creator: Lance Anderson lanceanderson
+  title: Cake store (Unsplash)
+  keywords: Cake store (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Files with coordinates
+    missing SDC location of creation November 2016 in Cleveland West Side Market interior West Side Market,
+    Cleveland, United States
+  width: 1800
+  score: 1.022
+  size:
+  - 800
+  - 533
+  match: 0.304
+- label: Singing carols
+  query: christmas carols
+  provider: commons
+  id: '156579071'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Dogface_Soldiers_serenade_Bia%C5%82a_Piska%2C_Poland%2C_with_Christmas_carols_%288172416%29.jpg/960px-Dogface_Soldiers_serenade_Bia%C5%82a_Piska%2C_Poland%2C_with_Christmas_carols_%288172416%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Dogface_Soldiers_serenade_Bia%C5%82a_Piska%2C_Poland%2C_with_Christmas_carols_%288172416%29.jpg/960px-Dogface_Soldiers_serenade_Bia%C5%82a_Piska%2C_Poland%2C_with_Christmas_carols_%288172416%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Dogface_Soldiers_serenade_Bia%C5%82a_Piska,_Poland,_with_Christmas_carols_(8172416).jpg
+  creator: U.S. Army photo by Sgt. Cesar Salazar Jr.
+  title: Dogface Soldiers serenade Biała Piska, Poland, with Christmas carols (8172416)
+  keywords: Dogface Soldiers serenade Biała Piska, Poland, with Christmas carols (8172416) Christmas carols
+    PD US National Guard Files created by the United States National Guard with known IDs Poland photographs
+    taken on 2023-12-17 DVIDS files uploaded by OptimusPrimeBot Milimedia files, Poland (review needed)
+    (From left) U.S. Army Spc. Evan Belmont, a tank loader, Staff Sgt. Keaton Williamson, a tank gunner,
+    Pvt. Rodney Gonzalez, a tank driver, Sgt. Kyle Batchelder, a tank gunner, and Staff Sgt. William Moogan,
+    a maintenance team chief, all with Bravo “Barbarian” Company, 2nd Battalion, 69th Armored Regi
+  width: 1800
+  score: 0.694
+  size:
+  - 800
+  - 572
+  match: 0.26
+  modern: 0.494
+- label: Board games
+  query: board game family
+  provider: commons
+  id: '24029786'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Family_playing_board_game.jpg/960px-Family_playing_board_game.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Family_playing_board_game.jpg/960px-Family_playing_board_game.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Family_playing_board_game.jpg
+  creator: Bill Branson (Photographer)
+  title: Family playing board game
+  keywords: Family playing board game National Institutes of Health images PD-author African American
+    families Images uploaded by Fæ PD US NIH CC-PD-Mark Media from National Cancer Institute Visuals Online
+    Media from National Cancer Institute Visuals Online with known IDs Title Family Playing Board Game
+    Description An African-American family (adult male and female and two male children) sit around a
+    coffee table playing a board game. Topics/Categories People -- Adult People -- Child People -- Family/Friends
+    People -- Recreation Type Color, Photo Source National Cance
+  width: 1800
+  score: 1.006
+  size:
+  - 800
+  - 532
+  match: 0.301
+  modern: 0.21
+- label: Watching TV
+  query: tv screen living room
+  provider: commons
+  id: '180480002'
+  preview_url: https://upload.wikimedia.org/wikipedia/commons/3/33/EFTA00002142_-_Modern_living_room_with_a_large_flat-screen_TV_on_a_wooden_media_console_set_against_white_walls_and_tiled_flooring.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled
+  full_url: https://upload.wikimedia.org/wikipedia/commons/3/33/EFTA00002142_-_Modern_living_room_with_a_large_flat-screen_TV_on_a_wooden_media_console_set_against_white_walls_and_tiled_flooring.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:EFTA00002142_-_Modern_living_room_with_a_large_flat-screen_TV_on_a_wooden_media_console_set_against_white_walls_and_tiled_flooring.jpg
+  creator: Federal Bureau of Investigation
+  title: EFTA00002142 - Modern living room with a large flat-screen TV on a wooden media console set against
+    white walls and tiled flooring
+  keywords: EFTA00002142 - Modern living room with a large flat-screen TV on a wooden media console set
+    against white walls and tiled flooring PD US Government Uploaded with pattypan PD US DOJ CC-PD-Mark
+    2019 FBI raid on Epstein's private island Part of Epstein Files released by the DOJ on December 19
+    2025
+  width: 768
+  score: 1.036
+  size:
+  - 768
+  - 1152
+  match: 0.307
+  modern: 0.22
+- label: Scrolling
+  query: smartphone in hand
+  provider: commons
+  id: '61762875'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Eira%2C_Helsinki%2C_Finland_%28Unsplash%29.jpg/960px-Eira%2C_Helsinki%2C_Finland_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Eira%2C_Helsinki%2C_Finland_%28Unsplash%29.jpg/960px-Eira%2C_Helsinki%2C_Finland_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Eira,_Helsinki,_Finland_(Unsplash).jpg
+  creator: Toni Hukkanen hukkanen
+  title: Eira, Helsinki, Finland (Unsplash)
+  keywords: Eira, Helsinki, Finland (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Files with coordinates missing SDC location of creation People with
+    smartphones Human hands holding phones Eira, Helsinki, Finland
+  width: 1800
+  score: 0.931
+  size:
+  - 800
+  - 504
+  match: 0.291
+media:
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-21-feed-1-1.jpg?v=6284e757
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-21-feed-1-2.jpg?v=b983333c
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-21-feed-1-3.jpg?v=36958a9f
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-21-feed-1-4.jpg?v=d0acc958
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-21-feed-1-5.jpg?v=fe228477
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-21-feed-1-6.jpg?v=c1f474c8
+media_from_slides: true
+music:
+  audio_id: '856093300426979'
+  title: Winter Magic
+  artist: Winterbell
+  trending: true
+  moods:
+  - winter
+  - nostalgic
+  alternatives:
+  - audio_id: '1302843157949715'
+    title: Autumn Days
+    artist: Morunas
+    trending: false
+  - audio_id: '1549201939908190'
+    title: Orange Trees
+    artist: Jesse Robitaille
+    trending: false
+  - audio_id: '1011178941789966'
+    title: Riverbank
+    artist: Goldenrod
+    trending: false

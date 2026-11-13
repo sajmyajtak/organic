@@ -130,3 +130,39 @@ commons:61666554  # „Phones at the cafe“: prázdná kavárna
 commons:176504700  # „Baking bread at home“: prázdná kovová mísa
 commons:70770216  # „Screens“: vesnice se skluzavkou
 commons:3837535  # „Screens“: Terri and Bindi Irwin 2 (bez obrazovky)
+# 13. 11. 2026, kontrola čtyř nových postů
+commons:178534717  # „Acorns“: vypadají jako hrozny
+commons:133463889  # „Thanksgiving dinner“: formální stůl v Bílém domě
+commons:181533864  # „Green beans“: plechovka s nápisem
+commons:173511793  # „Sweet potatoes“: nečitelný výřez
+commons:62195678  # „Backyard football“: hráči v souboji
+commons:58834444  # „Coffee“: hrnek s nápisem Never settle
+commons:195855526  # „Pecans“: skořicový šnek s Kinder Bueno
+commons:33628097  # „Kids in the kitchen“: krajíce chleba
+commons:62318761  # „By the fire“: jen tmavé uhlíky
+commons:149470039  # „French press“: Biden a Macron
+commons:154517409  # „Slippers“: sandály
+commons:25635224  # „Dishes together“: pás v jídelně
+commons:61705751  # „Old photo albums“: západ slunce na pláži
+commons:64376547  # „Thank-you cards“: muzejní přání z 19. století
+commons:191703126  # „Knitted scarf“: nečitelné
+commons:175709175  # „Swiss Alps“: satelitní snímek ledovce
+commons:157345998  # „Feta“: koláč
+commons:16917700  # „Fishing boats“: znečištěný přístav, archiv
+commons:95035498  # „Clay pots“: antický muzejní hrnec
+commons:61777437  # „Candles“: červené modlitební svíčky
+commons:106197226  # „Muesli“: zelená smoothie miska
+commons:162783277  # „Cowbell“: nečitelné
+commons:17113268  # „Cows in the meadow“: Aljaška, ropovod
+commons:61897862  # „Trains through the Alps“: vlak do Tibetu
+commons:126430007  # „Phone alarm“: snímek obrazovky s textem
+commons:61714886  # „Coffee to go“: káva u stolu, ne s sebou
+commons:93082840  # „Laptop on the couch“: logo Apple
+commons:152491997  # „Binge watching / Watching TV“: televize není vidět
+commons:9472582  # „Family around the tree“: vojenská rodina ve sportovní hale
+commons:31834620  # „Delivery boxes“: kelímek Blue Bottle
+commons:24048839  # „Online shopping“: žena s časopisem u brokolice
+commons:62258323  # „Gift cards“: pouzdro na karty
+commons:16602032  # „Paper garlands“: národní vánoční strom, archiv
+commons:146575707  # „Packages at the door“: Parcel locker NP 26152 (nápis)
+commons:202355357  # „By the fire“: chátrající místnost (Living Room Fireplace (55614693639))

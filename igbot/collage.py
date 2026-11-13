@@ -651,7 +651,8 @@ def _vintage(img: Image.Image, seed: int = 0) -> Image.Image:
     return Image.fromarray((np.clip(out, 0, 1) * 255).astype(np.uint8), "RGB")
 
 
-def _pair(things: list, title: str, body: str, kicker: str, style: Style, out: Path) -> Path:
+def _pair(things: list, title: str, body: str, kicker: str, style: Style, out: Path,
+          vintage: bool = True) -> Path:
     """Then and now, the way the niche's best comparison carousel does it: four photos edge
     to edge, the top two captioned with `title` ("Evenings then"), the bottom two with
     `body` ("Evenings now"), and an optional word on the seam (`kicker`, e.g. "Why?")."""
@@ -660,7 +661,7 @@ def _pair(things: list, title: str, body: str, kicker: str, style: Style, out: P
     cw, ch = W // 2, H // 2
     for k, (_, img, _, _) in enumerate(things[:4]):
         tile = _crop_to(img.convert("RGB"), cw / ch).resize((cw, ch), Image.LANCZOS)
-        if k < 2:   # "then": an old print's warm, faded tones, so the comparison reads at a glance
+        if k < 2 and vintage:   # "then": an old print's warm, faded tones, so it reads at a glance
             tile = _vintage(tile, seed=k)
         slide.paste(tile, ((k % 2) * cw, (k // 2) * ch))
     slide = slide.convert("RGBA")
@@ -694,7 +695,7 @@ def _pair(things: list, title: str, body: str, kicker: str, style: Style, out: P
 
 def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
                  seed: int = 0, handle: str = "", body: str = "", layout: str = "board",
-                 kicker: str = "") -> Path:
+                 kicker: str = "", vintage: bool = True) -> Path:
     """One collage slide; returns the JPEG path. layout: "cover", "board" or "cta"
     (see the module docstring). Labels are drawn on boards only. items:
     (label, path) or (label, path, {"photo": bool, "hero": bool})."""
@@ -703,7 +704,7 @@ def render_slide(title: str, items: list, out: Path, style: Style = STYLE,
     m = style.margin
     things = _things(items)
     if layout == "pair":
-        return _pair(things, title, body, kicker, style, out)
+        return _pair(things, title, body, kicker, style, out, vintage)
     photos_ = [img for _, img, photo, _ in things if photo]
     cuts_only = [img for _, img, photo, _ in things if not photo]
 
@@ -949,7 +950,7 @@ def render_slides(slides: list[dict], out_dir: Path, handle: str = "", style: St
             things = echo(slide.get("echo"))
         paths.append(render_slide(slide["title"], things, out_dir / name(n), style, seed=seed + n,
                                   handle=handle, body=slide.get("body") or "", layout=layout,
-                                  kicker=slide.get("kicker") or ""))
+                                  kicker=slide.get("kicker") or "", vintage=slide.get("vintage", True)))
     return paths, credits
 
 

@@ -1,0 +1,1638 @@
+id: 2026-11-19-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ country carousel (structure and technique)'
+ai_generated: true
+date: '2026-11-19'
+format: moodboard
+kind: carousel
+pillar: The art of ___ living (moodboards)
+caption: 'Four more countries, one habit: slowing down 🌍
+
+  Where would you move?'
+hashtags:
+- slowliving
+- simpleliving
+alt_text: 'More slow living around the world: Greece, Mexico, Sweden and Switzerland, each with its food,
+  habits and places.'
+music_moods:
+- calm
+- cozy
+slides:
+- title: More slow living around the world
+  items:
+  - label: Santorini
+    queries:
+    - santorini
+    - greek island
+    photo: true
+  - label: Colorful street
+    queries:
+    - colorful street mexico
+    - mexico street
+    photo: true
+  - label: Red cottage
+    queries:
+    - red cottage sweden
+    - swedish house
+    photo: true
+  - label: Swiss Alps
+    queries:
+    - swiss alps village
+    - alps
+    photo: true
+  - label: Olive grove
+    queries:
+    - olive grove
+    - olive trees
+    photo: true
+  - label: Lake
+    queries:
+    - lake sweden
+    - lake forest
+    photo: true
+  - label: Alpine meadow
+    queries:
+    - alpine meadow
+    - mountain meadow
+    photo: true
+  - label: Market
+    queries:
+    - mexican market
+    - market stall
+    photo: true
+  - label: Pomegranate
+    queries:
+    - pomegranate
+    - pomegranates
+  - label: Sunflower
+    queries:
+    - sunflower
+    - sunflower flower
+  - label: Pine cone
+    queries:
+    - pine cone
+    - pine cones
+  - label: Peaches
+    queries:
+    - peaches
+    - peach
+  - label: Clay mug
+    queries:
+    - ceramic mug
+    - clay cup
+- title: The Greek way
+  items:
+  - label: Santorini
+    queries:
+    - santorini
+    - oia santorini
+    hero: true
+    photo: true
+  - label: Olives
+    queries:
+    - olives
+    - green olives
+  - label: Feta
+    queries:
+    - feta cheese block
+    - feta
+  - label: Greek salad
+    queries:
+    - greek salad
+    - salad bowl
+  - label: Figs
+    queries:
+    - figs
+    - fresh figs
+  - label: Honey
+    queries:
+    - honey jar
+    - honey
+  - label: Greek yogurt
+    queries:
+    - yogurt bowl
+    - yogurt
+  - label: Tomatoes
+    queries:
+    - tomatoes
+    - red tomatoes
+  - label: Oregano
+    queries:
+    - oregano
+    - dried herbs
+  - label: Leather sandals
+    queries:
+    - leather sandals
+    - sandals
+  - label: Backgammon
+    queries:
+    - backgammon
+    - backgammon board
+  - label: Swimming in the Aegean
+    queries:
+    - greek sea swimming
+    - swimming sea
+    photo: true
+  - label: Fishing boats
+    queries:
+    - colorful fishing boat
+    - fishing boat greece
+    photo: true
+  - label: Whitewashed houses
+    queries:
+    - white houses greece
+    - greek village
+    photo: true
+- title: The Mexican way
+  items:
+  - label: Colorful streets
+    queries:
+    - colorful street mexico
+    - guanajuato
+    hero: true
+    photo: true
+  - label: Tortillas
+    queries:
+    - tortillas
+    - corn tortillas
+  - label: Avocados
+    queries:
+    - avocados
+    - avocado
+  - label: Limes
+    queries:
+    - limes
+    - lime
+  - label: Chili peppers
+    queries:
+    - chili peppers
+    - red chili
+  - label: Corn
+    queries:
+    - corn cobs
+    - corn
+  - label: Mangoes
+    queries:
+    - mangoes
+    - mango
+  - label: Hot chocolate
+    queries:
+    - hot chocolate cup
+    - cocoa
+  - label: Cactus
+    queries:
+    - cactus pot
+    - cactus
+  - label: Woven baskets
+    queries:
+    - woven basket
+    - basket
+  - label: Clay pots
+    queries:
+    - terracotta pots
+    - clay pots
+  - label: Market days
+    queries:
+    - mexican market
+    - market stall
+    photo: true
+  - label: Long family dinners
+    queries:
+    - family dinner outdoors
+    - family eating together
+    photo: true
+  - label: Dancing in the plaza
+    queries:
+    - people dancing street
+    - dancing
+    photo: true
+- title: The Swedish way
+  items:
+  - label: Red cottages
+    queries:
+    - red cottage sweden
+    - swedish house
+    hero: true
+    photo: true
+  - label: Cinnamon buns
+    queries:
+    - cinnamon buns
+    - cinnamon rolls
+  - label: Coffee
+    queries:
+    - coffee cup
+    - cup of coffee
+  - label: Crispbread
+    queries:
+    - crispbread
+    - crackers
+  - label: Lingonberries
+    queries:
+    - lingonberries
+    - red berries
+  - label: Meatballs
+    queries:
+    - meatballs
+    - swedish meatballs
+  - label: Rye bread
+    queries:
+    - rye bread
+    - dark bread
+  - label: Candles
+    queries:
+    - lit candles
+    - candles
+  - label: Wool socks
+    queries:
+    - wool socks
+    - knitted socks
+  - label: Bicycle
+    queries:
+    - bicycle
+    - city bike
+  - label: Fika breaks
+    queries:
+    - coffee and cake
+    - coffee break
+    photo: true
+  - label: Lake swims
+    queries:
+    - swimming lake
+    - lake swim
+    photo: true
+  - label: Forest walks
+    queries:
+    - forest path
+    - forest walk
+    photo: true
+  - label: Rowing on the lake
+    queries:
+    - rowing boat lake
+    - wooden boat
+    photo: true
+- title: The Swiss way
+  items:
+  - label: Swiss Alps
+    queries:
+    - swiss village mountains
+    - lauterbrunnen
+    - swiss mountain village
+    hero: true
+    photo: true
+  - label: Fondue
+    queries:
+    - cheese fondue
+    - fondue
+  - label: Chocolate
+    queries:
+    - chocolate bar
+    - chocolate
+  - label: Braided bread
+    queries:
+    - braided bread
+    - challah
+  - label: Muesli
+    queries:
+    - granola bowl
+    - muesli
+  - label: Apples
+    queries:
+    - apples
+    - green apples
+  - label: Hiking boots
+    queries:
+    - hiking boots
+    - boots
+  - label: Raclette
+    queries:
+    - raclette
+    - melted cheese
+  - label: Wool blanket
+    queries:
+    - wool blanket
+    - plaid blanket
+  - label: Mountain hikes
+    queries:
+    - alpine hiking
+    - mountain hiking
+    photo: true
+  - label: Mountain lakes
+    queries:
+    - alpine lake
+    - mountain lake
+    photo: true
+  - label: Cows in the meadow
+    queries:
+    - cows grazing alps
+    - cows in meadow
+    photo: true
+  - label: Foggy mountain mornings
+    queries:
+    - train in the alps
+    - mountain railway
+    photo: true
+- title: Follow for more slow living
+  body: Where would you move?
+photo_credits:
+- label: Santorini
+  query: santorini
+  provider: commons
+  id: '61880243'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Santorini%2C_Greece_%28Unsplash_OSzlbMcf9Hg%29.jpg/960px-Santorini%2C_Greece_%28Unsplash_OSzlbMcf9Hg%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Santorini%2C_Greece_%28Unsplash_OSzlbMcf9Hg%29.jpg/960px-Santorini%2C_Greece_%28Unsplash_OSzlbMcf9Hg%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Santorini,_Greece_(Unsplash_OSzlbMcf9Hg).jpg
+  creator: Jaime Arrieta jarrieta86
+  title: Santorini, Greece (Unsplash OSzlbMcf9Hg)
+  keywords: Santorini, Greece (Unsplash OSzlbMcf9Hg) CC-Zero Views of Oia Images uploaded by Fæ Images
+    from Unsplash Images from Unsplash (review needed) May 2015 Greece photographs 2015 in Santorini Files
+    with coordinates missing SDC location of creation Santorini, Greece
+  width: 1800
+  score: 0.957
+  size:
+  - 533
+  - 800
+  match: 0.293
+- label: Colorful street
+  query: colorful street mexico
+  provider: commons
+  id: '124210422'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Calle_%C3%81ngel_Flores%2C_Mazatl%C3%A1n.jpg/960px-Calle_%C3%81ngel_Flores%2C_Mazatl%C3%A1n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Calle_%C3%81ngel_Flores%2C_Mazatl%C3%A1n.jpg/960px-Calle_%C3%81ngel_Flores%2C_Mazatl%C3%A1n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Calle_%C3%81ngel_Flores,_Mazatl%C3%A1n.jpg
+  creator: Dennis Sylvester Hurd
+  title: Calle Ángel Flores, Mazatlán
+  keywords: Calle Ángel Flores, Mazatlán Files with coordinates missing SDC location of creation Colorful
+    buildings in Mexico Flickr images reviewed by FlickreviewR 2 PD-author-FlickrPDM Files from Dennis
+    Sylvester Hurd Flickr stream Calle Ángel Flores, Mazatlán Ángel Flores Street, Mazatlán.
+  width: 1800
+  score: 1.141
+  size:
+  - 800
+  - 450
+  match: 0.348
+  modern: 0.867
+- label: Red cottage
+  query: red cottage sweden
+  provider: commons
+  id: '170052541'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Red_Swedish_Cottage_in_Blooming_Field.jpg/960px-Red_Swedish_Cottage_in_Blooming_Field.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Red_Swedish_Cottage_in_Blooming_Field.jpg/960px-Red_Swedish_Cottage_in_Blooming_Field.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Red_Swedish_Cottage_in_Blooming_Field.jpg
+  creator: Nanacor9
+  title: Red Swedish Cottage in Blooming Field
+  keywords: Red Swedish Cottage in Blooming Field CC-Zero Self-published work Red houses buy enclomiphene
+    citrate online
+  width: 1800
+  score: 1.025
+  size:
+  - 800
+  - 569
+  match: 0.306
+  modern: 0.391
+- label: Swiss Alps
+  query: swiss alps village
+  provider: commons
+  id: '31601371'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/A_Swiss_Mountain_Village_%2812137111955%29.jpg/960px-A_Swiss_Mountain_Village_%2812137111955%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/A_Swiss_Mountain_Village_%2812137111955%29.jpg/960px-A_Swiss_Mountain_Village_%2812137111955%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:A_Swiss_Mountain_Village_(12137111955).jpg
+  creator: U.S. Department of State from United States
+  title: A Swiss Mountain Village (12137111955)
+  keywords: A Swiss Mountain Village (12137111955) Glarner Alps Taken with Nikon D3 PD US DOS Linth Niederurnen
+    Flickr images reviewed by File Upload Bot (Magnus Manske) Aerial photographs of the canton of Glarus
+    Aviation in the canton of Glarus Incorrect Exif date Photographs by the U.S. Department of State Files
+    with coordinates missing SDC location of creation Switzerland photographs taken on 2014-01-25 2014
+    in the canton of Glarus John Kerry at the 2014 World Economic Forum Aerial photographs of Glarus Nord
+    Aerial photographs of Linthal Niederurnen /Glarus Nord, as seen from the helicopter carrying U.S.
+    Secretary of State John Kerry as he flew between Davos, Switzerland, and Zurich on Jan. 25, 2014.[State
+    Dept. Photo/Public Domain]
+  width: 1800
+  score: 0.926
+  size:
+  - 800
+  - 531
+  match: 0.289
+  modern: 0.28
+- label: Olive grove
+  query: olive grove
+  provider: commons
+  id: '141690449'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Olive_grove_in_HaNundalet_%2854%29_memorial7622.jpg/960px-Olive_grove_in_HaNundalet_%2854%29_memorial7622.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Olive_grove_in_HaNundalet_%2854%29_memorial7622.jpg/960px-Olive_grove_in_HaNundalet_%2854%29_memorial7622.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Olive_grove_in_HaNundalet_(54)_memorial7622.jpg
+  creator: יעקב
+  title: Olive grove in HaNundalet (54) memorial7622
+  keywords: Olive grove in HaNundalet (54) memorial7622 CC-Zero Self-published work Olive grove in HaNundalet
+    (54) memorial Olive grove in HaNundalet (54) memorial
+  width: 1800
+  score: 0.902
+  size:
+  - 800
+  - 600
+  match: 0.288
+  modern: 0.287
+- label: Lake
+  query: lake sweden
+  provider: commons
+  id: '61648166'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Choppy_lake_surface_%28Unsplash%29.jpg/960px-Choppy_lake_surface_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Choppy_lake_surface_%28Unsplash%29.jpg/960px-Choppy_lake_surface_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Choppy_lake_surface_(Unsplash).jpg
+  creator: Josefin Brosche Hagsgård broschgard
+  title: Choppy lake surface (Unsplash)
+  keywords: Choppy lake surface (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Dalsland, Sweden
+  width: 1800
+  score: 0.982
+  size:
+  - 800
+  - 600
+  match: 0.297
+- label: Alpine meadow
+  query: alpine meadow
+  provider: commons
+  id: '16914378'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/ALPINE_MEADOW_-_NARA_-_544892.jpg/960px-ALPINE_MEADOW_-_NARA_-_544892.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/ALPINE_MEADOW_-_NARA_-_544892.jpg/960px-ALPINE_MEADOW_-_NARA_-_544892.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:ALPINE_MEADOW_-_NARA_-_544892.jpg
+  creator: Boyd Norton
+  title: ALPINE MEADOW - NARA - 544892
+  keywords: 'ALPINE MEADOW - NARA - 544892 Images from the National Archives and Records Administration
+    Uncompahgre National Forest Media contributed by the National Archives and Records Administration
+    PD US EPA Artworks without Wikidata item US National Archives series: DOCUMERICA: The Environmental
+    Protection Agency''s Program to Photographically Document Subjects of Environmental Concern, compiled
+    1972 - 1977 Montane meadows May 1972 in Colorado DOCUMERICA photographs by Boyd Norton '
+  width: 1800
+  score: 1.019
+  size:
+  - 800
+  - 539
+  match: 0.303
+  modern: 0.289
+- label: Market
+  query: mexican market
+  provider: commons
+  id: '143108140'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Traditional_Mexican_Pi%C3%B1ata.jpg/960px-Traditional_Mexican_Pi%C3%B1ata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Traditional_Mexican_Pi%C3%B1ata.jpg/960px-Traditional_Mexican_Pi%C3%B1ata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Traditional_Mexican_Pi%C3%B1ata.jpg
+  creator: Paricutina
+  title: Traditional Mexican Piñata
+  keywords: Traditional Mexican Piñata CC-Zero Piñatas Traditions of Mexico Self-published work Files
+    with coordinates missing SDC location of creation Markets in Tlalpan WikiLovesLatinx Commons Workshop
+    Decorative piñata
+  width: 1800
+  score: 0.531
+  size:
+  - 600
+  - 800
+  match: 0.236
+  modern: 0.701
+- label: Pomegranate
+  query: pomegranate
+  provider: commons
+  id: '61853770'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Samay_Bhavsar_2016_%28Unsplash%29.jpg/960px-Samay_Bhavsar_2016_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Samay_Bhavsar_2016_%28Unsplash%29.jpg/960px-Samay_Bhavsar_2016_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Samay_Bhavsar_2016_(Unsplash).jpg
+  creator: Samay Bhavsar samaybhavsar
+  title: Samay Bhavsar 2016 (Unsplash)
+  keywords: Samay Bhavsar 2016 (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Sliced pomegranates Samay Bhavsar 2016
+  width: 1800
+  score: 0.938
+  size:
+  - 384
+  - 366
+  match: 0.997
+- label: Sunflower
+  query: sunflower
+  provider: commons
+  id: '61852068'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Sunflower_pollen_%28Unsplash%29.jpg/960px-Sunflower_pollen_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Sunflower_pollen_%28Unsplash%29.jpg/960px-Sunflower_pollen_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sunflower_pollen_(Unsplash).jpg
+  creator: Asgeir Pall Juliusson asgeir
+  title: Sunflower pollen (Unsplash)
+  keywords: Sunflower pollen (Unsplash) CC-Zero Images uploaded by Fæ Unidentified Helianthus Images from
+    Unsplash Images from Unsplash (review needed) Asgeir Pall Juliusson 2016
+  width: 1800
+  score: 0.958
+  size:
+  - 478
+  - 468
+  match: 0.998
+- label: Pine cone
+  query: pine cone
+  provider: commons
+  id: '61898419'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Pine_cone_in_winter_%28Unsplash%29.jpg/960px-Pine_cone_in_winter_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Pine_cone_in_winter_%28Unsplash%29.jpg/960px-Pine_cone_in_winter_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Pine_cone_in_winter_(Unsplash).jpg
+  creator: Jeremiah Brashaw bradshawjg
+  title: Pine cone in winter (Unsplash)
+  keywords: Pine cone in winter (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Files with coordinates missing SDC location of creation Nature of Boone,
+    North Carolina Boone, United States
+  width: 1800
+  score: 0.786
+  size:
+  - 190
+  - 239
+  match: 0.981
+- label: Peaches
+  query: peach
+  provider: commons
+  id: '84578'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Autumn_Red_peaches.jpg/960px-Autumn_Red_peaches.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Autumn_Red_peaches.jpg/960px-Autumn_Red_peaches.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Autumn_Red_peaches.jpg
+  creator: Jack Dykinga, USDA
+  title: Autumn Red peaches
+  keywords: Autumn Red peaches Featured pictures from the United States Government PD USDA ARS Featured
+    pictures of fruit Featured pictures on Wikipedia, Indonesian Featured pictures on Wikipedia, Persian
+    Featured pictures on Wikipedia, Turkish Media created by the United States Agricultural Research Service
+    with known IDs Featured photographs in the public domain Cross sections of peaches and nectarines
+    Photographs by Jack Dykinga Autumn red peach.
+  width: 1800
+  score: 0.97
+  size:
+  - 517
+  - 532
+  match: 0.908
+- label: Clay mug
+  query: ceramic mug
+  provider: commons
+  id: '138569155'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/02023_Small_mug_with_a_handle_from_the_Wielbark_culture_found_near_Obliwice.jpg/960px-02023_Small_mug_with_a_handle_from_the_Wielbark_culture_found_near_Obliwice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/02023_Small_mug_with_a_handle_from_the_Wielbark_culture_found_near_Obliwice.jpg/960px-02023_Small_mug_with_a_handle_from_the_Wielbark_culture_found_near_Obliwice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:02023_Small_mug_with_a_handle_from_the_Wielbark_culture_found_near_Obliwice.jpg
+  creator: unknown (pottery̠
+  title: 02023 Small mug with a handle from the Wielbark culture found near Obliwice
+  keywords: 02023 Small mug with a handle from the Wielbark culture found near Obliwice CC-Zero Obliwice
+    Mugs in Poland Wielbark culture pottery Ceramics in the National Museum in Szczecin Roman Period artefacts
+    in the National Museum in Szczecin MNS/A/22174 The chronology of the pottery cups is difficult to
+    establish if they are not accompanied by other objects that can be more precisely dated. The specimen
+    from Obliwice is an excellent example of this situation. It is characterized by a unique style, which
+    in fact has no analogues in other
+  width: 1800
+  score: 0.934
+  size:
+  - 837
+  - 771
+  match: 0.995
+- label: Santorini
+  query: santorini
+  provider: commons
+  id: '62067386'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Santorini%2C_Greece_%28Unsplash_w04Uo0y8UyI%29.jpg/960px-Santorini%2C_Greece_%28Unsplash_w04Uo0y8UyI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Santorini%2C_Greece_%28Unsplash_w04Uo0y8UyI%29.jpg/960px-Santorini%2C_Greece_%28Unsplash_w04Uo0y8UyI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Santorini,_Greece_(Unsplash_w04Uo0y8UyI).jpg
+  creator: Aidan Meyer aidanjjmeyer
+  title: Santorini, Greece (Unsplash w04Uo0y8UyI)
+  keywords: Santorini, Greece (Unsplash w04Uo0y8UyI) Views of the caldera of Santorini CC-Zero Images
+    uploaded by Fæ Images from Unsplash Images from Unsplash (review needed) Santorini in the 2010s Files
+    with coordinates missing SDC location of creation Santorini, Greece
+  width: 1800
+  score: 0.977
+  size:
+  - 800
+  - 533
+  match: 0.294
+- label: Olives
+  query: green olives
+  provider: commons
+  id: '155172365'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Green_olives_%2820241110%29.jpg/960px-Green_olives_%2820241110%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Green_olives_%2820241110%29.jpg/960px-Green_olives_%2820241110%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Green_olives_(20241110).jpg
+  creator: Fumikas Sagisavas
+  title: Green olives (20241110)
+  keywords: Green olives (20241110) CC-Zero Self-published work Olive textures Files with coordinates
+    missing SDC location of creation Green olives
+  width: 1800
+  score: 0.755
+  size:
+  - 575
+  - 598
+  match: 0.755
+- label: Greek salad
+  query: greek salad
+  provider: commons
+  id: '18399943'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Insalata_greca.JPG/960px-Insalata_greca.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Insalata_greca.JPG/960px-Insalata_greca.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Insalata_greca.JPG
+  creator: Cifo Buscemi
+  title: Insalata greca
+  keywords: Insalata greca Taken with Panasonic Lumix DMC-FS3 CC-Zero Greek salad Self-published work
+    Media needing category review in use at it.wikipedia Media needing category review with 2 suggested
+    categories Media needing category review as of 17 February 2012 Esempio di utilizzo della feta nell'insalata
+    greca.
+  width: 1800
+  score: 0.924
+  size:
+  - 732
+  - 563
+  match: 0.886
+- label: Figs
+  query: figs
+  provider: openverse
+  id: cc2c10d5-94c8-464b-af58-212525cd10ac
+  preview_url: https://api.openverse.org/v1/images/cc2c10d5-94c8-464b-af58-212525cd10ac/thumb/
+  full_url: https://cdn.stocksnap.io/img-thumbs/960w/YVDRQAGWOP.jpg
+  license: cc0
+  source: https://stocksnap.io/photo/figs-fruits-YVDRQAGWOP
+  creator: Jaroslaw%20Puszczy%u0144ski
+  title: Figs Fruits
+  keywords: Figs Fruits figs food fruits healthy
+  width: 1024
+  score: 0.984
+  size:
+  - 676
+  - 438
+  match: 0.973
+- label: Honey
+  query: honey jar
+  provider: commons
+  id: '128153879'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg/960px-Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg/960px-Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg
+  creator: Alabama Extension
+  title: Small Honey Jar with Honeycomb - 51331363379
+  keywords: Small Honey Jar with Honeycomb - 51331363379 CC-Zero Beekeeping in the United States Flickr
+    images reviewed by FlickreviewR 2 ACES | Devontae Lindsey
+  width: 1800
+  score: 0.742
+  size:
+  - 414
+  - 500
+  match: 0.993
+- label: Greek yogurt
+  query: yogurt bowl
+  provider: commons
+  id: '184899978'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Food_Portions_%28Team_Nutrition%29_%2820210902-FNS-UNC-0055%29.jpg/960px-Food_Portions_%28Team_Nutrition%29_%2820210902-FNS-UNC-0055%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Food_Portions_%28Team_Nutrition%29_%2820210902-FNS-UNC-0055%29.jpg/960px-Food_Portions_%28Team_Nutrition%29_%2820210902-FNS-UNC-0055%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Food_Portions_(Team_Nutrition)_(20210902-FNS-UNC-0055).jpg
+  creator: USDAgov
+  title: Food Portions (Team Nutrition) (20210902-FNS-UNC-0055)
+  keywords: 'Food Portions (Team Nutrition) (20210902-FNS-UNC-0055) Blueberries as food PD USDA Flickr
+    images missing SDC creator United States photographs taken on 2017-03-09 Flickr images reviewed by
+    FlickreviewR 2 Files from U.S. Department of Agriculture Flickr stream U.S. Department of Agriculture
+    Flickr files uploaded by OptimusPrimeBot Flickr images missing SDC published in 3/4 cup (6 oz) yogurt
+    topped with 3 blueberries in clear bowl with spoon (1.5 oz eq meat alternates). CACFP meal pattern
+    3-5 years. For more resources, visit the Team Nutrition website at: www.TeamNutrition.usda.gov . All
+    photos are property of USDA with unlimited rights to the use and redistributio'
+  width: 1800
+  score: 0.919
+  size:
+  - 705
+  - 770
+  match: 0.999
+- label: Tomatoes
+  query: tomatoes
+  provider: commons
+  id: '62052042'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Healthy_Vegetables_%28Unsplash%29.jpg/960px-Healthy_Vegetables_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Healthy_Vegetables_%28Unsplash%29.jpg/960px-Healthy_Vegetables_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Healthy_Vegetables_(Unsplash).jpg
+  creator: Ivan Timov ivantimov
+  title: Healthy Vegetables (Unsplash)
+  keywords: Healthy Vegetables (Unsplash) Tomatoes CC-Zero Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Files with coordinates missing SDC location of creation Stock
+    photographs Plovdiv, Bulgaria
+  width: 1800
+  score: 0.993
+  size:
+  - 528
+  - 543
+  match: 0.999
+- label: Leather sandals
+  query: leather sandals
+  provider: commons
+  id: '178380771'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Leather_sandals_from_the_grave_goods_of_child_mummy_S_278%2C_leather_-_Museo_Egizio_%28Turin%29_S_279_p01.jpg/960px-Leather_sandals_from_the_grave_goods_of_child_mummy_S_278%2C_leather_-_Museo_Egizio_%28Turin%29_S_279_p01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Leather_sandals_from_the_grave_goods_of_child_mummy_S_278%2C_leather_-_Museo_Egizio_%28Turin%29_S_279_p01.jpg/960px-Leather_sandals_from_the_grave_goods_of_child_mummy_S_278%2C_leather_-_Museo_Egizio_%28Turin%29_S_279_p01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Leather_sandals_from_the_grave_goods_of_child_mummy_S_278,_leather_-_Museo_Egizio_(Turin)_S_279_p01.jpg
+  creator: ''
+  title: Leather sandals from the grave goods of child mummy S 278, leather - Museo Egizio (Turin) S 279
+    p01
+  keywords: 'Leather sandals from the grave goods of child mummy S 278, leather - Museo Egizio (Turin)
+    S 279 p01 CC-Zero Files with no machine-readable author Uploaded with OpenRefine Artworks with Wikidata
+    item Artworks with known accession number Artworks with accession number from Wikidata Artworks with
+    Wikidata item missing genre Leather sandals from the grave goods of child mummy S278 - Museo Egizio,
+    Turin S 279 Artworks digital representation of unknown type of work Media from Museo Egizio (Turin) '
+  width: 1800
+  score: 0.819
+  size:
+  - 655
+  - 701
+  match: 0.998
+- label: Backgammon
+  query: backgammon
+  provider: commons
+  id: '195220719'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Tablier_de_jacquet.jpg/960px-Tablier_de_jacquet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/e/e3/Tablier_de_jacquet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Tablier_de_jacquet.jpg
+  creator: Edward Werner
+  title: Tablier de jacquet
+  keywords: Tablier de jacquet Culture of France CC-Zero Backgammon Self-published work Game boards Backgammon
+    boards Un tablier, aussi connu sous le nom «tablier de jacquet». Celui-ci n'est point utile pour jouer
+    au trictrac; il est des années 1950/1960.
+  width: 1600
+  score: 0.861
+  size:
+  - 1303
+  - 1091
+  match: 0.824
+- label: Swimming in the Aegean
+  query: greek sea swimming
+  provider: commons
+  id: '74819869'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Sweden_Overlooking_the_Fjord_%289351000573%29.jpg/960px-Sweden_Overlooking_the_Fjord_%289351000573%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Sweden_Overlooking_the_Fjord_%289351000573%29.jpg/960px-Sweden_Overlooking_the_Fjord_%289351000573%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Sweden_Overlooking_the_Fjord_(9351000573).jpg
+  creator: Yiannis Theologos Michellis
+  title: Sweden Overlooking the Fjord (9351000573)
+  keywords: Sweden Overlooking the Fjord (9351000573) CC-Zero Unidentified bodies of water in Sweden Coastal
+    landforms in Sweden Files with coordinates missing SDC location of creation Flickr images reviewed
+    by FlickreviewR 2 Flickr images missing SDC published in Having visited Sweden, I feel the country
+    is an overlooked destination for sun and sea. Having grown up on a little island nestled in the east
+    corner of the Aegean Sea I am no stranger to beautiful sunny weather and the invigorating Mediterranean
+    sea. Having said that, swimming under a Swedish sun i
+  width: 1800
+  score: 0.544
+  size:
+  - 800
+  - 533
+  match: 0.235
+  modern: 0.511
+- label: Fishing boats
+  query: colorful fishing boat
+  provider: commons
+  id: '201993332'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Colorful_Boats_of_Zamboanga.jpg/960px-Colorful_Boats_of_Zamboanga.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/3/34/Colorful_Boats_of_Zamboanga.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Colorful_Boats_of_Zamboanga.jpg
+  creator: Dunno jay
+  title: Colorful Boats of Zamboanga
+  keywords: Colorful Boats of Zamboanga CC-Zero Self-published work WikiClubZamboanga Colorful boats represent
+    the coastal life and fishing traditions of Zamboanga's local communities.
+  width: 1778
+  score: 1.083
+  size:
+  - 1600
+  - 1024
+  match: 0.315
+  modern: 0.535
+- label: Whitewashed houses
+  query: greek village
+  provider: commons
+  id: '31225943'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/GreekVillageSlope%40mistySunset%26flag%28byMargaretBarley%29.jpg/960px-GreekVillageSlope%40mistySunset%26flag%28byMargaretBarley%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/0/06/GreekVillageSlope%40mistySunset%26flag%28byMargaretBarley%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:GreekVillageSlope@mistySunset%26flag(byMargaretBarley).jpg
+  creator: Margaret Barley
+  title: GreekVillageSlope@mistySunset&flag(byMargaretBarley)
+  keywords: GreekVillageSlope@mistySunset&flag(byMargaretBarley) CC-Zero Oia, Greece Files from external
+    sources with reviewed licenses Windmills in Oia (Santorini) Images from Unsplash Unknown date Files
+    with coordinates missing SDC location of creation Photographs of flags of Greece in South Aegean Flags
+    in Santorini Images from tumblr.unsplash.com Pejzaĝo de greka vilaĝo je sunfalo iom nebula, videblas
+    du ventmuelejoj kaj nacia flago hisita sur stangon.
+  width: 1280
+  score: 0.995
+  size:
+  - 1280
+  - 792
+  match: 0.303
+- label: Colorful streets
+  query: colorful street mexico
+  provider: commons
+  id: '83644594'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Valladolid_Yuc_Mex_Taxi.jpg/960px-Valladolid_Yuc_Mex_Taxi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Valladolid_Yuc_Mex_Taxi.jpg/960px-Valladolid_Yuc_Mex_Taxi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Valladolid_Yuc_Mex_Taxi.jpg
+  creator: Sony Thomas
+  title: Valladolid Yuc Mex Taxi
+  keywords: 'Valladolid Yuc Mex Taxi CC-Zero Taxis in Yucatán Files with coordinates missing SDC location
+    of creation Flickr images reviewed by FlickreviewR 2 Buildings in Valladolid, Yucatán 2016 in Valladolid,
+    Yucatán Columns in Yucatán Arches in Valladolid, Yucatán Balconies in Yucatán Calle 41, Valladolid,
+    Yucatán Calle 40, Valladolid, Yucatán Valladolid, Yucatán, Mexico. Colorful ancient city of Valladolid,
+    Mexico. From Wikipedia: Valladolid is a great city to spend the day exploring the history and culture
+    the Yucatan peninsula has to offer. From colonial era churches and architecture to natural wonders
+    like cenote notable sights to vis'
+  width: 1800
+  score: 1.085
+  size:
+  - 551
+  - 800
+  match: 0.31
+  modern: 0.713
+- label: Tortillas
+  query: tortillas
+  provider: commons
+  id: '57946370'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Day_40_homemade_tortillas._%2832433374470%29.jpg/960px-Day_40_homemade_tortillas._%2832433374470%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Day_40_homemade_tortillas._%2832433374470%29.jpg/960px-Day_40_homemade_tortillas._%2832433374470%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Day_40_homemade_tortillas._(32433374470).jpg
+  creator: terri_bateman
+  title: Day 40 homemade tortillas. (32433374470)
+  keywords: Day 40 homemade tortillas. (32433374470) CC-Zero Tortillas Photos uploaded from Flickr by
+    Fæ using a script Flickr images reviewed by FlickreviewR Photographs by Terri Bateman -365photo 2017
+    edition Food
+  width: 1800
+  score: 0.727
+  size:
+  - 551
+  - 469
+  match: 0.743
+- label: Avocados
+  query: avocados
+  provider: commons
+  id: '61663268'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Caroline_Attwood_2017-03-21_%28Unsplash%29.jpg/960px-Caroline_Attwood_2017-03-21_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Caroline_Attwood_2017-03-21_%28Unsplash%29.jpg/960px-Caroline_Attwood_2017-03-21_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Caroline_Attwood_2017-03-21_(Unsplash).jpg
+  creator: Caroline Attwood carolineattwood
+  title: Caroline Attwood 2017-03-21 (Unsplash)
+  keywords: Caroline Attwood 2017-03-21 (Unsplash) CC-Zero Images uploaded by Fæ Avocado toast Images
+    from Unsplash Caroline Attwood 2017-03-21
+  width: 1800
+  score: 0.918
+  size:
+  - 380
+  - 262
+  match: 0.991
+- label: Limes
+  query: lime
+  provider: commons
+  id: '152655775'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Limes_with_halves.jpg/960px-Limes_with_halves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/3/36/Limes_with_halves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Limes_with_halves.jpg
+  creator: Jiafei Slay Queen
+  title: Limes with halves
+  keywords: Limes with halves Citrus CC-Zero Limes Self-published work Citrus fruits on white background
+    This is an image of limes, I photoshopped this image to remove the lines of the tissue paper and contrasted
+    the image.
+  width: 1239
+  score: 0.953
+  size:
+  - 1003
+  - 774
+  match: 0.998
+- label: Chili peppers
+  query: red chili
+  provider: commons
+  id: '155127403'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Khola_chillies_-_in_red_ripe_stage.jpg/960px-Khola_chillies_-_in_red_ripe_stage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/0/00/Khola_chillies_-_in_red_ripe_stage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Khola_chillies_-_in_red_ripe_stage.jpg
+  creator: Suvidha Zaraunkar (Khola Chilli grower) from Soliem, Khola village
+  title: Khola chillies - in red ripe stage
+  keywords: Khola chillies - in red ripe stage CC-Zero Chili peppers Red food Khola chillies - in red
+    ripe stage
+  width: 989
+  score: 0.872
+  size:
+  - 166
+  - 510
+  match: 0.929
+- label: Corn
+  query: corn cobs
+  provider: commons
+  id: '93323753'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/4848Chunks_of_beef_textures_and_Corn_cobs_in_the_Philippines_03.jpg/960px-4848Chunks_of_beef_textures_and_Corn_cobs_in_the_Philippines_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/4848Chunks_of_beef_textures_and_Corn_cobs_in_the_Philippines_03.jpg/960px-4848Chunks_of_beef_textures_and_Corn_cobs_in_the_Philippines_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:4848Chunks_of_beef_textures_and_Corn_cobs_in_the_Philippines_03.jpg
+  creator: Judgefloro
+  title: 4848Chunks of beef textures and Corn cobs in the Philippines 03
+  keywords: '4848Chunks of beef textures and Corn cobs in the Philippines 03 CC-Zero Self-published work
+    Files with coordinates missing SDC location of creation Corncobs in the Philippines Philippines photographs
+    taken on 2020-08-20 Chunks of beef and Corn cobs in the Philippines as food ingredients of home cooking
+    in Poblacion, Baliuag, Bulacan Timeline of the 2020 coronavirus pandemic in the Philippines 2020 coronavirus
+    pandemic in the Philippines Bayanihan to Heal as One Act (RA 11469) Bayanihan Act of 2020. Signed
+    on March '
+  width: 1800
+  score: 0.998
+  size:
+  - 702
+  - 493
+  match: 0.999
+- label: Mangoes
+  query: mango
+  provider: commons
+  id: '160052253'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/A_cold_%E2%9D%84%EF%B8%8F_mango_%F0%9F%A5%AD.jpg/960px-A_cold_%E2%9D%84%EF%B8%8F_mango_%F0%9F%A5%AD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/A_cold_%E2%9D%84%EF%B8%8F_mango_%F0%9F%A5%AD.jpg/960px-A_cold_%E2%9D%84%EF%B8%8F_mango_%F0%9F%A5%AD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:A_cold_%E2%9D%84%EF%B8%8F_mango_%F0%9F%A5%AD.jpg
+  creator: Ideepakrathour
+  title: A cold ❄️ mango 🥭
+  keywords: A cold ❄️ mango 🥭 Mango CC-Zero Self-published work A cold mango 🥭
+  width: 1800
+  score: 0.838
+  size:
+  - 208
+  - 373
+  match: 0.748
+- label: Hot chocolate
+  query: hot chocolate cup
+  provider: commons
+  id: '194630291'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/JP_%E6%97%A5%E6%9C%AC_Japan_%E4%BA%AC%E9%83%BD_Kyoto_%E5%9B%9B%E6%9D%A1_Shijo_FORZA_%E9%85%92%E5%BA%97_Hotel_Forza_Kyoto_Shijo_Kawaramachi_main_lobby_welcome_drink_hot_chocolate_paper_cups_beverage_June_2026_N13P_01.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/JP_%E6%97%A5%E6%9C%AC_Japan_%E4%BA%AC%E9%83%BD_Kyoto_%E5%9B%9B%E6%9D%A1_Shijo_FORZA_%E9%85%92%E5%BA%97_Hotel_Forza_Kyoto_Shijo_Kawaramachi_main_lobby_welcome_drink_hot_chocolate_paper_cups_beverage_June_2026_N13P_01.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:JP_%E6%97%A5%E6%9C%AC_Japan_%E4%BA%AC%E9%83%BD_Kyoto_%E5%9B%9B%E6%9D%A1_Shijo_FORZA_%E9%85%92%E5%BA%97_Hotel_Forza_Kyoto_Shijo_Kawaramachi_main_lobby_welcome_drink_hot_chocolate_paper_cups_beverage_June_2026_N13P_01.jpg
+  creator: TKdows 2026
+  title: JP 日本 Japan 京都 Kyoto 四条 Shijo FORZA 酒店 Hotel Forza Kyoto Shijo Kawaramachi main lobby welcome
+    drink hot chocolate paper cups beverage June 2026 N13P 01
+  keywords: JP 日本 Japan 京都 Kyoto 四条 Shijo FORZA 酒店 Hotel Forza Kyoto Shijo Kawaramachi main lobby welcome
+    drink hot chocolate paper cups beverage June 2026 N13P 01 CC-Zero Paper cups Self-published work Files
+    with coordinates missing SDC location of creation Hot chocolate in Japan Kyoto photographs taken on
+    2026-06-27 Hotel Forza Kyoto Shijo Kawaramachi，Japan JP 日本 Japan 京都 Kyoto 四条 Shijo FORZA 酒店 Hotel
+    Forza Kyoto Shijo Kawaramachi main lobby welcome drink hot chocolate paper cups beverage in June 2026
+  width: 1800
+  score: 0.788
+  size:
+  - 750
+  - 747
+  match: 0.999
+- label: Cactus
+  query: cactus pot
+  provider: commons
+  id: '174685674'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Cactus_en_pots.jpg/960px-Cactus_en_pots.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Cactus_en_pots.jpg/960px-Cactus_en_pots.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Cactus_en_pots.jpg
+  creator: Quinze2001
+  title: Cactus en pots
+  keywords: Cactus en pots CC-Zero Self-published work Unidentified Cactaceae Cactus
+  width: 1800
+  score: 0.915
+  size:
+  - 337
+  - 403
+  match: 0.993
+- label: Woven baskets
+  query: woven basket
+  provider: commons
+  id: '195788438'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Woven_Basket_05.jpg/960px-Woven_Basket_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Woven_Basket_05.jpg
+  creator: PagesAndPathsPH
+  title: Woven Basket 05
+  keywords: Woven Basket 05 CC-Zero Self-published work All media needing categories as of 2026 Media
+    needing categories as of 17 July 2026 Woven basket
+  width: 1800
+  score: 0.975
+  size:
+  - 636
+  - 817
+  match: 0.999
+- label: Clay pots
+  query: terracotta pots
+  provider: commons
+  id: '60408187'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Terracotta_trick_vase_MET_DP121737.jpg/960px-Terracotta_trick_vase_MET_DP121737.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Terracotta_trick_vase_MET_DP121737.jpg/960px-Terracotta_trick_vase_MET_DP121737.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Terracotta_trick_vase_MET_DP121737.jpg
+  creator: ''
+  title: Terracotta trick vase MET DP121737
+  keywords: Terracotta trick vase MET DP121737 CC-Zero Files with no machine-readable author Artworks
+    without Wikidata item Artworks with known accession number Images from Metropolitan Museum of Art
+    GWToolset Batch Upload Bottom-filling pots Cypriotic pottery at the Department of Greek and Roman
+    Art, Metropolitan Museum of Art Cypriot; Jug with female head; Vases
+  width: 1800
+  score: 0.958
+  size:
+  - 453
+  - 761
+  match: 0.971
+- label: Market days
+  query: mexican market
+  provider: commons
+  id: '143108141'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Traditional_Mexican_Pi%C3%B1atas_01.jpg/960px-Traditional_Mexican_Pi%C3%B1atas_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Traditional_Mexican_Pi%C3%B1atas_01.jpg/960px-Traditional_Mexican_Pi%C3%B1atas_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Traditional_Mexican_Pi%C3%B1atas_01.jpg
+  creator: Paricutina
+  title: Traditional Mexican Piñatas 01
+  keywords: Traditional Mexican Piñatas 01 CC-Zero Piñatas Traditions of Mexico Self-published work Files
+    with coordinates missing SDC location of creation Markets in Tlalpan WikiLovesLatinx Commons Workshop
+    Piñatas for sale at the Tlalpan Market in Mexico City
+  width: 1800
+  score: 0.566
+  size:
+  - 800
+  - 600
+  match: 0.238
+  modern: 0.733
+- label: Long family dinners
+  query: family eating together
+  provider: commons
+  id: '24036618'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Family_eating_meal.jpg/960px-Family_eating_meal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Family_eating_meal.jpg/960px-Family_eating_meal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Family_eating_meal.jpg
+  creator: National Cancer Institute
+  title: Family eating meal
+  keywords: Family eating meal National Institutes of Health images Dining tables Images uploaded by Fæ
+    PD US NIH CC-PD-Mark Media from National Cancer Institute Visuals Online Mexican American history
+    of 1995 People eating together Media from National Cancer Institute Visuals Online with known IDs
+    People eating dinner Families eating in the United States Title Family Eating Meal Description A Hispanic
+    family (male adult, two female adults, female child, and male child) enjoy a meal at the dinner table.
+    Topics/Categories Food and Drink People -- Adult People -- Child People -- Family/Friends Type Color,
+    Photo Source National Cancer Institute
+  width: 1800
+  score: 0.989
+  size:
+  - 800
+  - 533
+  match: 0.297
+  modern: 0.483
+- label: Dancing in the plaza
+  query: people dancing street
+  provider: commons
+  id: '121116895'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/A_breakdance_group_is_dancing_and_playing_music_at_the_streetcorner_in_the_sunlight%3B_free_photo_Amsterdam_city_by_Fons_Heijnsbroek%2C_August_2009.tif/lossy-page1-960px-A_breakdance_group_is_dancing_and_playing_music_at_the_streetcorner_in_the_sunlight%3B_free_photo_Amsterdam_city_by_Fons_Heijnsbroek%2C_August_2009.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/A_breakdance_group_is_dancing_and_playing_music_at_the_streetcorner_in_the_sunlight%3B_free_photo_Amsterdam_city_by_Fons_Heijnsbroek%2C_August_2009.tif/lossy-page1-960px-A_breakdance_group_is_dancing_and_playing_music_at_the_streetcorner_in_the_sunlight%3B_free_photo_Amsterdam_city_by_Fons_Heijnsbroek%2C_August_2009.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:A_breakdance_group_is_dancing_and_playing_music_at_the_streetcorner_in_the_sunlight;_free_photo_Amsterdam_city_by_Fons_Heijnsbroek,_August_2009.tif
+  creator: Fons Heijnsbroek
+  title: A breakdance group is dancing and playing music at the streetcorner in the sunlight; free photo
+    Amsterdam city by Fons Heijnsbroek, August 2009
+  keywords: 'A breakdance group is dancing and playing music at the streetcorner in the sunlight; free
+    photo Amsterdam city by Fons Heijnsbroek, August 2009 CC-Zero Created with Adobe Photoshop Elements
+    Koningsplein, Amsterdam Herengracht, Amsterdam PD-Netherlands Self-published work Capoeira in the
+    Netherlands Anonymous people of Amsterdam Street dancers in the Netherlands Men wearing yellow shirts
+    August 2009 in Amsterdam Men wearing blue trousers Street photography in Amsterdam in the 2000s Groups
+    of people in Amsterdam Street musicians in Amsterdam Photographs by Fons Heijnsbroek in Amsterdam
+    (2009) Grachtengordel neighbourhood of Amsterdam, in photos by Fons Heijnsbroek 2009 - photo of a
+    breakdance group, dancing and playing music for free at the street corner in the sunlight with a lot
+    of public; free image of street dance, photo in Amsterdam city by Fons Heijnsbroek, August 2009 -
+    location: corner square Koningsplein &amp; Singel'
+  width: 1800
+  score: 1.015
+  size:
+  - 800
+  - 600
+  match: 0.305
+  modern: 0.679
+- label: Red cottages
+  query: red cottage sweden
+  provider: commons
+  id: '74956036'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Two_red_cottages_in_Govik.jpg/960px-Two_red_cottages_in_Govik.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Two_red_cottages_in_Govik.jpg/960px-Two_red_cottages_in_Govik.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Two_red_cottages_in_Govik.jpg
+  creator: W.carter
+  title: Two red cottages in Govik
+  keywords: Two red cottages in Govik Taken with Panasonic Lumix DMC-FZ1000 CC-Zero Self-published work
+    Images by W.carter Files with coordinates missing SDC location of creation Govik Two red cottages
+    in Govik harbor, Lysekil Municipality, Sweden.
+  width: 1800
+  score: 1.038
+  size:
+  - 800
+  - 474
+  match: 0.307
+  modern: 0.361
+- label: Cinnamon buns
+  query: cinnamon buns
+  provider: openverse
+  id: 72d5f500-7065-41cd-91ad-e779fcc6b438
+  preview_url: https://api.openverse.org/v1/images/72d5f500-7065-41cd-91ad-e779fcc6b438/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmYzMDQyLWltYWdlLWt3dnlsZWVyLmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/5928289/photo-image-public-domain-hands-person
+  creator: ''
+  title: Free vegan cinnamon rolls image
+  keywords: Free vegan cinnamon rolls image baking cinnamon cinnamon bread cinnamon buns cinnamon roll
+    dessert bread person photo sweet roll
+  width: 1024
+  score: 0.618
+  size:
+  - 675
+  - 722
+  match: 0.997
+- label: Coffee
+  query: coffee cup
+  provider: commons
+  id: '61715684'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Black_coffee_cup_%28Unsplash%29.jpg/960px-Black_coffee_cup_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Black_coffee_cup_%28Unsplash%29.jpg/960px-Black_coffee_cup_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Black_coffee_cup_(Unsplash).jpg
+  creator: Ross Parmly rparmly
+  title: Black coffee cup (Unsplash)
+  keywords: Black coffee cup (Unsplash) CC-Zero Cups of coffee Images uploaded by Fæ Images from Unsplash
+    Black coffee cups Ross Parmly 2015
+  width: 1800
+  score: 0.991
+  size:
+  - 574
+  - 459
+  match: 0.994
+- label: Crispbread
+  query: crispbread
+  provider: commons
+  id: '107264698'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Cheddar_cheese_and_Wasa_crispbread_-_Massachusetts.jpg/960px-Cheddar_cheese_and_Wasa_crispbread_-_Massachusetts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Cheddar_cheese_and_Wasa_crispbread_-_Massachusetts.jpg/960px-Cheddar_cheese_and_Wasa_crispbread_-_Massachusetts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Cheddar_cheese_and_Wasa_crispbread_-_Massachusetts.jpg
+  creator: Daderot
+  title: Cheddar cheese and Wasa crispbread - Massachusetts
+  keywords: Cheddar cheese and Wasa crispbread - Massachusetts CC-Zero Self-published work Food of Massachusetts
+    Uploaded with Mobile/Android Photographs taken on 2021-07-05 Square photos of food in the United States
+    Wasa crisp bread Sliced cheddar cheese Cheddar cheese and Wasa crispbread - Massachusetts, USA.
+  width: 1800
+  score: 0.853
+  size:
+  - 917
+  - 915
+  match: 0.91
+- label: Lingonberries
+  query: lingonberries
+  provider: commons
+  id: '62439439'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Kaalilaatikko_with_lingonberries.jpg/960px-Kaalilaatikko_with_lingonberries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Kaalilaatikko_with_lingonberries.jpg/960px-Kaalilaatikko_with_lingonberries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Kaalilaatikko_with_lingonberries.jpg
+  creator: Kotivalo
+  title: Kaalilaatikko with lingonberries
+  keywords: Kaalilaatikko with lingonberries CC-Zero Cuisine of Finland Cabbage-based food Lingonberry
+    jam Self-published work Food of Finland Plates with food in Finland Kaalilaatikko (casserole made
+    with cabbage) with lingonberries
+  width: 1800
+  score: 0.882
+  size:
+  - 631
+  - 602
+  match: 0.68
+- label: Meatballs
+  query: meatballs
+  provider: commons
+  id: '151624017'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Swedish_meatballs_with_egg_noodles.jpg/960px-Swedish_meatballs_with_egg_noodles.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Swedish_meatballs_with_egg_noodles.jpg/960px-Swedish_meatballs_with_egg_noodles.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Swedish_meatballs_with_egg_noodles.jpg
+  creator: RandomKatze
+  title: Swedish meatballs with egg noodles
+  keywords: Swedish meatballs with egg noodles Meatballs CC-Zero Self-published work A plate with egg
+    noodles, sauce, and Swedish meatballs.
+  width: 1800
+  score: 0.967
+  size:
+  - 565
+  - 561
+  match: 0.94
+- label: Rye bread
+  query: rye bread
+  provider: commons
+  id: '161307951'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cut_rye_bread_Kartoffelkruste_2025-02-20_02.jpg/960px-Cut_rye_bread_Kartoffelkruste_2025-02-20_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cut_rye_bread_Kartoffelkruste_2025-02-20_02.jpg/960px-Cut_rye_bread_Kartoffelkruste_2025-02-20_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Cut_rye_bread_Kartoffelkruste_2025-02-20_02.jpg
+  creator: Leonhard Lenz
+  title: Cut rye bread Kartoffelkruste 2025-02-20 02
+  keywords: Cut rye bread Kartoffelkruste 2025-02-20 02 CC-Zero Self-published work Photographs by Leonhard
+    Lenz Images from Wiki Loves Folklore 2025 Images from Wiki Loves Folklore 2025 in Germany Rye bread
+    of Germany Cut rye bread in the variation Kartoffelkruste produced by the Ufa bakery in Berlin.
+  width: 1800
+  score: 0.968
+  size:
+  - 620
+  - 383
+  match: 0.998
+- label: Candles
+  query: lit candles
+  provider: commons
+  id: '61803961'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Hands_%28Unsplash%29.jpg/960px-Hands_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Hands_%28Unsplash%29.jpg/960px-Hands_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Hands_(Unsplash).jpg
+  creator: Daiga Ellaby daiga_ellaby
+  title: Hands (Unsplash)
+  keywords: Hands (Unsplash) CC-Zero People of Riga Women of Latvia Nail art Images uploaded by Fæ Images
+    from Unsplash Images from Unsplash (review needed) Human hands holding objects Files with coordinates
+    missing SDC location of creation Latvia photographs taken on 2017-04-04 Burning candles in Latvia
+    Riga, Latvia
+  width: 1800
+  score: 0.885
+  size:
+  - 661
+  - 443
+  match: 0.999
+- label: Wool socks
+  query: wool socks
+  provider: openverse
+  id: 2be373f1-e26f-466f-9ab3-2ea5a8d61115
+  preview_url: https://api.openverse.org/v1/images/2be373f1-e26f-466f-9ab3-2ea5a8d61115/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL2xyL21ldDE1ODM1MS1pbWFnZS5qcGc.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/12850627/stockings
+  creator: themet
+  title: Stockings
+  keywords: Stockings american indian pattern art hungarian pattern philosophy wool socks
+  width: 1024
+  score: 0.84
+  size:
+  - 652
+  - 879
+  match: 1.0
+- label: Bicycle
+  query: bicycle
+  provider: commons
+  id: '61734878'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/White_bicycle_%28Unsplash%29.jpg/960px-White_bicycle_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/White_bicycle_%28Unsplash%29.jpg/960px-White_bicycle_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:White_bicycle_(Unsplash).jpg
+  creator: Natasza Remesz natasza
+  title: White bicycle (Unsplash)
+  keywords: White bicycle (Unsplash) CC-Zero Bicycles with a step-through frame Images uploaded by Fæ
+    Images from Unsplash Natasza Remesz 2015
+  width: 1800
+  score: 0.942
+  size:
+  - 870
+  - 563
+  match: 0.996
+- label: Fika breaks
+  query: coffee and cake
+  provider: commons
+  id: '61666290'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Coffee_and_coffee_cake_%28Unsplash%29.jpg/960px-Coffee_and_coffee_cake_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Coffee_and_coffee_cake_%28Unsplash%29.jpg/960px-Coffee_and_coffee_cake_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Coffee_and_coffee_cake_(Unsplash).jpg
+  creator: Stephanie McCabe stephaniemccabe
+  title: Coffee and coffee cake (Unsplash)
+  keywords: Coffee and coffee cake (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Files
+    with coordinates missing SDC location of creation Coffee and cake Coffee cake Glasses of coffee Redding,
+    United States
+  width: 1800
+  score: 0.857
+  size:
+  - 800
+  - 533
+  match: 0.279
+- label: Lake swims
+  query: swimming lake
+  provider: commons
+  id: '58802480'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Lake_Dunmore_%28Unsplash%29.jpg/960px-Lake_Dunmore_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Lake_Dunmore_%28Unsplash%29.jpg/960px-Lake_Dunmore_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Lake_Dunmore_(Unsplash).jpg
+  creator: Todd Quackenbush toddquackenbush
+  title: Lake Dunmore (Unsplash)
+  keywords: Lake Dunmore (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Files with coordinates
+    missing SDC location of creation Humans swimming Lake Dunmore
+  width: 1800
+  score: 0.908
+  size:
+  - 800
+  - 403
+  match: 0.295
+- label: Forest walks
+  query: forest path
+  provider: commons
+  id: '62196872'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Overgrown_forest_path_%28Unsplash%29.jpg/960px-Overgrown_forest_path_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Overgrown_forest_path_%28Unsplash%29.jpg/960px-Overgrown_forest_path_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Overgrown_forest_path_(Unsplash).jpg
+  creator: Kirill Nechmonya nech
+  title: Overgrown forest path (Unsplash)
+  keywords: Overgrown forest path (Unsplash) CC-Zero Forest paths Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Kirill Nechmonya 2015
+  width: 1800
+  score: 1.041
+  size:
+  - 800
+  - 533
+  match: 0.312
+- label: Rowing on the lake
+  query: rowing boat lake
+  provider: commons
+  id: '61799713'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Fishing_in_Myanmar_%28Unsplash%29.jpg/960px-Fishing_in_Myanmar_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Fishing_in_Myanmar_%28Unsplash%29.jpg/960px-Fishing_in_Myanmar_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Fishing_in_Myanmar_(Unsplash).jpg
+  creator: Chinh Le Duc mero_dnt
+  title: Fishing in Myanmar (Unsplash)
+  keywords: Fishing in Myanmar (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from
+    Unsplash (review needed) Files with coordinates missing SDC location of creation Fishing at Inle Lake
+    Stand-up rowing Inle Lake, Myanmar (Burma)
+  width: 1800
+  score: 0.672
+  size:
+  - 800
+  - 533
+  match: 0.253
+- label: Swiss Alps
+  query: swiss village mountains
+  provider: commons
+  id: '58821255'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Road_through_a_mountain_village_%28Unsplash%29.jpg/960px-Road_through_a_mountain_village_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Road_through_a_mountain_village_%28Unsplash%29.jpg/960px-Road_through_a_mountain_village_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Road_through_a_mountain_village_(Unsplash).jpg
+  creator: Alexandr Schwarz alexandrschwarz
+  title: Road through a mountain village (Unsplash)
+  keywords: Road through a mountain village (Unsplash) CC-Zero Valleys Images uploaded by Fæ Images from
+    Unsplash Images from Unsplash (review needed) switzerland-photo
+  width: 1800
+  score: 0.788
+  size:
+  - 800
+  - 533
+  match: 0.269
+- label: Fondue
+  query: cheese fondue
+  provider: commons
+  id: '22557887'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Swiss_cheese_fondue.JPG/960px-Swiss_cheese_fondue.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Swiss_cheese_fondue.JPG/960px-Swiss_cheese_fondue.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Swiss_cheese_fondue.JPG
+  creator: Brücke-Osteuropa
+  title: Swiss cheese fondue
+  keywords: Swiss cheese fondue Taken with Canon Digital IXUS 800 IS CC-Zero Cheese fondue Caquelons Self-published
+    work Swiss Cheese fondue, Restaurant des Antiquaires, Geneve
+  width: 1800
+  score: 0.929
+  size:
+  - 502
+  - 455
+  match: 0.915
+- label: Chocolate
+  query: chocolate bar
+  provider: commons
+  id: '14979584'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Milky-Way-Bars-USUK-Split.jpg/960px-Milky-Way-Bars-USUK-Split.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Milky-Way-Bars-USUK-Split.jpg/960px-Milky-Way-Bars-USUK-Split.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Milky-Way-Bars-USUK-Split.jpg
+  creator: Evan-Amos
+  title: Milky-Way-Bars-USUK-Split
+  keywords: Milky-Way-Bars-USUK-Split Milky Way (chocolate bar) Taken with Sony DSLR-A700 CC-Zero Self-published
+    work Evan Amos Chocolate on white background American (left) and British (right) Milky Way candy bars
+    that have been split in half. Note the difference in size, color and patterning. The inside of the
+    American is nougat and caramel, while the British is fluffy nougat. The American bars is similar to
+    a British Mars bar, while the British are si
+  width: 1800
+  score: 0.936
+  size:
+  - 909
+  - 354
+  match: 0.999
+- label: Muesli
+  query: granola bowl
+  provider: openverse
+  id: 607f44b5-68dd-4cee-866f-c109df9a7400
+  preview_url: https://api.openverse.org/v1/images/607f44b5-68dd-4cee-866f-c109df9a7400/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJjZXJlYWxfZ3Jhbm9sYV9taWxrX2xvY2FsLWltYWdlLWt5YmUwenh3LmpwZw.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/6039745/berry-cereal-bowl-free-public-domain-cc0-photo
+  creator: ''
+  title: Berry cereal bowl
+  keywords: Berry cereal bowl breakfast cereal cereal cereal berries cereal bowl granola granola bowl
+    healthy snacks raspberry
+  width: 1024
+  score: 0.809
+  size:
+  - 370
+  - 516
+  match: 0.628
+- label: Apples
+  query: apples
+  provider: commons
+  id: '61661575'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Roberta_Sorge_2016-11-01_%28Unsplash%29.jpg/960px-Roberta_Sorge_2016-11-01_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Roberta_Sorge_2016-11-01_%28Unsplash%29.jpg/960px-Roberta_Sorge_2016-11-01_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Roberta_Sorge_2016-11-01_(Unsplash).jpg
+  creator: Roberta Sorge robertina
+  title: Roberta Sorge 2016-11-01 (Unsplash)
+  keywords: Roberta Sorge 2016-11-01 (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Apples on black background Roberta Sorge 2016-11-01
+  width: 1800
+  score: 0.829
+  size:
+  - 628
+  - 655
+  match: 0.998
+- label: Hiking boots
+  query: hiking boots
+  provider: commons
+  id: '61855892'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Jake_Ingle_2016-11-08_%28Unsplash%29.jpg/960px-Jake_Ingle_2016-11-08_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Jake_Ingle_2016-11-08_%28Unsplash%29.jpg/960px-Jake_Ingle_2016-11-08_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Jake_Ingle_2016-11-08_(Unsplash).jpg
+  creator: Jake Ingle ingle_jake
+  title: Jake Ingle 2016-11-08 (Unsplash)
+  keywords: Jake Ingle 2016-11-08 (Unsplash) CC-Zero Hiking boots Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Jake Ingle 2016-11-08
+  width: 1800
+  score: 0.538
+  size:
+  - 518
+  - 362
+  match: 0.966
+- label: Raclette
+  query: raclette
+  provider: commons
+  id: '155025955'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Raclette_comtoise_02.jpg/960px-Raclette_comtoise_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Raclette_comtoise_02.jpg/960px-Raclette_comtoise_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Raclette_comtoise_02.jpg
+  creator: Arnaud 25
+  title: Raclette comtoise 02
+  keywords: Raclette comtoise 02 CC-Zero Self-published work Raclette comtoise Raclette comtoise
+  width: 1800
+  score: 0.87
+  size:
+  - 882
+  - 701
+  match: 0.808
+- label: Wool blanket
+  query: wool blanket
+  provider: commons
+  id: '98386345'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Navajo_Saddle_Blanket_01.jpg/960px-Navajo_Saddle_Blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://upload.wikimedia.org/wikipedia/commons/f/f8/Navajo_Saddle_Blanket_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Navajo_Saddle_Blanket_01.jpg
+  creator: Navajo artist
+  title: Navajo Saddle Blanket 01
+  keywords: 'Navajo Saddle Blanket 01 Saddle blankets PD-Art (PD-old-70) Unknown date CC-PD-Mark PD-Art
+    missing SDC copyright status PD-old missing SDC copyright status Navajo blankets twill-woven in handspun
+    wool, in numerous aniline colors, with concentric zigzags. 53 in. by 31 in. Exhibited Saint Louis
+    Art Museum: “Navajo Weavings from the Andy Williams Collection,” October 26, 1997 – January 4, 1998
+    Literature Ann Lane Hedlund, Navajo Weavings from the Andy Williams Collection'
+  width: 1201
+  score: 0.814
+  size:
+  - 1015
+  - 1732
+  match: 0.949
+- label: Mountain hikes
+  query: alpine hiking
+  provider: commons
+  id: '184068179'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Hiking_the_Alpine_7_trail_%2849894407503%29.jpg/960px-Hiking_the_Alpine_7_trail_%2849894407503%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Hiking_the_Alpine_7_trail_%2849894407503%29.jpg/960px-Hiking_the_Alpine_7_trail_%2849894407503%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Hiking_the_Alpine_7_trail_(49894407503).jpg
+  creator: Forest Service - Northern Region
+  title: Hiking the Alpine 7 trail (49894407503)
+  keywords: Hiking the Alpine 7 trail (49894407503) Flathead National Forest PD US USDA FS Flickr images
+    missing SDC creator Files from the U.S. Forest Service Northern Region Flickr stream Flickr images
+    reviewed by FlickreviewR 2 United States photographs taken on 2019-09-25 U.S. Forest Service Flickr
+    files uploaded by OptimusPrimeBot Flickr images missing SDC published in Photo by Erika Williams
+  width: 1800
+  score: 0.819
+  size:
+  - 800
+  - 600
+  match: 0.276
+  modern: 0.473
+- label: Mountain lakes
+  query: alpine lake
+  provider: commons
+  id: '62228478'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Opening_in_the_Spring_%28Unsplash%29.jpg/960px-Opening_in_the_Spring_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Opening_in_the_Spring_%28Unsplash%29.jpg/960px-Opening_in_the_Spring_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Opening_in_the_Spring_(Unsplash).jpg
+  creator: Daniel Chen d_che
+  title: Opening in the Spring (Unsplash)
+  keywords: Opening in the Spring (Unsplash) CC-Zero Emerald Lakes Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Files with coordinates missing SDC location of creation Tongariro
+    Volcanic Complex in 2017 Tongariro Alpine Crossing, Tongariro National Park, New Zealand
+  width: 1800
+  score: 0.902
+  size:
+  - 800
+  - 533
+  match: 0.288
+- label: Cows in the meadow
+  query: cows in meadow
+  provider: commons
+  id: '175895626'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cows_on_meadow_near_Siedlung_Platte.jpg/960px-Cows_on_meadow_near_Siedlung_Platte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cows_on_meadow_near_Siedlung_Platte.jpg/960px-Cows_on_meadow_near_Siedlung_Platte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Cows_on_meadow_near_Siedlung_Platte.jpg
+  creator: Gerda Arendt
+  title: Cows on meadow near Siedlung Platte
+  keywords: Cows on meadow near Siedlung Platte Cows in Germany CC-Zero Self-published work Cattle in
+    Hesse Animals of Rheingau-Taunus-Kreis Nature of Neuhof (Taunusstein) Cows on meadow near Siedlung
+    Platte
+  width: 1800
+  score: 1.098
+  size:
+  - 800
+  - 602
+  match: 0.316
+  modern: 0.403
+- label: Foggy mountain mornings
+  query: train in the alps
+  provider: commons
+  id: '61891224'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Alps_%28Unsplash%29.jpg/960px-Alps_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Alps_%28Unsplash%29.jpg/960px-Alps_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Alps_(Unsplash).jpg
+  creator: Philipp Schlabs phil_bill
+  title: Alps (Unsplash)
+  keywords: Alps (Unsplash) CC-Zero Furna, Switzerland Images uploaded by Fæ Images from Unsplash Files
+    with coordinates missing SDC location of creation Alps
+  width: 1800
+  score: 0.801
+  size:
+  - 800
+  - 531
+  match: 0.276
+media:
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-19-feed-1-1.jpg?v=6548f2d0
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-19-feed-1-2.jpg?v=69281412
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-19-feed-1-3.jpg?v=82c2bfd3
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-19-feed-1-4.jpg?v=59d0f851
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-19-feed-1-5.jpg?v=fc66829c
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-19-feed-1-6.jpg?v=33379b60
+media_from_slides: true
+music:
+  audio_id: '521711751036658'
+  title: Twinkling Lights (Reimagined)
+  artist: Auni
+  trending: true
+  moods:
+  - calm
+  - cozy
+  alternatives:
+  - audio_id: '856093300426979'
+    title: Winter Magic
+    artist: Winterbell
+    trending: true
+  - audio_id: '1302843157949715'
+    title: Autumn Days
+    artist: Morunas
+    trending: false
+  - audio_id: '431803750912946'
+    title: Yellow
+    artist: Coldplay
+    trending: false

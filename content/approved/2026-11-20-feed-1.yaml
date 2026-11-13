@@ -1,0 +1,549 @@
+id: 2026-11-20-feed-1
+time: '11:30'
+lang: en
+sponsored: false
+inspired_by: '@organic__101_ this isn''t / this is carousel (structure and technique)'
+ai_generated: true
+date: '2026-11-20'
+format: this_not_that
+kind: carousel
+pillar: This, not that
+caption: 'Same day, two ways to live it 🌿
+
+  Which one is your week?'
+hashtags:
+- slowliving
+- simpleliving
+alt_text: 'This isn''t living, this is: rushed mornings, dinners in front of the TV and weekends at the
+  mall next to slow mornings, family dinners and days outside.'
+music_moods:
+- calm
+- home
+slides:
+- layout: pair
+  title: This isn't living
+  body: This is
+  items:
+  - label: Commuting in traffic
+    queries:
+    - traffic jam
+    - cars traffic
+  - label: Office desk
+    queries:
+    - office desk computer
+    - office work
+  - label: Hiking in the mountains
+    queries:
+    - mountain hiking
+    - hiking
+  - label: Dinner outside
+    queries:
+    - outdoor dinner
+    - dinner party garden
+  vintage: false
+- layout: pair
+  title: This isn't a morning
+  body: This is a morning
+  items:
+  - label: Coffee to go
+    queries:
+    - takeaway coffee cup
+    - paper coffee cup
+  - label: Alarm clock
+    queries:
+    - alarm clock
+    - ringing alarm clock
+  - label: Coffee at sunrise
+    queries:
+    - coffee sunrise
+    - morning coffee
+  - label: Breakfast at the table
+    queries:
+    - breakfast table
+    - breakfast
+  vintage: false
+- layout: pair
+  title: This isn't dinner
+  body: This is dinner
+  items:
+  - label: Takeout boxes
+    queries:
+    - takeout food
+    - takeaway boxes
+  - label: TV dinner
+    queries:
+    - eating in front of tv
+    - tv dinner
+  - label: Family dinner
+    queries:
+    - family dinner table
+    - family eating together
+  - label: Cooking together
+    queries:
+    - cooking together
+    - couple cooking
+  vintage: false
+- layout: pair
+  title: This isn't a weekend
+  body: This is a weekend
+  items:
+  - label: Shopping mall
+    queries:
+    - shopping mall
+    - mall
+  - label: Emails on the weekend
+    queries:
+    - typing on keyboard
+    - computer work
+  - label: Picnic in the park
+    queries:
+    - picnic in the park
+    - picnic
+  - label: Lake swim
+    queries:
+    - swimming lake
+    - lake swim
+  vintage: false
+- layout: pair
+  title: This isn't rest
+  body: This is rest
+  items:
+  - label: Scrolling in bed
+    queries:
+    - smartphone in hand
+    - phone in bed
+  - label: Binge watching
+    queries:
+    - tv screen living room
+    - watching tv
+  - label: Hammock naps
+    queries:
+    - hammock
+    - hammock nap
+  - label: Reading by the window
+    queries:
+    - reading by window
+    - reading book
+  vintage: false
+- title: Follow for more slow living
+  body: Which one is your week?
+photo_credits:
+- label: Commuting in traffic
+  query: traffic jam
+  provider: commons
+  id: '61879176'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Traffic_jam_in_Bangkok_%28Unsplash%29.jpg/960px-Traffic_jam_in_Bangkok_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Traffic_jam_in_Bangkok_%28Unsplash%29.jpg/960px-Traffic_jam_in_Bangkok_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Traffic_jam_in_Bangkok_(Unsplash).jpg
+  creator: Peter Hershey peterhershey
+  title: Traffic jam in Bangkok (Unsplash)
+  keywords: Traffic jam in Bangkok (Unsplash) Streets in Bangkok CC-Zero Images uploaded by Fæ Images
+    from Unsplash Images from Unsplash (review needed) Traffic congestion in Thailand Files with coordinates
+    missing SDC location of creation Traffic in Bangkok Bangkok, Thailand
+  width: 1800
+  score: 0.915
+  size:
+  - 800
+  - 533
+  match: 0.29
+- label: Office desk
+  query: office desk computer
+  provider: commons
+  id: '61739944'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/An_office_table_and_computers_%28Unsplash%29.jpg/960px-An_office_table_and_computers_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/An_office_table_and_computers_%28Unsplash%29.jpg/960px-An_office_table_and_computers_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:An_office_table_and_computers_(Unsplash).jpg
+  creator: Patryk Sobczak patryksobczak
+  title: An office table and computers (Unsplash)
+  keywords: An office table and computers (Unsplash) CC-Zero IMac aluminium Images uploaded by Fæ Images
+    from Unsplash Files with coordinates missing SDC location of creation MacBook Pro (Intel-based) Desk
+    with Apple iMac and Macbook
+  width: 1800
+  score: 0.953
+  size:
+  - 800
+  - 600
+  match: 0.295
+- label: Hiking in the mountains
+  query: mountain hiking
+  provider: commons
+  id: '61891212'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Hiking_on_rugged_rocks_%28Unsplash%29.jpg/960px-Hiking_on_rugged_rocks_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Hiking_on_rugged_rocks_%28Unsplash%29.jpg/960px-Hiking_on_rugged_rocks_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Hiking_on_rugged_rocks_(Unsplash).jpg
+  creator: Jake Ingle ingle_jake
+  title: Hiking on rugged rocks (Unsplash)
+  keywords: Hiking on rugged rocks (Unsplash) CC-Zero Hiking Images uploaded by Fæ Unidentified mountains
+    Images from Unsplash Images from Unsplash (review needed) Jake Ingle 2016-09-22
+  width: 1800
+  score: 0.827
+  size:
+  - 800
+  - 533
+  match: 0.28
+- label: Dinner outside
+  query: outdoor dinner
+  provider: commons
+  id: '62049760'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Outdoor_wine_dinner_%28Unsplash%29.jpg/960px-Outdoor_wine_dinner_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Outdoor_wine_dinner_%28Unsplash%29.jpg/960px-Outdoor_wine_dinner_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Outdoor_wine_dinner_(Unsplash).jpg
+  creator: Serge Esteve sce767
+  title: Outdoor wine dinner (Unsplash)
+  keywords: Outdoor wine dinner (Unsplash) Taken with Sony DSC-RX1R CC-Zero Images uploaded by Fæ Images
+    from Unsplash Images from Unsplash (review needed) Glasses of red wine Serge Esteve 2015-01-31
+  width: 1800
+  score: 0.743
+  size:
+  - 800
+  - 800
+  match: 0.264
+  modern: 0.624
+- label: Coffee to go
+  query: takeaway coffee cup
+  provider: openverse
+  id: 24d9208e-5cb0-4506-9551-9349afb6f5fc
+  preview_url: https://api.openverse.org/v1/images/24d9208e-5cb0-4506-9551-9349afb6f5fc/thumb/
+  full_url: https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3Vwd2s2MjI1MjI3MS13aWtpbWVkaWEtaW1hZ2Uta293bXJiZGUuanBn.jpg
+  license: cc0
+  source: https://www.rawpixel.com/image/3295706/free-photo-image-cafeteria-beverage-cafe
+  creator: ''
+  title: takeaway coffee mug protective heat
+  keywords: takeaway coffee mug protective heat cafeteria christmas christmas coffee coffee coffee cup
+    restaurant wood
+  width: 1024
+  score: 1.003
+  size:
+  - 1024
+  - 768
+  match: 0.301
+  modern: 0.687
+- label: Alarm clock
+  query: alarm clock
+  provider: commons
+  id: '58901711'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Roman_numerals_on_alarm_clock_%28Unsplash%29.jpg/960px-Roman_numerals_on_alarm_clock_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Roman_numerals_on_alarm_clock_%28Unsplash%29.jpg/960px-Roman_numerals_on_alarm_clock_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Roman_numerals_on_alarm_clock_(Unsplash).jpg
+  creator: Ales Krivec aleskrivec
+  title: Roman numerals on alarm clock (Unsplash)
+  keywords: Roman numerals on alarm clock (Unsplash) CC-Zero Images with annotations Silver objects Images
+    uploaded by Fæ Time 10:11 Images from Unsplash Photographs taken on 2012-07-04 Yellow clockfaces Clockfaces
+    with 12 Roman numerals and tick marks for minutes Mechanical alarm clocks Roman numerals with taller
+    I Clockfaces with Roman and Arabic numerals (I-XII+5-60) and tick marks for minutes Ales Krivec 2014-11-10
+  width: 1800
+  score: 0.98
+  size:
+  - 960
+  - 714
+  match: 0.298
+- label: Coffee at sunrise
+  query: morning coffee
+  provider: commons
+  id: '61806212'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Morning_joe_from_above_%28Unsplash%29.jpg/960px-Morning_joe_from_above_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Morning_joe_from_above_%28Unsplash%29.jpg/960px-Morning_joe_from_above_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Morning_joe_from_above_(Unsplash).jpg
+  creator: Mikesh Kaos mikeshkaos
+  title: Morning joe from above (Unsplash)
+  keywords: Morning joe from above (Unsplash) CC-Zero Cups of coffee Images uploaded by Fæ Images from
+    Unsplash Images from Unsplash (review needed) Files with coordinates missing SDC location of creation
+    (50° N, 11° E) Mikesh Kaos 2015
+  width: 1800
+  score: 0.924
+  size:
+  - 800
+  - 600
+  match: 0.296
+- label: Breakfast at the table
+  query: breakfast table
+  provider: commons
+  id: '62121924'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Breakfast_on_a_table_%28Unsplash%29.jpg/960px-Breakfast_on_a_table_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Breakfast_on_a_table_%28Unsplash%29.jpg/960px-Breakfast_on_a_table_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Breakfast_on_a_table_(Unsplash).jpg
+  creator: Katerina Pavlickova katerinapavlickova
+  title: Breakfast on a table (Unsplash)
+  keywords: Breakfast on a table (Unsplash) CC-Zero Breakfast Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Katerina Pavlickova 2016
+  width: 1800
+  score: 0.809
+  size:
+  - 533
+  - 800
+  match: 0.273
+- label: Takeout boxes
+  query: takeout food
+  provider: commons
+  id: '140349589'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Beelzebab_takeaway_2023-11-05.jpg/960px-Beelzebab_takeaway_2023-11-05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Beelzebab_takeaway_2023-11-05.jpg/960px-Beelzebab_takeaway_2023-11-05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Beelzebab_takeaway_2023-11-05.jpg
+  creator: Andy Li
+  title: Beelzebab takeaway 2023-11-05
+  keywords: 'Beelzebab takeaway 2023-11-05 CC-Zero Self-published work Vegan food in the United Kingdom
+    Take-out food in the United Kingdom Beelzebab at The Hope and Ruin, Brighton Items and their description
+    on menu: Big Ben - "a Beelzebab® with a 9" tofu dog on top!" Hoisin Beneath My VVings - "three chicken
+    style VVings on a stick lathered in hoisin sauce, topped with sesame seeds"'
+  width: 1800
+  score: 0.733
+  size:
+  - 800
+  - 600
+  match: 0.261
+  modern: 0.674
+- label: TV dinner
+  query: tv dinner
+  provider: commons
+  id: '69128871'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Frozen-TV-dinner-top-view.jpg/960px-Frozen-TV-dinner-top-view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Frozen-TV-dinner-top-view.jpg/960px-Frozen-TV-dinner-top-view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Frozen-TV-dinner-top-view.jpg
+  creator: Sir Beluga
+  title: Frozen-TV-dinner-top-view
+  keywords: Frozen-TV-dinner-top-view CC-Zero Self-published work TV dinners Top view of an opened, uncooked
+    TV dinner.
+  width: 1800
+  score: 0.771
+  size:
+  - 800
+  - 600
+  match: 0.267
+  modern: 0.453
+- label: Family dinner
+  query: family dinner table
+  provider: commons
+  id: '24036618'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Family_eating_meal.jpg/960px-Family_eating_meal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Family_eating_meal.jpg/960px-Family_eating_meal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Family_eating_meal.jpg
+  creator: National Cancer Institute
+  title: Family eating meal
+  keywords: Family eating meal National Institutes of Health images Dining tables Images uploaded by Fæ
+    PD US NIH CC-PD-Mark Media from National Cancer Institute Visuals Online Mexican American history
+    of 1995 People eating together Media from National Cancer Institute Visuals Online with known IDs
+    People eating dinner Families eating in the United States Title Family Eating Meal Description A Hispanic
+    family (male adult, two female adults, female child, and male child) enjoy a meal at the dinner table.
+    Topics/Categories Food and Drink People -- Adult People -- Child People -- Family/Friends Type Color,
+    Photo Source National Cancer Institute
+  width: 1800
+  score: 0.986
+  size:
+  - 800
+  - 533
+  match: 0.297
+  modern: 0.483
+- label: Cooking together
+  query: cooking together
+  provider: commons
+  id: '147350624'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Kitchen_Companions%2C_Cooking_Together.jpg/960px-Kitchen_Companions%2C_Cooking_Together.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Kitchen_Companions%2C_Cooking_Together.jpg/960px-Kitchen_Companions%2C_Cooking_Together.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Kitchen_Companions,_Cooking_Together.jpg
+  creator: Gwasheya
+  title: Kitchen Companions, Cooking Together
+  keywords: 'Kitchen Companions, Cooking Together CC-Zero Self-published work Images from Wiki Loves Africa
+    2024 Images from Wiki Loves Africa 2024 in Namibia In a rustic kitchen setting, two women collaborate
+    in preparing a traditional meal. One woman stands attentively by a pot of porridge, ensuring it cooks
+    to perfection, while the other carefully adds flour to the mixture, focusing on the task at hand.
+    The scene captures a moment of shared effort and '
+  width: 1800
+  score: 0.834
+  size:
+  - 600
+  - 800
+  match: 0.276
+  modern: 0.183
+- label: Shopping mall
+  query: shopping mall
+  provider: commons
+  id: '61828559'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Mall_Shopping_%28Unsplash%29.jpg/960px-Mall_Shopping_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Mall_Shopping_%28Unsplash%29.jpg/960px-Mall_Shopping_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Mall_Shopping_(Unsplash).jpg
+  creator: freestocks.org freestocks
+  title: Mall Shopping (Unsplash)
+  keywords: Mall Shopping (Unsplash) CC-Zero People of Olsztyn Images uploaded by Fæ Images from Unsplash
+    Files with coordinates missing SDC location of creation Olsztyn, Poland
+  width: 1800
+  score: 0.884
+  size:
+  - 800
+  - 533
+  match: 0.284
+  modern: 0.353
+- label: Emails on the weekend
+  query: typing on keyboard
+  provider: commons
+  id: '62067439'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Keyboard_%28Unsplash%29.jpg/960px-Keyboard_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Keyboard_%28Unsplash%29.jpg/960px-Keyboard_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Keyboard_(Unsplash).jpg
+  creator: Anas Alshanti otenteko
+  title: Keyboard (Unsplash)
+  keywords: Keyboard (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images from Unsplash
+    (review needed) Files with coordinates missing SDC location of creation Alemdar Caddesi Istanbul,
+    Turkey
+  width: 1800
+  score: 0.907
+  size:
+  - 800
+  - 505
+  match: 0.295
+- label: Picnic in the park
+  query: picnic in the park
+  provider: commons
+  id: '61664199'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Hanging_Out_in_the_Park_%28Unsplash%29.jpg/960px-Hanging_Out_in_the_Park_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Hanging_Out_in_the_Park_%28Unsplash%29.jpg/960px-Hanging_Out_in_the_Park_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Hanging_Out_in_the_Park_(Unsplash).jpg
+  creator: Rob Bye robertbye
+  title: Hanging Out in the Park (Unsplash)
+  keywords: Hanging Out in the Park (Unsplash) CC-Zero Images uploaded by Fæ London Fields, London Images
+    from Unsplash Images from Unsplash (review needed) 2016 in the London Borough of Hackney Files with
+    coordinates missing SDC location of creation (51° N, 1° W) London Fields, London
+  width: 1800
+  score: 1.002
+  size:
+  - 800
+  - 600
+  match: 0.303
+  modern: 0.492
+- label: Lake swim
+  query: swimming lake
+  provider: commons
+  id: '58802480'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Lake_Dunmore_%28Unsplash%29.jpg/960px-Lake_Dunmore_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Lake_Dunmore_%28Unsplash%29.jpg/960px-Lake_Dunmore_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Lake_Dunmore_(Unsplash).jpg
+  creator: Todd Quackenbush toddquackenbush
+  title: Lake Dunmore (Unsplash)
+  keywords: Lake Dunmore (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Files with coordinates
+    missing SDC location of creation Humans swimming Lake Dunmore
+  width: 1800
+  score: 0.908
+  size:
+  - 800
+  - 403
+  match: 0.295
+- label: Scrolling in bed
+  query: smartphone in hand
+  provider: commons
+  id: '61762875'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Eira%2C_Helsinki%2C_Finland_%28Unsplash%29.jpg/960px-Eira%2C_Helsinki%2C_Finland_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Eira%2C_Helsinki%2C_Finland_%28Unsplash%29.jpg/960px-Eira%2C_Helsinki%2C_Finland_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Eira,_Helsinki,_Finland_(Unsplash).jpg
+  creator: Toni Hukkanen hukkanen
+  title: Eira, Helsinki, Finland (Unsplash)
+  keywords: Eira, Helsinki, Finland (Unsplash) CC-Zero Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Files with coordinates missing SDC location of creation People with
+    smartphones Human hands holding phones Eira, Helsinki, Finland
+  width: 1800
+  score: 0.931
+  size:
+  - 800
+  - 504
+  match: 0.291
+- label: Binge watching
+  query: tv screen living room
+  provider: commons
+  id: '180480002'
+  preview_url: https://upload.wikimedia.org/wikipedia/commons/3/33/EFTA00002142_-_Modern_living_room_with_a_large_flat-screen_TV_on_a_wooden_media_console_set_against_white_walls_and_tiled_flooring.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled
+  full_url: https://upload.wikimedia.org/wikipedia/commons/3/33/EFTA00002142_-_Modern_living_room_with_a_large_flat-screen_TV_on_a_wooden_media_console_set_against_white_walls_and_tiled_flooring.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:EFTA00002142_-_Modern_living_room_with_a_large_flat-screen_TV_on_a_wooden_media_console_set_against_white_walls_and_tiled_flooring.jpg
+  creator: Federal Bureau of Investigation
+  title: EFTA00002142 - Modern living room with a large flat-screen TV on a wooden media console set against
+    white walls and tiled flooring
+  keywords: EFTA00002142 - Modern living room with a large flat-screen TV on a wooden media console set
+    against white walls and tiled flooring PD US Government Uploaded with pattypan PD US DOJ CC-PD-Mark
+    2019 FBI raid on Epstein's private island Part of Epstein Files released by the DOJ on December 19
+    2025
+  width: 768
+  score: 1.036
+  size:
+  - 768
+  - 1152
+  match: 0.307
+  modern: 0.22
+- label: Hammock naps
+  query: hammock
+  provider: commons
+  id: '61898783'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Campsite_hammocks_%28Unsplash%29.jpg/960px-Campsite_hammocks_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Campsite_hammocks_%28Unsplash%29.jpg/960px-Campsite_hammocks_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Campsite_hammocks_(Unsplash).jpg
+  creator: Jake Ingle ingle_jake
+  title: Campsite hammocks (Unsplash)
+  keywords: Campsite hammocks (Unsplash) CC-Zero Hammocks Images uploaded by Fæ Images from Unsplash Images
+    from Unsplash (review needed) Jake Ingle 2016-09-22
+  width: 1800
+  score: 1.004
+  size:
+  - 960
+  - 640
+  match: 0.309
+- label: Reading by the window
+  query: reading by window
+  provider: commons
+  id: '61659046'
+  preview_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Rainy_window_and_table_book_%28Unsplash%29.jpg/960px-Rainy_window_and_table_book_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  full_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Rainy_window_and_table_book_%28Unsplash%29.jpg/960px-Rainy_window_and_table_book_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Rainy_window_and_table_book_(Unsplash).jpg
+  creator: Rosalind Chang rosalindjchang
+  title: Rainy window and table book (Unsplash)
+  keywords: Rainy window and table book (Unsplash) CC-Zero Reading Images uploaded by Fæ Images from Unsplash
+    Images from Unsplash (review needed) Rosalind Chang 2016
+  width: 1800
+  score: 0.901
+  size:
+  - 800
+  - 532
+  match: 0.288
+media:
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-20-feed-1-1.jpg?v=1427456b
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-20-feed-1-2.jpg?v=2d0c2f34
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-20-feed-1-3.jpg?v=f0007d1e
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-20-feed-1-4.jpg?v=45232102
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-20-feed-1-5.jpg?v=a29fd4df
+- https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-20-feed-1-6.jpg?v=5de7bbfb
+media_from_slides: true
+music:
+  audio_id: '431803750912946'
+  title: Yellow
+  artist: Coldplay
+  trending: false
+  moods:
+  - calm
+  - home
+  alternatives:
+  - audio_id: '856093300426979'
+    title: Winter Magic
+    artist: Winterbell
+    trending: true
+  - audio_id: '1305568027191616'
+    title: Little Life
+    artist: Robert Gromotka
+    trending: true
+  - audio_id: '1549201939908190'
+    title: Orange Trees
+    artist: Jesse Robitaille
+    trending: false
