@@ -349,3 +349,18 @@ def test_waiting_run_stops_when_the_day_is_done(queue, monkeypatch):
     total, nxt = publish.run_until({"account": {"timezone": TZ}}, 330, sleep=clock.sleep, clock=clock,
                                    after=lambda n: None, save=lambda m: None)
     assert (total, nxt) == (0, None) and clock.now == datetime(2026, 11, 2, 23, 30, tzinfo=ZoneInfo(TZ))
+
+
+def test_a_run_never_hands_over_before_its_budget_is_used(queue, monkeypatch):
+    """11 Nov 2026: with the next window 6 h away a run returned at once, the next run
+    did the same, and ~50 runs chained in half an hour. Now each one waits its budget."""
+    from igbot import scheduler
+    content.save(carousel(id="2026-11-10-feed-1", date=None, time=None), "approved")
+    content.save(carousel(id="2026-11-11-feed-1", date=None, time=None), "approved")
+    slot = scheduler.slots(datetime(2026, 11, 2, 6, 0, tzinfo=ZoneInfo(TZ)), 2, [], TZ)[0]
+    start = slot - timedelta(hours=6)
+    clock = FakeClock(start)
+    monkeypatch.setattr(publish, "publish_due", lambda cfg, dry_run=False, now=None: 0)
+    total, nxt = publish.run_until({"account": {"timezone": TZ}}, 330, sleep=clock.sleep, clock=clock,
+                                   after=lambda n: None, save=lambda m: None)
+    assert nxt == slot and clock.now >= start + timedelta(minutes=330)

@@ -201,7 +201,9 @@ def run_until(cfg: dict, minutes: int, dry_run: bool = False, sleep=time.sleep, 
     run doesn't just look once: it waits for the next window and publishes in it,
     again and again, waking every POLL to pick up KLAPKA decisions. Each publication
     is pushed at once (gitstate). Returns (posts published, the next window today
-    that lies beyond this run, or None), so the workflow can start the next run in time."""
+    that lies beyond this run, or None), so the workflow can start the next run in time.
+    A run with windows still ahead today always uses its whole budget before handing
+    over, so the chain moves at most one run per budget and can't spin."""
     from . import gitstate, klapka
 
     tz = cfg["account"]["timezone"]
@@ -226,9 +228,10 @@ def run_until(cfg: dict, minutes: int, dry_run: bool = False, sleep=time.sleep, 
             nxt = None   # due but nothing went out (limit, error): try again at the next wake-up
         if not plan["due"] and nxt is None:
             return total, None          # nothing more today
-        if nxt is not None and nxt > deadline:
-            return total, nxt           # the next window is for the next run
-        wake = min(nxt or deadline, clock() + POLL, deadline)
-        if wake >= deadline and (nxt is None or nxt > deadline):
+        now = clock()
+        if now >= deadline:
+            # Hand over only after using the whole budget: returning early made the next
+            # run return early too, and on 11 Nov 2026 ~50 runs chained within half an hour.
             return total, nxt
-        sleep(max(1.0, (wake - clock()).total_seconds() + 20))
+        wake = min(nxt or deadline, now + POLL, deadline)
+        sleep(max(1.0, (wake - now).total_seconds() + (20 if wake < deadline else 0)))
