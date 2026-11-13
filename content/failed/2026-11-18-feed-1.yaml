@@ -1543,4 +1543,5 @@ music:
     trending: false
 klapka:
   record: recx7OqOtic6v5DYn
-  sent: 795fd664a58f5857
+  sent: ed77bceb12ffa766
+error: '400 OAuthException 9004: Only photo or video can be accepted as media type.'
