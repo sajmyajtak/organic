@@ -548,18 +548,22 @@ music:
   - winter
   - nostalgic
   alternatives:
+  - audio_id: '263896829897972'
+    title: November
+    artist: Past Day
+    trending: true
+  - audio_id: '1115857888092269'
+    title: November
+    artist: Onoychenko
+    trending: true
   - audio_id: '1302843157949715'
     title: Autumn Days
     artist: Morunas
     trending: false
-  - audio_id: '1549201939908190'
-    title: Orange Trees
-    artist: Jesse Robitaille
-    trending: false
-  - audio_id: '1011178941789966'
-    title: Riverbank
-    artist: Goldenrod
-    trending: false
 klapka:
   record: recAGo02jzpEfjCT4
-  sent: 1ccf32562b700a51
+  sent: 5ecb2c8cecb650cd
+media_ids:
+- '18417470332086600'
+published_at: 2026-11-13T17:00-05:00
+permalink: https://www.instagram.com/p/Dfsp6I5jGLM/
