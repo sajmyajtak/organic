@@ -527,26 +527,30 @@ media:
 - https://raw.githubusercontent.com/sajmyajtak/organic/main/media/2026-11-20-feed-1-6.jpg?v=5de7bbfb
 media_from_slides: true
 music:
-  audio_id: '431803750912946'
-  title: Yellow
-  artist: Coldplay
-  trending: false
+  audio_id: '1305568027191616'
+  title: Little Life
+  artist: Robert Gromotka
+  trending: true
   moods:
   - calm
   - home
   alternatives:
-  - audio_id: '856093300426979'
-    title: Winter Magic
-    artist: Winterbell
+  - audio_id: '1115857888092269'
+    title: November
+    artist: Onoychenko
     trending: true
-  - audio_id: '1305568027191616'
-    title: Little Life
-    artist: Robert Gromotka
-    trending: true
-  - audio_id: '1549201939908190'
-    title: Orange Trees
-    artist: Jesse Robitaille
+  - audio_id: '431803750912946'
+    title: Yellow
+    artist: Coldplay
     trending: false
+  - audio_id: '263896829897972'
+    title: November
+    artist: Past Day
+    trending: true
 klapka:
   record: recbMKyAbroJUxSIM
-  sent: 87c8a2deff564847
+  sent: 1fcf059387659a40
+media_ids:
+- '18083692442380830'
+published_at: 2026-11-14T13:15-05:00
+permalink: https://www.instagram.com/p/Dfu08WiF2rn/
