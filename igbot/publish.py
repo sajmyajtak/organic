@@ -15,6 +15,7 @@ from .render import Theme, render_item
 # Items that missed their slot by more than this (e.g. the scheduler was down)
 # are not posted late; they go to content/failed for a human to reschedule.
 GRACE = timedelta(hours=6)
+MAX_ATTEMPTS = 3   # windows a post gets when Instagram can't fetch its pictures, before content/failed
 
 
 def media_sources(item: dict, theme: Theme) -> list[Path | str]:
@@ -173,6 +174,18 @@ def publish_due(cfg: dict, dry_run: bool = False, now: datetime | None = None) -
             continue
         try:
             ids = publish_item(ig, item, theme, dry_run, as_reel=(cfg.get("feed") or {}).get("publish_as") == "reel")
+        except InstagramError as exc:
+            if exc.fetch_failed and item.get("attempts", 0) + 1 < MAX_ATTEMPTS and not dry_run:
+                # A download hiccup at Instagram, not a broken post: it stays in the pool
+                # and goes out in a later window (the scheduler picks the next post now).
+                item["attempts"] = item.get("attempts", 0) + 1
+                item["last_error"] = str(exc)[:300]
+                content.save(item, "approved")
+                print(f"{item['id']}: Instagram obrázek nestáhl, zůstává v zásobě "
+                      f"(pokus {item['attempts']}/{MAX_ATTEMPTS})")
+                continue
+            fail(item, str(exc))
+            continue
         except Exception as exc:  # keep going with the rest of the queue
             fail(item, str(exc))
             continue

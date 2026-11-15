@@ -35,7 +35,18 @@ def _config_user_id() -> str | None:
 
 
 class InstagramError(RuntimeError):
-    pass
+    def __init__(self, message: str, code: int | None = None, subcode: int | None = None):
+        super().__init__(message)
+        self.code, self.subcode = code, subcode
+
+    @property
+    def fetch_failed(self) -> bool:
+        """Instagram couldn't download the picture from its URL this time (9004 "Only
+        photo or video can be accepted", 2207052 / 2207003 fetch errors). On
+        13 Nov 2026 all six slides of a post were fine minutes later: worth a retry."""
+        text = str(self)
+        return (self.code == 9004 or self.subcode in (2207003, 2207052)
+                or "Only photo or video" in text or "could not be fetched" in text.lower())
 
 
 class Instagram:
@@ -73,7 +84,8 @@ class Instagram:
         payload = resp.json() if resp.content else {}
         if resp.status_code >= 400 or "error" in payload:
             err = payload.get("error", {})
-            raise InstagramError(f"{resp.status_code} {err.get('type')} {err.get('code')}: {err.get('message')}")
+            raise InstagramError(f"{resp.status_code} {err.get('type')} {err.get('code')}: {err.get('message')}",
+                                 err.get("code"), err.get("error_subcode"))
         return payload
 
     def get(self, path: str, **params) -> dict:
@@ -87,8 +99,17 @@ class Instagram:
 
     # -- publishing --------------------------------------------------------
 
+    FETCH_RETRIES = (20, 60)   # seconds before the 2nd and 3rd try of a picture Instagram couldn't fetch
+
     def _container(self, **params) -> str:
-        return self.post(f"{self.user_id}/media", **params)["id"]
+        for wait in (*self.FETCH_RETRIES, None):
+            try:
+                return self.post(f"{self.user_id}/media", **params)["id"]
+            except InstagramError as exc:
+                if wait is None or not exc.fetch_failed:
+                    raise
+                print(f"  Instagram obrázek nestáhl ({exc}), zkusím to znovu za {wait} s")
+                time.sleep(wait)
 
     def wait_until_ready(self, container_id: str, timeout: int = 300, interval: int = 20) -> None:
         """Poll the container; Meta asks for roughly one check a minute, max ~5 minutes.

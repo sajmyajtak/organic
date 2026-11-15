@@ -1544,4 +1544,4 @@ music:
 klapka:
   record: recx7OqOtic6v5DYn
   sent: ed77bceb12ffa766
-error: '400 OAuthException 9004: Only photo or video can be accepted as media type.'
+last_error: '400 OAuthException 9004 (13. 11. 2026): Instagram obrázek nestáhl, slidy jsou v pořádku'

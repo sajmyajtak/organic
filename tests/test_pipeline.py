@@ -364,3 +364,39 @@ def test_a_run_never_hands_over_before_its_budget_is_used(queue, monkeypatch):
     total, nxt = publish.run_until({"account": {"timezone": TZ}}, 330, sleep=clock.sleep, clock=clock,
                                    after=lambda n: None, save=lambda m: None)
     assert nxt == slot and clock.now >= start + timedelta(minutes=330)
+
+
+def test_a_fetch_hiccup_retries_the_picture_and_keeps_the_post_in_the_pool(queue, monkeypatch):
+    from igbot.instagram import Instagram, InstagramError
+    ig = Instagram("1", "t")
+    calls = []
+
+    def post(path, **params):
+        calls.append(params.get("image_url"))
+        if len(calls) == 1:
+            raise InstagramError("400 OAuthException 9004: Only photo or video can be accepted as media type.", 9004)
+        return {"id": f"c{len(calls)}"}
+
+    monkeypatch.setattr(ig, "post", post)
+    monkeypatch.setattr("igbot.instagram.time.sleep", lambda s: None)
+    assert ig._container(image_url="https://x/1.jpg") == "c2" and calls == ["https://x/1.jpg"] * 2
+
+    # Still failing after the retries: the post stays in the pool for a later window.
+    monkeypatch.setenv("IG_USER_ID", "1")
+    monkeypatch.setenv("IG_ACCESS_TOKEN", "t")
+    monkeypatch.setattr(publish, "quota_left", lambda ig: None)
+    item = carousel(id="2026-11-02-feed-1", date=None, time=None, media=["https://x/1.jpg", "https://x/2.jpg"])
+    content.save(item, "approved")
+
+    def broken(*a, **k):
+        raise InstagramError("400 OAuthException 9004: Only photo or video can be accepted as media type.", 9004)
+
+    monkeypatch.setattr(publish, "publish_item", broken)
+    from igbot import scheduler
+    slot = scheduler.plan(datetime(2026, 11, 2, 6, 0, tzinfo=ZoneInfo(TZ)), TZ)["slots"][0]
+    for k in (1, 2):
+        publish.publish_due({"account": {"timezone": TZ}, "brand": {}}, now=slot + timedelta(minutes=k))
+        [kept] = content.items("approved")
+        assert kept["attempts"] == k and not content.items("failed")
+    publish.publish_due({"account": {"timezone": TZ}, "brand": {}}, now=slot + timedelta(minutes=3))
+    assert content.items("failed") and not content.items("approved")      # third window: give up
