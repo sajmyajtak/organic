@@ -1529,13 +1529,13 @@ music:
   - cozy
   - nostalgic
   alternatives:
-  - audio_id: '521711751036658'
-    title: Twinkling Lights (Reimagined)
-    artist: Auni
+  - audio_id: '1115857888092269'
+    title: November
+    artist: Onoychenko
     trending: true
-  - audio_id: '856093300426979'
-    title: Winter Magic
-    artist: Winterbell
+  - audio_id: '2150015712260414'
+    title: Vintage November
+    artist: Peaceful Reveries
     trending: true
   - audio_id: '1302843157949715'
     title: Autumn Days
@@ -1543,5 +1543,9 @@ music:
     trending: false
 klapka:
   record: recx7OqOtic6v5DYn
-  sent: 795fd664a58f5857
+  sent: 954f9230f45d980c
 last_error: '400 OAuthException 9004 (13. 11. 2026): Instagram obrázek nestáhl, slidy jsou v pořádku'
+media_ids:
+- '17843284059697356'
+published_at: 2026-11-15T15:12-05:00
+permalink: https://www.instagram.com/p/DfxnJYil66s/
